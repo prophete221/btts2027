@@ -1,70 +1,8 @@
 {
   "date": "2026-10-11",
-  "lastUpdated": "2026-10-11T19:56:50.323Z",
+  "lastUpdated": "2026-10-11T23:29:50.181Z",
   "source": "ESPN + TheSportsDB",
   "free": [
-    {
-      "id": "stlouisc-vs-lagalaxy-2026-10-11",
-      "match": "St. Louis CITY SC vs LA Galaxy",
-      "home": "St. Louis CITY SC",
-      "away": "LA Galaxy",
-      "league": "MLS",
-      "date": "2026-10-11",
-      "type": "BTTS",
-      "prediction": "Oui",
-      "proba": 0.7589,
-      "bttsProbDisplay": "75.89%",
-      "over25ProbDisplay": "82.92%",
-      "confidence": 76,
-      "time": "23:00",
-      "matchSemantic": "stlouisc-vs-lagalaxy-2026-10-11",
-      "source": "poisson-v92-real-data",
-      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/21812.png",
-      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/187.png",
-      "tier": "GOLD",
-      "reliabilityScore": 91.95,
-      "dataQuality": "HIGH",
-      "dataSource": "ESPN_TEAM_SCHEDULE",
-      "matchCountHome": 8,
-      "matchCountAway": 8,
-      "h2hAvailable": false,
-      "xgHome": 2.9,
-      "xgAway": 1.63,
-      "xgTotal": 4.53,
-      "formBTTS": 43,
-      "analysis": "St. Louis CITY SC (8 matchs réels, xG 2.90) vs LA Galaxy (8 matchs réels, xG 1.63). xG cumulé 4.53, BTTS 75.9%, Over 2.5 82.9%. Fiabilité 91.95%. Qualité données: HIGH.",
-      "analysisData": {
-        "bttsProb": 0.7589,
-        "over25Prob": 0.8292,
-        "homeLambda": 2.9,
-        "awayLambda": 1.63,
-        "xgTotal": 4.53
-      },
-      "estimatedCote": 1.32,
-      "estimatedCoteOver": 1.21,
-      "predictions": [
-        {
-          "type": "BTTS",
-          "prediction": "Oui",
-          "confidence": 76,
-          "bttsProb": 0.7589,
-          "homeLambda": 2.9,
-          "awayLambda": 1.63
-        },
-        {
-          "type": "Over 2.5",
-          "prediction": "Oui",
-          "confidence": 83,
-          "over25Prob": 0.8292,
-          "homeLambda": 2.9,
-          "awayLambda": 1.63
-        }
-      ],
-      "bttsProb": 0.7589,
-      "over25Prob": 0.8292,
-      "homeLambda": 2.9,
-      "awayLambda": 1.63
-    },
     {
       "id": "coventry-vs-newcastl-2026-10-12",
       "match": "Coventry City vs Newcastle United",
@@ -746,9 +684,7 @@
       "over25Prob": 0.8774,
       "homeLambda": 2.9,
       "awayLambda": 2.13
-    }
-  ],
-  "vipPreview": [
+    },
     {
       "id": "norwichc-vs-southamp-2026-10-14",
       "match": "Norwich City vs Southampton",
@@ -810,7 +746,9 @@
       "over25Prob": 0.7338,
       "homeLambda": 2.32,
       "awayLambda": 1.5
-    },
+    }
+  ],
+  "vipPreview": [
     {
       "id": "fccincin-vs-newengla-2026-10-14",
       "match": "FC Cincinnati vs New England Revolution",
@@ -1244,79 +1182,79 @@
       "over25Prob": 0.4084,
       "homeLambda": 1.32,
       "awayLambda": 1
-    }
-  ],
-  "stats": {
-    "avgReliability": 81.44,
-    "totalAnalyzed": 86,
-    "totalRejected": 1,
-    "totalAccepted": 85,
-    "freeCount": 12,
-    "vipCount": 8
-  },
-  "predictions": [
+    },
     {
-      "id": "stlouisc-vs-lagalaxy-2026-10-11",
-      "match": "St. Louis CITY SC vs LA Galaxy",
-      "home": "St. Louis CITY SC",
-      "away": "LA Galaxy",
+      "id": "colorado-vs-minnesot-2026-10-15",
+      "match": "Colorado Rapids vs Minnesota United FC",
+      "home": "Colorado Rapids",
+      "away": "Minnesota United FC",
       "league": "MLS",
-      "date": "2026-10-11",
+      "date": "2026-10-15",
       "type": "BTTS",
       "prediction": "Oui",
-      "proba": 0.7589,
-      "bttsProbDisplay": "75.89%",
+      "proba": 0.7954,
+      "bttsProbDisplay": "79.54%",
       "over25ProbDisplay": "82.92%",
-      "confidence": 76,
-      "time": "23:00",
-      "matchSemantic": "stlouisc-vs-lagalaxy-2026-10-11",
+      "confidence": 80,
+      "time": "01:30",
+      "matchSemantic": "colorado-vs-minnesot-2026-10-15",
       "source": "poisson-v92-real-data",
-      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/21812.png",
-      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/187.png",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/184.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/17362.png",
       "tier": "GOLD",
-      "reliabilityScore": 91.95,
+      "reliabilityScore": 93.55,
       "dataQuality": "HIGH",
       "dataSource": "ESPN_TEAM_SCHEDULE",
       "matchCountHome": 8,
       "matchCountAway": 8,
       "h2hAvailable": false,
-      "xgHome": 2.9,
-      "xgAway": 1.63,
+      "xgHome": 2.52,
+      "xgAway": 2,
       "xgTotal": 4.53,
-      "formBTTS": 43,
-      "analysis": "St. Louis CITY SC (8 matchs réels, xG 2.90) vs LA Galaxy (8 matchs réels, xG 1.63). xG cumulé 4.53, BTTS 75.9%, Over 2.5 82.9%. Fiabilité 91.95%. Qualité données: HIGH.",
+      "formBTTS": 36,
+      "analysis": "Colorado Rapids (8 matchs réels, xG 2.52) vs Minnesota United FC (8 matchs réels, xG 2.00). xG cumulé 4.53, BTTS 79.5%, Over 2.5 82.9%. Fiabilité 93.55%. Qualité données: HIGH.",
       "analysisData": {
-        "bttsProb": 0.7589,
+        "bttsProb": 0.7954,
         "over25Prob": 0.8292,
-        "homeLambda": 2.9,
-        "awayLambda": 1.63,
+        "homeLambda": 2.52,
+        "awayLambda": 2,
         "xgTotal": 4.53
       },
-      "estimatedCote": 1.32,
+      "estimatedCote": 1.26,
       "estimatedCoteOver": 1.21,
       "predictions": [
         {
           "type": "BTTS",
           "prediction": "Oui",
-          "confidence": 76,
-          "bttsProb": 0.7589,
-          "homeLambda": 2.9,
-          "awayLambda": 1.63
+          "confidence": 80,
+          "bttsProb": 0.7954,
+          "homeLambda": 2.52,
+          "awayLambda": 2
         },
         {
           "type": "Over 2.5",
           "prediction": "Oui",
           "confidence": 83,
           "over25Prob": 0.8292,
-          "homeLambda": 2.9,
-          "awayLambda": 1.63
+          "homeLambda": 2.52,
+          "awayLambda": 2
         }
       ],
-      "bttsProb": 0.7589,
+      "bttsProb": 0.7954,
       "over25Prob": 0.8292,
-      "homeLambda": 2.9,
-      "awayLambda": 1.63
-    },
+      "homeLambda": 2.52,
+      "awayLambda": 2
+    }
+  ],
+  "stats": {
+    "avgReliability": 81.32,
+    "totalAnalyzed": 85,
+    "totalRejected": 1,
+    "totalAccepted": 84,
+    "freeCount": 12,
+    "vipCount": 8
+  },
+  "predictions": [
     {
       "id": "coventry-vs-newcastl-2026-10-12",
       "match": "Coventry City vs Newcastle United",
@@ -1998,6 +1936,68 @@
       "over25Prob": 0.8774,
       "homeLambda": 2.9,
       "awayLambda": 2.13
+    },
+    {
+      "id": "norwichc-vs-southamp-2026-10-14",
+      "match": "Norwich City vs Southampton",
+      "home": "Norwich City",
+      "away": "Southampton",
+      "league": "Championship",
+      "date": "2026-10-14",
+      "type": "BTTS",
+      "prediction": "Oui",
+      "proba": 0.7003,
+      "bttsProbDisplay": "70.03%",
+      "over25ProbDisplay": "73.38%",
+      "confidence": 70,
+      "time": "18:45",
+      "matchSemantic": "norwichc-vs-southamp-2026-10-14",
+      "source": "poisson-v92-real-data",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/381.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/376.png",
+      "tier": "GOLD",
+      "reliabilityScore": 89.39,
+      "dataQuality": "HIGH",
+      "dataSource": "ESPN_TEAM_SCHEDULE",
+      "matchCountHome": 8,
+      "matchCountAway": 8,
+      "h2hAvailable": false,
+      "xgHome": 2.32,
+      "xgAway": 1.5,
+      "xgTotal": 3.82,
+      "formBTTS": 44,
+      "analysis": "Norwich City (8 matchs réels, xG 2.32) vs Southampton (8 matchs réels, xG 1.50). xG cumulé 3.82, BTTS 70.0%, Over 2.5 73.4%. Fiabilité 89.39%. Qualité données: HIGH.",
+      "analysisData": {
+        "bttsProb": 0.7003,
+        "over25Prob": 0.7338,
+        "homeLambda": 2.32,
+        "awayLambda": 1.5,
+        "xgTotal": 3.82
+      },
+      "estimatedCote": 1.43,
+      "estimatedCoteOver": 1.36,
+      "predictions": [
+        {
+          "type": "BTTS",
+          "prediction": "Oui",
+          "confidence": 70,
+          "bttsProb": 0.7003,
+          "homeLambda": 2.32,
+          "awayLambda": 1.5
+        },
+        {
+          "type": "Over 2.5",
+          "prediction": "Oui",
+          "confidence": 73,
+          "over25Prob": 0.7338,
+          "homeLambda": 2.32,
+          "awayLambda": 1.5
+        }
+      ],
+      "bttsProb": 0.7003,
+      "over25Prob": 0.7338,
+      "homeLambda": 2.32,
+      "awayLambda": 1.5
     }
   ]
 }
