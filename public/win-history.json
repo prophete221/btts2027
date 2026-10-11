@@ -1,6 +1,6 @@
 {
   "schemaVersion": 3,
-  "generatedAt": "2026-10-11T04:25:11.111Z",
+  "generatedAt": "2026-10-11T14:50:31.897Z",
   "trackingPeriod": {
     "startDate": "2026-08-08",
     "isPublicPeriod": true,
@@ -8,17 +8,17 @@
     "insufficientVolume": false
   },
   "stats": {
-    "total": 115,
-    "won": 79,
+    "total": 116,
+    "won": 80,
     "lost": 36,
-    "pending": 581,
+    "pending": 580,
     "archivedTotal": 696,
-    "rate": 68.7,
+    "rate": 69,
     "gold": {
-      "total": 97,
-      "won": 66,
+      "total": 98,
+      "won": 67,
       "lost": 31,
-      "rate": 68
+      "rate": 68.4
     },
     "standard": {
       "total": 18,
@@ -28,10 +28,10 @@
     },
     "byType": {
       "btts": {
-        "total": 113,
-        "won": 78,
+        "total": 114,
+        "won": 79,
         "lost": 35,
-        "rate": 69
+        "rate": 69.3
       },
       "over25": {
         "total": 2,
@@ -134,8 +134,8 @@
       },
       {
         "date": "2026-10-10",
-        "total": 2,
-        "won": 2,
+        "total": 3,
+        "won": 3,
         "lost": 0,
         "rate": 100
       }
@@ -147,6 +147,18 @@
     }
   },
   "history": [
+    {
+      "date": "2026-10-10",
+      "match": "LAFC vs Vancouver Whitecaps",
+      "league": "MLS",
+      "market": "btts",
+      "tier": "GOLD",
+      "proba": 0.5707,
+      "status": "WON",
+      "finalScore": "1-1",
+      "verifiedAt": "2026-10-11T14:42:23.735Z",
+      "source": "ESPN public"
+    },
     {
       "date": "2026-10-10",
       "match": "Minnesota United FC vs Houston Dynamo FC",

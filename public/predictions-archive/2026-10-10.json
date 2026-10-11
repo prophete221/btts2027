@@ -1887,7 +1887,9 @@
       "over25Prob": 0.5345,
       "homeLambda": 1.4,
       "awayLambda": 1.42,
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "1-1",
+      "verifiedAt": "2026-10-11T14:42:23.735Z"
     },
     {
       "id": "herthabe-vs-spvgggre-2026-10-11",
