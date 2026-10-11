@@ -1315,7 +1315,8 @@
       "bttsProb": 0.7589,
       "over25Prob": 0.8292,
       "homeLambda": 2.9,
-      "awayLambda": 1.63
+      "awayLambda": 1.63,
+      "status": "PENDING"
     },
     {
       "id": "sporting-vs-portland-2026-10-11",
@@ -1377,7 +1378,10 @@
       "bttsProb": 0.6971,
       "over25Prob": 0.706,
       "homeLambda": 2.02,
-      "awayLambda": 1.63
+      "awayLambda": 1.63,
+      "finalScore": "3-3",
+      "status": "WON",
+      "verifiedAt": "2026-10-11T04:18:09.233Z"
     },
     {
       "id": "fcutrech-vs-willemii-2026-10-11",
@@ -1439,7 +1443,8 @@
       "bttsProb": 0.8648,
       "over25Prob": 0.8996,
       "homeLambda": 2.65,
-      "awayLambda": 2.67
+      "awayLambda": 2.67,
+      "status": "PENDING"
     },
     {
       "id": "arouca-vs-estrela-2026-10-11",
@@ -1501,7 +1506,8 @@
       "bttsProb": 0.77,
       "over25Prob": 0.8047,
       "homeLambda": 2.48,
-      "awayLambda": 1.83
+      "awayLambda": 1.83,
+      "status": "PENDING"
     },
     {
       "id": "kvcweste-vs-antwerp-2026-10-11",
@@ -1563,7 +1569,8 @@
       "bttsProb": 0.7636,
       "over25Prob": 0.7831,
       "homeLambda": 1.98,
-      "awayLambda": 2.17
+      "awayLambda": 2.17,
+      "status": "PENDING"
     },
     {
       "id": "crystalp-vs-nottingh-2026-10-11",
@@ -1625,7 +1632,8 @@
       "bttsProb": 0.7563,
       "over25Prob": 0.8149,
       "homeLambda": 1.65,
-      "awayLambda": 2.75
+      "awayLambda": 2.75,
+      "status": "PENDING"
     },
     {
       "id": "kvmechel-vs-sinttrui-2026-10-11",
@@ -1687,7 +1695,8 @@
       "bttsProb": 0.7416,
       "over25Prob": 0.7831,
       "homeLambda": 1.65,
-      "awayLambda": 2.5
+      "awayLambda": 2.5,
+      "status": "PENDING"
     },
     {
       "id": "minnesot-vs-houstond-2026-10-11",
@@ -1749,7 +1758,10 @@
       "bttsProb": 0.5853,
       "over25Prob": 0.554,
       "homeLambda": 1.4,
-      "awayLambda": 1.5
+      "awayLambda": 1.5,
+      "finalScore": "2-2",
+      "status": "WON",
+      "verifiedAt": "2026-10-11T04:18:09.238Z"
     },
     {
       "id": "excelsio-vs-fcgronin-2026-10-11",
@@ -1811,7 +1823,8 @@
       "bttsProb": 0.7245,
       "over25Prob": 0.7338,
       "homeLambda": 1.98,
-      "awayLambda": 1.83
+      "awayLambda": 1.83,
+      "status": "PENDING"
     },
     {
       "id": "lafc-vs-vancouve-2026-10-11",
@@ -1873,7 +1886,8 @@
       "bttsProb": 0.5707,
       "over25Prob": 0.5345,
       "homeLambda": 1.4,
-      "awayLambda": 1.42
+      "awayLambda": 1.42,
+      "status": "PENDING"
     },
     {
       "id": "herthabe-vs-spvgggre-2026-10-11",
@@ -1935,7 +1949,8 @@
       "bttsProb": 0.712,
       "over25Prob": 0.7594,
       "homeLambda": 2.48,
-      "awayLambda": 1.5
+      "awayLambda": 1.5,
+      "status": "PENDING"
     },
     {
       "id": "telstar-vs-adodenha-2026-10-11",
@@ -1997,7 +2012,8 @@
       "bttsProb": 0.7032,
       "over25Prob": 0.706,
       "homeLambda": 1.77,
-      "awayLambda": 1.88
+      "awayLambda": 1.88,
+      "status": "PENDING"
     }
   ]
 }
