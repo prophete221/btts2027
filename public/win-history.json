@@ -1,6 +1,6 @@
 {
   "schemaVersion": 3,
-  "generatedAt": "2026-10-12T17:34:03.313Z",
+  "generatedAt": "2026-10-13T01:58:02.726Z",
   "trackingPeriod": {
     "startDate": "2026-08-08",
     "isPublicPeriod": true,
@@ -8,30 +8,30 @@
     "insufficientVolume": false
   },
   "stats": {
-    "total": 116,
-    "won": 80,
+    "total": 118,
+    "won": 82,
     "lost": 36,
-    "pending": 592,
-    "archivedTotal": 708,
-    "rate": 69,
+    "pending": 602,
+    "archivedTotal": 720,
+    "rate": 69.5,
     "gold": {
-      "total": 98,
-      "won": 67,
+      "total": 99,
+      "won": 68,
       "lost": 31,
-      "rate": 68.4
+      "rate": 68.7
     },
     "standard": {
-      "total": 18,
-      "won": 13,
+      "total": 19,
+      "won": 14,
       "lost": 5,
-      "rate": 72.2
+      "rate": 73.7
     },
     "byType": {
       "btts": {
-        "total": 114,
-        "won": 79,
+        "total": 116,
+        "won": 81,
         "lost": 35,
-        "rate": 69.3
+        "rate": 69.8
       },
       "over25": {
         "total": 2,
@@ -41,13 +41,6 @@
       }
     },
     "trend14": [
-      {
-        "date": "2026-09-04",
-        "total": 1,
-        "won": 0,
-        "lost": 1,
-        "rate": 0
-      },
       {
         "date": "2026-09-05",
         "total": 10,
@@ -138,15 +131,46 @@
         "won": 3,
         "lost": 0,
         "rate": 100
+      },
+      {
+        "date": "2026-10-12",
+        "total": 2,
+        "won": 2,
+        "lost": 0,
+        "rate": 100
       }
     ],
     "period": {
       "from": "2026-08-08",
-      "to": "2026-10-12",
-      "days": 66
+      "to": "2026-10-13",
+      "days": 67
     }
   },
   "history": [
+    {
+      "date": "2026-10-12",
+      "match": "FC Famalicao vs Alverca",
+      "league": "Liga Portugal",
+      "market": "btts",
+      "tier": "STANDARD",
+      "proba": 0.5324,
+      "status": "WON",
+      "finalScore": "1-4",
+      "verifiedAt": "2026-10-13T01:51:36.858Z",
+      "source": "ESPN public"
+    },
+    {
+      "date": "2026-10-12",
+      "match": "Coventry City vs Newcastle United",
+      "league": "Premier League",
+      "market": "btts",
+      "tier": "GOLD",
+      "proba": 0.6113,
+      "status": "WON",
+      "finalScore": "4-1",
+      "verifiedAt": "2026-10-13T01:51:36.858Z",
+      "source": "ESPN public"
+    },
     {
       "date": "2026-10-10",
       "match": "LAFC vs Vancouver Whitecaps",
@@ -1541,36 +1565,36 @@
     }
   ],
   "legacyStats": {
-    "total": 399,
-    "won": 201,
+    "total": 395,
+    "won": 197,
     "lost": 198,
-    "pending": 736,
-    "archivedTotal": 1135,
-    "rate": 50.4,
+    "pending": 690,
+    "archivedTotal": 1085,
+    "rate": 49.9,
     "gold": {
-      "total": 32,
-      "won": 16,
+      "total": 30,
+      "won": 14,
       "lost": 16,
-      "rate": 50
+      "rate": 46.7
     },
     "standard": {
-      "total": 367,
-      "won": 185,
+      "total": 365,
+      "won": 183,
       "lost": 182,
-      "rate": 50.4
+      "rate": 50.1
     },
     "byType": {
       "btts": {
-        "total": 200,
-        "won": 97,
+        "total": 198,
+        "won": 95,
         "lost": 103,
-        "rate": 48.5
+        "rate": 48
       },
       "over25": {
-        "total": 199,
-        "won": 104,
+        "total": 197,
+        "won": 102,
         "lost": 95,
-        "rate": 52.3
+        "rate": 51.8
       }
     },
     "trend14": [
@@ -1674,9 +1698,9 @@
       }
     ],
     "period": {
-      "from": "2026-07-15",
+      "from": "2026-07-16",
       "to": "2026-08-07",
-      "days": 24
+      "days": 23
     },
     "history": [
       {

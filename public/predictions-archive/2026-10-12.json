@@ -1315,7 +1315,10 @@
       "bttsProb": 0.6113,
       "over25Prob": 0.6603,
       "homeLambda": 1.15,
-      "awayLambda": 2.25
+      "awayLambda": 2.25,
+      "finalScore": "4-1",
+      "status": "WON",
+      "verifiedAt": "2026-10-13T01:51:36.858Z"
     },
     {
       "id": "fcfamali-vs-alverca-2026-10-12",
@@ -1377,7 +1380,10 @@
       "bttsProb": 0.5324,
       "over25Prob": 0.494,
       "homeLambda": 1.48,
-      "awayLambda": 1.17
+      "awayLambda": 1.17,
+      "finalScore": "1-4",
+      "status": "WON",
+      "verifiedAt": "2026-10-13T01:51:36.858Z"
     },
     {
       "id": "millwall-vs-swanseac-2026-10-13",
@@ -1439,7 +1445,8 @@
       "bttsProb": 0.6879,
       "over25Prob": 0.6913,
       "homeLambda": 1.94,
-      "awayLambda": 1.63
+      "awayLambda": 1.63,
+      "status": "PENDING"
     },
     {
       "id": "wolverha-vs-boltonwa-2026-10-13",
@@ -1501,7 +1508,8 @@
       "bttsProb": 0.6587,
       "over25Prob": 0.7338,
       "homeLambda": 2.57,
-      "awayLambda": 1.25
+      "awayLambda": 1.25,
+      "status": "PENDING"
     },
     {
       "id": "birmingh-vs-prestonn-2026-10-13",
@@ -1563,7 +1571,8 @@
       "bttsProb": 0.6307,
       "over25Prob": 0.627,
       "homeLambda": 1.86,
-      "awayLambda": 1.38
+      "awayLambda": 1.38,
+      "status": "PENDING"
     },
     {
       "id": "burnley-vs-charlton-2026-10-13",
@@ -1625,7 +1634,8 @@
       "bttsProb": 0.5719,
       "over25Prob": 0.5636,
       "homeLambda": 1.77,
-      "awayLambda": 1.17
+      "awayLambda": 1.17,
+      "status": "PENDING"
     },
     {
       "id": "wrexham-vs-westbrom-2026-10-13",
@@ -1687,7 +1697,8 @@
       "bttsProb": 0.4707,
       "over25Prob": 0.4303,
       "homeLambda": 1.44,
-      "awayLambda": 0.96
+      "awayLambda": 0.96,
+      "status": "PENDING"
     },
     {
       "id": "stokecit-vs-middlesb-2026-10-13",
@@ -1749,7 +1760,8 @@
       "bttsProb": 0.4684,
       "over25Prob": 0.5145,
       "homeLambda": 1.94,
-      "awayLambda": 0.79
+      "awayLambda": 0.79,
+      "status": "PENDING"
     },
     {
       "id": "cardiffc-vs-watford-2026-10-13",
@@ -1811,7 +1823,8 @@
       "bttsProb": 0.4542,
       "over25Prob": 0.4732,
       "homeLambda": 1.77,
-      "awayLambda": 0.79
+      "awayLambda": 0.79,
+      "status": "PENDING"
     },
     {
       "id": "bristolc-vs-blackbur-2026-10-13",
@@ -1873,7 +1886,8 @@
       "bttsProb": 0.4139,
       "over25Prob": 0.3639,
       "homeLambda": 1.32,
-      "awayLambda": 0.83
+      "awayLambda": 0.83,
+      "status": "PENDING"
     },
     {
       "id": "torontof-vs-orlandoc-2026-10-14",
@@ -1935,7 +1949,8 @@
       "bttsProb": 0.8321,
       "over25Prob": 0.8774,
       "homeLambda": 2.9,
-      "awayLambda": 2.13
+      "awayLambda": 2.13,
+      "status": "PENDING"
     },
     {
       "id": "norwichc-vs-southamp-2026-10-14",
@@ -1997,7 +2012,8 @@
       "bttsProb": 0.7003,
       "over25Prob": 0.7338,
       "homeLambda": 2.32,
-      "awayLambda": 1.5
+      "awayLambda": 1.5,
+      "status": "PENDING"
     }
   ]
 }
