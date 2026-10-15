@@ -1316,7 +1316,9 @@
       "over25Prob": 0.8292,
       "homeLambda": 2.52,
       "awayLambda": 2,
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "2-2",
+      "verifiedAt": "2026-10-15T08:55:55.803Z"
     },
     {
       "id": "stlouisc-vs-vancouve-2026-10-15",
@@ -1509,7 +1511,9 @@
       "over25Prob": 0.7132,
       "homeLambda": 2.27,
       "awayLambda": 1.42,
-      "status": "PENDING"
+      "status": "LOST",
+      "finalScore": "2-0",
+      "verifiedAt": "2026-10-15T08:55:55.804Z"
     },
     {
       "id": "fcdallas-vs-seattles-2026-10-15",
@@ -1637,7 +1641,9 @@
       "over25Prob": 0.6355,
       "homeLambda": 1.77,
       "awayLambda": 1.5,
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "3-3",
+      "verifiedAt": "2026-10-15T08:55:55.804Z"
     },
     {
       "id": "nashvill-vs-sporting-2026-10-15",
@@ -1765,7 +1771,9 @@
       "over25Prob": 0.5246,
       "homeLambda": 1.27,
       "awayLambda": 1.5,
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "1-1",
+      "verifiedAt": "2026-10-15T08:55:55.804Z"
     },
     {
       "id": "lafc-vs-austinfc-2026-10-15",
@@ -1828,7 +1836,9 @@
       "over25Prob": 0.3639,
       "homeLambda": 1.15,
       "awayLambda": 1,
-      "status": "PENDING"
+      "status": "LOST",
+      "finalScore": "3-1",
+      "verifiedAt": "2026-10-15T08:55:55.804Z"
     },
     {
       "id": "eintrach-vs-fccologn-2026-10-16",

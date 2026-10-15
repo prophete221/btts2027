@@ -1,6 +1,6 @@
 {
   "date": "2026-10-15",
-  "lastUpdated": "2026-10-15T03:25:48.934Z",
+  "lastUpdated": "2026-10-15T08:55:09.122Z",
   "source": "ESPN + TheSportsDB",
   "free": [
     {
@@ -589,7 +589,7 @@
       "xgHome": 1.65,
       "xgAway": 2.58,
       "xgTotal": 4.23,
-      "formBTTS": 55,
+      "formBTTS": 51,
       "analysis": "Minnesota United FC (8 matchs réels, xG 1.65) vs St. Louis CITY SC (8 matchs réels, xG 2.58). xG cumulé 4.23, BTTS 74.7%, Over 2.5 79.4%. Fiabilité 91.43%. Qualité données: HIGH.",
       "analysisData": {
         "bttsProb": 0.7469,
@@ -1247,7 +1247,7 @@
     }
   ],
   "stats": {
-    "avgReliability": 80.08,
+    "avgReliability": 80.03,
     "totalAnalyzed": 79,
     "totalRejected": 1,
     "totalAccepted": 78,
@@ -1841,7 +1841,7 @@
       "xgHome": 1.65,
       "xgAway": 2.58,
       "xgTotal": 4.23,
-      "formBTTS": 55,
+      "formBTTS": 51,
       "analysis": "Minnesota United FC (8 matchs réels, xG 1.65) vs St. Louis CITY SC (8 matchs réels, xG 2.58). xG cumulé 4.23, BTTS 74.7%, Over 2.5 79.4%. Fiabilité 91.43%. Qualité données: HIGH.",
       "analysisData": {
         "bttsProb": 0.7469,

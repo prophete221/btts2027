@@ -1,6 +1,6 @@
 {
   "schemaVersion": 3,
-  "generatedAt": "2026-10-15T03:35:40.884Z",
+  "generatedAt": "2026-10-15T09:01:18.644Z",
   "trackingPeriod": {
     "startDate": "2026-08-08",
     "isPublicPeriod": true,
@@ -8,30 +8,30 @@
     "insufficientVolume": false
   },
   "stats": {
-    "total": 122,
-    "won": 83,
-    "lost": 39,
-    "pending": 622,
+    "total": 127,
+    "won": 86,
+    "lost": 41,
+    "pending": 617,
     "archivedTotal": 744,
-    "rate": 68,
+    "rate": 67.7,
     "gold": {
-      "total": 103,
-      "won": 69,
-      "lost": 34,
-      "rate": 67
+      "total": 107,
+      "won": 72,
+      "lost": 35,
+      "rate": 67.3
     },
     "standard": {
-      "total": 19,
+      "total": 20,
       "won": 14,
-      "lost": 5,
-      "rate": 73.7
+      "lost": 6,
+      "rate": 70
     },
     "byType": {
       "btts": {
-        "total": 120,
-        "won": 82,
-        "lost": 38,
-        "rate": 68.3
+        "total": 125,
+        "won": 85,
+        "lost": 40,
+        "rate": 68
       },
       "over25": {
         "total": 2,
@@ -134,10 +134,10 @@
       },
       {
         "date": "2026-10-14",
-        "total": 4,
-        "won": 1,
-        "lost": 3,
-        "rate": 25
+        "total": 9,
+        "won": 4,
+        "lost": 5,
+        "rate": 44.4
       }
     ],
     "period": {
@@ -147,6 +147,30 @@
     }
   },
   "history": [
+    {
+      "date": "2026-10-14",
+      "match": "LAFC vs Austin FC",
+      "league": "MLS",
+      "market": "btts",
+      "tier": "STANDARD",
+      "proba": 0.432,
+      "status": "LOST",
+      "finalScore": "3-1",
+      "verifiedAt": "2026-10-15T08:55:55.804Z",
+      "source": "ESPN public"
+    },
+    {
+      "date": "2026-10-14",
+      "match": "Real Salt Lake vs San Jose Earthquakes",
+      "league": "MLS",
+      "market": "btts",
+      "tier": "GOLD",
+      "proba": 0.5598,
+      "status": "WON",
+      "finalScore": "1-1",
+      "verifiedAt": "2026-10-15T08:55:55.804Z",
+      "source": "ESPN public"
+    },
     {
       "date": "2026-10-14",
       "match": "Nashville SC vs Sporting Kansas City",
@@ -161,6 +185,18 @@
     },
     {
       "date": "2026-10-14",
+      "match": "San Diego FC vs Houston Dynamo FC",
+      "league": "MLS",
+      "market": "btts",
+      "tier": "GOLD",
+      "proba": 0.6452,
+      "status": "WON",
+      "finalScore": "3-3",
+      "verifiedAt": "2026-10-15T08:55:55.804Z",
+      "source": "ESPN public"
+    },
+    {
+      "date": "2026-10-14",
       "match": "FC Dallas vs Seattle Sounders FC",
       "league": "MLS",
       "market": "btts",
@@ -169,6 +205,18 @@
       "status": "LOST",
       "finalScore": "1-0",
       "verifiedAt": "2026-10-15T03:26:21.940Z",
+      "source": "ESPN public"
+    },
+    {
+      "date": "2026-10-14",
+      "match": "LA Galaxy vs Portland Timbers",
+      "league": "MLS",
+      "market": "btts",
+      "tier": "GOLD",
+      "proba": 0.6796,
+      "status": "LOST",
+      "finalScore": "2-0",
+      "verifiedAt": "2026-10-15T08:55:55.804Z",
       "source": "ESPN public"
     },
     {
@@ -193,6 +241,18 @@
       "status": "LOST",
       "finalScore": "0-0",
       "verifiedAt": "2026-10-15T03:26:21.940Z",
+      "source": "ESPN public"
+    },
+    {
+      "date": "2026-10-14",
+      "match": "Colorado Rapids vs Minnesota United FC",
+      "league": "MLS",
+      "market": "btts",
+      "tier": "GOLD",
+      "proba": 0.7954,
+      "status": "WON",
+      "finalScore": "2-2",
+      "verifiedAt": "2026-10-15T08:55:55.803Z",
       "source": "ESPN public"
     },
     {
