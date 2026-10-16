@@ -1,6 +1,6 @@
 {
   "date": "2026-10-16",
-  "lastUpdated": "2026-10-16T08:47:18.096Z",
+  "lastUpdated": "2026-10-16T16:10:04.208Z",
   "source": "ESPN + TheSportsDB",
   "free": [
     {
@@ -128,68 +128,6 @@
       "awayLambda": 1.55
     },
     {
-      "id": "energiec-vs-fcnrnber-2026-10-16",
-      "match": "Energie Cottbus vs 1. FC Nürnberg",
-      "home": "Energie Cottbus",
-      "away": "1. FC Nürnberg",
-      "league": "2. Bundesliga",
-      "date": "2026-10-16",
-      "type": "BTTS",
-      "prediction": "Oui",
-      "proba": 0.7636,
-      "bttsProbDisplay": "76.36%",
-      "over25ProbDisplay": "78.31%",
-      "confidence": 76,
-      "time": "16:30",
-      "matchSemantic": "energiec-vs-fcnrnber-2026-10-16",
-      "source": "poisson-v92-real-data",
-      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/123.png",
-      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/269.png",
-      "tier": "GOLD",
-      "reliabilityScore": 83.16,
-      "dataQuality": "MEDIUM",
-      "dataSource": "ESPN_TEAM_SCHEDULE",
-      "matchCountHome": 7,
-      "matchCountAway": 7,
-      "h2hAvailable": false,
-      "xgHome": 1.98,
-      "xgAway": 2.17,
-      "xgTotal": 4.15,
-      "formBTTS": 50,
-      "analysis": "Energie Cottbus (7 matchs réels, xG 1.98) vs 1. FC Nürnberg (7 matchs réels, xG 2.17). xG cumulé 4.15, BTTS 76.4%, Over 2.5 78.3%. Fiabilité 83.16%. Qualité données: MEDIUM.",
-      "analysisData": {
-        "bttsProb": 0.7636,
-        "over25Prob": 0.7831,
-        "homeLambda": 1.98,
-        "awayLambda": 2.17,
-        "xgTotal": 4.15
-      },
-      "estimatedCote": 1.31,
-      "estimatedCoteOver": 1.28,
-      "predictions": [
-        {
-          "type": "BTTS",
-          "prediction": "Oui",
-          "confidence": 76,
-          "bttsProb": 0.7636,
-          "homeLambda": 1.98,
-          "awayLambda": 2.17
-        },
-        {
-          "type": "Over 2.5",
-          "prediction": "Oui",
-          "confidence": 78,
-          "over25Prob": 0.7831,
-          "homeLambda": 1.98,
-          "awayLambda": 2.17
-        }
-      ],
-      "bttsProb": 0.7636,
-      "over25Prob": 0.7831,
-      "homeLambda": 1.98,
-      "awayLambda": 2.17
-    },
-    {
       "id": "rapidvie-vs-tsvhartb-2026-10-16",
       "match": "Rapid Vienna vs TSV Hartberg",
       "home": "Rapid Vienna",
@@ -250,68 +188,6 @@
       "over25Prob": 0.6761,
       "homeLambda": 2.69,
       "awayLambda": 0.79
-    },
-    {
-      "id": "holstein-vs-herthabe-2026-10-16",
-      "match": "Holstein Kiel vs Hertha Berlin",
-      "home": "Holstein Kiel",
-      "away": "Hertha Berlin",
-      "league": "2. Bundesliga",
-      "date": "2026-10-16",
-      "type": "BTTS",
-      "prediction": "Oui",
-      "proba": 0.7119,
-      "bttsProbDisplay": "71.19%",
-      "over25ProbDisplay": "73.38%",
-      "confidence": 71,
-      "time": "16:30",
-      "matchSemantic": "holstein-vs-herthabe-2026-10-16",
-      "source": "poisson-v92-real-data",
-      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/7884.png",
-      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/129.png",
-      "tier": "GOLD",
-      "reliabilityScore": 80.9,
-      "dataQuality": "MEDIUM",
-      "dataSource": "ESPN_TEAM_SCHEDULE",
-      "matchCountHome": 7,
-      "matchCountAway": 7,
-      "h2hAvailable": false,
-      "xgHome": 1.61,
-      "xgAway": 2.21,
-      "xgTotal": 3.82,
-      "formBTTS": 37,
-      "analysis": "Holstein Kiel (7 matchs réels, xG 1.61) vs Hertha Berlin (7 matchs réels, xG 2.21). xG cumulé 3.82, BTTS 71.2%, Over 2.5 73.4%. Fiabilité 80.9%. Qualité données: MEDIUM.",
-      "analysisData": {
-        "bttsProb": 0.7119,
-        "over25Prob": 0.7338,
-        "homeLambda": 1.61,
-        "awayLambda": 2.21,
-        "xgTotal": 3.82
-      },
-      "estimatedCote": 1.4,
-      "estimatedCoteOver": 1.36,
-      "predictions": [
-        {
-          "type": "BTTS",
-          "prediction": "Oui",
-          "confidence": 71,
-          "bttsProb": 0.7119,
-          "homeLambda": 1.61,
-          "awayLambda": 2.21
-        },
-        {
-          "type": "Over 2.5",
-          "prediction": "Oui",
-          "confidence": 73,
-          "over25Prob": 0.7338,
-          "homeLambda": 1.61,
-          "awayLambda": 2.21
-        }
-      ],
-      "bttsProb": 0.7119,
-      "over25Prob": 0.7338,
-      "homeLambda": 1.61,
-      "awayLambda": 2.21
     },
     {
       "id": "heerenve-vs-excelsio-2026-10-16",
@@ -746,9 +622,7 @@
       "over25Prob": 0.7545,
       "homeLambda": 2.57,
       "awayLambda": 1.38
-    }
-  ],
-  "vipPreview": [
+    },
     {
       "id": "stjohnst-vs-dundeeun-2026-10-17",
       "match": "St Johnstone vs Dundee United",
@@ -872,7 +746,9 @@
       "over25Prob": 0.6603,
       "homeLambda": 1.65,
       "awayLambda": 1.75
-    },
+    }
+  ],
+  "vipPreview": [
     {
       "id": "redbulln-vs-torontof-2026-10-17",
       "match": "Red Bull New York vs Toronto FC",
@@ -1244,13 +1120,137 @@
       "over25Prob": 0.6603,
       "homeLambda": 1.27,
       "awayLambda": 2.13
+    },
+    {
+      "id": "orlandoc-vs-dcunited-2026-10-17",
+      "match": "Orlando City SC vs D.C. United",
+      "home": "Orlando City SC",
+      "away": "D.C. United",
+      "league": "MLS",
+      "date": "2026-10-17",
+      "type": "BTTS",
+      "prediction": "Oui",
+      "proba": 0.6001,
+      "bttsProbDisplay": "60.01%",
+      "over25ProbDisplay": "75.94%",
+      "confidence": 60,
+      "time": "23:30",
+      "matchSemantic": "orlandoc-vs-dcunited-2026-10-17",
+      "source": "poisson-v92-real-data",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/12011.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/193.png",
+      "tier": "GOLD",
+      "reliabilityScore": 85.01,
+      "dataQuality": "HIGH",
+      "dataSource": "ESPN_TEAM_SCHEDULE",
+      "matchCountHome": 8,
+      "matchCountAway": 8,
+      "h2hAvailable": false,
+      "xgHome": 2.98,
+      "xgAway": 1,
+      "xgTotal": 3.98,
+      "formBTTS": 36,
+      "analysis": "Orlando City SC (8 matchs réels, xG 2.98) vs D.C. United (8 matchs réels, xG 1.00). xG cumulé 3.98, BTTS 60.0%, Over 2.5 75.9%. Fiabilité 85.01%. Qualité données: HIGH.",
+      "analysisData": {
+        "bttsProb": 0.6001,
+        "over25Prob": 0.7594,
+        "homeLambda": 2.98,
+        "awayLambda": 1,
+        "xgTotal": 3.98
+      },
+      "estimatedCote": 1.67,
+      "estimatedCoteOver": 1.32,
+      "predictions": [
+        {
+          "type": "BTTS",
+          "prediction": "Oui",
+          "confidence": 60,
+          "bttsProb": 0.6001,
+          "homeLambda": 2.98,
+          "awayLambda": 1
+        },
+        {
+          "type": "Over 2.5",
+          "prediction": "Oui",
+          "confidence": 76,
+          "over25Prob": 0.7594,
+          "homeLambda": 2.98,
+          "awayLambda": 1
+        }
+      ],
+      "bttsProb": 0.6001,
+      "over25Prob": 0.7594,
+      "homeLambda": 2.98,
+      "awayLambda": 1
+    },
+    {
+      "id": "svjoskor-vs-austriav-2026-10-17",
+      "match": "SV Josko Ried vs Austria Vienna",
+      "home": "SV Josko Ried",
+      "away": "Austria Vienna",
+      "league": "Austrian Bundesliga",
+      "date": "2026-10-17",
+      "type": "BTTS",
+      "prediction": "Oui",
+      "proba": 0.5967,
+      "bttsProbDisplay": "59.67%",
+      "over25ProbDisplay": "63.55%",
+      "confidence": 60,
+      "time": "17:30",
+      "matchSemantic": "svjoskor-vs-austriav-2026-10-17",
+      "source": "poisson-v92-real-data",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/3759.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/1382.png",
+      "tier": "GOLD",
+      "reliabilityScore": 84.85,
+      "dataQuality": "HIGH",
+      "dataSource": "ESPN_TEAM_SCHEDULE",
+      "matchCountHome": 8,
+      "matchCountAway": 8,
+      "h2hAvailable": false,
+      "xgHome": 2.15,
+      "xgAway": 1.13,
+      "xgTotal": 3.27,
+      "formBTTS": 25,
+      "analysis": "SV Josko Ried (8 matchs réels, xG 2.15) vs Austria Vienna (8 matchs réels, xG 1.13). xG cumulé 3.27, BTTS 59.7%, Over 2.5 63.6%. Fiabilité 84.85%. Qualité données: HIGH.",
+      "analysisData": {
+        "bttsProb": 0.5967,
+        "over25Prob": 0.6355,
+        "homeLambda": 2.15,
+        "awayLambda": 1.13,
+        "xgTotal": 3.27
+      },
+      "estimatedCote": 1.68,
+      "estimatedCoteOver": 1.57,
+      "predictions": [
+        {
+          "type": "BTTS",
+          "prediction": "Oui",
+          "confidence": 60,
+          "bttsProb": 0.5967,
+          "homeLambda": 2.15,
+          "awayLambda": 1.13
+        },
+        {
+          "type": "Over 2.5",
+          "prediction": "Oui",
+          "confidence": 64,
+          "over25Prob": 0.6355,
+          "homeLambda": 2.15,
+          "awayLambda": 1.13
+        }
+      ],
+      "bttsProb": 0.5967,
+      "over25Prob": 0.6355,
+      "homeLambda": 2.15,
+      "awayLambda": 1.13
     }
   ],
   "stats": {
-    "avgReliability": 80.03,
-    "totalAnalyzed": 79,
+    "avgReliability": 79.97,
+    "totalAnalyzed": 77,
     "totalRejected": 1,
-    "totalAccepted": 78,
+    "totalAccepted": 76,
     "freeCount": 12,
     "vipCount": 8
   },
@@ -1380,68 +1380,6 @@
       "awayLambda": 1.55
     },
     {
-      "id": "energiec-vs-fcnrnber-2026-10-16",
-      "match": "Energie Cottbus vs 1. FC Nürnberg",
-      "home": "Energie Cottbus",
-      "away": "1. FC Nürnberg",
-      "league": "2. Bundesliga",
-      "date": "2026-10-16",
-      "type": "BTTS",
-      "prediction": "Oui",
-      "proba": 0.7636,
-      "bttsProbDisplay": "76.36%",
-      "over25ProbDisplay": "78.31%",
-      "confidence": 76,
-      "time": "16:30",
-      "matchSemantic": "energiec-vs-fcnrnber-2026-10-16",
-      "source": "poisson-v92-real-data",
-      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/123.png",
-      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/269.png",
-      "tier": "GOLD",
-      "reliabilityScore": 83.16,
-      "dataQuality": "MEDIUM",
-      "dataSource": "ESPN_TEAM_SCHEDULE",
-      "matchCountHome": 7,
-      "matchCountAway": 7,
-      "h2hAvailable": false,
-      "xgHome": 1.98,
-      "xgAway": 2.17,
-      "xgTotal": 4.15,
-      "formBTTS": 50,
-      "analysis": "Energie Cottbus (7 matchs réels, xG 1.98) vs 1. FC Nürnberg (7 matchs réels, xG 2.17). xG cumulé 4.15, BTTS 76.4%, Over 2.5 78.3%. Fiabilité 83.16%. Qualité données: MEDIUM.",
-      "analysisData": {
-        "bttsProb": 0.7636,
-        "over25Prob": 0.7831,
-        "homeLambda": 1.98,
-        "awayLambda": 2.17,
-        "xgTotal": 4.15
-      },
-      "estimatedCote": 1.31,
-      "estimatedCoteOver": 1.28,
-      "predictions": [
-        {
-          "type": "BTTS",
-          "prediction": "Oui",
-          "confidence": 76,
-          "bttsProb": 0.7636,
-          "homeLambda": 1.98,
-          "awayLambda": 2.17
-        },
-        {
-          "type": "Over 2.5",
-          "prediction": "Oui",
-          "confidence": 78,
-          "over25Prob": 0.7831,
-          "homeLambda": 1.98,
-          "awayLambda": 2.17
-        }
-      ],
-      "bttsProb": 0.7636,
-      "over25Prob": 0.7831,
-      "homeLambda": 1.98,
-      "awayLambda": 2.17
-    },
-    {
       "id": "rapidvie-vs-tsvhartb-2026-10-16",
       "match": "Rapid Vienna vs TSV Hartberg",
       "home": "Rapid Vienna",
@@ -1502,68 +1440,6 @@
       "over25Prob": 0.6761,
       "homeLambda": 2.69,
       "awayLambda": 0.79
-    },
-    {
-      "id": "holstein-vs-herthabe-2026-10-16",
-      "match": "Holstein Kiel vs Hertha Berlin",
-      "home": "Holstein Kiel",
-      "away": "Hertha Berlin",
-      "league": "2. Bundesliga",
-      "date": "2026-10-16",
-      "type": "BTTS",
-      "prediction": "Oui",
-      "proba": 0.7119,
-      "bttsProbDisplay": "71.19%",
-      "over25ProbDisplay": "73.38%",
-      "confidence": 71,
-      "time": "16:30",
-      "matchSemantic": "holstein-vs-herthabe-2026-10-16",
-      "source": "poisson-v92-real-data",
-      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/7884.png",
-      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/129.png",
-      "tier": "GOLD",
-      "reliabilityScore": 80.9,
-      "dataQuality": "MEDIUM",
-      "dataSource": "ESPN_TEAM_SCHEDULE",
-      "matchCountHome": 7,
-      "matchCountAway": 7,
-      "h2hAvailable": false,
-      "xgHome": 1.61,
-      "xgAway": 2.21,
-      "xgTotal": 3.82,
-      "formBTTS": 37,
-      "analysis": "Holstein Kiel (7 matchs réels, xG 1.61) vs Hertha Berlin (7 matchs réels, xG 2.21). xG cumulé 3.82, BTTS 71.2%, Over 2.5 73.4%. Fiabilité 80.9%. Qualité données: MEDIUM.",
-      "analysisData": {
-        "bttsProb": 0.7119,
-        "over25Prob": 0.7338,
-        "homeLambda": 1.61,
-        "awayLambda": 2.21,
-        "xgTotal": 3.82
-      },
-      "estimatedCote": 1.4,
-      "estimatedCoteOver": 1.36,
-      "predictions": [
-        {
-          "type": "BTTS",
-          "prediction": "Oui",
-          "confidence": 71,
-          "bttsProb": 0.7119,
-          "homeLambda": 1.61,
-          "awayLambda": 2.21
-        },
-        {
-          "type": "Over 2.5",
-          "prediction": "Oui",
-          "confidence": 73,
-          "over25Prob": 0.7338,
-          "homeLambda": 1.61,
-          "awayLambda": 2.21
-        }
-      ],
-      "bttsProb": 0.7119,
-      "over25Prob": 0.7338,
-      "homeLambda": 1.61,
-      "awayLambda": 2.21
     },
     {
       "id": "heerenve-vs-excelsio-2026-10-16",
@@ -1998,6 +1874,130 @@
       "over25Prob": 0.7545,
       "homeLambda": 2.57,
       "awayLambda": 1.38
+    },
+    {
+      "id": "stjohnst-vs-dundeeun-2026-10-17",
+      "match": "St Johnstone vs Dundee United",
+      "home": "St Johnstone",
+      "away": "Dundee United",
+      "league": "Scottish Premiership",
+      "date": "2026-10-17",
+      "type": "BTTS",
+      "prediction": "Oui",
+      "proba": 0.683,
+      "bttsProbDisplay": "68.30%",
+      "over25ProbDisplay": "68.38%",
+      "confidence": 68,
+      "time": "14:00",
+      "matchSemantic": "stjohnst-vs-dundeeun-2026-10-17",
+      "source": "poisson-v92-real-data",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/267.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/264.png",
+      "tier": "GOLD",
+      "reliabilityScore": 88.63,
+      "dataQuality": "HIGH",
+      "dataSource": "ESPN_TEAM_SCHEDULE",
+      "matchCountHome": 8,
+      "matchCountAway": 8,
+      "h2hAvailable": false,
+      "xgHome": 1.9,
+      "xgAway": 1.63,
+      "xgTotal": 3.52,
+      "formBTTS": 25,
+      "analysis": "St Johnstone (8 matchs réels, xG 1.90) vs Dundee United (8 matchs réels, xG 1.63). xG cumulé 3.52, BTTS 68.3%, Over 2.5 68.4%. Fiabilité 88.63%. Qualité données: HIGH.",
+      "analysisData": {
+        "bttsProb": 0.683,
+        "over25Prob": 0.6838,
+        "homeLambda": 1.9,
+        "awayLambda": 1.63,
+        "xgTotal": 3.52
+      },
+      "estimatedCote": 1.46,
+      "estimatedCoteOver": 1.46,
+      "predictions": [
+        {
+          "type": "BTTS",
+          "prediction": "Oui",
+          "confidence": 68,
+          "bttsProb": 0.683,
+          "homeLambda": 1.9,
+          "awayLambda": 1.63
+        },
+        {
+          "type": "Over 2.5",
+          "prediction": "Oui",
+          "confidence": 68,
+          "over25Prob": 0.6838,
+          "homeLambda": 1.9,
+          "awayLambda": 1.63
+        }
+      ],
+      "bttsProb": 0.683,
+      "over25Prob": 0.6838,
+      "homeLambda": 1.9,
+      "awayLambda": 1.63
+    },
+    {
+      "id": "swanseac-vs-westhamu-2026-10-17",
+      "match": "Swansea City vs West Ham United",
+      "home": "Swansea City",
+      "away": "West Ham United",
+      "league": "Championship",
+      "date": "2026-10-17",
+      "type": "BTTS",
+      "prediction": "Oui",
+      "proba": 0.6675,
+      "bttsProbDisplay": "66.75%",
+      "over25ProbDisplay": "66.03%",
+      "confidence": 67,
+      "time": "14:00",
+      "matchSemantic": "swanseac-vs-westhamu-2026-10-17",
+      "source": "poisson-v92-real-data",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/318.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/371.png",
+      "tier": "GOLD",
+      "reliabilityScore": 87.96,
+      "dataQuality": "HIGH",
+      "dataSource": "ESPN_TEAM_SCHEDULE",
+      "matchCountHome": 8,
+      "matchCountAway": 8,
+      "h2hAvailable": false,
+      "xgHome": 1.65,
+      "xgAway": 1.75,
+      "xgTotal": 3.4,
+      "formBTTS": 50,
+      "analysis": "Swansea City (8 matchs réels, xG 1.65) vs West Ham United (8 matchs réels, xG 1.75). xG cumulé 3.4, BTTS 66.8%, Over 2.5 66.0%. Fiabilité 87.96%. Qualité données: HIGH.",
+      "analysisData": {
+        "bttsProb": 0.6675,
+        "over25Prob": 0.6603,
+        "homeLambda": 1.65,
+        "awayLambda": 1.75,
+        "xgTotal": 3.4
+      },
+      "estimatedCote": 1.5,
+      "estimatedCoteOver": 1.51,
+      "predictions": [
+        {
+          "type": "BTTS",
+          "prediction": "Oui",
+          "confidence": 67,
+          "bttsProb": 0.6675,
+          "homeLambda": 1.65,
+          "awayLambda": 1.75
+        },
+        {
+          "type": "Over 2.5",
+          "prediction": "Oui",
+          "confidence": 66,
+          "over25Prob": 0.6603,
+          "homeLambda": 1.65,
+          "awayLambda": 1.75
+        }
+      ],
+      "bttsProb": 0.6675,
+      "over25Prob": 0.6603,
+      "homeLambda": 1.65,
+      "awayLambda": 1.75
     }
   ]
 }
