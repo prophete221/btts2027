@@ -1,6 +1,6 @@
 {
   "schemaVersion": 3,
-  "generatedAt": "2026-10-16T22:42:03.600Z",
+  "generatedAt": "2026-10-17T03:19:16.720Z",
   "trackingPeriod": {
     "startDate": "2026-08-08",
     "isPublicPeriod": true,
@@ -11,8 +11,8 @@
     "total": 127,
     "won": 86,
     "lost": 41,
-    "pending": 629,
-    "archivedTotal": 756,
+    "pending": 641,
+    "archivedTotal": 768,
     "rate": 67.7,
     "gold": {
       "total": 107,
@@ -142,8 +142,8 @@
     ],
     "period": {
       "from": "2026-08-08",
-      "to": "2026-10-16",
-      "days": 70
+      "to": "2026-10-17",
+      "days": 71
     }
   },
   "history": [
@@ -1673,36 +1673,36 @@
     }
   ],
   "legacyStats": {
-    "total": 361,
-    "won": 175,
-    "lost": 186,
-    "pending": 574,
-    "archivedTotal": 935,
-    "rate": 48.5,
+    "total": 355,
+    "won": 171,
+    "lost": 184,
+    "pending": 530,
+    "archivedTotal": 885,
+    "rate": 48.2,
     "gold": {
-      "total": 29,
+      "total": 27,
       "won": 13,
-      "lost": 16,
-      "rate": 44.8
+      "lost": 14,
+      "rate": 48.1
     },
     "standard": {
-      "total": 332,
-      "won": 162,
+      "total": 328,
+      "won": 158,
       "lost": 170,
-      "rate": 48.8
+      "rate": 48.2
     },
     "byType": {
       "btts": {
-        "total": 181,
-        "won": 85,
-        "lost": 96,
-        "rate": 47
+        "total": 178,
+        "won": 83,
+        "lost": 95,
+        "rate": 46.6
       },
       "over25": {
-        "total": 180,
-        "won": 90,
-        "lost": 90,
-        "rate": 50
+        "total": 177,
+        "won": 88,
+        "lost": 89,
+        "rate": 49.7
       }
     },
     "trend14": [
@@ -1806,9 +1806,9 @@
       }
     ],
     "period": {
-      "from": "2026-07-19",
+      "from": "2026-07-20",
       "to": "2026-08-07",
-      "days": 20
+      "days": 19
     },
     "history": [
       {
