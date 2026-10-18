@@ -1,6 +1,6 @@
 {
   "schemaVersion": 3,
-  "generatedAt": "2026-10-18T03:25:24.350Z",
+  "generatedAt": "2026-10-18T08:41:28.143Z",
   "trackingPeriod": {
     "startDate": "2026-08-08",
     "isPublicPeriod": true,
@@ -8,17 +8,17 @@
     "insufficientVolume": false
   },
   "stats": {
-    "total": 134,
+    "total": 135,
     "won": 90,
-    "lost": 44,
-    "pending": 646,
+    "lost": 45,
+    "pending": 645,
     "archivedTotal": 780,
-    "rate": 67.2,
+    "rate": 66.7,
     "gold": {
-      "total": 113,
+      "total": 114,
       "won": 76,
-      "lost": 37,
-      "rate": 67.3
+      "lost": 38,
+      "rate": 66.7
     },
     "standard": {
       "total": 21,
@@ -28,10 +28,10 @@
     },
     "byType": {
       "btts": {
-        "total": 132,
+        "total": 133,
         "won": 89,
-        "lost": 43,
-        "rate": 67.4
+        "lost": 44,
+        "rate": 66.9
       },
       "over25": {
         "total": 2,
@@ -134,10 +134,10 @@
       },
       {
         "date": "2026-10-17",
-        "total": 7,
+        "total": 8,
         "won": 4,
-        "lost": 3,
-        "rate": 57.1
+        "lost": 4,
+        "rate": 50
       }
     ],
     "period": {
@@ -157,6 +157,18 @@
       "status": "WON",
       "finalScore": "2-2",
       "verifiedAt": "2026-10-18T03:15:53.677Z",
+      "source": "ESPN public"
+    },
+    {
+      "date": "2026-10-17",
+      "match": "Portland Timbers vs Colorado Rapids",
+      "league": "MLS",
+      "market": "btts",
+      "tier": "GOLD",
+      "proba": 0.7239,
+      "status": "LOST",
+      "finalScore": "0-0",
+      "verifiedAt": "2026-10-18T08:36:10.603Z",
       "source": "ESPN public"
     },
     {

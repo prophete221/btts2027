@@ -1895,7 +1895,9 @@
       "over25Prob": 0.7532,
       "homeLambda": 2.32,
       "awayLambda": 1.63,
-      "status": "PENDING"
+      "status": "LOST",
+      "finalScore": "0-0",
+      "verifiedAt": "2026-10-18T08:36:10.603Z"
     },
     {
       "id": "fcgronin-vs-ajaxamst-2026-10-18",
