@@ -1,6 +1,6 @@
 {
   "date": "2026-10-18",
-  "lastUpdated": "2026-10-18T18:28:59.796Z",
+  "lastUpdated": "2026-10-18T19:46:41.764Z",
   "source": "ESPN + TheSportsDB",
   "free": [
     {
@@ -998,6 +998,68 @@
       "awayLambda": 1.75
     },
     {
+      "id": "wsgswaro-vs-grazerak-2026-10-24",
+      "match": "WSG Swarovski Tirol vs Grazer AK",
+      "home": "WSG Swarovski Tirol",
+      "away": "Grazer AK",
+      "league": "Austrian Bundesliga",
+      "date": "2026-10-24",
+      "type": "BTTS",
+      "prediction": "Oui",
+      "proba": 0.7304,
+      "bttsProbDisplay": "73.04%",
+      "over25ProbDisplay": "78.87%",
+      "confidence": 73,
+      "time": "15:00",
+      "matchSemantic": "wsgswaro-vs-grazerak-2026-10-24",
+      "source": "poisson-v92-real-data",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/18794.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/21846.png",
+      "tier": "GOLD",
+      "reliabilityScore": 90.71,
+      "dataQuality": "HIGH",
+      "dataSource": "ESPN_TEAM_SCHEDULE",
+      "matchCountHome": 8,
+      "matchCountAway": 8,
+      "h2hAvailable": false,
+      "xgHome": 2.65,
+      "xgAway": 1.54,
+      "xgTotal": 4.19,
+      "formBTTS": 23,
+      "analysis": "WSG Swarovski Tirol (8 matchs réels, xG 2.65) vs Grazer AK (8 matchs réels, xG 1.54). xG cumulé 4.19, BTTS 73.0%, Over 2.5 78.9%. Fiabilité 90.71%. Qualité données: HIGH.",
+      "analysisData": {
+        "bttsProb": 0.7304,
+        "over25Prob": 0.7887,
+        "homeLambda": 2.65,
+        "awayLambda": 1.54,
+        "xgTotal": 4.19
+      },
+      "estimatedCote": 1.37,
+      "estimatedCoteOver": 1.27,
+      "predictions": [
+        {
+          "type": "BTTS",
+          "prediction": "Oui",
+          "confidence": 73,
+          "bttsProb": 0.7304,
+          "homeLambda": 2.65,
+          "awayLambda": 1.54
+        },
+        {
+          "type": "Over 2.5",
+          "prediction": "Oui",
+          "confidence": 79,
+          "over25Prob": 0.7887,
+          "homeLambda": 2.65,
+          "awayLambda": 1.54
+        }
+      ],
+      "bttsProb": 0.7304,
+      "over25Prob": 0.7887,
+      "homeLambda": 2.65,
+      "awayLambda": 1.54
+    },
+    {
       "id": "adodenha-vs-heerenve-2026-10-24",
       "match": "ADO Den Haag vs Heerenveen",
       "home": "ADO Den Haag",
@@ -1182,72 +1244,10 @@
       "over25Prob": 0.7188,
       "homeLambda": 2.27,
       "awayLambda": 1.45
-    },
-    {
-      "id": "wsgswaro-vs-grazerak-2026-10-24",
-      "match": "WSG Swarovski Tirol vs Grazer AK",
-      "home": "WSG Swarovski Tirol",
-      "away": "Grazer AK",
-      "league": "Austrian Bundesliga",
-      "date": "2026-10-24",
-      "type": "BTTS",
-      "prediction": "Oui",
-      "proba": 0.6796,
-      "bttsProbDisplay": "67.96%",
-      "over25ProbDisplay": "71.32%",
-      "confidence": 68,
-      "time": "15:00",
-      "matchSemantic": "wsgswaro-vs-grazerak-2026-10-24",
-      "source": "poisson-v92-real-data",
-      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/18794.png",
-      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/21846.png",
-      "tier": "GOLD",
-      "reliabilityScore": 88.48,
-      "dataQuality": "HIGH",
-      "dataSource": "ESPN_TEAM_SCHEDULE",
-      "matchCountHome": 8,
-      "matchCountAway": 8,
-      "h2hAvailable": false,
-      "xgHome": 2.27,
-      "xgAway": 1.42,
-      "xgTotal": 3.69,
-      "formBTTS": 21,
-      "analysis": "WSG Swarovski Tirol (8 matchs réels, xG 2.27) vs Grazer AK (8 matchs réels, xG 1.42). xG cumulé 3.69, BTTS 68.0%, Over 2.5 71.3%. Fiabilité 88.48%. Qualité données: HIGH.",
-      "analysisData": {
-        "bttsProb": 0.6796,
-        "over25Prob": 0.7132,
-        "homeLambda": 2.27,
-        "awayLambda": 1.42,
-        "xgTotal": 3.69
-      },
-      "estimatedCote": 1.47,
-      "estimatedCoteOver": 1.4,
-      "predictions": [
-        {
-          "type": "BTTS",
-          "prediction": "Oui",
-          "confidence": 68,
-          "bttsProb": 0.6796,
-          "homeLambda": 2.27,
-          "awayLambda": 1.42
-        },
-        {
-          "type": "Over 2.5",
-          "prediction": "Oui",
-          "confidence": 71,
-          "over25Prob": 0.7132,
-          "homeLambda": 2.27,
-          "awayLambda": 1.42
-        }
-      ],
-      "bttsProb": 0.6796,
-      "over25Prob": 0.7132,
-      "homeLambda": 2.27,
-      "awayLambda": 1.42
     }
   ],
   "stats": {
-    "avgReliability": 80.31,
+    "avgReliability": 80.34,
     "totalAnalyzed": 70,
     "totalRejected": 0,
     "totalAccepted": 70,
