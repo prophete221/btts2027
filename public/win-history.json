@@ -1,6 +1,6 @@
 {
   "schemaVersion": 3,
-  "generatedAt": "2026-10-17T22:06:33.204Z",
+  "generatedAt": "2026-10-18T03:25:24.350Z",
   "trackingPeriod": {
     "startDate": "2026-08-08",
     "isPublicPeriod": true,
@@ -8,30 +8,30 @@
     "insufficientVolume": false
   },
   "stats": {
-    "total": 127,
-    "won": 86,
-    "lost": 41,
-    "pending": 641,
-    "archivedTotal": 768,
-    "rate": 67.7,
+    "total": 134,
+    "won": 90,
+    "lost": 44,
+    "pending": 646,
+    "archivedTotal": 780,
+    "rate": 67.2,
     "gold": {
-      "total": 107,
-      "won": 72,
-      "lost": 35,
+      "total": 113,
+      "won": 76,
+      "lost": 37,
       "rate": 67.3
     },
     "standard": {
-      "total": 20,
+      "total": 21,
       "won": 14,
-      "lost": 6,
-      "rate": 70
+      "lost": 7,
+      "rate": 66.7
     },
     "byType": {
       "btts": {
-        "total": 125,
-        "won": 85,
-        "lost": 40,
-        "rate": 68
+        "total": 132,
+        "won": 89,
+        "lost": 43,
+        "rate": 67.4
       },
       "over25": {
         "total": 2,
@@ -41,13 +41,6 @@
       }
     },
     "trend14": [
-      {
-        "date": "2026-09-09",
-        "total": 12,
-        "won": 9,
-        "lost": 3,
-        "rate": 75
-      },
       {
         "date": "2026-09-12",
         "total": 8,
@@ -138,15 +131,106 @@
         "won": 4,
         "lost": 5,
         "rate": 44.4
+      },
+      {
+        "date": "2026-10-17",
+        "total": 7,
+        "won": 4,
+        "lost": 3,
+        "rate": 57.1
       }
     ],
     "period": {
       "from": "2026-08-08",
-      "to": "2026-10-17",
-      "days": 71
+      "to": "2026-10-18",
+      "days": 72
     }
   },
   "history": [
+    {
+      "date": "2026-10-17",
+      "match": "Houston Dynamo FC vs FC Dallas",
+      "league": "MLS",
+      "market": "btts",
+      "tier": "GOLD",
+      "proba": 0.6978,
+      "status": "WON",
+      "finalScore": "2-2",
+      "verifiedAt": "2026-10-18T03:15:53.677Z",
+      "source": "ESPN public"
+    },
+    {
+      "date": "2026-10-17",
+      "match": "Sporting Kansas City vs Real Salt Lake",
+      "league": "MLS",
+      "market": "btts",
+      "tier": "GOLD",
+      "proba": 0.7347,
+      "status": "WON",
+      "finalScore": "1-3",
+      "verifiedAt": "2026-10-18T03:15:53.675Z",
+      "source": "ESPN public"
+    },
+    {
+      "date": "2026-10-17",
+      "match": "New York City FC vs LAFC",
+      "league": "MLS",
+      "market": "btts",
+      "tier": "STANDARD",
+      "proba": 0.4252,
+      "status": "LOST",
+      "finalScore": "1-1",
+      "verifiedAt": "2026-10-18T03:15:53.674Z",
+      "source": "ESPN public"
+    },
+    {
+      "date": "2026-10-17",
+      "match": "Orlando City SC vs D.C. United",
+      "league": "MLS",
+      "market": "btts",
+      "tier": "GOLD",
+      "proba": 0.6001,
+      "status": "WON",
+      "finalScore": "4-1",
+      "verifiedAt": "2026-10-18T03:15:53.673Z",
+      "source": "ESPN public"
+    },
+    {
+      "date": "2026-10-17",
+      "match": "Atlanta United FC vs Inter Miami CF",
+      "league": "MLS",
+      "market": "btts",
+      "tier": "GOLD",
+      "proba": 0.6464,
+      "status": "WON",
+      "finalScore": "1-3",
+      "verifiedAt": "2026-10-18T03:15:53.673Z",
+      "source": "ESPN public"
+    },
+    {
+      "date": "2026-10-17",
+      "match": "Red Bull New York vs Toronto FC",
+      "league": "MLS",
+      "market": "btts",
+      "tier": "GOLD",
+      "proba": 0.6638,
+      "status": "LOST",
+      "finalScore": "0-2",
+      "verifiedAt": "2026-10-18T03:15:53.673Z",
+      "source": "ESPN public"
+    },
+    {
+      "date": "2026-10-17",
+      "match": "New England Revolution vs Chicago Fire FC",
+      "league": "MLS",
+      "market": "btts",
+      "tier": "GOLD",
+      "proba": 0.7892,
+      "status": "LOST",
+      "finalScore": "1-0",
+      "verifiedAt": "2026-10-18T03:15:53.672Z",
+      "source": "ESPN public"
+    },
     {
       "date": "2026-10-14",
       "match": "LAFC vs Austin FC",
@@ -1676,8 +1760,8 @@
     "total": 355,
     "won": 171,
     "lost": 184,
-    "pending": 530,
-    "archivedTotal": 885,
+    "pending": 480,
+    "archivedTotal": 835,
     "rate": 48.2,
     "gold": {
       "total": 27,
@@ -1806,9 +1890,9 @@
       }
     ],
     "period": {
-      "from": "2026-07-20",
+      "from": "2026-07-21",
       "to": "2026-08-07",
-      "days": 19
+      "days": 18
     },
     "history": [
       {
