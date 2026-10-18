@@ -1,70 +1,8 @@
 {
   "date": "2026-10-18",
-  "lastUpdated": "2026-10-18T08:35:38.450Z",
+  "lastUpdated": "2026-10-18T09:58:40.674Z",
   "source": "ESPN + TheSportsDB",
   "free": [
-    {
-      "id": "peczwoll-vs-goaheade-2026-10-18",
-      "match": "PEC Zwolle vs Go Ahead Eagles",
-      "home": "PEC Zwolle",
-      "away": "Go Ahead Eagles",
-      "league": "Eredivisie",
-      "date": "2026-10-18",
-      "type": "BTTS",
-      "prediction": "Oui",
-      "proba": 0.7494,
-      "bttsProbDisplay": "74.94%",
-      "over25ProbDisplay": "79.95%",
-      "confidence": 75,
-      "time": "10:15",
-      "matchSemantic": "peczwoll-vs-goaheade-2026-10-18",
-      "source": "poisson-v92-real-data",
-      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/2565.png",
-      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/3706.png",
-      "tier": "GOLD",
-      "reliabilityScore": 91.54,
-      "dataQuality": "HIGH",
-      "dataSource": "ESPN_TEAM_SCHEDULE",
-      "matchCountHome": 8,
-      "matchCountAway": 8,
-      "h2hAvailable": false,
-      "xgHome": 1.65,
-      "xgAway": 2.63,
-      "xgTotal": 4.28,
-      "formBTTS": 31,
-      "analysis": "PEC Zwolle (8 matchs réels, xG 1.65) vs Go Ahead Eagles (8 matchs réels, xG 2.63). xG cumulé 4.28, BTTS 74.9%, Over 2.5 79.9%. Fiabilité 91.54%. Qualité données: HIGH.",
-      "analysisData": {
-        "bttsProb": 0.7494,
-        "over25Prob": 0.7995,
-        "homeLambda": 1.65,
-        "awayLambda": 2.63,
-        "xgTotal": 4.28
-      },
-      "estimatedCote": 1.33,
-      "estimatedCoteOver": 1.25,
-      "predictions": [
-        {
-          "type": "BTTS",
-          "prediction": "Oui",
-          "confidence": 75,
-          "bttsProb": 0.7494,
-          "homeLambda": 1.65,
-          "awayLambda": 2.63
-        },
-        {
-          "type": "Over 2.5",
-          "prediction": "Oui",
-          "confidence": 80,
-          "over25Prob": 0.7995,
-          "homeLambda": 1.65,
-          "awayLambda": 2.63
-        }
-      ],
-      "bttsProb": 0.7494,
-      "over25Prob": 0.7995,
-      "homeLambda": 1.65,
-      "awayLambda": 2.63
-    },
     {
       "id": "fccincin-vs-columbus-2026-10-18",
       "match": "FC Cincinnati vs Columbus Crew",
@@ -746,9 +684,7 @@
       "over25Prob": 0.494,
       "homeLambda": 1.65,
       "awayLambda": 1
-    }
-  ],
-  "vipPreview": [
+    },
     {
       "id": "sksturmg-vs-grazerak-2026-10-18",
       "match": "SK Sturm Graz vs Grazer AK",
@@ -810,7 +746,9 @@
       "over25Prob": 0.5824,
       "homeLambda": 2.44,
       "awayLambda": 0.58
-    },
+    }
+  ],
+  "vipPreview": [
     {
       "id": "rbsalzbu-vs-scrheind-2026-10-18",
       "match": "RB Salzburg vs SC Rheindorf Altach",
@@ -1244,79 +1182,79 @@
       "over25Prob": 0.3188,
       "homeLambda": 1.15,
       "awayLambda": 0.83
-    }
-  ],
-  "stats": {
-    "avgReliability": 79.71,
-    "totalAnalyzed": 88,
-    "totalRejected": 1,
-    "totalAccepted": 87,
-    "freeCount": 12,
-    "vipCount": 8
-  },
-  "predictions": [
+    },
     {
-      "id": "peczwoll-vs-goaheade-2026-10-18",
-      "match": "PEC Zwolle vs Go Ahead Eagles",
-      "home": "PEC Zwolle",
-      "away": "Go Ahead Eagles",
-      "league": "Eredivisie",
-      "date": "2026-10-18",
+      "id": "wolverha-vs-portsmou-2026-10-20",
+      "match": "Wolverhampton Wanderers vs Portsmouth",
+      "home": "Wolverhampton Wanderers",
+      "away": "Portsmouth",
+      "league": "Championship",
+      "date": "2026-10-20",
       "type": "BTTS",
-      "prediction": "Oui",
-      "proba": 0.7494,
-      "bttsProbDisplay": "74.94%",
-      "over25ProbDisplay": "79.95%",
-      "confidence": 75,
-      "time": "10:15",
-      "matchSemantic": "peczwoll-vs-goaheade-2026-10-18",
+      "prediction": "Non",
+      "proba": 0.4695,
+      "bttsProbDisplay": "46.95%",
+      "over25ProbDisplay": "44.11%",
+      "confidence": 47,
+      "time": "18:45",
+      "matchSemantic": "wolverha-vs-portsmou-2026-10-20",
       "source": "poisson-v92-real-data",
-      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/2565.png",
-      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/3706.png",
-      "tier": "GOLD",
-      "reliabilityScore": 91.54,
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/380.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/385.png",
+      "tier": "SILVER",
+      "reliabilityScore": 74.29,
       "dataQuality": "HIGH",
       "dataSource": "ESPN_TEAM_SCHEDULE",
       "matchCountHome": 8,
       "matchCountAway": 8,
       "h2hAvailable": false,
-      "xgHome": 1.65,
-      "xgAway": 2.63,
-      "xgTotal": 4.28,
-      "formBTTS": 31,
-      "analysis": "PEC Zwolle (8 matchs réels, xG 1.65) vs Go Ahead Eagles (8 matchs réels, xG 2.63). xG cumulé 4.28, BTTS 74.9%, Over 2.5 79.9%. Fiabilité 91.54%. Qualité données: HIGH.",
+      "xgHome": 1.52,
+      "xgAway": 0.92,
+      "xgTotal": 2.44,
+      "formBTTS": 28,
+      "analysis": "Wolverhampton Wanderers (8 matchs réels, xG 1.52) vs Portsmouth (8 matchs réels, xG 0.92). xG cumulé 2.44, BTTS 47.0%, Over 2.5 44.1%. Fiabilité 74.29%. Qualité données: HIGH.",
       "analysisData": {
-        "bttsProb": 0.7494,
-        "over25Prob": 0.7995,
-        "homeLambda": 1.65,
-        "awayLambda": 2.63,
-        "xgTotal": 4.28
+        "bttsProb": 0.4695,
+        "over25Prob": 0.4411,
+        "homeLambda": 1.52,
+        "awayLambda": 0.92,
+        "xgTotal": 2.44
       },
-      "estimatedCote": 1.33,
-      "estimatedCoteOver": 1.25,
+      "estimatedCote": 2.13,
+      "estimatedCoteOver": 2.27,
       "predictions": [
         {
           "type": "BTTS",
-          "prediction": "Oui",
-          "confidence": 75,
-          "bttsProb": 0.7494,
-          "homeLambda": 1.65,
-          "awayLambda": 2.63
+          "prediction": "Non",
+          "confidence": 47,
+          "bttsProb": 0.4695,
+          "homeLambda": 1.52,
+          "awayLambda": 0.92
         },
         {
           "type": "Over 2.5",
-          "prediction": "Oui",
-          "confidence": 80,
-          "over25Prob": 0.7995,
-          "homeLambda": 1.65,
-          "awayLambda": 2.63
+          "prediction": "Non",
+          "confidence": 44,
+          "over25Prob": 0.4411,
+          "homeLambda": 1.52,
+          "awayLambda": 0.92
         }
       ],
-      "bttsProb": 0.7494,
-      "over25Prob": 0.7995,
-      "homeLambda": 1.65,
-      "awayLambda": 2.63
-    },
+      "bttsProb": 0.4695,
+      "over25Prob": 0.4411,
+      "homeLambda": 1.52,
+      "awayLambda": 0.92
+    }
+  ],
+  "stats": {
+    "avgReliability": 79.58,
+    "totalAnalyzed": 87,
+    "totalRejected": 1,
+    "totalAccepted": 86,
+    "freeCount": 12,
+    "vipCount": 8
+  },
+  "predictions": [
     {
       "id": "fccincin-vs-columbus-2026-10-18",
       "match": "FC Cincinnati vs Columbus Crew",
@@ -1998,6 +1936,68 @@
       "over25Prob": 0.494,
       "homeLambda": 1.65,
       "awayLambda": 1
+    },
+    {
+      "id": "sksturmg-vs-grazerak-2026-10-18",
+      "match": "SK Sturm Graz vs Grazer AK",
+      "home": "SK Sturm Graz",
+      "away": "Grazer AK",
+      "league": "Austrian Bundesliga",
+      "date": "2026-10-18",
+      "type": "BTTS",
+      "prediction": "Non",
+      "proba": 0.4035,
+      "bttsProbDisplay": "40.35%",
+      "over25ProbDisplay": "58.24%",
+      "confidence": 40,
+      "time": "15:00",
+      "matchSemantic": "sksturmg-vs-grazerak-2026-10-18",
+      "source": "poisson-v92-real-data",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/3746.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/21846.png",
+      "tier": "SILVER",
+      "reliabilityScore": 73.9,
+      "dataQuality": "HIGH",
+      "dataSource": "ESPN_TEAM_SCHEDULE",
+      "matchCountHome": 8,
+      "matchCountAway": 8,
+      "h2hAvailable": false,
+      "xgHome": 2.44,
+      "xgAway": 0.58,
+      "xgTotal": 3.02,
+      "formBTTS": 20,
+      "analysis": "SK Sturm Graz (8 matchs réels, xG 2.44) vs Grazer AK (8 matchs réels, xG 0.58). xG cumulé 3.02, BTTS 40.4%, Over 2.5 58.2%. Fiabilité 73.9%. Qualité données: HIGH.",
+      "analysisData": {
+        "bttsProb": 0.4035,
+        "over25Prob": 0.5824,
+        "homeLambda": 2.44,
+        "awayLambda": 0.58,
+        "xgTotal": 3.02
+      },
+      "estimatedCote": 2.48,
+      "estimatedCoteOver": 1.72,
+      "predictions": [
+        {
+          "type": "BTTS",
+          "prediction": "Non",
+          "confidence": 40,
+          "bttsProb": 0.4035,
+          "homeLambda": 2.44,
+          "awayLambda": 0.58
+        },
+        {
+          "type": "Over 2.5",
+          "prediction": "Oui",
+          "confidence": 58,
+          "over25Prob": 0.5824,
+          "homeLambda": 2.44,
+          "awayLambda": 0.58
+        }
+      ],
+      "bttsProb": 0.4035,
+      "over25Prob": 0.5824,
+      "homeLambda": 2.44,
+      "awayLambda": 0.58
     }
   ]
 }
