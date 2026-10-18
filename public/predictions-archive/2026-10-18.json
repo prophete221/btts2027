@@ -1,70 +1,8 @@
 {
   "date": "2026-10-18",
-  "lastUpdated": "2026-10-18T19:46:41.764Z",
+  "lastUpdated": "2026-10-18T22:15:06.293Z",
   "source": "ESPN + TheSportsDB",
   "free": [
-    {
-      "id": "fccincin-vs-columbus-2026-10-18",
-      "match": "FC Cincinnati vs Columbus Crew",
-      "home": "FC Cincinnati",
-      "away": "Columbus Crew",
-      "league": "MLS",
-      "date": "2026-10-18",
-      "type": "BTTS",
-      "prediction": "Oui",
-      "proba": 0.7457,
-      "bttsProbDisplay": "74.57%",
-      "over25ProbDisplay": "75.94%",
-      "confidence": 75,
-      "time": "21:00",
-      "matchSemantic": "fccincin-vs-columbus-2026-10-18",
-      "source": "poisson-v92-real-data",
-      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/18267.png",
-      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/183.png",
-      "tier": "GOLD",
-      "reliabilityScore": 91.37,
-      "dataQuality": "HIGH",
-      "dataSource": "ESPN_TEAM_SCHEDULE",
-      "matchCountHome": 8,
-      "matchCountAway": 8,
-      "h2hAvailable": false,
-      "xgHome": 1.98,
-      "xgAway": 2,
-      "xgTotal": 3.98,
-      "formBTTS": 33,
-      "analysis": "FC Cincinnati (8 matchs réels, xG 1.98) vs Columbus Crew (8 matchs réels, xG 2.00). xG cumulé 3.98, BTTS 74.6%, Over 2.5 75.9%. Fiabilité 91.37%. Qualité données: HIGH.",
-      "analysisData": {
-        "bttsProb": 0.7457,
-        "over25Prob": 0.7594,
-        "homeLambda": 1.98,
-        "awayLambda": 2,
-        "xgTotal": 3.98
-      },
-      "estimatedCote": 1.34,
-      "estimatedCoteOver": 1.32,
-      "predictions": [
-        {
-          "type": "BTTS",
-          "prediction": "Oui",
-          "confidence": 75,
-          "bttsProb": 0.7457,
-          "homeLambda": 1.98,
-          "awayLambda": 2
-        },
-        {
-          "type": "Over 2.5",
-          "prediction": "Oui",
-          "confidence": 76,
-          "over25Prob": 0.7594,
-          "homeLambda": 1.98,
-          "awayLambda": 2
-        }
-      ],
-      "bttsProb": 0.7457,
-      "over25Prob": 0.7594,
-      "homeLambda": 1.98,
-      "awayLambda": 2
-    },
     {
       "id": "tottenha-vs-coventry-2026-10-19",
       "match": "Tottenham Hotspur vs Coventry City",
@@ -746,9 +684,7 @@
       "over25Prob": 0.4519,
       "homeLambda": 1.65,
       "awayLambda": 0.83
-    }
-  ],
-  "vipPreview": [
+    },
     {
       "id": "vfbstutt-vs-borussia-2026-10-23",
       "match": "VfB Stuttgart vs Borussia Mönchengladbach",
@@ -810,7 +746,9 @@
       "over25Prob": 0.6761,
       "homeLambda": 2.82,
       "awayLambda": 0.67
-    },
+    }
+  ],
+  "vipPreview": [
     {
       "id": "vitriade-vs-maritimo-2026-10-23",
       "match": "Vitória de Guimaraes vs Maritimo",
@@ -901,7 +839,7 @@
       "xgHome": 2.15,
       "xgAway": 2.38,
       "xgTotal": 4.53,
-      "formBTTS": 30,
+      "formBTTS": 31,
       "analysis": "FC Utrecht (8 matchs réels, xG 2.15) vs PEC Zwolle (8 matchs réels, xG 2.38). xG cumulé 4.53, BTTS 80.1%, Over 2.5 82.9%. Fiabilité 93.75%. Qualité données: HIGH.",
       "analysisData": {
         "bttsProb": 0.8013,
@@ -1244,79 +1182,79 @@
       "over25Prob": 0.7188,
       "homeLambda": 2.27,
       "awayLambda": 1.45
-    }
-  ],
-  "stats": {
-    "avgReliability": 80.34,
-    "totalAnalyzed": 70,
-    "totalRejected": 0,
-    "totalAccepted": 70,
-    "freeCount": 12,
-    "vipCount": 8
-  },
-  "predictions": [
+    },
     {
-      "id": "fccincin-vs-columbus-2026-10-18",
-      "match": "FC Cincinnati vs Columbus Crew",
-      "home": "FC Cincinnati",
-      "away": "Columbus Crew",
+      "id": "philadel-vs-newengla-2026-10-24",
+      "match": "Philadelphia Union vs New England Revolution",
+      "home": "Philadelphia Union",
+      "away": "New England Revolution",
       "league": "MLS",
-      "date": "2026-10-18",
+      "date": "2026-10-24",
       "type": "BTTS",
       "prediction": "Oui",
-      "proba": 0.7457,
-      "bttsProbDisplay": "74.57%",
-      "over25ProbDisplay": "75.94%",
-      "confidence": 75,
-      "time": "21:00",
-      "matchSemantic": "fccincin-vs-columbus-2026-10-18",
+      "proba": 0.6707,
+      "bttsProbDisplay": "67.07%",
+      "over25ProbDisplay": "73.91%",
+      "confidence": 67,
+      "time": "23:30",
+      "matchSemantic": "philadel-vs-newengla-2026-10-24",
       "source": "poisson-v92-real-data",
-      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/18267.png",
-      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/183.png",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/10739.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/189.png",
       "tier": "GOLD",
-      "reliabilityScore": 91.37,
+      "reliabilityScore": 88.09,
       "dataQuality": "HIGH",
       "dataSource": "ESPN_TEAM_SCHEDULE",
       "matchCountHome": 8,
       "matchCountAway": 8,
       "h2hAvailable": false,
-      "xgHome": 1.98,
-      "xgAway": 2,
-      "xgTotal": 3.98,
-      "formBTTS": 33,
-      "analysis": "FC Cincinnati (8 matchs réels, xG 1.98) vs Columbus Crew (8 matchs réels, xG 2.00). xG cumulé 3.98, BTTS 74.6%, Over 2.5 75.9%. Fiabilité 91.37%. Qualité données: HIGH.",
+      "xgHome": 2.55,
+      "xgAway": 1.3,
+      "xgTotal": 3.85,
+      "formBTTS": 50,
+      "analysis": "Philadelphia Union (8 matchs réels, xG 2.55) vs New England Revolution (8 matchs réels, xG 1.30). xG cumulé 3.85, BTTS 67.1%, Over 2.5 73.9%. Fiabilité 88.09%. Qualité données: HIGH.",
       "analysisData": {
-        "bttsProb": 0.7457,
-        "over25Prob": 0.7594,
-        "homeLambda": 1.98,
-        "awayLambda": 2,
-        "xgTotal": 3.98
+        "bttsProb": 0.6707,
+        "over25Prob": 0.7391,
+        "homeLambda": 2.55,
+        "awayLambda": 1.3,
+        "xgTotal": 3.85
       },
-      "estimatedCote": 1.34,
-      "estimatedCoteOver": 1.32,
+      "estimatedCote": 1.49,
+      "estimatedCoteOver": 1.35,
       "predictions": [
         {
           "type": "BTTS",
           "prediction": "Oui",
-          "confidence": 75,
-          "bttsProb": 0.7457,
-          "homeLambda": 1.98,
-          "awayLambda": 2
+          "confidence": 67,
+          "bttsProb": 0.6707,
+          "homeLambda": 2.55,
+          "awayLambda": 1.3
         },
         {
           "type": "Over 2.5",
           "prediction": "Oui",
-          "confidence": 76,
-          "over25Prob": 0.7594,
-          "homeLambda": 1.98,
-          "awayLambda": 2
+          "confidence": 74,
+          "over25Prob": 0.7391,
+          "homeLambda": 2.55,
+          "awayLambda": 1.3
         }
       ],
-      "bttsProb": 0.7457,
-      "over25Prob": 0.7594,
-      "homeLambda": 1.98,
-      "awayLambda": 2
-    },
+      "bttsProb": 0.6707,
+      "over25Prob": 0.7391,
+      "homeLambda": 2.55,
+      "awayLambda": 1.3
+    }
+  ],
+  "stats": {
+    "avgReliability": 80.18,
+    "totalAnalyzed": 69,
+    "totalRejected": 0,
+    "totalAccepted": 69,
+    "freeCount": 12,
+    "vipCount": 8
+  },
+  "predictions": [
     {
       "id": "tottenha-vs-coventry-2026-10-19",
       "match": "Tottenham Hotspur vs Coventry City",
@@ -1998,6 +1936,68 @@
       "over25Prob": 0.4519,
       "homeLambda": 1.65,
       "awayLambda": 0.83
+    },
+    {
+      "id": "vfbstutt-vs-borussia-2026-10-23",
+      "match": "VfB Stuttgart vs Borussia Mönchengladbach",
+      "home": "VfB Stuttgart",
+      "away": "Borussia Mönchengladbach",
+      "league": "Bundesliga",
+      "date": "2026-10-23",
+      "type": "BTTS",
+      "prediction": "Non",
+      "proba": 0.4575,
+      "bttsProbDisplay": "45.75%",
+      "over25ProbDisplay": "67.61%",
+      "confidence": 46,
+      "time": "18:30",
+      "matchSemantic": "vfbstutt-vs-borussia-2026-10-23",
+      "source": "poisson-v92-real-data",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/134.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/268.png",
+      "tier": "SILVER",
+      "reliabilityScore": 69.76,
+      "dataQuality": "MEDIUM",
+      "dataSource": "ESPN_TEAM_SCHEDULE",
+      "matchCountHome": 6,
+      "matchCountAway": 6,
+      "h2hAvailable": false,
+      "xgHome": 2.82,
+      "xgAway": 0.67,
+      "xgTotal": 3.48,
+      "formBTTS": 27,
+      "analysis": "VfB Stuttgart (6 matchs réels, xG 2.82) vs Borussia Mönchengladbach (6 matchs réels, xG 0.67). xG cumulé 3.48, BTTS 45.7%, Over 2.5 67.6%. Fiabilité 69.76%. Qualité données: MEDIUM.",
+      "analysisData": {
+        "bttsProb": 0.4575,
+        "over25Prob": 0.6761,
+        "homeLambda": 2.82,
+        "awayLambda": 0.67,
+        "xgTotal": 3.48
+      },
+      "estimatedCote": 2.19,
+      "estimatedCoteOver": 1.48,
+      "predictions": [
+        {
+          "type": "BTTS",
+          "prediction": "Non",
+          "confidence": 46,
+          "bttsProb": 0.4575,
+          "homeLambda": 2.82,
+          "awayLambda": 0.67
+        },
+        {
+          "type": "Over 2.5",
+          "prediction": "Oui",
+          "confidence": 68,
+          "over25Prob": 0.6761,
+          "homeLambda": 2.82,
+          "awayLambda": 0.67
+        }
+      ],
+      "bttsProb": 0.4575,
+      "over25Prob": 0.6761,
+      "homeLambda": 2.82,
+      "awayLambda": 0.67
     }
   ]
 }
