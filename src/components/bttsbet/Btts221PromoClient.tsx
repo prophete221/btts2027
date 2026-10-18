@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { useMemo, useState } from 'react'
 import { AFFILIATE } from '@/lib/constants'
 import { trackAffiliateAction, trackAffiliateCodeCopy } from '@/lib/affiliateTracking'
+import { copyTextToClipboard } from '@/lib/clipboard'
 
 type Lang = 'fr' | 'en' | 'ar'
 
@@ -41,12 +42,12 @@ const COPY: Record<Lang, {
     dir: 'ltr',
     eyebrow: 'OFFRE PARTENAIRE · 888STARZ',
     title: 'Ton code 888Starz exclusif',
-    intro: 'Copie le code btts221, vérifie les conditions affichées pour ton pays, puis ouvre 888Starz depuis le lien sécurisé.',
+    intro: 'Copie le code btts221, reçois 300% de bonus + 100 free spins (sans condition de mise, dès 1 € de dépôt), puis ouvre 888Starz depuis le lien sécurisé.',
     partner: 'BTTSPredict × 888Starz',
     codeLabel: 'CODE PROMO',
     codeHint: 'À saisir exactement en minuscules',
     offerLabel: 'CAMPAGNE btts221 ANNONCÉE',
-    offerText: '150 free spins à l’inscription et dépôt minimum annoncé à 1 USD — disponibilité, éligibilité et conditions à confirmer directement sur 888Starz.',
+    offerText: '300% de bonus + 100 free spins à l’inscription, sans condition de mise, dès 1 € de dépôt — disponibilité et éligibilité à confirmer directement sur 888Starz.',
     conditions: 'Les bonus varient selon le pays, le compte, la période et les conditions de mise. Ne dépose rien avant d’avoir vérifié l’offre officielle.',
     copy: 'Copier le code',
     copied: 'Code copié',
@@ -57,14 +58,14 @@ const COPY: Record<Lang, {
     steps: [
       'Ouvre 888Starz depuis le bouton ci-dessus.',
       'Crée ton compte et saisis exactement btts221 en minuscules si le champ est disponible.',
-      'Vérifie l’offre affichée pour ton pays avant tout dépôt.',
-      'Lis les conditions des free spins, du dépôt et de la mise avant de confirmer.',
+      'Dépose dès 1 € avec un moyen de paiement disponible dans ton pays.',
+      'Reçois 300% de bonus + 100 free spins selon l’offre affichée par 888Starz.',
     ],
     faqTitle: 'Questions sur btts221 et 888Starz',
     faq: [
       { q: 'Quel est le code promo 888Starz ?', a: 'Le code présenté sur cette page est btts221, en minuscules. Vérifie son acceptation pendant l’inscription.' },
-      { q: 'Le code donne-t-il 150 free spins ?', a: 'La campagne annoncée mentionne 150 free spins, mais l’offre doit être confirmée sur 888Starz selon ton pays, ton compte et la période.' },
-      { q: 'Quel est le dépôt minimum ?', a: 'Le dépôt minimum annoncé est de 1 USD pour cette campagne. Vérifie le montant réellement affiché avant toute transaction.' },
+      { q: 'Le code donne-t-il 300% + 100 free spins ?', a: 'Oui — l’offre annoncée par la campagne est de 300% de bonus + 100 free spins, sans condition de mise. Confirme l’offre affichée sur 888Starz selon ton pays, ton compte et la période.' },
+      { q: 'Quel est le dépôt minimum ?', a: 'Le dépôt minimum annoncé est de 1 €. Vérifie le montant réellement affiché avant toute transaction.' },
       { q: 'Le code fonctionne-t-il partout ?', a: 'Non garanti. L’éligibilité peut dépendre du pays, du compte, de l’appareil et des règles locales de l’opérateur.' },
     ],
     verified: 'Page vérifiée le',
@@ -79,12 +80,12 @@ const COPY: Record<Lang, {
     dir: 'ltr',
     eyebrow: 'PARTNER OFFER · 888STARZ',
     title: 'Your exclusive 888Starz code',
-    intro: 'Copy btts221, check the terms shown for your country, then open 888Starz through the secure link.',
+    intro: 'Copy btts221, get a 300% bonus + 100 free spins (no wagering requirements, from a €1 deposit), then open 888Starz through the secure link.',
     partner: 'BTTSPredict × 888Starz',
     codeLabel: 'PROMO CODE',
     codeHint: 'Enter exactly in lowercase',
     offerLabel: 'btts221 CAMPAIGN ANNOUNCED',
-    offerText: '150 free spins at sign-up and a $1 minimum deposit announced — availability, eligibility and terms must be confirmed directly on 888Starz.',
+    offerText: '300% bonus + 100 free spins at sign-up, no wagering requirements, from a €1 deposit — availability and eligibility to be confirmed directly on 888Starz.',
     conditions: 'Bonuses vary by country, account, period and wagering terms. Do not deposit before checking the official offer.',
     copy: 'Copy code',
     copied: 'Code copied',
@@ -95,14 +96,14 @@ const COPY: Record<Lang, {
     steps: [
       'Open 888Starz from the button above.',
       'Create your account and enter btts221 in lowercase if the field is available.',
-      'Check the offer displayed for your country before depositing.',
-      'Read the free spins, deposit and wagering terms before confirming.',
+      'Deposit from €1 with a payment method available in your country.',
+      'Receive a 300% bonus + 100 free spins per the offer shown by 888Starz.',
     ],
     faqTitle: 'Questions about btts221 and 888Starz',
     faq: [
       { q: 'What is the 888Starz promo code?', a: 'The code shown on this page is btts221 in lowercase. Check that it is accepted during registration.' },
-      { q: 'Does the code give 150 free spins?', a: 'The announced campaign mentions 150 free spins, but the offer must be confirmed on 888Starz for your country, account and period.' },
-      { q: 'What is the minimum deposit?', a: 'The announced minimum deposit is $1 for this campaign. Check the amount displayed before making any transaction.' },
+      { q: 'Does the code give 300% + 100 free spins?', a: 'Yes — the announced campaign offers a 300% bonus + 100 free spins, no wagering requirements. Confirm the offer displayed on 888Starz for your country, account and period.' },
+      { q: 'What is the minimum deposit?', a: 'The announced minimum deposit is €1. Check the amount displayed before making any transaction.' },
       { q: 'Does the code work everywhere?', a: 'Not guaranteed. Eligibility may depend on your country, account, device and the operator’s local rules.' },
     ],
     verified: 'Page checked on',
@@ -117,12 +118,12 @@ const COPY: Record<Lang, {
     dir: 'rtl',
     eyebrow: 'عرض الشريك · 888STARZ',
     title: 'رمزك الحصري في 888Starz',
-    intro: 'انسخ الرمز btts221، تحقق من الشروط الظاهرة لبلدك، ثم افتح 888Starz عبر الرابط الآمن.',
+    intro: 'انسخ الرمز btts221، واحصل على مكافأة 300% + 100 لفة مجانية (بدون شروط مراهنة، بدءاً من إيداع 1 يورو)، ثم افتح 888Starz عبر الرابط الآمن.',
     partner: 'BTTSPredict × 888Starz',
     codeLabel: 'الرمز الترويجي',
     codeHint: 'أدخله تماماً بأحرف صغيرة',
     offerLabel: 'حملة btts221 المعلنة',
-    offerText: '150 لفة مجانية عند التسجيل وحد أدنى معلن للإيداع قدره 1 دولار — يجب تأكيد التوفر والأهلية والشروط مباشرة على 888Starz.',
+    offerText: 'مكافأة 300% + 100 لفة مجانية عند التسجيل، بدون شروط مراهنة، بدءاً من إيداع 1 يورو — يجب تأكيد التوفر والأهلية مباشرة على 888Starz.',
     conditions: 'قد تختلف المكافآت حسب البلد والحساب والفترة وشروط المراهنة. لا تقم بالإيداع قبل التحقق من العرض الرسمي.',
     copy: 'نسخ الرمز',
     copied: 'تم نسخ الرمز',
@@ -133,14 +134,14 @@ const COPY: Record<Lang, {
     steps: [
       'افتح 888Starz من الزر أعلاه.',
       'أنشئ حسابك وأدخل btts221 بأحرف صغيرة إذا كان الحقل متاحاً.',
-      'تحقق من العرض الظاهر لبلدك قبل الإيداع.',
-      'اقرأ شروط اللفات المجانية والإيداع ومتطلبات المراهنة قبل التأكيد.',
+      'أودع من 1 يورو بوسيلة دفع متوفرة في بلدك.',
+      'احصل على مكافأة 300% + 100 لفة مجانية وفق العرض المعروض من 888Starz.',
     ],
     faqTitle: 'أسئلة حول btts221 و888Starz',
     faq: [
       { q: 'ما هو الرمز الترويجي لـ 888Starz؟', a: 'الرمز المعروض في هذه الصفحة هو btts221 بأحرف صغيرة. تحقق من قبوله أثناء التسجيل.' },
-      { q: 'هل يمنح الرمز 150 لفة مجانية؟', a: 'تشير الحملة المعلنة إلى 150 لفة مجانية، لكن يجب تأكيد العرض على 888Starz حسب بلدك وحسابك والفترة.' },
-      { q: 'ما هو الحد الأدنى للإيداع؟', a: 'الحد الأدنى المعلن لهذه الحملة هو 1 دولار. تحقق من المبلغ الظاهر قبل إجراء أي معاملة.' },
+      { q: 'هل يمنح الرمز 300% + 100 لفة مجانية؟', a: 'نعم — الحملة المعلنة توفر مكافأة 300% + 100 لفة مجانية بدون شروط مراهنة. أكّد العرض الظاهر على 888Starz حسب بلدك وحسابك والفترة.' },
+      { q: 'ما هو الحد الأدنى للإيداع؟', a: 'الحد الأدنى المعلن للإيداع هو 1 يورو. تحقق من المبلغ الظاهر قبل إجراء أي معاملة.' },
       { q: 'هل يعمل الرمز في كل البلدان؟', a: 'لا يوجد ضمان عام. قد تعتمد الأهلية على البلد والحساب والجهاز والقواعد المحلية للمشغل.' },
     ],
     verified: 'تم التحقق من الصفحة في',
@@ -161,17 +162,26 @@ function formatDate(value: string, lang: Lang) {
 
 export default function Btts221PromoClient({ lang, reviewDate }: { lang: Lang; reviewDate: string }) {
   const [copied, setCopied] = useState(false)
+  const [copyFailed, setCopyFailed] = useState(false)
   const copy = useMemo(() => COPY[lang], [lang])
 
   const handleCopy = async () => {
-    try { await navigator.clipboard.writeText(CODE) } catch { /* Clipboard may be unavailable in some browsers. */ }
-    setCopied(true)
-    trackAffiliateCodeCopy('888starz', `btts221-${lang}-hero`)
-    window.setTimeout(() => setCopied(false), 2200)
+    // Succès affiché UNIQUEMENT si la copie a réellement réussi
+    const ok = await copyTextToClipboard(CODE)
+    if (ok) {
+      setCopied(true)
+      setCopyFailed(false)
+      trackAffiliateCodeCopy('888starz', `btts221-${lang}-hero`)
+      window.setTimeout(() => setCopied(false), 2200)
+    } else {
+      setCopyFailed(true)
+      setCopied(false)
+      window.setTimeout(() => setCopyFailed(false), 4000)
+    }
   }
 
   const handleSignup = () => trackAffiliateAction('888starz', 'signup_cta_click', `btts221-${lang}-hero`)
-  const signupLabel = copied ? copy.copied : copy.copy
+  const signupLabel = copyFailed ? `${copy.copy} ⚠` : copied ? copy.copied : copy.copy
 
   return (
     <main dir={copy.dir} className="min-h-screen overflow-hidden bg-[#07090D] pb-24 text-white">

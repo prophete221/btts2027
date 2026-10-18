@@ -8,19 +8,20 @@ const ErrorBoundary = dynamic(() => import('@/components/bttsbet/ErrorBoundary')
 const Star888Client = dynamic(() => import('./Star888Client'), { loading: () => null })
 
 /* ──────────────────────────────────────────────────────────────
-   Metadata — Code Promo 888Starz Afrique v64.1
+   Metadata — Code Promo 888Starz btts221 (corrigé : le code
+   888Starz est btts221, VISION221 est le code Linebet)
    ────────────────────────────────────────────────────────────── */
 const SITE_URL = 'https://bttspredict.com'
 const SLUG = 'bonus-888starz'
 const PAGE_URL = `${SITE_URL}/${SLUG}`
 
-// SEO Bing — title court (39 chars) + description courte (128 chars).
+// SEO — title court (46 chars) + description courte (<150).
 // Avec le template "%s | BTTSPredict" (14 chars), le title rendu fait
-// 39 + 14 = 53 chars, bien sous la limite hard 70.
+// 46 + 14 = 60 chars, sous la limite hard 70.
 const CURRENT_YEAR = new Date().getUTCFullYear()
 const REVIEW_DATE = new Date().toISOString().slice(0, 10)
-const TITLE = `Code promo 888Starz ${CURRENT_YEAR} : bonus VISION221`
-const DESCRIPTION = `Code promo 888Starz ${CURRENT_YEAR} : VISION221, inscription et conditions du bonus selon le pays. Guide vérifié, affiliation signalée, 18+.`
+const TITLE = `Code promo 888Starz btts221 : 300% + 100 spins`
+const DESCRIPTION = `Code promo 888Starz btts221 : 300% de bonus et 100 free spins, sans condition de mise, dès 1 € de dépôt. Guide ${CURRENT_YEAR} d'inscription, 18+.`
 checkSeo('bonus-888starz', TITLE, DESCRIPTION)
 
 export const metadata: Metadata = {
@@ -28,9 +29,9 @@ export const metadata: Metadata = {
   description: DESCRIPTION,
   keywords: [
     'code promo 888starz', '888starz promo code', `bonus 888starz ${CURRENT_YEAR}`, '888starz bonus',
-    'code 888starz', 'vision221', '888starz senegal', 'code promo 888starz senegal',
+    'code 888starz', 'btts221', '888starz btts221', 'vision221', '888starz senegal', 'code promo 888starz senegal',
     '888starz mali', '888starz maroc', '888starz cote d\'ivoire', '888starz guinee', '888starz congo',
-    '888starz wave', '888starz orange money', 'inscription 888starz',
+    '888starz wave', '888starz orange money', 'inscription 888starz', '888starz 300 bonus', '888starz free spins',
   ],
   alternates: {
     canonical: PAGE_URL,
@@ -90,7 +91,7 @@ function buildBreadcrumbJsonLd() {
     '@type': 'BreadcrumbList',
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Accueil', item: SITE_URL },
-      { '@type': 'ListItem', position: 2, name: 'Code Promo 888Starz Afrique', item: PAGE_URL },
+      { '@type': 'ListItem', position: 2, name: 'Code Promo 888Starz btts221', item: PAGE_URL },
     ],
   }
 }
@@ -99,10 +100,10 @@ function buildHowToJsonLd() {
   return {
     '@context': 'https://schema.org',
     '@type': 'HowTo',
-    name: 'Comment utiliser le code promo 888Starz VISION221 en Afrique',
-    description: "Guide complet pour activer un bonus 888Starz avec le code VISION221 au Sénégal, Mali, Côte d'Ivoire, Guinée, Congo et Maroc. Les conditions et montants peuvent évoluer.",
+    name: 'Comment utiliser le code promo 888Starz btts221',
+    description: "Guide pour activer l'offre 888Starz avec le code btts221 : 300% de bonus et 100 free spins, sans condition de mise, dès 1 € de dépôt. Vérifie les conditions affichées par l'opérateur.",
     totalTime: 'PT5M',
-    supply: [{ '@type': 'HowToSupply', name: 'Code promo VISION221' }],
+    supply: [{ '@type': 'HowToSupply', name: 'Code promo btts221' }],
     tool: [
       { '@type': 'HowToTool', name: 'Application 888Starz ou site web' },
       { '@type': 'HowToTool', name: 'Wave, Orange Money, MTN ou Moov' },
@@ -117,20 +118,20 @@ function buildHowToJsonLd() {
       {
         '@type': 'HowToStep',
         position: 2,
-        name: 'Saisir le code promo VISION221',
-        text: "Pendant l'inscription ou dans la section « Code Promo » de ton compte, colle exactement VISION221.",
+        name: 'Saisir le code promo btts221',
+        text: "Pendant l'inscription ou dans la section « Code Promo » de ton compte, saisis exactement btts221 en minuscules.",
       },
       {
         '@type': 'HowToStep',
         position: 3,
-        name: 'Vérifier les conditions du premier dépôt',
-        text: "Consulte les conditions affichées par 888Starz pour le premier dépôt et choisis un moyen de paiement disponible dans ton pays.",
+        name: 'Déposer dès 1 €',
+        text: "Effectue un premier dépôt à partir de 1 € avec un moyen de paiement disponible dans ton pays pour déclencher l'offre annoncée.",
       },
       {
         '@type': 'HowToStep',
         position: 4,
-        name: 'Recevoir le bonus',
-        text: "Les conditions et montants des offres promotionnelles peuvent évoluer. Consultez les conditions actuellement affichées par l'opérateur avant toute inscription ou dépôt.",
+        name: 'Recevoir le bonus et les free spins',
+        text: "300% de bonus et 100 free spins, sans condition de mise, selon l'offre affichée par 888Starz. Vérifie les conditions actuelles avant tout dépôt.",
       },
     ],
   }
@@ -146,23 +147,23 @@ function buildFaqJsonLd() {
         name: 'Quel est le code promo 888Starz ?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: "Le code présenté sur cette page est VISION221. Saisissez-le en majuscules et vérifiez son acceptation pendant l'inscription.",
+          text: "Le code promo 888Starz présenté sur cette page est btts221, à saisir exactement en minuscules pendant l'inscription ou dans la section « Code Promo ».",
         },
       },
       {
         '@type': 'Question',
-        name: `Quel est le bonus 888Starz en ${CURRENT_YEAR} ?`,
+        name: `Que donne le code btts221 en ${CURRENT_YEAR} ?`,
         acceptedAnswer: {
           '@type': 'Answer',
-          text: "Les montants, conditions et critères d’éligibilité du bonus 888Starz peuvent varier selon le pays et la période. Consulte l’offre actuellement affichée par l’opérateur avant toute inscription ou dépôt. Le code présenté sur cette page est VISION221.",
+          text: "Le code btts221 donne 300% de bonus et 100 free spins, sans condition de mise, dès 1 € de dépôt — offre annoncée par la campagne partenaire. Vérifie les conditions affichées par 888Starz pour ton pays avant tout dépôt.",
         },
       },
       {
         '@type': 'Question',
-        name: 'Comment utiliser VISION221 ?',
+        name: 'Quel est le dépôt minimum avec btts221 ?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: "Ouvrez le lien d'inscription, créez votre compte, saisissez VISION221 dans le champ prévu puis vérifiez les conditions du premier dépôt et du bonus affichées pour votre pays.",
+          text: "Le dépôt minimum annoncé est de 1 €. Vérifie le montant réellement affiché par 888Starz et les moyens de paiement disponibles dans ton pays avant de confirmer.",
         },
       },
       {

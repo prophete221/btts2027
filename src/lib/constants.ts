@@ -12,7 +12,7 @@ export const SITE = {
   // → Pour afficher le taux dans l'UI, lire win-history.json (côté client) ou fetch /win-history.json
   accuracy: 'Calculé en temps réel depuis l\'archive publique',
   vipAccuracy: 'Calculé en temps réel depuis l\'archive publique',
-  vipMinDeposit: '5 USD (≈ 3 000 XOF)',
+  vipMinDeposit: '10 € (≈ 6 560 XOF)',
   historyRate: 'Voir /historique',
   last30Rate: 'Voir /historique',
 }
@@ -40,8 +40,8 @@ export const BOOKMAKERS = [
     downloadLink: AFFILIATE.linebetDownload,
     promoCode: 'VISION221',
     color: 'emerald',
-    bonus: 'Bonus et conditions à vérifier sur le site officiel',
-    description: 'Partenaire d’affiliation — offre et éligibilité à vérifier selon le pays',
+    bonus: '300% + 100 free spins (offre annoncée, dès 1 € de dépôt)',
+    description: 'Partenaire d’affiliation — offre annoncée : 300% + 100 free spins, sans condition de mise, dès 1 € de dépôt',
     logoFull: '/logos/linebet.svg',
     logoIcon: '/logos/linebet-icon.svg',
   },
@@ -50,10 +50,11 @@ export const BOOKMAKERS = [
     name: '888starz',
     signupLink: AFFILIATE.star888,
     downloadLink: AFFILIATE.star888Download,
-    promoCode: 'VISION221',
+    // Code 888Starz réel = btts221 (VISION221 est le code Linebet)
+    promoCode: 'btts221',
     color: 'gold',
-    bonus: 'Bonus (voir conditions sur site)',
-    description: 'Nouveau bookmaker partenaire — Bonus (voir conditions sur site) sur le 1er dépôt',
+    bonus: '300% + 100 free spins (offre annoncée, dès 1 € de dépôt)',
+    description: 'Bookmaker partenaire — offre annoncée : 300% + 100 free spins, sans condition de mise, dès 1 € de dépôt',
     logoFull: '/logos/888starz.svg',
     logoIcon: '/logos/888starz-icon.svg',
   },
@@ -104,8 +105,8 @@ export const FAQ_ITEMS = [
     a: "Notre moteur utilise un modèle statistique Poisson calibré sur la forme récente des équipes (8 derniers matchs réels) et des buts attendus modélisés (lambda). Sources : ESPN et TheSportsDB (données publiques). Le taux de réussite réel est calculé dynamiquement depuis l'archive publique des pronostics (predictions-archive/) et affiché sans filtrage sur /historique. Chaque pronostic est accompagné d'un indice de confiance calculé par le modèle. Les performances passées ne garantissent pas les résultats futurs.",
   },
   {
-    q: 'Comment utiliser le code promo VISION221 ?',
-    a: "Inscrivez-vous sur Linebet via notre lien de parrainage, puis saisissez le code promo VISION221 lors de votre inscription ou dans la section \"Code Promo\" de votre compte. Vérifiez ensuite l'offre, les conditions et votre éligibilité directement auprès de Linebet avant tout dépôt. Les conditions commerciales peuvent changer.",
+    q: 'Comment utiliser les codes promo VISION221 et btts221 ?',
+    a: "VISION221 est le code promo Linebet, btts221 est le code promo 888Starz. Inscrivez-vous via notre lien, saisissez le code correspondant dans le champ « Code Promo » puis effectuez un premier dépôt dès 1 € : 300% de bonus + 100 free spins, sans condition de mise (offre annoncée par la campagne partenaire). Vérifiez l'offre affichée par l'opérateur avant tout dépôt. Les conditions commerciales peuvent changer.",
   },
   {
     q: 'Les pronostics gratuits sont-ils fiables ?',
@@ -125,7 +126,7 @@ export const FAQ_ITEMS = [
   },
 ]
 
-export const VIP_DESCRIPTION = 'VIP: Historique complet + 10 matchs/jour — Débloque avec inscription via VISION221'
+export const VIP_DESCRIPTION = 'VIP : historique complet + sélections du jour — Débloque avec un nouveau compte Linebet via VISION221 et un dépôt minimum de 10 €'
 
 
 export const LONASE = { name: 'LONASE', description: 'Loterie Nationale du Sénégal' }

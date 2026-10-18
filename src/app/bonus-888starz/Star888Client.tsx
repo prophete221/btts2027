@@ -1,8 +1,20 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { AFFILIATE } from '@/lib/constants'
 import { trackAffiliateAction, trackAffiliateCodeCopy } from '@/lib/affiliateTracking'
+import { copyTextToClipboard } from '@/lib/clipboard'
+
+/* ─── Code promo 888Starz — btts221 (minuscules). VISION221 est le code Linebet. ─── */
+const CODE = 'btts221'
+
+/* ─── Offre annoncée par la campagne partenaire ─── */
+const OFFER = {
+  bonus: '300%',
+  freeSpins: '100',
+  wagering: 'Sans condition de mise',
+  minDeposit: '1 €',
+}
 
 /* ─── Palette locale — 888Starz rouge clair (couleur de marque) ──────── */
 const ORANGE = '#F87171'      // rouge clair 888Starz
@@ -14,7 +26,7 @@ const TEXT_SEC = '#9DABBB'
 const BG_DARK = '#0B0F14'
 const BORDER_OUTLINE = '#9DABBB'
 
-/* Lien affilié 888Starz */
+/* Lien affilié 888Starz — inchangé */
 const STAR888_SIGNUP = AFFILIATE.star888
 
 /* ─── Étapes (4) — design moderne avec icônes SVG ────────────────────── */
@@ -32,8 +44,8 @@ const STEPS = [
   },
   {
     n: '02',
-    title: 'Saisis le code VISION221',
-    desc: "Pendant l'inscription (ou dans « Code Promo » de ton compte), colle exactement VISION221.",
+    title: `Saisis le code ${CODE}`,
+    desc: `Pendant l'inscription (ou dans « Code Promo » de ton compte), tape exactement ${CODE} en minuscules.`,
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
         <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
@@ -43,8 +55,8 @@ const STEPS = [
   },
   {
     n: '03',
-    title: 'Vérifie le premier dépôt',
-    desc: "Choisis un moyen de paiement disponible dans ton pays et vérifie le montant minimum ainsi que les conditions affichées par 888Starz.",
+    title: `Dépose dès ${OFFER.minDeposit}`,
+    desc: `Effectue un premier dépôt à partir de ${OFFER.minDeposit} avec Wave, Orange Money ou un autre moyen disponible dans ton pays.`,
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
         <rect x="2" y="6" width="20" height="12" rx="2" />
@@ -55,8 +67,8 @@ const STEPS = [
   },
   {
     n: '04',
-    title: 'Vérifie le bonus reçu',
-    desc: "Les conditions du bonus, les montants disponibles et les critères d'éligibilité peuvent évoluer. Vérifie toujours les conditions actuellement affichées par 888Starz avant toute inscription ou dépôt.",
+    title: 'Reçois 300% + 100 free spins',
+    desc: `Le bonus de ${OFFER.bonus} et les ${OFFER.freeSpins} free spins sont crédités selon l'offre affichée par 888Starz, ${OFFER.wagering.toLowerCase()}. Vérifie les conditions actuelles.`,
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 2l2.5 6.5L21 9l-5 4.5L17.5 21 12 17l-5.5 4L8 13.5 3 9l6.5-.5L12 2z" />
@@ -75,16 +87,17 @@ const PAYMENT_METHODS = [
 
 /* ─── Détails bonus ──────────────────────────────────────────────────── */
 const BONUS_ROWS = [
-  { label: 'Bonus', value: 'Conditions à vérifier auprès de 888Starz', highlight: true },
-  { label: 'Code', value: 'VISION221 (copiable)' },
-  { label: 'Dépôt', value: 'Montant et conditions à vérifier auprès de 888Starz' },
-  { label: 'Méthodes', value: 'Disponibilité à vérifier selon le pays' },
+  { label: 'Bonus', value: '300% sur le premier dépôt', highlight: true },
+  { label: 'Free spins', value: '100 free spins inclus' },
+  { label: 'Condition de mise', value: 'Sans condition de mise (offre annoncée)' },
+  { label: 'Dépôt minimum', value: '1 €' },
+  { label: 'Code', value: `${CODE} (copiable — en minuscules)` },
   { label: 'Pays', value: 'Sénégal, Mali, CIV, Guinée, Congo, Maroc' },
 ]
 
 /* ─── Liens internes ─────────────────────────────────────────────────── */
 const INTERNAL_LINKS = [
-  { href: '/', label: 'Pronostics BTTS Afrique Ouest' },
+  { href: '/', label: 'Pronostics BTTS Afrique de l\'Ouest' },
   { href: '/code-promo-linebet-senegal', label: 'Code Promo Linebet' },
   { href: '/btts-c-est-quoi', label: "C'est quoi BTTS ?" },
 ]
@@ -93,7 +106,13 @@ export default function Star888Client({ reviewDate }: { reviewDate: string }) {
   const reviewYear = reviewDate.slice(0, 4)
   const reviewDateLabel = new Intl.DateTimeFormat('fr-FR', { dateStyle: 'long', timeZone: 'Africa/Dakar' }).format(new Date(`${reviewDate}T12:00:00Z`))
   const [copied, setCopied] = useState(false)
+  const [copyFailed, setCopyFailed] = useState(false)
   const [toast, setToast] = useState(false)
+
+  /* Mesure : 1 vue de la page promo par session */
+  useEffect(() => {
+    trackAffiliateAction('888starz', 'promo_view', 'bonus-888starz-page')
+  }, [])
 
   const showToast = () => {
     setToast(true)
@@ -101,22 +120,18 @@ export default function Star888Client({ reviewDate }: { reviewDate: string }) {
   }
 
   const handleCopy = async () => {
-    trackAffiliateCodeCopy('888starz', '888starz-promo-code-card')
-    try {
-      await navigator.clipboard.writeText('VISION221')
+    // Succès affiché UNIQUEMENT si la copie a réellement réussi
+    const ok = await copyTextToClipboard(CODE)
+    if (ok) {
+      trackAffiliateCodeCopy('888starz', '888starz-promo-code-card')
       setCopied(true)
+      setCopyFailed(false)
       showToast()
       setTimeout(() => setCopied(false), 2000)
-    } catch {
-      const el = document.createElement('textarea')
-      el.value = 'VISION221'
-      document.body.appendChild(el)
-      el.select()
-      try { document.execCommand('copy') } catch {}
-      document.body.removeChild(el)
-      setCopied(true)
+    } else {
+      setCopyFailed(true)
       showToast()
-      setTimeout(() => setCopied(false), 2000)
+      setTimeout(() => setCopyFailed(false), 4000)
     }
   }
 
@@ -124,7 +139,7 @@ export default function Star888Client({ reviewDate }: { reviewDate: string }) {
 
   return (
     <>
-      {/* Toast flottant — affiché quand le code est copié */}
+      {/* Toast flottant — seulement après un vrai succès de copie */}
       {toast && (
         <div
           className="fixed top-4 left-1/2 -translate-x-1/2 z-[100] px-5 py-3 rounded-xl font-bold text-sm shadow-2xl"
@@ -137,7 +152,7 @@ export default function Star888Client({ reviewDate }: { reviewDate: string }) {
           role="status"
           aria-live="polite"
         >
-          ✅ Code copié !
+          {copyFailed ? `⚠ Copie impossible — code : ${CODE}` : '✅ Code copié !'}
         </div>
       )}
 
@@ -161,20 +176,34 @@ export default function Star888Client({ reviewDate }: { reviewDate: string }) {
             className="text-3xl sm:text-5xl mb-3 leading-tight"
             style={{ fontFamily: "var(--font-bebas-neue), 'Bebas Neue', sans-serif", letterSpacing: '0.03em', color: TEXT }}
           >
-            CODE PROMO <span style={{ color: ORANGE, textShadow: `0 0 22px ${ORANGE}66` }}>888STARZ</span> {reviewYear} : BONUS VISION221
+            CODE PROMO <span style={{ color: ORANGE, textShadow: `0 0 22px ${ORANGE}66` }}>888STARZ</span> {reviewYear} : BTTS221
           </h1>
           <div className="mx-auto mb-4 flex min-h-16 max-w-[340px] items-center justify-center rounded-xl bg-white px-4 py-2 shadow-lg sm:max-w-[440px]">
             <img src="/logos/888starz-provided.webp" alt="Logo officiel 888Starz" className="max-h-14 w-auto object-contain" width={1920} height={894} loading="eager" />
           </div>
           <p className="text-sm sm:text-base max-w-2xl mx-auto leading-relaxed" style={{ color: TEXT_SEC }}>
-            Inscription, code copiable et conditions à vérifier avant tout dépôt.
-          </p>
-          <p className="text-sm sm:text-base max-w-2xl mx-auto mt-3 leading-relaxed" style={{ color: TEXT_SEC }}>
-            Code promo <strong style={{ color: ORANGE }}>VISION221</strong>. Les conditions et montants du bonus peuvent évoluer — vérifiez les conditions affichées par 888Starz avant tout dépôt.
+            Inscris-toi avec le code <strong style={{ color: ORANGE }}>{CODE}</strong> et profite de l&apos;offre annoncée : <strong style={{ color: TEXT }}>300% de bonus + 100 free spins</strong>, sans condition de mise, dès 1 € de dépôt.
           </p>
           <p className="text-[11px] mt-3" style={{ color: TEXT_SEC }}>
-            Guide vérifié le <time dateTime={reviewDate}>{reviewDateLabel}</time> · informations susceptibles de varier selon le pays · 18+
+            Guide vérifié le <time dateTime={reviewDate}>{reviewDateLabel}</time> · offre annoncée — conditions affichées par 888Starz · 18+
           </p>
+        </div>
+      </section>
+
+      {/* ─────────── ENCARD OFFRE ─────────── */}
+      <section className="pb-6" aria-label="Offre de bienvenue annoncée">
+        <div className="max-w-2xl mx-auto px-4 sm:px-6">
+          <div className="rounded-2xl p-5 text-center" style={{ backgroundColor: `${ORANGE}0D`, border: `1px solid ${ORANGE}55` }}>
+            <p className="text-2xl sm:text-3xl font-black" style={{ color: ORANGE, fontFamily: "var(--font-bebas-neue), 'Bebas Neue', sans-serif", letterSpacing: '0.04em' }}>
+              300% DE BONUS + 100 FREE SPINS
+            </p>
+            <p className="text-xs mt-2 font-semibold" style={{ color: TEXT }}>
+              Sans condition de mise · Dès 1 € de dépôt
+            </p>
+            <p className="text-[10px] mt-1" style={{ color: TEXT_SEC }}>
+              Offre annoncée par la campagne partenaire — vérifie les conditions affichées par 888Starz avant tout dépôt.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -195,7 +224,7 @@ export default function Star888Client({ reviewDate }: { reviewDate: string }) {
               ★ Exclusif Afrique de l&apos;Ouest
             </div>
 
-            {/* Code VISION221 — cliquable directement */}
+            {/* Code btts221 — cliquable directement */}
             <p className="text-[11px] uppercase tracking-[0.25em] mb-2" style={{ color: TEXT_SEC }}>
               Code promo 888Starz
             </p>
@@ -203,7 +232,7 @@ export default function Star888Client({ reviewDate }: { reviewDate: string }) {
               type="button"
               onClick={copyCode}
               title="Cliquer pour copier"
-              aria-label="Code promo VISION221 — cliquer pour copier dans le presse-papier"
+              aria-label={`Code promo ${CODE} — cliquer pour copier dans le presse-papier`}
               className="inline-flex items-center justify-center gap-3 mb-3 select-all cursor-pointer transition-transform hover:scale-[1.02] active:scale-[0.98] bg-transparent border-0 p-0"
               style={{
                 color: ORANGE,
@@ -212,7 +241,7 @@ export default function Star888Client({ reviewDate }: { reviewDate: string }) {
               }}
             >
               <span className="text-5xl sm:text-6xl font-black tracking-[0.15em]">
-                VISION221
+                {CODE}
               </span>
               <span
                 className="inline-flex items-center justify-center w-9 h-9 rounded-lg flex-shrink-0"
@@ -236,23 +265,25 @@ export default function Star888Client({ reviewDate }: { reviewDate: string }) {
               </span>
             </button>
             <p className="text-xs mb-6" style={{ color: TEXT_SEC }}>
-              Les conditions et montants du bonus peuvent évoluer · Code VISION221
+              À saisir exactement en <strong style={{ color: TEXT }}>minuscules</strong> · Code {CODE}
             </p>
 
-            {/* 3 boutons : 1-Copier (orange), 2-S'inscrire (violet), 3-Télécharger (outline) */}
+            {/* 3 boutons : 1-Copier, 2-S'inscrire, 3-Télécharger */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3">
               <button
                 onClick={handleCopy}
                 className="flex-1 sm:flex-initial sm:min-w-[260px] h-[52px] rounded-[10px] font-bold text-[14px] flex items-center justify-center gap-2 transition-all"
                 style={{
                   backgroundColor: copied ? '#F87171' : ORANGE,
-                  color: copied ? BG_DARK : BG_DARK,
+                  color: BG_DARK,
                   border: 'none',
                   boxShadow: `0 6px 20px ${ORANGE}33`,
                 }}
-                aria-label="Copier le code VISION221 dans le presse-papier"
+                aria-label={`Copier le code ${CODE} dans le presse-papier`}
               >
-                {copied ? (
+                {copyFailed ? (
+                  <>⚠ Copie impossible</>
+                ) : copied ? (
                   <>
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                       <polyline points="20 6 9 17 4 12" />
@@ -265,7 +296,7 @@ export default function Star888Client({ reviewDate }: { reviewDate: string }) {
                       <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
                       <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
                     </svg>
-                    Copier le code VISION221
+                    Copier le code {CODE}
                   </>
                 )}
               </button>
@@ -331,7 +362,7 @@ export default function Star888Client({ reviewDate }: { reviewDate: string }) {
             className="text-xl sm:text-2xl mb-4 text-center"
             style={{ fontFamily: "var(--font-bebas-neue), 'Bebas Neue', sans-serif", letterSpacing: '0.03em', color: TEXT }}
           >
-            Détails du bonus 888Starz
+            Détails de l&apos;offre 888Starz
           </h2>
           <div className="rounded-2xl overflow-hidden" style={{ border: `1px solid ${ORANGE}33`, backgroundColor: '#141C25' }}>
             <table className="w-full text-sm">
@@ -355,6 +386,9 @@ export default function Star888Client({ reviewDate }: { reviewDate: string }) {
               </tbody>
             </table>
           </div>
+          <p className="text-[10px] mt-2 text-center" style={{ color: TEXT_SEC }}>
+            Offre annoncée par la campagne partenaire — les conditions affichées par 888Starz prévalent.
+          </p>
         </div>
       </section>
 
@@ -365,7 +399,7 @@ export default function Star888Client({ reviewDate }: { reviewDate: string }) {
             className="text-xl sm:text-2xl mb-6 text-center"
             style={{ fontFamily: "var(--font-bebas-neue), 'Bebas Neue', sans-serif", letterSpacing: '0.03em', color: TEXT }}
           >
-            Comment utiliser le code VISION221 sur 888Starz
+            Comment utiliser le code {CODE} sur 888Starz
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {STEPS.map((step) => (
@@ -411,7 +445,7 @@ export default function Star888Client({ reviewDate }: { reviewDate: string }) {
             Moyens de dépôt 888Starz
           </h2>
           <p className="text-center text-sm mb-6" style={{ color: TEXT_SEC }}>
-            Moyens de paiement possibles selon le pays · disponibilité et conditions à vérifier.
+            Dépose dès {OFFER.minDeposit} avec le moyen disponible dans ton pays · disponibilité à vérifier.
           </p>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
             {PAYMENT_METHODS.map((m) => (
@@ -468,19 +502,19 @@ export default function Star888Client({ reviewDate }: { reviewDate: string }) {
           <div className="space-y-2">
             <details className="rounded-xl p-4" style={{ backgroundColor: '#141C25', border: `1px solid ${ORANGE}22` }}>
               <summary className="cursor-pointer font-bold" style={{ color: TEXT }}>Quel est le code promo 888Starz ?</summary>
-              <p className="mt-3 text-sm leading-relaxed" style={{ color: TEXT_SEC }}>Le code présenté sur cette page est <strong style={{ color: ORANGE }}>VISION221</strong>. Saisis-le en majuscules et vérifie son acceptation pendant l’inscription.</p>
+              <p className="mt-3 text-sm leading-relaxed" style={{ color: TEXT_SEC }}>Le code promo 888Starz présenté sur cette page est <strong style={{ color: ORANGE }}>{CODE}</strong>, à saisir exactement en minuscules pendant l&apos;inscription ou dans la section « Code Promo ».</p>
             </details>
             <details className="rounded-xl p-4" style={{ backgroundColor: '#141C25', border: `1px solid ${ORANGE}22` }}>
-              <summary className="cursor-pointer font-bold" style={{ color: TEXT }}>Quel est le bonus 888Starz en {reviewYear} ?</summary>
-              <p className="mt-3 text-sm leading-relaxed" style={{ color: TEXT_SEC }}>Les montants, conditions et critères d’éligibilité peuvent varier selon le pays et la période. Consulte l’offre actuellement affichée par 888Starz avant toute inscription ou dépôt.</p>
+              <summary className="cursor-pointer font-bold" style={{ color: TEXT }}>Que donne le code {CODE} en {reviewYear} ?</summary>
+              <p className="mt-3 text-sm leading-relaxed" style={{ color: TEXT_SEC }}>Le code {CODE} donne <strong style={{ color: ORANGE }}>300% de bonus et 100 free spins</strong>, sans condition de mise, dès 1 € de dépôt — offre annoncée par la campagne partenaire. Vérifie les conditions affichées par 888Starz pour ton pays avant tout dépôt.</p>
             </details>
             <details className="rounded-xl p-4" style={{ backgroundColor: '#141C25', border: `1px solid ${ORANGE}22` }}>
-              <summary className="cursor-pointer font-bold" style={{ color: TEXT }}>Comment utiliser VISION221 ?</summary>
-              <p className="mt-3 text-sm leading-relaxed" style={{ color: TEXT_SEC }}>Ouvre le lien d’inscription, crée ton compte, saisis VISION221 dans le champ prévu puis vérifie les conditions du premier dépôt et du bonus affichées pour ton pays.</p>
+              <summary className="cursor-pointer font-bold" style={{ color: TEXT }}>Quel est le dépôt minimum avec {CODE} ?</summary>
+              <p className="mt-3 text-sm leading-relaxed" style={{ color: TEXT_SEC }}>Le dépôt minimum annoncé est de <strong style={{ color: TEXT }}>1 €</strong>. Vérifie le montant réellement affiché par 888Starz et les moyens de paiement disponibles dans ton pays avant de confirmer.</p>
             </details>
             <details className="rounded-xl p-4" style={{ backgroundColor: '#141C25', border: `1px solid ${ORANGE}22` }}>
               <summary className="cursor-pointer font-bold" style={{ color: TEXT }}>Le code fonctionne-t-il dans tous les pays ?</summary>
-              <p className="mt-3 text-sm leading-relaxed" style={{ color: TEXT_SEC }}>La disponibilité peut dépendre du pays, du compte et de la période. Vérifie l’éligibilité directement auprès de 888Starz avant de déposer.</p>
+              <p className="mt-3 text-sm leading-relaxed" style={{ color: TEXT_SEC }}>La disponibilité peut dépendre du pays, du compte et de la période. Vérifie l&apos;éligibilité directement auprès de 888Starz avant de déposer.</p>
             </details>
           </div>
         </div>
@@ -492,7 +526,7 @@ export default function Star888Client({ reviewDate }: { reviewDate: string }) {
           <div className="rounded-xl p-4 text-center" style={{ backgroundColor: 'rgba(255, 122, 122, 0.06)', border: '1px solid rgba(255, 122, 122, 0.2)' }}>
             <p className="text-[11px] leading-relaxed" style={{ color: TEXT_SEC }}>
               ⚠ BTTSPredict est un site informatif et d&apos;affiliation. Nous ne prenons aucun pari, ne collectons aucun fonds et ne sommes pas un bookmaker.
-              Les bonus sont soumis aux conditions de 888Starz (mise, dépôt et éligibilité — voir site bookmaker).
+              L&apos;offre annoncée (300% + 100 free spins) est soumise aux conditions de 888Starz (éligibilité, moyens de paiement — voir site bookmaker).
               Pariez responsable · <a href="/jouer-responsable" className="underline" style={{ color: PRIMARY }}>en savoir plus</a> · 18+.
             </p>
           </div>
@@ -512,7 +546,7 @@ export default function Star888Client({ reviewDate }: { reviewDate: string }) {
         <div className="flex flex-col">
           <span className="text-[9px] uppercase tracking-widest" style={{ color: TEXT_SEC }}>Code promo</span>
           <span className="text-base font-black tracking-[0.12em]" style={{ color: ORANGE, fontFamily: 'var(--font-mono), monospace' }}>
-            VISION221
+            {CODE}
           </span>
         </div>
         <button
@@ -523,7 +557,7 @@ export default function Star888Client({ reviewDate }: { reviewDate: string }) {
             color: BG_DARK,
           }}
         >
-          {copied ? '✅ Copié' : '📋 Copier'}
+          {copyFailed ? '⚠ Manuel' : copied ? '✅ Copié' : '📋 Copier'}
         </button>
       </div>
 
