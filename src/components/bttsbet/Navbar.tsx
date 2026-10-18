@@ -6,6 +6,7 @@ import { SITE } from '@/lib/constants'
 import LanguageSwitcher, { useLanguage } from './LanguageSwitcher'
 import { localizedPath, translationsFor } from '@/lib/i18n'
 import { trackAffiliateCodeCopy } from '@/lib/affiliateTracking'
+import { copyTextToClipboard } from '@/lib/clipboard'
 
 /**
  * Navbar BTTSPredict — Design V2 (plateforme d'analyse)
@@ -33,13 +34,20 @@ export default function Navbar() {
   const [copied, setCopied] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
 
+  /* Code promo contextuel : btts221 sur les pages 888Starz, VISION221 (Linebet) ailleurs */
+  const is888Page = pathname?.includes('bonus-888starz') ?? false
+  const navPromoCode = is888Page ? 'btts221' : SITE.promoCode
+  const navPartner: 'linebet' | '888starz' = is888Page ? '888starz' : 'linebet'
+
   const copyCode = useCallback(async () => {
-    try { await navigator.clipboard.writeText(SITE.promoCode) } catch {}
-    trackAffiliateCodeCopy('linebet', 'navbar-vision221')
+    // « Copié » n'est affiché que si la copie a réellement réussi
+    const ok = await copyTextToClipboard(navPromoCode)
+    if (!ok) return
+    trackAffiliateCodeCopy(navPartner, 'navbar-promo-code')
     setCopied(true)
     navigator.vibrate?.(15)
     setTimeout(() => setCopied(false), 2000)
-  }, [])
+  }, [navPromoCode, navPartner])
 
   const isActive = (href: string) => {
     if (href === '/' || href === localizedPath('/', lang)) return pathname === href
@@ -102,9 +110,9 @@ export default function Navbar() {
                   backgroundColor: 'rgba(47, 125, 255, 0.10)',
                   color: copied ? '#34D399' : '#4A90FF',
                 }}
-                aria-label={`Copier le code promo ${SITE.promoCode}`}
+                aria-label={`Copier le code promo ${navPromoCode}`}
               >
-                {copied ? '✓ Copié' : SITE.promoCode}
+                {copied ? '✓ Copié' : navPromoCode}
               </button>
 
               {/* Hamburger — mobile/tablette */}
@@ -212,7 +220,7 @@ export default function Navbar() {
                   color: copied ? '#34D399' : '#4A90FF',
                 }}
               >
-                {copied ? '✓ Copié' : SITE.promoCode}
+                {copied ? '✓ Copié' : navPromoCode}
               </button>
             </div>
           </div>

@@ -1,22 +1,33 @@
 'use client'
 
-import { useState } from 'react'
-import { AFFILIATE, SITE } from '@/lib/constants'
+import { useEffect, useState } from 'react'
+import { AFFILIATE } from '@/lib/constants'
 import { trackAffiliateAction, trackAffiliateCodeCopy } from '@/lib/affiliateTracking'
+import { copyTextToClipboard } from '@/lib/clipboard'
 
-/* ─── Palette locale — Linebet vert clair (couleur de marque) ───────── */
-const GOLD = '#2F7DFF'       // vert clair Linebet
-const GOLD_LIGHT = '#3FBA7C' // vert clair sombre
-const PRIMARY = '#2F7DFF'    // boutons et accents en vert clair
+/* ─── Code promo Linebet — VISION221 (majuscules) ───────────────────── */
+const CODE = 'VISION221'
+
+/* ─── Offre annoncée par la campagne partenaire ─────────────────────── */
+const OFFER = {
+  bonus: '300%',
+  freeSpins: '100',
+  wagering: 'Sans condition de mise',
+  minDeposit: '1 €',
+}
+
+/* ─── Palette locale — Linebet bleu (couleur de marque du thème) ────── */
+const GOLD = '#2F7DFF'
+const GOLD_LIGHT = '#3FBA7C'
+const PRIMARY = '#2F7DFF'
 const PRIMARY_HOVER = '#3FBA7C'
 const TEXT = '#F2F6FA'
 const TEXT_SEC = '#9DABBB'
 const BG_DARK = '#0B0F14'
 
-/* Lien affilié Linebet — registration */
+/* Lien affilié Linebet — registration (inchangé) */
 const LINEBET_SIGNUP = AFFILIATE.linebet
-/* Vrai lien affilié de téléchargement (APK) — fix : le bouton "Télécharger"
-   pointait vers la registration. Aucune URL fabriquée, cf. constants.ts. */
+/* Vrai lien affilié de téléchargement (APK) — inchangé */
 const LINEBET_DOWNLOAD = AFFILIATE.linebetDownload
 
 /* ─── Étapes (4) — design moderne avec icônes SVG ───────────────────── */
@@ -34,8 +45,8 @@ const STEPS = [
   },
   {
     n: '02',
-    title: 'Saisis le code VISION221',
-    desc: "Pendant l'inscription (ou dans « Code Promo » de ton compte), colle exactement VISION221 en majuscules.",
+    title: `Saisis le code ${CODE}`,
+    desc: `Pendant l'inscription (ou dans « Code Promo » de ton compte), colle exactement ${CODE} en majuscules.`,
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
         <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
@@ -45,8 +56,8 @@ const STEPS = [
   },
   {
     n: '03',
-    title: 'Vérifie les conditions de dépôt',
-    desc: "Les moyens de paiement, montants minimums et délais dépendent du pays et de l’offre affichée par Linebet.",
+    title: `Dépose dès ${OFFER.minDeposit}`,
+    desc: `Effectue ton premier dépôt à partir de ${OFFER.minDeposit} avec Wave, Orange Money ou un autre moyen disponible dans ton pays.`,
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
         <rect x="2" y="6" width="20" height="12" rx="2" />
@@ -57,8 +68,8 @@ const STEPS = [
   },
   {
     n: '04',
-    title: 'Vérifie le bonus reçu',
-    desc: "Les conditions du bonus, les montants disponibles et les critères d'éligibilité peuvent évoluer. Vérifie toujours les conditions actuellement affichées par Linebet avant toute inscription ou dépôt.",
+    title: 'Reçois 300% + 100 free spins',
+    desc: `Le bonus de ${OFFER.bonus} et les ${OFFER.freeSpins} free spins sont crédités selon l'offre affichée par Linebet, ${OFFER.wagering.toLowerCase()}.`,
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 2l2.5 6.5L21 9l-5 4.5L17.5 21 12 17l-5.5 4L8 13.5 3 9l6.5-.5L12 2z" />
@@ -76,25 +87,32 @@ const PAYMENT_METHODS = [
   { name: 'Free Money', color: '#CC0066', short: 'F' },
 ]
 
-/* ─── Détails bonus ──────────────────────────────────────────────────── */
+/* ─── Détails offre ─────────────────────────────────────────────────── */
 const BONUS_ROWS = [
-  { label: 'Bonus', value: 'Conditions à vérifier auprès de Linebet', highlight: true },
-  { label: 'Code', value: 'VISION221 (copiable)' },
-  { label: 'Dépôt min', value: 'À vérifier sur l’offre officielle' },
-  { label: 'Méthodes', value: 'Selon le pays et les options affichées par Linebet' },
-  { label: 'Pays', value: 'Disponibilité à vérifier selon le pays' },
+  { label: 'Bonus', value: '300% sur le premier dépôt', highlight: true },
+  { label: 'Free spins', value: '100 free spins inclus' },
+  { label: 'Condition de mise', value: 'Sans condition de mise (offre annoncée)' },
+  { label: 'Dépôt minimum', value: '1 €' },
+  { label: 'Code', value: `${CODE} (copiable — en majuscules)` },
+  { label: 'Pays', value: 'Sénégal, Mali, CIV, Guinée, Congo, Maroc' },
 ]
 
 /* ─── Liens internes ─────────────────────────────────────────────────── */
 const INTERNAL_LINKS = [
-  { href: '/btts/predictions/today', label: 'Tableau des sélections internationales' },
-  { href: '/bonus-888starz', label: 'Bonus 888Starz' },
+  { href: '/btts/predictions/today', label: 'Pronostics du jour' },
+  { href: '/bonus-888starz', label: 'Code promo 888Starz' },
   { href: '/btts-c-est-quoi', label: "C'est quoi BTTS ?" },
 ]
 
 export default function LinebetClient() {
   const [copied, setCopied] = useState(false)
+  const [copyFailed, setCopyFailed] = useState(false)
   const [toast, setToast] = useState(false)
+
+  /* Mesure : 1 vue de la page promo par session */
+  useEffect(() => {
+    trackAffiliateAction('linebet', 'promo_view', 'code-promo-linebet-page')
+  }, [])
 
   const showToast = () => {
     setToast(true)
@@ -102,23 +120,18 @@ export default function LinebetClient() {
   }
 
   const handleCopy = async () => {
-    trackAffiliateCodeCopy('linebet', 'linebet-promo-code-card')
-    try {
-      await navigator.clipboard.writeText('VISION221')
+    // Succès affiché UNIQUEMENT si la copie a réellement réussi
+    const ok = await copyTextToClipboard(CODE)
+    if (ok) {
+      trackAffiliateCodeCopy('linebet', 'linebet-promo-code-card')
       setCopied(true)
+      setCopyFailed(false)
       showToast()
       setTimeout(() => setCopied(false), 2000)
-    } catch {
-      // Fallback pour anciens navigateurs
-      const el = document.createElement('textarea')
-      el.value = 'VISION221'
-      document.body.appendChild(el)
-      el.select()
-      try { document.execCommand('copy') } catch {}
-      document.body.removeChild(el)
-      setCopied(true)
+    } else {
+      setCopyFailed(true)
       showToast()
-      setTimeout(() => setCopied(false), 2000)
+      setTimeout(() => setCopyFailed(false), 4000)
     }
   }
 
@@ -127,7 +140,7 @@ export default function LinebetClient() {
 
   return (
     <>
-      {/* Toast flottant — affiché quand le code est copié (clic sur bouton ou sur le code lui-même) */}
+      {/* Toast flottant — seulement après un vrai succès de copie */}
       {toast && (
         <div
           className="fixed top-4 left-1/2 -translate-x-1/2 z-[100] px-5 py-3 rounded-xl font-bold text-sm shadow-2xl"
@@ -140,7 +153,7 @@ export default function LinebetClient() {
           role="status"
           aria-live="polite"
         >
-          ✅ Code copié !
+          {copyFailed ? `⚠ Copie impossible — code : ${CODE}` : '✅ Code copié !'}
         </div>
       )}
 
@@ -152,7 +165,7 @@ export default function LinebetClient() {
           </li>
           <li aria-hidden="true">/</li>
           <li>
-            <span aria-current="page">Code Promo Linebet Afrique Ouest &amp; Maroc</span>
+            <span aria-current="page">Code Promo Linebet Afrique de l&apos;Ouest &amp; Maroc</span>
           </li>
         </ol>
       </nav>
@@ -164,17 +177,34 @@ export default function LinebetClient() {
             className="text-3xl sm:text-5xl mb-3 leading-tight"
             style={{ fontFamily: "var(--font-bebas-neue), 'Bebas Neue', sans-serif", letterSpacing: '0.03em', color: TEXT }}
           >
-            GUIDE <span style={{ color: GOLD, textShadow: `0 0 22px ${GOLD}66` }}>LINEBET</span> VISION221 — SÉNÉGAL
+            CODE PROMO <span style={{ color: GOLD, textShadow: `0 0 22px ${GOLD}66` }}>LINEBET</span> VISION221
           </h1>
           <div className="mx-auto mb-4 flex min-h-16 max-w-[280px] items-center justify-center rounded-xl bg-white px-4 py-2 shadow-lg sm:max-w-[340px]">
             <img src="/logos/linebet-provided.jpg" alt="Logo officiel Linebet" className="max-h-14 w-auto object-contain" width={1280} height={465} loading="eager" />
           </div>
           <p className="text-sm sm:text-base max-w-2xl mx-auto leading-relaxed" style={{ color: TEXT_SEC }}>
-            Inscription, code copiable et conditions à vérifier avant tout dépôt.
+            Inscris-toi avec le code <strong style={{ color: GOLD }}>{CODE}</strong> et profite de l&apos;offre annoncée : <strong style={{ color: TEXT }}>300% de bonus + 100 free spins</strong>, sans condition de mise, dès 1 € de dépôt.
           </p>
-          <p className="text-sm sm:text-base max-w-2xl mx-auto mt-3 leading-relaxed" style={{ color: TEXT_SEC }}>
-            Code promo <strong style={{ color: GOLD }}>VISION221</strong>. Les conditions du bonus et les montants disponibles peuvent évoluer — vérifiez toujours les conditions affichées par l'opérateur avant toute inscription ou dépôt.
+          <p className="text-[11px] mt-3" style={{ color: TEXT_SEC }}>
+            Offre annoncée — vérifie les conditions affichées par Linebet · 18+
           </p>
+        </div>
+      </section>
+
+      {/* ─────────── ENCARD OFFRE ─────────── */}
+      <section className="pb-6" aria-label="Offre de bienvenue annoncée">
+        <div className="max-w-2xl mx-auto px-4 sm:px-6">
+          <div className="rounded-2xl p-5 text-center" style={{ backgroundColor: `${GOLD}0D`, border: `1px solid ${GOLD}55` }}>
+            <p className="text-2xl sm:text-3xl font-black" style={{ color: GOLD, fontFamily: "var(--font-bebas-neue), 'Bebas Neue', sans-serif", letterSpacing: '0.04em' }}>
+              300% DE BONUS + 100 FREE SPINS
+            </p>
+            <p className="text-xs mt-2 font-semibold" style={{ color: TEXT }}>
+              Sans condition de mise · Dès 1 € de dépôt
+            </p>
+            <p className="text-[10px] mt-1" style={{ color: TEXT_SEC }}>
+              Offre annoncée par la campagne partenaire — vérifie les conditions affichées par Linebet avant tout dépôt.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -203,7 +233,7 @@ export default function LinebetClient() {
               type="button"
               onClick={copyCode}
               title="Cliquer pour copier"
-              aria-label="Code promo VISION221 — cliquer pour copier dans le presse-papier"
+              aria-label={`Code promo ${CODE} — cliquer pour copier dans le presse-papier`}
               className="inline-flex items-center justify-center gap-3 mb-3 select-all cursor-pointer transition-transform hover:scale-[1.02] active:scale-[0.98] bg-transparent border-0 p-0"
               style={{
                 color: GOLD,
@@ -212,7 +242,7 @@ export default function LinebetClient() {
               }}
             >
               <span className="text-5xl sm:text-6xl font-black tracking-[0.15em]">
-                VISION221
+                {CODE}
               </span>
               <span
                 className="inline-flex items-center justify-center w-9 h-9 rounded-lg flex-shrink-0"
@@ -236,23 +266,25 @@ export default function LinebetClient() {
               </span>
             </button>
             <p className="text-xs mb-6" style={{ color: TEXT_SEC }}>
-              Les conditions et montants du bonus peuvent évoluer — vérifiez les conditions affichées par Linebet avant tout dépôt.
+              À saisir exactement en <strong style={{ color: TEXT }}>majuscules</strong> · Code {CODE}
             </p>
 
-            {/* 3 boutons : 1-Copier (or), 2-S'inscrire (violet), 3-Télécharger (outline) */}
+            {/* 3 boutons : 1-Copier, 2-S'inscrire, 3-Télécharger */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3">
               <button
                 onClick={handleCopy}
                 className="flex-1 sm:flex-initial sm:min-w-[260px] h-[52px] rounded-[10px] font-bold text-[14px] flex items-center justify-center gap-2 transition-all"
                 style={{
                   backgroundColor: copied ? '#2F7DFF' : GOLD,
-                  color: copied ? BG_DARK : BG_DARK,
+                  color: BG_DARK,
                   border: 'none',
                   boxShadow: `0 6px 20px ${GOLD}33`,
                 }}
-                aria-label="Copier le code VISION221 dans le presse-papier"
+                aria-label={`Copier le code ${CODE} dans le presse-papier`}
               >
-                {copied ? (
+                {copyFailed ? (
+                  <>⚠ Copie impossible</>
+                ) : copied ? (
                   <>
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                       <polyline points="20 6 9 17 4 12" />
@@ -265,7 +297,7 @@ export default function LinebetClient() {
                       <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
                       <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
                     </svg>
-                    Copier le code VISION221
+                    Copier le code {CODE}
                   </>
                 )}
               </button>
@@ -324,14 +356,14 @@ export default function LinebetClient() {
         </div>
       </section>
 
-      {/* ─────────── TABLE BONUS ─────────── */}
+      {/* ─────────── TABLE OFFRE ─────────── */}
       <section className="pb-10">
         <div className="max-w-2xl mx-auto px-4 sm:px-6">
           <h2
             className="text-xl sm:text-2xl mb-4 text-center"
             style={{ fontFamily: "var(--font-bebas-neue), 'Bebas Neue', sans-serif", letterSpacing: '0.03em', color: TEXT }}
           >
-            Détails du bonus Linebet
+            Détails de l&apos;offre Linebet
           </h2>
           <div className="rounded-2xl overflow-hidden" style={{ border: `1px solid ${GOLD}33`, backgroundColor: '#141C25' }}>
             <table className="w-full text-sm">
@@ -355,6 +387,9 @@ export default function LinebetClient() {
               </tbody>
             </table>
           </div>
+          <p className="text-[10px] mt-2 text-center" style={{ color: TEXT_SEC }}>
+            Offre annoncée par la campagne partenaire — les conditions affichées par Linebet prévalent.
+          </p>
         </div>
       </section>
 
@@ -365,7 +400,7 @@ export default function LinebetClient() {
             className="text-xl sm:text-2xl mb-6 text-center"
             style={{ fontFamily: "var(--font-bebas-neue), 'Bebas Neue', sans-serif", letterSpacing: '0.03em', color: TEXT }}
           >
-            Comment utiliser le code VISION221
+            Comment utiliser le code {CODE}
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {STEPS.map((step) => (
@@ -411,7 +446,7 @@ export default function LinebetClient() {
                 boxShadow: `0 4px 14px ${GOLD}33`,
               }}
             >
-              {copied ? '✅ Code copié — colle-le sur Linebet' : '📋 Copier VISION221 maintenant'}
+              {copyFailed ? `⚠ Copie impossible — code : ${CODE}` : copied ? `✅ Code copié — colle-le sur Linebet` : `📋 Copier ${CODE} maintenant`}
             </button>
           </div>
         </div>
@@ -427,7 +462,7 @@ export default function LinebetClient() {
             Moyens de dépôt Linebet
           </h2>
           <p className="text-center text-sm mb-6" style={{ color: TEXT_SEC }}>
-            Les moyens de paiement et conditions de dépôt peuvent varier selon le pays et la période.
+            Dépose dès {OFFER.minDeposit} avec le moyen disponible dans ton pays · disponibilité à vérifier.
           </p>
           <div className="grid grid-cols-2 sm:grid-cols-5 gap-3">
             {PAYMENT_METHODS.map((m) => (
@@ -452,7 +487,7 @@ export default function LinebetClient() {
         </div>
       </section>
 
-      {/* ─────────── FAQ visible (3 questions — alignées sur JSON-LD) ─────────── */}
+      {/* ─────────── FAQ visible (alignée sur JSON-LD) ─────────── */}
       <section className="pb-10">
         <div className="max-w-2xl mx-auto px-4 sm:px-6">
           <h2
@@ -464,16 +499,19 @@ export default function LinebetClient() {
           <div className="space-y-3">
             {[
               {
-                q: 'Quel est le code promo Linebet Afrique Ouest ?',
-                a: "Le code promo est VISION221 — saisi en majuscules lors de l'inscription ou dans la section « Code Promo » de ton compte. Les conditions du bonus, les montants disponibles et les critères d'éligibilité peuvent évoluer. Vérifie toujours les conditions actuellement affichées par Linebet avant toute inscription ou dépôt.",
+                q: 'Quel est le code promo Linebet ?',
+                a: `Le code promo Linebet est ${CODE} — à saisir en majuscules lors de l'inscription ou dans la section « Code Promo » de ton compte. Valable au Sénégal, au Mali, en Côte d'Ivoire, en Guinée, au Congo et au Maroc.`,
               },
               {
-                q: 'Comment déposer avec Wave ?',
-                                    a: "Si Wave est disponible pour ton pays, sélectionne-le dans la section Dépôt de Linebet, puis vérifie le montant minimum, les délais et les conditions affichées avant de confirmer.",
-
+                q: `Que donne le code ${CODE} ?`,
+                a: `300% de bonus et 100 free spins, sans condition de mise, dès 1 € de dépôt — offre annoncée par la campagne partenaire. Vérifie l'offre affichée par Linebet pour ton pays avant tout dépôt.`,
               },
               {
-                q: 'Le bonus est-il valable au Maroc, Mali et Côte d\'Ivoire ?',
+                q: 'Comment déposer avec Wave ou Orange Money ?',
+                a: "Si Wave ou Orange Money est disponible pour ton pays, sélectionne-le dans la section Dépôt de Linebet, dépose à partir de 1 € puis vérifie les conditions affichées avant de confirmer.",
+              },
+              {
+                q: `Le bonus est-il valable au Maroc, au Mali et en Côte d'Ivoire ?`,
                 a: "La disponibilité du code et de l'offre dépend du pays, du compte et de la période. Vérifie ton éligibilité et les conditions actuellement affichées par Linebet avant toute inscription ou dépôt.",
               },
             ].map((item) => (
@@ -519,7 +557,7 @@ export default function LinebetClient() {
           <div className="rounded-xl p-4 text-center" style={{ backgroundColor: 'rgba(255, 122, 122, 0.06)', border: '1px solid rgba(255, 122, 122, 0.2)' }}>
             <p className="text-[11px] leading-relaxed" style={{ color: TEXT_SEC }}>
               ⚠ BTTSPredict est un site informatif et d&apos;affiliation. Nous ne prenons aucun pari, ne collectons aucun fonds et ne sommes pas un bookmaker.
-              Les bonus, montants, conditions de mise et éventuels dépôts minimums sont soumis aux conditions de Linebet.
+              L&apos;offre annoncée (300% + 100 free spins) est soumise aux conditions de Linebet (éligibilité, moyens de paiement — voir site bookmaker).
               Pariez responsable · <a href="/jouer-responsable" className="underline" style={{ color: PRIMARY }}>en savoir plus</a> · 18+.
             </p>
           </div>
@@ -539,7 +577,7 @@ export default function LinebetClient() {
         <div className="flex flex-col">
           <span className="text-[9px] uppercase tracking-widest" style={{ color: TEXT_SEC }}>Code promo</span>
           <span className="text-base font-black tracking-[0.12em]" style={{ color: GOLD, fontFamily: 'var(--font-mono), monospace' }}>
-            VISION221
+            {CODE}
           </span>
         </div>
         <button
@@ -550,7 +588,7 @@ export default function LinebetClient() {
             color: BG_DARK,
           }}
         >
-          {copied ? '✅ Copié' : '📋 Copier'}
+          {copyFailed ? '⚠ Manuel' : copied ? '✅ Copié' : '📋 Copier'}
         </button>
       </div>
 

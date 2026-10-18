@@ -11,8 +11,9 @@ const SLUG = 'bonus-888starz-btts221'
 const PAGE_URL = `${SITE_URL}/${SLUG}`
 const REVIEW_DATE = getDakarDateString()
 const YEAR = Number(REVIEW_DATE.slice(0, 4))
-const TITLE = `Code promo 888Starz btts221 ${YEAR}`
-const DESCRIPTION = `Code promo 888Starz btts221 : offre annoncée de 150 free spins et dépôt de 1 USD à vérifier selon le pays, le compte et la période. Guide ${YEAR}, 18+.`
+// Titre différencié de /bonus-888starz (angle « code btts221 ») — 46 chars
+const TITLE = `Code 888Starz btts221 : bonus 300% + 100 spins`
+const DESCRIPTION = `Le code btts221 débloque 300% de bonus + 100 free spins sur 888Starz, sans condition de mise, dès 1 € de dépôt. Guide ${YEAR}, 18+.`
 
 checkSeo('bonus-888starz-btts221', TITLE, DESCRIPTION)
 
@@ -21,8 +22,8 @@ export const metadata: Metadata = {
   description: DESCRIPTION,
   keywords: [
     'code promo 888starz btts221', '888starz btts221', 'bonus 888starz btts221',
-    '888starz 150 free spins', '888starz bonus free spins', '888starz promo code',
-    'code promo 888starz', 'bonus 888starz', '888starz minimum deposit',
+    '888starz 100 free spins', '888starz 300 bonus', '888starz bonus free spins', '888starz promo code',
+    'code promo 888starz', 'bonus 888starz', '888starz minimum deposit', 'btts221 code',
   ],
   alternates: {
     canonical: PAGE_URL,
@@ -77,13 +78,13 @@ function howToJsonLd() {
     '@context': 'https://schema.org',
     '@type': 'HowTo',
     name: 'Comment utiliser le code promo 888Starz btts221',
-    description: 'Étapes pour vérifier et utiliser le code btts221 selon les conditions affichées par 888Starz.',
+    description: 'Étapes pour activer l\'offre annoncée avec le code btts221 : 300% de bonus + 100 free spins, sans condition de mise, dès 1 € de dépôt.',
     totalTime: 'PT5M',
     step: [
       { '@type': 'HowToStep', position: 1, name: 'Ouvrir 888Starz', text: 'Ouvre le lien officiel 888Starz depuis cette page.' },
       { '@type': 'HowToStep', position: 2, name: 'Saisir btts221', text: 'Crée ton compte et saisis exactement btts221 en minuscules si le champ est disponible.' },
-      { '@type': 'HowToStep', position: 3, name: 'Vérifier les conditions', text: 'Vérifie l’offre affichée pour ton pays avant tout dépôt.' },
-      { '@type': 'HowToStep', position: 4, name: 'Lire les règles du bonus', text: 'Lis les conditions des free spins, du dépôt et de la mise avant de confirmer.' },
+      { '@type': 'HowToStep', position: 3, name: 'Déposer dès 1 €', text: 'Effectue un premier dépôt à partir de 1 € avec un moyen de paiement disponible dans ton pays.' },
+      { '@type': 'HowToStep', position: 4, name: 'Recevoir le bonus et les free spins', text: '300% de bonus + 100 free spins, sans condition de mise, selon l\'offre affichée par 888Starz. Vérifie les conditions actuelles avant de confirmer.' },
     ],
   }
 }
@@ -94,8 +95,8 @@ function faqJsonLd() {
     '@type': 'FAQPage',
     mainEntity: [
       { '@type': 'Question', name: 'Quel est le code promo 888Starz btts221 ?', acceptedAnswer: { '@type': 'Answer', text: 'Le code présenté sur cette page est btts221, en minuscules. Vérifiez son acceptation pendant l’inscription.' } },
-      { '@type': 'Question', name: 'Le code btts221 donne-t-il 150 free spins ?', acceptedAnswer: { '@type': 'Answer', text: 'La campagne annoncée mentionne 150 free spins, mais l’offre doit être confirmée sur 888Starz selon le pays, le compte et la période.' } },
-      { '@type': 'Question', name: 'Quel est le dépôt minimum annoncé ?', acceptedAnswer: { '@type': 'Answer', text: 'Le dépôt minimum annoncé est de 1 USD pour cette campagne. Vérifiez le montant affiché par 888Starz avant toute transaction.' } },
+      { '@type': 'Question', name: 'Le code btts221 donne-t-il 300% + 100 free spins ?', acceptedAnswer: { '@type': 'Answer', text: 'Oui — l’offre annoncée par la campagne est de 300% de bonus + 100 free spins, sans condition de mise. Vérifiez l’offre affichée sur 888Starz selon votre pays, votre compte et la période.' } },
+      { '@type': 'Question', name: 'Quel est le dépôt minimum annoncé ?', acceptedAnswer: { '@type': 'Answer', text: 'Le dépôt minimum annoncé est de 1 €. Vérifiez le montant affiché par 888Starz avant toute transaction.' } },
       { '@type': 'Question', name: 'Le code btts221 fonctionne-t-il dans tous les pays ?', acceptedAnswer: { '@type': 'Answer', text: 'L’éligibilité n’est pas garantie dans tous les pays. Vérifiez les règles locales, le compte et les conditions de 888Starz.' } },
     ],
   }

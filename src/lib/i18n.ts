@@ -39,9 +39,20 @@ export const TRANSLATIONS = {
       changeLanguage: 'Changer de langue', moreLanguages: 'Langues disponibles',
     },
     hero: {
-      badge: 'Plateforme mondiale de prédictions BTTS', title: 'La référence mondiale des prédictions BTTS.',
-      subtitle: 'BTTS, Over 2,5 et score exact sur des matchs internationaux. Données horodatées et méthode documentée.', commandCenter: 'Marchés suivis', liveData: 'Données en direct', btts: 'Les deux marquent', goals: 'Total de buts', exact: 'Projection exacte', active: 'Analyse active',
-      cta: 'Pronostic du jour', timezone: 'Heure officielle Africa/Dakar',
+      // Clé composée utilisée par le H1 de Hero.tsx (identique à title1 + title2)
+      title: 'Les matchs. Décryptés par les données.',
+      title1: 'Les matchs.', title2: 'Décryptés par les données.',
+      subtitle: 'BTTS, Over 2.5, scores exacts et signaux de marché analysés à partir de données actualisées.',
+      liveData: 'Analyse en direct', timezone: 'Africa/Dakar',
+      cta: 'Voir les analyses du jour', ctaSecondary: 'Découvrir la plateforme',
+      note18: '18+ · Données publiées avant le match',
+      statsRate: 'Taux de réussite vérifié', statsTotal: 'Matchs analysés', statsRecord: 'Résultats publiés',
+      partnerEyebrow: 'Partenaire', partnerQuestion: 'Vous souhaitez miser sur vos analyses ?', partnerJoin: 'Rejoignez LINEBET',
+      promoLabel: 'Code promo', bonus: 'Bonus de bienvenue sur le 1er dépôt*',
+      partnerCta: 'Créer mon compte LINEBET', copied: 'Code copié !', copy: 'Copier',
+      partnerDisclaimer: '*Selon les conditions de l’offre.',
+      trendLabel: 'Tendance vérifiée',
+      funnelData: 'Données', funnelAnalysis: 'Analyse', funnelPick: 'Pronostic', funnelAction: 'Action',
     },
     predictions: {
       all: 'Tous', today: 'Auj.', tomorrow: 'Dem.', leagues: 'Toutes', noMatches: 'Aucun match sous ce filtre', seeAll: 'Voir tous les pronostics du jour', matchPage: 'Analyse',
