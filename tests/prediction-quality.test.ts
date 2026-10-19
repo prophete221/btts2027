@@ -9,19 +9,20 @@ describe('prediction quality guard', () => {
     expect(humanMethodLabel('insufficient')).toBe('Données insuffisantes')
   })
 
+  it('recognizes the real nested ESPN payload used by predictions.json', () => {
+    expect(predictionQuality({
+      match: 'Real FC', proba: 0.68, source: 'poisson-v92-real-data', dataSource: 'ESPN_TEAM_SCHEDULE',
+      dataQuality: 'HIGH', matchCountHome: 8, matchCountAway: 8,
+      xgHome: 1.8, xgAway: 1.4,
+      analysisData: { homeLambda: 1.8, awayLambda: 1.4 },
+    })).toBe('reliable')
+  })
+
   it('distinguishes limited data from a fully supported signal', () => {
     expect(predictionQuality({ match: 'Limited FC', proba: 0.64 })).toBe('limited')
     expect(predictionQuality({
-      match: 'Supported FC',
-      proba: 0.68,
-      source: 'ESPN',
-      analysis: {
-        homeLambda: 1.2,
-        awayLambda: 1.1,
-        homeForm: { scoredIn: 4 },
-        awayForm: { scoredIn: 4 },
-        hasRealData: true,
-      },
+      match: 'Supported FC', proba: 0.68, source: 'ESPN',
+      analysis: { homeLambda: 1.2, awayLambda: 1.1, homeForm: { scoredIn: 4 }, awayForm: { scoredIn: 4 }, hasRealData: true },
     })).toBe('reliable')
   })
 })
