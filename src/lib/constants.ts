@@ -7,9 +7,6 @@ export const SITE = {
   url: 'https://bttspredict.com',
   tagline: "Pronostics football BTTS & Over 2,5 calculés par un modèle statistique transparent pour parieurs sérieux",
   promoCode: 'VISION221',
-  // Stats RÉELLES calculées par scripts/update-win-history.mjs depuis public/predictions-archive/
-  // → Aucune stat figée ici. Les chiffres proviennent de public/win-history.json.
-  // → Pour afficher le taux dans l'UI, lire win-history.json (côté client) ou fetch /win-history.json
   accuracy: 'Calculé en temps réel depuis l\'archive publique',
   vipAccuracy: 'Calculé en temps réel depuis l\'archive publique',
   vipMinDeposit: '10 € (≈ 6 560 XOF)',
@@ -25,13 +22,23 @@ export const AFFILIATE = {
     'https://linebet.press/vision221',
     'https://linebetop.com/en?promocode=VISION221',
   ],
-  // 888starz — Nouveau partenaire d'affiliation (même code promo VISION221)
+  // 888starz utilise btts221. VISION221 est réservé à Linebet.
   star888: 'https://888ghta.com/8hwF6V',
   star888Download: 'https://888ghta.com/5o6glw',
   rel: 'sponsored nofollow',
 }
 
-// Liste des bookmakers affiliés pour itération dans l'UI
+// Politique VIP centrale : les écrans doivent reprendre ces faits, pas des valeurs héritées.
+// Le dépôt est une condition déclarée du parcours, pas une preuve automatique de paiement.
+export const VIP_POLICY = {
+  partner: 'Linebet',
+  promoCode: 'VISION221',
+  minimumDeposit: '10 €',
+  minimumDepositXof: '≈ 6 560 XOF',
+  activation: 'Après vérification manuelle sur WhatsApp',
+  verificationTime: 'Dans la journée, selon les horaires de publication',
+} as const
+
 export const BOOKMAKERS = [
   {
     id: 'linebet',
@@ -50,7 +57,6 @@ export const BOOKMAKERS = [
     name: '888starz',
     signupLink: AFFILIATE.star888,
     downloadLink: AFFILIATE.star888Download,
-    // Code 888Starz réel = btts221 (VISION221 est le code Linebet)
     promoCode: 'btts221',
     color: 'gold',
     bonus: '300% + 100 free spins (offre annoncée, dès 1 € de dépôt)',
@@ -60,7 +66,6 @@ export const BOOKMAKERS = [
   },
 ] as const
 
-// Logo Android — utilisé sur les boutons de téléchargement APK
 export const ANDROID_LOGO = '/logos/android.svg'
 
 export const NAV_LINKS = [
@@ -106,7 +111,7 @@ export const FAQ_ITEMS = [
   },
   {
     q: 'Comment utiliser les codes promo VISION221 et btts221 ?',
-    a: "VISION221 est le code promo Linebet, btts221 est le code promo 888Starz. Inscrivez-vous via notre lien, saisissez le code correspondant dans le champ « Code Promo » puis effectuez un premier dépôt dès 1 € : 300% de bonus + 100 free spins, sans condition de mise (offre annoncée par la campagne partenaire). Vérifiez l'offre affichée par l'opérateur avant tout dépôt. Les conditions commerciales peuvent changer.",
+    a: "VISION221 est le code promo Linebet, btts221 est le code promo 888Starz. Inscrivez-vous via le lien correspondant, saisissez le code affiché par l'opérateur puis vérifiez l'offre et ses conditions avant tout dépôt. Les campagnes et l'éligibilité peuvent changer selon le pays, le compte et la période.",
   },
   {
     q: 'Les pronostics gratuits sont-ils fiables ?',
@@ -127,7 +132,6 @@ export const FAQ_ITEMS = [
 ]
 
 export const VIP_DESCRIPTION = 'VIP : historique complet + sélections du jour — Débloque avec un nouveau compte Linebet via VISION221 et un dépôt minimum de 10 €'
-
 
 export const LONASE = { name: 'LONASE', description: 'Loterie Nationale du Sénégal' }
 
