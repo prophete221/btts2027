@@ -92,7 +92,7 @@ const BONUS_ROWS = [
   { label: 'Condition de mise', value: 'Sans condition de mise (offre annoncée)' },
   { label: 'Dépôt minimum', value: '1 €' },
   { label: 'Code', value: `${CODE} (copiable — en minuscules)` },
-  { label: 'Pays', value: 'Sénégal, Mali, CIV, Guinée, Congo, Maroc' },
+  { label: 'Pays', value: 'International — tous les pays du monde, sans exception' },
 ]
 
 /* ─── Liens internes ─────────────────────────────────────────────────── */
@@ -221,7 +221,7 @@ export default function Star888Client({ reviewDate }: { reviewDate: string }) {
             {/* Badge exclusif */}
             <div className="inline-block px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-[0.18em] mb-5"
               style={{ backgroundColor: `${ORANGE}1A`, color: ORANGE, border: `1px solid ${ORANGE}55` }}>
-              ★ Exclusif Afrique de l&apos;Ouest
+              ★ Offre Internationale — Tous Pays
             </div>
 
             {/* Code btts221 — cliquable directement */}

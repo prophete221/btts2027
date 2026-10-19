@@ -94,7 +94,7 @@ const BONUS_ROWS = [
   { label: 'Condition de mise', value: 'Sans condition de mise (offre annoncée)' },
   { label: 'Dépôt minimum', value: '1 €' },
   { label: 'Code', value: `${CODE} (copiable — en majuscules)` },
-  { label: 'Pays', value: 'Sénégal, Mali, CIV, Guinée, Congo, Maroc' },
+  { label: 'Pays', value: 'International — tous les pays du monde, sans exception' },
 ]
 
 /* ─── Liens internes ─────────────────────────────────────────────────── */
@@ -165,7 +165,7 @@ export default function LinebetClient() {
           </li>
           <li aria-hidden="true">/</li>
           <li>
-            <span aria-current="page">Code Promo Linebet Afrique de l&apos;Ouest &amp; Maroc</span>
+            <span aria-current="page">Code Promo Linebet International</span>
           </li>
         </ol>
       </nav>
@@ -222,7 +222,7 @@ export default function LinebetClient() {
             {/* Badge exclusif */}
             <div className="inline-block px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-[0.18em] mb-5"
               style={{ backgroundColor: `${GOLD}1A`, color: GOLD, border: `1px solid ${GOLD}55` }}>
-              ★ Exclusif Afrique de l&apos;Ouest
+              ★ Code Promo N°1 Mondial
             </div>
 
             {/* Code VISION221 — cliquable directement */}
@@ -500,7 +500,7 @@ export default function LinebetClient() {
             {[
               {
                 q: 'Quel est le code promo Linebet ?',
-                a: `Le code promo Linebet est ${CODE} — à saisir en majuscules lors de l'inscription ou dans la section « Code Promo » de ton compte. Valable au Sénégal, au Mali, en Côte d'Ivoire, en Guinée, au Congo et au Maroc.`,
+                a: `Le code promo Linebet est ${CODE} — à saisir en majuscules lors de l'inscription ou dans la section « Code Promo » de ton compte. Valable dans le monde entier — tous les pays du monde, sans exception.`,
               },
               {
                 q: `Que donne le code ${CODE} ?`,
@@ -511,7 +511,7 @@ export default function LinebetClient() {
                 a: "Si Wave ou Orange Money est disponible pour ton pays, sélectionne-le dans la section Dépôt de Linebet, dépose à partir de 1 € puis vérifie les conditions affichées avant de confirmer.",
               },
               {
-                q: `Le bonus est-il valable au Maroc, au Mali et en Côte d'Ivoire ?`,
+                q: 'Le bonus est-il valable dans tous les pays ?',
                 a: "La disponibilité du code et de l'offre dépend du pays, du compte et de la période. Vérifie ton éligibilité et les conditions actuellement affichées par Linebet avant toute inscription ou dépôt.",
               },
             ].map((item) => (

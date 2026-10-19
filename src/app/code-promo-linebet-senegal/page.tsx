@@ -94,7 +94,7 @@ function buildBreadcrumbJsonLd() {
     '@type': 'BreadcrumbList',
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Accueil', item: SITE_URL },
-      { '@type': 'ListItem', position: 2, name: 'Code Promo Linebet Afrique de l\'Ouest & Maroc', item: PAGE_URL },
+      { '@type': 'ListItem', position: 2, name: 'Code Promo Linebet International', item: PAGE_URL },
     ],
   }
 }
@@ -150,7 +150,7 @@ function buildFaqJsonLd() {
         name: 'Quel est le code promo Linebet ?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: "Le code promo Linebet est VISION221 — à saisir en majuscules lors de l'inscription ou dans la section « Code Promo » de ton compte. Valable au Sénégal, au Mali, en Côte d'Ivoire, en Guinée, au Congo et au Maroc.",
+          text: "Le code promo Linebet est VISION221 — à saisir en majuscules lors de l'inscription ou dans la section « Code Promo » de ton compte. Valable dans le monde entier — tous les pays du monde, sans exception.",
         },
       },
       {
@@ -171,7 +171,7 @@ function buildFaqJsonLd() {
       },
       {
         '@type': 'Question',
-        name: "Le bonus est-il valable au Maroc, au Mali et en Côte d'Ivoire ?",
+        name: 'Le bonus est-il valable dans tous les pays ?',
         acceptedAnswer: {
           '@type': 'Answer',
           text: "La disponibilité du code et de l'offre dépend du pays, du compte et de la période. Vérifiez votre éligibilité et les conditions actuellement affichées par Linebet avant toute inscription ou dépôt.",
