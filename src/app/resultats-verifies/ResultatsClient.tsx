@@ -80,12 +80,17 @@ function useReveal<T extends HTMLElement>(): [React.RefObject<T | null>, boolean
   useEffect(() => {
     const el = ref.current
     if (!el) return
-    if (typeof IntersectionObserver === 'undefined') { setVisible(true); return }
+    // Révélation différée d'un frame (évite un setState synchrone dans
+    // l'effet — cascade de rendus — tout en restant quasi immédiate).
+    if (typeof IntersectionObserver === 'undefined') {
+      const id = requestAnimationFrame(() => setVisible(true))
+      return () => cancelAnimationFrame(id)
+    }
     // Déjà dans le viewport au montage → révéler immédiatement (sinon un
     // conteneur plus grand que l'écran n'atteindrait jamais le seuil).
     if (el.getBoundingClientRect().top < window.innerHeight * 0.92) {
-      setVisible(true)
-      return
+      const id = requestAnimationFrame(() => setVisible(true))
+      return () => cancelAnimationFrame(id)
     }
     const io = new IntersectionObserver(
       ([entry]) => {

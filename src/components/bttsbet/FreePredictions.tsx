@@ -10,6 +10,8 @@ import { useLanguage } from './LanguageSwitcher'
 import { translationsFor, type Locale } from '@/lib/i18n'
 import { generateMatchSlug } from '@/lib/match-slug'
 import { trackAffiliateAction } from '@/lib/affiliateTracking'
+import { humanMethodLabel, predictionQuality, type PredictionQuality as DataQuality } from '@/lib/predictionQuality'
+import { analysisHeading } from '@/lib/predictionPresentation'
 
 // ─── Helpers ────────────────────────────────────────────────────────────
 function getMatchStatus(date: string, time?: string): 'live' | 'upcoming' | 'finished' {
@@ -91,6 +93,7 @@ interface MatchData {
   aiOver25Prob?: string
   aiKeyFact?: string
   aiAnalysis?: string
+  quality?: DataQuality
 }
 
 // ─── Probability Bar — visual representation of Poisson model ────────────
@@ -154,10 +157,11 @@ function TeamLogo({ src, name, size = 48 }: { src?: string; name: string; size?:
 }
 
 // ─── Prediction Card — main component (rich, with BTTS + O2.5 separately) ─
-// ─── Poisson fallback: compute BTTS / Over 2.5 from lambdas ────────────
-// If a match has BTTS but not Over 2.5 (or vice versa), we compute the
-// missing prediction from the available lambdas (expected goals).
-// This ensures EVERY match has both predictions — no "non disponible".
+// ─── Poisson: recompute a missing market ONLY from real lambdas ─────────
+// If a match has BTTS but not Over 2.5 (or vice versa) AND the payload
+// carries real expected goals, we compute the missing market from those
+// real lambdas. No invented lambda, no clamped percentage: without real
+// inputs the card shows an honest "Données insuffisantes" state.
 
 function poissonP(k: number, lambda: number): number {
   return Math.pow(lambda, k) * Math.exp(-lambda) / factorial(k)
@@ -221,47 +225,43 @@ function PredictionCard({ match, index, initialLocale }: { match: MatchData; ind
   const timeUntil = getTimeUntil(match.date, match.time)
   const dateLabel = formatDateShort(match.date, lang)
 
-  // ─── Fallback Poisson: ensure EVERY match has both BTTS + Over 2.5 ──
-  // If a prediction is missing, compute it from available lambdas.
-  // This eliminates all "non disponible" cases for a professional, reliable site.
+  // ─── Données réelles uniquement — aucun lambda inventé, aucun clamp ──
+  // Les lignes affichées proviennent du payload réel (pipeline Poisson v92
+  // sur données ESPN). Un marché manquant est recalculé uniquement si des
+  // lambdas réels existent ; sinon l'état est "Données insuffisantes".
 
   // Get predictions data
   const rawBtts = match.predictions.find(p => p.type === 'BTTS')
   const rawOver25 = match.predictions.find(p => p.type.includes('Over'))
 
-  // Extract lambdas (from either prediction — they're the same model)
-  const homeLambda = rawBtts?.homeLambda || rawOver25?.homeLambda
-  const awayLambda = rawBtts?.awayLambda || rawOver25?.awayLambda
+  // Extract real lambdas (from either prediction — they're the same model)
+  const homeLambda = rawBtts?.homeLambda ?? rawOver25?.homeLambda
+  const awayLambda = rawBtts?.awayLambda ?? rawOver25?.awayLambda
 
-  // Default lambdas if completely missing (league-average fallback: ~1.3 goals/team)
-  const effHomeLambda = homeLambda ?? 1.3
-  const effAwayLambda = awayLambda ?? 1.1
-
-  // Build BTTS prediction (use existing or compute from Poisson)
-  const bttsProb = rawBtts?.bttsProb ?? computeBtts(effHomeLambda, effAwayLambda)
-  const bttsPred = rawBtts || {
+  // Build BTTS prediction (use existing, or compute from real lambdas only)
+  const bttsProb = rawBtts?.bttsProb ?? (homeLambda != null && awayLambda != null ? computeBtts(homeLambda, awayLambda) : undefined)
+  const bttsPred = rawBtts ?? (bttsProb != null && homeLambda != null && awayLambda != null ? {
     type: 'BTTS',
     prediction: bttsProb >= 0.48 ? 'Oui' : 'Non',
-    confidence: Math.round(Math.max(40, Math.min(54, bttsProb * 100))),  // 40-54% range (free tier, calibration réaliste)
-    bttsProb: Math.max(0.40, Math.min(0.54, bttsProb)),  // clamp displayed proba to 40-54%
-    homeLambda: effHomeLambda,
-    awayLambda: effAwayLambda,
-  }
+    confidence: Math.round(bttsProb * 100),
+    bttsProb,
+    homeLambda,
+    awayLambda,
+  } : null)
 
-  // Build Over 2.5 prediction (use existing or compute from Poisson)
-  const over25Prob = rawOver25?.over25Prob ?? computeOver25(effHomeLambda, effAwayLambda)
-  const over25Pred = rawOver25 || {
+  // Build Over 2.5 prediction (use existing, or compute from real lambdas only)
+  const over25Prob = rawOver25?.over25Prob ?? (homeLambda != null && awayLambda != null ? computeOver25(homeLambda, awayLambda) : undefined)
+  const over25Pred = rawOver25 ?? (over25Prob != null && homeLambda != null && awayLambda != null ? {
     type: 'Over 2.5',
-    prediction: over25Prob >= 0.49 ? 'Oui' : 'Non',  
-    confidence: Math.round(Math.max(40, Math.min(54, over25Prob * 100))),  // 40-54% range
-    over25Prob: Math.max(0.40, Math.min(0.54, over25Prob)),  // clamp displayed proba to 40-54%
-    homeLambda: effHomeLambda,
-    awayLambda: effAwayLambda,
-  }
+    prediction: over25Prob >= 0.49 ? 'Oui' : 'Non',
+    confidence: Math.round(over25Prob * 100),
+    over25Prob,
+    homeLambda,
+    awayLambda,
+  } : null)
 
-  // Lambda → expected goals display
-  const homeGoals = effHomeLambda ? effHomeLambda.toFixed(2) : null
-  const awayGoals = effAwayLambda ? effAwayLambda.toFixed(2) : null
+  // Qualité des données — libellé humain, jamais un pourcentage inventé
+  const dataQuality: DataQuality = match.quality ?? (bttsPred || over25Pred ? 'limited' : 'insufficient')
 
   return (
     <motion.div
@@ -327,7 +327,8 @@ function PredictionCard({ match, index, initialLocale }: { match: MatchData; ind
                   <line x1="15" y1="9" x2="15.01" y2="9" />
                 </svg>
               </div>
-              <span className="text-xs uppercase tracking-widest font-semibold text-cendre">{t.predictions.aiPick}</span>
+              {/* Libellé humain de la section d'analyse */}
+              <span className="text-xs uppercase tracking-widest font-semibold text-cendre">{analysisHeading(lang)}</span>
             </div>
             <span className="text-xs text-cendre">BTTS + Over 2.5</span>
           </div>
@@ -337,19 +338,23 @@ function PredictionCard({ match, index, initialLocale }: { match: MatchData; ind
             {/* BTTS column */}
             <div className="space-y-2 text-center">
               <div className="text-xs uppercase tracking-widest font-semibold text-primary">BTTS</div>
-              <div className="text-2xl sm:text-3xl font-bold" style={{ color: bttsPred.prediction === 'Oui' ? '#2F7DFF' : '#9DABBB' }}>
-                {bttsPred.prediction === 'Oui' ? t.predictions.bttsYes : t.predictions.bttsNo}
+              <div className="text-2xl sm:text-3xl font-bold" style={{ color: bttsPred?.prediction === 'Oui' ? '#2F7DFF' : '#9DABBB' }}>
+                {bttsPred ? (bttsPred.prediction === 'Oui' ? t.predictions.bttsYes : t.predictions.bttsNo) : '—'}
               </div>
             </div>
 
             {/* Over 2.5 column */}
             <div className="space-y-2 text-center border-l border-[#223041] pl-3 sm:pl-4">
               <div className="text-xs uppercase tracking-widest font-semibold text-primary">Over 2.5</div>
-              <div className="text-2xl sm:text-3xl font-bold" style={{ color: over25Pred.prediction === 'Oui' ? '#2F7DFF' : '#9DABBB' }}>
-                {over25Pred.prediction === 'Oui' ? t.predictions.bttsYes : t.predictions.bttsNo}
+              <div className="text-2xl sm:text-3xl font-bold" style={{ color: over25Pred?.prediction === 'Oui' ? '#2F7DFF' : '#9DABBB' }}>
+                {over25Pred ? (over25Pred.prediction === 'Oui' ? t.predictions.bttsYes : t.predictions.bttsNo) : '—'}
               </div>
             </div>
           </div>
+
+          {/* Qualité des données — « Basé sur les données récentes » / « Données limitées » / « Données insuffisantes »
+              (affiché uniquement quand les données sont réellement insuffisantes pour le dernier cas) */}
+          <p className="text-[11px] text-cendre mt-2 text-center">{humanMethodLabel(dataQuality, lang)}</p>
         </div>
 
         {/* Expandable analysis section */}
@@ -363,7 +368,7 @@ function PredictionCard({ match, index, initialLocale }: { match: MatchData; ind
               className="overflow-hidden"
             >
               <div className="mt-4 pt-4 border-t border-edge space-y-3">
-                {/* BTTSPredict AI enrichment */}
+                {/* Enrichissement — libellé humain */}
                 {(match.aiKeyFact || match.aiExactScore) && (
                   <div className="bg-[#2F7DFF]/5 rounded-lg p-3 border border-[#2F7DFF]/20">
                     <div className="flex items-center justify-between mb-2">
@@ -372,7 +377,7 @@ function PredictionCard({ match, index, initialLocale }: { match: MatchData; ind
                           <path d="M12 2L2 7l10 5 10-5-10-5z" />
                           <path d="M2 17l10 5 10-5M2 12l10 5 10-5" />
                         </svg>
-                        <span className="text-xs uppercase tracking-widest font-semibold text-[#4A90FF]">BTTSPredict AI</span>
+                        <span className="text-xs uppercase tracking-widest font-semibold text-[#4A90FF]">{lang === 'en' ? 'Match analysis' : lang === 'ar' ? 'تحليل المباراة' : 'Analyse du match'}</span>
                       </div>
                       {match.aiExactScore && (
                         <div className="flex items-center gap-1">
@@ -515,6 +520,8 @@ export default function FreePredictions({ initialLocale }: { initialLocale?: Loc
         }
         const matchMap = new Map<string, MatchData>()
         for (const p of rawPredictions) {
+          // Qualité des données calculée sur la ligne réelle du payload (format ESPN v92 reconnu)
+          const rowQuality: DataQuality = predictionQuality(p)
           // v91: each prediction already groups both markets under p.predictions[]
           // If p.predictions[] exists, use it directly. Otherwise build from legacy fields.
           const preds = Array.isArray(p.predictions) && p.predictions.length > 0
@@ -547,6 +554,7 @@ export default function FreePredictions({ initialLocale }: { initialLocale?: Loc
               homeLogo: p.homeLogo || '',
               awayLogo: p.awayLogo || '',
               predictions: preds,
+              quality: rowQuality,
               reliabilityScore: p.reliabilityScore,
               xgTotal: p.xgTotal,
               analysis: p.analysis,

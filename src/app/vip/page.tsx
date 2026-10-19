@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import dynamic from 'next/dynamic'
 import { AFFILIATE } from '@/lib/constants'
+import { onlyVipFixtures } from '@/lib/vipPredictions'
 import { useLanguage } from '@/components/bttsbet/LanguageSwitcher'
 import type { Locale } from '@/lib/i18n'
 import { trackAffiliateAction, trackAffiliateCodeCopy } from '@/lib/affiliateTracking'
@@ -206,7 +207,7 @@ const copy = {
     kickoff: 'Coup d’envoi',
     locked: 'Sélection verrouillée',
     lockedCta: 'Débloquer',
-    combosEmpty: 'Les affiches du jour arrivent avec la prochaine mise à jour.',
+    combosEmpty: 'Aucune sélection VIP disponible aujourd’hui.',
     benefitsEyebrow: 'Ce que tu débloques',
     benefitsTitle: 'Un espace VIP complet, pas juste une liste',
     b1Title: 'Pronos VIP du jour',
@@ -316,7 +317,7 @@ const copy = {
     kickoff: 'Kick-off',
     locked: 'Selection locked',
     lockedCta: 'Unlock',
-    combosEmpty: 'Today’s fixtures will arrive with the next update.',
+    combosEmpty: 'No VIP selection available today.',
     benefitsEyebrow: 'What you unlock',
     benefitsTitle: 'A complete VIP space, not just a list',
     b1Title: 'Daily VIP picks',
@@ -426,7 +427,7 @@ const copy = {
     kickoff: 'انطلاق المباراة',
     locked: 'الاختيار مقفل',
     lockedCta: 'فتح',
-    combosEmpty: 'ستصل مواجهات اليوم مع التحديث القادم.',
+    combosEmpty: 'لا توجد اختيارات VIP متاحة اليوم.',
     benefitsEyebrow: 'ماذا تفتح',
     benefitsTitle: 'فضاء VIP كامل، وليس مجرد قائمة',
     b1Title: 'توقعات VIP اليومية',
@@ -510,14 +511,16 @@ export default function VipPage() {
     }
   }, [openStep])
 
-  /* Aperçu VIP : fixtures à venir depuis predictions.json (sélections verrouillées) */
+  /* Aperçu VIP : uniquement les fixtures explicitement marquées VIP par la source de données.
+     Jamais de contenu gratuit (free / predictions / vipPreview non flagué) dans cet espace —
+     seule une donnée explicitement VIP (payload.vip / payload.vipPredictions, flag vip) est retenue. */
   useEffect(() => {
     let cancelled = false
     fetch('/predictions.json', { cache: 'no-store' })
-      .then((response) => (response.ok ? (response.json() as Promise<{ date?: string; free?: PredictionFixture[]; vipPreview?: PredictionFixture[]; predictions?: PredictionFixture[] }>) : null))
+      .then((response) => (response.ok ? (response.json() as Promise<{ date?: string; vip?: PredictionFixture[]; vipPredictions?: PredictionFixture[] }>) : null))
       .then((payload) => {
         if (cancelled || !payload || payload.date !== dakarDate()) return
-        const rows = [...(payload.vipPreview || []), ...(payload.free || []), ...(payload.predictions || [])]
+        const rows = onlyVipFixtures(payload)
         const seen = new Set<string>()
         const upcoming: PredictionFixture[] = []
         for (const fixture of rows) {

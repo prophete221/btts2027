@@ -133,7 +133,9 @@ export default function VectorWordmark({
   const hostRef = useRef<HTMLSpanElement | null>(null)
   const canvasRef = useRef<HTMLCanvasElement | null>(null)
   const cbs = useRef({ onReady, onSettled, onError })
-  cbs.current = { onReady, onSettled, onError }
+  useEffect(() => {
+    cbs.current = { onReady, onSettled, onError }
+  })
 
   useEffect(() => {
     const host = hostRef.current

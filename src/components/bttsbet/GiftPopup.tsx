@@ -38,7 +38,6 @@ export default function GiftPopup() {
       /* sessionStorage indisponible — on affiche normalement */
     }
     if (alreadyClosed) return
-    setDismissed(false)
 
     let armed = false
     const onScroll = () => {
@@ -51,10 +50,17 @@ export default function GiftPopup() {
         window.removeEventListener('scroll', onScroll)
       }
     }
-    onScroll()
+    /* Armer au frame suivant : évite un setState synchrone dans l'effet
+       (cascade de rendus). Comportement identique — le seuil de scroll
+       est évalué dès le montage, puis à chaque scroll/resize. */
+    const arm = requestAnimationFrame(() => {
+      setDismissed(false)
+      onScroll()
+    })
     window.addEventListener('scroll', onScroll, { passive: true })
     window.addEventListener('resize', onScroll, { passive: true })
     return () => {
+      cancelAnimationFrame(arm)
       window.removeEventListener('scroll', onScroll)
       window.removeEventListener('resize', onScroll)
     }

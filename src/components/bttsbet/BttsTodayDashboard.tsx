@@ -222,8 +222,10 @@ function useCountUp(target: number, active: boolean, duration = 900): number {
       /* no-op */
     }
     if (reduce) {
-      setValue(target)
-      return
+      /* Valeur finale sans animation — différé d'un frame pour éviter un
+         setState synchrone dans l'effet (cascade de rendus). */
+      const id = requestAnimationFrame(() => setValue(target))
+      return () => cancelAnimationFrame(id)
     }
     let raf = 0
     const t0 = performance.now()

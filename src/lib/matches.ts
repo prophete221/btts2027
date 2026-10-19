@@ -102,6 +102,9 @@ export interface MatchData {
   matchCountAway?: number
   aiRisk?: string
   formBtts?: string
+  // Date de publication réelle du snapshot de données (predictions.json / archives).
+  // Remplace toute date de source codée en dur dans l'UI.
+  lastUpdated?: string
 }
 
 /**
@@ -139,6 +142,7 @@ export function loadAllMatches(): Map<string, MatchData> {
         if (!home || !away || !date) continue
 
         const slug = generateMatchSlug(home, away, date)
+        const snapshotPublishedAt = data.lastUpdated || data.date || file.replace(/\.json$/, '')
         if (!matches.has(slug)) {
           matches.set(slug, {
             slug,
@@ -167,6 +171,7 @@ export function loadAllMatches(): Map<string, MatchData> {
             matchCountAway: p.matchCountAway,
             aiRisk: p.ai_risk,
             formBtts: p.formBTTS,
+            lastUpdated: snapshotPublishedAt,
           })
         }
 
@@ -188,6 +193,7 @@ export function loadAllMatches(): Map<string, MatchData> {
         if (match.matchCountAway == null && p.matchCountAway != null) match.matchCountAway = p.matchCountAway
         if (!match.aiRisk && p.ai_risk) match.aiRisk = p.ai_risk
         if (!match.formBtts && p.formBTTS) match.formBtts = p.formBTTS
+        if (!match.lastUpdated && snapshotPublishedAt) match.lastUpdated = snapshotPublishedAt
         match.predictions.push({
           type: p.type || p.market || '',
           market: p.type || p.market || '',
@@ -234,9 +240,11 @@ export function loadAllMatches(): Map<string, MatchData> {
               homeLogo: p.homeLogo,
               awayLogo: p.awayLogo,
               predictions: [],
+              lastUpdated: current.lastUpdated || current.date || undefined,
             }
             matches.set(slug, match)
           }
+          if (!match.lastUpdated && current.lastUpdated) match.lastUpdated = current.lastUpdated
           if (!match.aiExactScore && p.ai_exact_score) match.aiExactScore = p.ai_exact_score
           if (!match.exactScoreProb && p.exact_score_prob) match.exactScoreProb = p.exact_score_prob
           if (!match.aiBttsProb && p.ai_btts_prob) match.aiBttsProb = p.ai_btts_prob

@@ -134,13 +134,17 @@ export default function AnimatedTitle({
   const Tag = as as any
   const hostRef = useRef<HTMLElement | null>(null)
   const layerRef = useRef<HTMLSpanElement | null>(null)
-  const [phase, setPhase] = useState<Phase>('idle')
 
   const reduced =
     typeof window !== 'undefined' &&
     typeof window.matchMedia === 'function' &&
     window.matchMedia('(prefers-reduced-motion: reduce)').matches
   const active = enabled && !reduced
+
+  /* Phase 'armed' dès le premier render quand l'animation est active :
+     l'armement reste pré-paint (useLayoutEffect) sans setState synchrone
+     dans l'effet (cascade de rendus interdite par react-hooks). */
+  const [phase, setPhase] = useState<Phase>(() => (active ? 'armed' : 'idle'))
 
   /* Hôte à dégradé global (ex. VIP : h1 avec background-clip:text +
      -webkit-text-fill-color:transparent) : le clip ne traverse PAS les boîtes
@@ -203,6 +207,7 @@ export default function AnimatedTitle({
   useLayoutEffect(() => {
     if (!active) return
     let cancelled = false
+    let raf0 = 0
     let raf1 = 0
     let raf2 = 0
     let failsafe = 0
@@ -214,7 +219,12 @@ export default function AnimatedTitle({
       }, 180)
     }
     applyHostGradient() /* mesure à l'état repos, avant tout transform */
-    setPhase('armed')
+    /* Re-armement différé d'un frame : le montage part déjà de 'armed'
+       (initialiseur useState). Utile si l'effet re-court après une
+       désactivation ; sans effet sinon (bail-out React sur même valeur). */
+    raf0 = requestAnimationFrame(() => {
+      if (!cancelled) setPhase('armed')
+    })
     const start = () => {
       if (cancelled) return
       raf1 = requestAnimationFrame(() => {
@@ -249,6 +259,7 @@ export default function AnimatedTitle({
     window.addEventListener('resize', onResize)
     return () => {
       cancelled = true
+      cancelAnimationFrame(raf0)
       cancelAnimationFrame(raf1)
       cancelAnimationFrame(raf2)
       window.clearTimeout(failsafe)
