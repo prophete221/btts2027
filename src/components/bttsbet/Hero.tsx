@@ -12,9 +12,9 @@ import MovingGradientButton from './MovingGradientButton'
  * Hero v4 — « signal terminal » premium.
  *
  * Colonne gauche : eyebrow, H1 (accents dégradés), texte, 2 CTA internes,
- * puis bandeau de chiffres 100% factuels lu depuis les JSON réels
- * (sélections publiées, résultats vérifiés, début du suivi public) —
- * chaque item est masqué si la donnée n'est pas disponible.
+ * puis bandeau défilant des grands clubs européens suivis (décoratif,
+ * logos locaux, défilement infini, pause au survol, désactivable via
+ * prefers-reduced-motion).
  * Colonne droite : carte « Signal en vedette » — un VRAI match du flux
  * predictions.json (marchés, xG, forme, fiabilité, horodatage GMT),
  * sans aucune statistique inventée. Fallback si flux vide : pipeline
@@ -22,6 +22,17 @@ import MovingGradientButton from './MovingGradientButton'
  * La carte « Centre de transparence » est supprimée (décision produit).
  * Aucun pourcentage de réussite affiché ici.
  */
+
+/**
+ * Logos des grands clubs suivis — fichiers locaux (public/logos/clubs/),
+ * téléchargés depuis la même source ESPN que les logos d'équipes des matchs.
+ * Purement décoratif : aucun club n'endosse ce site.
+ */
+const CLUB_LOGOS = [
+  'real-madrid', 'barcelona', 'manchester-united', 'liverpool', 'bayern',
+  'psg', 'chelsea', 'manchester-city', 'arsenal', 'juventus', 'ac-milan',
+  'inter', 'dortmund', 'atletico', 'tottenham',
+] as const
 
 interface MarketPick {
   type: string
@@ -93,33 +104,25 @@ export default function Hero({ initialLocale }: { initialLocale?: Locale } = {})
   const t = translationsFor(lang)
 
   const [featured, setFeatured] = useState<FeedItem | null>(null)
-  const [feedCount, setFeedCount] = useState<number | null>(null)
-  const [verified, setVerified] = useState<number | null>(null)
-  const [sinceDate, setSinceDate] = useState<string | null>(null)
   const [ready, setReady] = useState(false)
 
   useEffect(() => {
     let cancelled = false
-    Promise.all([
-      fetch('/predictions.json').then(r => (r.ok ? r.json() : null)).catch(() => null),
-      fetch('/win-history.json').then(r => (r.ok ? r.json() : null)).catch(() => null),
-    ]).then(([pred, hist]) => {
-      if (cancelled) return
-      const raw: FeedItem[] = Array.isArray(pred?.free)
-        ? pred.free
-        : Array.isArray(pred?.predictions) ? pred.predictions : []
-      // Signal en vedette : prochain match à venir avec les données les plus riches
-      const upcoming = raw
-        .filter(m => dayDiff(m.date) >= 0)
-        .sort((a, b) => dataRichness(b) - dataRichness(a))
-      setFeatured(upcoming[0] || raw[0] || null)
-      setFeedCount(raw.length > 0 ? raw.length : null)
-      const s = hist?.stats
-      if (s && typeof s.total === 'number' && s.total > 0) setVerified(s.total)
-      const since = hist?.trackingPeriod?.startDate
-      if (typeof since === 'string') setSinceDate(since)
-      setReady(true)
-    })
+    fetch('/predictions.json')
+      .then(r => (r.ok ? r.json() : null))
+      .catch(() => null)
+      .then(pred => {
+        if (cancelled) return
+        const raw: FeedItem[] = Array.isArray(pred?.free)
+          ? pred.free
+          : Array.isArray(pred?.predictions) ? pred.predictions : []
+        // Signal en vedette : prochain match à venir avec les données les plus riches
+        const upcoming = raw
+          .filter(m => dayDiff(m.date) >= 0)
+          .sort((a, b) => dataRichness(b) - dataRichness(a))
+        setFeatured(upcoming[0] || raw[0] || null)
+        setReady(true)
+      })
     return () => { cancelled = true }
   }, [])
 
@@ -186,31 +189,26 @@ export default function Hero({ initialLocale }: { initialLocale?: Locale } = {})
               </a>
             </div>
 
-            {/* Bandeau de chiffres factuels — lus depuis les JSON réels */}
-            {(feedCount !== null || verified !== null || sinceDate) && (
-              <dl className="hp-hstats">
-                {feedCount !== null && (
-                  <div className="hp-hstat">
-                    <dt className="hp-hstat__label">{t.home2.heroStat1}</dt>
-                    <dd className="hp-hstat__value">{feedCount}</dd>
+            {/* Bandeau défilant — grands clubs suivis (décoratif, logos locaux) */}
+            <div className="hp-clubs" aria-hidden="true">
+              <div className="hp-clubs__track">
+                {[0, 1].map(copy => (
+                  <div className="hp-clubs__group" key={copy}>
+                    {CLUB_LOGOS.map(slug => (
+                      <img
+                        key={`${copy}-${slug}`}
+                        src={`/logos/clubs/${slug}.png`}
+                        alt=""
+                        width={500}
+                        height={500}
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    ))}
                   </div>
-                )}
-                {verified !== null && (
-                  <div className="hp-hstat">
-                    <dt className="hp-hstat__label">{t.home2.heroStat2}</dt>
-                    <dd className="hp-hstat__value">{verified}</dd>
-                  </div>
-                )}
-                {sinceDate && (
-                  <div className="hp-hstat">
-                    <dt className="hp-hstat__label">{t.home2.heroStat3}</dt>
-                    <dd className="hp-hstat__value hp-hstat__value--date">{sinceDate}</dd>
-                  </div>
-                )}
-              </dl>
-            )}
-
-            <p className="hp-hero__reassurance">{t.home2.heroReassurance}</p>
+                ))}
+              </div>
+            </div>
           </div>
 
           {/* ═══ Carte « Signal en vedette » — vraies données du flux ═══ */}

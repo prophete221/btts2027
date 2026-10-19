@@ -4066,43 +4066,43 @@ body {
   .hp-hero__cta-zone { flex-direction: row; align-items: center; }
   .hp-hero__cta-zone .hp-btn-primary, .hp-hero__cta-zone .hp-btn-ghost { width: auto; }
 }
-.hp-hero__reassurance {
-  margin: 1.05rem 0 0;
-  color: #8B99AD;
-  font-size: 0.78125rem;
-  line-height: 1.5;
-}
-
-/* ── Bandeau de chiffres factuels (données réelles des JSON) ── */
-.hp-hstats {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem 2.4rem;
+/* ── Bandeau défilant des grands clubs suivis (décoratif) ──
+   Piste dupliquée ×2 → translateX(-50%) = boucle parfaite sans saut. */
+.hp-clubs {
   margin: 1.8rem 0 0;
   padding-top: 1.25rem;
   border-top: 1px solid rgba(148, 184, 220, 0.10);
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 8%, #000 92%, transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0, #000 8%, #000 92%, transparent 100%);
 }
-.hp-hstat { display: grid; gap: 0.3rem; }
-.hp-hstat__value {
-  order: -1;
-  color: #F2F6FA;
-  font-family: var(--font-display), system-ui, sans-serif;
-  font-size: 1.5rem;
-  font-weight: 800;
-  font-variant-numeric: tabular-nums;
-  line-height: 1.05;
-  letter-spacing: -0.01em;
+.hp-clubs__track {
+  display: flex;
+  width: max-content;
+  animation: hp-clubs-scroll 40s linear infinite;
+  will-change: transform;
 }
-.hp-hstat__value--date {
-  font-size: 1.1rem;
-  letter-spacing: 0.02em;
-  padding-top: 0.18rem;
+.hp-clubs__group {
+  display: flex;
+  align-items: center;
+  gap: 2.6rem;
+  padding-right: 2.6rem; /* = gap : garantit l'équivalence des deux moitiés */
 }
-.hp-hstat__label {
-  color: #8B99AD;
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.05em;
+.hp-clubs__track img {
+  height: 2.5rem;
+  width: auto;
+  filter: grayscale(100%) brightness(1.45);
+  opacity: 0.48;
+  transition: opacity 0.25s ease, filter 0.25s ease;
+}
+.hp-clubs__track img:hover {
+  opacity: 1;
+  filter: none;
+}
+.hp-clubs:hover .hp-clubs__track { animation-play-state: paused; }
+@keyframes hp-clubs-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
 }
 
 /* ── Carte « Signal en vedette » (vraies données du flux) ── */
@@ -5058,7 +5058,8 @@ body {
   .hp-sect-head { align-items: flex-start; flex-direction: column; }
   .hp-mc-foot { flex-wrap: wrap; }
   .hp-live { padding: 1.15rem 1.1rem 1.2rem; }
-  .hp-hstats { gap: 0.9rem 1.8rem; }
+  .hp-clubs__group { gap: 1.9rem; padding-right: 1.9rem; }
+  .hp-clubs__track img { height: 1.8rem; }
   .hp-live-zone { margin-inline: auto; }
 }
 
@@ -5066,6 +5067,7 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .hp-mc-card { animation: none; }
   .hp-live__pulse { animation: none; }
+  .hp-clubs__track { animation: none; }
   .hp-live__skeleton, .hp-skeleton { animation: none; background: rgba(255, 255, 255, 0.035); }
   .hp-btn-primary, .hp-btn-primary:hover, .hp-btn-ghost, .hp-pillar, .hp-mc-card, .hp-trend__bar, .hp-league { transition: none; transform: none; }
   .hp-btn-primary:hover .hp-btn-arrow { transform: none; }
@@ -5118,17 +5120,6 @@ body::before {
 }
 .hp-live::before {
   background: linear-gradient(90deg, transparent, rgba(69, 199, 247, 0.5), rgba(47, 125, 255, 0.28), transparent);
-}
-
-/* — Statistiques hero (chiffres factuels) — hairline + verre — */
-.hp-hstats { gap: 0.9rem; }
-.hp-hstat {
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 14px;
-  background: rgba(12, 17, 25, 0.55);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  padding: 0.7rem 0.95rem;
 }
 
 /* — Panneaux et cartes génériques — profondeur douce — */
