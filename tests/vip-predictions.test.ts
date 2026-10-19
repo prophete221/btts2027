@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { onlyVipPredictions } from '@/lib/vipPredictions'
+import { onlyVipFixtures, onlyVipPredictions } from '@/lib/vipPredictions'
 
 describe('VIP prediction separation', () => {
   it('keeps only explicitly VIP-marked data', () => {
@@ -10,5 +10,16 @@ describe('VIP prediction separation', () => {
     ]
 
     expect(onlyVipPredictions(rows).map((row) => row.home)).toEqual(['VIP FC'])
+  })
+
+  it('ignores free and generic prediction arrays', () => {
+    const payload = {
+      vip: [{ home: 'VIP FC', away: 'VIP United', vip: true }],
+      free: [{ home: 'Free FC', away: 'Free United' }],
+      predictions: [{ home: 'Generic FC', away: 'Generic United', tier: 'GOLD' }],
+    }
+
+    expect(onlyVipFixtures(payload).map((row) => row.home)).toEqual(['VIP FC'])
+    expect(onlyVipFixtures({ free: payload.free, predictions: payload.predictions })).toEqual([])
   })
 })
