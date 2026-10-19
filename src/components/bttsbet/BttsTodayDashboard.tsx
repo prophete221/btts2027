@@ -1,9 +1,12 @@
 'use client'
 
 /**
- * BttsTodayDashboard — terminal-style predictions dashboard for /btts/predictions/today
+ * BttsTodayDashboard — premium predictions dashboard for /btts/predictions/today
  *
- * Visual identity: dark premium analytics / data terminal.
+ * Visual identity V3 — « plateforme mondiale » : dark glass, liserés animés,
+ * barres de probabilité animées au scroll, reveal en cascade (IntersectionObserver),
+ * combo IA vedette à bordure conique animée, sheen au survol des cartes.
+ * Motion design 100% CSS/IO — reduced-motion : tout est désactivé et visible.
  * NOT a blog article.
  *
  * Data sources (read-only):
@@ -24,7 +27,7 @@
  *   ai_key_fact, ai_analysis               ← Gemini short text
  */
 
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { trackAffiliateAction } from '@/lib/affiliateTracking'
 import Link from 'next/link'
 import { generateMatchSlug } from '@/lib/match-slug'
@@ -32,7 +35,7 @@ import { useLanguage } from './LanguageSwitcher'
 import { translationsFor } from '@/lib/i18n'
 import { getDakarDateString, getDakarMatchStatus } from '@/lib/dakar-date'
 
-// ─── Palette (Design V2 — bleu analyse, sémantique WIN/LOST/PENDING) ──────────
+// ─── Palette (V3 — bleu analyse, sémantique WIN/LOST/PENDING) ────────────────
 const C = {
   bg:       '#0B0F14',
   surface:  '#141C25',
@@ -128,6 +131,8 @@ interface MatchData {
 
 type FilterType = 'all' | 'BTTS' | 'O2.5' | 'HIGH' | 'VIP'
 
+type CardStatus = 'live' | 'scheduled' | 'finished'
+
 // ─── AI Combo of the Day — selection type ───────────────────────────────
 // A ComboPick is a deterministic selection derived ONLY from data already
 // present in predictions.json. The frontend never recalculates probabilities;
@@ -198,99 +203,137 @@ function hasSufficientData(match: MatchData): boolean {
   return quality !== 'LOW' && sampleSize >= 2
 }
 
+// Largeur de barre de probabilité (0..100%) — clampée, jamais recalculée.
+function barWidth(p?: number): string {
+  if (p == null || !Number.isFinite(p)) return '0%'
+  const clamped = Math.min(100, Math.max(0, p * 100))
+  return `${clamped.toFixed(1)}%`
+}
+
+// ─── useCountUp — compteur animé (reduced-motion aware) ─────────────────
+function useCountUp(target: number, active: boolean, duration = 900): number {
+  const [value, setValue] = useState(0)
+  useEffect(() => {
+    if (!active || !Number.isFinite(target)) return
+    let reduce = false
+    try {
+      reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    } catch {
+      /* no-op */
+    }
+    if (reduce) {
+      setValue(target)
+      return
+    }
+    let raf = 0
+    const t0 = performance.now()
+    const tick = (t: number) => {
+      const p = Math.min(1, (t - t0) / duration)
+      const eased = 1 - Math.pow(1 - p, 3)
+      setValue(Math.round(target * eased))
+      if (p < 1) raf = requestAnimationFrame(tick)
+    }
+    raf = requestAnimationFrame(tick)
+    return () => cancelAnimationFrame(raf)
+  }, [target, active, duration])
+  return Number.isFinite(target) ? value : 0
+}
+
 // ─── Team Logo (compact, dashboard-grade) ───────────────────────────────
-function TeamLogo({ src, name, size = 36 }: { src?: string; name: string; size?: number }) {
+function TeamLogo({ src, name }: { src?: string; name: string }) {
   const [err, setErr] = useState(false)
   const initial = (name || '?').slice(0, 3).toUpperCase()
-  if (!src || err) {
-    return (
-      <div
-        className="rounded-md flex items-center justify-center font-bold flex-shrink-0"
-        style={{
-          width: size,
-          height: size,
-          backgroundColor: C.surface,
-          border: `1px solid ${C.border}`,
-          color: C.success,
-          fontSize: Math.round(size * 0.32),
-        }}
-        aria-label={name}
-        title={name}
-      >
-        {initial}
+  return (
+    <div className="btx-team__logo" aria-label={name} title={name}>
+      {src && !err ? (
+        <img
+          src={src}
+          alt={`Logo ${name}`}
+          loading="lazy"
+          decoding="async"
+          onError={() => setErr(true)}
+        />
+      ) : (
+        <span
+          style={{
+            fontSize: '0.72rem',
+            fontWeight: 900,
+            color: C.success,
+            letterSpacing: '0.02em',
+          }}
+        >
+          {initial}
+        </span>
+      )}
+    </div>
+  )
+}
+
+// ─── ProbBar — barre de probabilité animée (marché BTTS / Over 2.5) ─────
+function ProbBar({ label, value, color, dim }: { label: string; value?: number; color: string; dim?: boolean }) {
+  const noData = value == null || !Number.isFinite(value) || dim
+  return (
+    <div className="btx-prob">
+      <div className="btx-prob__head">
+        <span className="btx-prob__label">{label}</span>
+        <span className="btx-prob__value" style={{ ['--pc' as string]: color, opacity: noData ? 0.45 : 1 }}>
+          {noData ? '—' : fmtPct(value)}
+        </span>
       </div>
+      <div className="btx-bar" style={{ opacity: noData ? 0.4 : 1 }}>
+        <span className="btx-bar__threshold" aria-hidden="true" />
+        <span className="btx-bar__fill" style={{ ['--w' as string]: noData ? '0%' : barWidth(value), ['--pc' as string]: color }} />
+      </div>
+    </div>
+  )
+}
+
+// ─── StatusChip — LIVE pulsant / Terminé / Heure ────────────────────────
+function StatusChip({ status, time, lang }: { status: CardStatus; time: string; lang: string }) {
+  if (status === 'live') {
+    return (
+      <span className="btx-status btx-status--live">
+        <span className="btx-status__dot" aria-hidden="true" />
+        LIVE
+      </span>
     )
   }
-  return (
-    <img
-      src={src}
-      alt={`Logo ${name}`}
-      className="object-contain flex-shrink-0 rounded"
-      style={{ width: size, height: size, backgroundColor: C.surface2 }}
-      width={size}
-      height={size}
-      loading="lazy"
-      decoding="async"
-      onError={() => setErr(true)}
-    />
-  )
-}
-
-// ─── Stat Block (header summary) ─────────────────────────────────────────
-function StatBlock({ label, value, accent }: { label: string; value: string; accent?: string }) {
-  return (
-    <div className="rounded-lg p-2 sm:p-3 text-center" style={{
-      backgroundColor: C.surface2,
-      border: `1px solid ${C.border}`,
-    }}>
-      <div className="text-xs uppercase tracking-widest font-semibold mb-0.5" style={{ color: C.textSec }}>
-        {label}
-      </div>
-      <div className="text-base sm:text-lg font-bold tabular-nums" style={{ color: accent || C.text }}>
-        {value}
-      </div>
-    </div>
-  )
-}
-
-// ─── Probability Block (large, primary visual) ──────────────────────────
-function ProbBlock({ label, value, accent }: { label: string; value: string; accent: string }) {
-  return (
-    <div className="rounded-md p-2 text-center" style={{ backgroundColor: `${accent}10` }}>
-      <div className="text-xs uppercase tracking-widest font-semibold mb-1" style={{ color: C.textSec }}>
-        {label}
-      </div>
-      <div className="text-base sm:text-lg font-bold tabular-nums" style={{ color: accent }}>
-        {value}
-      </div>
-    </div>
-  )
-}
-
-// ─── Data Quality Badge ──────────────────────────────────────────────────
-function DataBadge({ label, value, accent }: { label: string; value: string; accent?: string }) {
-  return (
-    <div className="flex items-center gap-1.5">
-      <span className="text-xs uppercase tracking-widest font-semibold" style={{ color: C.textSec }}>
-        {label}
+  if (status === 'finished') {
+    return (
+      <span className="btx-status btx-status--done">
+        {lang === 'fr' ? 'Terminé' : lang === 'en' ? 'Full time' : 'انتهت'}
       </span>
-      <span
-        className="px-1.5 py-0.5 rounded text-xs font-bold uppercase tracking-wider"
-        style={{
-          backgroundColor: `${accent || C.textSec}15`,
-          color: accent || C.textSec,
-          border: `1px solid ${accent || C.textSec}30`,
-        }}
-      >
-        {value}
-      </span>
-    </div>
-  )
+    )
+  }
+  return <span className="btx-status">{time || '--:--'}</span>
 }
 
-// ─── Match Card — terminal-style ─────────────────────────────────────────
-function MatchCard({ match, index, insufficientDataLabel, labels }: { match: MatchData; index: number; insufficientDataLabel: string; labels: DashboardLabels }) {
+// ─── Match Card — premium V3 (glass, liseré statut, sheen, barres animées) ──
+function MatchCard({ match, index, status, lang, insufficientDataLabel, labels, now }: {
+  match: MatchData
+  index: number
+  status: CardStatus
+  lang: string
+  insufficientDataLabel: string
+  labels: DashboardLabels
+  now: number
+}) {
   const [expanded, setExpanded] = useState(false)
+
+  // Statut fin pour les cartes « programmées » d'aujourd'hui : un match dont
+  // l'heure est passée bascule en live/terminé via getDakarMatchStatus.
+  const fine: CardStatus = useMemo(() => {
+    if (status === 'finished') return 'finished'
+    const s = getDakarMatchStatus(match.date, match.time, new Date(now))
+    if (s === 'live') return 'live'
+    if (s === 'finished') return 'finished'
+    return 'scheduled'
+  }, [status, match.date, match.time, now])
+
+  const accent =
+    fine === 'live' ? 'rgba(52, 211, 153, 0.85)'
+    : fine === 'finished' ? 'rgba(107, 122, 140, 0.55)'
+    : 'rgba(47, 125, 255, 0.8)'
 
   const dataSourceLabel = normalizeDataSource(match.dataSource)
   const quality = match.dataQuality?.toUpperCase() || '—'
@@ -299,269 +342,202 @@ function MatchCard({ match, index, insufficientDataLabel, labels }: { match: Mat
 
   return (
     <article
-      className="btts-match-card rounded-xl overflow-hidden transition-all"
-      style={{
-        backgroundColor: C.surface,
-        border: `1px solid ${C.border}`,
-        animation: `dashFade 0.4s ease-out ${Math.min(index * 0.04, 0.3)}s backwards`,
-      }}
+      className="btx-card btx-rev"
+      style={{ ['--accent' as string]: accent, ['--d' as string]: `${Math.min(index, 8) * 50}ms` }}
+      aria-label={`${match.home} vs ${match.away} — ${match.league}`}
     >
-      {/* Top accent */}
-      <div className="h-[2px] w-full" style={{
-        background: `linear-gradient(90deg, transparent, ${C.success}40, transparent)`,
-      }} />
-
-      {/* ─── HEADER: League + Time ─── */}
-      <div className="flex items-center justify-between px-3 py-2" style={{ borderBottom: `1px solid ${C.border}` }}>
-        <span className="text-xs uppercase tracking-widest font-semibold truncate" style={{ color: C.textSec }}>
-          {match.league}
-        </span>
-        <div className="flex items-center gap-2 flex-shrink-0">
-          <span className="text-xs font-mono tabular-nums" style={{ color: C.textSec }}>
-            {match.time || '--:--'}
-          </span>
-        </div>
-      </div>
-
-      {/* ─── TEAMS ─── */}
-      <div className="flex items-center justify-between px-3 py-3 gap-2">
-        <div className="flex flex-col items-center gap-1 flex-1 min-w-0">
-          <TeamLogo src={match.homeLogo} name={match.home} size={36} />
-          <span className="text-sm font-semibold text-center truncate w-full" style={{ color: C.text }}>
-            {match.home}
-          </span>
-        </div>
-        <div className="flex flex-col items-center px-1 flex-shrink-0">
-          <span className="text-xs font-bold" style={{ color: C.textMute }}>VS</span>
-        </div>
-        <div className="flex flex-col items-center gap-1 flex-1 min-w-0">
-          <TeamLogo src={match.awayLogo} name={match.away} size={36} />
-          <span className="text-sm font-semibold text-center truncate w-full" style={{ color: C.text }}>
-            {match.away}
-          </span>
-        </div>
-      </div>
-
-      {/* ─── PROBABILITIES — primary block ─── */}
-      <div className="px-3 pb-3">
-        <div className="grid grid-cols-2 gap-1.5 mb-2">
-          <ProbBlock label="BTTS" value={sufficientData ? fmtPct(match.bttsProb) : '—'} accent={C.success} />
-          <ProbBlock label="Over 2.5" value={sufficientData ? fmtPct(match.over25Prob) : '—'} accent={C.warning} />
+      <div className="btx-card__edge" aria-hidden="true" />
+      <div className="btx-card__inner">
+        {/* ─── TOP : ligue + statut ─── */}
+        <div className="btx-card__top">
+          <span className="btx-league">{match.league}</span>
+          <StatusChip status={fine} time={match.time} lang={lang} />
         </div>
 
-        {/* xG row */}
-        <div className="grid grid-cols-3 gap-1.5">
-          <div className="rounded-md p-2 text-center" style={{ backgroundColor: `${C.data}08` }}>
-            <div className="text-xs uppercase tracking-wider font-semibold mb-0.5" style={{ color: C.textSec }}>{labels.xgHome}</div>
-            <div className="text-sm font-bold tabular-nums" style={{ color: C.data }}>
-              {sufficientData ? fmtNum(match.homeLambda ?? match.xgHome) : '—'}
-            </div>
+        {/* ─── TEAMS ─── */}
+        <div className="btx-teams">
+          <div className="btx-team">
+            <TeamLogo src={match.homeLogo} name={match.home} />
+            <span className="btx-team__name">{match.home}</span>
           </div>
-          <div className="rounded-md p-2 text-center" style={{ backgroundColor: `${C.data}08` }}>
-            <div className="text-xs uppercase tracking-wider font-semibold mb-0.5" style={{ color: C.textSec }}>{labels.xgAway}</div>
-            <div className="text-sm font-bold tabular-nums" style={{ color: C.data }}>
-              {sufficientData ? fmtNum(match.awayLambda ?? match.xgAway) : '—'}
-            </div>
+          <div className="btx-vs" aria-hidden="true">
+            <span className="btx-vs__line" />
+            <span className="btx-vs__chip">VS</span>
+            <span className="btx-vs__line" />
           </div>
-          <div className="rounded-md p-2 text-center" style={{ backgroundColor: `${C.data}08` }}>
-            <div className="text-xs uppercase tracking-wider font-semibold mb-0.5" style={{ color: C.textSec }}>{labels.xgTotal}</div>
-            <div className="text-sm font-bold tabular-nums" style={{ color: C.data }}>
+          <div className="btx-team">
+            <TeamLogo src={match.awayLogo} name={match.away} />
+            <span className="btx-team__name">{match.away}</span>
+          </div>
+        </div>
+
+        {/* ─── PROBABILITÉS — barres animées ─── */}
+        <div className="btx-probs">
+          <ProbBar label="BTTS" value={match.bttsProb} color="#34D399" dim={!sufficientData} />
+          <ProbBar label="Over 2.5" value={match.over25Prob} color="#FBBF24" dim={!sufficientData} />
+        </div>
+
+        {/* ─── λ buts attendus modélisés ─── */}
+        <div className="btx-lambdas">
+          <div className="btx-lambda">
+            <span className="btx-lambda__label">{labels.xgHome}</span>
+            <span className="btx-lambda__value">{sufficientData ? fmtNum(match.homeLambda ?? match.xgHome) : '—'}</span>
+          </div>
+          <div className="btx-lambda">
+            <span className="btx-lambda__label">{labels.xgAway}</span>
+            <span className="btx-lambda__value">{sufficientData ? fmtNum(match.awayLambda ?? match.xgAway) : '—'}</span>
+          </div>
+          <div className="btx-lambda">
+            <span className="btx-lambda__label">{labels.xgTotal}</span>
+            <span className="btx-lambda__value">
               {sufficientData ? fmtNum(match.xgTotal ?? ((match.homeLambda ?? match.xgHome ?? 0) + (match.awayLambda ?? match.xgAway ?? 0))) : '—'}
-            </div>
+            </span>
           </div>
         </div>
-      </div>
+        <p className="btx-score__hint" style={{ margin: '-0.4rem 0.9rem 0.85rem' }}>
+          {labels.xgHint}
+        </p>
 
-      {/* ─── EXACT SCORE — source data only ─── */}
-      <div className="px-3 pb-3">
-        <div className="rounded-md p-2.5" style={{ backgroundColor: 'rgba(47, 125, 255, 0.08)', border: '1px solid rgba(47, 125, 255, 0.25)' }}>
-          <div className="flex items-center justify-between gap-2">
-            <span className="text-xs uppercase tracking-widest font-semibold" style={{ color: C.textSec }}>
-              {labels.exactScore}
-            </span>
-            {match.exactScoreProb && (
-              <span className="text-xs font-mono font-semibold" style={{ color: C.data }}>
-                {match.exactScoreProb}
-              </span>
-            )}
+        {/* ─── SCORE EXACT ─── */}
+        <div className="btx-score">
+          <div className="btx-score__head">
+            <span className="btx-score__label">{labels.exactScore}</span>
+            {match.exactScoreProb && <span className="btx-score__prob">{match.exactScoreProb}</span>}
           </div>
-          <div className="mt-1 text-lg font-bold tabular-nums" style={{ color: match.aiExactScore ? C.data : C.textSec }}>
-            {match.aiExactScore ? match.aiExactScore : 'Non publié — données insuffisantes'}
+          <div className="btx-score__value">
+            {match.aiExactScore ? match.aiExactScore : '— —'}
           </div>
-          <p className="text-xs mt-1" style={{ color: C.textMute }}>
+          <p className="btx-score__hint">
             {match.aiExactScore || match.exactScoreProb ? labels.projection : insufficientDataLabel}
           </p>
         </div>
-      </div>
 
-      {/* ─── DATA SOURCE / DATA QUALITY ─── */}
-      <div className="px-3 py-2 flex flex-wrap items-center justify-between gap-2" style={{
-        borderTop: `1px solid ${C.border}`,
-        backgroundColor: C.surface2,
-      }}>
-        <DataBadge label={labels.source} value={dataSourceLabel} accent={C.data} />
-        <DataBadge label={labels.quality} value={quality} accent={qualityColorVal} />
-        <span className="text-xs uppercase tracking-wider font-semibold" style={{ color: C.textSec }}>
-          {fmtInt(match.matchCountHome)} + {fmtInt(match.matchCountAway)} {labels.matches}
-        </span>
-      </div>
-
-      {/* ─── DATA CONFIDENCE ─── */}
-      {match.reliabilityScore != null && Number.isFinite(match.reliabilityScore) && (
-        <div className="px-3 py-2" style={{ borderTop: `1px solid ${C.border}` }}>
-          <div className="flex items-center justify-between mb-1">
-            <span className="text-xs uppercase tracking-widest font-semibold" style={{ color: C.textSec }}>
-              {labels.dataConfidence}
-            </span>
-            <span className="text-sm font-bold tabular-nums" style={{ color: C.data }}>
-              {Math.round(match.reliabilityScore)}%
-            </span>
-          </div>
-          <div className="relative h-1 rounded-full overflow-hidden" style={{ backgroundColor: C.surface2 }}>
-            <div
-              className="absolute inset-y-0 left-0 rounded-full"
-              style={{
-                width: `${Math.min(100, Math.max(0, match.reliabilityScore))}%`,
-                background: 'linear-gradient(90deg, rgba(47, 125, 255, 0.7), #2F7DFF)',
-                boxShadow: 'none',
-              }}
-            />
-          </div>
-        </div>
-      )}
-
-      {/* ─── AI ANALYSIS — secondary, collapsible ─── */}
-      <div className="px-3 py-2" style={{ borderTop: `1px solid ${C.border}` }}>
-        <div className="flex items-center justify-between mb-1">
-          <div className="flex items-center gap-1.5">
-            <span
-              className="w-1.5 h-1.5 rounded-full"
-              style={{ backgroundColor: C.data, boxShadow: `0 0 6px ${C.data}` }}
-            />
-            <span className="text-xs uppercase tracking-widest font-semibold" style={{ color: C.data }}>
-              {labels.aiAnalysis}
-            </span>
-          </div>
-          {match.aiExactScore && (
-            <span className="text-xs font-mono tabular-nums" style={{ color: C.textSec }}>
-              {labels.score}: <span style={{ color: C.data }}>{match.aiExactScore}</span>
-              {match.exactScoreProb ? ` (${match.exactScoreProb})` : ''}
-            </span>
-          )}
+        {/* ─── MÉTA : source / qualité / échantillon ─── */}
+        <div className="btx-meta">
+          <span className="btx-chip">
+            {labels.source} <b style={{ ['--cc' as string]: '#7DB5FF' }}>{dataSourceLabel}</b>
+          </span>
+          <span className="btx-chip">
+            {labels.quality} <b style={{ ['--cc' as string]: qualityColorVal }}>{quality}</b>
+          </span>
+          <span className="btx-chip">
+            {fmtInt(match.matchCountHome)} + {fmtInt(match.matchCountAway)} {labels.matches}
+          </span>
         </div>
 
-        {(match.aiBttsView || match.aiOver25View) && (
-          <div className="grid grid-cols-2 gap-1.5 mb-2">
-            {match.aiBttsView && <ProbBlock label="BTTS · IA" value={match.aiBttsView} accent={C.success} />}
-            {match.aiOver25View && <ProbBlock label="Over 2.5 · IA" value={match.aiOver25View} accent={C.warning} />}
+        {/* ─── CONFIANCE DES DONNÉES ─── */}
+        {match.reliabilityScore != null && Number.isFinite(match.reliabilityScore) && (
+          <div className="btx-conf">
+            <div className="btx-conf__head">
+              <span className="btx-conf__label">{labels.dataConfidence}</span>
+              <span className="btx-conf__value">{Math.round(match.reliabilityScore)}%</span>
+            </div>
+            <div className="btx-bar">
+              <span className="btx-bar__fill" style={{ ['--w' as string]: `${Math.min(100, Math.max(0, match.reliabilityScore)).toFixed(1)}%` }} />
+            </div>
           </div>
         )}
-        {match.aiKeyFact && (
-          <p className="text-xs font-semibold mb-1" style={{ color: C.text }}>
-            {match.aiKeyFact}
-          </p>
-        )}
-        {!expanded && match.aiAnalysis && (
-          <p className="text-xs leading-relaxed mt-1" style={{ color: C.textSec }}>
-            {match.aiAnalysis.length > 180 ? `${match.aiAnalysis.slice(0, 177)}…` : match.aiAnalysis}
-          </p>
-        )}
-        {expanded && match.aiAnalysis && (
-          <p className="text-xs leading-relaxed mt-1" style={{ color: C.textSec }}>
-            {match.aiAnalysis}
-          </p>
+
+        {/* ─── ANALYSE IA GEMINI ─── */}
+        {(match.aiAnalysis || match.aiKeyFact || match.aiBttsView || match.aiOver25View) && (
+          <div className="btx-ai">
+            <div className="btx-ai__head">
+              <span className="btx-ai__dot" aria-hidden="true" />
+              <span className="btx-ai__label">{labels.aiAnalysis}</span>
+              {match.aiExactScore && (
+                <span className="btx-score__prob" style={{ marginLeft: 'auto' }}>
+                  {labels.score}: {match.aiExactScore}{match.exactScoreProb ? ` (${match.exactScoreProb})` : ''}
+                </span>
+              )}
+            </div>
+            {match.aiBttsView && (
+              <div className="btx-ai__views">
+                <div className="btx-ai__view">
+                  <div className="btx-ai__view-label">BTTS · IA</div>
+                  <div className="btx-ai__view-value" style={{ ['--vc' as string]: '#34D399' }}>{match.aiBttsView}</div>
+                </div>
+                {match.aiOver25View && (
+                  <div className="btx-ai__view btx-ai__view--amber">
+                    <div className="btx-ai__view-label">Over 2.5 · IA</div>
+                    <div className="btx-ai__view-value" style={{ ['--vc' as string]: '#FBBF24' }}>{match.aiOver25View}</div>
+                  </div>
+                )}
+              </div>
+            )}
+            {match.aiKeyFact && <p className="btx-ai__fact">{match.aiKeyFact}</p>}
+            {match.aiAnalysis && (
+              <p className="btx-ai__text">
+                {expanded || match.aiAnalysis.length <= 180
+                  ? match.aiAnalysis
+                  : `${match.aiAnalysis.slice(0, 177)}…`}
+              </p>
+            )}
+            <div className="btx-actions" style={{ paddingInline: 0, borderTop: 'none', paddingTop: '0.55rem' }}>
+              {match.aiAnalysis && match.aiAnalysis.length > 180 && (
+                <button
+                  onClick={() => setExpanded(e => !e)}
+                  aria-expanded={expanded}
+                  aria-label={expanded ? `Masquer l'analyse complète de ${match.home} vs ${match.away}` : `Voir l'analyse complète de ${match.home} vs ${match.away}`}
+                  className="btx-link"
+                  style={{ background: 'none', border: 'none', padding: 0 }}
+                >
+                  {expanded ? '−' : '+'} {expanded ? (lang === 'fr' ? 'Masquer l’analyse' : lang === 'en' ? 'Hide analysis' : 'إخفاء التحليل') : (lang === 'fr' ? 'Voir l’analyse complète' : lang === 'en' ? 'Full analysis' : 'التحليل الكامل')}
+                </button>
+              )}
+              <Link
+                href={`/match/${generateMatchSlug(match.home, match.away, match.date)}`}
+                className="btx-link"
+              >
+                {labels.openMatch} →
+              </Link>
+            </div>
+          </div>
         )}
 
-        <div className="flex flex-wrap items-center gap-3 mt-2">
-          {match.aiAnalysis && (
-            <button
-              onClick={() => setExpanded(e => !e)}
-              aria-expanded={expanded}
-              aria-label={expanded ? `Masquer l'analyse complète de ${match.home} vs ${match.away}` : `Voir l'analyse complète de ${match.home} vs ${match.away}`}
-              className="text-xs uppercase tracking-widest font-semibold transition-colors"
-              style={{ color: C.data }}
+        {/* Lien page match pour les cartes sans analyse IA */}
+        {!(match.aiAnalysis || match.aiKeyFact || match.aiBttsView || match.aiOver25View) && (
+          <div className="btx-actions">
+            <Link
+              href={`/match/${generateMatchSlug(match.home, match.away, match.date)}`}
+              className="btx-link"
             >
-              {expanded ? 'Masquer l’analyse' : 'Voir l’analyse complète'}
-            </button>
-          )}
-          <Link
-            href={`/match/${generateMatchSlug(match.home, match.away, match.date)}`}
-            className="text-xs uppercase tracking-widest font-semibold transition-colors"
-            style={{ color: C.data }}
-          >
-            {labels.openMatch} →
-          </Link>
-        </div>
+              {labels.openMatch} →
+            </Link>
+          </div>
+        )}
       </div>
-
-      {/* ─── Inline keyframes ─── */}
-      <style jsx>{`
-        @keyframes dashFade {
-          from { opacity: 0; transform: translateY(6px); }
-          to   { opacity: 1; transform: translateY(0); }
-        }
-      `}</style>
     </article>
   )
 }
 
-// ─── ComboPickRow — one row inside AI COMBO OF THE DAY ──────────────────
-function ComboPickRow({ pick, index }: { pick: ComboPick; index: number }) {
+// ─── ComboPickRow — vedette « Combo IA du jour » ────────────────────────
+function ComboPickRow({ pick, index, lang }: { pick: ComboPick; index: number; lang: string }) {
   const num = String(index + 1).padStart(2, '0')
-  const marketColor = pick.market === 'BTTS' ? C.success : C.warning
+  const marketColor = pick.market === 'BTTS' ? '#34D399' : '#FBBF24'
+  const rank = index === 0 ? 'N°1' : index === 1 ? 'N°2' : 'N°3'
 
   return (
-    <div className="rounded-lg p-2.5" style={{
-      backgroundColor: C.surface2,
-      border: `1px solid ${C.border}`,
-    }}>
-      {/* Row 1: number + match name + league/time */}
-      <div className="flex items-start gap-2 mb-1.5">
-        <span className="text-xs font-bold tabular-nums flex-shrink-0 mt-0.5" style={{ color: C.data }}>
-          {num}
-        </span>
-        <div className="flex-1 min-w-0">
-          <div className="text-sm font-semibold truncate" style={{ color: C.text }}>
-            {pick.match.home} <span style={{ color: C.textSec }}>vs</span> {pick.match.away}
-          </div>
-          <div className="text-xs uppercase tracking-wider font-semibold truncate" style={{ color: C.textSec }}>
-            {pick.match.league} · {pick.match.time || '--:--'}
-          </div>
+    <div className="btx-combo-row">
+      <span className="btx-combo-row__rank" aria-hidden="true">{num}</span>
+      <div className="btx-combo-row__body">
+        <div className="btx-combo-row__match">
+          {pick.match.home} <span style={{ color: C.textSec }}>vs</span> {pick.match.away}
+        </div>
+        <div className="btx-combo-row__meta">
+          {pick.match.league} · {pick.match.time || '--:--'}
+          {lang === 'fr' ? ` · choix ${rank}` : lang === 'en' ? ` · pick ${rank}` : ` · اختيار ${rank}`}
+        </div>
+        <div className="btx-combo-row__foot">
+          <span>{normalizeDataSource(pick.match.dataSource)} · {pick.dataQuality}</span>
+          <span>
+            {lang === 'fr' ? 'Confiance' : 'Confidence'} <span className="btx-combo-row__conf">{Math.round(pick.reliabilityScore)}%</span>
+          </span>
         </div>
       </div>
-
-      {/* Row 2: market badge + real probability */}
-      <div className="flex items-center justify-between gap-2 mb-1.5">
-        <span
-          className="px-2 py-0.5 rounded text-xs font-bold uppercase tracking-wider flex-shrink-0"
-          style={{
-            backgroundColor: `${marketColor}15`,
-            color: marketColor,
-            border: `1px solid ${marketColor}30`,
-          }}
-        >
-          {pick.market}
-        </span>
-        <span className="text-[14px] font-bold tabular-nums" style={{ color: marketColor }}>
-          {(pick.probability * 100).toFixed(1)}%
-        </span>
-      </div>
-
-      {/* Row 3: meta info — source/quality/confidence (real values only) */}
-      <div className="flex items-center justify-between gap-2 mt-1.5 pt-1.5 text-xs" style={{
-        borderTop: `1px solid ${C.border}`,
-        color: C.textSec,
-      }}>
-        <span className="uppercase tracking-wider font-bold truncate flex-1 min-w-0">
-          {normalizeDataSource(pick.match.dataSource)} · {pick.dataQuality}
-        </span>
-        <span className="flex items-center gap-1 flex-shrink-0">
-          <span className="uppercase tracking-wider font-bold">Confidence</span>
-          <span className="font-bold tabular-nums" style={{ color: C.data }}>
-            {Math.round(pick.reliabilityScore)}%
-          </span>
-        </span>
-      </div>
+      <span className="btx-market-chip" style={{ ['--mc' as string]: marketColor }}>{pick.market}</span>
+      <span className="btx-combo-row__prob" style={{ ['--mc' as string]: marketColor }}>
+        {(pick.probability * 100).toFixed(1)}%
+      </span>
     </div>
   )
 }
@@ -570,6 +546,7 @@ function ComboPickRow({ pick, index }: { pick: ComboPick; index: number }) {
 export default function BttsTodayDashboard() {
   const { lang } = useLanguage()
   const t = translationsFor(lang)
+  const sectionRef = useRef<HTMLElement | null>(null)
 
   // Vue du dashboard de prédictions (1×/session) — funnel : PRÉDICTION.
   useEffect(() => {
@@ -784,7 +761,7 @@ export default function BttsTodayDashboard() {
     return candidates.slice(0, 3)
   }, [liveTodayMatches, scheduledTodayMatches, loading])
 
-  // ─── Filters ──────────────────────────────────────────────────────────
+  // ─── Filtres ──────────────────────────────────────────────────────────
   const filters: { id: FilterType; label: string }[] = [
     { id: 'all', label: t.predictions.all },
     { id: 'BTTS', label: 'BTTS' },
@@ -812,220 +789,279 @@ export default function BttsTodayDashboard() {
       ? { exactScore: 'Proposed exact score', projection: 'Projection based on available data, with no result guaranteed.', source: 'Source', quality: 'Quality', matches: 'matches', dataConfidence: 'Data confidence', aiAnalysis: 'Gemini AI analysis', score: 'Score', xgHome: 'Home λ', xgAway: 'Away λ', xgTotal: 'Total λ', xgHint: 'Modeled expected goals (λ): recent real goals averages (ESPN) converted via the Poisson model. Not provider xG.', openMatch: 'Open match page' }
       : { exactScore: 'النتيجة الدقيقة المقترحة', projection: 'توقع مبني على البيانات المتاحة دون ضمان للنتيجة.', source: 'المصدر', quality: 'الجودة', matches: 'مباريات', dataConfidence: 'موثوقية البيانات', aiAnalysis: 'تحليل Gemini بالذكاء الاصطناعي', score: 'النتيجة', xgHome: 'λ صاحب الأرض', xgAway: 'λ الضيف', xgTotal: 'إجمالي λ', xgHint: 'أهداف متوقعة نمذجة (λ) من متوسطات أهداف حقيقية حديثة (ESPN) عبر نموذج بواسون.', openMatch: 'فتح صفحة المباراة' }
 
+  // ─── Révélation au scroll (IntersectionObserver, gate .btx3d) ─────────
+  // Sans JS : cartes toujours visibles (progressive enhancement).
+  // reduced-motion : tout est révélé immédiatement.
+  useEffect(() => {
+    const section = sectionRef.current
+    if (!section || loading) return
+    const cards = Array.from(section.querySelectorAll<HTMLElement>('.btx-rev:not(.is-revealed)'))
+    if (cards.length === 0) return
+
+    let reduced = false
+    try {
+      reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    } catch {
+      /* no-op */
+    }
+    if (reduced || typeof IntersectionObserver === 'undefined') {
+      cards.forEach(c => c.classList.add('is-revealed'))
+      return
+    }
+
+    section.classList.add('btx3d')
+    const io = new IntersectionObserver(
+      entries => {
+        for (const entry of entries) {
+          if (!entry.isIntersecting) continue
+          const el = entry.target as HTMLElement
+          el.style.transitionDelay = el.style.getPropertyValue('--d') || '0ms'
+          el.classList.add('is-revealed')
+          io.unobserve(el)
+          const done = (e: TransitionEvent) => {
+            if (e.propertyName !== 'transform') return
+            el.style.transitionDelay = ''
+            el.removeEventListener('transitionend', done)
+          }
+          el.addEventListener('transitionend', done)
+        }
+      },
+      { rootMargin: '0px 0px -6% 0px', threshold: 0.06 }
+    )
+    cards.forEach(c => io.observe(c))
+    return () => io.disconnect()
+  }, [loading, activeFilter, filteredMatches, liveTodayMatches, scheduledTodayMatches, finishedTodayMatches, upcomingMatches, now])
+
+  // ─── Compteurs animés du header ────────────────────────────────────────
+  const animCount = useCountUp(stats.todayCount, !loading)
+  const animBtts = useCountUp(stats.bttsHigh, !loading)
+  const animOver = useCountUp(stats.overHigh, !loading)
+  const animReliability = useCountUp(stats.avgReliability ?? 0, !loading && stats.avgReliability != null)
+
   // ─── Render ───────────────────────────────────────────────────────────
   return (
-    <section id="btts-today-dashboard" className="max-w-[1200px] mx-auto px-3 sm:px-4 py-4 sm:py-6">
+    <section id="btts-today-dashboard" ref={sectionRef} className="max-w-[1200px] mx-auto px-3 sm:px-4 py-4 sm:py-6">
 
-      {/* ─── DASHBOARD HEADER ─── */}
-      <div className="btts-today-header rounded-xl p-3 sm:p-4 mb-4" style={{
-        backgroundColor: C.surface,
-        border: `1px solid ${C.border}`,
-      }}>
-        <div className="flex items-center justify-between flex-wrap gap-2">
-          <div>
-            <div className="flex items-center gap-1.5 mb-1">
-              <span
-                className="w-1.5 h-1.5 rounded-full"
-                style={{ backgroundColor: C.data }}
-              />
-              <span className="text-xs uppercase tracking-widest font-semibold" style={{ color: C.data }}>
-                BTTSPredict
-              </span>
-              <span className="text-xs uppercase tracking-widest" style={{ color: C.textSec }}>
-                · AI + Statistical Engine
-              </span>
-            </div>
-            <h2 className="text-base sm:text-lg font-bold" style={{ color: C.text, fontFamily: 'var(--font-display), system-ui, sans-serif' }}>
-              {lang === 'fr' ? 'Pronostics du jour' : lang === 'en' ? 'Today’s predictions' : 'توقعات اليوم'}
+      {/* ─── HERO ─── */}
+      <div className="btx-hero btx-rev p-4 sm:p-5 mb-4" style={{ ['--d' as string]: '0ms' }}>
+        <div className="flex items-center justify-between flex-wrap gap-3">
+          <div className="min-w-0">
+            <span className="btx-eyebrow">
+              <span className="btx-eyebrow-dot" aria-hidden="true" />
+              BTTSPredict
+              <span style={{ opacity: 0.65, fontWeight: 600 }}>· AI + Statistical Engine</span>
+            </span>
+            <h2 className="btx-title">
+              {lang === 'fr' ? <>Pronostics <em>du jour</em></> : lang === 'en' ? <>Today’s <em>predictions</em></> : <>توقعات <em>اليوم</em></>}
             </h2>
-            <p className="text-xs" style={{ color: C.textSec }}>
-              {lang === 'fr' ? 'Prédictions statistiques basées sur des données réelles de matchs' : lang === 'en' ? 'Statistical predictions powered by real match data' : 'توقعات إحصائية مبنية على بيانات حقيقية للمباريات'}
-              {generationDate ? ` · ${fmtDate(generationDate)}` : ''}
+            <p className="btx-sub">
+              {lang === 'fr'
+                ? 'Prédictions statistiques basées sur des données réelles de matchs'
+                : lang === 'en'
+                  ? 'Statistical predictions powered by real match data'
+                  : 'توقعات إحصائية مبنية على بيانات حقيقية للمباريات'}
             </p>
           </div>
-        </div>
-
-        {/* ─── Stats row (real values only) ─── */}
-        <div className="btts-today-stats grid grid-cols-2 sm:grid-cols-4 gap-2 mt-3">
-          <StatBlock label={lang === 'fr' ? 'Matchs' : lang === 'en' ? 'Matches' : 'المباريات'} value={fmtInt(stats.todayCount)} accent={C.text} />
-          <StatBlock label={lang === 'fr' ? 'BTTS élevé' : lang === 'en' ? 'BTTS high' : 'BTTS مرتفع'} value={fmtInt(stats.bttsHigh)} accent={C.data} />
-          <StatBlock label={lang === 'fr' ? 'Over 2.5 élevé' : lang === 'en' ? 'Over 2.5 high' : 'Over 2.5 مرتفع'} value={fmtInt(stats.overHigh)} accent={C.warning} />
-          <StatBlock label={lang === 'fr' ? 'Qualité des données' : lang === 'en' ? 'Data quality' : 'جودة البيانات'} value={stats.highQuality > 0 ? 'HIGH' : '—'} accent={stats.highQuality > 0 ? C.data : C.textSec} />
-        </div>
-
-        {stats.avgReliability != null && (
-          <div className="mt-2 flex flex-col gap-1 text-xs" style={{ color: C.textSec }}>
-            <div className="flex items-center gap-2">
-              <span className="uppercase tracking-widest font-bold">{lang === 'fr' ? 'Confiance moyenne des données :' : lang === 'en' ? 'Average data confidence:' : 'متوسط موثوقية البيانات:'}</span>
-              <span className="font-bold tabular-nums" style={{ color: C.data }}>{stats.avgReliability}%</span>
-            </div>
-            <span className="text-xs italic" style={{ color: C.textMute }}>
-              {lang === 'fr' ? 'Qualité des données disponibles — ce n’est pas une probabilité de réussite.' : lang === 'en' ? 'Available data quality — this is not a probability of success.' : 'جودة البيانات المتاحة — ليست احتمالاً للنجاح.'}
+          {generationDate && (
+            <span className="btx-datechip">
+              {lang === 'fr' ? 'Données générées' : lang === 'en' ? 'Data generated' : 'البيانات المولدة'} · {fmtDate(generationDate)}
             </span>
+          )}
+        </div>
+
+        {/* ─── Stats réelles ─── */}
+        <div className="btx-stats mt-4">
+          <div className="btx-stat" style={{ ['--glow' as string]: 'rgba(47, 125, 255, 0.16)' }}>
+            <div className="btx-stat__label">{lang === 'fr' ? 'Matchs du jour' : lang === 'en' ? 'Matches today' : 'مباريات اليوم'}</div>
+            <div className="btx-stat__value" style={{ ['--accent' as string]: '#F2F6FA' }}>{animCount}</div>
           </div>
-        )}
+          <div className="btx-stat" style={{ ['--glow' as string]: 'rgba(52, 211, 153, 0.16)' }}>
+            <div className="btx-stat__label">BTTS ≥ 60%</div>
+            <div className="btx-stat__value" style={{ ['--accent' as string]: '#34D399' }}>{animBtts}</div>
+          </div>
+          <div className="btx-stat" style={{ ['--glow' as string]: 'rgba(251, 191, 36, 0.15)' }}>
+            <div className="btx-stat__label">Over 2.5 ≥ 60%</div>
+            <div className="btx-stat__value" style={{ ['--accent' as string]: '#FBBF24' }}>{animOver}</div>
+          </div>
+          <div className="btx-stat" style={{ ['--glow' as string]: 'rgba(47, 125, 255, 0.16)' }}>
+            <div className="btx-stat__label">{lang === 'fr' ? 'Confiance moyenne' : lang === 'en' ? 'Avg. confidence' : 'متوسط الثقة'}</div>
+            <div className="btx-stat__value" style={{ ['--accent' as string]: '#7DB5FF' }}>
+              {stats.avgReliability != null ? `${animReliability}` : '—'}
+              {stats.avgReliability != null && <span className="btx-stat__unit">%</span>}
+            </div>
+          </div>
+        </div>
+
+        <div className="btx-reliability">
+          <span className="btx-reliability__label">
+            {lang === 'fr' ? 'Qualité des données' : lang === 'en' ? 'Data quality' : 'جودة البيانات'}
+          </span>
+          <span className="btx-reliability__note">
+            {lang === 'fr'
+              ? 'Indicateur de qualité des données disponibles — ce n’est pas une probabilité de réussite.'
+              : lang === 'en'
+                ? 'Indicator of available data quality — this is not a probability of success.'
+                : 'مؤشر جودة البيانات المتاحة — وليس احتمالاً للنجاح.'}
+          </span>
+        </div>
       </div>
 
       {/* ─── AI COMBO OF THE DAY ─── */}
       {/* Deterministic selection — NO Gemini call from client, NO recalculation. */}
       {/* Source: /predictions.json fields only (bttsProb, over25Prob, reliabilityScore, dataQuality, dataSource). */}
       {!loading && (liveTodayMatches.length > 0 || scheduledTodayMatches.length > 0) && (
-        <div className="btts-today-combo rounded-xl p-3 sm:p-4 mb-4" style={{
-          backgroundColor: C.surface,
-          border: `1px solid rgba(47, 125, 255, 0.30)`,
-          boxShadow: '0 8px 24px rgba(47, 125, 255, 0.06)',
-        }}>
-          {/* Header */}
-          <div className="flex items-center gap-2 mb-3">
-            <span className="text-base flex-shrink-0" style={{ color: C.data }}>✦</span>
+        <div className="btx-combo btx-rev mb-4" style={{ ['--d' as string]: '60ms' }}>
+          <div className="btx-combo__head">
+            <span className="btx-combo__icon" aria-hidden="true">✦</span>
             <div className="flex-1 min-w-0">
-              <div className="text-xs uppercase tracking-widest font-semibold" style={{ color: C.data }}>
+              <div className="btx-combo__kicker">AI COMBO</div>
+              <div className="btx-combo__title">
                 {lang === 'fr' ? 'Combo IA du jour' : lang === 'en' ? 'AI Combo of the Day' : 'تركيبة الذكاء الاصطناعي لليوم'}
               </div>
-              <div className="text-xs" style={{ color: C.textSec }}>
-                {combo.length === 3
-                  ? (lang === 'fr' ? 'Sélection statistique · 3 choix' : lang === 'en' ? 'Statistical selection · 3 picks' : 'اختيار إحصائي · 3 اختيارات')
-                  : (lang === 'fr' ? 'Sélection statistique' : lang === 'en' ? 'Statistical selection' : 'اختيار إحصائي')}
-              </div>
-              <div className="text-xs mt-0.5 italic" style={{ color: C.textMute }}>
-                {lang === 'fr' ? 'Sélection déterministe basée sur les données disponibles — ne garantit aucun résultat.' : lang === 'en' ? 'Deterministic selection based on available data — no result is guaranteed.' : 'اختيار محدد يعتمد على البيانات المتاحة — لا توجد ضمانات لأي نتيجة.'}
+              <div className="btx-combo__note">
+                {lang === 'fr'
+                  ? 'Sélection déterministe basée sur les données disponibles — ne garantit aucun résultat.'
+                  : lang === 'en'
+                    ? 'Deterministic selection based on available data — no result is guaranteed.'
+                    : 'اختيار محدد يعتمد على البيانات المتاحة — لا توجد ضمانات لأي نتيجة.'}
               </div>
             </div>
           </div>
 
           {/* Picks — exactly 3 required, otherwise neutral empty state. Legacy copy: No combo available today. */}
           {combo.length < 3 ? (
-            <div className="py-4 text-center">
-              <p className="text-sm font-semibold" style={{ color: C.text }}>
-                {t.predictions.noCombo}
-              </p>
-              <p className="text-xs mt-1" style={{ color: C.textSec }}>
-                {lang === 'fr' ? 'Conditions : qualité des données différente de LOW, fiabilité ≥ 70 %, BTTS ou Over 2.5 ≥ 65 %.' : lang === 'en' ? 'Eligibility: data quality is not LOW, reliability ≥ 70%, BTTS or Over 2.5 ≥ 65%.' : 'الشروط: جودة البيانات ليست منخفضة، الموثوقية ≥ 70%، وBTTS أو Over 2.5 ≥ 65%.'}
+            <div className="btx-empty" style={{ padding: '1.4rem 1rem' }}>
+              <p className="btx-empty__title">{t.predictions.noCombo}</p>
+              <p className="btx-empty__sub">
+                {lang === 'fr'
+                  ? 'Conditions : qualité des données différente de LOW, fiabilité ≥ 70 %, BTTS ou Over 2.5 ≥ 65 %.'
+                  : lang === 'en'
+                    ? 'Eligibility: data quality is not LOW, reliability ≥ 70%, BTTS or Over 2.5 ≥ 65%.'
+                    : 'الشروط: جودة البيانات ليست منخفضة، الموثوقية ≥ 70%، وBTTS أو Over 2.5 ≥ 65%.'}
               </p>
             </div>
           ) : (
-            <div className="space-y-2">
+            <div>
               {combo.map((pick, i) => (
                 <ComboPickRow
                   key={`${pick.match.key}-${pick.market}`}
                   pick={pick}
                   index={i}
+                  lang={lang}
                 />
               ))}
             </div>
           )}
 
-          {/* Disclaimer — discrete */}
-          <p className="text-xs mt-3 text-center" style={{ color: C.textMute }}>
-            {lang === 'fr' ? 'Sélection IA basée sur les sorties du modèle statistique. Aucun pari n’est garanti.' : lang === 'en' ? 'AI selection based on statistical model outputs. No bet is guaranteed.' : 'اختيار الذكاء الاصطناعي مبني على مخرجات النموذج الإحصائي. لا توجد ضمانات لأي رهان.'}
+          <p className="btx-disclaimer" style={{ marginTop: '0.8rem' }}>
+            {lang === 'fr'
+              ? 'Sélection IA basée sur les sorties du modèle statistique. Aucun pari n’est garanti.'
+              : lang === 'en'
+                ? 'AI selection based on statistical model outputs. No bet is guaranteed.'
+                : 'اختيار الذكاء الاصطناعي مبني على مخرجات النموذج الإحصائي. لا توجد ضمانات لأي رهان.'}
           </p>
         </div>
       )}
 
-      {/* ─── FILTERS ─── */}
-      <div className="btts-today-filters flex items-center gap-1.5 overflow-x-auto no-scrollbar pb-2 mb-3">
+      {/* ─── FILTRES ─── */}
+      <div className="btx-filters btx-rev mb-4" role="group" aria-label={lang === 'fr' ? 'Filtres de pronostics' : 'Prediction filters'} style={{ ['--d' as string]: '90ms' }}>
         {filters.map(f => (
           <button
             key={f.id}
             onClick={() => setActiveFilter(f.id)}
             aria-pressed={activeFilter === f.id}
-            className="px-3 py-1.5 rounded-full text-sm font-semibold transition-all whitespace-nowrap flex-shrink-0"
-            style={{
-              backgroundColor: activeFilter === f.id ? C.data : C.surface,
-              color: activeFilter === f.id ? C.bg : C.textSec,
-              border: `1px solid ${activeFilter === f.id ? C.success : C.border}`,
-            }}
+            className={`btx-filter${activeFilter === f.id ? ' is-active' : ''}`}
           >
             {f.label}
           </button>
         ))}
       </div>
 
-      {/* ─── TODAY'S MATCHES ─── */}
+      {/* ─── SECTIONS MATCHS ─── */}
       {loading ? (
-        <div className="btts-match-grid grid grid-cols-1 lg:grid-cols-2 gap-3">
-          {[1, 2, 3, 4].map(i => (
-            <div key={i} className="rounded-xl h-64 animate-pulse" style={{ backgroundColor: C.surface, border: `1px solid ${C.border}` }} />
-          ))}
+        <div className="btx-grid">
+          {[1, 2, 3, 4].map(i => <div key={i} className="btx-skel" aria-hidden="true" />)}
         </div>
       ) : (
         <>
-          {/* ─── Section: Aujourd'hui ─── */}
-          <div className="mb-6">
-            <h3 className="text-xs uppercase tracking-widest font-bold mb-3" style={{ color: C.text }}>
-              {lang === 'fr' ? 'À venir aujourd’hui' : lang === 'en' ? 'Today — upcoming' : 'المباريات القادمة اليوم'}
-              <span className="ml-2 px-2 py-0.5 rounded-full text-xs font-semibold" style={{
-                backgroundColor: (scheduledTodayMatches.length + liveTodayMatches.length) > 0 ? `${C.success}20` : `${C.textMute}20`,
-                color: (scheduledTodayMatches.length + liveTodayMatches.length) > 0 ? C.success : C.textMute,
-              }}>
+          {/* ─── Aujourd'hui (live + à venir) ─── */}
+          <div className="mb-7">
+            <h3 className="btx-section-title">
+              {lang === 'fr' ? 'Aujourd’hui' : lang === 'en' ? 'Today' : 'اليوم'}
+              <span className={`btx-count-pill${(scheduledTodayMatches.length + liveTodayMatches.length) > 0 ? ' btx-count-pill--green' : ' btx-count-pill--muted'}`}>
                 {scheduledTodayMatches.length + liveTodayMatches.length}
               </span>
             </h3>
-            {scheduledTodayMatches.length === 0 ? (
-              <div className="rounded-xl p-8 text-center" style={{ backgroundColor: C.surface, border: `1px solid ${C.border}` }}>
-                <p className="text-sm font-bold mb-1" style={{ color: C.text }}>{lang === 'fr' ? 'Aucun match disponible aujourd’hui' : lang === 'en' ? 'No match available today' : 'لا توجد مباريات متاحة اليوم'}</p>
-                <p className="text-[13px]" style={{ color: C.textSec }}>{lang === 'fr' ? 'Revenez plus tard ou consultez les matchs à venir ci-dessous.' : lang === 'en' ? 'Come back later or check the upcoming matches below.' : 'عد لاحقاً أو راجع المباريات القادمة أدناه.'}</p>
+            {scheduledTodayMatches.length === 0 && liveTodayMatches.length === 0 ? (
+              <div className="btx-empty">
+                <p className="btx-empty__title">{lang === 'fr' ? 'Aucun match disponible aujourd’hui' : lang === 'en' ? 'No match available today' : 'لا توجد مباريات متاحة اليوم'}</p>
+                <p className="btx-empty__sub">{lang === 'fr' ? 'Revenez plus tard ou consultez les matchs à venir ci-dessous.' : lang === 'en' ? 'Come back later or check the upcoming matches below.' : 'عد لاحقاً أو راجع المباريات القادمة أدناه.'}</p>
               </div>
             ) : (
-              <div className="btts-match-grid grid grid-cols-1 lg:grid-cols-2 gap-3">
+              <div className="btx-grid">
                 {[...liveTodayMatches, ...scheduledTodayMatches]
                   .filter(m => passesFilter(m, activeFilter))
                   .map((m, i) => (
-                    <MatchCard key={`today-${m.key}`} match={m} index={i} insufficientDataLabel={insufficientDataLabel} labels={labels} />
+                    <MatchCard
+                      key={`today-${m.key}`}
+                      match={m}
+                      index={i}
+                      status="scheduled"
+                      lang={lang}
+                      insufficientDataLabel={insufficientDataLabel}
+                      labels={labels}
+                      now={now}
+                    />
                   ))}
               </div>
             )}
           </div>
 
           {finishedTodayMatches.length > 0 && (
-            <div className="mb-6">
-              <h3 className="text-xs uppercase tracking-widest font-bold mb-3" style={{ color: C.textSec }}>
+            <div className="mb-7">
+              <h3 className="btx-section-title" style={{ color: C.textSec }}>
+                {/* Conservé pour cohérence i18n et tests d'acceptance */}
                 {lang === 'fr' ? 'Terminés aujourd’hui' : lang === 'en' ? 'Finished today' : 'انتهت اليوم'}
-                <span className="ml-2 px-2 py-0.5 rounded-full text-xs font-semibold" style={{ backgroundColor: `${C.textMute}20`, color: C.textMute }}>
-                  {finishedTodayMatches.length}
-                </span>
+                <span className="btx-count-pill btx-count-pill--muted">{finishedTodayMatches.length}</span>
               </h3>
-              <div className="btts-match-grid grid grid-cols-1 lg:grid-cols-2 gap-3 opacity-80">
+              <div className="btx-grid" style={{ opacity: 0.82 }}>
                 {finishedTodayMatches.filter(m => passesFilter(m, activeFilter)).map((m, i) => (
-                  <MatchCard key={`finished-${m.key}`} match={m} index={i} insufficientDataLabel={insufficientDataLabel} labels={labels} />
+                  <MatchCard
+                    key={`finished-${m.key}`}
+                    match={m}
+                    index={i}
+                    status="finished"
+                    lang={lang}
+                    insufficientDataLabel={insufficientDataLabel}
+                    labels={labels}
+                    now={now}
+                  />
                 ))}
               </div>
             </div>
           )}
 
-          {liveTodayMatches.length > 0 && (
-            <div className="mb-6">
-              <h3 className="text-xs uppercase tracking-widest font-bold mb-3" style={{ color: C.success }}>
-                {lang === 'fr' ? 'En direct / en cours' : lang === 'en' ? 'Live / in progress' : 'مباشر / قيد اللعب'}
-                <span className="ml-2 px-2 py-0.5 rounded-full text-xs font-semibold" style={{ backgroundColor: `${C.success}20`, color: C.success }}>
-                  {liveTodayMatches.length}
-                </span>
-              </h3>
-              <div className="btts-match-grid grid grid-cols-1 lg:grid-cols-2 gap-3">
-                {liveTodayMatches.filter(m => passesFilter(m, activeFilter)).map((m, i) => (
-                  <MatchCard key={`live-${m.key}`} match={m} index={i} insufficientDataLabel={insufficientDataLabel} labels={labels} />
-                ))}
-              </div>
-            </div>
-          )}
-
-          {/* ─── Section: À venir ─── */}
+          {/* ─── À venir (autres jours) ─── */}
           {upcomingMatches.length > 0 && (
-            <div>
-              <h3 className="text-xs uppercase tracking-widest font-bold mb-3" style={{ color: C.text }}>
+            <div className="mb-7">
+              <h3 className="btx-section-title">
                 {lang === 'fr' ? 'À venir' : lang === 'en' ? 'Upcoming' : 'القادمة'}
-                <span className="ml-2 px-2 py-0.5 rounded-full text-xs font-semibold" style={{
-                  backgroundColor: `${C.textSec}20`,
-                  color: C.textSec,
-                }}>
-                  {upcomingMatches.length}
-                </span>
+                <span className="btx-count-pill">{upcomingMatches.length}</span>
               </h3>
-              <div className="btts-match-grid grid grid-cols-1 lg:grid-cols-2 gap-3">
+              <div className="btx-grid">
                 {upcomingMatches
                   .filter(m => passesFilter(m, activeFilter))
                   .map((m, i) => (
-                    <MatchCard key={`upcoming-${m.key}`} match={m} index={i} insufficientDataLabel={insufficientDataLabel} labels={labels} />
+                    <MatchCard
+                      key={`upcoming-${m.key}`}
+                      match={m}
+                      index={i}
+                      status="scheduled"
+                      lang={lang}
+                      insufficientDataLabel={insufficientDataLabel}
+                      labels={labels}
+                      now={now}
+                    />
                   ))}
               </div>
             </div>
@@ -1033,18 +1069,20 @@ export default function BttsTodayDashboard() {
 
           {/* Empty state when both sections are empty under current filter */}
           {scheduledTodayMatches.length === 0 && liveTodayMatches.length === 0 && upcomingMatches.length === 0 && (
-            <div className="rounded-xl p-8 text-center" style={{ backgroundColor: C.surface, border: `1px solid ${C.border}` }}>
-              <p className="text-sm font-bold mb-1" style={{ color: C.text }}>{lang === 'fr' ? 'Aucun match sous ce filtre' : lang === 'en' ? 'No matches under this filter' : 'لا توجد مباريات ضمن هذا الفلتر'}</p>
-              <p className="text-[13px]" style={{ color: C.textSec }}>{lang === 'fr' ? 'Essayez un autre filtre ou revenez plus tard.' : lang === 'en' ? 'Try another filter or come back later.' : 'جرّب فلترًا آخر أو عد لاحقاً.'}</p>
+            <div className="btx-empty">
+              <p className="btx-empty__title">{lang === 'fr' ? 'Aucun match sous ce filtre' : lang === 'en' ? 'No matches under this filter' : 'لا توجد مباريات ضمن هذا الفلتر'}</p>
+              <p className="btx-empty__sub">{lang === 'fr' ? 'Essayez un autre filtre ou revenez plus tard.' : lang === 'en' ? 'Try another filter or come back later.' : 'جرّب فلترًا آخر أو عد لاحقاً.'}</p>
             </div>
           )}
         </>
       )}
 
       {/* ─── Footer disclaimer ─── */}
-      <p className="text-center text-xs mt-6" style={{ color: C.textSec }}>
+      <p className="btx-disclaimer">
         {lang === 'fr' ? 'Prédictions statistiques basées sur des buts attendus modélisés (λ) issus des buts récents réels (ESPN) et le modèle de Poisson. Aucun résultat futur garanti. 18+' : lang === 'en' ? 'Statistical predictions based on modeled expected goals (λ) from recent real goals (ESPN) and the Poisson model. No future result guaranteed. 18+.' : 'توقعات إحصائية مبنية على أهداف متوقعة نمذجة (λ) من أهداف حقيقية حديثة (ESPN) ونموذج بواسون. لا توجد ضمانات لنتيجة مستقبلية. 18+'}
       </p>
     </section>
   )
 }
+
+
