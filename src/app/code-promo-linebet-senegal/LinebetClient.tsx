@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useState, type CSSProperties } from 'react'
 import { AFFILIATE } from '@/lib/constants'
 import { trackAffiliateAction, trackAffiliateCodeCopy } from '@/lib/affiliateTracking'
 import { copyTextToClipboard } from '@/lib/clipboard'
@@ -16,11 +16,10 @@ const OFFER = {
   minDeposit: '1 €',
 }
 
-/* ─── Palette locale — Linebet bleu (couleur de marque du thème) ────── */
+/* ─── Palette locale — bleu marque Linebet + cyan ────────────────────── */
 const GOLD = '#2F7DFF'
-const GOLD_LIGHT = '#3FBA7C'
+const CYAN = '#22D3EE'
 const PRIMARY = '#2F7DFF'
-const PRIMARY_HOVER = '#3FBA7C'
 const TEXT = '#F2F6FA'
 const TEXT_SEC = '#9DABBB'
 const BG_DARK = '#0B0F14'
@@ -29,6 +28,16 @@ const BG_DARK = '#0B0F14'
 const LINEBET_SIGNUP = AFFILIATE.linebet
 /* Vrai lien affilié de téléchargement (APK) — inchangé */
 const LINEBET_DOWNLOAD = AFFILIATE.linebetDownload
+
+/* ─── Bandeau défilant — bénéfices de l'offre annoncée ───────────────── */
+const BENEFITS = [
+  '300% de bonus',
+  '100 Free Spins',
+  'Sans condition de mise',
+  'Dès 1 € de dépôt',
+  'International — tous les pays du monde',
+  'App Android & iOS',
+]
 
 /* ─── Étapes (4) — design moderne avec icônes SVG ───────────────────── */
 const STEPS = [
@@ -104,10 +113,34 @@ const INTERNAL_LINKS = [
   { href: '/btts-c-est-quoi', label: "C'est quoi BTTS ?" },
 ]
 
+/* ─── Compteur animé (motion design billboard) ───────────────────────── */
+function useCountUp(target: number, duration = 1300): number {
+  const [value, setValue] = useState(0)
+  useEffect(() => {
+    const reduced = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    let raf = 0
+    const start = performance.now()
+    const tick = (now: number) => {
+      // Motion réduite → saut direct à la valeur finale (p = 1)
+      const p = reduced ? 1 : Math.min(1, (now - start) / duration)
+      const eased = 1 - Math.pow(1 - p, 3)
+      setValue(Math.round(target * eased))
+      if (p < 1) raf = requestAnimationFrame(tick)
+    }
+    raf = requestAnimationFrame(tick)
+    return () => cancelAnimationFrame(raf)
+  }, [target, duration])
+  return value
+}
+
 export default function LinebetClient() {
   const [copied, setCopied] = useState(false)
   const [copyFailed, setCopyFailed] = useState(false)
   const [toast, setToast] = useState(false)
+
+  const bonusCount = useCountUp(300)
+  const spinsCount = useCountUp(100)
+  const depositCount = useCountUp(1)
 
   /* Mesure : 1 vue de la page promo par session */
   useEffect(() => {
@@ -170,188 +203,189 @@ export default function LinebetClient() {
         </ol>
       </nav>
 
-      {/* ─────────── HERO + H1 ─────────── */}
-      <section className="pb-6 sm:pb-8">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+      {/* ─────────── HERO + H1 — aurore bleue Linebet ─────────── */}
+      <section className="lpb-hero pb-6 sm:pb-8">
+        <div className="lpb-orb lpb-orb--1" aria-hidden="true" />
+        <div className="lpb-orb lpb-orb--2" aria-hidden="true" />
+        <span className="lpb-spark text-lg" style={{ top: '14%', left: '9%', animationDelay: '0.2s' }} aria-hidden="true">✦</span>
+        <span className="lpb-spark text-sm" style={{ top: '58%', left: '16%', animationDelay: '1.1s' }} aria-hidden="true">✦</span>
+        <span className="lpb-spark text-base" style={{ top: '22%', right: '11%', animationDelay: '1.8s' }} aria-hidden="true">✦</span>
+        <span className="lpb-spark text-xs" style={{ top: '66%', right: '18%', animationDelay: '0.7s' }} aria-hidden="true">✦</span>
+
+        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 text-center">
+          <div className="lpb-rise flex justify-center mb-4" style={{ '--d': '40ms' } as CSSProperties}>
+            <span className="lpb-badge text-[10px] tracking-[0.18em]">★ Code Promo N°1 Mondial</span>
+          </div>
           <h1
-            className="text-3xl sm:text-5xl mb-3 leading-tight"
-            style={{ fontFamily: "var(--font-bebas-neue), 'Bebas Neue', sans-serif", letterSpacing: '0.03em', color: TEXT }}
+            className="lpb-rise text-3xl sm:text-5xl mb-3 leading-tight"
+            style={{ fontFamily: "var(--font-bebas-neue), 'Bebas Neue', sans-serif", letterSpacing: '0.03em', color: TEXT, '--d': '120ms' } as CSSProperties}
           >
             CODE PROMO <span style={{ color: GOLD, textShadow: `0 0 22px ${GOLD}66` }}>LINEBET</span> VISION221
           </h1>
-          <div className="mx-auto mb-4 flex min-h-16 max-w-[280px] items-center justify-center rounded-xl bg-white px-4 py-2 shadow-lg sm:max-w-[340px]">
+          <div className="lpb-rise mx-auto mb-4 flex min-h-16 max-w-[280px] items-center justify-center rounded-xl bg-white px-4 py-2 shadow-lg sm:max-w-[340px]" style={{ '--d': '220ms' } as CSSProperties}>
             <img src="/logos/linebet-provided.jpg" alt="Logo officiel Linebet" className="max-h-14 w-auto object-contain" width={1280} height={465} loading="eager" />
           </div>
-          <p className="text-sm sm:text-base max-w-2xl mx-auto leading-relaxed" style={{ color: TEXT_SEC }}>
+          <p className="lpb-rise text-sm sm:text-base max-w-2xl mx-auto leading-relaxed" style={{ color: TEXT_SEC, '--d': '320ms' } as CSSProperties}>
             Inscris-toi avec le code <strong style={{ color: GOLD }}>{CODE}</strong> et profite de l&apos;offre annoncée : <strong style={{ color: TEXT }}>300% de bonus + 100 free spins</strong>, sans condition de mise, dès 1 € de dépôt.
           </p>
-          <p className="text-[11px] mt-3" style={{ color: TEXT_SEC }}>
+          <p className="lpb-rise text-[11px] mt-3" style={{ color: TEXT_SEC, '--d': '420ms' } as CSSProperties}>
             Offre annoncée — vérifie les conditions affichées par Linebet · 18+
           </p>
         </div>
       </section>
 
-      {/* ─────────── ENCARD OFFRE ─────────── */}
-      <section className="pb-6" aria-label="Offre de bienvenue annoncée">
-        <div className="max-w-2xl mx-auto px-4 sm:px-6">
-          <div className="rounded-2xl p-5 text-center" style={{ backgroundColor: `${GOLD}0D`, border: `1px solid ${GOLD}55` }}>
-            <p className="text-2xl sm:text-3xl font-black" style={{ color: GOLD, fontFamily: "var(--font-bebas-neue), 'Bebas Neue', sans-serif", letterSpacing: '0.04em' }}>
-              300% DE BONUS + 100 FREE SPINS
-            </p>
-            <p className="text-xs mt-2 font-semibold" style={{ color: TEXT }}>
-              Sans condition de mise · Dès 1 € de dépôt
-            </p>
-            <p className="text-[10px] mt-1" style={{ color: TEXT_SEC }}>
-              Offre annoncée par la campagne partenaire — vérifie les conditions affichées par Linebet avant tout dépôt.
-            </p>
+      {/* ─────────── BANDEAU DÉFILANT BÉNÉFICES (décoratif) ─────────── */}
+      <section className="pb-6" aria-hidden="true">
+        <div className="lpb-marquee">
+          <div className="lpb-marquee__track">
+            {[0, 1].map((copy) => (
+              <div className="lpb-marquee__group" key={copy}>
+                {BENEFITS.map((b) => (
+                  <span className="lpb-marquee__item" key={`${copy}-${b}`}>{b}</span>
+                ))}
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* ─────────── CARTE CODE MODERNE ─────────── */}
+      {/* ─────────── BILLBOARD OFFRE — 3 chiffres animés ─────────── */}
+      <section className="pb-8" aria-label="Offre de bienvenue annoncée">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6">
+          <div className="grid grid-cols-3 gap-3">
+            <div className="lpb-stat lpb-pop" style={{ '--d': '120ms' } as CSSProperties}>
+              <p className="lpb-stat__num">{bonusCount}%</p>
+              <span className="sr-only">300% de bonus</span>
+              <p className="text-[10px] sm:text-xs mt-1.5 font-bold uppercase tracking-wider" style={{ color: TEXT }}>Bonus</p>
+            </div>
+            <div className="lpb-stat lpb-pop" style={{ '--d': '260ms' } as CSSProperties}>
+              <p className="lpb-stat__num">{spinsCount}</p>
+              <span className="sr-only">100 free spins</span>
+              <p className="text-[10px] sm:text-xs mt-1.5 font-bold uppercase tracking-wider" style={{ color: TEXT }}>
+                <span className="lpb-spins-star" aria-hidden="true">✦</span> Free spins
+              </p>
+            </div>
+            <div className="lpb-stat lpb-pop" style={{ '--d': '400ms' } as CSSProperties}>
+              <p className="lpb-stat__num">{depositCount} €</p>
+              <span className="sr-only">1 euro de dépôt minimum</span>
+              <p className="text-[10px] sm:text-xs mt-1.5 font-bold uppercase tracking-wider" style={{ color: TEXT }}>Dépôt min.</p>
+            </div>
+          </div>
+          <p className="text-xs mt-3 text-center font-semibold" style={{ color: TEXT }}>
+            {OFFER.wagering} · Offre annoncée par la campagne partenaire — vérifie les conditions affichées par Linebet avant tout dépôt.
+          </p>
+        </div>
+      </section>
+
+      {/* ─────────── CARTE CODE PREMIUM — bordure animée + reflet ─────────── */}
       <section className="pb-8">
         <div className="max-w-2xl mx-auto px-4 sm:px-6">
-          <div
-            className="rounded-2xl p-8 text-center relative overflow-hidden"
-            style={{
-              background: `linear-gradient(135deg, ${BG_DARK} 0%, #1A242F 100%)`,
-              border: `1.5px solid ${GOLD}`,
-              boxShadow: `0 0 60px ${GOLD}22, 0 10px 40px rgba(0,0,0,0.4), inset 0 1px 0 ${GOLD}33`,
-            }}
-          >
-            {/* Badge exclusif */}
-            <div className="inline-block px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-[0.18em] mb-5"
-              style={{ backgroundColor: `${GOLD}1A`, color: GOLD, border: `1px solid ${GOLD}55` }}>
-              ★ Code Promo N°1 Mondial
-            </div>
+          <div className="lpb-card">
+            <div className="lpb-card__inner">
+              <span className="lpb-shine__beam" aria-hidden="true" />
 
-            {/* Code VISION221 — cliquable directement */}
-            <p className="text-[11px] uppercase tracking-[0.25em] mb-2" style={{ color: TEXT_SEC }}>
-              Code promo Linebet
-            </p>
-            <button
-              type="button"
-              onClick={copyCode}
-              title="Cliquer pour copier"
-              aria-label={`Code promo ${CODE} — cliquer pour copier dans le presse-papier`}
-              className="inline-flex items-center justify-center gap-3 mb-3 select-all cursor-pointer transition-transform hover:scale-[1.02] active:scale-[0.98] bg-transparent border-0 p-0"
-              style={{
-                color: GOLD,
-                fontFamily: 'var(--font-mono), monospace',
-                textShadow: `0 0 30px ${GOLD}55, 0 0 12px ${GOLD}88`,
-              }}
-            >
-              <span className="text-5xl sm:text-6xl font-black tracking-[0.15em]">
-                {CODE}
-              </span>
-              <span
-                className="inline-flex items-center justify-center w-9 h-9 rounded-lg flex-shrink-0"
-                style={{
-                  backgroundColor: copied ? '#2F7DFF' : `${GOLD}1A`,
-                  border: `1px solid ${copied ? '#2F7DFF' : GOLD}`,
-                  color: copied ? BG_DARK : GOLD,
-                }}
-                aria-hidden="true"
-              >
-                {copied ? (
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <polyline points="20 6 9 17 4 12" />
-                  </svg>
-                ) : (
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
-                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
-                  </svg>
-                )}
-              </span>
-            </button>
-            <p className="text-xs mb-6" style={{ color: TEXT_SEC }}>
-              À saisir exactement en <strong style={{ color: TEXT }}>majuscules</strong> · Code {CODE}
-            </p>
-
-            {/* 3 boutons : 1-Copier, 2-S'inscrire, 3-Télécharger */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3">
+              {/* Code VISION221 — cliquable directement */}
+              <p className="text-[11px] uppercase tracking-[0.25em] mb-2" style={{ color: TEXT_SEC }}>
+                Code promo Linebet
+              </p>
               <button
-                onClick={handleCopy}
-                className="flex-1 sm:flex-initial sm:min-w-[260px] h-[52px] rounded-[10px] font-bold text-[14px] flex items-center justify-center gap-2 transition-all"
-                style={{
-                  backgroundColor: copied ? '#2F7DFF' : GOLD,
-                  color: BG_DARK,
-                  border: 'none',
-                  boxShadow: `0 6px 20px ${GOLD}33`,
-                }}
-                aria-label={`Copier le code ${CODE} dans le presse-papier`}
+                type="button"
+                onClick={copyCode}
+                title="Cliquer pour copier"
+                aria-label={`Code promo ${CODE} — cliquer pour copier dans le presse-papier`}
+                className="inline-flex items-center justify-center gap-3 mb-3 select-all cursor-pointer transition-transform hover:scale-[1.02] active:scale-[0.98] bg-transparent border-0 p-0"
+                style={{ fontFamily: 'var(--font-mono), monospace' }}
               >
-                {copyFailed ? (
-                  <>⚠ Copie impossible</>
-                ) : copied ? (
-                  <>
+                <span className="lpb-code text-5xl sm:text-6xl font-black tracking-[0.15em]">
+                  {CODE}
+                </span>
+                <span
+                  className="inline-flex items-center justify-center w-9 h-9 rounded-lg flex-shrink-0"
+                  style={{
+                    backgroundColor: copied ? '#2F7DFF' : 'rgba(47, 125, 255, 0.14)',
+                    border: `1px solid ${copied ? '#2F7DFF' : GOLD}`,
+                    color: copied ? BG_DARK : GOLD,
+                  }}
+                  aria-hidden="true"
+                >
+                  {copied ? (
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                       <polyline points="20 6 9 17 4 12" />
                     </svg>
-                    Copié !
-                  </>
-                ) : (
-                  <>
+                  ) : (
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
                       <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
                     </svg>
-                    Copier le code {CODE}
-                  </>
-                )}
+                  )}
+                </span>
               </button>
+              <p className="text-xs mb-6" style={{ color: TEXT_SEC }}>
+                À saisir exactement en <strong style={{ color: TEXT }}>majuscules</strong> · Code {CODE}
+              </p>
 
-              <a
-                href={LINEBET_SIGNUP}
-                target="_blank"
-                rel="noopener noreferrer nofollow sponsored"
-                className="flex-1 sm:flex-initial sm:min-w-[260px] h-[52px] rounded-[10px] font-bold text-[14px] flex items-center justify-center gap-2 transition-all"
-                style={{
-                  backgroundColor: PRIMARY,
-                  color: TEXT,
-                  border: 'none',
-                  boxShadow: '0 6px 20px rgba(127, 162, 198, 0.30)',
-                }}
-                onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = PRIMARY_HOVER }}
-                onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = PRIMARY }}
-                data-cta="linebet-signup-v60"
-                onClick={() => trackAffiliateAction('linebet', 'signup_cta_click', 'linebet-promo-code-card')}
-              >
-                S&apos;inscrire sur Linebet
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <line x1="5" y1="12" x2="19" y2="12" />
-                  <polyline points="12 5 19 12 12 19" />
-                </svg>
-              </a>
+              {/* 3 boutons : Copier / S'inscrire / Télécharger (Google Play) */}
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3">
+                <button
+                  onClick={handleCopy}
+                  className="lpb-btn lpb-btn--copy flex-1 sm:flex-initial sm:min-w-[240px]"
+                  aria-label={`Copier le code ${CODE} dans le presse-papier`}
+                >
+                  {copyFailed ? (
+                    <>⚠ Copie impossible</>
+                  ) : copied ? (
+                    <>
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                        <polyline points="20 6 9 17 4 12" />
+                      </svg>
+                      Copié !
+                    </>
+                  ) : (
+                    <>
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
+                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+                      </svg>
+                      Copier le code {CODE}
+                    </>
+                  )}
+                </button>
 
-              <a
-                href={LINEBET_DOWNLOAD}
-                target="_blank"
-                rel="noopener noreferrer nofollow sponsored"
-                className="flex-1 sm:flex-initial sm:min-w-[260px] h-[52px] rounded-[10px] font-bold text-[14px] flex items-center justify-center gap-2 transition-all"
-                style={{
-                  backgroundColor: 'transparent',
-                  color: '#C8CCDA',
-                  border: '1.5px solid #9DABBB',
-                }}
-                onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#1A242F' }}
-                onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'transparent' }}
-                data-cta="linebet-download-v62"
-                onClick={() => trackAffiliateAction('linebet', 'download_click', 'linebet-promo-code-card', { link_target: 'download' })}
-              >
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                  <polyline points="7 10 12 15 17 10" />
-                  <line x1="12" y1="15" x2="12" y2="3" />
-                </svg>
-                Télécharger Linebet APK (Android &amp; iOS)
-              </a>
+                <a
+                  href={LINEBET_SIGNUP}
+                  target="_blank"
+                  rel="noopener noreferrer nofollow sponsored"
+                  className="lpb-btn lpb-btn--primary flex-1 sm:flex-initial sm:min-w-[240px]"
+                  data-cta="linebet-signup-v60"
+                  onClick={() => trackAffiliateAction('linebet', 'signup_cta_click', 'linebet-promo-code-card')}
+                >
+                  S&apos;inscrire sur Linebet
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                    <polyline points="12 5 19 12 12 19" />
+                  </svg>
+                </a>
+
+                <a
+                  href={LINEBET_DOWNLOAD}
+                  target="_blank"
+                  rel="noopener noreferrer nofollow sponsored"
+                  className="lpb-btn lpb-btn--store flex-1 sm:flex-initial sm:min-w-[240px]"
+                  data-cta="linebet-download-v62"
+                  onClick={() => trackAffiliateAction('linebet', 'download_click', 'linebet-promo-code-card', { link_target: 'download' })}
+                >
+                  <img src="/logos/google-play.svg" alt="" width={22} height={22} loading="lazy" aria-hidden="true" />
+                  <span className="flex flex-col items-start leading-tight">
+                    <span>Télécharger l&apos;app</span>
+                    <span className="text-[9px] font-semibold uppercase tracking-wider" style={{ color: TEXT_SEC }}>Google Play · APK Android</span>
+                  </span>
+                </a>
+              </div>
+
+              <p className="text-[10px] mt-4" style={{ color: '#9DABBB' }}>
+                Lien d&apos;affiliation rémunéré · 18+ · Jouer responsable
+              </p>
             </div>
-
-            <p className="text-[10px] mt-4" style={{ color: '#9DABBB' }}>
-              Lien d&apos;affiliation rémunéré · 18+ · Jouer responsable
-            </p>
           </div>
         </div>
       </section>
@@ -365,7 +399,7 @@ export default function LinebetClient() {
           >
             Détails de l&apos;offre Linebet
           </h2>
-          <div className="rounded-2xl overflow-hidden" style={{ border: `1px solid ${GOLD}33`, backgroundColor: '#141C25' }}>
+          <div className="lpb-rise rounded-2xl overflow-hidden" style={{ border: `1px solid ${GOLD}33`, backgroundColor: '#141C25' }}>
             <table className="w-full text-sm">
               <tbody>
                 {BONUS_ROWS.map((row, i) => (
@@ -393,7 +427,7 @@ export default function LinebetClient() {
         </div>
       </section>
 
-      {/* ─────────── ÉTAPES (4) ─────────── */}
+      {/* ─────────── ÉTAPES (4) — apparition en cascade ─────────── */}
       <section className="pb-10">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <h2
@@ -403,20 +437,20 @@ export default function LinebetClient() {
             Comment utiliser le code {CODE}
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {STEPS.map((step) => (
+            {STEPS.map((step, idx) => (
               <div
                 key={step.n}
-                className="rounded-2xl p-5 relative"
+                className="lpb-rise lpb-step rounded-2xl p-5 relative"
                 style={{
                   backgroundColor: '#141C25',
                   border: `1px solid ${GOLD}22`,
-                }}
+                  '--d': `${idx * 130}ms`,
+                } as CSSProperties}
               >
                 {/* Numéro + icône */}
                 <div className="flex items-center gap-3 mb-3">
                   <div
-                    className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
-                    style={{ backgroundColor: `${GOLD}15`, border: `1px solid ${GOLD}40`, color: GOLD }}
+                    className="lpb-num w-10 h-10 flex items-center justify-center flex-shrink-0"
                     aria-hidden="true"
                   >
                     {step.icon}
@@ -439,12 +473,8 @@ export default function LinebetClient() {
           <div className="text-center mt-6">
             <button
               onClick={handleCopy}
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-[10px] font-bold text-[13px] transition-all"
-              style={{
-                backgroundColor: copied ? '#2F7DFF' : GOLD,
-                color: BG_DARK,
-                boxShadow: `0 4px 14px ${GOLD}33`,
-              }}
+              className="lpb-btn lpb-btn--copy px-5"
+              style={{ minHeight: 44 }}
             >
               {copyFailed ? `⚠ Copie impossible — code : ${CODE}` : copied ? `✅ Code copié — colle-le sur Linebet` : `📋 Copier ${CODE} maintenant`}
             </button>
@@ -468,7 +498,7 @@ export default function LinebetClient() {
             {PAYMENT_METHODS.map((m) => (
               <div
                 key={m.name}
-                className="rounded-2xl p-4 text-center"
+                className="lpb-pay rounded-2xl p-4 text-center"
                 style={{ backgroundColor: '#141C25', border: `1px solid ${m.color}33` }}
               >
                 <div
@@ -515,8 +545,8 @@ export default function LinebetClient() {
                 a: "La disponibilité du code et de l'offre dépend du pays, du compte et de la période. Vérifie ton éligibilité et les conditions actuellement affichées par Linebet avant toute inscription ou dépôt.",
               },
             ].map((item) => (
-              <details key={item.q} className="rounded-2xl p-4" style={{ backgroundColor: '#141C25', border: `1px solid ${GOLD}22` }}>
-                <summary className="cursor-pointer font-semibold text-sm" style={{ color: TEXT, listStyle: 'none' }}>
+              <details key={item.q} className="lpb-faq rounded-2xl p-4" style={{ backgroundColor: '#141C25', border: `1px solid ${GOLD}22` }}>
+                <summary className="cursor-pointer font-semibold text-sm" style={{ color: TEXT }}>
                   {item.q}
                 </summary>
                 <p className="text-[12px] mt-2 leading-relaxed" style={{ color: TEXT_SEC }}>
@@ -532,7 +562,7 @@ export default function LinebetClient() {
       <section className="pb-10">
         <div className="max-w-2xl mx-auto px-4 sm:px-6">
           <div className="rounded-2xl p-5 text-center" style={{ backgroundColor: '#141C25', border: `1px solid ${GOLD}22` }}>
-            <p className="text-[10px] uppercase tracking-widest mb-3" style={{ color: GOLD }}>
+            <p className="text-[10px] uppercase tracking-widest mb-3" style={{ color: CYAN }}>
               À découvrir sur BTTSPredict
             </p>
             <div className="flex flex-wrap items-center justify-center gap-3 text-sm">
@@ -566,7 +596,7 @@ export default function LinebetClient() {
 
       {/* ─────────── STICKY BOTTOM BAR (mobile only) ─────────── */}
       <div
-        className="sm:hidden fixed bottom-0 left-0 right-0 z-[80] flex items-center justify-between gap-3 px-4 py-3"
+        className="lpb-sticky sm:hidden fixed bottom-0 left-0 right-0 z-[80] flex items-center justify-between gap-3 px-4 py-3"
         style={{
           backgroundColor: BG_DARK,
           borderTop: `1.5px solid ${GOLD}`,

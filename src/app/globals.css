@@ -5540,3 +5540,617 @@ body::before {
     width: auto;
   }
 }
+
+/* ════════════════════════════════════════════════════════════════════════════
+   PAGES PROMO PREMIUM — motion design « campagne »
+   .lpb-* = page code promo Linebet (bleu marque #2F7DFF / cyan #22D3EE)
+   .szb-* = page bonus 888Starz   (rouge marque #FF4D6D / or #FFD200)
+   Animations 100% CSS, uniquement transform / opacity / filter / background-pos
+   (compositées GPU). prefers-reduced-motion : tout est désactivé en fin de bloc.
+   ════════════════════════════════════════════════════════════════════════════ */
+
+@property --lpb-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@property --szb-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes lpb-border-spin {
+  to { --lpb-angle: 360deg; }
+}
+
+@keyframes szb-border-spin {
+  to { --szb-angle: 360deg; }
+}
+
+@keyframes lpb-orb-a {
+  0%   { transform: translate3d(0, 0, 0) scale(1); }
+  50%  { transform: translate3d(46px, 34px, 0) scale(1.12); }
+  100% { transform: translate3d(-18px, 12px, 0) scale(0.96); }
+}
+
+@keyframes lpb-orb-b {
+  0%   { transform: translate3d(0, 0, 0) scale(1); }
+  50%  { transform: translate3d(-52px, -28px, 0) scale(1.08); }
+  100% { transform: translate3d(16px, 22px, 0) scale(1.02); }
+}
+
+@keyframes lpb-rise {
+  from { opacity: 0; transform: translateY(26px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes lpb-pop {
+  0%   { opacity: 0; transform: scale(0.55); }
+  70%  { opacity: 1; transform: scale(1.07); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes lpb-badge-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(47, 125, 255, 0.42); }
+  50%      { box-shadow: 0 0 0 9px rgba(47, 125, 255, 0); }
+}
+
+@keyframes szb-badge-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255, 77, 109, 0.42); }
+  50%      { box-shadow: 0 0 0 9px rgba(255, 77, 109, 0); }
+}
+
+@keyframes lpb-shine-sweep {
+  0%       { transform: translateX(-240%) skewX(-18deg); }
+  55%, 100% { transform: translateX(560%) skewX(-18deg); }
+}
+
+@keyframes lpb-code-flow {
+  0%   { background-position: 0% 50%; }
+  100% { background-position: 220% 50%; }
+}
+
+@keyframes lpb-float-y {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-7px); }
+}
+
+@keyframes lpb-marquee-x {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@keyframes lpb-sparkle {
+  0%, 100% { opacity: 0.15; transform: scale(0.72) rotate(0deg); }
+  50%      { opacity: 0.95; transform: scale(1.15) rotate(24deg); }
+}
+
+@keyframes lpb-cta-pulse {
+  0%, 100% { box-shadow: 0 8px 26px rgba(47, 125, 255, 0.36), 0 0 0 0 rgba(47, 125, 255, 0.34); }
+  50%      { box-shadow: 0 8px 30px rgba(47, 125, 255, 0.5), 0 0 0 10px rgba(47, 125, 255, 0); }
+}
+
+@keyframes szb-cta-pulse {
+  0%, 100% { box-shadow: 0 8px 26px rgba(255, 77, 109, 0.36), 0 0 0 0 rgba(255, 77, 109, 0.34); }
+  50%      { box-shadow: 0 8px 30px rgba(255, 77, 109, 0.5), 0 0 0 10px rgba(255, 77, 109, 0); }
+}
+
+@keyframes lpb-spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes lpb-sticky-in {
+  from { transform: translateY(112%); opacity: 0; }
+  to   { transform: translateY(0); opacity: 1; }
+}
+
+/* ── HERO (commun aux deux pages, décliné par couleur) ──────────────────── */
+
+.lpb-hero,
+.szb-hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.lpb-hero::before,
+.szb-hero::before {
+  content: '';
+  position: absolute;
+  inset: -30% -10%;
+  pointer-events: none;
+  background-size: 240% 240%;
+  opacity: 0.85;
+}
+
+.lpb-hero::before {
+  background-image:
+    radial-gradient(42% 52% at 30% 38%, rgba(47, 125, 255, 0.16), transparent 70%),
+    radial-gradient(40% 48% at 74% 30%, rgba(34, 211, 238, 0.10), transparent 70%),
+    radial-gradient(46% 50% at 55% 85%, rgba(63, 186, 124, 0.08), transparent 70%);
+  animation: lpb-aurora 16s ease-in-out infinite alternate;
+}
+
+.szb-hero::before {
+  background-image:
+    radial-gradient(42% 52% at 30% 38%, rgba(255, 77, 109, 0.15), transparent 70%),
+    radial-gradient(40% 48% at 74% 30%, rgba(255, 210, 0, 0.08), transparent 70%),
+    radial-gradient(46% 50% at 55% 85%, rgba(214, 49, 72, 0.12), transparent 70%);
+  animation: lpb-aurora 18s ease-in-out infinite alternate;
+}
+
+@keyframes lpb-aurora {
+  from { background-position: 0% 20%; }
+  to   { background-position: 100% 80%; }
+}
+
+.lpb-orb,
+.szb-orb {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(58px);
+  pointer-events: none;
+  opacity: 0.5;
+  will-change: transform;
+}
+
+.lpb-orb--1 { width: 320px; height: 320px; top: -90px; left: -70px;  background: rgba(47, 125, 255, 0.34); animation: lpb-orb-a 15s ease-in-out infinite alternate; }
+.lpb-orb--2 { width: 280px; height: 280px; top: 8%;    right: -80px; background: rgba(34, 211, 238, 0.26); animation: lpb-orb-b 19s ease-in-out infinite alternate; }
+
+.szb-orb--1 { width: 320px; height: 320px; top: -90px; left: -70px;  background: rgba(255, 77, 109, 0.30); animation: lpb-orb-a 15s ease-in-out infinite alternate; }
+.szb-orb--2 { width: 280px; height: 280px; top: 8%;    right: -80px; background: rgba(255, 210, 0, 0.20); animation: lpb-orb-b 19s ease-in-out infinite alternate; }
+
+.lpb-spark,
+.szb-spark {
+  position: absolute;
+  pointer-events: none;
+  color: #7EB6FF;
+  animation: lpb-sparkle 3.2s ease-in-out infinite;
+}
+
+.szb-spark { color: #FFD200; }
+
+/* ── Entrées en cascade ─────────────────────────────────────────────────── */
+
+.lpb-rise,
+.szb-rise {
+  opacity: 0;
+  animation: lpb-rise 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: var(--d, 0ms);
+}
+
+.lpb-pop,
+.szb-pop {
+  opacity: 0;
+  animation: lpb-pop 0.95s cubic-bezier(0.22, 1.35, 0.36, 1) forwards;
+  animation-delay: var(--d, 0ms);
+}
+
+/* ── Badge « N°1 mondial » / « Offre internationale » ───────────────────── */
+
+.lpb-badge,
+.szb-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.32rem 0.85rem;
+  border-radius: 9999px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.lpb-badge {
+  background: rgba(47, 125, 255, 0.12);
+  border: 1px solid rgba(47, 125, 255, 0.55);
+  color: #8FBFFF;
+  animation: lpb-badge-pulse 2.6s ease-in-out infinite;
+}
+
+.szb-badge {
+  background: rgba(255, 77, 109, 0.12);
+  border: 1px solid rgba(255, 77, 109, 0.55);
+  color: #FF9DB0;
+  animation: szb-badge-pulse 2.6s ease-in-out infinite;
+}
+
+/* ── Carte code premium — bordure conique animée + reflet balayant ──────── */
+
+.lpb-card,
+.szb-card {
+  position: relative;
+  border-radius: 24px;
+  padding: 2px;
+}
+
+.lpb-card {
+  background: conic-gradient(from var(--lpb-angle), #2F7DFF, #22D3EE, #3FBA7C, #2F7DFF);
+  animation: lpb-border-spin 7s linear infinite;
+  box-shadow: 0 0 52px rgba(47, 125, 255, 0.22), 0 18px 44px rgba(0, 0, 0, 0.45);
+}
+
+.szb-card {
+  background: conic-gradient(from var(--szb-angle), #FF4D6D, #FFD200, #D63148, #FF4D6D);
+  animation: szb-border-spin 7s linear infinite;
+  box-shadow: 0 0 52px rgba(255, 77, 109, 0.22), 0 18px 44px rgba(0, 0, 0, 0.45);
+}
+
+.lpb-card__inner,
+.szb-card__inner {
+  position: relative;
+  border-radius: 22px;
+  overflow: hidden;
+  padding: 2rem 1.25rem;
+  text-align: center;
+}
+
+.lpb-card__inner {
+  background: linear-gradient(165deg, #0A1322 0%, #0E1B30 55%, #0A1428 100%);
+}
+
+.szb-card__inner {
+  background: linear-gradient(165deg, #190A10 0%, #220D15 55%, #150810 100%);
+}
+
+.lpb-shine__beam,
+.szb-shine__beam {
+  position: absolute;
+  top: -22%;
+  bottom: -22%;
+  left: 0;
+  width: 30%;
+  pointer-events: none;
+  background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.09) 42%, rgba(255, 255, 255, 0.17) 50%, rgba(255, 255, 255, 0.09) 58%, transparent);
+  transform: translateX(-240%) skewX(-18deg);
+  animation: lpb-shine-sweep 4.8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  animation-delay: 1.4s;
+  will-change: transform;
+}
+
+/* ── Code promo — texte dégradé animé ───────────────────────────────────── */
+
+.lpb-code,
+.szb-code {
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 220% 100%;
+  background-position: 0% 50%;
+  animation: lpb-code-flow 6s linear infinite, lpb-float-y 5.5s ease-in-out infinite;
+  filter: drop-shadow(0 0 20px rgba(47, 125, 255, 0.4));
+}
+
+.lpb-code {
+  background-image: linear-gradient(110deg, #6FB1FF 0%, #EAF3FF 28%, #2F7DFF 52%, #EAF3FF 76%, #6FB1FF 100%);
+}
+
+.szb-code {
+  background-image: linear-gradient(110deg, #FF8FA3 0%, #FFF0F3 28%, #FF4D6D 52%, #FFF0F3 76%, #FF8FA3 100%);
+  filter: drop-shadow(0 0 20px rgba(255, 77, 109, 0.42));
+}
+
+/* ── Panneau « billboard » des 3 chiffres ───────────────────────────────── */
+
+.lpb-stat,
+.szb-stat {
+  position: relative;
+  border-radius: 18px;
+  padding: 1.1rem 0.75rem;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(6px);
+}
+
+.lpb-stat {
+  background: linear-gradient(165deg, rgba(47, 125, 255, 0.10), rgba(47, 125, 255, 0.03));
+}
+
+.szb-stat {
+  background: linear-gradient(165deg, rgba(255, 77, 109, 0.10), rgba(255, 210, 0, 0.04));
+}
+
+.lpb-stat__num {
+  font-family: var(--font-bebas-neue), 'Bebas Neue', sans-serif;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  font-size: 2.6rem;
+  background-image: linear-gradient(120deg, #6FB1FF, #EAF3FF 55%, #22D3EE);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 16px rgba(47, 125, 255, 0.35));
+}
+
+.szb-stat__num {
+  font-family: var(--font-bebas-neue), 'Bebas Neue', sans-serif;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  font-size: 2.6rem;
+  background-image: linear-gradient(120deg, #FF8FA3, #FFFFFF 55%, #FFD200);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 16px rgba(255, 77, 109, 0.35));
+}
+
+/* ── Bandeau défilant des bénéfices ─────────────────────────────────────── */
+
+.lpb-marquee,
+.szb-marquee {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+}
+
+.lpb-marquee__track,
+.szb-marquee__track {
+  display: inline-flex;
+  animation: lpb-marquee-x 26s linear infinite;
+  will-change: transform;
+}
+
+.lpb-marquee:hover .lpb-marquee__track,
+.szb-marquee:hover .szb-marquee__track {
+  animation-play-state: paused;
+}
+
+.lpb-marquee__group,
+.szb-marquee__group {
+  display: inline-flex;
+  align-items: center;
+  gap: 2.4rem;
+  padding-right: 2.4rem;
+  white-space: nowrap;
+}
+
+.lpb-marquee__item,
+.szb-marquee__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 0.02em;
+  color: #C9D6E5;
+}
+
+.lpb-marquee__item::before,
+.szb-marquee__item::before {
+  content: '✦';
+  font-size: 0.7rem;
+}
+
+.lpb-marquee__item::before { color: #22D3EE; }
+.szb-marquee__item::before { color: #FFD200; }
+
+/* ── Boutons CTA premium ────────────────────────────────────────────────── */
+
+.lpb-btn,
+.szb-btn {
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  min-height: 52px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 14px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background-color 0.2s ease, filter 0.2s ease;
+}
+
+.lpb-btn::after,
+.szb-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 36%;
+  pointer-events: none;
+  background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.28), transparent);
+  transform: translateX(-180%) skewX(-18deg);
+  transition: transform 0.7s ease;
+}
+
+.lpb-btn:hover::after,
+.szb-btn:hover::after {
+  transform: translateX(360%) skewX(-18deg);
+}
+
+.lpb-btn:active,
+.szb-btn:active {
+  transform: translateY(1px) scale(0.99);
+}
+
+.lpb-btn--primary {
+  background: linear-gradient(120deg, #2F7DFF 0%, #22A7EE 100%);
+  color: #FFFFFF;
+  animation: lpb-cta-pulse 3s ease-in-out infinite;
+}
+
+.lpb-btn--primary:hover {
+  filter: brightness(1.08);
+}
+
+.szb-btn--primary {
+  background: linear-gradient(120deg, #FF4D6D 0%, #D63148 100%);
+  color: #FFFFFF;
+  animation: szb-cta-pulse 3s ease-in-out infinite;
+}
+
+.szb-btn--primary:hover {
+  filter: brightness(1.08);
+}
+
+.lpb-btn--copy {
+  background: rgba(47, 125, 255, 0.12);
+  border: 1px solid rgba(47, 125, 255, 0.5);
+  color: #8FBFFF;
+}
+
+.lpb-btn--copy:hover {
+  background: rgba(47, 125, 255, 0.22);
+}
+
+.szb-btn--copy {
+  background: rgba(255, 77, 109, 0.12);
+  border: 1px solid rgba(255, 77, 109, 0.5);
+  color: #FF9DB0;
+}
+
+.szb-btn--copy:hover {
+  background: rgba(255, 77, 109, 0.22);
+}
+
+.lpb-btn--store,
+.szb-btn--store {
+  background: linear-gradient(135deg, #131C28 0%, #0D1420 100%);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: #EAF0F7;
+}
+
+.lpb-btn--store:hover,
+.szb-btn--store:hover {
+  border-color: rgba(255, 255, 255, 0.34);
+}
+
+/* ── Étapes / paiements / FAQ / sticky ──────────────────────────────────── */
+
+.lpb-step,
+.szb-step {
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.lpb-step:hover {
+  transform: translateY(-4px);
+  border-color: rgba(47, 125, 255, 0.45) !important;
+  box-shadow: 0 14px 34px rgba(47, 125, 255, 0.14);
+}
+
+.szb-step:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 77, 109, 0.45) !important;
+  box-shadow: 0 14px 34px rgba(255, 77, 109, 0.14);
+}
+
+.lpb-num,
+.szb-num {
+  position: relative;
+  border-radius: 12px;
+  color: #FFFFFF;
+}
+
+.lpb-num {
+  background: linear-gradient(135deg, rgba(47, 125, 255, 0.28), rgba(34, 211, 238, 0.20));
+  border: 1px solid rgba(47, 125, 255, 0.55);
+  color: #8FBFFF;
+}
+
+.szb-num {
+  background: linear-gradient(135deg, rgba(255, 77, 109, 0.28), rgba(255, 210, 0, 0.16));
+  border: 1px solid rgba(255, 77, 109, 0.55);
+  color: #FF9DB0;
+}
+
+.lpb-pay,
+.szb-pay {
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.lpb-pay:hover,
+.szb-pay:hover {
+  transform: translateY(-3px);
+  border-color: rgba(255, 255, 255, 0.22) !important;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+}
+
+.lpb-faq summary,
+.szb-faq summary {
+  list-style: none;
+  position: relative;
+  padding-right: 1.6rem;
+}
+
+.lpb-faq summary::-webkit-details-marker,
+.szb-faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.lpb-faq summary::after,
+.szb-faq summary::after {
+  content: '▾';
+  position: absolute;
+  right: 0.2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform 0.25s ease;
+  font-size: 0.85rem;
+}
+
+.lpb-faq summary::after { color: #6FB1FF; }
+.szb-faq summary::after { color: #FF9DB0; }
+
+.lpb-faq details[open] summary::after,
+.szb-faq details[open] summary::after {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.lpb-sticky,
+.szb-sticky {
+  animation: lpb-sticky-in 0.65s cubic-bezier(0.22, 1, 0.36, 1) 0.45s backwards;
+}
+
+.lpb-spins-star,
+.szb-spins-star {
+  display: inline-block;
+  animation: lpb-spin 7s linear infinite;
+}
+
+/* ── Responsive ─────────────────────────────────────────────────────────── */
+
+@media (max-width: 640px) {
+  .lpb-orb--1, .szb-orb--1 { width: 210px; height: 210px; opacity: 0.38; }
+  .lpb-orb--2, .szb-orb--2 { width: 180px; height: 180px; opacity: 0.34; }
+  .lpb-stat__num, .szb-stat__num { font-size: 2.1rem; }
+  .lpb-marquee__group, .szb-marquee__group { gap: 1.7rem; padding-right: 1.7rem; }
+}
+
+/* ── Accessibilité : motion réduite = tout statique ─────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  .lpb-hero::before,
+  .szb-hero::before,
+  .lpb-orb, .szb-orb,
+  .lpb-spark, .szb-spark,
+  .lpb-rise, .szb-rise,
+  .lpb-pop, .szb-pop,
+  .lpb-badge, .szb-badge,
+  .lpb-card, .szb-card,
+  .lpb-shine__beam, .szb-shine__beam,
+  .lpb-code, .szb-code,
+  .lpb-stat__num, .szb-stat__num,
+  .lpb-marquee__track, .szb-marquee__track,
+  .lpb-btn--primary, .szb-btn--primary,
+  .lpb-sticky, .szb-sticky,
+  .lpb-spins-star, .szb-spins-star {
+    animation: none !important;
+  }
+
+  .lpb-rise, .szb-rise,
+  .lpb-pop, .szb-pop {
+    opacity: 1 !important;
+  }
+
+  .lpb-code, .szb-code,
+  .lpb-stat__num, .szb-stat__num {
+    -webkit-text-fill-color: currentColor;
+    background-image: none;
+    filter: none;
+  }
+
+  .lpb-btn::after, .szb-btn::after {
+    transition: none;
+  }
+}
