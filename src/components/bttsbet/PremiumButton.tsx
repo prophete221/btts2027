@@ -2,6 +2,7 @@
 
 import { motion, HTMLMotionProps } from 'framer-motion'
 import { buttonHover } from '@/lib/motionPresets'
+import { trackAffiliateAction } from '@/lib/affiliateTracking'
 
 type Variant = 'linebet' | 'star888' | 'gold' | 'ghost' | 'download'
 type Size = 'sm' | 'md' | 'lg'
@@ -14,6 +15,7 @@ interface PremiumButtonProps extends Omit<HTMLMotionProps<'a'>, 'ref'> {
   showLogo?: boolean
   downloadText?: string
   fullWidth?: boolean
+  trackingPlacement?: string
 }
 
 const SIZES: Record<Size, string> = {
@@ -61,11 +63,15 @@ export default function PremiumButton({
   children,
   showLogo = true,
   fullWidth = false,
+  trackingPlacement,
   className = '',
+  onClick,
   ...rest
 }: PremiumButtonProps) {
   const v = VARIANTS[variant]
   const sizeClass = SIZES[size]
+  const partner = variant === 'star888' ? '888starz' : 'linebet'
+  const action = variant === 'download' ? 'download_click' : 'signup_cta_click'
 
   return (
     <motion.a
@@ -75,6 +81,10 @@ export default function PremiumButton({
       href={href}
       rel="sponsored nofollow noopener noreferrer"
       target="_blank"
+      onClick={(event) => {
+        trackAffiliateAction(partner, action, trackingPlacement || `premium-button-${variant}`)
+        onClick?.(event)
+      }}
       className={`inline-flex items-center justify-center rounded-xl ${sizeClass} ${v.className} ${fullWidth ? 'w-full' : ''} ${className}`}
       {...rest}
     >
