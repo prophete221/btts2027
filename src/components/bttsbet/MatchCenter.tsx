@@ -1,9 +1,12 @@
 'use client'
 
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react'
 import { useLanguage } from './LanguageSwitcher'
 import { translationsFor, type Locale, localizedPath } from '@/lib/i18n'
 import { generateMatchSlug } from '@/lib/match-slug'
+
+// useLayoutEffect isomorphe (évite le warning SSR React)
+const useIsoLayoutEffect = typeof window !== 'undefined' ? useLayoutEffect : useEffect
 
 /**
  * MatchCenter — section « Matchs analysés aujourd’hui » (accueil).
@@ -95,6 +98,7 @@ export default function MatchCenter({ initialLocale }: { initialLocale?: Locale 
   const [status, setStatus] = useState<StatusFilter>('all')
   const [day, setDay] = useState<DayFilter>('week')
   const [league, setLeague] = useState<string>('all')
+  const gridRef = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {
     let cancelled = false
@@ -157,6 +161,54 @@ export default function MatchCenter({ initialLocale }: { initialLocale?: Locale 
     items.forEach(m => m.league && set.add(m.league))
     return Array.from(set).sort()
   }, [items])
+
+  // ═══ Révélation 3D au scroll ═══
+  // Gate JS (.mc3d) : sans JS les cartes restent visibles (progressive enhancement).
+  // Chaque carte entre en scène (opacity + rotateX + translateY, stagger via --d)
+  // quand elle entre dans le viewport, puis le délai de transition est retiré
+  // pour que le hover 3D reste instantané.
+  useIsoLayoutEffect(() => {
+    if (loading) return
+    const grid = gridRef.current
+    if (!grid) return
+    const cards = Array.from(grid.querySelectorAll<HTMLElement>('.hp-mc-card'))
+    if (cards.length === 0) return
+
+    let reduced = false
+    try {
+      reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    } catch {
+      /* no-op */
+    }
+    if (reduced || typeof IntersectionObserver === 'undefined') {
+      cards.forEach(c => c.classList.add('is-revealed'))
+      return
+    }
+
+    grid.classList.add('mc3d')
+    const io = new IntersectionObserver(
+      entries => {
+        for (const entry of entries) {
+          if (!entry.isIntersecting) continue
+          const el = entry.target as HTMLElement
+          el.style.transitionDelay = el.style.getPropertyValue('--d') || '0ms'
+          el.classList.add('is-revealed')
+          io.unobserve(el)
+          const done = (e: TransitionEvent) => {
+            if (e.propertyName !== 'transform') return
+            el.style.transitionDelay = ''
+            el.removeEventListener('transitionend', done)
+          }
+          el.addEventListener('transitionend', done)
+        }
+      },
+      { rootMargin: '0px 0px -8% 0px', threshold: 0.08 }
+    )
+    cards.forEach(c => {
+      if (!c.classList.contains('is-revealed')) io.observe(c)
+    })
+    return () => io.disconnect()
+  }, [loading, filtered])
 
   const dayTabs: { id: DayFilter; label: string }[] = [
     { id: 'today', label: t.home2.mcToday },
@@ -262,7 +314,7 @@ export default function MatchCenter({ initialLocale }: { initialLocale?: Locale 
 
         {/* Contenu */}
         {loading ? (
-          <div className="hp-mc-grid" aria-hidden="true">
+          <div className="hp-mc-grid" aria-hidden="true" ref={loading ? gridRef : undefined}>
             {[1, 2, 3, 4].map(i => <div key={i} className="hp-mc-card hp-skeleton" />)}
           </div>
         ) : filtered.length === 0 ? (
@@ -278,7 +330,7 @@ export default function MatchCenter({ initialLocale }: { initialLocale?: Locale 
             </a>
           </div>
         ) : (
-          <div className="hp-mc-grid">
+          <div className="hp-mc-grid" ref={filtered.length > 0 ? gridRef : undefined}>
             {filtered.map((m, i) => (
               <MatchCard key={`${m.match}-${m.date}-${m.time}`} m={m} index={i} lang={lang} results={results} />
             ))}
@@ -297,6 +349,10 @@ function MatchCard({ m, index, lang, results }: {
   results: Map<string, HistoryRecord>
 }) {
   const t = translationsFor(lang)
+  const cardRef = useRef<HTMLElement | null>(null)
+  const tiltRaf = useRef(0)
+  const tiltPointer = useRef({ x: 0, y: 0 })
+  const tiltCapable = useRef<boolean | null>(null)
   const diff = dayDiff(m.date)
   const isFinished = diff < 0
   const record = results.get(`${m.match}|${m.date}`)
@@ -317,8 +373,68 @@ function MatchCard({ m, index, lang, results }: {
   const num = (v?: number, digits = 2) =>
     v === undefined ? null : v.toLocaleString(loc, { maximumFractionDigits: digits })
 
+  // ═══ Tilt 3D « motion designer » — la carte pivote doucement sous le curseur ═══
+  // Desktop uniquement (hover:hover + pointer:fine), rAF-throttlé, aucune
+  // re-render React : écriture directe de variables CSS (--rx/--ry/--mx/--my).
+  const tiltEnabled = () => {
+    if (tiltCapable.current === null) {
+      try {
+        tiltCapable.current =
+          typeof window !== 'undefined' &&
+          window.matchMedia('(hover: hover) and (pointer: fine)').matches &&
+          !window.matchMedia('(prefers-reduced-motion: reduce)').matches
+      } catch {
+        tiltCapable.current = false
+      }
+    }
+    return tiltCapable.current
+  }
+
+  const applyTilt = () => {
+    const el = cardRef.current
+    if (!el) return
+    const rect = el.getBoundingClientRect()
+    const px = (tiltPointer.current.x - rect.left) / rect.width - 0.5
+    const py = (tiltPointer.current.y - rect.top) / rect.height - 0.5
+    el.style.setProperty('--ry', `${(px * 9).toFixed(2)}deg`)
+    el.style.setProperty('--rx', `${(-py * 7).toFixed(2)}deg`)
+    el.style.setProperty('--mx', `${((px + 0.5) * 100).toFixed(1)}%`)
+    el.style.setProperty('--my', `${((py + 0.5) * 100).toFixed(1)}%`)
+  }
+
+  const onCardMove = (e: React.MouseEvent) => {
+    if (!tiltEnabled()) return
+    tiltPointer.current = { x: e.clientX, y: e.clientY }
+    if (tiltRaf.current) return
+    tiltRaf.current = requestAnimationFrame(() => {
+      tiltRaf.current = 0
+      applyTilt()
+    })
+  }
+
+  const onCardLeave = () => {
+    if (tiltRaf.current) {
+      cancelAnimationFrame(tiltRaf.current)
+      tiltRaf.current = 0
+    }
+    const el = cardRef.current
+    if (!el) return
+    el.style.setProperty('--rx', '0deg')
+    el.style.setProperty('--ry', '0deg')
+  }
+
+  useEffect(() => () => {
+    if (tiltRaf.current) cancelAnimationFrame(tiltRaf.current)
+  }, [])
+
   return (
-    <article className="hp-mc-card" style={{ ['--d' as string]: `${Math.min(index, 6) * 40}ms` }}>
+    <article
+      ref={cardRef}
+      className="hp-mc-card"
+      onMouseMove={onCardMove}
+      onMouseLeave={onCardLeave}
+      style={{ ['--d' as string]: `${Math.min(index, 6) * 40}ms` }}
+    >
       {/* Ligne 1 : compétition + horodatage */}
       <div className="hp-mc-top">
         <span className="hp-mc-league">{m.league}</span>

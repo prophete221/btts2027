@@ -4480,11 +4480,12 @@ body {
   color: #C4DBFF;
 }
 
-/* ── Cartes matchs ── */
+/* ── Cartes matchs — 3D motion design ── */
 .hp-mc-grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   gap: 0.85rem;
+  perspective: 1400px;
 }
 @media (min-width: 768px) {
   .hp-mc-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
@@ -4501,17 +4502,54 @@ body {
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.04),
     0 10px 26px rgba(2, 6, 14, 0.30);
-  transition: border-color 200ms ease, transform 200ms ease, box-shadow 200ms ease;
-  animation: hp-rise 0.5s cubic-bezier(0.22, 0.61, 0.36, 1) both;
-  animation-delay: var(--d, 0ms);
+  transform-style: preserve-3d;
+  will-change: transform, opacity;
+  transition:
+    transform 0.55s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.2s ease,
+    box-shadow 0.3s ease;
 }
-.hp-mc-card:hover {
-  border-color: rgba(111, 165, 255, 0.38);
-  transform: translateY(-3px);
+/* Reflet premium qui suit le curseur (via --mx/--my posées en JS) */
+.hp-mc-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(440px circle at var(--mx, 50%) var(--my, 0%), rgba(111, 165, 255, 0.11), transparent 46%);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  transform: translateZ(46px);
+  pointer-events: none;
+}
+/* Révélation au scroll — gate JS .mc3d (sans JS : cartes toujours visibles) */
+.mc3d .hp-mc-card:not(.is-revealed) {
+  opacity: 0;
+  transform: translateY(44px) rotateX(15deg) scale(0.95);
+}
+.mc3d .hp-mc-card.is-revealed {
+  opacity: 1;
+  transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+}
+/* Couches internes en profondeur — parallaxe 3D au tilt */
+.mc3d .hp-mc-top    { transform: translateZ(26px); }
+.mc3d .hp-mc-teams  { transform: translateZ(40px); }
+.mc3d .hp-mc-result { transform: translateZ(30px); }
+.mc3d .hp-mc-picks  { transform: translateZ(32px); }
+.mc3d .hp-mc-data   { transform: translateZ(24px); }
+.mc3d .hp-mc-foot   { transform: translateZ(34px); }
+/* Hover 3D — tilt curseur + lévitation + halo bleu */
+.mc3d .hp-mc-card.is-revealed:hover {
+  transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) translateY(-6px) scale(1.018);
+  border-color: rgba(111, 165, 255, 0.42);
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.05),
-    0 18px 40px rgba(2, 6, 14, 0.45);
+    0 26px 50px rgba(2, 6, 14, 0.52),
+    0 0 0 1px rgba(111, 165, 255, 0.10),
+    0 0 36px rgba(47, 125, 255, 0.17);
+  transition-duration: 0.16s, 0.55s, 0.2s, 0.3s;
 }
+.mc3d .hp-mc-card.is-revealed:hover::after { opacity: 1; }
 .hp-skeleton {
   height: 230px;
   border-radius: 18px;
@@ -5066,6 +5104,12 @@ body {
 /* ── Micro-animations sobres, désactivables ── */
 @media (prefers-reduced-motion: reduce) {
   .hp-mc-card { animation: none; }
+  .mc3d .hp-mc-card,
+  .mc3d .hp-mc-card.is-revealed,
+  .mc3d .hp-mc-card.is-revealed:hover { opacity: 1 !important; transform: none !important; transition: none; }
+  .mc3d .hp-mc-card::after { display: none; }
+  .hp-gift-card::before { animation: none; }
+  .hp-gift-spark { display: none; }
   .hp-live__pulse { animation: none; }
   .hp-clubs__track { animation: none; }
   .hp-live__skeleton, .hp-skeleton { animation: none; background: rgba(255, 255, 255, 0.035); }
@@ -6153,4 +6197,133 @@ body::before {
   .lpb-btn::after, .szb-btn::after {
     transition: none;
   }
+}
+
+/* ════════════════════════════════════════════════════════════════════════════
+   GIFT POPUP — paquet cadeau « Bonus 300% » (accueil, fermable, Linebet)
+   Mobile : au-dessus de MobileTabBar + StickyCTABar · Desktop : bas droite
+   ════════════════════════════════════════════════════════════════════════════ */
+.hp-gift {
+  position: fixed;
+  z-index: 50;
+  left: 0.75rem;
+  right: 0.75rem;
+  bottom: calc(148px + env(safe-area-inset-bottom, 0px));
+  pointer-events: none; /* le conteneur pleine largeur ne bloque pas les clics */
+}
+@media (min-width: 768px) {
+  .hp-gift {
+    left: auto;
+    right: 1.5rem;
+    bottom: 1.5rem;
+  }
+}
+.hp-gift-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  width: fit-content;
+  max-width: 100%;
+  margin-left: auto;
+  padding: 0.9rem 1rem 0.9rem 0.85rem;
+  border-radius: 18px;
+  background: linear-gradient(155deg, #0F2318 0%, #0B1A14 48%, #0A1520 100%);
+  border: 1px solid rgba(0, 210, 122, 0.32);
+  box-shadow:
+    0 18px 44px rgba(2, 6, 14, 0.55),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  pointer-events: auto;
+}
+/* Halo vert pulsant */
+.hp-gift-card::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: 19px;
+  animation: hp-gift-glow 2.6s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes hp-gift-glow {
+  0%, 100% { box-shadow: 0 0 14px rgba(0, 210, 122, 0.10); opacity: 0.7; }
+  50% { box-shadow: 0 0 34px rgba(0, 210, 122, 0.30); opacity: 1; }
+}
+.hp-gift-box {
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  filter: drop-shadow(0 8px 16px rgba(0, 190, 100, 0.25));
+}
+.hp-gift-body {
+  display: grid;
+  gap: 0.15rem;
+  min-width: 0;
+}
+.hp-gift-bonus {
+  margin: 0;
+  color: #F2F6FA;
+  font-size: 1.02rem;
+  font-weight: 900;
+  letter-spacing: 0.02em;
+  line-height: 1.15;
+  white-space: nowrap;
+}
+.hp-gift-bonus span {
+  color: #FFD54A;
+  text-shadow: 0 0 18px rgba(255, 213, 74, 0.38);
+}
+.hp-gift-sub {
+  margin: 0 0 0.45rem;
+  color: #9DABBB;
+  font-size: 0.68rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.hp-gift-sub b {
+  color: #7CFFB2;
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-weight: 700;
+}
+.hp-gift-close {
+  position: absolute;
+  top: -9px;
+  right: -9px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 1px solid rgba(148, 184, 220, 0.28);
+  background: #1A2634;
+  color: #9DABBB;
+  cursor: pointer;
+  transition: color 0.15s ease, border-color 0.15s ease, background-color 0.15s ease, transform 0.15s ease;
+}
+.hp-gift-close:hover,
+.hp-gift-close:focus-visible {
+  color: #F2F6FA;
+  border-color: rgba(248, 113, 113, 0.55);
+  background: #251B20;
+  transform: scale(1.08);
+}
+/* Étincelles festives */
+.hp-gift-spark {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: #FFE082;
+  clip-path: polygon(50% 0, 62% 38%, 100% 50%, 62% 62%, 50% 100%, 38% 62%, 0 50%, 38% 38%);
+  opacity: 0;
+  animation: hp-sparkle 2.4s ease-in-out infinite;
+  pointer-events: none;
+}
+.hp-gift-spark--1 { top: -7px; right: 58px; }
+.hp-gift-spark--2 { bottom: 12px; left: 54px; width: 6px; height: 6px; animation-delay: 0.8s; }
+.hp-gift-spark--3 { top: 30px; right: -10px; width: 7px; height: 7px; animation-delay: 1.5s; }
+@keyframes hp-sparkle {
+  0%, 100% { opacity: 0; transform: scale(0.4) rotate(0deg); }
+  50% { opacity: 1; transform: scale(1) rotate(90deg); }
 }
