@@ -528,6 +528,9 @@ export default function VipPage() {
           const away = fixture.away?.trim()
           const { raw, timestamp } = fixtureKickoff(fixture)
           if (!home || !away || !Number.isFinite(timestamp) || timestamp <= Date.now()) continue
+          // Sélections du jour uniquement (Africa/Dakar) : un match programmé
+          // à J+N (ex. dans 4 jours) n'est jamais présenté comme sélection du jour.
+          if (dakarDate(new Date(timestamp)) !== today) continue
           const key = `${home.toLowerCase()}|${away.toLowerCase()}|${timestamp}`
           if (seen.has(key)) continue
           seen.add(key)
