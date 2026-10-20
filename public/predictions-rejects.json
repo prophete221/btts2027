@@ -1,0 +1,34 @@
+{
+  "generatedAt": "2026-10-20T12:29:41.845Z",
+  "date": "2026-10-20",
+  "receivedRaw": 204,
+  "rejected": [
+    {
+      "reason": "proba_trop_basse",
+      "count": 5,
+      "examples": [
+        "Oxford United vs Wigan Athletic [League One] 2026-10-20 — proba_trop_basse (BTTS 30.4% / Over 31.9% < 35%)",
+        "Exeter City vs Crewe Alexandra [League Two] 2026-10-20 — proba_trop_basse (BTTS 24.2% / Over 15.7% < 35%)",
+        "Dunfermline Athletic vs Partick Thistle [Scottish Championship] 2026-10-20 — proba_trop_basse (BTTS 29.8% / Over 23.0% < 35%)",
+        "Deportivo Pereira vs Boyacá Chicó FC [Categoría Primera A] 2026-10-20 — proba_trop_basse (BTTS 31.5% / Over 26.9% < 35%)",
+        "Yokohama F. Marinos vs Tokyo Verdy 1969 [J1 League] 2026-10-21 — proba_trop_basse (BTTS 28.8% / Over 27.4% < 35%)"
+      ]
+    },
+    {
+      "reason": "cap_affichage",
+      "count": 79,
+      "examples": [
+        "4 ligne(s) du 2026-10-22",
+        "58 ligne(s) du 2026-10-23",
+        "11 ligne(s) du 2026-10-24",
+        "3 ligne(s) du 2026-10-25",
+        "3 ligne(s) du 2026-10-26"
+      ]
+    }
+  ],
+  "duplicates": 2,
+  "duplicateExamples": [
+    "Gimnasia y Esgrima de La Plata vs Sarmiento [Argentinian Primera Division] 2026-10-23 (doublon de même source)",
+    "Gimnasia y Esgrima de Mendoza vs Platense [Argentinian Primera Division] 2026-10-23 (doublon de même source)"
+  ]
+}

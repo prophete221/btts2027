@@ -1,18 +1,34 @@
 // ═════════════════════════════════════════════════════════════════════════════
-// BTTSPredict – Predictions Engine v91
-// Display-first: always publishes top N matches per day (sorted by reliability)
-// Eliminates only truly unusable matches. Generous thresholds = always visible.
+// BTTSPredict – Predictions Engine v92 — AGRÉGATEUR DE COUVERTURE
+// ═════════════════════════════════════════════════════════════════════════════
+// Mission « matchs réels du jour » :
+//   1. SOURCE PRINCIPALE : ESPN scoreboard public — ~76 ligues (au lieu de 11).
+//   2. SOURCE DE SECOURS : TheSportsDB eventsday (clé publique, dégradée :
+//      3 événements/jour maximum sur la clé gratuite actuelle).
+//   3. Dédoublonnage par équipes normalisées + date (Jaccard ≥ 0.6 par camp).
+//   4. Fuseau unique Africa/Dakar (UTC+0) pour dates et heures.
+//   5. Vraie source conservée par ligne (dataSource) + journal des rejets.
+//   6. Qualité par ligne :
+//        HIGH   : ≥ 8 vrais matchs récents par équipe (deux équipes)
+//        MEDIUM : ≥ 4 vrais matchs récents par équipe (deux équipes)
+//        LOW    : match réel, données limitées → AUCUNE probabilité calculée,
+//                 AUCUN λ, AUCUNE cote — marqué « Données limitées ».
+// Interdits maintenus : lambda par défaut, proba 0.62, clamp 40-54 %,
+// score exact inventé, cote inventée, Gemini comme source factuelle.
+// Les probabilités Poisson ne sont calculées QUE si les DEUX équipes ont
+// ≥ 4 vrais matchs réels récents ESPN (sinon ligne affichage seul).
 // ═════════════════════════════════════════════════════════════════════════════
 
 import fs from 'fs'
 import path from 'path'
-import { fileURLToPath } from 'url'
+import { fileURLToPath, pathToFileURL } from 'url'
 import { validatePredictionPayload } from './validate-predictions.mjs'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 const PUBLIC_DIR = path.join(__dirname, '..', 'public')
 const PREDICTIONS_FILE = path.join(PUBLIC_DIR, 'predictions.json')
+const REJECTS_FILE = path.join(PUBLIC_DIR, 'predictions-rejects.json')
 const ARCHIVE_DIR = path.join(PUBLIC_DIR, 'predictions-archive')
 
 if (!fs.existsSync(ARCHIVE_DIR)) fs.mkdirSync(ARCHIVE_DIR, { recursive: true })
@@ -23,65 +39,300 @@ function writeJsonAtomically(file, payload) {
   fs.renameSync(tempFile, file)
 }
 
-const FUTURE_DAYS = 7        // look ahead 7 days to ensure we always have matches
-const MAX_FREE = 12           // show up to 12 free matches (Gemini-powered analysis)
-const MAX_VIP = 8            // show up to 8 VIP matches
-const DISPLAY_TZ = 'Africa/Dakar'  // Senegal timezone = UTC+0 (GMT)
-const MIN_KICKOFF_LEAD_MINUTES = 30 // safety buffer for long enrichment/verification steps
+const FUTURE_DAYS = 4                 // horizon J0..J+3 — compromis couverture / budget requêtes ESPN
+const STATS_WINDOW_DAYS = 3           // stats d'équipe réelles seulement pour J0..J+2
+const MAX_FREE = 120                  // cap d'hygiène du payload (journalisé au-delà)
+const MAX_VIP = 8                     // sélections VIP (flag explicite vip: true)
+const MIN_KICKOFF_LEAD_MINUTES = 30   // aucune ligne publiée après le coup d'envoi -30 min
+const MIN_PROBA = 0.35                // seuil plancher pour les lignes AVEC probabilités
+export const GEMINI_MAX_LINES = 48    // plafond de lignes envoyées à Gemini (enrich_predictions.py)
+export const DISPLAY_TZ = 'Africa/Dakar'
+export const MIN_PROBA_THRESHOLD = MIN_PROBA
+export const MAX_FREE_LINES = MAX_FREE
+export const MAX_VIP_LINES = MAX_VIP
+export const STATS_WINDOW = STATS_WINDOW_DAYS
 
-// ─── HIGH BTTS Leagues ───
-const ESPN_SLUGS = {
+// ─── ESPN : 76 slugs valides (sondés en production le 2026-10-20).
+// Les 10 noms historiques sont conservés à l'identique (cohérence archives) ;
+// les nouveaux slugs utilisent le nom de ligue renvoyé par ESPN.
+export const ESPN_SLUGS = {
   'eng.1': 'Premier League',
   'eng.2': 'Championship',
   'ger.1': 'Bundesliga',
   'ger.2': '2. Bundesliga',
   'ned.1': 'Eredivisie',
   'bel.1': 'Jupiler Pro League',
-  'swi.1': 'Swiss Super League',
   'por.1': 'Liga Portugal',
   'aut.1': 'Austrian Bundesliga',
   'sco.1': 'Scottish Premiership',
   'usa.1': 'MLS',
+  'esp.1': 'LaLiga',
+  'esp.2': 'LaLiga 2',
+  'ita.1': 'Serie A',
+  'ita.2': 'Serie B',
+  'fra.1': 'Ligue 1',
+  'fra.2': 'Ligue 2',
+  'eng.3': 'League One',
+  'eng.4': 'League Two',
+  'eng.5': 'National League',
+  'ned.2': 'Eerste Divisie',
+  'sco.2': 'Scottish Championship',
+  'sco.3': 'Scottish League One',
+  'den.1': 'Superliga',
+  'nor.1': 'Eliteserien',
+  'swe.1': 'Allsvenskan',
+  'fin.1': 'Veikkausliiga',
+  'irl.1': 'League of Ireland Premier Division',
+  'wal.1': 'Cymru Premier',
+  'gre.1': 'Super League Greece',
+  'tur.1': 'Süper Lig',
+  'rus.1': 'Russian Premier League',
+  'cze.1': 'Czech Liga',
+  'rou.1': 'Liga I',
+  'isr.1': 'Israeli Premier League',
+  'aut.2': '2. Liga (Austria)',
+  'usa.open': 'U.S. Open Cup',
+  'bra.1': 'Brasileirão Série A',
+  'bra.2': 'Brasileirão Série B',
+  'mex.1': 'Liga BBVA MX',
+  'arg.1': 'Liga Profesional Argentina',
+  'chi.1': 'Primera División de Chile',
+  'col.1': 'Categoría Primera A',
+  'ecu.1': 'LigaPro Ecuador',
+  'par.1': 'Primera División Paraguay',
+  'per.1': 'Liga 1 Perú',
+  'uru.1': 'Primera División Uruguay',
+  'ven.1': 'Primera División Venezuela',
+  'bol.1': 'Liga Profesional Boliviano',
+  'jpn.1': 'J1 League',
+  'chn.1': 'Chinese Super League',
+  'aus.1': 'A-League Men',
+  'ksa.1': 'Saudi Pro League',
+  'ind.1': 'Indian Super League',
+  'idn.1': 'Super League Indonesia',
+  'tha.1': 'Thai League 1',
+  'mys.1': 'Malaysia Super League',
+  'sgp.1': 'Singapore Premier League',
+  'rsa.1': 'Premiership (South Africa)',
+  'nga.1': 'Nigeria Professional League',
+  'uefa.champions': 'UEFA Champions League',
+  'uefa.europa': 'UEFA Europa League',
+  'uefa.europa.conf': 'UEFA Conference League',
+  'uefa.nations': 'UEFA Nations League',
+  'conmebol.libertadores': 'CONMEBOL Libertadores',
+  'conmebol.sudamericana': 'CONMEBOL Sudamericana',
+  'concacaf.champions_cup': 'CONCACAF Champions Cup',
+  'concacaf.nations.league': 'Concacaf Nations League',
+  'afc.champions': 'AFC Champions League Elite',
+  'afc.cup': 'AFC Champions League Two',
+  'caf.champions': 'CAF Champions League',
+  'fifa.world': 'FIFA World Cup',
+  'fifa.cwc': 'FIFA Club World Cup',
+  'fifa.wwc': "FIFA Women's World Cup",
+  'uefa.wchampions': "UEFA Women's Champions League",
+  'eng.w.1': "Women's Super League",
+  'usa.nwsl': 'NWSL',
 }
 
-const LEAGUE_PROFILES = {
-  'eng.1': { bttsRate: 0.55, avgGoals: 2.82, homeFactor: 1.35, awayFactor: 1.10 },
-  'eng.2': { bttsRate: 0.56, avgGoals: 2.68, homeFactor: 1.32, awayFactor: 1.08 },
-  'ger.1': { bttsRate: 0.58, avgGoals: 3.05, homeFactor: 1.40, awayFactor: 1.15 },
-  'ger.2': { bttsRate: 0.57, avgGoals: 2.90, homeFactor: 1.35, awayFactor: 1.12 },
-  'ned.1': { bttsRate: 0.57, avgGoals: 3.15, homeFactor: 1.38, awayFactor: 1.18 },
-  'bel.1': { bttsRate: 0.55, avgGoals: 2.85, homeFactor: 1.33, awayFactor: 1.10 },
-  'swi.1': { bttsRate: 0.54, avgGoals: 2.78, homeFactor: 1.30, awayFactor: 1.08 },
-  'por.1': { bttsRate: 0.55, avgGoals: 2.72, homeFactor: 1.35, awayFactor: 1.10 },
-  'aut.1': { bttsRate: 0.54, avgGoals: 2.80, homeFactor: 1.32, awayFactor: 1.08 },
-  'sco.1': { bttsRate: 0.53, avgGoals: 2.65, homeFactor: 1.30, awayFactor: 1.05 },
-  'usa.1': { bttsRate: 0.56, avgGoals: 3.10, homeFactor: 1.35, awayFactor: 1.12 },
+// ─── Helpers date/heure — fuseau unique Africa/Dakar (UTC+0) ───
+export function dakarDateFromISO(iso) {
+  if (!iso || typeof iso !== 'string') return null
+  const d = new Date(iso)
+  if (Number.isNaN(d.getTime())) return null
+  return d.toLocaleDateString('sv-SE', { timeZone: DISPLAY_TZ })
 }
 
-const DEFAULT_PROFILE = { bttsRate: 0.54, avgGoals: 2.80, homeFactor: 1.33, awayFactor: 1.10 }
+export function dakarTimeFromISO(iso) {
+  if (!iso || typeof iso !== 'string') return null
+  const d = new Date(iso)
+  if (Number.isNaN(d.getTime())) return null
+  return d.toLocaleTimeString('sv-SE', { hour: '2-digit', minute: '2-digit', timeZone: DISPLAY_TZ })
+}
 
-// ─── Helpers ───
 function getTodayISO() {
   return new Date().toLocaleDateString('sv-SE', { timeZone: DISPLAY_TZ })
 }
 
-function formatDateParam(d) {
-  // Use local date in DISPLAY_TZ
-  const tzDate = new Date(d.toLocaleString('en-US', { timeZone: DISPLAY_TZ }))
-  const y = tzDate.getFullYear()
-  const m = String(tzDate.getMonth() + 1).padStart(2, '0')
-  const day = String(tzDate.getDate()).padStart(2, '0')
-  return `${y}${m}${day}`
+// ─── Normalisation des équipes + dédoublonnage ───
+export function normalizeTeamName(name) {
+  if (!name || typeof name !== 'string') return ''
+  return name
+    .normalize('NFD')
+    .replace(/\p{Diacritic}/gu, '')
+    .toLowerCase()
+    .replace(/[^a-z0-9 ]/g, ' ')
+    .split(/\s+/)
+    .filter(t => t.length >= 3 && !['fc', 'cf', 'afc', 'sc', 'ac', 'if', 'fk', 'sk', 'cd', 'club'].includes(t))
+    .sort()
+    .join(' ')
+    .trim()
 }
 
-// ─── SUPPRIMÉ: matchHash, getTeamForm (synthétique), getH2H (synthétique) ───
-// Ces fonctions fabriquaient des statistiques d'équipe à partir de hash pseudo-aléatoires.
-// Remplacées par fetchTeamStats() qui récupère les vrais résultats ESPN.
+export function tokenJaccard(a, b) {
+  const sa = new Set((a || '').split(' ').filter(Boolean))
+  const sb = new Set((b || '').split(' ').filter(Boolean))
+  if (sa.size === 0 || sb.size === 0) return 0
+  let inter = 0
+  for (const t of sa) if (sb.has(t)) inter++
+  return inter / (sa.size + sb.size - inter)
+}
 
-// ─── Cache en mémoire pour les stats d'équipe (évite les requêtes dupliquées) ───
-const teamStatsCache = new Map()
+/**
+ * Même club ? Jaccard ≥ 0.6 OU inclusion de token (variantes courtes :
+ * « Wolverhampton » ⊆ « Wolverhampton Wanderers »). Toujours combiné à la
+ * similarité du camp opposé — deux clubs distincts ne fusionnent jamais.
+ */
+function sameClubTokens(a, b) {
+  const sa = new Set((a || '').split(' ').filter(Boolean))
+  const sb = new Set((b || '').split(' ').filter(Boolean))
+  if (sa.size === 0 || sb.size === 0) return false
+  if (tokenJaccard(a, b) >= 0.6) return true
+  if (sa.size <= sb.size) {
+    for (const t of sa) if (!sb.has(t)) return false
+    return true
+  }
+  for (const t of sb) if (!sa.has(t)) return false
+  return true
+}
 
-// ─── Poisson functions (conservées — mathématiquement correctes) ───
+/** Deux candidats sont le même match si même date Dakar + même club (jaccard ≥ 0.6 ou inclusion) sur chaque camp. */
+export function sameMatch(a, b) {
+  if (!a || !b) return false
+  if (a.date !== b.date) return false
+  return sameClubTokens(normalizeTeamName(a.home), normalizeTeamName(b.home))
+    && sameClubTokens(normalizeTeamName(a.away), normalizeTeamName(b.away))
+}
+
+/**
+ * Dédoublonnage multi-sources : priorité à la source la plus riche
+ * (ESPN avec IDs d'équipes > TheSportsDB). Ordre d'entrée = priorité.
+ * Pré-calcul des jetons normalisés (une seule fois par candidat).
+ */
+export function dedupCandidates(candidates) {
+  const kept = []
+  const duplicates = []
+  const norm = new Map()
+  const tokensOf = (c) => {
+    let t = norm.get(c)
+    if (!t) {
+      t = { home: normalizeTeamName(c.home), away: normalizeTeamName(c.away) }
+      norm.set(c, t)
+    }
+    return t
+  }
+  for (const c of candidates || []) {
+    const t = tokensOf(c)
+    const twin = kept.find(k => {
+      const kt = tokensOf(k)
+      return k.date === c.date
+        && sameClubTokens(kt.home, t.home)
+        && sameClubTokens(kt.away, t.away)
+    })
+    if (twin) { duplicates.push({ source: c.source, dropped: c }); continue }
+    kept.push(c)
+  }
+  return { kept, duplicates }
+}
+
+// ─── Classification d'un événement source → candidat ou rejet motivé ───
+// Retourne { status: 'kept' | 'rejected', reason?, candidate? }
+export function classifyESPNEvent(event, ctx) {
+  const todayISO = ctx.todayISO
+  const now = ctx.now instanceof Date ? ctx.now : new Date()
+  const comp = event?.competitions?.[0]
+  if (!comp) return { status: 'rejected', reason: 'sans_donnees_competition' }
+  const homeComp = comp.competitors?.find(c => c.homeAway === 'home')
+  const awayComp = comp.competitors?.find(c => c.homeAway === 'away')
+  const homeTeam = homeComp?.team?.displayName || homeComp?.team?.shortDisplayName
+  const awayTeam = awayComp?.team?.displayName || awayComp?.team?.shortDisplayName
+  if (!homeComp || !awayComp || !homeTeam || !awayTeam) {
+    return { status: 'rejected', reason: 'sans_equipes' }
+  }
+  const statusType = comp.status?.type?.name
+  if (statusType === 'STATUS_FINAL' || statusType === 'STATUS_FULL_TIME') return { status: 'rejected', reason: 'termine' }
+  if (statusType === 'STATUS_POSTPONED') return { status: 'rejected', reason: 'reporte' }
+  if (statusType === 'STATUS_CANCELED') return { status: 'rejected', reason: 'annule' }
+  if (!comp.date) return { status: 'rejected', reason: 'sans_date' }
+  const date = dakarDateFromISO(comp.date)
+  if (!date) return { status: 'rejected', reason: 'sans_date' }
+  if (date < todayISO) return { status: 'rejected', reason: 'date_passee' }
+  const time = dakarTimeFromISO(comp.date) || ''
+  if (date === todayISO) {
+    const kickoff = new Date(comp.date).getTime()
+    if (Number.isFinite(kickoff) && kickoff <= now.getTime() + MIN_KICKOFF_LEAD_MINUTES * 60 * 1000) {
+      return { status: 'rejected', reason: 'deja_commence' }
+    }
+  }
+  return {
+    status: 'kept',
+    candidate: {
+      home: homeTeam, away: awayTeam,
+      league: ctx.leagueName || ESPN_SLUGS[ctx.slug] || ctx.slug,
+      date, time,
+      homeLogo: homeComp.team?.logo || `https://a.espncdn.com/i/teamlogos/soccer/500/${homeComp.team?.id}.png`,
+      awayLogo: awayComp.team?.logo || `https://a.espncdn.com/i/teamlogos/soccer/500/${awayComp.team?.id}.png`,
+      slug: ctx.slug,
+      homeTeamId: homeComp.team?.id, awayTeamId: awayComp.team?.id,
+      kickoffISO: comp.date,
+      source: 'ESPN',
+    },
+  }
+}
+
+/** Normalise un instant TheSportsDB vers un ISO UTC parseable. */
+export function toUTCInstant(raw) {
+  if (!raw || typeof raw !== 'string') return null
+  let iso = raw.trim().replace(' ', 'T')
+  if (!/^\d{4}-\d{2}-\d{2}/.test(iso)) return null
+  if (!iso.includes('T')) iso = `${iso.slice(0, 10)}T12:00:00`
+  if (!/(Z|[+-]\d{2}:?\d{2})$/.test(iso)) iso = `${iso}Z`
+  const d = new Date(iso)
+  return Number.isNaN(d.getTime()) ? null : iso
+}
+
+export function classifyTSBEvent(event, ctx) {
+  const todayISO = ctx.todayISO
+  const now = ctx.now instanceof Date ? ctx.now : new Date()
+  const raw = event?.strEvent || ''
+  const sep = raw.includes(' vs ') ? ' vs ' : raw.includes(' vs.') ? ' vs. ' : null
+  if (!sep) return { status: 'rejected', reason: 'sans_equipes' }
+  const parts = raw.split(sep)
+  const home = (parts[0] || '').trim()
+  const away = (parts.slice(1).join(sep) || '').trim()
+  if (!home || !away) return { status: 'rejected', reason: 'sans_equipes' }
+  if (event.strStatus && /^(FT|Match Finished|Finished|Final|Postponed|Cancelled|Canceled|APT|PST|SUSP|ABD)$/i.test(event.strStatus)) {
+    return { status: 'rejected', reason: /post/i.test(event.strStatus) ? 'reporte' : /canc/i.test(event.strStatus) ? 'annule' : 'termine' }
+  }
+  // Date Dakar : strTimestamp (UTC) prioritaire, sinon dateEvent + strTime (UTC), sinon rejet.
+  const instant = toUTCInstant(event.strTimestamp)
+    || (event.dateEvent && event.strTime ? toUTCInstant(`${event.dateEvent}T${event.strTime}`) : null)
+  if (!instant) return { status: 'rejected', reason: 'sans_date' }
+  const date = dakarDateFromISO(instant)
+  if (!date) return { status: 'rejected', reason: 'sans_date' }
+  if (date < todayISO) return { status: 'rejected', reason: 'date_passee' }
+  const time = dakarTimeFromISO(instant) || ''
+  if (date === todayISO) {
+    const kickoff = new Date(instant).getTime()
+    if (Number.isFinite(kickoff) && kickoff <= now.getTime() + MIN_KICKOFF_LEAD_MINUTES * 60 * 1000) {
+      return { status: 'rejected', reason: 'deja_commence' }
+    }
+  }
+  return {
+    status: 'kept',
+    candidate: {
+      home, away,
+      league: event.strLeague || 'Ligue inconnue',
+      date, time,
+      homeLogo: null, awayLogo: null,
+      slug: null,
+      homeTeamId: event.idHomeTeam || null, awayTeamId: event.idAwayTeam || null,
+      kickoffISO: instant,
+      source: 'TheSportsDB',
+    },
+  }
+}
+
+// ─── Poisson (conservé — mathématiquement correct, alimenté par données réelles) ───
 function factorial(n) {
   if (n <= 1) return 1
   let r = 1
@@ -107,13 +358,15 @@ function over25RealProb(lambdaHome, lambdaAway) {
   return 1 - pUnder25
 }
 
-// ─── Fetch real team stats from ESPN schedule API ───
-async function fetchTeamStats(slug, teamId, teamName) {
+// ─── Cache mémoire des stats d'équipe ───
+const teamStatsCache = new Map()
+
+async function fetchTeamStats(slug, teamId) {
   const cacheKey = `${slug}_${teamId}`
   if (teamStatsCache.has(cacheKey)) return teamStatsCache.get(cacheKey)
 
   const maxRetries = 3
-  const baseDelay = 1000
+  const baseDelay = 800
 
   for (let attempt = 0; attempt < maxRetries; attempt++) {
     try {
@@ -129,493 +382,511 @@ async function fetchTeamStats(slug, teamId, teamName) {
         break
       }
       const data = await res.json()
-      const events = data.events || []
-
       const finishedMatches = []
-      for (const ev of events) {
+      for (const ev of data.events || []) {
         const comp = ev.competitions?.[0]
         if (!comp) continue
         const status = comp.status?.type?.name
         if (status !== 'STATUS_FULL_TIME' && status !== 'STATUS_FINAL') continue
-
         const home = comp.competitors?.find(c => c.homeAway === 'home')
         const away = comp.competitors?.find(c => c.homeAway === 'away')
         if (!home || !away) continue
-
         const homeScore = typeof home.score === 'object' ? home.score?.value : home.score
         const awayScore = typeof away.score === 'object' ? away.score?.value : away.score
         if (homeScore === undefined || awayScore === undefined || homeScore === null || awayScore === null) continue
-
         const isHome = String(home.team?.id) === String(teamId)
         const myScore = isHome ? homeScore : awayScore
         const oppScore = isHome ? awayScore : homeScore
-        const oppName = isHome ? (away.team?.displayName || 'Unknown') : (home.team?.displayName || 'Unknown')
-
         finishedMatches.push({
           date: (ev.date || '').slice(0, 10),
-          opponent: oppName,
           isHome,
           goalsFor: parseInt(myScore, 10),
           goalsAgainst: parseInt(oppScore, 10),
-          result: myScore > oppScore ? 'W' : myScore < oppScore ? 'L' : 'D',
         })
       }
-
-      // Take last 8 (most recent first in ESPN schedule)
-      // Sort by date descending (most recent first) — ensures we get the 8 latest
       finishedMatches.sort((a, b) => new Date(b.date) - new Date(a.date))
       const recent = finishedMatches.slice(0, 8)
 
       if (recent.length === 0) {
-        const result = { dataQuality: 'LOW', matchCount: 0, available: false, dataSource: 'LEAGUE_FALLBACK' }
+        const result = { available: false, matchCount: 0, dataSource: 'ESPN_TEAM_SCHEDULE' }
         teamStatsCache.set(cacheKey, result)
         return result
       }
 
-      // Calculate real stats
-      const totalGoalsFor = recent.reduce((s, m) => s + m.goalsFor, 0)
-      const totalGoalsAgainst = recent.reduce((s, m) => s + m.goalsAgainst, 0)
-      const avgScored = totalGoalsFor / recent.length
-      const avgConceded = totalGoalsAgainst / recent.length
-
+      const avgScored = recent.reduce((s, m) => s + m.goalsFor, 0) / recent.length
+      const avgConceded = recent.reduce((s, m) => s + m.goalsAgainst, 0) / recent.length
       const homeMatches = recent.filter(m => m.isHome)
       const awayMatches = recent.filter(m => !m.isHome)
+      const homeAvgScored = homeMatches.length ? homeMatches.reduce((s, m) => s + m.goalsFor, 0) / homeMatches.length : null
+      const homeAvgConceded = homeMatches.length ? homeMatches.reduce((s, m) => s + m.goalsAgainst, 0) / homeMatches.length : null
+      const awayAvgScored = awayMatches.length ? awayMatches.reduce((s, m) => s + m.goalsFor, 0) / awayMatches.length : null
+      const awayAvgConceded = awayMatches.length ? awayMatches.reduce((s, m) => s + m.goalsAgainst, 0) / awayMatches.length : null
+      const dataQuality = recent.length >= 8 ? 'HIGH' : 'MEDIUM' // ≥4 par construction du fenêtrage
 
-      const homeAvgScored = homeMatches.length > 0
-        ? homeMatches.reduce((s, m) => s + m.goalsFor, 0) / homeMatches.length
-        : null
-      const homeAvgConceded = homeMatches.length > 0
-        ? homeMatches.reduce((s, m) => s + m.goalsAgainst, 0) / homeMatches.length
-        : null
-      const awayAvgScored = awayMatches.length > 0
-        ? awayMatches.reduce((s, m) => s + m.goalsFor, 0) / awayMatches.length
-        : null
-      const awayAvgConceded = awayMatches.length > 0
-        ? awayMatches.reduce((s, m) => s + m.goalsAgainst, 0) / awayMatches.length
-        : null
-
-      const dataQuality = recent.length >= 8 ? 'HIGH' : recent.length >= 4 ? 'MEDIUM' : 'LOW'
-
-      const result = {
-        available: true,
-        dataSource: 'ESPN_TEAM_SCHEDULE',
-        matchCount: recent.length,
-        dataQuality,
-        avgScored,
-        avgConceded,
-        homeAvgScored,
-        homeAvgConceded,
-        awayAvgScored,
-        awayAvgConceded,
-        recent,
-      }
-
+      const result = { available: true, dataSource: 'ESPN_TEAM_SCHEDULE', matchCount: recent.length, dataQuality, avgScored, avgConceded, homeAvgScored, homeAvgConceded, awayAvgScored, awayAvgConceded }
       teamStatsCache.set(cacheKey, result)
       return result
-
-    } catch (err) {
+    } catch {
       if (attempt < maxRetries - 1) {
         await new Promise(r => setTimeout(r, baseDelay * (attempt + 1)))
         continue
       }
     }
   }
-
-  const result = { dataQuality: 'LOW', matchCount: 0, available: false, dataSource: 'LEAGUE_FALLBACK' }
+  const result = { available: false, matchCount: 0, dataSource: 'ESPN_TEAM_SCHEDULE' }
   teamStatsCache.set(cacheKey, result)
   return result
 }
 
-// ─── Assign tier ───
+// ─── Pool de concurrence borné ───
+async function mapPool(items, limit, fn) {
+  const results = new Array(items.length)
+  let next = 0
+  async function worker() {
+    while (next < items.length) {
+      const i = next++
+      results[i] = await fn(items[i], i)
+    }
+  }
+  await Promise.all(Array.from({ length: Math.min(limit, items.length) }, worker))
+  return results
+}
+
+// ─── Construction des lignes de payload ───
+export function genMatchId(home, away, date) {
+  // Les chiffres sont conservés (ex. « 1860 Munich », « Club 1 ») — sinon deux
+  // équipes distinctes tronquées à 8 lettres produiraient le même id.
+  const h = home.toLowerCase().replace(/[^a-z0-9]/g, '').slice(0, 8)
+  const a = away.toLowerCase().replace(/[^a-z0-9]/g, '').slice(0, 8)
+  return `${h}-vs-${a}-${date}`
+}
+
 function assignTier(reliability) {
   if (reliability >= 75) return 'GOLD'
   if (reliability >= 60) return 'SILVER'
   return 'STANDARD'
 }
 
-// ─── Fetch ESPN scoreboard ───
-async function fetchESPNMatches(slug, dateParam) {
-  try {
-    const res = await fetch(
-      `https://site.api.espn.com/apis/site/v2/sports/soccer/${slug}/scoreboard?dates=${dateParam}`,
-      { headers: { 'User-Agent': 'Mozilla/5.0 (compatible; BTTSPredict/1.0)' }, signal: AbortSignal.timeout(10000) }
-    )
-    if (!res.ok) return []
-    const data = await res.json()
-    const matches = []
-    for (const event of data.events || []) {
-      const comp = event.competitions?.[0]
-      if (!comp) continue
-      const statusType = comp.status?.type?.name
-      if (['STATUS_FINAL', 'STATUS_POSTPONED', 'STATUS_CANCELED'].includes(statusType)) continue
+/** Ligne AVEC probabilités — uniquement si les DEUX équipes ont ≥ 4 vrais matchs récents. */
+export function buildProbaLine(candidate, homeStats, awayStats) {
+  const homeAttackXG = homeStats.homeAvgScored !== null ? homeStats.homeAvgScored : homeStats.avgScored
+  const homeDefenseXG = homeStats.homeAvgConceded !== null ? homeStats.homeAvgConceded : homeStats.avgConceded
+  const awayAttackXG = awayStats.awayAvgScored !== null ? awayStats.awayAvgScored : awayStats.avgScored
+  const awayDefenseXG = awayStats.awayAvgConceded !== null ? awayStats.awayAvgConceded : awayStats.avgConceded
 
-      // Use the event's real calendar date in Africa/Dakar. The ESPN query date
-      // is not reliable for late UTC kickoffs that belong to the next Dakar day.
-      const matchDate = comp.date
-        ? new Date(comp.date).toLocaleDateString('sv-SE', { timeZone: DISPLAY_TZ })
-        : dateParam.slice(0, 4) + '-' + dateParam.slice(4, 6) + '-' + dateParam.slice(6, 8)
-      const today = getTodayISO()
-      if (matchDate < today) continue
-      if (matchDate === today && comp.date) {
-        const kickoff = new Date(comp.date).getTime()
-        if (Number.isFinite(kickoff) && kickoff <= Date.now() + MIN_KICKOFF_LEAD_MINUTES * 60 * 1000) continue
-      }
+  const homeBonus = 0.15
+  const lambdaHome = Math.max(0.50, Math.min(3.00, (homeAttackXG + awayDefenseXG) / 2 + homeBonus))
+  const lambdaAway = Math.max(0.50, Math.min(3.00, (awayAttackXG + homeDefenseXG) / 2))
 
-      const homeComp = comp.competitors?.find(c => c.homeAway === 'home')
-      const awayComp = comp.competitors?.find(c => c.homeAway === 'away')
-      if (!homeComp || !awayComp) continue
-      const homeTeam = homeComp.team?.displayName || homeComp.team?.shortDisplayName || 'Home'
-      const awayTeam = awayComp.team?.displayName || awayComp.team?.shortDisplayName || 'Away'
-      const time = comp.date ? new Date(comp.date).toLocaleTimeString('sv-SE', { hour: '2-digit', minute: '2-digit', timeZone: DISPLAY_TZ }) : ''
-      matches.push({
-        match: `${homeTeam} vs ${awayTeam}`,
-        home: homeTeam,
-        away: awayTeam,
-        league: ESPN_SLUGS[slug] || slug,
-        date: matchDate,
-        time,
-        homeLogo: homeComp.team?.logo || `https://a.espncdn.com/i/teamlogos/soccer/500/${homeComp.team?.id}.png`,
-        awayLogo: awayComp.team?.logo || `https://a.espncdn.com/i/teamlogos/soccer/500/${awayComp.team?.id}.png`,
-        slug,
-        homeTeamId: homeComp.team?.id,
-        awayTeamId: awayComp.team?.id,
-      })
-    }
-    return matches
-  } catch (err) {
-    return []
+  const bttsProbRaw = bttsRealProb(lambdaHome, lambdaAway)
+  const over25ProbRaw = over25RealProb(lambdaHome, lambdaAway)
+  const maxProb = Math.max(bttsProbRaw, over25ProbRaw)
+  if (maxProb < MIN_PROBA) return { rejected: true, reason: `proba_trop_basse (BTTS ${(bttsProbRaw * 100).toFixed(1)}% / Over ${(over25ProbRaw * 100).toFixed(1)}% < 35%)` }
+
+  const xgHome = +lambdaHome.toFixed(2)
+  const xgAway = +lambdaAway.toFixed(2)
+  const xgTotal = +(lambdaHome + lambdaAway).toFixed(2)
+
+  let xgScore = xgTotal >= 3.2 ? 95 : xgTotal >= 2.8 ? 85 : xgTotal >= 2.4 ? 75 : xgTotal >= 2.0 ? 60 : 45
+  const qualityRank = { HIGH: 3, MEDIUM: 2, LOW: 1 }
+  const homeQuality = homeStats.dataQuality
+  const awayQuality = awayStats.dataQuality
+  const dataQuality = qualityRank[homeQuality] <= qualityRank[awayQuality] ? homeQuality : awayQuality
+  const qualityScore = dataQuality === 'HIGH' ? 100 : 70
+  const bttsScore = Math.min(100, bttsProbRaw * 100 * 1.25)
+  const reliability = +((bttsScore * 0.35) + (xgScore * 0.25) + (qualityScore * 0.30) + (50 * 0.10)).toFixed(2)
+
+  const matchId = genMatchId(candidate.home, candidate.away, candidate.date)
+  return {
+    rejected: false,
+    line: {
+      id: matchId,
+      match: `${candidate.home} vs ${candidate.away}`,
+      home: candidate.home,
+      away: candidate.away,
+      league: candidate.league,
+      date: candidate.date,
+      time: candidate.time || '',
+      type: 'BTTS',
+      prediction: bttsProbRaw >= 0.50 ? 'Oui' : 'Non',
+      proba: +bttsProbRaw.toFixed(4),
+      confidence: Math.round(Math.max(40, Math.min(95, bttsProbRaw * 100))),
+      matchSemantic: matchId,
+      source: 'poisson-v92-real-data',
+      matchSource: candidate.source,
+      homeLogo: candidate.homeLogo,
+      awayLogo: candidate.awayLogo,
+      tier: assignTier(reliability),
+      reliabilityScore: reliability,
+      dataQuality,
+      dataSource: 'ESPN_TEAM_SCHEDULE',
+      matchCountHome: homeStats.matchCount,
+      matchCountAway: awayStats.matchCount,
+      h2hAvailable: false,
+      xgHome, xgAway, xgTotal,
+      estimatedCote: +(1 / Math.max(0.20, bttsProbRaw)).toFixed(2),
+      estimatedCoteOver: +(1 / Math.max(0.20, over25ProbRaw)).toFixed(2),
+      predictions: [
+        { type: 'BTTS', prediction: bttsProbRaw >= 0.50 ? 'Oui' : 'Non', confidence: Math.round(Math.max(40, Math.min(95, bttsProbRaw * 100))), bttsProb: +bttsProbRaw.toFixed(4), homeLambda: xgHome, awayLambda: xgAway },
+        { type: 'Over 2.5', prediction: over25ProbRaw >= 0.50 ? 'Oui' : 'Non', confidence: Math.round(Math.max(40, Math.min(95, over25ProbRaw * 100))), over25Prob: +over25ProbRaw.toFixed(4), homeLambda: xgHome, awayLambda: xgAway },
+      ],
+      bttsProb: +bttsProbRaw.toFixed(4),
+      over25Prob: +over25ProbRaw.toFixed(4),
+      homeLambda: xgHome,
+      awayLambda: xgAway,
+    },
   }
 }
 
-// ─── Generate unique match ID ───
-function genMatchId(home, away, date) {
-  const h = home.toLowerCase().replace(/[^a-z]/g, '').slice(0, 8)
-  const a = away.toLowerCase().replace(/[^a-z]/g, '').slice(0, 8)
-  return `${h}-vs-${a}-${date}`
+/** Ligne « données limitées » — match réel SANS probabilité, SANS λ, SANS cote. */
+export function buildLimitedLine(candidate) {
+  const matchId = genMatchId(candidate.home, candidate.away, candidate.date)
+  return {
+    id: matchId,
+    match: `${candidate.home} vs ${candidate.away}`,
+    home: candidate.home,
+    away: candidate.away,
+    league: candidate.league,
+    date: candidate.date,
+    time: candidate.time || '',
+    type: null,
+    prediction: null,
+    proba: null,
+    confidence: null,
+    matchSemantic: matchId,
+    source: 'listing-real-match',
+    matchSource: candidate.source,
+    homeLogo: candidate.homeLogo,
+    awayLogo: candidate.awayLogo,
+    tier: null,
+    reliabilityScore: null,
+    dataQuality: 'LOW',
+    dataLimited: true,
+    dataSource: candidate.source === 'TheSportsDB' ? 'THESPORTSDB_EVENTS' : 'ESPN_SCOREBOARD',
+    matchCountHome: 0,
+    matchCountAway: 0,
+    h2hAvailable: false,
+    xgHome: null,
+    xgAway: null,
+    xgTotal: null,
+    estimatedCote: null,
+    estimatedCoteOver: null,
+    predictions: [],
+    bttsProb: null,
+    over25Prob: null,
+    homeLambda: null,
+    awayLambda: null,
+  }
 }
 
-// ─── Generate unique analysis text ───
-function genAnalysis(home, away, xgHome, xgAway, bttsProb, over25Prob, formHome, formAway, h2h, reliability) {
-  const xgTotal = (xgHome + xgAway).toFixed(2)
-  const homeForm = `${formHome.scoredIn}/5 derniers matchs marques`
-  const awayForm = `${formAway.scoredIn}/5 derniers matchs marques`
-  const h2hText = `${h2h.bttsCount}/${h2h.totalH2H} H2H BTTS`
-  const probPct = (bttsProb * 100).toFixed(1)
-  const overPct = (over25Prob * 100).toFixed(1)
-  const relPct = reliability.toFixed(1)
+const QUALITY_RANK = { HIGH: 3, MEDIUM: 2, LOW: 1 }
 
-  return `${home} (${homeForm}, xG ${xgHome.toFixed(2)}) vs ${away} (${awayForm}, xG ${xgAway.toFixed(2)}). xG cumule ${xgTotal}, BTTS ${probPct}%, Over 2.5 ${overPct}%, ${h2hText}. Fiabilite ${relPct}%.`
+/**
+ * Cœur pur du pipeline : candidats déjà classés → payload + journal.
+ * Aucun réseau ici — entièrement testable.
+ */
+export function buildPayload({ candidates, todayISO, now = new Date(), maxFree = MAX_FREE, maxVip = MAX_VIP }) {
+  const journal = {
+    generatedAt: new Date(now.getTime()).toISOString(),
+    date: todayISO,
+    receivedRaw: candidates.length,
+    rejected: [],
+    duplicates: 0,
+  }
+  const bump = (reason) => {
+    const r = journal.rejected.find(x => x.reason === reason)
+    if (r) r.count++
+    else journal.rejected.push({ reason, count: 1, examples: [] })
+  }
+  const addReject = (reason, candidate, extra = '') => {
+    bump(reason)
+    const bucket = journal.rejected.find(x => x.reason === reason)
+    if (bucket.examples.length < 15) {
+      bucket.examples.push(`${candidate.home} vs ${candidate.away} [${candidate.league}] ${candidate.date}${extra ? ' — ' + extra : ''}`)
+    }
+  }
+
+  const scoredProba = []
+  const limited = []
+
+  for (const item of candidates) {
+    const c = item.candidate
+    if (item.noStatsWindow) {
+      limited.push(buildLimitedLine(c))
+      continue
+    }
+    const homeUsable = item.homeStats?.available && item.homeStats.matchCount >= 4
+    const awayUsable = item.awayStats?.available && item.awayStats.matchCount >= 4
+    if (!homeUsable || !awayUsable) {
+      limited.push(buildLimitedLine(c))
+      continue
+    }
+    const built = buildProbaLine(c, item.homeStats, item.awayStats)
+    if (built.rejected) {
+      addReject('proba_trop_basse', c, built.reason)
+      continue
+    }
+    scoredProba.push(built.line)
+  }
+
+  // Tri : date asc → qualité desc → fiabilité desc → heure asc
+  scoredProba.sort((a, b) => {
+    const dc = (a.date || '').localeCompare(b.date || '')
+    if (dc !== 0) return dc
+    const qc = QUALITY_RANK[b.dataQuality] - QUALITY_RANK[a.dataQuality]
+    if (qc !== 0) return qc
+    const rc = (b.reliabilityScore ?? -1) - (a.reliabilityScore ?? -1)
+    if (rc !== 0) return rc
+    return `${a.date}T${a.time || '23:59'}`.localeCompare(`${b.date}T${b.time || '23:59'}`)
+  })
+  limited.sort((a, b) => `${a.date}T${a.time || '23:59'}`.localeCompare(`${b.date}T${b.time || '23:59'}`))
+
+  // Fusion date/qualité : les lignes limitées d'une date passent après les lignes
+  // avec probabilité de la même date, avant les lignes proba des jours suivants.
+  const merged = []
+  let pi = 0, li = 0
+  while (pi < scoredProba.length || li < limited.length) {
+    const nextProba = scoredProba[pi]
+    const nextLimited = limited[li]
+    if (!nextLimited || (nextProba && nextProba.date <= nextLimited.date)) { merged.push(nextProba); pi++ }
+    else { merged.push(nextLimited); li++ }
+  }
+
+  const published = merged.slice(0, maxFree)
+
+  let truncated = 0
+  // VIP : lignes prédictives au-delà du cap free, matchs du jour priorisés.
+  // Partition STRICTE : free ∪ vip ∪ tronqués = acceptés (aucun double comptage).
+  const overflow = merged.slice(maxFree)
+  const overflowProba = overflow.filter(p => typeof p.proba === 'number')
+  overflowProba.sort((a, b) => ((b.date === todayISO ? 1 : 0) - (a.date === todayISO ? 1 : 0)) || (b.reliabilityScore - a.reliabilityScore))
+  const vipPreview = overflowProba.slice(0, maxVip).map(p => ({ ...p, vip: true }))
+  const vipIds = new Set(vipPreview.map(p => p.id))
+  const truncatedByDate = {}
+  for (const line of overflow) {
+    if (vipIds.has(line.id)) continue
+    truncated++
+    truncatedByDate[line.date] = (truncatedByDate[line.date] || 0) + 1
+  }
+  if (truncated > 0) journal.rejected.push({ reason: 'cap_affichage', count: truncated, examples: Object.entries(truncatedByDate).slice(0, 15).map(([d, n]) => `${n} ligne(s) du ${d}`) })
+
+  const free = published
+
+  const sourcesUsed = [...new Set(published.map(p => p.matchSource).filter(Boolean))]
+  const probaPublished = published.filter(p => typeof p.proba === 'number').length + vipPreview.length
+
+  const payload = {
+    date: todayISO,
+    lastUpdated: journal.generatedAt,
+    source: sourcesUsed.length > 0 ? sourcesUsed.join(' + ') : 'ESPN',
+    free,
+    vipPreview,
+    stats: {
+      avgReliability: scoredProba.length > 0 ? +(scoredProba.reduce((s, p) => s + p.reliabilityScore, 0) / scoredProba.length).toFixed(2) : 0,
+      receivedRaw: candidates.length,
+      totalAnalyzed: candidates.length - journal.rejected.filter(r => ['sans_donnees_competition', 'sans_equipes', 'termine', 'reporte', 'annule', 'sans_date', 'date_passee', 'deja_commence'].includes(r.reason)).reduce((s, r) => s + r.count, 0) - (journal.duplicates),
+      totalRejected: journal.rejected.reduce((s, r) => s + r.count, 0) + journal.duplicates,
+      totalAccepted: free.length + vipPreview.length,
+      freeCount: free.length,
+      vipCount: vipPreview.length,
+      displayOnly: free.filter(p => p.dataLimited === true).length,
+      probaLines: probaPublished,
+      geminiEligible: Math.min(GEMINI_MAX_LINES, probaPublished),
+      rejections: { doublons: journal.duplicates, byReason: journal.rejected.reduce((acc, r) => { acc[r.reason] = r.count; return acc }, {}) },
+    },
+    predictions: free,
+  }
+
+  // Invariant de cohérence : reçu = publié + rejeté (hors doublons comptés à part)
+  const rejectedTotal = journal.rejected.reduce((s, r) => s + r.count, 0)
+  if (candidates.length !== free.length + vipPreview.length + rejectedTotal + journal.duplicates) {
+    throw new Error(`[v92] Compteurs incohérents: reçu ${candidates.length} ≠ publié ${free.length + vipPreview.length} + rejeté ${rejectedTotal} + doublons ${journal.duplicates}`)
+  }
+
+  return { payload, journal }
+}
+
+// ─── Réseau : sources ───
+async function fetchJSON(url, ms = 10000) {
+  const res = await fetch(url, { headers: { 'User-Agent': 'Mozilla/5.0 (compatible; BTTSPredict/1.0)' }, signal: AbortSignal.timeout(ms) })
+  if (!res.ok) throw new Error(`HTTP ${res.status}`)
+  return res.json()
+}
+
+/**
+ * Scoreboard ESPN appel-par-appel (la syntaxe de plage `dates=A-B` est
+ * silencieusement vide côté ESPN — vérifié 2026-10-20). Horizon J0..J+3 pour
+ * borner le budget de requêtes ; retries + dégradation gracieuse par ligue.
+ */
+async function fetchESPNBoard(slug, dateParam) {
+  // 3 tentatives avec backoff — ESPN limite les rafales (429/403 Akamai) ;
+  // sans retry, un pool parallèle perdrait des journées entières.
+  for (let attempt = 0; attempt < 3; attempt++) {
+    try {
+      const data = await fetchJSON(`https://site.api.espn.com/apis/site/v2/sports/soccer/${slug}/scoreboard?dates=${dateParam}`)
+      return { events: data.events || [], leagueName: data.leagues?.[0]?.name || ESPN_SLUGS[slug] || slug }
+    } catch {
+      if (attempt < 2) await new Promise(r => setTimeout(r, 500 * (attempt + 1)))
+    }
+  }
+  return { events: [], leagueName: ESPN_SLUGS[slug] || slug, failed: true }
+}
+
+// Clés TheSportsDB : « 3 » (historique, 403 depuis 2026) puis « 123 » (démo, 3 événements max).
+const TSB_KEYS = ['3', '123']
+let tsbWorkingKey = null
+
+async function fetchTheSportsDBDay(dateISO) {
+  const keys = tsbWorkingKey ? [tsbWorkingKey, ...TSB_KEYS.filter(k => k !== tsbWorkingKey)] : TSB_KEYS
+  for (const key of keys) {
+    try {
+      const data = await fetchJSON(`https://www.thesportsdb.com/api/v1/json/${key}/eventsday.php?d=${dateISO}&s=Soccer`)
+      tsbWorkingKey = key
+      return data.events || []
+    } catch {
+      continue
+    }
+  }
+  return []
 }
 
 // ─── Main ───
 async function quickUpdate() {
+  const t0 = Date.now()
   const today = getTodayISO()
-  console.log(`[v91 Display-First] Generating predictions for ${today}`)
-  console.log('[v91] Strategy: display top matches per day. Eliminate only truly unusable.')
+  const now = new Date()
+  console.log(`[v92] Agrégateur de couverture — aujourd'hui (Dakar) = ${today}`)
 
   const dateParams = []
   for (let i = 0; i < FUTURE_DAYS; i++) {
-    const d = new Date()
-    d.setDate(d.getDate() + i)
-    dateParams.push(formatDateParam(d))
+    dateParams.push(new Date(now.getTime() + i * 86400000).toLocaleDateString('sv-SE', { timeZone: DISPLAY_TZ }))
+  }
+  const tsbDates = [...dateParams, ...Array.from({ length: 3 }, (_, i) => new Date(now.getTime() + (FUTURE_DAYS + i) * 86400000).toLocaleDateString('sv-SE', { timeZone: DISPLAY_TZ }))]
+
+  // ─── Étape 1 : ESPN — 76 ligues × J0..J+3, pool borné + retries ───
+  const boardJobs = []
+  for (const slug of Object.keys(ESPN_SLUGS)) {
+    for (const dateParam of dateParams) boardJobs.push({ slug, dateParam: dateParam.replace(/-/g, '') })
+  }
+  const boards = await mapPool(boardJobs, 6, async job => ({ job, board: await fetchESPNBoard(job.slug, job.dateParam) }))
+
+  const candidates = []
+  let receivedRaw = 0
+  const ctxBase = { todayISO: today, now }
+  for (const { job, board } of boards) {
+    for (const ev of board.events) {
+      receivedRaw++
+      const res = classifyESPNEvent(ev, { ...ctxBase, slug: job.slug, leagueName: ESPN_SLUGS[job.slug] || board.leagueName })
+      if (res.status === 'kept') candidates.push(res.candidate)
+    }
+  }
+  const slugOk = new Set(boards.filter(b => b.board.events.length > 0).map(b => b.job.slug))
+  const boardFailures = boards.filter(b => b.board.failed).length
+  console.log(`[v92] ESPN: ${receivedRaw} événements reçus sur ${boardJobs.length} requêtes (${slugOk.size} slugs actifs, ${boardFailures} échecs après retries)`)
+
+  // ─── Étape 2 : TheSportsDB — secours dégradé (source conservée par ligne) ───
+  let tsbRaw = 0
+  for (const dateISO of tsbDates) {
+    const events = await fetchTheSportsDBDay(dateISO)
+    tsbRaw += events.length
+    for (const ev of events) {
+      const res = classifyTSBEvent(ev, ctxBase)
+      if (res.status === 'kept') candidates.push(res.candidate)
+    }
+    await new Promise(r => setTimeout(r, 350)) // politesse rate-limit
+  }
+  console.log(`[v92] TheSportsDB: ${tsbRaw} événements (clé utilisée: ${tsbWorkingKey || 'aucune'})`)
+
+  // ─── Étape 3 : dédoublonnage (équipes normalisées + date ; ESPN prioritaire) ───
+  candidates.sort((a, b) => (a.source === 'ESPN' ? 0 : 1) - (b.source === 'ESPN' ? 0 : 1))
+  const { kept, duplicates } = dedupCandidates(candidates)
+  console.log(`[v92] Candidats ${candidates.length} → uniques ${kept.length} (doublons inter-sources: ${duplicates.length})`)
+  if (kept.length === 0) {
+    throw new Error(`[v92] Aucun match planifié reçu des sources pour ${today} ; predictions.json existant conservé`)
   }
 
-  // Fetch all matches
-  const allMatches = []
-  for (const [slug, leagueName] of Object.entries(ESPN_SLUGS)) {
-    for (const dateParam of dateParams) {
-      const matches = await fetchESPNMatches(slug, dateParam)
-      for (const m of matches) {
-        const profile = LEAGUE_PROFILES[slug] || DEFAULT_PROFILE
-        allMatches.push({ ...m, profile, slug })
-      }
-      console.log(`[v91] ${slug}/${dateParam}: ${matches.length} matches`)
+  // ─── Étape 4 : stats d'équipe réelles pour la fenêtre J0..J+2 (hors fenêtre → ligne limitée) ───
+  const statsWindowEnd = new Date(now.getTime() + (STATS_WINDOW_DAYS - 1) * 86400000).toLocaleDateString('sv-SE', { timeZone: DISPLAY_TZ })
+  const enriched = await mapPool(kept, 8, async (c) => {
+    if (c.source !== 'ESPN' || !c.slug || !c.homeTeamId || !c.awayTeamId || c.date > statsWindowEnd) {
+      return { candidate: c, noStatsWindow: c.date > statsWindowEnd || c.source !== 'ESPN' }
     }
-  }
-
-  // Deduplicate
-  const uniqueMatches = []
-  const seen = new Set()
-  for (const m of allMatches) {
-    const key = `${m.match}-${m.date}`
-    if (seen.has(key)) continue
-    seen.add(key)
-    uniqueMatches.push(m)
-  }
-
-    console.log(`[v91] Total unique matches: ${uniqueMatches.length}`)
-  if (uniqueMatches.length === 0) {
-    throw new Error(`[v91] ESPN returned no scheduled matches for ${today}; existing predictions.json was preserved`)
-  }
-  // ─── RELIABILITY SCORING — only eliminate truly unusable ───
-
-  const scored = []
-  let rejected = 0
-  const rejectionReasons = []
-
-  for (const m of uniqueMatches) {
-    const profile = m.profile || DEFAULT_PROFILE
-    const dateStr = m.date
-    const slug = m.slug
-
-    // ─── Fetch REAL team stats from ESPN ───
-    const homeStats = m.homeTeamId ? await fetchTeamStats(slug, m.homeTeamId, m.home) : { available: false, dataQuality: 'LOW', matchCount: 0 }
-    const awayStats = m.awayTeamId ? await fetchTeamStats(slug, m.awayTeamId, m.away) : { available: false, dataQuality: 'LOW', matchCount: 0 }
-
-    // Determine data quality (worst of both teams)
-    const homeQuality = homeStats.available ? homeStats.dataQuality : 'LOW'
-    const awayQuality = awayStats.available ? awayStats.dataQuality : 'LOW'
-    const qualityRank = { HIGH: 3, MEDIUM: 2, LOW: 1 }
-    const dataQuality = qualityRank[homeQuality] <= qualityRank[awayQuality] ? homeQuality : awayQuality
-
-    // ─── Calculate lambda from REAL data ───
-    // If real data available: use real avg scored/conceded (with home/away split when possible)
-    // If not available: fall back to LEAGUE_PROFILES (context only, not team-specific)
-    let homeAttackXG, homeDefenseXG, awayAttackXG, awayDefenseXG
-
-    if (homeStats.available && homeStats.matchCount >= 4) {
-      // Real data: prefer home-specific stats for home team
-      homeAttackXG = homeStats.homeAvgScored !== null ? homeStats.homeAvgScored : homeStats.avgScored
-      homeDefenseXG = homeStats.homeAvgConceded !== null ? homeStats.homeAvgConceded : homeStats.avgConceded
-    } else {
-      // Fallback: league average (not team-specific — data quality LOW)
-      homeAttackXG = profile.avgGoals * 0.55
-      homeDefenseXG = profile.avgGoals * 0.45
-    }
-
-    if (awayStats.available && awayStats.matchCount >= 4) {
-      // Real data: prefer away-specific stats for away team
-      awayAttackXG = awayStats.awayAvgScored !== null ? awayStats.awayAvgScored : awayStats.avgScored
-      awayDefenseXG = awayStats.awayAvgConceded !== null ? awayStats.awayAvgConceded : awayStats.avgConceded
-    } else {
-      awayAttackXG = profile.avgGoals * 0.45
-      awayDefenseXG = profile.avgGoals * 0.55
-    }
-
-    // Lambda = average of (team attack, opponent defense)
-    const homeBonus = 0.15
-    const lambdaHome = Math.max(0.50, Math.min(3.00,
-      (homeAttackXG + awayDefenseXG) / 2 + homeBonus
-    ))
-    const lambdaAway = Math.max(0.50, Math.min(3.00,
-      (awayAttackXG + homeDefenseXG) / 2
-    ))
-
-    // ─── Calculate REAL Poisson probas ───
-    const bttsProbRaw = bttsRealProb(lambdaHome, lambdaAway)
-    const over25ProbRaw = over25RealProb(lambdaHome, lambdaAway)
-
-    const xgHome = +lambdaHome.toFixed(2)
-    const xgAway = +lambdaAway.toFixed(2)
-    const xgTotal = +(lambdaHome + lambdaAway).toFixed(2)
-
-    // ═══ DISPLAY-FIRST: only reject if both BTTS and Over 2.5 are very low ═══
-    const maxProb = Math.max(bttsProbRaw, over25ProbRaw)
-    if (maxProb < 0.35) {
-      rejected++
-      rejectionReasons.push(`REJETE: ${m.home} vs ${m.away} - BTTS ${(bttsProbRaw*100).toFixed(1)}% + Over ${(over25ProbRaw*100).toFixed(1)}% tous deux < 35%`)
-      continue
-    }
-
-    // ═══ RELIABILITY SCORE — basé sur données réelles, pas de randomisation ═══
-    // xg score: higher xG total → higher score
-    let xgScore = 0
-    if (xgTotal >= 3.2) xgScore = 95
-    else if (xgTotal >= 2.8) xgScore = 85
-    else if (xgTotal >= 2.4) xgScore = 75
-    else if (xgTotal >= 2.0) xgScore = 60
-    else xgScore = 45
-
-    // data quality score: based on real data availability
-    let qualityScore = 0
-    if (dataQuality === 'HIGH') qualityScore = 100
-    else if (dataQuality === 'MEDIUM') qualityScore = 70
-    else qualityScore = 40
-
-    // BTTS probability score
-    const bttsScore = Math.min(100, bttsProbRaw * 100 * 1.25)
-
-    // No H2H score — h2h_available is false by default (no synthetic H2H)
-    const h2hScore = 50 // neutral — no H2H data available
-
-    // Reliability = weighted by data quality
-    const reliability = +(
-      (bttsScore * 0.35) +
-      (xgScore * 0.25) +
-      (qualityScore * 0.30) +
-      (h2hScore * 0.10)
-    ).toFixed(2)
-
-    // Estimated odds (informational)
-    const estimatedCoteBTTS = +(1 / Math.max(0.20, bttsProbRaw)).toFixed(2)
-    const estimatedCoteOver = +(1 / Math.max(0.20, over25ProbRaw)).toFixed(2)
-
-    const analysis = `${m.home} (${homeStats.matchCount} matchs réels, xG ${xgHome.toFixed(2)}) vs ${m.away} (${awayStats.matchCount} matchs réels, xG ${xgAway.toFixed(2)}). xG cumulé ${xgTotal}, BTTS ${(bttsProbRaw*100).toFixed(1)}%, Over 2.5 ${(over25ProbRaw*100).toFixed(1)}%. Fiabilité ${reliability}%. Qualité données: ${dataQuality}.`
-    const matchId = genMatchId(m.home, m.away, m.date)
-
-    // Build TWO predictions: BTTS + Over 2.5 (so component has both)
-    const bttsPrediction = {
-      type: 'BTTS',
-      prediction: bttsProbRaw >= 0.50 ? 'Oui' : 'Non',
-      confidence: Math.round(Math.max(40, Math.min(95, bttsProbRaw * 100))),
-      bttsProb: +bttsProbRaw.toFixed(4),
-      homeLambda: xgHome,
-      awayLambda: xgAway,
-    }
-
-    const over25Prediction = {
-      type: 'Over 2.5',
-      prediction: over25ProbRaw >= 0.50 ? 'Oui' : 'Non',
-      confidence: Math.round(Math.max(40, Math.min(95, over25ProbRaw * 100))),
-      over25Prob: +over25ProbRaw.toFixed(4),
-      homeLambda: xgHome,
-      awayLambda: xgAway,
-    }
-
-    // MAIN prediction object — contains everything the component needs
-    const prediction = {
-      id: matchId,
-      match: m.match,
-      home: m.home,
-      away: m.away,
-      league: m.league,
-      date: m.date,
-      type: 'BTTS',
-      prediction: bttsPrediction.prediction,
-      proba: +bttsProbRaw.toFixed(4),
-      bttsProbDisplay: `${(bttsProbRaw * 100).toFixed(2)}%`,
-      over25ProbDisplay: `${(over25ProbRaw * 100).toFixed(2)}%`,
-      confidence: bttsPrediction.confidence,
-      time: m.time || '',
-      matchSemantic: matchId,
-      source: 'poisson-v92-real-data',
-      homeLogo: m.homeLogo,
-      awayLogo: m.awayLogo,
-      tier: assignTier(reliability),
-      reliabilityScore: reliability,
-      dataQuality: dataQuality,
-      dataSource: homeStats.dataSource === 'ESPN_TEAM_SCHEDULE' && awayStats.dataSource === 'ESPN_TEAM_SCHEDULE'
-        ? 'ESPN_TEAM_SCHEDULE'
-        : 'LEAGUE_FALLBACK',
-      matchCountHome: homeStats.matchCount || 0,
-      matchCountAway: awayStats.matchCount || 0,
-      h2hAvailable: false,
-      xgHome: xgHome,
-      xgAway: xgAway,
-      xgTotal: xgTotal,
-      formBTTS: homeStats.available ? Math.round((homeStats.avgScored + awayStats.avgScored) / 10 * 100) : 0,
-      analysis: analysis,
-      // ─── DATA FIELDS the component needs ───
-      // PromoVip reads these via p.analysis?.X (we mirror them here too)
-      analysisData: {
-        bttsProb: +bttsProbRaw.toFixed(4),
-        over25Prob: +over25ProbRaw.toFixed(4),
-        homeLambda: xgHome,
-        awayLambda: xgAway,
-        xgTotal: xgTotal,
-      },
-      estimatedCote: estimatedCoteBTTS,
-      estimatedCoteOver: estimatedCoteOver,
-      // ─── BOTH predictions array (so FreePredictions has both BTTS + Over 2.5) ───
-      predictions: [bttsPrediction, over25Prediction],
-      // Mirror key fields at top-level so the component reads them directly
-      bttsProb: +bttsProbRaw.toFixed(4),
-      over25Prob: +over25ProbRaw.toFixed(4),
-      homeLambda: xgHome,
-      awayLambda: xgAway,
-    }
-
-    scored.push(prediction)
-  }
-
-  // ─── SORT BY DATE ASC FIRST, THEN RELIABILITY DESC ───
-  // Priority: matches scheduled for TODAY (Africa/Dakar) come first,
-  // then upcoming matches sorted by date ascending.
-  // Within the same date, sort by reliability descending.
-  scored.sort((a, b) => {
-    const dateCmp = (a.date || '').localeCompare(b.date || '')
-    if (dateCmp !== 0) return dateCmp
-    return b.reliabilityScore - a.reliabilityScore
+    const [homeStats, awayStats] = await Promise.all([
+      fetchTeamStats(c.slug, c.homeTeamId),
+      fetchTeamStats(c.slug, c.awayTeamId),
+    ])
+    return { candidate: c, homeStats, awayStats }
   })
+  const statCalls = enriched.filter(e => e.homeStats).length
+  console.log(`[v92] Stats d'équipe réelles: ${statCalls} matchs enrichis (fenêtre J0..J+${STATS_WINDOW_DAYS - 1}), ${enriched.length - statCalls} lignes « données limitées »`)
 
-  // ─── DISPLAY-FIRST PUBLICATION ───
-  // Free: top 8 by reliability (any score, always show top)
-  const free = scored.slice(0, MAX_FREE)
+  // ─── Étape 5 : payload + journal ───
+  const { payload, journal } = buildPayload({ candidates: enriched, todayISO: today, now })
+  journal.duplicates = duplicates.length
+  journal.duplicateExamples = duplicates.slice(0, 15).map(d => `${d.dropped.home} vs ${d.dropped.away} [${d.dropped.league}] ${d.dropped.date} (doublon de ${d.source === d.dropped.source ? 'même source' : 'source ' + d.source})`)
+  // Recalcul des compteurs avec les doublons
+  payload.stats.rejections.doublons = duplicates.length
+  payload.stats.totalRejected = journal.rejected.reduce((s, r) => s + r.count, 0) + duplicates.length
+  payload.stats.totalAnalyzed = candidates.length - journal.rejected.filter(r => ['sans_donnees_competition', 'sans_equipes', 'termine', 'reporte', 'annule', 'sans_date', 'date_passee', 'deja_commence'].includes(r.reason)).reduce((s, r) => s + r.count, 0) - duplicates.length
 
-  // VIP: next 6 after free (lower reliability, "preview" teasing)
-  // Sélection VIP = copie détachée de scored, explicitement marquée vip: true.
-  // Le statut VIP n'est JAMAIS déduit du tier GOLD, d'une proba ou d'un tableau.
-  const vipPreview = scored.slice(MAX_FREE, MAX_FREE + MAX_VIP).map(p => ({ ...p, vip: true }))
+  const rejectedSourceExamples = journal.rejected.filter(r => r.examples?.length)
+  console.log(`\n[v92] ===== RÉSULTATS =====`)
+  console.log(`Reçus des sources        : ${candidates.length} (uniques, doublons retirés)`)
+  console.log(`Publiés                  : ${payload.stats.totalAccepted} (free ${payload.stats.freeCount} + VIP ${payload.stats.vipCount})`)
+  console.log(`  - avec probabilités    : ${payload.stats.probaLines - payload.stats.vipCount}`)
+  console.log(`  - données limitées     : ${payload.stats.displayOnly}`)
+  console.log(`Rejetés (total journalisé): ${payload.stats.totalRejected}`)
+  for (const r of journal.rejected) console.log(`  - ${r.reason}: ${r.count}`)
+  console.log(`Doublons dédupliqués     : ${duplicates.length}`)
+  console.log(`Éligibles Gemini         : ≤ ${payload.stats.geminiEligible} lignes`)
 
-  // If we don't have enough matches, duplicate some from free into vip
-  // Miroirs de teasing uniquement : explicitement NON VIP (vip: false) —
-  // un match gratuit ne peut jamais être affiché comme sélection VIP.
-  if (vipPreview.length < 3 && free.length > 0) {
-    const extra = free.slice(0, 3 - vipPreview.length).map(p => ({ ...p, vipMirror: true, vip: false }))
-    vipPreview.push(...extra)
+  console.log(`\n--- REJETS (exemples) ---`)
+  for (const r of rejectedSourceExamples.slice(0, 8)) {
+    console.log(`  ${r.reason}: ${r.examples.slice(0, 3).join(' | ')}`)
   }
+  console.log(`\n--- FREE (aujourd'hui ${today}) ---`)
+  payload.free.filter(p => p.date === today).slice(0, 25).forEach(p => console.log(`  ${p.match} | ${p.league} | ${p.time || 'heure n/c'} | ${p.dataLimited ? 'DONNÉES LIMITÉES' : `BTTS ${(p.bttsProb * 100).toFixed(1)}%`} | ${p.dataSource}`))
 
-  // ─── LOG RESULTS ───
-  console.log(`\n[v91] ===== RESULTS =====`)
-  console.log(`Total analysed: ${uniqueMatches.length}`)
-  console.log(`Rejected (very low proba): ${rejected}`)
-  console.log(`Published: ${scored.length}`)
-  console.log(`Free published: ${free.length} (max ${MAX_FREE})`)
-  console.log(`VIP preview: ${vipPreview.length} (max ${MAX_VIP})`)
-
-  console.log(`\n--- REJECTED (first 10) ---`)
-  rejectionReasons.slice(0, 10).forEach(r => console.log(r))
-
-  console.log(`\n--- FREE (top ${free.length}) ---`)
-  free.forEach(p => console.log(`  ${p.match} | ${p.date} ${p.time} | ${p.league} | BTTS ${p.bttsProbDisplay} | O2.5 ${p.over25ProbDisplay} | xG ${p.xgTotal} | Rel ${p.reliabilityScore}`))
-
-  // ─── Calculate stats ───
-  const avgReliability = scored.length > 0
-    ? +(scored.reduce((sum, p) => sum + p.reliabilityScore, 0) / scored.length).toFixed(2)
-    : 0
-
-  // ─── Save predictions.json (new structure with predictions nested) ───
-  const predictionsData = {
-    date: today,
-    lastUpdated: new Date().toISOString(),
-    source: 'ESPN + TheSportsDB',
-    free: free,
-    vipPreview: vipPreview,
-    stats: {
-      avgReliability: avgReliability,
-      totalAnalyzed: uniqueMatches.length,
-      totalRejected: rejected,
-      totalAccepted: scored.length,
-      freeCount: free.length,
-      vipCount: vipPreview.length,
-    },
-    // Backward compat: predictions = free
-    predictions: free,
-  }
-
-  const validationErrors = validatePredictionPayload(predictionsData, {
-    today,
-    requireTimestamp: true,
-    checkKickoff: true,
-    now: new Date(),
-  })
-
+  // ─── Validation bloquante ───
+  const validationErrors = validatePredictionPayload(payload, { today, requireTimestamp: true, checkKickoff: true, now })
   if (validationErrors.length > 0) {
-    throw new Error(`[v91] Refusing to publish invalid predictions:\n${validationErrors.join('\n')}`)
+    throw new Error(`[v92] Refus de publier un payload invalide :\n${validationErrors.join('\n')}`)
   }
-  writeJsonAtomically(PREDICTIONS_FILE, predictionsData)
-  console.log(`\n[v91] Written to predictions.json (${free.length} free, ${vipPreview.length} VIP)`)
-  console.log(`[v91] File size: ${(fs.statSync(PREDICTIONS_FILE).size / 1024).toFixed(1)} KB`)
-  // ─── Archive daily ───
+
+  writeJsonAtomically(PREDICTIONS_FILE, payload)
+  console.log(`\n[v92] Écrit: predictions.json (${payload.stats.freeCount} free dont ${payload.stats.displayOnly} données limitées, ${payload.stats.vipCount} VIP) — ${(fs.statSync(PREDICTIONS_FILE).size / 1024).toFixed(1)} KB`)
+
+  // Journal des rejets (audit de couverture)
+  writeJsonAtomically(REJECTS_FILE, journal)
+  console.log(`[v92] Journal des rejets: predictions-rejects.json (${journal.rejected.reduce((s, r) => s + r.count, 0)} rejets)`)
+
+  // ─── Archive quotidienne : UNIQUEMENT les lignes prédictives (jamais les
+  // lignes « données limitées » — elles ne sont pas des pronostics et ne
+  // doivent pas entrer dans le suivi public vérifié). ───
+  const archiveProbaFree = payload.free.filter(p => typeof p.proba === 'number')
+  const archiveData = {
+    date: payload.date,
+    lastUpdated: payload.lastUpdated,
+    source: payload.source,
+    free: archiveProbaFree,
+    vipPreview: payload.vipPreview,
+    stats: payload.stats,
+    predictions: archiveProbaFree,
+  }
   const archiveFile = path.join(ARCHIVE_DIR, `${today}.json`)
-  writeJsonAtomically(archiveFile, predictionsData)
-
-  console.log(`[v91] Archived to predictions-archive/${today}.json`)
-
-  console.log(`\n[v91] Done.`)
+  writeJsonAtomically(archiveFile, archiveData)
+  console.log(`[v92] Archivé: predictions-archive/${today}.json (${archiveProbaFree.length} pronostics prédictifs)`)
+  console.log(`\n[v92] Terminé en ${((Date.now() - t0) / 1000).toFixed(0)}s.`)
 }
 
-quickUpdate().catch(err => {
-  console.error('[v91] FATAL:', err)
-  process.exit(1)
-})
+// Exports pour les tests (aucune exécution réseau à l'import)
+export { fetchTeamStats, mapPool }
+
+const isMain = typeof process.argv[1] === 'string' && process.argv[1].length > 0
+  && import.meta.url === pathToFileURL(process.argv[1]).href
+if (isMain) {
+  quickUpdate().catch(err => {
+    console.error('[v92] FATAL:', err)
+    process.exit(1)
+  })
+}

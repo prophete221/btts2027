@@ -30,18 +30,29 @@ export function validatePredictionPayload(payload, options = {}) {
 
   rows.forEach((prediction, index) => {
     const prefix = `prediction[${index}]`
-    for (const field of ['id', 'match', 'home', 'away', 'league', 'date', 'type', 'prediction']) {
+    // Ligne « données limitées » (match réel sans pronostic) : pas de probabilité,
+    // pas de λ, pas de cote — seuls les champs d'identité et de traçabilité sont exigés.
+    const isLimitedRow = prediction?.dataLimited === true
+    const identityFields = ['id', 'match', 'home', 'away', 'league', 'date']
+    const requiredFields = isLimitedRow ? identityFields : [...identityFields, 'type', 'prediction']
+    for (const field of requiredFields) {
       if (typeof prediction?.[field] !== 'string' || prediction[field].trim() === '') {
         errors.push(`${prefix}.${field} is required`)
       }
     }
+    if (isLimitedRow && (typeof prediction?.type === 'string' && prediction.type.trim() !== '')) {
+      errors.push(`${prefix}.type must be null for a limited-data listing row`)
+    }
+    if (isLimitedRow && (prediction?.proba != null || prediction?.bttsProb != null || prediction?.over25Prob != null || prediction?.estimatedCote != null)) {
+      errors.push(`${prefix} is marked dataLimited but carries a probability or odds — invented values are forbidden`)
+    }
     if (!ISO_DATE.test(prediction?.date || '')) errors.push(`${prefix}.date must be YYYY-MM-DD`)
     else if (prediction.date < today) errors.push(`${prefix}.date is older than Africa/Dakar today`)
     if (typeof prediction?.proba !== 'number' || prediction.proba < 0 || prediction.proba > 1) {
-      errors.push(`${prefix}.proba must be between 0 and 1`)
+      if (!isLimitedRow || prediction?.proba != null) errors.push(`${prefix}.proba must be between 0 and 1`)
     }
     if (typeof prediction?.reliabilityScore !== 'number' || prediction.reliabilityScore < 0 || prediction.reliabilityScore > 100) {
-      errors.push(`${prefix}.reliabilityScore must be between 0 and 100`)
+      if (!isLimitedRow || prediction?.reliabilityScore != null) errors.push(`${prefix}.reliabilityScore must be between 0 and 100`)
     }
     if (!['HIGH', 'MEDIUM', 'LOW'].includes(prediction?.dataQuality)) {
       errors.push(`${prefix}.dataQuality must be HIGH, MEDIUM or LOW`)

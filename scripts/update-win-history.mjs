@@ -289,7 +289,9 @@ function processFile(file, bucket, nowMs = Date.now(), dir = DIR) {
       bucket.all.push({
         date, match: p.match || '', league: p.league || '',
         market: type, tier,
-        proba: p.proba || (p.confidence ? p.confidence / 100 : 0.62),
+        // Aucune proba par défaut : si la donnée est absente, elle reste absente
+        // (interdiction du fallback 0.62 — mission anti-invention).
+        proba: typeof p.proba === 'number' ? p.proba : (typeof p.confidence === 'number' ? p.confidence / 100 : null),
         status: isWon ? 'WON' : 'LOST',
         finalScore: p.finalScore || p.score || '-',
         verifiedAt: p.verifiedAt || '',

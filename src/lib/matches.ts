@@ -223,6 +223,10 @@ export function loadAllMatches(): Map<string, MatchData> {
       const currentPredictions = current?.free || current?.predictions || []
       if (Array.isArray(currentPredictions)) {
         for (const p of currentPredictions) {
+          // Mission couverture : les lignes « données limitées » (match réel sans
+          // pronostic) ne génèrent PAS de page match — éviter des pages fines
+          // indexables sans analyse. Elles restent visibles sur la page du jour.
+          if (p.dataLimited === true) continue
           const home = p.home || ''
           const away = p.away || ''
           const date = (p.date || '').slice(0, 10)

@@ -27,6 +27,10 @@ export function predictionQuality(input: PredictionPayload): PredictionQuality {
   const quality = String(input.dataQuality || '').toUpperCase()
 
   if (hasLambdas && hasSource && (hasForm || hasEnoughMatches || quality === 'HIGH')) return 'reliable'
+  // Mission couverture : un match réel issu d'une vraie source mais aux données
+  // trop minces pour un λ est affiché « Données limitées » (jamais « insuffisant »,
+  // jamais une probabilité inventée pour lui).
+  if (quality === 'LOW' && hasSource && !hasLambdas) return 'limited'
   if (hasLambdas || (input.proba && input.proba > 0) || (input.probability && input.probability > 0)) return 'limited'
   return 'insufficient'
 }

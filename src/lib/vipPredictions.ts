@@ -46,3 +46,12 @@ export function onlyVipFixtures(payload: Record<string, unknown> | null | undefi
         : []
   return rows.filter((row): row is VipFixture => Boolean(row && typeof row === 'object' && isExplicitVipPrediction(row as Prediction & Record<string, unknown>)))
 }
+
+/**
+ * Filtre strict « sélection VIP du jour » (Africa/Dakar) :
+ * seule une fixture dont la date Dakar est exactement aujourd'hui est retenue.
+ * Une ligne sans date exploitable est rejetée — jamais traitée comme future.
+ */
+export function filterVipFixturesForToday<T extends { date?: string }>(fixtures: readonly T[], todayStr: string): T[] {
+  return (fixtures || []).filter(f => typeof f?.date === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(f.date) && f.date === todayStr)
+}

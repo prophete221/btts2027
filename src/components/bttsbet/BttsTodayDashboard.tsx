@@ -34,6 +34,7 @@ import { generateMatchSlug } from '@/lib/match-slug'
 import { useLanguage } from './LanguageSwitcher'
 import { translationsFor } from '@/lib/i18n'
 import { getDakarDateString, getDakarMatchStatus } from '@/lib/dakar-date'
+import { filterDakarTodayRows } from '@/lib/todayFilter'
 
 // ─── Palette (V3 — bleu analyse, sémantique WIN/LOST/PENDING) ────────────────
 const C = {
@@ -193,7 +194,7 @@ function qualityColor(q?: string): string {
   const u = q.toUpperCase()
   if (u === 'HIGH') return C.success
   if (u === 'MEDIUM') return C.warning
-  if (u === 'LOW') return C.danger
+  // LOW = match réel aux données limitées — neutre (gris), pas une alerte rouge.
   return C.textSec
 }
 
@@ -340,6 +341,9 @@ function MatchCard({ match, index, status, lang, insufficientDataLabel, labels, 
   const dataSourceLabel = normalizeDataSource(match.dataSource)
   const quality = match.dataQuality?.toUpperCase() || '—'
   const qualityColorVal = qualityColor(match.dataQuality)
+  const qualityLabel = quality === 'LOW'
+    ? (lang === 'fr' ? 'Données limitées' : lang === 'en' ? 'Limited data' : 'بيانات محدودة')
+    : quality
   const sufficientData = hasSufficientData(match)
 
   return (
@@ -420,7 +424,7 @@ function MatchCard({ match, index, status, lang, insufficientDataLabel, labels, 
             {labels.source} <b style={{ ['--cc' as string]: '#7DB5FF' }}>{dataSourceLabel}</b>
           </span>
           <span className="btx-chip">
-            {labels.quality} <b style={{ ['--cc' as string]: qualityColorVal }}>{quality}</b>
+            {labels.quality} <b style={{ ['--cc' as string]: qualityColorVal }}>{qualityLabel}</b>
           </span>
           <span className="btx-chip">
             {fmtInt(match.matchCountHome)} + {fmtInt(match.matchCountAway)} {labels.matches}
@@ -496,8 +500,9 @@ function MatchCard({ match, index, status, lang, insufficientDataLabel, labels, 
           </div>
         )}
 
-        {/* Lien page match pour les cartes sans analyse IA */}
-        {!(match.aiAnalysis || match.aiKeyFact || match.aiBttsView || match.aiOver25View) && (
+        {/* Lien page match pour les cartes sans analyse IA
+            (les lignes « données limitées » n'ont pas de page match) */}
+        {quality !== 'LOW' && !(match.aiAnalysis || match.aiKeyFact || match.aiBttsView || match.aiOver25View) && (
           <div className="btx-actions">
             <Link
               href={`/match/${generateMatchSlug(match.home, match.away, match.date)}`}
@@ -559,7 +564,6 @@ export default function BttsTodayDashboard() {
   const [activeFilter, setActiveFilter] = useState<FilterType>('all')
   const [generationDate, setGenerationDate] = useState<string | null>(null)
   const [todayMatches, setTodayMatches] = useState<MatchData[]>([])
-  const [upcomingMatches, setUpcomingMatches] = useState<MatchData[]>([])
   const [now, setNow] = useState<number>(() => Date.now())
 
   useEffect(() => {
@@ -632,10 +636,9 @@ export default function BttsTodayDashboard() {
           }
         }
 
-        // Separate today's matches from upcoming matches.
-        // - todayMatches: date === todayStr (real today matches, Africa/Dakar)
-        // - upcomingMatches: date > todayStr (kept for the "À venir" section)
-        // We never show past matches (date < todayStr).
+        // Mission couverture : la page today est STRICTEMENT limitée au jour
+        // Dakar en cours. Les matchs d'autres dates restent réservés aux pages
+        // tomorrow / archives — le 24 octobre n'apparaît jamais sur la page du 20.
         const all = [...map.values()]
           .filter(m => m.date >= todayStr)
           .sort((a, b) => {
@@ -645,8 +648,7 @@ export default function BttsTodayDashboard() {
           })
 
         setMatches(all)
-        setTodayMatches(all.filter(m => m.date === todayStr))
-        setUpcomingMatches(all.filter(m => m.date > todayStr))
+        setTodayMatches(filterDakarTodayRows(all, todayStr))
         if (typeof data?.date === 'string' && data.date.length > 0) setGenerationDate(data.date)
         setLoading(false)
       })
@@ -666,28 +668,43 @@ export default function BttsTodayDashboard() {
     [todayMatches, now],
   )
 
+  // ─── Séparation claire des qualités (mission couverture) ───────────────
+  // HIGH/MEDIUM = analyse complète ; LOW = match réel « Données limitées »
+  // (calendrier seul, aucune probabilité affichée).
+  const activeTodayMatches = useMemo(
+    () => [...liveTodayMatches, ...scheduledTodayMatches],
+    [liveTodayMatches, scheduledTodayMatches],
+  )
+  const analyzedTodayMatches = useMemo(
+    () => activeTodayMatches.filter(m => (m.dataQuality || '').toUpperCase() !== 'LOW'),
+    [activeTodayMatches],
+  )
+  const limitedTodayMatches = useMemo(
+    () => activeTodayMatches.filter(m => (m.dataQuality || '').toUpperCase() === 'LOW'),
+    [activeTodayMatches],
+  )
+
   // ─── Real stats from loaded data (no fabrication) ──────────────────────
   const stats = useMemo(() => {
-    // « Today » = matchs réellement affichés (filtrés par date >= todayStr dans useEffect).
-    // On utilise matches.length qui correspond exactement à ce qui est rendu dans la grille.
-    const bttsHigh = matches.filter(m => (m.bttsProb ?? 0) >= 0.6).length
-    const overHigh = matches.filter(m => (m.over25Prob ?? 0) >= 0.6).length
-    const highQuality = matches.filter(m => (m.dataQuality || '').toUpperCase() === 'HIGH').length
-    const avgReliability = matches.length > 0
-      ? Math.round(matches.reduce((s, m) => s + (m.reliabilityScore ?? 0), 0) / matches.length)
+    // « Today » = matchs réellement affichés (filtrés strictement sur le jour Dakar).
+    const bttsHigh = todayMatches.filter(m => (m.bttsProb ?? 0) >= 0.6).length
+    const overHigh = todayMatches.filter(m => (m.over25Prob ?? 0) >= 0.6).length
+    const highQuality = todayMatches.filter(m => (m.dataQuality || '').toUpperCase() === 'HIGH').length
+    const avgReliability = todayMatches.length > 0
+      ? Math.round(todayMatches.reduce((s, m) => s + (m.reliabilityScore ?? 0), 0) / todayMatches.length)
       : null
 
     // todayCount = number of active/scheduled matches for today (Africa/Dakar).
     // Finished matches remain visible in their own section but are not counted as current selections.
     return {
       todayCount: scheduledTodayMatches.length + liveTodayMatches.length,
-      total: matches.length,
+      total: todayMatches.length,
       bttsHigh,
       overHigh,
       highQuality,
       avgReliability,
     }
-  }, [matches, scheduledTodayMatches, liveTodayMatches])
+  }, [todayMatches, scheduledTodayMatches, liveTodayMatches])
 
   // ─── AI COMBO OF THE DAY — deterministic selection from real data only ──
   // Eligibility filter (NO recalculation — uses predictions.json values as-is):
@@ -832,7 +849,7 @@ export default function BttsTodayDashboard() {
     )
     cards.forEach(c => io.observe(c))
     return () => io.disconnect()
-  }, [loading, activeFilter, filteredMatches, liveTodayMatches, scheduledTodayMatches, finishedTodayMatches, upcomingMatches, now])
+  }, [loading, activeFilter, filteredMatches, liveTodayMatches, scheduledTodayMatches, finishedTodayMatches, activeTodayMatches, now])
 
   // ─── Compteurs animés du header ────────────────────────────────────────
   const animCount = useCountUp(stats.todayCount, !loading)
@@ -986,36 +1003,76 @@ export default function BttsTodayDashboard() {
         </div>
       ) : (
         <>
-          {/* ─── Aujourd'hui (live + à venir) ─── */}
+          {/* ─── Aujourd'hui (live + à venir du jour uniquement — filtrage strict Dakar) ─── */}
           <div className="mb-7">
             <h3 className="btx-section-title">
               {lang === 'fr' ? 'Aujourd’hui' : lang === 'en' ? 'Today' : 'اليوم'}
-              <span className={`btx-count-pill${(scheduledTodayMatches.length + liveTodayMatches.length) > 0 ? ' btx-count-pill--green' : ' btx-count-pill--muted'}`}>
-                {scheduledTodayMatches.length + liveTodayMatches.length}
+              <span className={`btx-count-pill${activeTodayMatches.length > 0 ? ' btx-count-pill--green' : ' btx-count-pill--muted'}`}>
+                {activeTodayMatches.length}
               </span>
             </h3>
-            {scheduledTodayMatches.length === 0 && liveTodayMatches.length === 0 ? (
+            {activeTodayMatches.length === 0 ? (
               <div className="btx-empty">
                 <p className="btx-empty__title">{lang === 'fr' ? 'Aucun match disponible aujourd’hui' : lang === 'en' ? 'No match available today' : 'لا توجد مباريات متاحة اليوم'}</p>
-                <p className="btx-empty__sub">{lang === 'fr' ? 'Revenez plus tard ou consultez les matchs à venir ci-dessous.' : lang === 'en' ? 'Come back later or check the upcoming matches below.' : 'عد لاحقاً أو راجع المباريات القادمة أدناه.'}</p>
+                <p className="btx-empty__sub">
+                  {lang === 'fr' ? 'Les matchs des autres dates restent réservés aux pages dédiées — ' : lang === 'en' ? 'Matches from other dates stay on their dedicated pages — ' : 'مباريات التواريخ الأخرى تبقى في صفحاتها المخصصة — '}
+                  <Link href={lang === 'fr' ? '/btts/predictions/tomorrow' : `/${lang}/btts/predictions/tomorrow`} className="btx-link">{lang === 'fr' ? 'voir les prochains jours' : lang === 'en' ? 'see upcoming days' : 'الأيام القادمة'} →</Link>
+                </p>
               </div>
             ) : (
-              <div className="btx-grid">
-                {[...liveTodayMatches, ...scheduledTodayMatches]
-                  .filter(m => passesFilter(m, activeFilter))
-                  .map((m, i) => (
-                    <MatchCard
-                      key={`today-${m.key}`}
-                      match={m}
-                      index={i}
-                      status="scheduled"
-                      lang={lang}
-                      insufficientDataLabel={insufficientDataLabel}
-                      labels={labels}
-                      now={now}
-                    />
-                  ))}
-              </div>
+              <>
+                {analyzedTodayMatches.length > 0 && (
+                  <div className="btx-grid">
+                    {analyzedTodayMatches
+                      .filter(m => passesFilter(m, activeFilter))
+                      .map((m, i) => (
+                        <MatchCard
+                          key={`today-${m.key}`}
+                          match={m}
+                          index={i}
+                          status="scheduled"
+                          lang={lang}
+                          insufficientDataLabel={insufficientDataLabel}
+                          labels={labels}
+                          now={now}
+                        />
+                      ))}
+                  </div>
+                )}
+                {limitedTodayMatches.length > 0 && (
+                  <>
+                    <div className="btx-reliability" style={{ margin: '1.1rem 0 0.75rem' }}>
+                      <span className="btx-reliability__label">
+                        {lang === 'fr' ? 'Données limitées' : lang === 'en' ? 'Limited data' : 'بيانات محدودة'}
+                        <span className={`btx-count-pill btx-count-pill--muted`} style={{ marginLeft: '0.5rem' }}>{limitedTodayMatches.length}</span>
+                      </span>
+                      <span className="btx-reliability__note">
+                        {lang === 'fr'
+                          ? 'Matchs réels de petites compétitions — calendrier et source affichés, aucune probabilité inventée.'
+                          : lang === 'en'
+                            ? 'Real matches from smaller competitions — schedule and source shown, no invented probability.'
+                            : 'مباريات حقيقية من مسابقات أصغر — الجدول والمصدر معروضان، بدون احتمالات مؤلفة.'}
+                      </span>
+                    </div>
+                    <div className="btx-grid" style={{ opacity: 0.85 }}>
+                      {limitedTodayMatches
+                        .filter(m => passesFilter(m, activeFilter))
+                        .map((m, i) => (
+                          <MatchCard
+                            key={`today-limited-${m.key}`}
+                            match={m}
+                            index={i}
+                            status="scheduled"
+                            lang={lang}
+                            insufficientDataLabel={insufficientDataLabel}
+                            labels={labels}
+                            now={now}
+                          />
+                        ))}
+                    </div>
+                  </>
+                )}
+              </>
             )}
           </div>
 
@@ -1043,34 +1100,11 @@ export default function BttsTodayDashboard() {
             </div>
           )}
 
-          {/* ─── À venir (autres jours) ─── */}
-          {upcomingMatches.length > 0 && (
-            <div className="mb-7">
-              <h3 className="btx-section-title">
-                {lang === 'fr' ? 'À venir' : lang === 'en' ? 'Upcoming' : 'القادمة'}
-                <span className="btx-count-pill">{upcomingMatches.length}</span>
-              </h3>
-              <div className="btx-grid">
-                {upcomingMatches
-                  .filter(m => passesFilter(m, activeFilter))
-                  .map((m, i) => (
-                    <MatchCard
-                      key={`upcoming-${m.key}`}
-                      match={m}
-                      index={i}
-                      status="scheduled"
-                      lang={lang}
-                      insufficientDataLabel={insufficientDataLabel}
-                      labels={labels}
-                      now={now}
-                    />
-                  ))}
-              </div>
-            </div>
-          )}
+          {/* Mission couverture : plus de section « À venir » ici — les matchs
+              d'autres dates restent réservés aux pages tomorrow / archives. */}
 
           {/* Empty state when both sections are empty under current filter */}
-          {scheduledTodayMatches.length === 0 && liveTodayMatches.length === 0 && upcomingMatches.length === 0 && (
+          {activeTodayMatches.length === 0 && (
             <div className="btx-empty">
               <p className="btx-empty__title">{lang === 'fr' ? 'Aucun match sous ce filtre' : lang === 'en' ? 'No matches under this filter' : 'لا توجد مباريات ضمن هذا الفلتر'}</p>
               <p className="btx-empty__sub">{lang === 'fr' ? 'Essayez un autre filtre ou revenez plus tard.' : lang === 'en' ? 'Try another filter or come back later.' : 'جرّب فلترًا آخر أو عد لاحقاً.'}</p>

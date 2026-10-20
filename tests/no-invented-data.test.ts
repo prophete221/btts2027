@@ -85,13 +85,15 @@ describe('no invented data — fallbacks interdits', () => {
     expect(source).toMatch(/snapshotPublishedAt/)
   })
 
-  it('le pipeline marque explicitement la sélection VIP et neutralise les miroirs gratuits', () => {
+  it('le pipeline marque explicitement la sélection VIP et n\'utilise jamais de miroir gratuit', () => {
     const source = readSource('scripts/quick-update-predictions.mjs')
 
     // Sélection VIP = flag explicite sur copie détachée
     expect(source).toMatch(/\.map\(p => \(\{ \.\.\.p, vip: true \}\)\)/)
-    // Miroirs gratuits : jamais VIP
-    expect(source).toMatch(/vipMirror: true, vip: false/)
+    // Mission couverture : un match gratuit n'est JAMAIS utilisé comme
+    // sélection VIP — les anciens « miroirs » (vipMirror: true, vip: false)
+    // ont été supprimés ; seule une donnée explicitement flaggée entre en VIP.
+    expect(source).not.toMatch(/vipMirror/)
   })
 
   it('i18n remplace « Fiabilité » par « Qualité des données » dans les 3 langues', () => {

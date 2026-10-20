@@ -241,8 +241,21 @@ def main():
         print("[enrich] Dry-run complete (no API key)")
         sys.exit(0)
 
-    # Build combined list of all matches to enrich
-    all_matches = list(free_matches) + list(vip_matches)
+    # Build combined list of all matches to enrich.
+    # Mission « données réelles » : Gemini ne reçoit que des lignes prédictives
+    # portant une probabilité réelle du modèle (issues de vraies données ESPN).
+    # Les lignes « données limitées » (dataLimited: true, sans probabilité) sont
+    # EXCLUES — rien à résumer sans données, et aucune invention possible.
+    # Plafond de quota : GEMINI_MAX_LINES lignes max par run (48).
+    GEMINI_MAX_LINES = 48
+    eligible = [m for m in list(free_matches) + list(vip_matches) if isinstance(m.get("proba"), (int, float)) and not m.get("dataLimited")]
+    skipped = (len(free_matches) + len(vip_matches)) - len(eligible)
+    all_matches = eligible[:GEMINI_MAX_LINES]
+    capped = len(eligible) - len(all_matches)
+    if skipped:
+        print(f"[enrich] {skipped} ligne(s) « données limitées » exclue(s) de l'enrichissement (aucune probabilité réelle)")
+    if capped:
+        print(f"[enrich] {capped} ligne(s) éligible(s) au-delà du plafond de {GEMINI_MAX_LINES} (quota Gemini)")
 
     # Diagnostic: list available models for this API key
     try:

@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import dynamic from 'next/dynamic'
 import { AFFILIATE } from '@/lib/constants'
-import { onlyVipFixtures } from '@/lib/vipPredictions'
+import { onlyVipFixtures, filterVipFixturesForToday } from '@/lib/vipPredictions'
 import { useLanguage } from '@/components/bttsbet/LanguageSwitcher'
 import type { Locale } from '@/lib/i18n'
 import { trackAffiliateAction, trackAffiliateCodeCopy } from '@/lib/affiliateTracking'
@@ -520,7 +520,10 @@ export default function VipPage() {
       .then((response) => (response.ok ? (response.json() as Promise<{ date?: string; vip?: PredictionFixture[]; vipPredictions?: PredictionFixture[] }>) : null))
       .then((payload) => {
         if (cancelled || !payload || payload.date !== dakarDate()) return
-        const rows = onlyVipFixtures(payload)
+        // Mission couverture : filtre strict sur la date Dakar du jour — une
+        // sélection VIP d'une autre date (ex. du 24 sur la page du 20) n'est
+        // JAMAIS affichée ; sans sélection du jour → message vide prévu.
+        const rows = filterVipFixturesForToday(onlyVipFixtures(payload), today)
         const seen = new Set<string>()
         const upcoming: PredictionFixture[] = []
         for (const fixture of rows) {
