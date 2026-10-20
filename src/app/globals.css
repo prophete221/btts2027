@@ -4725,13 +4725,15 @@ body {
 .hp-clubs__track img {
   height: 2.5rem;
   width: auto;
-  filter: grayscale(100%) brightness(1.45);
-  opacity: 0.48;
-  transition: opacity 0.25s ease, filter 0.25s ease;
+  /* Logos des clubs en couleur réelle (demande propriétaire) — plus de grayscale */
+  filter: none;
+  opacity: 0.95;
+  transition: opacity 0.25s ease, filter 0.25s ease, transform 0.25s ease;
 }
 .hp-clubs__track img:hover {
   opacity: 1;
-  filter: none;
+  transform: scale(1.12);
+  filter: drop-shadow(0 0 10px rgba(47, 125, 255, 0.35));
 }
 .hp-clubs:hover .hp-clubs__track { animation-play-state: paused; }
 @keyframes hp-clubs-scroll {
