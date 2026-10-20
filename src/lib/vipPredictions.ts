@@ -28,10 +28,21 @@ export type VipFixture = {
 
 /**
  * Selects only explicitly VIP-marked fixtures from a payload.
- * `free`, `predictions`, and unmarked previews are intentionally ignored.
+ * `free`, `predictions`, and unmarked rows are intentionally ignored.
+ *
+ * Containers accepted, in order: `vip` → `vipPredictions` → `vipPreview`.
+ * `vipPreview` is only honoured for rows individually flagged by the data
+ * pipeline (`vip: true` / `isVip: true` / tier `VIP`) — a GOLD tier, a high
+ * probability, or mere membership of any array is never sufficient.
  */
 export function onlyVipFixtures(payload: Record<string, unknown> | null | undefined): VipFixture[] {
   if (!payload) return []
-  const rows = Array.isArray(payload.vip) ? payload.vip : Array.isArray(payload.vipPredictions) ? payload.vipPredictions : []
+  const rows = Array.isArray(payload.vip)
+    ? payload.vip
+    : Array.isArray(payload.vipPredictions)
+      ? payload.vipPredictions
+      : Array.isArray(payload.vipPreview)
+        ? payload.vipPreview
+        : []
   return rows.filter((row): row is VipFixture => Boolean(row && typeof row === 'object' && isExplicitVipPrediction(row as Prediction & Record<string, unknown>)))
 }

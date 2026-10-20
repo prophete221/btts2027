@@ -3,6 +3,7 @@ import { readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { humanMethodLabel } from '@/lib/predictionQuality'
 import { statusLabel, confidenceLabel } from '@/lib/predictionPresentation'
+import { onlyVipFixtures } from '@/lib/vipPredictions'
 
 /**
  * Gardes anti-régression du chantier audit-conversion-batch.
@@ -84,6 +85,15 @@ describe('no invented data — fallbacks interdits', () => {
     expect(source).toMatch(/snapshotPublishedAt/)
   })
 
+  it('le pipeline marque explicitement la sélection VIP et neutralise les miroirs gratuits', () => {
+    const source = readSource('scripts/quick-update-predictions.mjs')
+
+    // Sélection VIP = flag explicite sur copie détachée
+    expect(source).toMatch(/\.map\(p => \(\{ \.\.\.p, vip: true \}\)\)/)
+    // Miroirs gratuits : jamais VIP
+    expect(source).toMatch(/vipMirror: true, vip: false/)
+  })
+
   it('i18n remplace « Fiabilité » par « Qualité des données » dans les 3 langues', () => {
     const source = readSource('src/lib/i18n.ts')
 
@@ -112,5 +122,29 @@ describe('no invented data — libellés humains (runtime)', () => {
   it('une confiance absente n\'est jamais présentée comme un pourcentage', () => {
     expect(confidenceLabel(undefined)).toBe('Données insuffisantes')
     expect(confidenceLabel(Number.NaN)).toBe('Données insuffisantes')
+  })
+})
+
+describe('no invented data — payload réel (public/predictions.json)', () => {
+  it('aucune ligne du payload réel n\'entre dans l\'espace VIP sans flag explicite', () => {
+    const raw = readFileSync(resolve(__dirname, '..', 'public', 'predictions.json'), 'utf8')
+    const payload = JSON.parse(raw) as Record<string, unknown>
+    const rows = onlyVipFixtures(payload)
+
+    for (const row of rows) {
+      const explicit = row.vip === true || row.isVip === true || row.tier?.toString().toUpperCase() === 'VIP'
+      expect(explicit, `ligne VIP sans flag: ${row.home}`).toBe(true)
+    }
+
+    // Aucun match gratuit (free / predictions) ne fuite dans l'espace VIP
+    const freeLike = [
+      ...((payload.free as Array<Record<string, unknown>>) ?? []),
+      ...((payload.predictions as Array<Record<string, unknown>>) ?? []),
+    ]
+    const freeKeys = new Set(freeLike.map((m) => String(m.id ?? `${m.home}-${m.date ?? m.match}`)))
+    for (const row of rows as Array<Record<string, unknown>>) {
+      const key = String(row.id ?? `${row.home}-${row.date ?? row.match}`)
+      expect(freeKeys.has(key), `match gratuit en VIP: ${String(row.home)}`).toBe(false)
+    }
   })
 })
