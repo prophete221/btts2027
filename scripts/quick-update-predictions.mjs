@@ -30,9 +30,16 @@ const DISPLAY_TZ = 'Africa/Dakar'  // Senegal timezone = UTC+0 (GMT)
 const MIN_KICKOFF_LEAD_MINUTES = 30 // safety buffer for long enrichment/verification steps
 
 // ─── HIGH BTTS Leagues ───
+// Inclut les compétitions midweek (Champions League mardi/mercredi) et les
+// grands championnats (LaLiga, Serie A, Ligue 1) — sans eux, les mardis et
+// mercredis se retrouvent avec 0-1 match affiché alors que ESPN en recense 9+.
 const ESPN_SLUGS = {
+  'uefa.champions': 'UEFA Champions League',
   'eng.1': 'Premier League',
   'eng.2': 'Championship',
+  'esp.1': 'LaLiga',
+  'ita.1': 'Serie A',
+  'fra.1': 'Ligue 1',
   'ger.1': 'Bundesliga',
   'ger.2': '2. Bundesliga',
   'ned.1': 'Eredivisie',
@@ -45,6 +52,7 @@ const ESPN_SLUGS = {
 }
 
 const LEAGUE_PROFILES = {
+  'uefa.champions': { bttsRate: 0.54, avgGoals: 3.05, homeFactor: 1.30, awayFactor: 1.15 },
   'eng.1': { bttsRate: 0.55, avgGoals: 2.82, homeFactor: 1.35, awayFactor: 1.10 },
   'eng.2': { bttsRate: 0.56, avgGoals: 2.68, homeFactor: 1.32, awayFactor: 1.08 },
   'ger.1': { bttsRate: 0.58, avgGoals: 3.05, homeFactor: 1.40, awayFactor: 1.15 },
@@ -55,6 +63,9 @@ const LEAGUE_PROFILES = {
   'por.1': { bttsRate: 0.55, avgGoals: 2.72, homeFactor: 1.35, awayFactor: 1.10 },
   'aut.1': { bttsRate: 0.54, avgGoals: 2.80, homeFactor: 1.32, awayFactor: 1.08 },
   'sco.1': { bttsRate: 0.53, avgGoals: 2.65, homeFactor: 1.30, awayFactor: 1.05 },
+  'esp.1': { bttsRate: 0.51, avgGoals: 2.70, homeFactor: 1.35, awayFactor: 1.10 },
+  'ita.1': { bttsRate: 0.52, avgGoals: 2.75, homeFactor: 1.32, awayFactor: 1.10 },
+  'fra.1': { bttsRate: 0.50, avgGoals: 2.65, homeFactor: 1.33, awayFactor: 1.08 },
   'usa.1': { bttsRate: 0.56, avgGoals: 3.10, homeFactor: 1.35, awayFactor: 1.12 },
 }
 
