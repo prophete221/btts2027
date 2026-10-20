@@ -1,6 +1,6 @@
 {
   "date": "2026-10-20",
-  "lastUpdated": "2026-10-20T15:46:52.015Z",
+  "lastUpdated": "2026-10-20T18:03:55.821Z",
   "source": "ESPN + TheSportsDB",
   "free": [
     {
@@ -32,7 +32,7 @@
       "xgAway": 0.92,
       "xgTotal": 2.44,
       "formBTTS": 28,
-      "analysis": "Wolverhampton Wanderers (8 matchs réels, xG 1.52) vs Portsmouth (8 matchs réels, xG 0.92). xG cumulé 2.44, BTTS 47.0%, Over 2.5 44.1%. Fiabilité 74.29%. Qualité données: HIGH.",
+      "analysis": "Wolverhampton Wanderers : forme V-D-D-V-V (3V 0N 2D, 5 buts marqués / 5 encaissés sur 5) · Portsmouth : forme V-V-D-N-N (2V 2N 1D, 6 buts marqués / 5 encaissés sur 5). Classement : Wolverhampton Wanderers 8e (17 pts), Portsmouth 13e (14 pts). Modèle Poisson : xG cumulé 2.44, BTTS 47.0%, Over 2.5 44.1%. Cotes DraftKings — 1: 1.57 / N: 4.3 / 2: 5.75 · Over 2.5: 1.8. Fiabilité 74.29%.",
       "analysisData": {
         "bttsProb": 0.4695,
         "over25Prob": 0.4411,
@@ -42,6 +42,56 @@
       },
       "estimatedCote": 2.13,
       "estimatedCoteOver": 2.27,
+      "odds": {
+        "provider": "DraftKings",
+        "home": 1.57,
+        "draw": 4.3,
+        "away": 5.75,
+        "over25": 1.8,
+        "under25": 2
+      },
+      "oddsSource": "DraftKings",
+      "estimatedCoteBTTS": 2.13,
+      "formHome": {
+        "last5String": "V-D-D-V-V",
+        "wins": 3,
+        "draws": 0,
+        "losses": 2,
+        "goalsFor": 5,
+        "goalsAgainst": 5,
+        "bttsRate": 0.4,
+        "over25Rate": 0.4,
+        "cleanSheets": 2,
+        "failedToScore": 1,
+        "count": 5
+      },
+      "formAway": {
+        "last5String": "V-V-D-N-N",
+        "wins": 2,
+        "draws": 2,
+        "losses": 1,
+        "goalsFor": 6,
+        "goalsAgainst": 5,
+        "bttsRate": 0.4,
+        "over25Rate": 0.4,
+        "cleanSheets": 2,
+        "failedToScore": 2,
+        "count": 5
+      },
+      "standingsHome": {
+        "rank": 8,
+        "points": 17,
+        "played": 10,
+        "gf": 18,
+        "ga": 15
+      },
+      "standingsAway": {
+        "rank": 13,
+        "points": 14,
+        "played": 10,
+        "gf": 13,
+        "ga": 13
+      },
       "predictions": [
         {
           "type": "BTTS",
@@ -64,130 +114,6 @@
       "over25Prob": 0.4411,
       "homeLambda": 1.52,
       "awayLambda": 0.92
-    },
-    {
-      "id": "fenerbah-vs-slaviapr-2026-10-20",
-      "match": "Fenerbahce vs Slavia Prague",
-      "home": "Fenerbahce",
-      "away": "Slavia Prague",
-      "league": "UEFA Champions League",
-      "date": "2026-10-20",
-      "type": "BTTS",
-      "prediction": "Oui",
-      "proba": 0.6265,
-      "bttsProbDisplay": "62.65%",
-      "over25ProbDisplay": "62.01%",
-      "confidence": 63,
-      "time": "16:45",
-      "matchSemantic": "fenerbah-vs-slaviapr-2026-10-20",
-      "source": "poisson-v92-real-data",
-      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/436.png",
-      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/494.png",
-      "tier": "SILVER",
-      "reliabilityScore": 68.16,
-      "dataQuality": "LOW",
-      "dataSource": "ESPN_TEAM_SCHEDULE",
-      "matchCountHome": 2,
-      "matchCountAway": 2,
-      "h2hAvailable": false,
-      "xgHome": 1.83,
-      "xgAway": 1.37,
-      "xgTotal": 3.2,
-      "formBTTS": 15,
-      "analysis": "Fenerbahce (2 matchs réels, xG 1.83) vs Slavia Prague (2 matchs réels, xG 1.37). xG cumulé 3.2, BTTS 62.6%, Over 2.5 62.0%. Fiabilité 68.16%. Qualité données: LOW.",
-      "analysisData": {
-        "bttsProb": 0.6265,
-        "over25Prob": 0.6201,
-        "homeLambda": 1.83,
-        "awayLambda": 1.37,
-        "xgTotal": 3.2
-      },
-      "estimatedCote": 1.6,
-      "estimatedCoteOver": 1.61,
-      "predictions": [
-        {
-          "type": "BTTS",
-          "prediction": "Oui",
-          "confidence": 63,
-          "bttsProb": 0.6265,
-          "homeLambda": 1.83,
-          "awayLambda": 1.37
-        },
-        {
-          "type": "Over 2.5",
-          "prediction": "Oui",
-          "confidence": 62,
-          "over25Prob": 0.6201,
-          "homeLambda": 1.83,
-          "awayLambda": 1.37
-        }
-      ],
-      "bttsProb": 0.6265,
-      "over25Prob": 0.6201,
-      "homeLambda": 1.83,
-      "awayLambda": 1.37
-    },
-    {
-      "id": "sabahfk-vs-borussia-2026-10-20",
-      "match": "Sabah FK vs Borussia Dortmund",
-      "home": "Sabah FK",
-      "away": "Borussia Dortmund",
-      "league": "UEFA Champions League",
-      "date": "2026-10-20",
-      "type": "BTTS",
-      "prediction": "Oui",
-      "proba": 0.6265,
-      "bttsProbDisplay": "62.65%",
-      "over25ProbDisplay": "62.01%",
-      "confidence": 63,
-      "time": "16:45",
-      "matchSemantic": "sabahfk-vs-borussia-2026-10-20",
-      "source": "poisson-v92-real-data",
-      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/21922.png",
-      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/124.png",
-      "tier": "SILVER",
-      "reliabilityScore": 68.16,
-      "dataQuality": "LOW",
-      "dataSource": "ESPN_TEAM_SCHEDULE",
-      "matchCountHome": 2,
-      "matchCountAway": 2,
-      "h2hAvailable": false,
-      "xgHome": 1.83,
-      "xgAway": 1.37,
-      "xgTotal": 3.2,
-      "formBTTS": 25,
-      "analysis": "Sabah FK (2 matchs réels, xG 1.83) vs Borussia Dortmund (2 matchs réels, xG 1.37). xG cumulé 3.2, BTTS 62.6%, Over 2.5 62.0%. Fiabilité 68.16%. Qualité données: LOW.",
-      "analysisData": {
-        "bttsProb": 0.6265,
-        "over25Prob": 0.6201,
-        "homeLambda": 1.83,
-        "awayLambda": 1.37,
-        "xgTotal": 3.2
-      },
-      "estimatedCote": 1.6,
-      "estimatedCoteOver": 1.61,
-      "predictions": [
-        {
-          "type": "BTTS",
-          "prediction": "Oui",
-          "confidence": 63,
-          "bttsProb": 0.6265,
-          "homeLambda": 1.83,
-          "awayLambda": 1.37
-        },
-        {
-          "type": "Over 2.5",
-          "prediction": "Oui",
-          "confidence": 62,
-          "over25Prob": 0.6201,
-          "homeLambda": 1.83,
-          "awayLambda": 1.37
-        }
-      ],
-      "bttsProb": 0.6265,
-      "over25Prob": 0.6201,
-      "homeLambda": 1.83,
-      "awayLambda": 1.37
     },
     {
       "id": "asroma-vs-slovanbr-2026-10-20",
@@ -218,7 +144,7 @@
       "xgAway": 1.37,
       "xgTotal": 3.2,
       "formBTTS": 25,
-      "analysis": "AS Roma (2 matchs réels, xG 1.83) vs Slovan Bratislava (2 matchs réels, xG 1.37). xG cumulé 3.2, BTTS 62.6%, Over 2.5 62.0%. Fiabilité 68.16%. Qualité données: LOW.",
+      "analysis": "AS Roma : forme D-N (0V 1N 1D, 4 buts marqués / 5 encaissés sur 5) · Slovan Bratislava : forme D-D (0V 0N 2D, 1 buts marqués / 9 encaissés sur 5). Classement : AS Roma 25e (1 pts), Slovan Bratislava 36e (? pts). Modèle Poisson : xG cumulé 3.2, BTTS 62.6%, Over 2.5 62.0%. Cotes DraftKings — 1: 1.11 / N: 10 / 2: 21. Fiabilité 68.16%.",
       "analysisData": {
         "bttsProb": 0.6265,
         "over25Prob": 0.6201,
@@ -228,6 +154,56 @@
       },
       "estimatedCote": 1.6,
       "estimatedCoteOver": 1.61,
+      "odds": {
+        "provider": "DraftKings",
+        "home": 1.11,
+        "draw": 10,
+        "away": 21,
+        "over25": null,
+        "under25": null
+      },
+      "oddsSource": "DraftKings",
+      "estimatedCoteBTTS": 1.6,
+      "formHome": {
+        "last5String": "D-N",
+        "wins": 0,
+        "draws": 1,
+        "losses": 1,
+        "goalsFor": 4,
+        "goalsAgainst": 5,
+        "bttsRate": 1,
+        "over25Rate": 0.5,
+        "cleanSheets": 0,
+        "failedToScore": 0,
+        "count": 2
+      },
+      "formAway": {
+        "last5String": "D-D",
+        "wins": 0,
+        "draws": 0,
+        "losses": 2,
+        "goalsFor": 1,
+        "goalsAgainst": 9,
+        "bttsRate": 0.5,
+        "over25Rate": 1,
+        "cleanSheets": 0,
+        "failedToScore": 1,
+        "count": 2
+      },
+      "standingsHome": {
+        "rank": 25,
+        "points": 1,
+        "played": 2,
+        "gf": 4,
+        "ga": 5
+      },
+      "standingsAway": {
+        "rank": 36,
+        "points": null,
+        "played": 2,
+        "gf": 1,
+        "ga": 9
+      },
       "predictions": [
         {
           "type": "BTTS",
@@ -280,7 +256,7 @@
       "xgAway": 1.37,
       "xgTotal": 3.2,
       "formBTTS": 15,
-      "analysis": "FC Porto (2 matchs réels, xG 1.83) vs PSV Eindhoven (2 matchs réels, xG 1.37). xG cumulé 3.2, BTTS 62.6%, Over 2.5 62.0%. Fiabilité 68.16%. Qualité données: LOW.",
+      "analysis": "FC Porto : forme D-D (0V 0N 2D, 2 buts marqués / 5 encaissés sur 5) · PSV Eindhoven : forme D-N (0V 1N 1D, 1 buts marqués / 2 encaissés sur 5). Classement : FC Porto 30e (? pts), PSV Eindhoven 26e (1 pts). Modèle Poisson : xG cumulé 3.2, BTTS 62.6%, Over 2.5 62.0%. Cotes DraftKings — 1: 1.5 / N: 4.7 / 2: 6. Fiabilité 68.16%.",
       "analysisData": {
         "bttsProb": 0.6265,
         "over25Prob": 0.6201,
@@ -290,6 +266,56 @@
       },
       "estimatedCote": 1.6,
       "estimatedCoteOver": 1.61,
+      "odds": {
+        "provider": "DraftKings",
+        "home": 1.5,
+        "draw": 4.7,
+        "away": 6,
+        "over25": null,
+        "under25": null
+      },
+      "oddsSource": "DraftKings",
+      "estimatedCoteBTTS": 1.6,
+      "formHome": {
+        "last5String": "D-D",
+        "wins": 0,
+        "draws": 0,
+        "losses": 2,
+        "goalsFor": 2,
+        "goalsAgainst": 5,
+        "bttsRate": 0.5,
+        "over25Rate": 0.5,
+        "cleanSheets": 0,
+        "failedToScore": 1,
+        "count": 2
+      },
+      "formAway": {
+        "last5String": "D-N",
+        "wins": 0,
+        "draws": 1,
+        "losses": 1,
+        "goalsFor": 1,
+        "goalsAgainst": 2,
+        "bttsRate": 0.5,
+        "over25Rate": 0,
+        "cleanSheets": 0,
+        "failedToScore": 1,
+        "count": 2
+      },
+      "standingsHome": {
+        "rank": 30,
+        "points": null,
+        "played": 2,
+        "gf": 2,
+        "ga": 5
+      },
+      "standingsAway": {
+        "rank": 26,
+        "points": 1,
+        "played": 2,
+        "gf": 1,
+        "ga": 2
+      },
       "predictions": [
         {
           "type": "BTTS",
@@ -342,7 +368,7 @@
       "xgAway": 1.37,
       "xgTotal": 3.2,
       "formBTTS": 65,
-      "analysis": "Liverpool (2 matchs réels, xG 1.83) vs Villarreal (2 matchs réels, xG 1.37). xG cumulé 3.2, BTTS 62.6%, Over 2.5 62.0%. Fiabilité 68.16%. Qualité données: LOW.",
+      "analysis": "Liverpool : forme V-V (2V 0N 0D, 8 buts marqués / 4 encaissés sur 5) · Villarreal : forme V-D (1V 0N 1D, 5 buts marqués / 4 encaissés sur 5). Classement : Liverpool 5e (6 pts), Villarreal 14e (3 pts). Modèle Poisson : xG cumulé 3.2, BTTS 62.6%, Over 2.5 62.0%. Cotes DraftKings — 1: 1.57 / N: 4.5 / 2: 5.5. Fiabilité 68.16%.",
       "analysisData": {
         "bttsProb": 0.6265,
         "over25Prob": 0.6201,
@@ -352,6 +378,56 @@
       },
       "estimatedCote": 1.6,
       "estimatedCoteOver": 1.61,
+      "odds": {
+        "provider": "DraftKings",
+        "home": 1.57,
+        "draw": 4.5,
+        "away": 5.5,
+        "over25": null,
+        "under25": null
+      },
+      "oddsSource": "DraftKings",
+      "estimatedCoteBTTS": 1.6,
+      "formHome": {
+        "last5String": "V-V",
+        "wins": 2,
+        "draws": 0,
+        "losses": 0,
+        "goalsFor": 8,
+        "goalsAgainst": 4,
+        "bttsRate": 1,
+        "over25Rate": 1,
+        "cleanSheets": 0,
+        "failedToScore": 0,
+        "count": 2
+      },
+      "formAway": {
+        "last5String": "V-D",
+        "wins": 1,
+        "draws": 0,
+        "losses": 1,
+        "goalsFor": 5,
+        "goalsAgainst": 4,
+        "bttsRate": 1,
+        "over25Rate": 1,
+        "cleanSheets": 0,
+        "failedToScore": 0,
+        "count": 2
+      },
+      "standingsHome": {
+        "rank": 5,
+        "points": 6,
+        "played": 2,
+        "gf": 8,
+        "ga": 4
+      },
+      "standingsAway": {
+        "rank": 14,
+        "points": 3,
+        "played": 2,
+        "gf": 5,
+        "ga": 4
+      },
       "predictions": [
         {
           "type": "BTTS",
@@ -404,7 +480,7 @@
       "xgAway": 1.37,
       "xgTotal": 3.2,
       "formBTTS": 30,
-      "analysis": "Manchester City (2 matchs réels, xG 1.83) vs AEK Athens (2 matchs réels, xG 1.37). xG cumulé 3.2, BTTS 62.6%, Over 2.5 62.0%. Fiabilité 68.16%. Qualité données: LOW.",
+      "analysis": "Manchester City : forme D-V (1V 0N 1D, 4 buts marqués / 4 encaissés sur 5) · AEK Athens : forme D-V (1V 0N 1D, 2 buts marqués / 3 encaissés sur 5). Classement : Manchester City 17e (3 pts), AEK Athens 20e (3 pts). Modèle Poisson : xG cumulé 3.2, BTTS 62.6%, Over 2.5 62.0%. Cotes DraftKings — 1: 1.14 / N: 9 / 2: 17. Fiabilité 68.16%.",
       "analysisData": {
         "bttsProb": 0.6265,
         "over25Prob": 0.6201,
@@ -414,6 +490,56 @@
       },
       "estimatedCote": 1.6,
       "estimatedCoteOver": 1.61,
+      "odds": {
+        "provider": "DraftKings",
+        "home": 1.14,
+        "draw": 9,
+        "away": 17,
+        "over25": null,
+        "under25": null
+      },
+      "oddsSource": "DraftKings",
+      "estimatedCoteBTTS": 1.6,
+      "formHome": {
+        "last5String": "D-V",
+        "wins": 1,
+        "draws": 0,
+        "losses": 1,
+        "goalsFor": 4,
+        "goalsAgainst": 4,
+        "bttsRate": 0.5,
+        "over25Rate": 0.5,
+        "cleanSheets": 1,
+        "failedToScore": 0,
+        "count": 2
+      },
+      "formAway": {
+        "last5String": "D-V",
+        "wins": 1,
+        "draws": 0,
+        "losses": 1,
+        "goalsFor": 2,
+        "goalsAgainst": 3,
+        "bttsRate": 0.5,
+        "over25Rate": 0.5,
+        "cleanSheets": 1,
+        "failedToScore": 0,
+        "count": 2
+      },
+      "standingsHome": {
+        "rank": 17,
+        "points": 3,
+        "played": 2,
+        "gf": 4,
+        "ga": 4
+      },
+      "standingsAway": {
+        "rank": 20,
+        "points": 3,
+        "played": 2,
+        "gf": 2,
+        "ga": 3
+      },
       "predictions": [
         {
           "type": "BTTS",
@@ -466,7 +592,7 @@
       "xgAway": 1.37,
       "xgTotal": 3.2,
       "formBTTS": 10,
-      "analysis": "Napoli (2 matchs réels, xG 1.83) vs Bodo/Glimt (2 matchs réels, xG 1.37). xG cumulé 3.2, BTTS 62.6%, Over 2.5 62.0%. Fiabilité 68.16%. Qualité données: LOW.",
+      "analysis": "Napoli : forme D-D (0V 0N 2D, 1 buts marqués / 4 encaissés sur 5) · Bodo/Glimt : forme V-D (1V 0N 1D, 1 buts marqués / 5 encaissés sur 5). Classement : Napoli 32e (? pts), Bodo/Glimt 24e (3 pts). Modèle Poisson : xG cumulé 3.2, BTTS 62.6%, Over 2.5 62.0%. Cotes DraftKings — 1: 1.74 / N: 4 / 2: 4.4. Fiabilité 68.16%.",
       "analysisData": {
         "bttsProb": 0.6265,
         "over25Prob": 0.6201,
@@ -476,6 +602,56 @@
       },
       "estimatedCote": 1.6,
       "estimatedCoteOver": 1.61,
+      "odds": {
+        "provider": "DraftKings",
+        "home": 1.74,
+        "draw": 4,
+        "away": 4.4,
+        "over25": null,
+        "under25": null
+      },
+      "oddsSource": "DraftKings",
+      "estimatedCoteBTTS": 1.6,
+      "formHome": {
+        "last5String": "D-D",
+        "wins": 0,
+        "draws": 0,
+        "losses": 2,
+        "goalsFor": 1,
+        "goalsAgainst": 4,
+        "bttsRate": 0.5,
+        "over25Rate": 0.5,
+        "cleanSheets": 0,
+        "failedToScore": 1,
+        "count": 2
+      },
+      "formAway": {
+        "last5String": "V-D",
+        "wins": 1,
+        "draws": 0,
+        "losses": 1,
+        "goalsFor": 1,
+        "goalsAgainst": 5,
+        "bttsRate": 0,
+        "over25Rate": 0.5,
+        "cleanSheets": 1,
+        "failedToScore": 1,
+        "count": 2
+      },
+      "standingsHome": {
+        "rank": 32,
+        "points": null,
+        "played": 2,
+        "gf": 1,
+        "ga": 4
+      },
+      "standingsAway": {
+        "rank": 24,
+        "points": 3,
+        "played": 2,
+        "gf": 1,
+        "ga": 5
+      },
       "predictions": [
         {
           "type": "BTTS",
@@ -528,7 +704,7 @@
       "xgAway": 1.37,
       "xgTotal": 3.2,
       "formBTTS": 95,
-      "analysis": "Paris Saint-Germain (2 matchs réels, xG 1.83) vs Barcelona (2 matchs réels, xG 1.37). xG cumulé 3.2, BTTS 62.6%, Over 2.5 62.0%. Fiabilité 68.16%. Qualité données: LOW.",
+      "analysis": "Paris Saint-Germain : forme V-V (2V 0N 0D, 10 buts marqués / 3 encaissés sur 5) · Barcelona : forme V-V (2V 0N 0D, 9 buts marqués / 2 encaissés sur 5). Classement : Paris Saint-Germain 1e (6 pts), Barcelona 2e (6 pts). Modèle Poisson : xG cumulé 3.2, BTTS 62.6%, Over 2.5 62.0%. Cotes DraftKings — 1: 2.45 / N: 4.4 / 2: 2.45. Fiabilité 68.16%.",
       "analysisData": {
         "bttsProb": 0.6265,
         "over25Prob": 0.6201,
@@ -538,6 +714,56 @@
       },
       "estimatedCote": 1.6,
       "estimatedCoteOver": 1.61,
+      "odds": {
+        "provider": "DraftKings",
+        "home": 2.45,
+        "draw": 4.4,
+        "away": 2.45,
+        "over25": null,
+        "under25": null
+      },
+      "oddsSource": "DraftKings",
+      "estimatedCoteBTTS": 1.6,
+      "formHome": {
+        "last5String": "V-V",
+        "wins": 2,
+        "draws": 0,
+        "losses": 0,
+        "goalsFor": 10,
+        "goalsAgainst": 3,
+        "bttsRate": 1,
+        "over25Rate": 1,
+        "cleanSheets": 0,
+        "failedToScore": 0,
+        "count": 2
+      },
+      "formAway": {
+        "last5String": "V-V",
+        "wins": 2,
+        "draws": 0,
+        "losses": 0,
+        "goalsFor": 9,
+        "goalsAgainst": 2,
+        "bttsRate": 1,
+        "over25Rate": 1,
+        "cleanSheets": 0,
+        "failedToScore": 0,
+        "count": 2
+      },
+      "standingsHome": {
+        "rank": 1,
+        "points": 6,
+        "played": 2,
+        "gf": 10,
+        "ga": 3
+      },
+      "standingsAway": {
+        "rank": 2,
+        "points": 6,
+        "played": 2,
+        "gf": 9,
+        "ga": 2
+      },
       "predictions": [
         {
           "type": "BTTS",
@@ -590,7 +816,7 @@
       "xgAway": 1.37,
       "xgTotal": 3.2,
       "formBTTS": 45,
-      "analysis": "VfB Stuttgart (2 matchs réels, xG 1.83) vs Atlético Madrid (2 matchs réels, xG 1.37). xG cumulé 3.2, BTTS 62.6%, Over 2.5 62.0%. Fiabilité 68.16%. Qualité données: LOW.",
+      "analysis": "VfB Stuttgart : forme V-V (2V 0N 0D, 6 buts marqués / 1 encaissés sur 5) · Atlético Madrid : forme V-D (1V 0N 1D, 3 buts marqués / 2 encaissés sur 5). Classement : VfB Stuttgart 4e (6 pts), Atlético Madrid 15e (3 pts). Modèle Poisson : xG cumulé 3.2, BTTS 62.6%, Over 2.5 62.0%. Cotes DraftKings — 1: 3.1 / N: 3.9 / 2: 2.15. Fiabilité 68.16%.",
       "analysisData": {
         "bttsProb": 0.6265,
         "over25Prob": 0.6201,
@@ -600,6 +826,56 @@
       },
       "estimatedCote": 1.6,
       "estimatedCoteOver": 1.61,
+      "odds": {
+        "provider": "DraftKings",
+        "home": 3.1,
+        "draw": 3.9,
+        "away": 2.15,
+        "over25": null,
+        "under25": null
+      },
+      "oddsSource": "DraftKings",
+      "estimatedCoteBTTS": 1.6,
+      "formHome": {
+        "last5String": "V-V",
+        "wins": 2,
+        "draws": 0,
+        "losses": 0,
+        "goalsFor": 6,
+        "goalsAgainst": 1,
+        "bttsRate": 0.5,
+        "over25Rate": 1,
+        "cleanSheets": 1,
+        "failedToScore": 0,
+        "count": 2
+      },
+      "formAway": {
+        "last5String": "V-D",
+        "wins": 1,
+        "draws": 0,
+        "losses": 1,
+        "goalsFor": 3,
+        "goalsAgainst": 2,
+        "bttsRate": 0.5,
+        "over25Rate": 0.5,
+        "cleanSheets": 1,
+        "failedToScore": 0,
+        "count": 2
+      },
+      "standingsHome": {
+        "rank": 4,
+        "points": 6,
+        "played": 2,
+        "gf": 6,
+        "ga": 1
+      },
+      "standingsAway": {
+        "rank": 15,
+        "points": 3,
+        "played": 2,
+        "gf": 3,
+        "ga": 2
+      },
       "predictions": [
         {
           "type": "BTTS",
@@ -652,7 +928,7 @@
       "xgAway": 2,
       "xgTotal": 4.82,
       "formBTTS": 25,
-      "analysis": "FC Cincinnati (8 matchs réels, xG 2.82) vs D.C. United (8 matchs réels, xG 2.00). xG cumulé 4.82, BTTS 81.3%, Over 2.5 85.9%. Fiabilité 93.75%. Qualité données: HIGH.",
+      "analysis": "FC Cincinnati : forme D-D-V-D-N (1V 1N 3D, 8 buts marqués / 11 encaissés sur 5) · D.C. United : forme D-V-D-N-D (1V 1N 3D, 7 buts marqués / 14 encaissés sur 5). Classement : FC Cincinnati 9e (36 pts), D.C. United 13e (33 pts). Modèle Poisson : xG cumulé 4.82, BTTS 81.3%, Over 2.5 85.9%. Cotes DraftKings — 1: 1.65 / N: 4.4 / 2: 4. Fiabilité 93.75%.",
       "analysisData": {
         "bttsProb": 0.813,
         "over25Prob": 0.859,
@@ -662,6 +938,56 @@
       },
       "estimatedCote": 1.23,
       "estimatedCoteOver": 1.16,
+      "odds": {
+        "provider": "DraftKings",
+        "home": 1.65,
+        "draw": 4.4,
+        "away": 4,
+        "over25": null,
+        "under25": null
+      },
+      "oddsSource": "DraftKings",
+      "estimatedCoteBTTS": 1.23,
+      "formHome": {
+        "last5String": "D-D-V-D-N",
+        "wins": 1,
+        "draws": 1,
+        "losses": 3,
+        "goalsFor": 8,
+        "goalsAgainst": 11,
+        "bttsRate": 0.8,
+        "over25Rate": 0.8,
+        "cleanSheets": 0,
+        "failedToScore": 1,
+        "count": 5
+      },
+      "formAway": {
+        "last5String": "D-V-D-N-D",
+        "wins": 1,
+        "draws": 1,
+        "losses": 3,
+        "goalsFor": 7,
+        "goalsAgainst": 14,
+        "bttsRate": 0.8,
+        "over25Rate": 1,
+        "cleanSheets": 0,
+        "failedToScore": 1,
+        "count": 5
+      },
+      "standingsHome": {
+        "rank": 9,
+        "points": 36,
+        "played": 29,
+        "gf": 60,
+        "ga": 70
+      },
+      "standingsAway": {
+        "rank": 13,
+        "points": 33,
+        "played": 29,
+        "gf": 37,
+        "ga": 51
+      },
       "predictions": [
         {
           "type": "BTTS",
@@ -714,7 +1040,7 @@
       "xgAway": 1.83,
       "xgTotal": 3.98,
       "formBTTS": 25,
-      "analysis": "Levante (8 matchs réels, xG 2.15) vs Athletic Club (7 matchs réels, xG 1.83). xG cumulé 3.98, BTTS 74.2%, Over 2.5 75.9%. Fiabilité 82.22%. Qualité données: MEDIUM.",
+      "analysis": "Levante : forme N-N-D-D-N (0V 3N 2D, 7 buts marqués / 11 encaissés sur 5) · Athletic Club : forme N-N-N-V-V (2V 3N 0D, 6 buts marqués / 1 encaissés sur 5). Classement : Levante 17e (7 pts), Athletic Club 11e (9 pts). Modèle Poisson : xG cumulé 3.98, BTTS 74.2%, Over 2.5 75.9%. Cotes DraftKings — 1: 3.65 / N: 3.2 / 2: 2.15 · Over 2.5: 1.95. Fiabilité 82.22%.",
       "analysisData": {
         "bttsProb": 0.7423,
         "over25Prob": 0.7594,
@@ -724,6 +1050,56 @@
       },
       "estimatedCote": 1.35,
       "estimatedCoteOver": 1.32,
+      "odds": {
+        "provider": "DraftKings",
+        "home": 3.65,
+        "draw": 3.2,
+        "away": 2.15,
+        "over25": 1.95,
+        "under25": 1.87
+      },
+      "oddsSource": "DraftKings",
+      "estimatedCoteBTTS": 1.35,
+      "formHome": {
+        "last5String": "N-N-D-D-N",
+        "wins": 0,
+        "draws": 3,
+        "losses": 2,
+        "goalsFor": 7,
+        "goalsAgainst": 11,
+        "bttsRate": 0.8,
+        "over25Rate": 0.6,
+        "cleanSheets": 1,
+        "failedToScore": 1,
+        "count": 5
+      },
+      "formAway": {
+        "last5String": "N-N-N-V-V",
+        "wins": 2,
+        "draws": 3,
+        "losses": 0,
+        "goalsFor": 6,
+        "goalsAgainst": 1,
+        "bttsRate": 0.2,
+        "over25Rate": 0.2,
+        "cleanSheets": 4,
+        "failedToScore": 2,
+        "count": 5
+      },
+      "standingsHome": {
+        "rank": 17,
+        "points": 7,
+        "played": 8,
+        "gf": 12,
+        "ga": 16
+      },
+      "standingsAway": {
+        "rank": 11,
+        "points": 9,
+        "played": 7,
+        "gf": 7,
+        "ga": 6
+      },
       "predictions": [
         {
           "type": "BTTS",
@@ -746,9 +1122,7 @@
       "over25Prob": 0.7594,
       "homeLambda": 2.15,
       "awayLambda": 1.83
-    }
-  ],
-  "vipPreview": [
+    },
     {
       "id": "como-vs-manchest-2026-10-21",
       "match": "Como vs Manchester United",
@@ -778,7 +1152,7 @@
       "xgAway": 1.37,
       "xgTotal": 3.2,
       "formBTTS": 50,
-      "analysis": "Como (2 matchs réels, xG 1.83) vs Manchester United (2 matchs réels, xG 1.37). xG cumulé 3.2, BTTS 62.6%, Over 2.5 62.0%. Fiabilité 68.16%. Qualité données: LOW.",
+      "analysis": "Como : forme D-V (1V 0N 1D, 6 buts marqués / 4 encaissés sur 5) · Manchester United : forme D-V (1V 0N 1D, 4 buts marqués / 2 encaissés sur 5). Classement : Como 12e (3 pts), Manchester United 13e (3 pts). Modèle Poisson : xG cumulé 3.2, BTTS 62.6%, Over 2.5 62.0%. Cotes DraftKings — 1: 2.2 / N: 3.8 / 2: 3 · Over 2.5: 1.57. Fiabilité 68.16%.",
       "analysisData": {
         "bttsProb": 0.6265,
         "over25Prob": 0.6201,
@@ -788,6 +1162,56 @@
       },
       "estimatedCote": 1.6,
       "estimatedCoteOver": 1.61,
+      "odds": {
+        "provider": "DraftKings",
+        "home": 2.2,
+        "draw": 3.8,
+        "away": 3,
+        "over25": 1.57,
+        "under25": 2.4
+      },
+      "oddsSource": "DraftKings",
+      "estimatedCoteBTTS": 1.6,
+      "formHome": {
+        "last5String": "D-V",
+        "wins": 1,
+        "draws": 0,
+        "losses": 1,
+        "goalsFor": 6,
+        "goalsAgainst": 4,
+        "bttsRate": 1,
+        "over25Rate": 1,
+        "cleanSheets": 0,
+        "failedToScore": 0,
+        "count": 2
+      },
+      "formAway": {
+        "last5String": "D-V",
+        "wins": 1,
+        "draws": 0,
+        "losses": 1,
+        "goalsFor": 4,
+        "goalsAgainst": 2,
+        "bttsRate": 0,
+        "over25Rate": 0.5,
+        "cleanSheets": 1,
+        "failedToScore": 1,
+        "count": 2
+      },
+      "standingsHome": {
+        "rank": 12,
+        "points": 3,
+        "played": 2,
+        "gf": 6,
+        "ga": 4
+      },
+      "standingsAway": {
+        "rank": 13,
+        "points": 3,
+        "played": 2,
+        "gf": 4,
+        "ga": 2
+      },
       "predictions": [
         {
           "type": "BTTS",
@@ -809,8 +1233,7 @@
       "bttsProb": 0.6265,
       "over25Prob": 0.6201,
       "homeLambda": 1.83,
-      "awayLambda": 1.37,
-      "vip": true
+      "awayLambda": 1.37
     },
     {
       "id": "lille-vs-galatasa-2026-10-21",
@@ -841,7 +1264,7 @@
       "xgAway": 1.37,
       "xgTotal": 3.2,
       "formBTTS": 20,
-      "analysis": "Lille (2 matchs réels, xG 1.83) vs Galatasaray (2 matchs réels, xG 1.37). xG cumulé 3.2, BTTS 62.6%, Over 2.5 62.0%. Fiabilité 68.16%. Qualité données: LOW.",
+      "analysis": "Lille : forme D-D (0V 0N 2D, 2 buts marqués / 6 encaissés sur 5) · Galatasaray : forme D-D (0V 0N 2D, 2 buts marqués / 7 encaissés sur 5). Classement : Lille 34e (? pts), Galatasaray 35e (? pts). Modèle Poisson : xG cumulé 3.2, BTTS 62.6%, Over 2.5 62.0%. Cotes DraftKings — 1: 2.15 / N: 3.75 / 2: 3.15 · Over 2.5: 1.57. Fiabilité 68.16%.",
       "analysisData": {
         "bttsProb": 0.6265,
         "over25Prob": 0.6201,
@@ -851,6 +1274,56 @@
       },
       "estimatedCote": 1.6,
       "estimatedCoteOver": 1.61,
+      "odds": {
+        "provider": "DraftKings",
+        "home": 2.15,
+        "draw": 3.75,
+        "away": 3.15,
+        "over25": 1.57,
+        "under25": 2.4
+      },
+      "oddsSource": "DraftKings",
+      "estimatedCoteBTTS": 1.6,
+      "formHome": {
+        "last5String": "D-D",
+        "wins": 0,
+        "draws": 0,
+        "losses": 2,
+        "goalsFor": 2,
+        "goalsAgainst": 6,
+        "bttsRate": 0.5,
+        "over25Rate": 1,
+        "cleanSheets": 0,
+        "failedToScore": 1,
+        "count": 2
+      },
+      "formAway": {
+        "last5String": "D-D",
+        "wins": 0,
+        "draws": 0,
+        "losses": 2,
+        "goalsFor": 2,
+        "goalsAgainst": 7,
+        "bttsRate": 1,
+        "over25Rate": 1,
+        "cleanSheets": 0,
+        "failedToScore": 0,
+        "count": 2
+      },
+      "standingsHome": {
+        "rank": 34,
+        "points": null,
+        "played": 2,
+        "gf": 2,
+        "ga": 6
+      },
+      "standingsAway": {
+        "rank": 35,
+        "points": null,
+        "played": 2,
+        "gf": 2,
+        "ga": 7
+      },
       "predictions": [
         {
           "type": "BTTS",
@@ -872,9 +1345,10 @@
       "bttsProb": 0.6265,
       "over25Prob": 0.6201,
       "homeLambda": 1.83,
-      "awayLambda": 1.37,
-      "vip": true
-    },
+      "awayLambda": 1.37
+    }
+  ],
+  "vipPreview": [
     {
       "id": "astonvil-vs-vikingfk-2026-10-21",
       "match": "Aston Villa vs Viking FK",
@@ -904,7 +1378,7 @@
       "xgAway": 1.37,
       "xgTotal": 3.2,
       "formBTTS": 65,
-      "analysis": "Aston Villa (2 matchs réels, xG 1.83) vs Viking FK (2 matchs réels, xG 1.37). xG cumulé 3.2, BTTS 62.6%, Over 2.5 62.0%. Fiabilité 68.16%. Qualité données: LOW.",
+      "analysis": "Aston Villa : forme V-V (2V 0N 0D, 9 buts marqués / 2 encaissés sur 5) · Viking FK : forme N-D (0V 1N 1D, 4 buts marqués / 6 encaissés sur 5). Classement : Aston Villa 3e (6 pts), Viking FK 27e (1 pts). Modèle Poisson : xG cumulé 3.2, BTTS 62.6%, Over 2.5 62.0%. Cotes DraftKings — 1: 1.22 / N: 7 / 2: 12. Fiabilité 68.16%.",
       "analysisData": {
         "bttsProb": 0.6265,
         "over25Prob": 0.6201,
@@ -914,6 +1388,56 @@
       },
       "estimatedCote": 1.6,
       "estimatedCoteOver": 1.61,
+      "odds": {
+        "provider": "DraftKings",
+        "home": 1.22,
+        "draw": 7,
+        "away": 12,
+        "over25": null,
+        "under25": null
+      },
+      "oddsSource": "DraftKings",
+      "estimatedCoteBTTS": 1.6,
+      "formHome": {
+        "last5String": "V-V",
+        "wins": 2,
+        "draws": 0,
+        "losses": 0,
+        "goalsFor": 9,
+        "goalsAgainst": 2,
+        "bttsRate": 0.5,
+        "over25Rate": 1,
+        "cleanSheets": 1,
+        "failedToScore": 0,
+        "count": 2
+      },
+      "formAway": {
+        "last5String": "N-D",
+        "wins": 0,
+        "draws": 1,
+        "losses": 1,
+        "goalsFor": 4,
+        "goalsAgainst": 6,
+        "bttsRate": 1,
+        "over25Rate": 1,
+        "cleanSheets": 0,
+        "failedToScore": 0,
+        "count": 2
+      },
+      "standingsHome": {
+        "rank": 3,
+        "points": 6,
+        "played": 2,
+        "gf": 9,
+        "ga": 2
+      },
+      "standingsAway": {
+        "rank": 27,
+        "points": 1,
+        "played": 2,
+        "gf": 4,
+        "ga": 6
+      },
       "predictions": [
         {
           "type": "BTTS",
@@ -967,7 +1491,7 @@
       "xgAway": 1.37,
       "xgTotal": 3.2,
       "formBTTS": 60,
-      "analysis": "Bayern Munich (2 matchs réels, xG 1.83) vs Arsenal (2 matchs réels, xG 1.37). xG cumulé 3.2, BTTS 62.6%, Over 2.5 62.0%. Fiabilité 68.16%. Qualité données: LOW.",
+      "analysis": "Bayern Munich : forme N-V (1V 1N 0D, 8 buts marqués / 3 encaissés sur 5) · Arsenal : forme V-V (2V 0N 0D, 4 buts marqués / 0 encaissés sur 5). Classement : Bayern Munich 10e (4 pts), Arsenal 7e (6 pts). Modèle Poisson : xG cumulé 3.2, BTTS 62.6%, Over 2.5 62.0%. Cotes DraftKings — 1: 2.05 / N: 3.9 / 2: 3.35 · Over 2.5: 1.61. Fiabilité 68.16%.",
       "analysisData": {
         "bttsProb": 0.6265,
         "over25Prob": 0.6201,
@@ -977,6 +1501,56 @@
       },
       "estimatedCote": 1.6,
       "estimatedCoteOver": 1.61,
+      "odds": {
+        "provider": "DraftKings",
+        "home": 2.05,
+        "draw": 3.9,
+        "away": 3.35,
+        "over25": 1.61,
+        "under25": 2.35
+      },
+      "oddsSource": "DraftKings",
+      "estimatedCoteBTTS": 1.6,
+      "formHome": {
+        "last5String": "N-V",
+        "wins": 1,
+        "draws": 1,
+        "losses": 0,
+        "goalsFor": 8,
+        "goalsAgainst": 3,
+        "bttsRate": 0.5,
+        "over25Rate": 1,
+        "cleanSheets": 1,
+        "failedToScore": 0,
+        "count": 2
+      },
+      "formAway": {
+        "last5String": "V-V",
+        "wins": 2,
+        "draws": 0,
+        "losses": 0,
+        "goalsFor": 4,
+        "goalsAgainst": 0,
+        "bttsRate": 0,
+        "over25Rate": 0.5,
+        "cleanSheets": 2,
+        "failedToScore": 0,
+        "count": 2
+      },
+      "standingsHome": {
+        "rank": 10,
+        "points": 4,
+        "played": 2,
+        "gf": 8,
+        "ga": 3
+      },
+      "standingsAway": {
+        "rank": 7,
+        "points": 6,
+        "played": 2,
+        "gf": 4,
+        "ga": null
+      },
       "predictions": [
         {
           "type": "BTTS",
@@ -1030,7 +1604,7 @@
       "xgAway": 1.37,
       "xgTotal": 3.2,
       "formBTTS": 45,
-      "analysis": "Club Brugge (2 matchs réels, xG 1.83) vs Lens (2 matchs réels, xG 1.37). xG cumulé 3.2, BTTS 62.6%, Over 2.5 62.0%. Fiabilité 68.16%. Qualité données: LOW.",
+      "analysis": "Club Brugge : forme V-D (1V 0N 1D, 6 buts marqués / 6 encaissés sur 5) · Lens : forme D-V (1V 0N 1D, 3 buts marqués / 4 encaissés sur 5). Classement : Club Brugge 16e (3 pts), Lens 19e (3 pts). Modèle Poisson : xG cumulé 3.2, BTTS 62.6%, Over 2.5 62.0%. Cotes DraftKings — 1: 2.05 / N: 3.95 / 2: 3.25. Fiabilité 68.16%.",
       "analysisData": {
         "bttsProb": 0.6265,
         "over25Prob": 0.6201,
@@ -1040,6 +1614,56 @@
       },
       "estimatedCote": 1.6,
       "estimatedCoteOver": 1.61,
+      "odds": {
+        "provider": "DraftKings",
+        "home": 2.05,
+        "draw": 3.95,
+        "away": 3.25,
+        "over25": null,
+        "under25": null
+      },
+      "oddsSource": "DraftKings",
+      "estimatedCoteBTTS": 1.6,
+      "formHome": {
+        "last5String": "V-D",
+        "wins": 1,
+        "draws": 0,
+        "losses": 1,
+        "goalsFor": 6,
+        "goalsAgainst": 6,
+        "bttsRate": 1,
+        "over25Rate": 1,
+        "cleanSheets": 0,
+        "failedToScore": 0,
+        "count": 2
+      },
+      "formAway": {
+        "last5String": "D-V",
+        "wins": 1,
+        "draws": 0,
+        "losses": 1,
+        "goalsFor": 3,
+        "goalsAgainst": 4,
+        "bttsRate": 0.5,
+        "over25Rate": 0.5,
+        "cleanSheets": 0,
+        "failedToScore": 1,
+        "count": 2
+      },
+      "standingsHome": {
+        "rank": 16,
+        "points": 3,
+        "played": 2,
+        "gf": 6,
+        "ga": 6
+      },
+      "standingsAway": {
+        "rank": 19,
+        "points": 3,
+        "played": 2,
+        "gf": 3,
+        "ga": 4
+      },
       "predictions": [
         {
           "type": "BTTS",
@@ -1093,7 +1717,7 @@
       "xgAway": 1.37,
       "xgTotal": 3.2,
       "formBTTS": 40,
-      "analysis": "Internazionale (2 matchs réels, xG 1.83) vs Shakhtar Donetsk (2 matchs réels, xG 1.37). xG cumulé 3.2, BTTS 62.6%, Over 2.5 62.0%. Fiabilité 68.16%. Qualité données: LOW.",
+      "analysis": "Internazionale : forme D-D (0V 0N 2D, 4 buts marqués / 6 encaissés sur 5) · Shakhtar Donetsk : forme V-N (1V 1N 0D, 4 buts marqués / 2 encaissés sur 5). Classement : Internazionale 29e (? pts), Shakhtar Donetsk 11e (4 pts). Modèle Poisson : xG cumulé 3.2, BTTS 62.6%, Over 2.5 62.0%. Cotes DraftKings — 1: 1.21 / N: 7.5 / 2: 12. Fiabilité 68.16%.",
       "analysisData": {
         "bttsProb": 0.6265,
         "over25Prob": 0.6201,
@@ -1103,6 +1727,56 @@
       },
       "estimatedCote": 1.6,
       "estimatedCoteOver": 1.61,
+      "odds": {
+        "provider": "DraftKings",
+        "home": 1.21,
+        "draw": 7.5,
+        "away": 12,
+        "over25": null,
+        "under25": null
+      },
+      "oddsSource": "DraftKings",
+      "estimatedCoteBTTS": 1.6,
+      "formHome": {
+        "last5String": "D-D",
+        "wins": 0,
+        "draws": 0,
+        "losses": 2,
+        "goalsFor": 4,
+        "goalsAgainst": 6,
+        "bttsRate": 1,
+        "over25Rate": 1,
+        "cleanSheets": 0,
+        "failedToScore": 0,
+        "count": 2
+      },
+      "formAway": {
+        "last5String": "V-N",
+        "wins": 1,
+        "draws": 1,
+        "losses": 0,
+        "goalsFor": 4,
+        "goalsAgainst": 2,
+        "bttsRate": 1,
+        "over25Rate": 0.5,
+        "cleanSheets": 0,
+        "failedToScore": 0,
+        "count": 2
+      },
+      "standingsHome": {
+        "rank": 29,
+        "points": null,
+        "played": 2,
+        "gf": 4,
+        "ga": 6
+      },
+      "standingsAway": {
+        "rank": 11,
+        "points": 4,
+        "played": 2,
+        "gf": 4,
+        "ga": 2
+      },
       "predictions": [
         {
           "type": "BTTS",
@@ -1156,7 +1830,7 @@
       "xgAway": 1.37,
       "xgTotal": 3.2,
       "formBTTS": 50,
-      "analysis": "Real Betis (2 matchs réels, xG 1.83) vs Feyenoord Rotterdam (2 matchs réels, xG 1.37). xG cumulé 3.2, BTTS 62.6%, Over 2.5 62.0%. Fiabilité 68.16%. Qualité données: LOW.",
+      "analysis": "Real Betis : forme V-V (2V 0N 0D, 6 buts marqués / 4 encaissés sur 5) · Feyenoord Rotterdam : forme V-D (1V 0N 1D, 4 buts marqués / 7 encaissés sur 5). Classement : Real Betis 9e (6 pts), Feyenoord Rotterdam 23e (3 pts). Modèle Poisson : xG cumulé 3.2, BTTS 62.6%, Over 2.5 62.0%. Cotes DraftKings — 1: 1.56 / N: 4.8 / 2: 5.25. Fiabilité 68.16%.",
       "analysisData": {
         "bttsProb": 0.6265,
         "over25Prob": 0.6201,
@@ -1166,6 +1840,56 @@
       },
       "estimatedCote": 1.6,
       "estimatedCoteOver": 1.61,
+      "odds": {
+        "provider": "DraftKings",
+        "home": 1.56,
+        "draw": 4.8,
+        "away": 5.25,
+        "over25": null,
+        "under25": null
+      },
+      "oddsSource": "DraftKings",
+      "estimatedCoteBTTS": 1.6,
+      "formHome": {
+        "last5String": "V-V",
+        "wins": 2,
+        "draws": 0,
+        "losses": 0,
+        "goalsFor": 6,
+        "goalsAgainst": 4,
+        "bttsRate": 1,
+        "over25Rate": 1,
+        "cleanSheets": 0,
+        "failedToScore": 0,
+        "count": 2
+      },
+      "formAway": {
+        "last5String": "V-D",
+        "wins": 1,
+        "draws": 0,
+        "losses": 1,
+        "goalsFor": 4,
+        "goalsAgainst": 7,
+        "bttsRate": 1,
+        "over25Rate": 1,
+        "cleanSheets": 0,
+        "failedToScore": 0,
+        "count": 2
+      },
+      "standingsHome": {
+        "rank": 9,
+        "points": 6,
+        "played": 2,
+        "gf": 6,
+        "ga": 4
+      },
+      "standingsAway": {
+        "rank": 23,
+        "points": 3,
+        "played": 2,
+        "gf": 4,
+        "ga": 7
+      },
       "predictions": [
         {
           "type": "BTTS",
@@ -1219,7 +1943,7 @@
       "xgAway": 1.37,
       "xgTotal": 3.2,
       "formBTTS": 40,
-      "analysis": "Real Madrid (2 matchs réels, xG 1.83) vs RB Leipzig (2 matchs réels, xG 1.37). xG cumulé 3.2, BTTS 62.6%, Over 2.5 62.0%. Fiabilité 68.16%. Qualité données: LOW.",
+      "analysis": "Real Madrid : forme V-V (2V 0N 0D, 6 buts marqués / 4 encaissés sur 5) · RB Leipzig : forme V-D (1V 0N 1D, 2 buts marqués / 4 encaissés sur 5). Classement : Real Madrid 8e (6 pts), RB Leipzig 21e (3 pts). Modèle Poisson : xG cumulé 3.2, BTTS 62.6%, Over 2.5 62.0%. Cotes DraftKings — 1: 1.25 / N: 7 / 2: 9.5. Fiabilité 68.16%.",
       "analysisData": {
         "bttsProb": 0.6265,
         "over25Prob": 0.6201,
@@ -1229,6 +1953,56 @@
       },
       "estimatedCote": 1.6,
       "estimatedCoteOver": 1.61,
+      "odds": {
+        "provider": "DraftKings",
+        "home": 1.25,
+        "draw": 7,
+        "away": 9.5,
+        "over25": null,
+        "under25": null
+      },
+      "oddsSource": "DraftKings",
+      "estimatedCoteBTTS": 1.6,
+      "formHome": {
+        "last5String": "V-V",
+        "wins": 2,
+        "draws": 0,
+        "losses": 0,
+        "goalsFor": 6,
+        "goalsAgainst": 4,
+        "bttsRate": 1,
+        "over25Rate": 1,
+        "cleanSheets": 0,
+        "failedToScore": 0,
+        "count": 2
+      },
+      "formAway": {
+        "last5String": "V-D",
+        "wins": 1,
+        "draws": 0,
+        "losses": 1,
+        "goalsFor": 2,
+        "goalsAgainst": 4,
+        "bttsRate": 0.5,
+        "over25Rate": 0.5,
+        "cleanSheets": 1,
+        "failedToScore": 0,
+        "count": 2
+      },
+      "standingsHome": {
+        "rank": 8,
+        "points": 6,
+        "played": 2,
+        "gf": 6,
+        "ga": 4
+      },
+      "standingsAway": {
+        "rank": 21,
+        "points": 3,
+        "played": 2,
+        "gf": 2,
+        "ga": 4
+      },
       "predictions": [
         {
           "type": "BTTS",
@@ -1252,13 +2026,239 @@
       "homeLambda": 1.83,
       "awayLambda": 1.37,
       "vip": true
+    },
+    {
+      "id": "sporting-vs-lasklinz-2026-10-21",
+      "match": "Sporting CP vs LASK Linz",
+      "home": "Sporting CP",
+      "away": "LASK Linz",
+      "league": "UEFA Champions League",
+      "date": "2026-10-21",
+      "type": "BTTS",
+      "prediction": "Oui",
+      "proba": 0.6265,
+      "bttsProbDisplay": "62.65%",
+      "over25ProbDisplay": "62.01%",
+      "confidence": 63,
+      "time": "19:00",
+      "matchSemantic": "sporting-vs-lasklinz-2026-10-21",
+      "source": "poisson-v92-real-data",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/2250.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/4411.png",
+      "tier": "SILVER",
+      "reliabilityScore": 68.16,
+      "dataQuality": "LOW",
+      "dataSource": "ESPN_TEAM_SCHEDULE",
+      "matchCountHome": 2,
+      "matchCountAway": 2,
+      "h2hAvailable": false,
+      "xgHome": 1.83,
+      "xgAway": 1.37,
+      "xgTotal": 3.2,
+      "formBTTS": 40,
+      "analysis": "Sporting CP : forme V-V (2V 0N 0D, 5 buts marqués / 1 encaissés sur 5) · LASK Linz : forme D-D (0V 0N 2D, 3 buts marqués / 7 encaissés sur 5). Classement : Sporting CP 6e (6 pts), LASK Linz 33e (? pts). Modèle Poisson : xG cumulé 3.2, BTTS 62.6%, Over 2.5 62.0%. Cotes DraftKings — 1: 1.2 / N: 8 / 2: 12. Fiabilité 68.16%.",
+      "analysisData": {
+        "bttsProb": 0.6265,
+        "over25Prob": 0.6201,
+        "homeLambda": 1.83,
+        "awayLambda": 1.37,
+        "xgTotal": 3.2
+      },
+      "estimatedCote": 1.6,
+      "estimatedCoteOver": 1.61,
+      "odds": {
+        "provider": "DraftKings",
+        "home": 1.2,
+        "draw": 8,
+        "away": 12,
+        "over25": null,
+        "under25": null
+      },
+      "oddsSource": "DraftKings",
+      "estimatedCoteBTTS": 1.6,
+      "formHome": {
+        "last5String": "V-V",
+        "wins": 2,
+        "draws": 0,
+        "losses": 0,
+        "goalsFor": 5,
+        "goalsAgainst": 1,
+        "bttsRate": 0.5,
+        "over25Rate": 0.5,
+        "cleanSheets": 1,
+        "failedToScore": 0,
+        "count": 2
+      },
+      "formAway": {
+        "last5String": "D-D",
+        "wins": 0,
+        "draws": 0,
+        "losses": 2,
+        "goalsFor": 3,
+        "goalsAgainst": 7,
+        "bttsRate": 0.5,
+        "over25Rate": 0.5,
+        "cleanSheets": 0,
+        "failedToScore": 1,
+        "count": 2
+      },
+      "standingsHome": {
+        "rank": 6,
+        "points": 6,
+        "played": 2,
+        "gf": 5,
+        "ga": 1
+      },
+      "standingsAway": {
+        "rank": 33,
+        "points": null,
+        "played": 2,
+        "gf": 3,
+        "ga": 7
+      },
+      "predictions": [
+        {
+          "type": "BTTS",
+          "prediction": "Oui",
+          "confidence": 63,
+          "bttsProb": 0.6265,
+          "homeLambda": 1.83,
+          "awayLambda": 1.37
+        },
+        {
+          "type": "Over 2.5",
+          "prediction": "Oui",
+          "confidence": 62,
+          "over25Prob": 0.6201,
+          "homeLambda": 1.83,
+          "awayLambda": 1.37
+        }
+      ],
+      "bttsProb": 0.6265,
+      "over25Prob": 0.6201,
+      "homeLambda": 1.83,
+      "awayLambda": 1.37,
+      "vip": true
+    },
+    {
+      "id": "scrheind-vs-austriav-2026-10-23",
+      "match": "SC Rheindorf Altach vs Austria Vienna",
+      "home": "SC Rheindorf Altach",
+      "away": "Austria Vienna",
+      "league": "Austrian Bundesliga",
+      "date": "2026-10-23",
+      "type": "BTTS",
+      "prediction": "Oui",
+      "proba": 0.697,
+      "bttsProbDisplay": "69.70%",
+      "over25ProbDisplay": "72.70%",
+      "confidence": 70,
+      "time": "17:30",
+      "matchSemantic": "scrheind-vs-austriav-2026-10-23",
+      "source": "poisson-v92-real-data",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/4405.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/1382.png",
+      "tier": "GOLD",
+      "reliabilityScore": 89.24,
+      "dataQuality": "HIGH",
+      "dataSource": "ESPN_TEAM_SCHEDULE",
+      "matchCountHome": 8,
+      "matchCountAway": 8,
+      "h2hAvailable": false,
+      "xgHome": 2.27,
+      "xgAway": 1.5,
+      "xgTotal": 3.77,
+      "formBTTS": 21,
+      "analysis": "SC Rheindorf Altach : forme D-V-D-D-D (1V 0N 4D, 4 buts marqués / 10 encaissés sur 5) · Austria Vienna : forme D-D-N-V-D (1V 1N 3D, 6 buts marqués / 9 encaissés sur 5). Classement : SC Rheindorf Altach 11e (6 pts), Austria Vienna 10e (7 pts). Modèle Poisson : xG cumulé 3.77, BTTS 69.7%, Over 2.5 72.7%. Cotes DraftKings — 1: 2.15 / N: 3.45 / 2: 3.2 · Over 2.5: 1.8. Fiabilité 89.24%.",
+      "analysisData": {
+        "bttsProb": 0.697,
+        "over25Prob": 0.727,
+        "homeLambda": 2.27,
+        "awayLambda": 1.5,
+        "xgTotal": 3.77
+      },
+      "estimatedCote": 1.43,
+      "estimatedCoteOver": 1.38,
+      "odds": {
+        "provider": "DraftKings",
+        "home": 2.15,
+        "draw": 3.45,
+        "away": 3.2,
+        "over25": 1.8,
+        "under25": 1.91
+      },
+      "oddsSource": "DraftKings",
+      "estimatedCoteBTTS": 1.43,
+      "formHome": {
+        "last5String": "D-V-D-D-D",
+        "wins": 1,
+        "draws": 0,
+        "losses": 4,
+        "goalsFor": 4,
+        "goalsAgainst": 10,
+        "bttsRate": 0.2,
+        "over25Rate": 0.8,
+        "cleanSheets": 1,
+        "failedToScore": 3,
+        "count": 5
+      },
+      "formAway": {
+        "last5String": "D-D-N-V-D",
+        "wins": 1,
+        "draws": 1,
+        "losses": 3,
+        "goalsFor": 6,
+        "goalsAgainst": 9,
+        "bttsRate": 0.6,
+        "over25Rate": 0.6,
+        "cleanSheets": 0,
+        "failedToScore": 2,
+        "count": 5
+      },
+      "standingsHome": {
+        "rank": 11,
+        "points": 6,
+        "played": 9,
+        "gf": 8,
+        "ga": 15
+      },
+      "standingsAway": {
+        "rank": 10,
+        "points": 7,
+        "played": 9,
+        "gf": 9,
+        "ga": 18
+      },
+      "predictions": [
+        {
+          "type": "BTTS",
+          "prediction": "Oui",
+          "confidence": 70,
+          "bttsProb": 0.697,
+          "homeLambda": 2.27,
+          "awayLambda": 1.5
+        },
+        {
+          "type": "Over 2.5",
+          "prediction": "Oui",
+          "confidence": 73,
+          "over25Prob": 0.727,
+          "homeLambda": 2.27,
+          "awayLambda": 1.5
+        }
+      ],
+      "bttsProb": 0.697,
+      "over25Prob": 0.727,
+      "homeLambda": 2.27,
+      "awayLambda": 1.5,
+      "vip": true
     }
   ],
   "stats": {
-    "avgReliability": 78.72,
-    "totalAnalyzed": 144,
+    "avgReliability": 78.87,
+    "totalAnalyzed": 142,
     "totalRejected": 1,
-    "totalAccepted": 143,
+    "totalAccepted": 141,
     "freeCount": 12,
     "vipCount": 8
   },
@@ -1292,7 +2292,7 @@
       "xgAway": 0.92,
       "xgTotal": 2.44,
       "formBTTS": 28,
-      "analysis": "Wolverhampton Wanderers (8 matchs réels, xG 1.52) vs Portsmouth (8 matchs réels, xG 0.92). xG cumulé 2.44, BTTS 47.0%, Over 2.5 44.1%. Fiabilité 74.29%. Qualité données: HIGH.",
+      "analysis": "Wolverhampton Wanderers : forme V-D-D-V-V (3V 0N 2D, 5 buts marqués / 5 encaissés sur 5) · Portsmouth : forme V-V-D-N-N (2V 2N 1D, 6 buts marqués / 5 encaissés sur 5). Classement : Wolverhampton Wanderers 8e (17 pts), Portsmouth 13e (14 pts). Modèle Poisson : xG cumulé 2.44, BTTS 47.0%, Over 2.5 44.1%. Cotes DraftKings — 1: 1.57 / N: 4.3 / 2: 5.75 · Over 2.5: 1.8. Fiabilité 74.29%.",
       "analysisData": {
         "bttsProb": 0.4695,
         "over25Prob": 0.4411,
@@ -1302,6 +2302,56 @@
       },
       "estimatedCote": 2.13,
       "estimatedCoteOver": 2.27,
+      "odds": {
+        "provider": "DraftKings",
+        "home": 1.57,
+        "draw": 4.3,
+        "away": 5.75,
+        "over25": 1.8,
+        "under25": 2
+      },
+      "oddsSource": "DraftKings",
+      "estimatedCoteBTTS": 2.13,
+      "formHome": {
+        "last5String": "V-D-D-V-V",
+        "wins": 3,
+        "draws": 0,
+        "losses": 2,
+        "goalsFor": 5,
+        "goalsAgainst": 5,
+        "bttsRate": 0.4,
+        "over25Rate": 0.4,
+        "cleanSheets": 2,
+        "failedToScore": 1,
+        "count": 5
+      },
+      "formAway": {
+        "last5String": "V-V-D-N-N",
+        "wins": 2,
+        "draws": 2,
+        "losses": 1,
+        "goalsFor": 6,
+        "goalsAgainst": 5,
+        "bttsRate": 0.4,
+        "over25Rate": 0.4,
+        "cleanSheets": 2,
+        "failedToScore": 2,
+        "count": 5
+      },
+      "standingsHome": {
+        "rank": 8,
+        "points": 17,
+        "played": 10,
+        "gf": 18,
+        "ga": 15
+      },
+      "standingsAway": {
+        "rank": 13,
+        "points": 14,
+        "played": 10,
+        "gf": 13,
+        "ga": 13
+      },
       "predictions": [
         {
           "type": "BTTS",
@@ -1324,130 +2374,6 @@
       "over25Prob": 0.4411,
       "homeLambda": 1.52,
       "awayLambda": 0.92
-    },
-    {
-      "id": "fenerbah-vs-slaviapr-2026-10-20",
-      "match": "Fenerbahce vs Slavia Prague",
-      "home": "Fenerbahce",
-      "away": "Slavia Prague",
-      "league": "UEFA Champions League",
-      "date": "2026-10-20",
-      "type": "BTTS",
-      "prediction": "Oui",
-      "proba": 0.6265,
-      "bttsProbDisplay": "62.65%",
-      "over25ProbDisplay": "62.01%",
-      "confidence": 63,
-      "time": "16:45",
-      "matchSemantic": "fenerbah-vs-slaviapr-2026-10-20",
-      "source": "poisson-v92-real-data",
-      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/436.png",
-      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/494.png",
-      "tier": "SILVER",
-      "reliabilityScore": 68.16,
-      "dataQuality": "LOW",
-      "dataSource": "ESPN_TEAM_SCHEDULE",
-      "matchCountHome": 2,
-      "matchCountAway": 2,
-      "h2hAvailable": false,
-      "xgHome": 1.83,
-      "xgAway": 1.37,
-      "xgTotal": 3.2,
-      "formBTTS": 15,
-      "analysis": "Fenerbahce (2 matchs réels, xG 1.83) vs Slavia Prague (2 matchs réels, xG 1.37). xG cumulé 3.2, BTTS 62.6%, Over 2.5 62.0%. Fiabilité 68.16%. Qualité données: LOW.",
-      "analysisData": {
-        "bttsProb": 0.6265,
-        "over25Prob": 0.6201,
-        "homeLambda": 1.83,
-        "awayLambda": 1.37,
-        "xgTotal": 3.2
-      },
-      "estimatedCote": 1.6,
-      "estimatedCoteOver": 1.61,
-      "predictions": [
-        {
-          "type": "BTTS",
-          "prediction": "Oui",
-          "confidence": 63,
-          "bttsProb": 0.6265,
-          "homeLambda": 1.83,
-          "awayLambda": 1.37
-        },
-        {
-          "type": "Over 2.5",
-          "prediction": "Oui",
-          "confidence": 62,
-          "over25Prob": 0.6201,
-          "homeLambda": 1.83,
-          "awayLambda": 1.37
-        }
-      ],
-      "bttsProb": 0.6265,
-      "over25Prob": 0.6201,
-      "homeLambda": 1.83,
-      "awayLambda": 1.37
-    },
-    {
-      "id": "sabahfk-vs-borussia-2026-10-20",
-      "match": "Sabah FK vs Borussia Dortmund",
-      "home": "Sabah FK",
-      "away": "Borussia Dortmund",
-      "league": "UEFA Champions League",
-      "date": "2026-10-20",
-      "type": "BTTS",
-      "prediction": "Oui",
-      "proba": 0.6265,
-      "bttsProbDisplay": "62.65%",
-      "over25ProbDisplay": "62.01%",
-      "confidence": 63,
-      "time": "16:45",
-      "matchSemantic": "sabahfk-vs-borussia-2026-10-20",
-      "source": "poisson-v92-real-data",
-      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/21922.png",
-      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/124.png",
-      "tier": "SILVER",
-      "reliabilityScore": 68.16,
-      "dataQuality": "LOW",
-      "dataSource": "ESPN_TEAM_SCHEDULE",
-      "matchCountHome": 2,
-      "matchCountAway": 2,
-      "h2hAvailable": false,
-      "xgHome": 1.83,
-      "xgAway": 1.37,
-      "xgTotal": 3.2,
-      "formBTTS": 25,
-      "analysis": "Sabah FK (2 matchs réels, xG 1.83) vs Borussia Dortmund (2 matchs réels, xG 1.37). xG cumulé 3.2, BTTS 62.6%, Over 2.5 62.0%. Fiabilité 68.16%. Qualité données: LOW.",
-      "analysisData": {
-        "bttsProb": 0.6265,
-        "over25Prob": 0.6201,
-        "homeLambda": 1.83,
-        "awayLambda": 1.37,
-        "xgTotal": 3.2
-      },
-      "estimatedCote": 1.6,
-      "estimatedCoteOver": 1.61,
-      "predictions": [
-        {
-          "type": "BTTS",
-          "prediction": "Oui",
-          "confidence": 63,
-          "bttsProb": 0.6265,
-          "homeLambda": 1.83,
-          "awayLambda": 1.37
-        },
-        {
-          "type": "Over 2.5",
-          "prediction": "Oui",
-          "confidence": 62,
-          "over25Prob": 0.6201,
-          "homeLambda": 1.83,
-          "awayLambda": 1.37
-        }
-      ],
-      "bttsProb": 0.6265,
-      "over25Prob": 0.6201,
-      "homeLambda": 1.83,
-      "awayLambda": 1.37
     },
     {
       "id": "asroma-vs-slovanbr-2026-10-20",
@@ -1478,7 +2404,7 @@
       "xgAway": 1.37,
       "xgTotal": 3.2,
       "formBTTS": 25,
-      "analysis": "AS Roma (2 matchs réels, xG 1.83) vs Slovan Bratislava (2 matchs réels, xG 1.37). xG cumulé 3.2, BTTS 62.6%, Over 2.5 62.0%. Fiabilité 68.16%. Qualité données: LOW.",
+      "analysis": "AS Roma : forme D-N (0V 1N 1D, 4 buts marqués / 5 encaissés sur 5) · Slovan Bratislava : forme D-D (0V 0N 2D, 1 buts marqués / 9 encaissés sur 5). Classement : AS Roma 25e (1 pts), Slovan Bratislava 36e (? pts). Modèle Poisson : xG cumulé 3.2, BTTS 62.6%, Over 2.5 62.0%. Cotes DraftKings — 1: 1.11 / N: 10 / 2: 21. Fiabilité 68.16%.",
       "analysisData": {
         "bttsProb": 0.6265,
         "over25Prob": 0.6201,
@@ -1488,6 +2414,56 @@
       },
       "estimatedCote": 1.6,
       "estimatedCoteOver": 1.61,
+      "odds": {
+        "provider": "DraftKings",
+        "home": 1.11,
+        "draw": 10,
+        "away": 21,
+        "over25": null,
+        "under25": null
+      },
+      "oddsSource": "DraftKings",
+      "estimatedCoteBTTS": 1.6,
+      "formHome": {
+        "last5String": "D-N",
+        "wins": 0,
+        "draws": 1,
+        "losses": 1,
+        "goalsFor": 4,
+        "goalsAgainst": 5,
+        "bttsRate": 1,
+        "over25Rate": 0.5,
+        "cleanSheets": 0,
+        "failedToScore": 0,
+        "count": 2
+      },
+      "formAway": {
+        "last5String": "D-D",
+        "wins": 0,
+        "draws": 0,
+        "losses": 2,
+        "goalsFor": 1,
+        "goalsAgainst": 9,
+        "bttsRate": 0.5,
+        "over25Rate": 1,
+        "cleanSheets": 0,
+        "failedToScore": 1,
+        "count": 2
+      },
+      "standingsHome": {
+        "rank": 25,
+        "points": 1,
+        "played": 2,
+        "gf": 4,
+        "ga": 5
+      },
+      "standingsAway": {
+        "rank": 36,
+        "points": null,
+        "played": 2,
+        "gf": 1,
+        "ga": 9
+      },
       "predictions": [
         {
           "type": "BTTS",
@@ -1540,7 +2516,7 @@
       "xgAway": 1.37,
       "xgTotal": 3.2,
       "formBTTS": 15,
-      "analysis": "FC Porto (2 matchs réels, xG 1.83) vs PSV Eindhoven (2 matchs réels, xG 1.37). xG cumulé 3.2, BTTS 62.6%, Over 2.5 62.0%. Fiabilité 68.16%. Qualité données: LOW.",
+      "analysis": "FC Porto : forme D-D (0V 0N 2D, 2 buts marqués / 5 encaissés sur 5) · PSV Eindhoven : forme D-N (0V 1N 1D, 1 buts marqués / 2 encaissés sur 5). Classement : FC Porto 30e (? pts), PSV Eindhoven 26e (1 pts). Modèle Poisson : xG cumulé 3.2, BTTS 62.6%, Over 2.5 62.0%. Cotes DraftKings — 1: 1.5 / N: 4.7 / 2: 6. Fiabilité 68.16%.",
       "analysisData": {
         "bttsProb": 0.6265,
         "over25Prob": 0.6201,
@@ -1550,6 +2526,56 @@
       },
       "estimatedCote": 1.6,
       "estimatedCoteOver": 1.61,
+      "odds": {
+        "provider": "DraftKings",
+        "home": 1.5,
+        "draw": 4.7,
+        "away": 6,
+        "over25": null,
+        "under25": null
+      },
+      "oddsSource": "DraftKings",
+      "estimatedCoteBTTS": 1.6,
+      "formHome": {
+        "last5String": "D-D",
+        "wins": 0,
+        "draws": 0,
+        "losses": 2,
+        "goalsFor": 2,
+        "goalsAgainst": 5,
+        "bttsRate": 0.5,
+        "over25Rate": 0.5,
+        "cleanSheets": 0,
+        "failedToScore": 1,
+        "count": 2
+      },
+      "formAway": {
+        "last5String": "D-N",
+        "wins": 0,
+        "draws": 1,
+        "losses": 1,
+        "goalsFor": 1,
+        "goalsAgainst": 2,
+        "bttsRate": 0.5,
+        "over25Rate": 0,
+        "cleanSheets": 0,
+        "failedToScore": 1,
+        "count": 2
+      },
+      "standingsHome": {
+        "rank": 30,
+        "points": null,
+        "played": 2,
+        "gf": 2,
+        "ga": 5
+      },
+      "standingsAway": {
+        "rank": 26,
+        "points": 1,
+        "played": 2,
+        "gf": 1,
+        "ga": 2
+      },
       "predictions": [
         {
           "type": "BTTS",
@@ -1602,7 +2628,7 @@
       "xgAway": 1.37,
       "xgTotal": 3.2,
       "formBTTS": 65,
-      "analysis": "Liverpool (2 matchs réels, xG 1.83) vs Villarreal (2 matchs réels, xG 1.37). xG cumulé 3.2, BTTS 62.6%, Over 2.5 62.0%. Fiabilité 68.16%. Qualité données: LOW.",
+      "analysis": "Liverpool : forme V-V (2V 0N 0D, 8 buts marqués / 4 encaissés sur 5) · Villarreal : forme V-D (1V 0N 1D, 5 buts marqués / 4 encaissés sur 5). Classement : Liverpool 5e (6 pts), Villarreal 14e (3 pts). Modèle Poisson : xG cumulé 3.2, BTTS 62.6%, Over 2.5 62.0%. Cotes DraftKings — 1: 1.57 / N: 4.5 / 2: 5.5. Fiabilité 68.16%.",
       "analysisData": {
         "bttsProb": 0.6265,
         "over25Prob": 0.6201,
@@ -1612,6 +2638,56 @@
       },
       "estimatedCote": 1.6,
       "estimatedCoteOver": 1.61,
+      "odds": {
+        "provider": "DraftKings",
+        "home": 1.57,
+        "draw": 4.5,
+        "away": 5.5,
+        "over25": null,
+        "under25": null
+      },
+      "oddsSource": "DraftKings",
+      "estimatedCoteBTTS": 1.6,
+      "formHome": {
+        "last5String": "V-V",
+        "wins": 2,
+        "draws": 0,
+        "losses": 0,
+        "goalsFor": 8,
+        "goalsAgainst": 4,
+        "bttsRate": 1,
+        "over25Rate": 1,
+        "cleanSheets": 0,
+        "failedToScore": 0,
+        "count": 2
+      },
+      "formAway": {
+        "last5String": "V-D",
+        "wins": 1,
+        "draws": 0,
+        "losses": 1,
+        "goalsFor": 5,
+        "goalsAgainst": 4,
+        "bttsRate": 1,
+        "over25Rate": 1,
+        "cleanSheets": 0,
+        "failedToScore": 0,
+        "count": 2
+      },
+      "standingsHome": {
+        "rank": 5,
+        "points": 6,
+        "played": 2,
+        "gf": 8,
+        "ga": 4
+      },
+      "standingsAway": {
+        "rank": 14,
+        "points": 3,
+        "played": 2,
+        "gf": 5,
+        "ga": 4
+      },
       "predictions": [
         {
           "type": "BTTS",
@@ -1664,7 +2740,7 @@
       "xgAway": 1.37,
       "xgTotal": 3.2,
       "formBTTS": 30,
-      "analysis": "Manchester City (2 matchs réels, xG 1.83) vs AEK Athens (2 matchs réels, xG 1.37). xG cumulé 3.2, BTTS 62.6%, Over 2.5 62.0%. Fiabilité 68.16%. Qualité données: LOW.",
+      "analysis": "Manchester City : forme D-V (1V 0N 1D, 4 buts marqués / 4 encaissés sur 5) · AEK Athens : forme D-V (1V 0N 1D, 2 buts marqués / 3 encaissés sur 5). Classement : Manchester City 17e (3 pts), AEK Athens 20e (3 pts). Modèle Poisson : xG cumulé 3.2, BTTS 62.6%, Over 2.5 62.0%. Cotes DraftKings — 1: 1.14 / N: 9 / 2: 17. Fiabilité 68.16%.",
       "analysisData": {
         "bttsProb": 0.6265,
         "over25Prob": 0.6201,
@@ -1674,6 +2750,56 @@
       },
       "estimatedCote": 1.6,
       "estimatedCoteOver": 1.61,
+      "odds": {
+        "provider": "DraftKings",
+        "home": 1.14,
+        "draw": 9,
+        "away": 17,
+        "over25": null,
+        "under25": null
+      },
+      "oddsSource": "DraftKings",
+      "estimatedCoteBTTS": 1.6,
+      "formHome": {
+        "last5String": "D-V",
+        "wins": 1,
+        "draws": 0,
+        "losses": 1,
+        "goalsFor": 4,
+        "goalsAgainst": 4,
+        "bttsRate": 0.5,
+        "over25Rate": 0.5,
+        "cleanSheets": 1,
+        "failedToScore": 0,
+        "count": 2
+      },
+      "formAway": {
+        "last5String": "D-V",
+        "wins": 1,
+        "draws": 0,
+        "losses": 1,
+        "goalsFor": 2,
+        "goalsAgainst": 3,
+        "bttsRate": 0.5,
+        "over25Rate": 0.5,
+        "cleanSheets": 1,
+        "failedToScore": 0,
+        "count": 2
+      },
+      "standingsHome": {
+        "rank": 17,
+        "points": 3,
+        "played": 2,
+        "gf": 4,
+        "ga": 4
+      },
+      "standingsAway": {
+        "rank": 20,
+        "points": 3,
+        "played": 2,
+        "gf": 2,
+        "ga": 3
+      },
       "predictions": [
         {
           "type": "BTTS",
@@ -1726,7 +2852,7 @@
       "xgAway": 1.37,
       "xgTotal": 3.2,
       "formBTTS": 10,
-      "analysis": "Napoli (2 matchs réels, xG 1.83) vs Bodo/Glimt (2 matchs réels, xG 1.37). xG cumulé 3.2, BTTS 62.6%, Over 2.5 62.0%. Fiabilité 68.16%. Qualité données: LOW.",
+      "analysis": "Napoli : forme D-D (0V 0N 2D, 1 buts marqués / 4 encaissés sur 5) · Bodo/Glimt : forme V-D (1V 0N 1D, 1 buts marqués / 5 encaissés sur 5). Classement : Napoli 32e (? pts), Bodo/Glimt 24e (3 pts). Modèle Poisson : xG cumulé 3.2, BTTS 62.6%, Over 2.5 62.0%. Cotes DraftKings — 1: 1.74 / N: 4 / 2: 4.4. Fiabilité 68.16%.",
       "analysisData": {
         "bttsProb": 0.6265,
         "over25Prob": 0.6201,
@@ -1736,6 +2862,56 @@
       },
       "estimatedCote": 1.6,
       "estimatedCoteOver": 1.61,
+      "odds": {
+        "provider": "DraftKings",
+        "home": 1.74,
+        "draw": 4,
+        "away": 4.4,
+        "over25": null,
+        "under25": null
+      },
+      "oddsSource": "DraftKings",
+      "estimatedCoteBTTS": 1.6,
+      "formHome": {
+        "last5String": "D-D",
+        "wins": 0,
+        "draws": 0,
+        "losses": 2,
+        "goalsFor": 1,
+        "goalsAgainst": 4,
+        "bttsRate": 0.5,
+        "over25Rate": 0.5,
+        "cleanSheets": 0,
+        "failedToScore": 1,
+        "count": 2
+      },
+      "formAway": {
+        "last5String": "V-D",
+        "wins": 1,
+        "draws": 0,
+        "losses": 1,
+        "goalsFor": 1,
+        "goalsAgainst": 5,
+        "bttsRate": 0,
+        "over25Rate": 0.5,
+        "cleanSheets": 1,
+        "failedToScore": 1,
+        "count": 2
+      },
+      "standingsHome": {
+        "rank": 32,
+        "points": null,
+        "played": 2,
+        "gf": 1,
+        "ga": 4
+      },
+      "standingsAway": {
+        "rank": 24,
+        "points": 3,
+        "played": 2,
+        "gf": 1,
+        "ga": 5
+      },
       "predictions": [
         {
           "type": "BTTS",
@@ -1788,7 +2964,7 @@
       "xgAway": 1.37,
       "xgTotal": 3.2,
       "formBTTS": 95,
-      "analysis": "Paris Saint-Germain (2 matchs réels, xG 1.83) vs Barcelona (2 matchs réels, xG 1.37). xG cumulé 3.2, BTTS 62.6%, Over 2.5 62.0%. Fiabilité 68.16%. Qualité données: LOW.",
+      "analysis": "Paris Saint-Germain : forme V-V (2V 0N 0D, 10 buts marqués / 3 encaissés sur 5) · Barcelona : forme V-V (2V 0N 0D, 9 buts marqués / 2 encaissés sur 5). Classement : Paris Saint-Germain 1e (6 pts), Barcelona 2e (6 pts). Modèle Poisson : xG cumulé 3.2, BTTS 62.6%, Over 2.5 62.0%. Cotes DraftKings — 1: 2.45 / N: 4.4 / 2: 2.45. Fiabilité 68.16%.",
       "analysisData": {
         "bttsProb": 0.6265,
         "over25Prob": 0.6201,
@@ -1798,6 +2974,56 @@
       },
       "estimatedCote": 1.6,
       "estimatedCoteOver": 1.61,
+      "odds": {
+        "provider": "DraftKings",
+        "home": 2.45,
+        "draw": 4.4,
+        "away": 2.45,
+        "over25": null,
+        "under25": null
+      },
+      "oddsSource": "DraftKings",
+      "estimatedCoteBTTS": 1.6,
+      "formHome": {
+        "last5String": "V-V",
+        "wins": 2,
+        "draws": 0,
+        "losses": 0,
+        "goalsFor": 10,
+        "goalsAgainst": 3,
+        "bttsRate": 1,
+        "over25Rate": 1,
+        "cleanSheets": 0,
+        "failedToScore": 0,
+        "count": 2
+      },
+      "formAway": {
+        "last5String": "V-V",
+        "wins": 2,
+        "draws": 0,
+        "losses": 0,
+        "goalsFor": 9,
+        "goalsAgainst": 2,
+        "bttsRate": 1,
+        "over25Rate": 1,
+        "cleanSheets": 0,
+        "failedToScore": 0,
+        "count": 2
+      },
+      "standingsHome": {
+        "rank": 1,
+        "points": 6,
+        "played": 2,
+        "gf": 10,
+        "ga": 3
+      },
+      "standingsAway": {
+        "rank": 2,
+        "points": 6,
+        "played": 2,
+        "gf": 9,
+        "ga": 2
+      },
       "predictions": [
         {
           "type": "BTTS",
@@ -1850,7 +3076,7 @@
       "xgAway": 1.37,
       "xgTotal": 3.2,
       "formBTTS": 45,
-      "analysis": "VfB Stuttgart (2 matchs réels, xG 1.83) vs Atlético Madrid (2 matchs réels, xG 1.37). xG cumulé 3.2, BTTS 62.6%, Over 2.5 62.0%. Fiabilité 68.16%. Qualité données: LOW.",
+      "analysis": "VfB Stuttgart : forme V-V (2V 0N 0D, 6 buts marqués / 1 encaissés sur 5) · Atlético Madrid : forme V-D (1V 0N 1D, 3 buts marqués / 2 encaissés sur 5). Classement : VfB Stuttgart 4e (6 pts), Atlético Madrid 15e (3 pts). Modèle Poisson : xG cumulé 3.2, BTTS 62.6%, Over 2.5 62.0%. Cotes DraftKings — 1: 3.1 / N: 3.9 / 2: 2.15. Fiabilité 68.16%.",
       "analysisData": {
         "bttsProb": 0.6265,
         "over25Prob": 0.6201,
@@ -1860,6 +3086,56 @@
       },
       "estimatedCote": 1.6,
       "estimatedCoteOver": 1.61,
+      "odds": {
+        "provider": "DraftKings",
+        "home": 3.1,
+        "draw": 3.9,
+        "away": 2.15,
+        "over25": null,
+        "under25": null
+      },
+      "oddsSource": "DraftKings",
+      "estimatedCoteBTTS": 1.6,
+      "formHome": {
+        "last5String": "V-V",
+        "wins": 2,
+        "draws": 0,
+        "losses": 0,
+        "goalsFor": 6,
+        "goalsAgainst": 1,
+        "bttsRate": 0.5,
+        "over25Rate": 1,
+        "cleanSheets": 1,
+        "failedToScore": 0,
+        "count": 2
+      },
+      "formAway": {
+        "last5String": "V-D",
+        "wins": 1,
+        "draws": 0,
+        "losses": 1,
+        "goalsFor": 3,
+        "goalsAgainst": 2,
+        "bttsRate": 0.5,
+        "over25Rate": 0.5,
+        "cleanSheets": 1,
+        "failedToScore": 0,
+        "count": 2
+      },
+      "standingsHome": {
+        "rank": 4,
+        "points": 6,
+        "played": 2,
+        "gf": 6,
+        "ga": 1
+      },
+      "standingsAway": {
+        "rank": 15,
+        "points": 3,
+        "played": 2,
+        "gf": 3,
+        "ga": 2
+      },
       "predictions": [
         {
           "type": "BTTS",
@@ -1912,7 +3188,7 @@
       "xgAway": 2,
       "xgTotal": 4.82,
       "formBTTS": 25,
-      "analysis": "FC Cincinnati (8 matchs réels, xG 2.82) vs D.C. United (8 matchs réels, xG 2.00). xG cumulé 4.82, BTTS 81.3%, Over 2.5 85.9%. Fiabilité 93.75%. Qualité données: HIGH.",
+      "analysis": "FC Cincinnati : forme D-D-V-D-N (1V 1N 3D, 8 buts marqués / 11 encaissés sur 5) · D.C. United : forme D-V-D-N-D (1V 1N 3D, 7 buts marqués / 14 encaissés sur 5). Classement : FC Cincinnati 9e (36 pts), D.C. United 13e (33 pts). Modèle Poisson : xG cumulé 4.82, BTTS 81.3%, Over 2.5 85.9%. Cotes DraftKings — 1: 1.65 / N: 4.4 / 2: 4. Fiabilité 93.75%.",
       "analysisData": {
         "bttsProb": 0.813,
         "over25Prob": 0.859,
@@ -1922,6 +3198,56 @@
       },
       "estimatedCote": 1.23,
       "estimatedCoteOver": 1.16,
+      "odds": {
+        "provider": "DraftKings",
+        "home": 1.65,
+        "draw": 4.4,
+        "away": 4,
+        "over25": null,
+        "under25": null
+      },
+      "oddsSource": "DraftKings",
+      "estimatedCoteBTTS": 1.23,
+      "formHome": {
+        "last5String": "D-D-V-D-N",
+        "wins": 1,
+        "draws": 1,
+        "losses": 3,
+        "goalsFor": 8,
+        "goalsAgainst": 11,
+        "bttsRate": 0.8,
+        "over25Rate": 0.8,
+        "cleanSheets": 0,
+        "failedToScore": 1,
+        "count": 5
+      },
+      "formAway": {
+        "last5String": "D-V-D-N-D",
+        "wins": 1,
+        "draws": 1,
+        "losses": 3,
+        "goalsFor": 7,
+        "goalsAgainst": 14,
+        "bttsRate": 0.8,
+        "over25Rate": 1,
+        "cleanSheets": 0,
+        "failedToScore": 1,
+        "count": 5
+      },
+      "standingsHome": {
+        "rank": 9,
+        "points": 36,
+        "played": 29,
+        "gf": 60,
+        "ga": 70
+      },
+      "standingsAway": {
+        "rank": 13,
+        "points": 33,
+        "played": 29,
+        "gf": 37,
+        "ga": 51
+      },
       "predictions": [
         {
           "type": "BTTS",
@@ -1974,7 +3300,7 @@
       "xgAway": 1.83,
       "xgTotal": 3.98,
       "formBTTS": 25,
-      "analysis": "Levante (8 matchs réels, xG 2.15) vs Athletic Club (7 matchs réels, xG 1.83). xG cumulé 3.98, BTTS 74.2%, Over 2.5 75.9%. Fiabilité 82.22%. Qualité données: MEDIUM.",
+      "analysis": "Levante : forme N-N-D-D-N (0V 3N 2D, 7 buts marqués / 11 encaissés sur 5) · Athletic Club : forme N-N-N-V-V (2V 3N 0D, 6 buts marqués / 1 encaissés sur 5). Classement : Levante 17e (7 pts), Athletic Club 11e (9 pts). Modèle Poisson : xG cumulé 3.98, BTTS 74.2%, Over 2.5 75.9%. Cotes DraftKings — 1: 3.65 / N: 3.2 / 2: 2.15 · Over 2.5: 1.95. Fiabilité 82.22%.",
       "analysisData": {
         "bttsProb": 0.7423,
         "over25Prob": 0.7594,
@@ -1984,6 +3310,56 @@
       },
       "estimatedCote": 1.35,
       "estimatedCoteOver": 1.32,
+      "odds": {
+        "provider": "DraftKings",
+        "home": 3.65,
+        "draw": 3.2,
+        "away": 2.15,
+        "over25": 1.95,
+        "under25": 1.87
+      },
+      "oddsSource": "DraftKings",
+      "estimatedCoteBTTS": 1.35,
+      "formHome": {
+        "last5String": "N-N-D-D-N",
+        "wins": 0,
+        "draws": 3,
+        "losses": 2,
+        "goalsFor": 7,
+        "goalsAgainst": 11,
+        "bttsRate": 0.8,
+        "over25Rate": 0.6,
+        "cleanSheets": 1,
+        "failedToScore": 1,
+        "count": 5
+      },
+      "formAway": {
+        "last5String": "N-N-N-V-V",
+        "wins": 2,
+        "draws": 3,
+        "losses": 0,
+        "goalsFor": 6,
+        "goalsAgainst": 1,
+        "bttsRate": 0.2,
+        "over25Rate": 0.2,
+        "cleanSheets": 4,
+        "failedToScore": 2,
+        "count": 5
+      },
+      "standingsHome": {
+        "rank": 17,
+        "points": 7,
+        "played": 8,
+        "gf": 12,
+        "ga": 16
+      },
+      "standingsAway": {
+        "rank": 11,
+        "points": 9,
+        "played": 7,
+        "gf": 7,
+        "ga": 6
+      },
       "predictions": [
         {
           "type": "BTTS",
@@ -2006,6 +3382,230 @@
       "over25Prob": 0.7594,
       "homeLambda": 2.15,
       "awayLambda": 1.83
+    },
+    {
+      "id": "como-vs-manchest-2026-10-21",
+      "match": "Como vs Manchester United",
+      "home": "Como",
+      "away": "Manchester United",
+      "league": "UEFA Champions League",
+      "date": "2026-10-21",
+      "type": "BTTS",
+      "prediction": "Oui",
+      "proba": 0.6265,
+      "bttsProbDisplay": "62.65%",
+      "over25ProbDisplay": "62.01%",
+      "confidence": 63,
+      "time": "16:45",
+      "matchSemantic": "como-vs-manchest-2026-10-21",
+      "source": "poisson-v92-real-data",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/2572.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/360.png",
+      "tier": "SILVER",
+      "reliabilityScore": 68.16,
+      "dataQuality": "LOW",
+      "dataSource": "ESPN_TEAM_SCHEDULE",
+      "matchCountHome": 2,
+      "matchCountAway": 2,
+      "h2hAvailable": false,
+      "xgHome": 1.83,
+      "xgAway": 1.37,
+      "xgTotal": 3.2,
+      "formBTTS": 50,
+      "analysis": "Como : forme D-V (1V 0N 1D, 6 buts marqués / 4 encaissés sur 5) · Manchester United : forme D-V (1V 0N 1D, 4 buts marqués / 2 encaissés sur 5). Classement : Como 12e (3 pts), Manchester United 13e (3 pts). Modèle Poisson : xG cumulé 3.2, BTTS 62.6%, Over 2.5 62.0%. Cotes DraftKings — 1: 2.2 / N: 3.8 / 2: 3 · Over 2.5: 1.57. Fiabilité 68.16%.",
+      "analysisData": {
+        "bttsProb": 0.6265,
+        "over25Prob": 0.6201,
+        "homeLambda": 1.83,
+        "awayLambda": 1.37,
+        "xgTotal": 3.2
+      },
+      "estimatedCote": 1.6,
+      "estimatedCoteOver": 1.61,
+      "odds": {
+        "provider": "DraftKings",
+        "home": 2.2,
+        "draw": 3.8,
+        "away": 3,
+        "over25": 1.57,
+        "under25": 2.4
+      },
+      "oddsSource": "DraftKings",
+      "estimatedCoteBTTS": 1.6,
+      "formHome": {
+        "last5String": "D-V",
+        "wins": 1,
+        "draws": 0,
+        "losses": 1,
+        "goalsFor": 6,
+        "goalsAgainst": 4,
+        "bttsRate": 1,
+        "over25Rate": 1,
+        "cleanSheets": 0,
+        "failedToScore": 0,
+        "count": 2
+      },
+      "formAway": {
+        "last5String": "D-V",
+        "wins": 1,
+        "draws": 0,
+        "losses": 1,
+        "goalsFor": 4,
+        "goalsAgainst": 2,
+        "bttsRate": 0,
+        "over25Rate": 0.5,
+        "cleanSheets": 1,
+        "failedToScore": 1,
+        "count": 2
+      },
+      "standingsHome": {
+        "rank": 12,
+        "points": 3,
+        "played": 2,
+        "gf": 6,
+        "ga": 4
+      },
+      "standingsAway": {
+        "rank": 13,
+        "points": 3,
+        "played": 2,
+        "gf": 4,
+        "ga": 2
+      },
+      "predictions": [
+        {
+          "type": "BTTS",
+          "prediction": "Oui",
+          "confidence": 63,
+          "bttsProb": 0.6265,
+          "homeLambda": 1.83,
+          "awayLambda": 1.37
+        },
+        {
+          "type": "Over 2.5",
+          "prediction": "Oui",
+          "confidence": 62,
+          "over25Prob": 0.6201,
+          "homeLambda": 1.83,
+          "awayLambda": 1.37
+        }
+      ],
+      "bttsProb": 0.6265,
+      "over25Prob": 0.6201,
+      "homeLambda": 1.83,
+      "awayLambda": 1.37
+    },
+    {
+      "id": "lille-vs-galatasa-2026-10-21",
+      "match": "Lille vs Galatasaray",
+      "home": "Lille",
+      "away": "Galatasaray",
+      "league": "UEFA Champions League",
+      "date": "2026-10-21",
+      "type": "BTTS",
+      "prediction": "Oui",
+      "proba": 0.6265,
+      "bttsProbDisplay": "62.65%",
+      "over25ProbDisplay": "62.01%",
+      "confidence": 63,
+      "time": "16:45",
+      "matchSemantic": "lille-vs-galatasa-2026-10-21",
+      "source": "poisson-v92-real-data",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/166.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/432.png",
+      "tier": "SILVER",
+      "reliabilityScore": 68.16,
+      "dataQuality": "LOW",
+      "dataSource": "ESPN_TEAM_SCHEDULE",
+      "matchCountHome": 2,
+      "matchCountAway": 2,
+      "h2hAvailable": false,
+      "xgHome": 1.83,
+      "xgAway": 1.37,
+      "xgTotal": 3.2,
+      "formBTTS": 20,
+      "analysis": "Lille : forme D-D (0V 0N 2D, 2 buts marqués / 6 encaissés sur 5) · Galatasaray : forme D-D (0V 0N 2D, 2 buts marqués / 7 encaissés sur 5). Classement : Lille 34e (? pts), Galatasaray 35e (? pts). Modèle Poisson : xG cumulé 3.2, BTTS 62.6%, Over 2.5 62.0%. Cotes DraftKings — 1: 2.15 / N: 3.75 / 2: 3.15 · Over 2.5: 1.57. Fiabilité 68.16%.",
+      "analysisData": {
+        "bttsProb": 0.6265,
+        "over25Prob": 0.6201,
+        "homeLambda": 1.83,
+        "awayLambda": 1.37,
+        "xgTotal": 3.2
+      },
+      "estimatedCote": 1.6,
+      "estimatedCoteOver": 1.61,
+      "odds": {
+        "provider": "DraftKings",
+        "home": 2.15,
+        "draw": 3.75,
+        "away": 3.15,
+        "over25": 1.57,
+        "under25": 2.4
+      },
+      "oddsSource": "DraftKings",
+      "estimatedCoteBTTS": 1.6,
+      "formHome": {
+        "last5String": "D-D",
+        "wins": 0,
+        "draws": 0,
+        "losses": 2,
+        "goalsFor": 2,
+        "goalsAgainst": 6,
+        "bttsRate": 0.5,
+        "over25Rate": 1,
+        "cleanSheets": 0,
+        "failedToScore": 1,
+        "count": 2
+      },
+      "formAway": {
+        "last5String": "D-D",
+        "wins": 0,
+        "draws": 0,
+        "losses": 2,
+        "goalsFor": 2,
+        "goalsAgainst": 7,
+        "bttsRate": 1,
+        "over25Rate": 1,
+        "cleanSheets": 0,
+        "failedToScore": 0,
+        "count": 2
+      },
+      "standingsHome": {
+        "rank": 34,
+        "points": null,
+        "played": 2,
+        "gf": 2,
+        "ga": 6
+      },
+      "standingsAway": {
+        "rank": 35,
+        "points": null,
+        "played": 2,
+        "gf": 2,
+        "ga": 7
+      },
+      "predictions": [
+        {
+          "type": "BTTS",
+          "prediction": "Oui",
+          "confidence": 63,
+          "bttsProb": 0.6265,
+          "homeLambda": 1.83,
+          "awayLambda": 1.37
+        },
+        {
+          "type": "Over 2.5",
+          "prediction": "Oui",
+          "confidence": 62,
+          "over25Prob": 0.6201,
+          "homeLambda": 1.83,
+          "awayLambda": 1.37
+        }
+      ],
+      "bttsProb": 0.6265,
+      "over25Prob": 0.6201,
+      "homeLambda": 1.83,
+      "awayLambda": 1.37
     }
   ]
 }
