@@ -85,6 +85,99 @@ function formatDateParam(d) {
   return `${y}${m}${day}`
 }
 
+// ─── Cotes réelles (bookmaker) SANS clé API — source ESPN scoreboard ───
+// ESPN expose gratuitement les cotes DraftKings au format américain
+// (ex: "+115" → décimale 2.15, "-105" → décimale 1.95).
+function americanToDecimal(value) {
+  if (value === null || value === undefined || value === '') return null
+  const n = typeof value === 'number' ? value : parseFloat(String(value).replace('+', ''))
+  if (!Number.isFinite(n) || n === 0) return null
+  const dec = n > 0 ? n / 100 + 1 : 100 / Math.abs(n) + 1
+  return +(Math.round(dec * 100) / 100).toFixed(2)
+}
+
+function extractEventOdds(comp) {
+  try {
+    const o = comp.odds && Array.isArray(comp.odds) ? comp.odds[0] : null
+    if (!o) return null
+
+    const moneyline = o.moneyline || {}
+    const home = americanToDecimal(moneyline.home?.close?.odds ?? moneyline.home?.open?.odds)
+    const away = americanToDecimal(moneyline.away?.close?.odds ?? moneyline.away?.open?.odds)
+    const draw = americanToDecimal(o.drawOdds?.moneyLine)
+
+    // Total (Over/Under) : line "o2.5" → 2.5
+    const total = o.total || {}
+    const overLine = parseFloat(String(total.over?.close?.line ?? total.over?.open?.line ?? '').replace(/[^0-9.]/g, ''))
+    const over25 = americanToDecimal(total.over?.close?.odds ?? total.over?.open?.odds)
+    const under25 = americanToDecimal(total.under?.close?.odds ?? total.under?.open?.odds)
+    const isOver25 = Number.isFinite(overLine) ? Math.abs(overLine - 2.5) < 0.01 : true
+
+    const result = {
+      provider: o.provider?.displayName || o.provider?.name || 'ESPN',
+      home,
+      draw,
+      away,
+      over25: isOver25 ? over25 : null,
+      under25: isOver25 ? under25 : null,
+    }
+
+    // Considéré fiable si au moins 2 cotes 1X2 ou au moins une cote O/U
+    const x12Count = [result.home, result.draw, result.away].filter(v => v !== null).length
+    if (x12Count >= 2 || result.over25 !== null) return result
+    return null
+  } catch {
+    return null
+  }
+}
+
+// ─── Classement ESPN (gratuit, sans clé API) — cache par ligue ───
+const standingsCache = new Map()
+
+async function fetchStandings(slug) {
+  if (standingsCache.has(slug)) return standingsCache.get(slug)
+
+  const empty = new Map()
+  try {
+    const res = await fetch(
+      `https://site.api.espn.com/apis/v2/sports/soccer/${slug}/standings`,
+      { headers: { 'User-Agent': 'Mozilla/5.0 (compatible; BTTSPredict/1.0)' }, signal: AbortSignal.timeout(8000) }
+    )
+    if (!res.ok) {
+      standingsCache.set(slug, empty)
+      return empty
+    }
+    const data = await res.json()
+    const map = new Map()
+    const walk = (node) => {
+      if (!node) return
+      const entries = node.standings?.entries || node.entries || []
+      for (const entry of entries) {
+        const teamId = String(entry.team?.id || '')
+        if (!teamId) continue
+        const stats = {}
+        for (const s of entry.stats || []) {
+          if (s.name) stats[s.name] = s.value !== undefined ? s.value : s.displayValue
+        }
+        map.set(teamId, {
+          rank: parseInt(stats.rank, 10) || null,
+          points: parseInt(stats.points, 10) || null,
+          played: parseInt(stats.gamesPlayed, 10) || null,
+          gf: parseInt(stats.pointsFor, 10) || null,
+          ga: parseInt(stats.pointsAgainst, 10) || null,
+        })
+      }
+      for (const child of node.children || []) walk(child)
+    }
+    walk(data)
+    standingsCache.set(slug, map)
+    return map
+  } catch {
+    standingsCache.set(slug, empty)
+    return empty
+  }
+}
+
 // ─── SUPPRIMÉ: matchHash, getTeamForm (synthétique), getH2H (synthétique) ───
 // Ces fonctions fabriquaient des statistiques d'équipe à partir de hash pseudo-aléatoires.
 // Remplacées par fetchTeamStats() qui récupère les vrais résultats ESPN.
@@ -207,6 +300,29 @@ async function fetchTeamStats(slug, teamId, teamName) {
 
       const dataQuality = recent.length >= 8 ? 'HIGH' : recent.length >= 4 ? 'MEDIUM' : 'LOW'
 
+      // ─── Forme détaillée (5 derniers matchs) pour l'analyse AI ───
+      const last5 = recent.slice(0, 5)
+      const resultLetterFr = { W: 'V', D: 'N', L: 'D' }
+      const gf5 = last5.reduce((s, m) => s + m.goalsFor, 0)
+      const ga5 = last5.reduce((s, m) => s + m.goalsAgainst, 0)
+      const wins5 = last5.filter(m => m.result === 'W').length
+      const draws5 = last5.filter(m => m.result === 'D').length
+      const losses5 = last5.filter(m => m.result === 'L').length
+      const btts5 = last5.filter(m => m.goalsFor > 0 && m.goalsAgainst > 0).length
+      const over255 = last5.filter(m => (m.goalsFor + m.goalsAgainst) >= 3).length
+      const cleanSheets5 = last5.filter(m => m.goalsAgainst === 0).length
+      const failedToScore5 = last5.filter(m => m.goalsFor === 0).length
+      const form = {
+        last5String: last5.map(m => resultLetterFr[m.result] || '?').join('-'),
+        wins: wins5, draws: draws5, losses: losses5,
+        goalsFor: gf5, goalsAgainst: ga5,
+        bttsRate: last5.length ? +(btts5 / last5.length).toFixed(2) : null,
+        over25Rate: last5.length ? +(over255 / last5.length).toFixed(2) : null,
+        cleanSheets: cleanSheets5,
+        failedToScore: failedToScore5,
+        count: last5.length,
+      }
+
       const result = {
         available: true,
         dataSource: 'ESPN_TEAM_SCHEDULE',
@@ -219,6 +335,7 @@ async function fetchTeamStats(slug, teamId, teamName) {
         awayAvgScored,
         awayAvgConceded,
         recent,
+        form,
       }
 
       teamStatsCache.set(cacheKey, result)
@@ -253,6 +370,8 @@ async function fetchESPNMatches(slug, dateParam) {
     )
     if (!res.ok) return []
     const data = await res.json()
+    // Classement de la ligue (gratuit ESPN, mis en cache) — enrichit l'analyse AI
+    const standings = await fetchStandings(slug)
     const matches = []
     for (const event of data.events || []) {
       const comp = event.competitions?.[0]
@@ -278,6 +397,10 @@ async function fetchESPNMatches(slug, dateParam) {
       const homeTeam = homeComp.team?.displayName || homeComp.team?.shortDisplayName || 'Home'
       const awayTeam = awayComp.team?.displayName || awayComp.team?.shortDisplayName || 'Away'
       const time = comp.date ? new Date(comp.date).toLocaleTimeString('sv-SE', { hour: '2-digit', minute: '2-digit', timeZone: DISPLAY_TZ }) : ''
+      // ─── Cotes réelles du bookmaker (gratuit,ESPN/DraftKings) ───
+      const odds = extractEventOdds(comp)
+      const homeStanding = standings.get(String(homeComp.team?.id || '')) || null
+      const awayStanding = standings.get(String(awayComp.team?.id || '')) || null
       matches.push({
         match: `${homeTeam} vs ${awayTeam}`,
         home: homeTeam,
@@ -290,6 +413,9 @@ async function fetchESPNMatches(slug, dateParam) {
         slug,
         homeTeamId: homeComp.team?.id,
         awayTeamId: awayComp.team?.id,
+        odds,
+        standingsHome: homeStanding,
+        standingsAway: awayStanding,
       })
     }
     return matches
@@ -457,11 +583,27 @@ async function quickUpdate() {
       (h2hScore * 0.10)
     ).toFixed(2)
 
-    // Estimated odds (informational)
+    // Estimated odds (informational) — fallback quand aucune cote bookmaker réelle
     const estimatedCoteBTTS = +(1 / Math.max(0.20, bttsProbRaw)).toFixed(2)
     const estimatedCoteOver = +(1 / Math.max(0.20, over25ProbRaw)).toFixed(2)
 
-    const analysis = `${m.home} (${homeStats.matchCount} matchs réels, xG ${xgHome.toFixed(2)}) vs ${m.away} (${awayStats.matchCount} matchs réels, xG ${xgAway.toFixed(2)}). xG cumulé ${xgTotal}, BTTS ${(bttsProbRaw*100).toFixed(1)}%, Over 2.5 ${(over25ProbRaw*100).toFixed(1)}%. Fiabilité ${reliability}%. Qualité données: ${dataQuality}.`
+    // ─── Forme réelle des deux équipes (5 derniers matchs ESPN) ───
+    const formHome = homeStats.available && homeStats.form ? homeStats.form : null
+    const formAway = awayStats.available && awayStats.form ? awayStats.form : null
+
+    // ─── Analyse textuelle enrichie : forme + classement + cotes réelles ───
+    const formBits = []
+    if (formHome) formBits.push(`${m.home} : forme ${formHome.last5String} (${formHome.wins}V ${formHome.draws}N ${formHome.losses}D, ${formHome.goalsFor} buts marqués / ${formHome.goalsAgainst} encaissés sur 5)`)
+    else formBits.push(`${m.home} : forme indisponible`)
+    if (formAway) formBits.push(`${m.away} : forme ${formAway.last5String} (${formAway.wins}V ${formAway.draws}N ${formAway.losses}D, ${formAway.goalsFor} buts marqués / ${formAway.goalsAgainst} encaissés sur 5)`)
+    else formBits.push(`${m.away} : forme indisponible`)
+    const rankBits = []
+    if (m.standingsHome?.rank) rankBits.push(`${m.home} ${m.standingsHome.rank}e (${m.standingsHome.points ?? '?'} pts)`)
+    if (m.standingsAway?.rank) rankBits.push(`${m.away} ${m.standingsAway.rank}e (${m.standingsAway.points ?? '?'} pts)`)
+    const oddsBit = m.odds?.provider
+      ? ` Cotes ${m.odds.provider} — 1: ${m.odds.home ?? '—'} / N: ${m.odds.draw ?? '—'} / 2: ${m.odds.away ?? '—'}${m.odds.over25 ? ` · Over 2.5: ${m.odds.over25}` : ''}.`
+      : ''
+    const analysis = `${formBits.join(' · ')}.${rankBits.length ? ` Classement : ${rankBits.join(', ')}.` : ''} Modèle Poisson : xG cumulé ${xgTotal}, BTTS ${(bttsProbRaw*100).toFixed(1)}%, Over 2.5 ${(over25ProbRaw*100).toFixed(1)}%.${oddsBit} Fiabilité ${reliability}%.`
     const matchId = genMatchId(m.home, m.away, m.date)
 
     // Build TWO predictions: BTTS + Over 2.5 (so component has both)
@@ -527,6 +669,18 @@ async function quickUpdate() {
       },
       estimatedCote: estimatedCoteBTTS,
       estimatedCoteOver: estimatedCoteOver,
+      // ─── Cotes réelles du marché (sans clé API — ESPN/DraftKings) ───
+      // odds = cotes bookmaker réelles quand disponibles, sinon null
+      // (le frontend affiche alors la cote estimée Poisson en secours)
+      odds: m.odds || null,
+      oddsSource: m.odds?.provider || 'ESTIMATION_POISSON',
+      estimatedCoteBTTS,
+      estimatedCoteOver,
+      // ─── Forme réelle (5 derniers matchs) + classement — pour l'analyse AI ───
+      formHome,
+      formAway,
+      standingsHome: m.standingsHome || null,
+      standingsAway: m.standingsAway || null,
       // ─── BOTH predictions array (so FreePredictions has both BTTS + Over 2.5) ───
       predictions: [bttsPrediction, over25Prediction],
       // Mirror key fields at top-level so the component reads them directly

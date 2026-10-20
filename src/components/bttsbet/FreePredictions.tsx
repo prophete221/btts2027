@@ -93,6 +93,10 @@ interface MatchData {
   aiOver25Prob?: string
   aiKeyFact?: string
   aiAnalysis?: string
+  aiFormSummary?: string
+  aiAbsences?: string
+  aiOddsInsight?: string
+  odds?: { provider?: string; home?: number | null; draw?: number | null; away?: number | null; over25?: number | null; under25?: number | null } | null
   quality?: DataQuality
 }
 
@@ -416,8 +420,56 @@ function PredictionCard({ match, index, initialLocale }: { match: MatchData; ind
                     {match.aiKeyFact && (
                       <p className="text-sm text-[#F2F6FA] font-semibold mb-2">📊 {match.aiKeyFact}</p>
                     )}
+
+                    {/* Forme récente des deux équipes */}
+                    {match.aiFormSummary && (
+                      <div className="rounded-lg p-2.5 mb-2 border border-white/5" style={{ backgroundColor: 'rgba(255,255,255,0.03)' }}>
+                        <div className="text-[10px] uppercase tracking-widest text-cendre mb-1">{lang === 'en' ? 'Recent form' : lang === 'ar' ? 'الفورمة الأخيرة' : 'Forme récente (5 derniers matchs)'}</div>
+                        <p className="text-[12px] text-[#C8D2DC] leading-relaxed">📈 {match.aiFormSummary}</p>
+                      </div>
+                    )}
+
+                    {/* Cotes réelles du marché (sans clé API — ESPN/bookmaker) */}
+                    {match.odds && (match.odds.home || match.odds.away) && (
+                      <div className="rounded-lg p-2.5 mb-2 border border-[#2F7DFF]/15" style={{ backgroundColor: 'rgba(47,125,255,0.06)' }}>
+                        <div className="text-[10px] uppercase tracking-widest text-cendre mb-1.5">
+                          {lang === 'en' ? 'Market odds' : lang === 'ar' ? 'أودز السوق' : 'Cotes marché'}{match.odds.provider ? ` · ${match.odds.provider}` : ''}
+                        </div>
+                        <div className="flex items-center gap-2 text-center">
+                          <div className="flex-1 rounded p-1" style={{ backgroundColor: 'rgba(255,255,255,0.04)' }}>
+                            <div className="text-[9px] uppercase text-cendre">1</div>
+                            <div className="text-[13px] font-bold text-[#F2F6FA] font-mono">{match.odds.home ?? '—'}</div>
+                          </div>
+                          <div className="flex-1 rounded p-1" style={{ backgroundColor: 'rgba(255,255,255,0.04)' }}>
+                            <div className="text-[9px] uppercase text-cendre">N</div>
+                            <div className="text-[13px] font-bold text-[#F2F6FA] font-mono">{match.odds.draw ?? '—'}</div>
+                          </div>
+                          <div className="flex-1 rounded p-1" style={{ backgroundColor: 'rgba(255,255,255,0.04)' }}>
+                            <div className="text-[9px] uppercase text-cendre">2</div>
+                            <div className="text-[13px] font-bold text-[#F2F6FA] font-mono">{match.odds.away ?? '—'}</div>
+                          </div>
+                          {match.odds.over25 && (
+                            <div className="flex-1 rounded p-1" style={{ backgroundColor: 'rgba(199,244,100,0.10)' }}>
+                              <div className="text-[9px] uppercase text-cendre">O2.5</div>
+                              <div className="text-[13px] font-bold text-[#C7F464] font-mono">{match.odds.over25}</div>
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    )}
+
                     {match.aiAnalysis && (
-                      <p className="text-[13px] text-[#9DABBB] leading-relaxed">{match.aiAnalysis}</p>
+                      <p className="text-[13px] text-[#9DABBB] leading-relaxed mb-2">{match.aiAnalysis}</p>
+                    )}
+
+                    {/* Lecture des cotes par l'IA */}
+                    {match.aiOddsInsight && (
+                      <p className="text-[12px] text-[#8FA3B8] leading-relaxed mb-1.5">💰 {match.aiOddsInsight}</p>
+                    )}
+
+                    {/* Disponibilités / absents */}
+                    {match.aiAbsences && (
+                      <p className="text-[12px] text-[#8FA3B8] leading-relaxed">🩹 {match.aiAbsences}</p>
                     )}
                   </div>
                 )}
@@ -560,6 +612,10 @@ export default function FreePredictions({ initialLocale }: { initialLocale?: Loc
               analysis: p.analysis,
               aiKeyFact: p.ai_key_fact,
               aiAnalysis: p.ai_analysis,
+              aiFormSummary: p.ai_form_summary,
+              aiAbsences: p.ai_absences,
+              aiOddsInsight: p.ai_odds_insight,
+              odds: p.odds || null,
               aiExactScore: p.ai_exact_score,
               exactScoreProb: p.exact_score_prob,
               aiBttsProb: p.ai_btts_prob,
