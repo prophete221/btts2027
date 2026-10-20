@@ -57,19 +57,17 @@ type Copy = {
   won: string
   lost: string
   source: string
-  published: string
-  scopeOf: string
 }
 
 const COPIES: Record<'fr' | 'en' | 'ar', Copy> = {
   fr: {
-    loading: 'Chargement…', verified: 'Vérifiés', allRate: 'Taux global', goldPicks: 'Sélections Gold', verifiedCount: 'vérifiés', premiumSelection: 'Sélection premium', last30: '30 derniers jours', lastScan: 'Dernière vérification', detailed: 'Tableau détaillé (100 derniers)', date: 'Date', match: 'Match', market: 'Marché', proba: 'Proba modèle', score: 'Score', result: 'Résultat', empty: 'Aucun résultat vérifié.', marketBreakdown: 'Performance par marché', sample: 'vérifiés', noMarketData: 'Pas encore de données suffisantes par marché.', btts: 'BTTS', over: 'Over 2.5', won: 'WIN', lost: 'LOST', source: 'Source : ESPN', published: 'publiés', scopeOf: 'sur',
+    loading: 'Chargement…', verified: 'Vérifiés', allRate: 'Taux global', goldPicks: 'Sélections Gold', verifiedCount: 'vérifiés', premiumSelection: 'Sélection premium', last30: '30 derniers jours', lastScan: 'Dernière vérification', detailed: 'Tableau détaillé (100 derniers)', date: 'Date', match: 'Match', market: 'Marché', proba: 'Proba modèle', score: 'Score', result: 'Résultat', empty: 'Aucun résultat vérifié.', marketBreakdown: 'Performance par marché', sample: 'vérifiés', noMarketData: 'Pas encore de données suffisantes par marché.', btts: 'BTTS', over: 'Over 2.5', won: 'WIN', lost: 'LOST', source: 'Source : ESPN',
   },
   en: {
-    loading: 'Loading…', verified: 'Verified', allRate: 'Overall rate', goldPicks: 'Gold picks', verifiedCount: 'verified', premiumSelection: 'Premium selection', last30: 'Last 30 days', lastScan: 'Last verification', detailed: 'Detailed table (last 100)', date: 'Date', match: 'Match', market: 'Market', proba: 'Model proba', score: 'Score', result: 'Result', empty: 'No verified result.', marketBreakdown: 'Performance by market', sample: 'verified', noMarketData: 'Not enough market-level data yet.', btts: 'BTTS', over: 'Over 2.5', won: 'WIN', lost: 'LOST', source: 'Source: ESPN', published: 'published', scopeOf: 'out of',
+    loading: 'Loading…', verified: 'Verified', allRate: 'Overall rate', goldPicks: 'Gold picks', verifiedCount: 'verified', premiumSelection: 'Premium selection', last30: 'Last 30 days', lastScan: 'Last verification', detailed: 'Detailed table (last 100)', date: 'Date', match: 'Match', market: 'Market', proba: 'Model proba', score: 'Score', result: 'Result', empty: 'No verified result.', marketBreakdown: 'Performance by market', sample: 'verified', noMarketData: 'Not enough market-level data yet.', btts: 'BTTS', over: 'Over 2.5', won: 'WIN', lost: 'LOST', source: 'Source: ESPN',
   },
   ar: {
-    loading: 'جار التحميل…', verified: 'موثق', allRate: 'المعدل العام', goldPicks: 'اختيارات Gold', verifiedCount: 'موثق', premiumSelection: 'اختيار مميز', last30: 'آخر 30 يوماً', lastScan: 'آخر تحقق', detailed: 'الجدول التفصيلي (آخر 100)', date: 'التاريخ', match: 'المباراة', market: 'السوق', proba: 'احتمال النموذج', score: 'النتيجة', result: 'الحالة', empty: 'لا توجد نتائج موثقة.', marketBreakdown: 'الأداء حسب السوق', sample: 'موثق', noMarketData: 'لا توجد بيانات كافية حسب السوق بعد.', btts: 'BTTS', over: 'أكثر من 2.5', won: 'فوز', lost: 'خسارة', source: 'المصدر: ESPN', published: 'منشور', scopeOf: 'من أصل',
+    loading: 'جار التحميل…', verified: 'موثق', allRate: 'المعدل العام', goldPicks: 'اختيارات Gold', verifiedCount: 'موثق', premiumSelection: 'اختيار مميز', last30: 'آخر 30 يوماً', lastScan: 'آخر تحقق', detailed: 'الجدول التفصيلي (آخر 100)', date: 'التاريخ', match: 'المباراة', market: 'السوق', proba: 'احتمال النموذج', score: 'النتيجة', result: 'الحالة', empty: 'لا توجد نتائج موثقة.', marketBreakdown: 'الأداء حسب السوق', sample: 'موثق', noMarketData: 'لا توجد بيانات كافية حسب السوق بعد.', btts: 'BTTS', over: 'أكثر من 2.5', won: 'فوز', lost: 'خسارة', source: 'المصدر: ESPN',
   },
 }
 
@@ -222,22 +220,18 @@ export default function ResultatsClient({ initialData }: { initialData?: any }) 
   const scanLabel = generatedAt && !Number.isNaN(generatedAt.getTime())
     ? `${copy.lastScan}: ${generatedAt.toLocaleString(lang === 'ar' ? 'ar' : lang === 'en' ? 'en-GB' : 'fr-FR', { dateStyle: 'medium', timeStyle: 'short' })} · ${copy.source}`
     : `${copy.lastScan} · ${copy.source}`
-  const published = stats.archivedTotal || 0
-  // V8.2 : « en attente » (futurs/récents) et « non vérifiables » (passés > 48 h)
-  // sont deux compteurs distincts — ne jamais fusionner ni présenter les non
-  // vérifiables comme futurs ou en attente de vérification.
-  const pendingN = stats.pending || 0
-  const unverifiableN = stats.unverifiable || 0
+  // V8.3 : affichage public restreint aux résultats vérifiés (WON / LOST).
+  // Les compteurs internes (publiés / en attente / non vérifiables) restent
+  // dans win-history.json pour l'audit mais ne sont plus affichés sur le site.
   const trackingFrom = data.trackingPeriod?.startDate || null
 
   return (
     <div>
       {/* Périmètre explicite */}
       <p className={`rv-scope${kpiVisible ? ' is-visible' : ''}`}>
-        {total} {copy.verified} {copy.scopeOf} {published} {copy.published}
+        {total} {copy.verified}
         {trackingFrom && (lang === 'fr' ? ` depuis le ${trackingFrom} (suivi public)` : lang === 'en' ? ` since ${trackingFrom} (public tracking)` : ` منذ ${trackingFrom}`)}
-        {pendingN > 0 && ` · ${pendingN} ${lang === 'fr' ? 'en attente de vérification' : lang === 'en' ? 'pending verification' : 'قيد التحقق'}`}
-        {unverifiableN > 0 && ` · ${unverifiableN} ${lang === 'fr' ? 'non vérifiables (passés de plus de 48 h sans score vérifiable)' : lang === 'en' ? 'unverifiable (past more than 48 h without a verifiable score)' : 'غير قابلة للتوثق (تجاوزت 48 ساعة بدون نتيجة قابلة للتحقق)'}`}
+        {` · ${won} WIN / ${lost} LOST`}
       </p>
 
       <div className="rv-grid" ref={kpiRef as React.RefObject<HTMLDivElement>}>

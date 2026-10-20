@@ -10,7 +10,8 @@ import { translationsFor, type Locale, localizedPath } from '@/lib/i18n'
  * 100% win-history.json (aucune stat inventée) :
  *  - history[] : enregistrements horodatés {date, market, status WON/LOST, finalScore}
  *    → périodes 7j / 30j / suivi public / total calculées côté client
- *  - stats.pending : sélections en attente de vérification (affiché tel quel)
+ *  - stats.pending : compteur interne (resté dans win-history.json pour audit,
+ *    volontairement NON affiché publiquement — seuls WON/LOST sont montrés)
  *  - stats.byType : répartition BTTS / Over 2,5 (le score exact n’a pas encore
  *    d’archive vérifiée → affiché « suivi en cours de constitution », jamais chiffré)
  *  - stats.trend14 : courbe hebdomadaire minimale (barres SVG, données réelles)
@@ -160,11 +161,6 @@ export default function PerformanceDashboard({ initialLocale }: { initialLocale?
                       />
                     ))}
                   </div>
-                  <p className="hp-perf__pending">
-                    {global?.pending !== undefined && (
-                      <>{num(global.pending)} {t.home2.perfPending}</>
-                    )}
-                  </p>
                 </div>
               )}
 

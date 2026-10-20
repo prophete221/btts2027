@@ -51,13 +51,13 @@ export function RateBar({ label, rate, won, lost, lang, color = '#2F7DFF', note 
   )
 }
 
-/** Barre de composition unique (WIN / LOST / PENDING sur le total publié). */
-export function CompositionBar({ won, lost, pending, unverifiable = 0, labels }: {
+/** Barre de composition unique (WIN / LOST — segments optionnels masqués si vides). */
+export function CompositionBar({ won, lost, pending = 0, unverifiable = 0, labels }: {
   won: number
   lost: number
-  pending: number
+  pending?: number
   unverifiable?: number
-  labels: { won: string; lost: string; pending: string; unverifiable?: string }
+  labels: { won: string; lost: string; pending?: string; unverifiable?: string }
 }) {
   const total = won + lost + pending + unverifiable
   if (total === 0) return null
@@ -65,20 +65,22 @@ export function CompositionBar({ won, lost, pending, unverifiable = 0, labels }:
   return (
     <div>
       <div className="h-4 rounded-full overflow-hidden flex border border-[#223041]" role="img"
-        aria-label={`${won} WIN, ${lost} LOST, ${pending} en attente, ${unverifiable} non vérifiables sur ${total} publiés`}>
+        aria-label={`${won} WIN, ${lost} LOST${pending > 0 ? `, ${pending} en attente` : ''}${unverifiable > 0 ? `, ${unverifiable} non vérifiables` : ''} sur ${total} vérifiés`}>
         <div style={{ width: seg(won), backgroundColor: '#34D399' }} />
         <div style={{ width: seg(lost), backgroundColor: '#F87171' }} />
-        <div style={{ width: seg(pending), backgroundColor: '#FBBF24' }} />
+        {pending > 0 && <div style={{ width: seg(pending), backgroundColor: '#FBBF24' }} />}
         {unverifiable > 0 && <div style={{ width: seg(unverifiable), backgroundColor: '#55637A' }} />}
       </div>
       <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-xs text-[#9DABBB]">
         <span><span className="inline-block w-2 h-2 rounded-full mr-1 align-middle" style={{ backgroundColor: '#34D399' }} />{labels.won} : {won}</span>
         <span><span className="inline-block w-2 h-2 rounded-full mr-1 align-middle" style={{ backgroundColor: '#F87171' }} />{labels.lost} : {lost}</span>
-        <span><span className="inline-block w-2 h-2 rounded-full mr-1 align-middle" style={{ backgroundColor: '#FBBF24' }} />{labels.pending} : {pending}</span>
+        {pending > 0 && labels.pending && (
+          <span><span className="inline-block w-2 h-2 rounded-full mr-1 align-middle" style={{ backgroundColor: '#FBBF24' }} />{labels.pending} : {pending}</span>
+        )}
         {unverifiable > 0 && labels.unverifiable && (
           <span><span className="inline-block w-2 h-2 rounded-full mr-1 align-middle" style={{ backgroundColor: '#55637A' }} />{labels.unverifiable} : {unverifiable}</span>
         )}
-        <span className="text-[#6B7A8C]">/ {total} publiés</span>
+        <span className="text-[#6B7A8C]">/ {total} vérifiés</span>
       </div>
     </div>
   )

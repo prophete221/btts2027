@@ -60,17 +60,15 @@ function makeCopy(lang: 'fr' | 'en' | 'ar') {
     return {
       title: 'Verified statistics', subtitle: 'All figures below come from the public verified tracking — every rate is shown with its denominator. No projection, no fabricated data.',
       scopeTitle: 'Scope',
-      scope: (pub: number, ver: number, pend: number, unv: number, from: string) =>
-        `${pub} predictions published since ${from} (public tracking). ${ver} verified against official results (ESPN). ${pend} pending verification (future or recent). ${unv} unverifiable — matches past more than 48 h without a verifiable score: neither won, lost nor pending. Pre-${from} archives are private and excluded.`,
-      kpiOverall: 'Overall success rate', kpiGold: 'Gold picks rate', kpiPending: 'Pending verification', kpiVerified: 'Verified predictions',
-      ofPublished: (p: number) => `of ${p} published`,
-      composition: 'Outcome composition', compositionDesc: (p: number) => `All ${p} published predictions since the tracking start — losses, pending and unverifiable included, nothing hidden.`,
+      scope: (ver: number, won: number, lost: number, from: string) =>
+        `${ver} predictions verified against official results (ESPN) since ${from} (public tracking): ${won} won, ${lost} lost. Pre-${from} archives are private and excluded.`,
+      kpiOverall: 'Overall success rate', kpiGold: 'Gold picks rate', kpiVerified: 'Verified predictions',
+      composition: 'Outcome composition', compositionDesc: (p: number) => `The ${p} verified predictions since the tracking start — losses included, nothing hidden.`,
       evolution: 'Cumulative verified results', daily: 'Daily verifications', dailyDesc: 'Last 30 days with at least one verification (days without verification are not invented).',
       markets: 'By market', tiers: 'By selection tier', leagues: 'By competition',
       leaguesNote: (l: number, t: number) => `Competitions come from verified entries only (${t} entries across ${l} competitions). Counts below are real — uneven coverage reflects actual data, not a ranking of competitions.`,
       tableLeague: 'Competition', tableWin: 'WIN', tableLost: 'LOST', tableRate: 'Rate', tableSample: 'Sample',
-      verifiedOn: 'Verified predictions only — pending predictions and unverifiable matches are not included in any rate.',
-      updated: 'Last data update', method: 'Methodology', results: 'Verified results →', today: 'Today’s predictions →',
+      verifiedOn: 'Verified predictions only — every rate is based on won or lost results.', updated: 'Last data update', method: 'Methodology', results: 'Verified results →', today: 'Today’s predictions →',
       loading: 'Loading statistics…', error: 'Unable to load statistics data.', retry: 'Retry',
       disclaimer: '18+ · Sports betting carries a risk of loss. No future result is guaranteed. BTTSPredict does not take bets or hold funds.',
     }
@@ -79,17 +77,15 @@ function makeCopy(lang: 'fr' | 'en' | 'ar') {
     return {
       title: 'إحصائيات موثقة', subtitle: 'جميع الأرقام أدناه من التتبع العام الموثق — كل معدل يظهر مع مقامه. لا توجد توقعات مستقبلية ولا بيانات مؤلفة.',
       scopeTitle: 'النطاق',
-      scope: (pub: number, ver: number, pend: number, unv: number, from: string) =>
-        `${pub} توقعاً منشوراً منذ ${from} (تتبع عام). ${ver} موثقاً مقابل النتائج الرسمية (ESPN). ${pend} قيد التحقق (مستقبلية أو حديثة). ${unv} غير قابلة للتوثق — مباريات تجاوزت 48 ساعة بدون نتيجة قابلة للتحقق: ليست فوزاً ولا خسارة ولا معلقة. أرشيف ما قبل ${from} خاص ومستبعد.`,
-      kpiOverall: 'معدل النجاح الإجمالي', kpiGold: 'معدل اختيارات Gold', kpiPending: 'قيد التحقق', kpiVerified: 'توقعات موثقة',
-      ofPublished: (p: number) => `من أصل ${p} منشور`,
-      composition: 'توزيع النتائج', compositionDesc: (p: number) => `جميع التوقعات المنشورة (${p}) منذ بداية التتبع — الخسائر والمعلقة وغير القابلة للتوثق مشمولة، لا شيء مخفي.`,
+      scope: (ver: number, won: number, lost: number, from: string) =>
+        `${ver} توقعاً موثقاً مقابل النتائج الرسمية (ESPN) منذ ${from} (تتبع عام): ${won} فوزاً و${lost} خسارة. أرشيف ما قبل ${from} خاص ومستبعد.`,
+      kpiOverall: 'معدل النجاح الإجمالي', kpiGold: 'معدل اختيارات Gold', kpiVerified: 'توقعات موثقة',
+      composition: 'توزيع النتائج', compositionDesc: (p: number) => `التوقعات الموثقة (${p}) منذ بداية التتبع — الخسائر مشمولة، لا شيء مخفي.`,
       evolution: 'النتائج الموثقة التراكمية', daily: 'التحققات اليومية', dailyDesc: 'آخر 30 يوماً بتحقق واحد على الأقل (الأيام بدون تحقق غير مؤلفة).',
       markets: 'حسب السوق', tiers: 'حسب مستوى الاختيار', leagues: 'حسب المسابقة',
       leaguesNote: (l: number, t: number) => `المسابقات من الإدخالات الموثقة فقط (${t} إدخالاً عبر ${l} مسابقة). الأعداد حقيقية — التغطية غير المتكافئة تعكس البيانات الفعلية وليست ترتيباً للمسابقات.`,
       tableLeague: 'المسابقة', tableWin: 'فوز', tableLost: 'خسارة', tableRate: 'المعدل', tableSample: 'العينة',
-      verifiedOn: 'التوقعات الموثقة فقط — التوقعات المعلقة والمباريات غير القابلة للتوثق لا تدخل في أي معدل.',
-      updated: 'آخر تحديث للبيانات', method: 'المنهجية', results: 'النتائج الموثقة ←', today: 'توقعات اليوم ←',
+      verifiedOn: 'التوقعات الموثقة فقط — كل معدل يعتمد على نتائج فوز أو خسارة.', updated: 'آخر تحديث للبيانات', method: 'المنهجية', results: 'النتائج الموثقة ←', today: 'توقعات اليوم ←',
       loading: 'جار تحميل الإحصائيات…', error: 'تعذر تحميل بيانات الإحصائيات.', retry: 'إعادة المحاولة',
       disclaimer: '18+ · المراهنات الرياضية تنطوي على خطر الخسارة. لا توجد ضمانات لأي نتيجة مستقبلية. BTTSPredict لا يقبل الرهانات ولا يحتفظ بالأموال.',
     }
@@ -97,17 +93,15 @@ function makeCopy(lang: 'fr' | 'en' | 'ar') {
   return {
     title: 'Statistiques vérifiées', subtitle: 'Tous les chiffres ci-dessous proviennent du suivi public vérifié — chaque taux est affiché avec son dénominateur. Aucune projection, aucune donnée inventée.',
     scopeTitle: 'Périmètre',
-    scope: (pub: number, ver: number, pend: number, unv: number, from: string) =>
-      `${pub} pronostics publiés depuis le ${from} (suivi public). ${ver} vérifiés contre les résultats officiels (ESPN). ${pend} en attente de vérification (matchs futurs ou récents). ${unv} non vérifiables — matchs passés de plus de 48 h sans score vérifiable : ni gagnés, ni perdus, ni en attente. Les archives antérieures au ${from} sont privées et exclues.`,
-    kpiOverall: 'Taux de réussite global', kpiGold: 'Taux Sélections Gold', kpiPending: 'En attente de vérification', kpiVerified: 'Pronostics vérifiés',
-    ofPublished: (p: number) => `sur ${p} publiés`,
-    composition: 'Composition des résultats', compositionDesc: (p: number) => `Les ${p} pronostics publiés depuis le lancement du suivi — pertes, en attente et non vérifiables inclus, rien n'est masqué.`,
+    scope: (ver: number, won: number, lost: number, from: string) =>
+      `${ver} pronostics vérifiés contre les résultats officiels (ESPN) depuis le ${from} (suivi public) : ${won} gagnés, ${lost} perdus. Les archives antérieures au ${from} sont privées et exclues.`,
+    kpiOverall: 'Taux de réussite global', kpiGold: 'Taux Sélections Gold', kpiVerified: 'Pronostics vérifiés',
+    composition: 'Composition des résultats', compositionDesc: (p: number) => `Les ${p} pronostics vérifiés depuis le lancement du suivi — pertes incluses, rien n'est masqué.`,
     evolution: 'Évolution des résultats vérifiés', daily: 'Vérifications par jour', dailyDesc: 'Les 30 derniers jours comptant au moins une vérification (les jours sans vérification ne sont pas inventés).',
     markets: 'Par marché', tiers: 'Par niveau de sélection', leagues: 'Par compétition',
     leaguesNote: (l: number, t: number) => `Compétitions issues des seules entrées vérifiées (${t} entrées réparties sur ${l} compétitions). Les effectifs ci-dessous sont réels — la couverture inégale reflète les données, ce n'est pas un classement des compétitions.`,
     tableLeague: 'Compétition', tableWin: 'WIN', tableLost: 'LOST', tableRate: 'Taux', tableSample: 'Échantillon',
-    verifiedOn: 'Pronostics vérifiés uniquement — les pronostics en attente et les matchs non vérifiables n\'entrent dans aucun taux.',
-    updated: 'Dernière mise à jour des données', method: 'Méthodologie', results: 'Résultats vérifiés →', today: 'Pronostics du jour →',
+    verifiedOn: 'Pronostics vérifiés uniquement — chaque taux repose sur des résultats gagnés ou perdus.', updated: 'Dernière mise à jour des données', method: 'Méthodologie', results: 'Résultats vérifiés →', today: 'Pronostics du jour →',
     loading: 'Chargement des statistiques…', error: 'Impossible de charger les données de statistiques.', retry: 'Réessayer',
     disclaimer: '18+ · Les paris sportifs comportent un risque de perte. Aucun résultat futur n\'est garanti. BTTSPredict ne prend pas de paris et ne collecte pas de fonds.',
   }
@@ -179,7 +173,6 @@ export default function StatistiquesClient() {
   }, [])
   const tierGold = { won: history.filter(h => (h.tier || '').toUpperCase() === 'GOLD' && h.status === 'WON').length, lost: history.filter(h => (h.tier || '').toUpperCase() === 'GOLD' && h.status === 'LOST').length }
   const tierStd = { won: history.filter(h => (h.tier || '').toUpperCase() !== 'GOLD' && h.status === 'WON').length, lost: history.filter(h => (h.tier || '').toUpperCase() !== 'GOLD' && h.status === 'LOST').length }
-  const pendingShare = stats.archivedTotal > 0 ? Number(((stats.pending / stats.archivedTotal) * 100).toFixed(1)) : null
   const updatedLabel = new Date(generatedAt).toLocaleString(lang === 'ar' ? 'ar' : lang === 'en' ? 'en-GB' : 'fr-FR', { dateStyle: 'medium', timeStyle: 'short' })
 
   return (
@@ -198,7 +191,7 @@ export default function StatistiquesClient() {
           <span className="inline-block w-1.5 h-4 rounded-full bg-[#2F7DFF]" aria-hidden="true" />{copy.scopeTitle}
         </h2>
         <p className="text-sm text-[#9DABBB] leading-relaxed">
-          {copy.scope(stats.archivedTotal, stats.total, stats.pending, stats.unverifiable ?? 0, from)}
+          {copy.scope(stats.total, stats.won, stats.lost, from)}
         </p>
         {lowVolume && (
           <p className="mt-2 text-xs text-[#FBBF24] leading-relaxed">
@@ -208,7 +201,7 @@ export default function StatistiquesClient() {
       </section>
 
       {/* KPI — chaque taux avec son dénominateur */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-8">
         <div className="rounded-2xl border border-[#223041] bg-[#141C25] p-5">
           <div className="text-xs uppercase tracking-wider text-[#9DABBB] font-bold">{copy.kpiOverall}</div>
           <div className="mt-1 text-3xl font-bold text-[#F2F6FA] font-mono">{fmtPct(stats.rate.toFixed(1), lang)} %</div>
@@ -220,23 +213,18 @@ export default function StatistiquesClient() {
           <div className="mt-1 text-xs text-[#9DABBB]">{stats.gold.won} WIN / {stats.gold.lost} LOST — {stats.gold.total} vérifié{stats.gold.total > 1 ? 's' : ''}</div>
         </div>
         <div className="rounded-2xl border border-[#223041] bg-[#141C25] p-5">
-          <div className="text-xs uppercase tracking-wider text-[#9DABBB] font-bold">{copy.kpiPending}</div>
-          <div className="mt-1 text-3xl font-bold font-mono" style={{ color: '#FBBF24' }}>{stats.pending}</div>
-          <div className="mt-1 text-xs text-[#9DABBB]">{pendingShare !== null && `${fmtPct(pendingShare.toFixed(1), lang)} % `}{copy.ofPublished(stats.archivedTotal)}</div>
-        </div>
-        <div className="rounded-2xl border border-[#223041] bg-[#141C25] p-5">
           <div className="text-xs uppercase tracking-wider text-[#9DABBB] font-bold">{copy.kpiVerified}</div>
           <div className="mt-1 text-3xl font-bold text-[#F2F6FA] font-mono">{stats.total}</div>
           <div className="mt-1 text-xs text-[#9DABBB]">{copy.verifiedOn}</div>
         </div>
       </div>
 
-      {/* Composition WIN / LOST / PENDING */}
+      {/* Composition WIN / LOST (résultats vérifiés uniquement) */}
       <section className="rounded-2xl border border-[#223041] bg-[#141C25] p-4 sm:p-6 mb-8" aria-labelledby="st-composition">
         <h2 id="st-composition" className="text-base font-bold text-[#F2F6FA] mb-1" style={{ fontFamily: 'Poppins, sans-serif' }}>{copy.composition}</h2>
-        <p className="text-xs text-[#9DABBB] mb-4">{copy.compositionDesc(stats.archivedTotal)}</p>
-        <CompositionBar won={stats.won} lost={stats.lost} pending={stats.pending} unverifiable={stats.unverifiable ?? 0}
-          labels={{ won: 'WIN', lost: 'LOST', pending: lang === 'fr' ? 'En attente' : lang === 'en' ? 'Pending' : 'قيد الانتظار', unverifiable: lang === 'fr' ? 'Non vérifiables' : lang === 'en' ? 'Unverifiable' : 'غير قابلة للتوثق' }} />
+        <p className="text-xs text-[#9DABBB] mb-4">{copy.compositionDesc(stats.total)}</p>
+        <CompositionBar won={stats.won} lost={stats.lost}
+          labels={{ won: 'WIN', lost: 'LOST' }} />
       </section>
 
       {/* Évolution cumulée */}
