@@ -786,10 +786,10 @@ export default function BttsTodayDashboard() {
       ? 'Projection hidden: insufficient data sample.'
       : 'تم إخفاء التوقع: عينة البيانات غير كافية.'
   const labels: DashboardLabels = lang === 'fr'
-    ? { exactScore: 'Score exact proposé', projection: 'Projection issue des données disponibles, sans garantie de résultat.', source: 'Source', quality: 'Qualité', matches: 'matchs', dataConfidence: 'Confiance des données', aiAnalysis: 'Analyse IA Gemini', score: 'Score', xgHome: 'λ domicile', xgAway: 'λ extérieur', xgTotal: 'λ total', xgHint: 'Buteurs attendus modélisés (λ) : moyennes de buts récents (ESPN) converties en modèle Poisson. Pas des xG de fournisseur.', openMatch: 'Ouvrir la page du match' }
+    ? { exactScore: 'Score exact proposé', projection: 'Projection issue des données disponibles, sans garantie de résultat.', source: 'Source', quality: 'Qualité', matches: 'matchs', dataConfidence: 'Confiance des données', aiAnalysis: 'Notre analyse du match', score: 'Score', xgHome: 'λ domicile', xgAway: 'λ extérieur', xgTotal: 'λ total', xgHint: 'Buteurs attendus modélisés (λ) : moyennes de buts récents (ESPN) converties par notre modèle statistique. Pas des xG de fournisseur.', openMatch: 'Ouvrir la page du match' }
     : lang === 'en'
-      ? { exactScore: 'Proposed exact score', projection: 'Projection based on available data, with no result guaranteed.', source: 'Source', quality: 'Quality', matches: 'matches', dataConfidence: 'Data confidence', aiAnalysis: 'Gemini AI analysis', score: 'Score', xgHome: 'Home λ', xgAway: 'Away λ', xgTotal: 'Total λ', xgHint: 'Modeled expected goals (λ): recent real goals averages (ESPN) converted via the Poisson model. Not provider xG.', openMatch: 'Open match page' }
-      : { exactScore: 'النتيجة الدقيقة المقترحة', projection: 'توقع مبني على البيانات المتاحة دون ضمان للنتيجة.', source: 'المصدر', quality: 'الجودة', matches: 'مباريات', dataConfidence: 'موثوقية البيانات', aiAnalysis: 'تحليل Gemini بالذكاء الاصطناعي', score: 'النتيجة', xgHome: 'λ صاحب الأرض', xgAway: 'λ الضيف', xgTotal: 'إجمالي λ', xgHint: 'أهداف متوقعة نمذجة (λ) من متوسطات أهداف حقيقية حديثة (ESPN) عبر نموذج بواسون.', openMatch: 'فتح صفحة المباراة' }
+      ? { exactScore: 'Proposed exact score', projection: 'Projection based on available data, with no result guaranteed.', source: 'Source', quality: 'Quality', matches: 'matches', dataConfidence: 'Data confidence', aiAnalysis: 'Our match analysis', score: 'Score', xgHome: 'Home λ', xgAway: 'Away λ', xgTotal: 'Total λ', xgHint: 'Modeled expected goals (λ): recent real goals averages (ESPN) converted through our statistical model. Not provider xG.', openMatch: 'Open match page' }
+      : { exactScore: 'النتيجة الدقيقة المقترحة', projection: 'توقع مبني على البيانات المتاحة دون ضمان للنتيجة.', source: 'المصدر', quality: 'الجودة', matches: 'مباريات', dataConfidence: 'موثوقية البيانات', aiAnalysis: 'تحليلنا للمباراة', score: 'النتيجة', xgHome: 'λ صاحب الأرض', xgAway: 'λ الضيف', xgTotal: 'إجمالي λ', xgHint: 'أهداف متوقعة نمذجة (λ) من متوسطات أهداف حقيقية حديثة (ESPN) عبر نموذجنا الإحصائي.', openMatch: 'فتح صفحة المباراة' }
 
   // ─── Révélation au scroll (IntersectionObserver, gate .btx3d) ─────────
   // Sans JS : cartes toujours visibles (progressive enhancement).
@@ -1081,7 +1081,7 @@ export default function BttsTodayDashboard() {
 
       {/* ─── Footer disclaimer ─── */}
       <p className="btx-disclaimer">
-        {lang === 'fr' ? 'Prédictions statistiques basées sur des buts attendus modélisés (λ) issus des buts récents réels (ESPN) et le modèle de Poisson. Aucun résultat futur garanti. 18+' : lang === 'en' ? 'Statistical predictions based on modeled expected goals (λ) from recent real goals (ESPN) and the Poisson model. No future result guaranteed. 18+.' : 'توقعات إحصائية مبنية على أهداف متوقعة نمذجة (λ) من أهداف حقيقية حديثة (ESPN) ونموذج بواسون. لا توجد ضمانات لنتيجة مستقبلية. 18+'}
+        {lang === 'fr' ? 'Prédictions statistiques basées sur des buts attendus modélisés (λ) issus des buts récents réels (ESPN) et notre modèle statistique. Aucun résultat futur garanti. 18+' : lang === 'en' ? 'Statistical predictions based on modeled expected goals (λ) from recent real goals (ESPN) and our statistical model. No future result guaranteed. 18+.' : 'توقعات إحصائية مبنية على أهداف متوقعة نمذجة (λ) من أهداف حقيقية حديثة (ESPN) ونموذجنا الإحصائي. لا توجد ضمانات لنتيجة مستقبلية. 18+'}
       </p>
     </section>
   )

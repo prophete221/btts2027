@@ -628,7 +628,7 @@ export default function FreePredictions({ initialLocale }: { initialLocale?: Loc
         )}
 
         <p className="text-center text-sm text-cendre mt-6">
-          {lang === 'ar' ? 'توقع إحصائي مبني على xG ونموذج بواسون. لا توجد ضمانات مستقبلية. 18+' : lang === 'en' ? 'Statistical prediction based on xG and a Poisson model. No future guarantee. 18+.' : 'Prediction statistique basee sur xG + modele Poisson. Aucune garantie future. 18+'}
+          {lang === 'ar' ? 'توقع إحصائي مبني على البيانات الأخيرة ونموذجنا الإحصائي. لا توجد ضمانات مستقبلية. 18+' : lang === 'en' ? 'Statistical prediction based on recent data and our statistical model. No future guarantee. 18+.' : 'Prévision statistique basée sur les données récentes et notre modèle statistique. Aucune garantie future. 18+'}
         </p>
 
         {/* CTA — Voir tous les pronostics du jour (page dédiée) */}

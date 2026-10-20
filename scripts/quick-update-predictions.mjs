@@ -543,11 +543,15 @@ async function quickUpdate() {
   const free = scored.slice(0, MAX_FREE)
 
   // VIP: next 6 after free (lower reliability, "preview" teasing)
-  const vipPreview = scored.slice(MAX_FREE, MAX_FREE + MAX_VIP)
+  // Sélection VIP = copie détachée de scored, explicitement marquée vip: true.
+  // Le statut VIP n'est JAMAIS déduit du tier GOLD, d'une proba ou d'un tableau.
+  const vipPreview = scored.slice(MAX_FREE, MAX_FREE + MAX_VIP).map(p => ({ ...p, vip: true }))
 
   // If we don't have enough matches, duplicate some from free into vip
+  // Miroirs de teasing uniquement : explicitement NON VIP (vip: false) —
+  // un match gratuit ne peut jamais être affiché comme sélection VIP.
   if (vipPreview.length < 3 && free.length > 0) {
-    const extra = free.slice(0, 3 - vipPreview.length).map(p => ({ ...p, vipMirror: true }))
+    const extra = free.slice(0, 3 - vipPreview.length).map(p => ({ ...p, vipMirror: true, vip: false }))
     vipPreview.push(...extra)
   }
 

@@ -59,7 +59,7 @@ export default function BttsAndOver25Page() {
               <strong>BTTS (Both Teams To Score)</strong> means both teams score at least one goal. <strong>Over 2.5</strong> means at least 3 goals total in the match. When <strong>both conditions are met</strong>, the match ends with a score like 2-1, 1-2, 2-2, 3-1, 1-3, etc.
             </p>
             <p className="text-sm text-[#9DABBB] leading-relaxed mb-3">
-              <strong>Why combine them?</strong> Matches where both BTTS and Over 2.5 hit are the most offensive, high-scoring games. The Poisson model identifies these by checking that both teams have high modeled expected goals (lambda derived from recent real goals) individually, and the total lambda exceeds 2.5.
+              <strong>Why combine them?</strong> Matches where both BTTS and Over 2.5 hit are the most offensive, high-scoring games. Our statistical model identifies these by checking that both teams have high modeled expected goals (lambda derived from recent real goals) individually, and the total lambda exceeds 2.5.
             </p>
             <p className="text-sm text-[#9DABBB] leading-relaxed">
               For the methodology, see our <Link href="/methodologie" className="text-[#2F7DFF] underline">methodology page</Link>.
