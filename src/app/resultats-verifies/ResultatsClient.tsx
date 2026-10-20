@@ -223,6 +223,11 @@ export default function ResultatsClient({ initialData }: { initialData?: any }) 
     ? `${copy.lastScan}: ${generatedAt.toLocaleString(lang === 'ar' ? 'ar' : lang === 'en' ? 'en-GB' : 'fr-FR', { dateStyle: 'medium', timeStyle: 'short' })} · ${copy.source}`
     : `${copy.lastScan} · ${copy.source}`
   const published = stats.archivedTotal || 0
+  // V8.2 : « en attente » (futurs/récents) et « non vérifiables » (passés > 48 h)
+  // sont deux compteurs distincts — ne jamais fusionner ni présenter les non
+  // vérifiables comme futurs ou en attente de vérification.
+  const pendingN = stats.pending || 0
+  const unverifiableN = stats.unverifiable || 0
   const trackingFrom = data.trackingPeriod?.startDate || null
 
   return (
@@ -231,7 +236,8 @@ export default function ResultatsClient({ initialData }: { initialData?: any }) 
       <p className={`rv-scope${kpiVisible ? ' is-visible' : ''}`}>
         {total} {copy.verified} {copy.scopeOf} {published} {copy.published}
         {trackingFrom && (lang === 'fr' ? ` depuis le ${trackingFrom} (suivi public)` : lang === 'en' ? ` since ${trackingFrom} (public tracking)` : ` منذ ${trackingFrom}`)}
-        {published > 0 && published - total > 0 && ` · ${published - total} ${lang === 'fr' ? 'encore en attente de vérification' : lang === 'en' ? 'still pending verification' : 'لا يزال قيد التحقق'}`}
+        {pendingN > 0 && ` · ${pendingN} ${lang === 'fr' ? 'en attente de vérification' : lang === 'en' ? 'pending verification' : 'قيد التحقق'}`}
+        {unverifiableN > 0 && ` · ${unverifiableN} ${lang === 'fr' ? 'non vérifiables (passés de plus de 48 h sans score vérifiable)' : lang === 'en' ? 'unverifiable (past more than 48 h without a verifiable score)' : 'غير قابلة للتوثق (تجاوزت 48 ساعة بدون نتيجة قابلة للتحقق)'}`}
       </p>
 
       <div className="rv-grid" ref={kpiRef as React.RefObject<HTMLDivElement>}>

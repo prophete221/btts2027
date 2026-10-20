@@ -34,11 +34,12 @@ let realFileHashBefore: string;
 
 const sha256 = (p: string) => createHash('sha256').update(fs.readFileSync(p)).digest('hex');
 
-/** Payload valide minimal (structure conforme au schéma v3). */
+/** Payload valide minimal (structure conforme au schéma v4 — grâce 48 h). */
 function validPayload(overrides: Record<string, unknown> = {}) {
   return {
     schemaVersion: SCHEMA_VERSION,
     generatedAt: '2026-09-28T21:00:00.000Z',
+    pendingPolicy: { graceHours: 48 },
     trackingPeriod: {
       startDate: '2026-08-08',
       isPublicPeriod: true,
@@ -46,7 +47,7 @@ function validPayload(overrides: Record<string, unknown> = {}) {
       insufficientVolume: false,
     },
     stats: {
-      total: 4, won: 3, lost: 1, pending: 9, archivedTotal: 13, rate: 75,
+      total: 4, won: 3, lost: 1, pending: 9, unverifiable: 0, archivedTotal: 13, rate: 75,
       gold: { total: 2, won: 2, lost: 0, rate: 100 },
       standard: { total: 2, won: 1, lost: 1, rate: 50 },
       byType: {
@@ -64,7 +65,7 @@ function validPayload(overrides: Record<string, unknown> = {}) {
       },
     ],
     legacyStats: {
-      total: 1, won: 0, lost: 1, pending: 0, archivedTotal: 5, rate: 0,
+      total: 1, won: 0, lost: 1, pending: 0, unverifiable: 4, archivedTotal: 5, rate: 0,
       gold: { total: 0, won: 0, lost: 0, rate: 0 },
       standard: { total: 1, won: 0, lost: 1, rate: 0 },
       byType: { btts: { total: 1, won: 0, lost: 1, rate: 0 }, over25: { total: 0, won: 0, lost: 0, rate: 0 } },

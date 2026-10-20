@@ -1,10 +1,19 @@
 // ═══════════════════════════════════════════════════════════════════════════════
-// BTTSPredict — update-win-history V8.1 (New Tracking Period + Garde-fou)
+// BTTSPredict — update-win-history V8.2 (grâce 48 h + bucket unverifiable)
 // ═══════════════════════════════════════════════════════════════════════════════
 // Calcule 2 buckets :
 //  - newStats     : pronos publiés depuis tracking-period.startDate (PUBLIC)
 //  - legacyStats  : pronos publiés avant startDate (PRIVÉ, non affiché publiquement)
 // Source unique de vérité : public/win-history.json
+//
+// POLITIQUE PENDING (2026-10-20, V8.2) :
+//  Une prédiction sans statut WON/LOST n'est « en attente » (pending) que si
+//  son match est futur ou récent : grâce de exactement 48 h après le coup
+//  d'envoi (fin de journée UTC + 48 h si l'heure est absente). Au-delà, sans
+//  score vérifiable, elle devient « non vérifiable » (unverifiable) :
+//  comptée à part, jamais présentée comme gagnée, perdue ou en attente,
+//  exclue du compteur public « en attente », conservée dans les archives
+//  (aucune archive source n'est supprimée, aucun score inventé).
 //
 // GARDE-FOU ANTI-RÉGRESSION (2026-09-28) :
 //  Aucune écriture n'est possible sans passer par validateWinHistoryPayload() :
@@ -29,13 +38,51 @@ const TRACKING_PERIOD_FILE = './public/tracking-period.json';
 // ne doit être calculé tant que le site ne collecte pas de cotes réelles.
 
 // ── Garde-fou : contrat de format ────────────────────────────────────────────
-export const SCHEMA_VERSION = 3;
+export const SCHEMA_VERSION = 4;
+
+/** Délai de grâce : un match sans statut reste « en attente » 48 h après son coup d'envoi. */
+export const PENDING_GRACE_HOURS = 48;
+const GRACE_MS = PENDING_GRACE_HOURS * 60 * 60 * 1000;
+
+/**
+ * Fin de grâce d'un match sans statut, en ms epoch (ou null si aucune date exploitable).
+ * - date + time (« HH:MM », fuseau de publication = Africa/Dakar = UTC+0 → lu comme UTC)
+ *   → coup d'envoi + exactement 48 h ;
+ * - date seule → règle documentée : fin de journée UTC (23:59:59.999) + 48 h.
+ */
+export function resolveGraceCutoff(p) {
+  const d = p && typeof p === 'object' ? p.date : null;
+  if (typeof d !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(d)) return null;
+  const t = p && typeof p.time === 'string' ? p.time.trim() : '';
+  const m = /^(\d{1,2}):(\d{2})/.exec(t);
+  if (m) {
+    const hh = Math.min(23, Number(m[1]));
+    const mm = Math.min(59, Number(m[2]));
+    const kickoff = Date.parse(`${d}T${String(hh).padStart(2, '0')}:${String(mm).padStart(2, '0')}:00Z`);
+    if (!Number.isNaN(kickoff)) return kickoff + GRACE_MS;
+  }
+  const endOfDayUtc = Date.parse(`${d}T23:59:59.999Z`);
+  if (!Number.isNaN(endOfDayUtc)) return endOfDayUtc + GRACE_MS;
+  return null;
+}
+
+/**
+ * Catégorie d'une prédiction sans statut WON/LOST :
+ *  - 'pending'      → match futur ou récent (grâce de 48 h non écoulée) ;
+ *  - 'unverifiable' → match passé de plus de 48 h sans score vérifiable,
+ *                     ou date absente/inexploitable (impossible à vérifier).
+ */
+export function classifyUnverified(p, nowMs = Date.now()) {
+  const cutoff = resolveGraceCutoff(p);
+  if (cutoff === null) return 'unverifiable';
+  return nowMs <= cutoff ? 'pending' : 'unverifiable';
+}
 
 /** Champs bannis du fichier public (issus de l'ancien calcul sur cote fictive). */
 export const FORBIDDEN_KEYS = ['roi', 'yield', 'avgOdds', 'profit', 'coteProposee', 'coteCloture', 'bookmaker'];
 
-const REQUIRED_TOP_KEYS = ['generatedAt', 'trackingPeriod', 'stats', 'history', 'legacyStats'];
-const REQUIRED_STATS_KEYS = ['total', 'won', 'lost', 'pending', 'archivedTotal', 'rate', 'gold', 'standard', 'byType', 'trend14', 'period'];
+const REQUIRED_TOP_KEYS = ['generatedAt', 'trackingPeriod', 'stats', 'history', 'legacyStats', 'pendingPolicy'];
+const REQUIRED_STATS_KEYS = ['total', 'won', 'lost', 'pending', 'unverifiable', 'archivedTotal', 'rate', 'gold', 'standard', 'byType', 'trend14', 'period'];
 const HISTORY_ENTRY_KEYS = ['date', 'match', 'league', 'market', 'tier', 'proba', 'status', 'finalScore', 'verifiedAt', 'source'];
 
 export class WinHistoryValidationError extends Error {}
@@ -85,6 +132,16 @@ export function validateWinHistoryPayload(payload) {
         errors.push(`incohérence stats.total : ${stats.total} ≠ won + lost (${stats.won} + ${stats.lost})`);
       }
     }
+    if ('unverifiable' in stats && (typeof stats.unverifiable !== 'number' || stats.unverifiable < 0 || !Number.isInteger(stats.unverifiable))) {
+      errors.push(`stats.unverifiable invalide : ${JSON.stringify(stats.unverifiable)} (entier ≥ 0 attendu)`);
+    }
+    const counterKeys = ['total', 'pending', 'unverifiable', 'archivedTotal'];
+    if (counterKeys.every(k => typeof stats[k] === 'number')) {
+      const accounted = stats.total + stats.pending + stats.unverifiable;
+      if (accounted !== stats.archivedTotal) {
+        errors.push(`incohérence compteurs : total + pending + unverifiable (${accounted}) ≠ archivedTotal (${stats.archivedTotal})`);
+      }
+    }
     if (typeof stats.total === 'number' && stats.total > 0 && typeof stats.won === 'number' && typeof stats.rate === 'number') {
       const expected = +(stats.won / stats.total * 100).toFixed(1);
       if (stats.rate !== expected) {
@@ -111,6 +168,15 @@ export function validateWinHistoryPayload(payload) {
     });
   } else if (hist !== undefined) {
     errors.push('history doit être un tableau');
+  }
+
+  const policy = payload.pendingPolicy;
+  if (policy && typeof policy === 'object' && !Array.isArray(policy)) {
+    if (policy.graceHours !== PENDING_GRACE_HOURS) {
+      errors.push(`pendingPolicy.graceHours invalide : ${JSON.stringify(policy.graceHours)} (${PENDING_GRACE_HOURS} attendu)`);
+    }
+  } else if (policy !== undefined) {
+    errors.push('pendingPolicy doit être un objet');
   }
 
   const legacy = payload.legacyStats;
@@ -173,7 +239,7 @@ function getType(p) {
 
 function emptyBucket() {
   return {
-    won: 0, lost: 0, pending: 0,
+    won: 0, lost: 0, pending: 0, unverifiable: 0,
     gold: { won: 0, lost: 0 },
     std: { won: 0, lost: 0 },
     btts: { won: 0, lost: 0 },
@@ -184,10 +250,10 @@ function emptyBucket() {
   };
 }
 
-function processFile(file, bucket) {
+function processFile(file, bucket, nowMs = Date.now(), dir = DIR) {
   const date = file.replace('.json', '');
   let data;
-  try { data = JSON.parse(fs.readFileSync(path.join(DIR, file), 'utf8')); } catch (e) { return; }
+  try { data = JSON.parse(fs.readFileSync(path.join(dir, file), 'utf8')); } catch (e) { return; }
   let preds = data.predictions || data;
   if (!Array.isArray(preds)) return;
 
@@ -212,7 +278,11 @@ function processFile(file, bucket) {
       else bucket.std.lost++;
       if (type === 'btts') bucket.btts.lost++; else bucket.over25.lost++;
     } else {
-      bucket.pending++;
+      // V8.2 : sans statut, le match reste « en attente » pendant sa grâce de 48 h
+      // (futur ou récent) ; au-delà, sans score vérifiable, il devient « non
+      // vérifiable » — compté à part, jamais gagné/perdu/en attente.
+      if (classifyUnverified(p, nowMs) === 'pending') bucket.pending++;
+      else bucket.unverifiable++;
     }
 
     if (isVerified) {
@@ -255,6 +325,7 @@ function buildStats(bucket, periodFrom, periodTo, daysCount) {
 
   return {
     total, won: bucket.won, lost: bucket.lost, pending: bucket.pending,
+    unverifiable: bucket.unverifiable,
     archivedTotal: bucket.archivedTotal,
     rate,
     // (2026-09-28) avgOdds / profit / roi / yield / maxDrawdown supprimés :
@@ -279,12 +350,12 @@ function resolveOutPath() {
   return process.env.WIN_HISTORY_OUT || OUT;
 }
 
-function run({ write }) {
-  if (!fs.existsSync(DIR)) {
-    console.warn(`[update-win-history] ${DIR} introuvable`);
+function run({ write, dir = DIR, now = Date.now() }) {
+  if (!fs.existsSync(dir)) {
+    console.warn(`[update-win-history] ${dir} introuvable`);
     return;
   }
-  const files = fs.readdirSync(DIR).filter(f => f.endsWith('.json')).sort();
+  const files = fs.readdirSync(dir).filter(f => f.endsWith('.json')).sort();
   const allFiles = files.slice(-90);
 
   const newBucket = emptyBucket();
@@ -301,12 +372,12 @@ function run({ write }) {
       if (!newPeriodFrom) newPeriodFrom = date;
       newPeriodTo = date;
       newDaysCount++;
-      processFile(file, newBucket);
+      processFile(file, newBucket, now, dir);
     } else {
       if (!legacyPeriodFrom) legacyPeriodFrom = date;
       legacyPeriodTo = date;
       legacyDaysCount++;
-      processFile(file, legacyBucket);
+      processFile(file, legacyBucket, now, dir);
     }
   }
 
@@ -315,7 +386,13 @@ function run({ write }) {
 
   const out = {
     schemaVersion: SCHEMA_VERSION,
-    generatedAt: new Date().toISOString(),
+    generatedAt: new Date(now).toISOString(),
+    pendingPolicy: {
+      graceHours: PENDING_GRACE_HOURS,
+      rule: "Sans statut vérifié, un match futur ou récent reste « en attente » pendant exactement 48 h après son coup d'envoi.",
+      dateOnlyRule: "Si l'heure de coup d'envoi est absente, la grâce court depuis la fin de la journée UTC du match.",
+      unverifiableRule: "Au-delà de la grâce, sans score vérifiable, le match devient « non vérifiable » : il n'est ni gagné, ni perdu, ni en attente, il est exclu du compteur public « en attente » et reste conservé dans les archives pour audit.",
+    },
     trackingPeriod: {
       startDate: TRACKING_START,
       isPublicPeriod: true,
@@ -364,7 +441,7 @@ function run({ write }) {
   fs.writeFileSync(outPath, JSON.stringify(out, null, 2));
 
   console.log(`[update-win-history] ─────────────────────────────────────────`);
-  console.log(`[update-win-history] NEW (public) ${newStats.total} vérifiés | ${newStats.rate}% | ${newStats.archivedTotal} archivés | ${newStats.pending} en attente`);
+  console.log(`[update-win-history] NEW (public) ${newStats.total} vérifiés | ${newStats.rate}% | ${newStats.archivedTotal} archivés | ${newStats.pending} en attente | ${newStats.unverifiable} non vérifiables`);
   console.log(`[update-win-history]   GOLD ${newStats.gold.total} ${newStats.gold.rate}%`);
   console.log(`[update-win-history]   Period ${newPeriodFrom || '—'} → ${newPeriodTo || '—'} (${newDaysCount}j)`);
   console.log(`[update-win-history] LEGACY (privé) ${legacyStats.total} vérifiés | ${legacyStats.rate}%`);
@@ -375,6 +452,9 @@ function run({ write }) {
   }
   return out;
 }
+
+// Exports pour les tests vitest (le binaire CLI reste inchangé).
+export { run as runWinHistory, DIR as ARCHIVE_DIR, OUT as WIN_HISTORY_OUT };
 
 function main() {
   const args = process.argv.slice(2);

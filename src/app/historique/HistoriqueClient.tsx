@@ -18,6 +18,7 @@ interface Stats {
   won: number
   lost: number
   pending: number
+  unverifiable?: number
   archivedTotal: number
   rate: number
   gold: {
@@ -63,7 +64,7 @@ interface WinHistory {
 
 export default function HistoriqueClient() {
   const { lang } = useLanguage()
-  const copy = lang === 'fr' ? { loading: 'Chargement de l’historique vérifié…', error: 'Erreur de récupération des données', retry: 'Réessayer', newTracking: 'Nouveau suivi public', title: 'Historique vérifié', intro: 'BTTSPredict lance une nouvelle période de suivi vérifié. Chaque pronostic publié est enregistré, horodaté et évalué après le résultat officiel du match. Les performances seront publiées progressivement, sans modification rétroactive.', launch: 'Nouvelle période de suivi publique', counters: 'Compteurs en temps réel', published: 'Pronostics publiés', verified: 'Matchs vérifiés', won: 'Gagnés', lost: 'Perdus', pending: 'Résultats en attente', launchDate: 'Date de lancement' } : lang === 'en' ? { loading: 'Loading verified history…', error: 'Unable to retrieve the data', retry: 'Try again', newTracking: 'New public tracking period', title: 'Verified history', intro: 'BTTSPredict is starting a new verified tracking period. Every published prediction is recorded, time-stamped and assessed after the official match result. Performance will be published progressively, without retroactive changes.', launch: 'New public tracking period', counters: 'Real-time counters', published: 'Published predictions', verified: 'Verified matches', won: 'Won', lost: 'Lost', pending: 'Pending results', launchDate: 'Launch date' } : { loading: 'جار تحميل السجل الموثق…', error: 'تعذر استرجاع البيانات', retry: 'إعادة المحاولة', newTracking: 'فترة تتبع عامة جديدة', title: 'السجل الموثق', intro: 'تبدأ BTTSPredict فترة جديدة لتتبع التوقعات الموثقة. يتم تسجيل كل توقع منشور وتأريخه وتقييمه بعد النتيجة الرسمية للمباراة. سيتم نشر الأداء تدريجياً دون تعديلات بأثر رجعي.', launch: 'فترة تتبع عامة جديدة', counters: 'عدادات مباشرة', published: 'التوقعات المنشورة', verified: 'المباريات الموثقة', won: 'فوز', lost: 'خسارة', pending: 'نتائج معلقة', launchDate: 'تاريخ البداية' }
+  const copy = lang === 'fr' ? { loading: 'Chargement de l’historique vérifié…', error: 'Erreur de récupération des données', retry: 'Réessayer', newTracking: 'Nouveau suivi public', title: 'Historique vérifié', intro: 'BTTSPredict lance une nouvelle période de suivi vérifié. Chaque pronostic publié est enregistré, horodaté et évalué après le résultat officiel du match. Les performances seront publiées progressivement, sans modification rétroactive.', launch: 'Nouvelle période de suivi publique', counters: 'Compteurs en temps réel', published: 'Pronostics publiés', verified: 'Matchs vérifiés', won: 'Gagnés', lost: 'Perdus', pending: 'Résultats en attente', unverifiable: 'Matchs non vérifiables', policyNote: '« Résultats en attente » : matchs futurs ou récents (moins de 48 h après le coup d’envoi) qui seront vérifiés après le résultat officiel. « Matchs non vérifiables » : matchs passés de plus de 48 h sans score vérifiable — ils ne sont ni gagnés, ni perdus, ni en attente, et restent conservés dans les archives.', launchDate: 'Date de lancement' } : lang === 'en' ? { loading: 'Loading verified history…', error: 'Unable to retrieve the data', retry: 'Try again', newTracking: 'New public tracking period', title: 'Verified history', intro: 'BTTSPredict is starting a new verified tracking period. Every published prediction is recorded, time-stamped and assessed after the official match result. Performance will be published progressively, without retroactive changes.', launch: 'New public tracking period', counters: 'Real-time counters', published: 'Published predictions', verified: 'Verified matches', won: 'Won', lost: 'Lost', pending: 'Pending results', unverifiable: 'Unverifiable matches', policyNote: '“Pending results”: future or recent matches (less than 48 h after kick-off) that will be verified after the official result. “Unverifiable matches”: matches past more than 48 h without a verifiable score — they are neither won, lost nor pending, and remain stored in the archives.', launchDate: 'Launch date' } : { loading: 'جار تحميل السجل الموثق…', error: 'تعذر استرجاع البيانات', retry: 'إعادة المحاولة', newTracking: 'فترة تتبع عامة جديدة', title: 'السجل الموثق', intro: 'تبدأ BTTSPredict فترة جديدة لتتبع التوقعات الموثقة. يتم تسجيل كل توقع منشور وتأريخه وتقييمه بعد النتيجة الرسمية للمباراة. سيتم نشر الأداء تدريجياً دون تعديلات بأثر رجعي.', launch: 'فترة تتبع عامة جديدة', counters: 'عدادات مباشرة', published: 'التوقعات المنشورة', verified: 'المباريات الموثقة', won: 'فوز', lost: 'خسارة', pending: 'نتائج معلقة', unverifiable: 'مباريات غير قابلة للتوثق', policyNote: '«نتائج معلقة»: مباريات مستقبلية أو حديثة (أقل من 48 ساعة بعد انطلاقها) سيتم التحقق منها بعد النتيجة الرسمية. «مباريات غير قابلة للتوثق»: مباريات تجاوزت 48 ساعة بدون نتيجة قابلة للتحقق — ليست فوزاً ولا خسارة ولا معلقة، وتبقى محفوظة في الأرشيف.', launchDate: 'تاريخ البداية' }
   const [data, setData] = useState<WinHistory | null>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
@@ -168,13 +169,14 @@ export default function HistoriqueClient() {
         <h2 className="text-xl font-bold mb-4 text-center" style={{ fontFamily: 'Poppins, sans-serif' }}>
           {copy.counters}
         </h2>
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
           {[
             { label: copy.published, value: stats.archivedTotal },
             { label: copy.verified, value: stats.total },
             { label: copy.won, value: stats.won, tone: '#34D399' },
             { label: copy.lost, value: stats.lost, tone: '#F87171' },
             { label: copy.pending, value: stats.pending, tone: '#FBBF24' },
+            { label: copy.unverifiable, value: stats.unverifiable ?? 0, tone: '#9DABBB' },
             { label: copy.launchDate, value: trackingPeriod.startDate, isText: true },
           ].map((card, i) => (
             <div key={i} className="p-4 rounded-xl text-center"
@@ -189,7 +191,10 @@ export default function HistoriqueClient() {
             </div>
           ))}
         </div>
-        <p className="text-xs text-[#9DABBB] text-center mt-4 leading-relaxed">
+        <p className="text-xs text-[#9DABBB] text-center mt-4 leading-relaxed max-w-3xl mx-auto">
+          {copy.policyNote}
+        </p>
+        <p className="text-xs text-[#9DABBB] text-center mt-2 leading-relaxed">
           {lang === 'fr' ? 'Dernière mise à jour' : lang === 'en' ? 'Last data update' : 'آخر تحديث'} : {new Date(data.generatedAt).toLocaleString(lang === 'ar' ? 'ar' : lang === 'en' ? 'en-GB' : 'fr-FR', { dateStyle: 'short', timeStyle: 'short' })}
           {stats.period.from && (lang === 'fr' ? ` · Période : ${stats.period.from} → ${stats.period.to || 'en cours'}` : lang === 'en' ? ` · Period: ${stats.period.from} → ${stats.period.to || 'ongoing'}` : ` · الفترة: ${stats.period.from} → ${stats.period.to || 'جارية'}`)}
         </p>
