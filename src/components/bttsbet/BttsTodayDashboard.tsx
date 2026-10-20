@@ -82,6 +82,10 @@ interface RawPrediction {
   ai_over25_view?: string
   ai_key_fact?: string
   ai_analysis?: string
+  ai_form_summary?: string
+  ai_absences?: string
+  ai_odds_insight?: string
+  odds?: { provider?: string; home?: number | null; draw?: number | null; away?: number | null; over25?: number | null; under25?: number | null } | null
 }
 
 interface DashboardLabels {
@@ -127,6 +131,10 @@ interface MatchData {
   aiOver25View?: string
   aiKeyFact?: string
   aiAnalysis?: string
+  aiFormSummary?: string
+  aiAbsences?: string
+  aiOddsInsight?: string
+  odds?: { provider?: string; home?: number | null; draw?: number | null; away?: number | null; over25?: number | null; under25?: number | null } | null
 }
 
 type FilterType = 'all' | 'BTTS' | 'O2.5' | 'HIGH' | 'VIP'
@@ -467,12 +475,62 @@ function MatchCard({ match, index, status, lang, insufficientDataLabel, labels, 
               </div>
             )}
             {match.aiKeyFact && <p className="btx-ai__fact">{match.aiKeyFact}</p>}
+
+            {/* Forme récente des deux équipes */}
+            {match.aiFormSummary && (
+              <div style={{ margin: '0.45rem 0', padding: '0.55rem 0.65rem', borderRadius: 10, background: 'rgba(255,255,255,0.035)', border: '1px solid rgba(255,255,255,0.06)' }}>
+                <div style={{ fontSize: 10, letterSpacing: '0.12em', textTransform: 'uppercase', opacity: 0.6, marginBottom: 3 }}>
+                  {lang === 'fr' ? 'Forme récente (5 derniers matchs)' : lang === 'en' ? 'Recent form' : 'الفورمة الأخيرة'}
+                </div>
+                <div style={{ fontSize: 12.5, lineHeight: 1.5, opacity: 0.85 }}>📈 {match.aiFormSummary}</div>
+              </div>
+            )}
+
+            {/* Cotes réelles du marché (gratuit — ESPN/bookmaker) */}
+            {match.odds && (match.odds.home || match.odds.away) && (
+              <div style={{ margin: '0.45rem 0' }}>
+                <div style={{ fontSize: 10, letterSpacing: '0.12em', textTransform: 'uppercase', opacity: 0.6, marginBottom: 4 }}>
+                  {lang === 'fr' ? 'Cotes marché' : lang === 'en' ? 'Market odds' : 'أودز السوق'}{match.odds.provider ? ` · ${match.odds.provider}` : ''}
+                </div>
+                <div style={{ display: 'flex', gap: 6 }}>
+                  <div style={{ flex: 1, textAlign: 'center', padding: '3px 0', borderRadius: 8, background: 'rgba(255,255,255,0.05)' }}>
+                    <div style={{ fontSize: 9, opacity: 0.55 }}>1</div>
+                    <div style={{ fontSize: 13, fontWeight: 700, fontFamily: 'var(--font-mono, monospace)' }}>{match.odds.home ?? '—'}</div>
+                  </div>
+                  <div style={{ flex: 1, textAlign: 'center', padding: '3px 0', borderRadius: 8, background: 'rgba(255,255,255,0.05)' }}>
+                    <div style={{ fontSize: 9, opacity: 0.55 }}>N</div>
+                    <div style={{ fontSize: 13, fontWeight: 700, fontFamily: 'var(--font-mono, monospace)' }}>{match.odds.draw ?? '—'}</div>
+                  </div>
+                  <div style={{ flex: 1, textAlign: 'center', padding: '3px 0', borderRadius: 8, background: 'rgba(255,255,255,0.05)' }}>
+                    <div style={{ fontSize: 9, opacity: 0.55 }}>2</div>
+                    <div style={{ fontSize: 13, fontWeight: 700, fontFamily: 'var(--font-mono, monospace)' }}>{match.odds.away ?? '—'}</div>
+                  </div>
+                  {match.odds.over25 && (
+                    <div style={{ flex: 1, textAlign: 'center', padding: '3px 0', borderRadius: 8, background: 'rgba(52,211,153,0.12)' }}>
+                      <div style={{ fontSize: 9, opacity: 0.55 }}>O2.5</div>
+                      <div style={{ fontSize: 13, fontWeight: 700, fontFamily: 'var(--font-mono, monospace)', color: '#34D399' }}>{match.odds.over25}</div>
+                    </div>
+                  )}
+                </div>
+              </div>
+            )}
+
             {match.aiAnalysis && (
               <p className="btx-ai__text">
                 {expanded || match.aiAnalysis.length <= 180
                   ? match.aiAnalysis
                   : `${match.aiAnalysis.slice(0, 177)}…`}
               </p>
+            )}
+
+            {/* Lecture des cotes par l'IA */}
+            {match.aiOddsInsight && (
+              <p style={{ fontSize: 12.5, lineHeight: 1.5, opacity: 0.7, margin: '0.4rem 0 0.2rem' }}>💰 {match.aiOddsInsight}</p>
+            )}
+
+            {/* Disponibilités / absents */}
+            {match.aiAbsences && (
+              <p style={{ fontSize: 12.5, lineHeight: 1.5, opacity: 0.7, margin: '0.2rem 0' }}>🩹 {match.aiAbsences}</p>
             )}
             <div className="btx-actions" style={{ paddingInline: 0, borderTop: 'none', paddingTop: '0.55rem' }}>
               {match.aiAnalysis && match.aiAnalysis.length > 180 && (
@@ -609,6 +667,10 @@ export default function BttsTodayDashboard() {
               aiOver25View: p.ai_over25_view,
               aiKeyFact: p.ai_key_fact,
               aiAnalysis: p.ai_analysis,
+              aiFormSummary: p.ai_form_summary,
+              aiAbsences: p.ai_absences,
+              aiOddsInsight: p.ai_odds_insight,
+              odds: p.odds || null,
             })
           } else {
             // Merge missing fields from sibling row (BTTS row may carry bttsProb,
@@ -629,6 +691,10 @@ export default function BttsTodayDashboard() {
             if (existing.aiOver25View == null && p.ai_over25_view != null) existing.aiOver25View = p.ai_over25_view
             if (existing.aiKeyFact == null && p.ai_key_fact != null) existing.aiKeyFact = p.ai_key_fact
             if (existing.aiAnalysis == null && p.ai_analysis != null) existing.aiAnalysis = p.ai_analysis
+            if (existing.aiFormSummary == null && p.ai_form_summary != null) existing.aiFormSummary = p.ai_form_summary
+            if (existing.aiAbsences == null && p.ai_absences != null) existing.aiAbsences = p.ai_absences
+            if (existing.aiOddsInsight == null && p.ai_odds_insight != null) existing.aiOddsInsight = p.ai_odds_insight
+            if (existing.odds == null && p.odds != null) existing.odds = p.odds
           }
         }
 

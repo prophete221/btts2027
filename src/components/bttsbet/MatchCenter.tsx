@@ -44,6 +44,7 @@ interface FeedItem {
   formBTTS?: number
   ai_exact_score?: string
   exact_score_prob?: string
+  odds?: { provider?: string; home?: number | null; draw?: number | null; away?: number | null; over25?: number | null; under25?: number | null } | null
   predictions?: MarketPick[]
   type?: string
   prediction?: string
@@ -495,6 +496,16 @@ function MatchCard({ m, index, lang, results }: {
               {m.exact_score_prob && <i>{m.exact_score_prob}</i>}
             </span>
           )}
+        </div>
+      )}
+
+      {/* Ligne 3bis : cotes réelles du marché (gratuit — ESPN/bookmaker) */}
+      {m.odds && (m.odds.home || m.odds.away) && (
+        <div className="hp-mc-data" title={m.odds.provider ? `Cotes ${m.odds.provider}` : 'Cotes marché'}>
+          {m.odds.home !== null && m.odds.home !== undefined && <span><i>1</i> {m.odds.home}</span>}
+          {m.odds.draw !== null && m.odds.draw !== undefined && <span><i>N</i> {m.odds.draw}</span>}
+          {m.odds.away !== null && m.odds.away !== undefined && <span><i>2</i> {m.odds.away}</span>}
+          {m.odds.over25 !== null && m.odds.over25 !== undefined && <span><i>O2.5</i> {m.odds.over25}</span>}
         </div>
       )}
 
