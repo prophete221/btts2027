@@ -1,71 +1,8 @@
 {
   "date": "2026-10-21",
-  "lastUpdated": "2026-10-21T20:27:33.181Z",
+  "lastUpdated": "2026-10-21T23:03:04.435Z",
   "source": "ESPN + TheSportsDB",
   "free": [
-    {
-      "id": "fccincin-vs-dcunited-2026-10-21",
-      "match": "FC Cincinnati vs D.C. United",
-      "home": "FC Cincinnati",
-      "away": "D.C. United",
-      "league": "MLS",
-      "date": "2026-10-21",
-      "type": "BTTS",
-      "prediction": "Oui",
-      "proba": 0.7976,
-      "bttsProbDisplay": "79.76%",
-      "over25ProbDisplay": "85.90%",
-      "confidence": 80,
-      "time": "23:00",
-      "matchSemantic": "fccincin-vs-dcunited-2026-10-21",
-      "source": "poisson-v92-real-data",
-      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/18267.png",
-      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/193.png",
-      "tier": "GOLD",
-      "reliabilityScore": 93.64,
-      "dataQuality": "HIGH",
-      "dataSource": "ESPN_TEAM_SCHEDULE",
-      "matchCountHome": 8,
-      "matchCountAway": 8,
-      "h2hAvailable": false,
-      "xgHome": 2.98,
-      "xgAway": 1.83,
-      "xgTotal": 4.82,
-      "formBTTS": null,
-      "analysis": "FC Cincinnati (8 matchs réels, xG 2.98) vs D.C. United (8 matchs réels, xG 1.83). xG cumulé 4.82, BTTS 79.8%, Over 2.5 85.9%. Fiabilité 93.64%. Qualité données: HIGH.",
-      "analysisData": {
-        "bttsProb": 0.7976,
-        "over25Prob": 0.859,
-        "homeLambda": 2.98,
-        "awayLambda": 1.83,
-        "xgTotal": 4.82
-      },
-      "estimatedCote": 1.25,
-      "estimatedCoteOver": 1.16,
-      "predictions": [
-        {
-          "type": "BTTS",
-          "prediction": "Oui",
-          "confidence": 80,
-          "bttsProb": 0.7976,
-          "homeLambda": 2.98,
-          "awayLambda": 1.83
-        },
-        {
-          "type": "Over 2.5",
-          "prediction": "Oui",
-          "confidence": 86,
-          "over25Prob": 0.859,
-          "homeLambda": 2.98,
-          "awayLambda": 1.83
-        }
-      ],
-      "bttsProb": 0.7976,
-      "over25Prob": 0.859,
-      "homeLambda": 2.98,
-      "awayLambda": 1.83,
-      "status": "PENDING"
-    },
     {
       "id": "lillestr-vs-realsoci-2026-10-22",
       "match": "Lillestrom vs Real Sociedad",
@@ -186,7 +123,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 5.75, nul: 4.7, 2: 1.51, Over 2.5: 1.61.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 5.75, draw: 4.7, 2: 1.51, Over 2.5: 1.61."
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 5.75, draw: 4.7, 2: 1.51, Over 2.5: 1.61.",
+      "status": "PENDING"
     },
     {
       "id": "fcmidtjy-vs-sinttrui-2026-10-22",
@@ -302,7 +240,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Cotes marché non disponibles — pronostic basé sur le modèle statistique seul.",
-      "ai_odds_insight_en": "Market odds unavailable — prediction based on the statistical model only."
+      "ai_odds_insight_en": "Market odds unavailable — prediction based on the statistical model only.",
+      "status": "PENDING"
     },
     {
       "id": "trabzons-vs-heartofm-2026-10-22",
@@ -425,7 +364,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 1.32, nul: 6, 2: 8.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 1.32, draw: 6, 2: 8."
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 1.32, draw: 6, 2: 8.",
+      "status": "PENDING"
     },
     {
       "id": "oficrete-vs-bayerlev-2026-10-22",
@@ -548,7 +488,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 11, nul: 7, 2: 1.24.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 11, draw: 7, 2: 1.24."
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 11, draw: 7, 2: 1.24.",
+      "status": "PENDING"
     },
     {
       "id": "ajaxamst-vs-atalanta-2026-10-22",
@@ -671,7 +612,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 2.15, nul: 3.85, 2: 3.05.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.15, draw: 3.85, 2: 3.05."
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.15, draw: 3.85, 2: 3.05.",
+      "status": "PENDING"
     },
     {
       "id": "juventus-vs-staderen-2026-10-22",
@@ -794,7 +736,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 1.54, nul: 4.5, 2: 5.75, Over 2.5: 1.67.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 1.54, draw: 4.5, 2: 5.75, Over 2.5: 1.67."
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 1.54, draw: 4.5, 2: 5.75, Over 2.5: 1.67.",
+      "status": "PENDING"
     },
     {
       "id": "sksturmg-vs-marseill-2026-10-22",
@@ -917,7 +860,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 3.5, nul: 3.65, 2: 2.05, Over 2.5: 1.69.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 3.5, draw: 3.65, 2: 2.05, Over 2.5: 1.69."
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 3.5, draw: 3.65, 2: 2.05, Over 2.5: 1.69.",
+      "status": "PENDING"
     },
     {
       "id": "tsghoffe-vs-lyon-2026-10-22",
@@ -1040,7 +984,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 2, nul: 4, 2: 3.3.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 2, draw: 4, 2: 3.3."
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 2, draw: 4, 2: 3.3.",
+      "status": "PENDING"
     },
     {
       "id": "braga-vs-kaagent-2026-10-22",
@@ -1163,7 +1108,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 1.91, nul: 3.55, 2: 4.2, Over 2.5: 2.15.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 1.91, draw: 3.55, 2: 4.2, Over 2.5: 2.15."
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 1.91, draw: 3.55, 2: 4.2, Over 2.5: 2.15.",
+      "status": "PENDING"
     },
     {
       "id": "asmonaco-vs-scfreibu-2026-10-22",
@@ -1286,7 +1232,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 2.3, nul: 3.6, 2: 3.05, Over 2.5: 1.74.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.3, draw: 3.6, 2: 3.05, Over 2.5: 1.74."
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.3, draw: 3.6, 2: 3.05, Over 2.5: 1.74.",
+      "status": "PENDING"
     },
     {
       "id": "besiktas-vs-crystalp-2026-10-22",
@@ -1409,19 +1356,134 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 2.15, nul: 3.9, 2: 3.1.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.15, draw: 3.9, 2: 3.1."
-    }
-  ],
-  "vipPreview": [
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.15, draw: 3.9, 2: 3.1.",
+      "status": "PENDING"
+    },
     {
-      "vip": true,
       "id": "afcbourn-vs-acmilan-2026-10-22",
+      "match": "AFC Bournemouth vs AC Milan",
       "home": "AFC Bournemouth",
       "away": "AC Milan",
       "league": "UEFA Europa League",
       "date": "2026-10-22",
-      "time": "19:00"
-    },
+      "type": "BTTS",
+      "prediction": "Oui",
+      "proba": 0.5375,
+      "bttsProbDisplay": "53.75%",
+      "over25ProbDisplay": "49.40%",
+      "confidence": 54,
+      "time": "19:00",
+      "matchSemantic": "afcbourn-vs-acmilan-2026-10-22",
+      "source": "poisson-v92-real-data",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/349.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/103.png",
+      "tier": "SILVER",
+      "reliabilityScore": 68.27,
+      "dataQuality": "MEDIUM",
+      "dataSource": "ESPN_TEAM_SCHEDULE",
+      "matchCountHome": 7,
+      "matchCountAway": 7,
+      "h2hAvailable": false,
+      "xgHome": 1.4,
+      "xgAway": 1.25,
+      "xgTotal": 2.65,
+      "formBTTS": 70,
+      "analysis": "AFC Bournemouth : forme V-D-D-N-N (1V 2N 2D, 7 buts marqués / 10 encaissés sur 5) · AC Milan : forme V-N-V-N-N (2V 3N 0D, 10 buts marqués / 6 encaissés sur 5). Classement : AFC Bournemouth 5e (6 pts), AC Milan 16e (3 pts). Modèle Poisson : xG cumulé 2.65, BTTS 53.8%, Over 2.5 49.4%. Cotes DraftKings — 1: 2 / N: 3.7 / 2: 3.6 · Over 2.5: 1.71. Fiabilité 68.27%.",
+      "analysisData": {
+        "bttsProb": 0.5375,
+        "over25Prob": 0.494,
+        "homeLambda": 1.4,
+        "awayLambda": 1.25,
+        "xgTotal": 2.65
+      },
+      "estimatedCote": 1.86,
+      "estimatedCoteOver": 2.02,
+      "odds": {
+        "provider": "DraftKings",
+        "home": 2,
+        "draw": 3.7,
+        "away": 3.6,
+        "over25": 1.71,
+        "under25": 2.1
+      },
+      "oddsSource": "DraftKings",
+      "estimatedCoteBTTS": 1.86,
+      "formHome": {
+        "last5String": "V-D-D-N-N",
+        "wins": 1,
+        "draws": 2,
+        "losses": 2,
+        "goalsFor": 7,
+        "goalsAgainst": 10,
+        "bttsRate": 0.6,
+        "over25Rate": 0.6,
+        "cleanSheets": 1,
+        "failedToScore": 1,
+        "count": 5
+      },
+      "formAway": {
+        "last5String": "V-N-V-N-N",
+        "wins": 2,
+        "draws": 3,
+        "losses": 0,
+        "goalsFor": 10,
+        "goalsAgainst": 6,
+        "bttsRate": 0.8,
+        "over25Rate": 0.6,
+        "cleanSheets": 1,
+        "failedToScore": 0,
+        "count": 5
+      },
+      "standingsHome": {
+        "rank": 5,
+        "points": 6,
+        "played": 2,
+        "gf": 5,
+        "ga": 1
+      },
+      "standingsAway": {
+        "rank": 16,
+        "points": 3,
+        "played": 2,
+        "gf": 4,
+        "ga": 2
+      },
+      "predictions": [
+        {
+          "type": "BTTS",
+          "prediction": "Oui",
+          "confidence": 54,
+          "bttsProb": 0.5375,
+          "homeLambda": 1.4,
+          "awayLambda": 1.25
+        },
+        {
+          "type": "Over 2.5",
+          "prediction": "Non",
+          "confidence": 49,
+          "over25Prob": 0.494,
+          "homeLambda": 1.4,
+          "awayLambda": 1.25
+        }
+      ],
+      "bttsProb": 0.5375,
+      "over25Prob": 0.494,
+      "homeLambda": 1.4,
+      "awayLambda": 1.25,
+      "ai_key_fact": "AC Milan présente un taux BTTS élevé de 0.8 sur ses 5 derniers matchs.",
+      "ai_analysis": "Le modèle Poisson indique un xG de 1.4 pour AFC Bournemouth et de 1.25 pour AC Milan. Les probabilités estimées ressortent à 53.8% pour le BTTS et 49.4% pour l'Over 2.5, assorties d'une fiabilité de 68.27%. Au classement, Bournemouth pointe à la 5e position avec 6 points tandis que Milan se trouve 16e avec 3 points. Les cotes bookmaker enregistrent 2.0 pour la victoire de Bournemouth et 1.71 pour l'Over 2.5, rappelant le caractère incertain du match.",
+      "ai_form_summary": "AFC Bournemouth traverse une période mitigée avec 1 victoire, 2 nuls et 2 défaites, affichant un taux BTTS de 0.6. AC Milan reste invaincu sur ses 5 dernières sorties avec 2 victoires et 3 nuls.",
+      "ai_key_fact_en": "AC Milan presents a high 0.8 BTTS rate over their last 5 matches.",
+      "ai_analysis_en": "The Poisson model indicates an xG of 1.4 for AFC Bournemouth and 1.25 for AC Milan. Estimated probabilities stand at 53.8% for BTTS and 49.4% for Over 2.5, paired with a 68.27% reliability. In the standings, Bournemouth points to 5th position with 6 points while Milan is 16th with 3 points. Bookmaker odds record 2.0 for Bournemouth's win and 1.71 for Over 2.5, recalling the uncertain nature of the fixture.",
+      "ai_form_summary_en": "AFC Bournemouth experiences a mixed period with 1 win, 2 draws, and 2 defeats, showing a 0.6 BTTS rate. AC Milan remains undefeated in their last 5 outings with 2 wins and 3 draws.",
+      "ai_source": "gemini-v2",
+      "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
+      "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
+      "ai_odds_insight": "Le marché (DraftKings) cote 1: 2, nul: 3.7, 2: 3.6, Over 2.5: 1.71.",
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 2, draw: 3.7, 2: 3.6, Over 2.5: 1.71."
+    }
+  ],
+  "vipPreview": [
     {
       "vip": true,
       "id": "celtic-vs-celtavig-2026-10-22",
@@ -1484,80 +1546,26 @@
       "league": "Serie A",
       "date": "2026-10-23",
       "time": "18:45"
+    },
+    {
+      "vip": true,
+      "id": "ipswicht-vs-nottingh-2026-10-23",
+      "home": "Ipswich Town",
+      "away": "Nottingham Forest",
+      "league": "Premier League",
+      "date": "2026-10-23",
+      "time": "19:00"
     }
   ],
   "stats": {
-    "avgReliability": 79.73,
-    "totalAnalyzed": 163,
+    "avgReliability": 79.63,
+    "totalAnalyzed": 162,
     "totalRejected": 23,
-    "totalAccepted": 140,
+    "totalAccepted": 139,
     "freeCount": 12,
     "vipCount": 8
   },
   "predictions": [
-    {
-      "id": "fccincin-vs-dcunited-2026-10-21",
-      "match": "FC Cincinnati vs D.C. United",
-      "home": "FC Cincinnati",
-      "away": "D.C. United",
-      "league": "MLS",
-      "date": "2026-10-21",
-      "type": "BTTS",
-      "prediction": "Oui",
-      "proba": 0.7976,
-      "bttsProbDisplay": "79.76%",
-      "over25ProbDisplay": "85.90%",
-      "confidence": 80,
-      "time": "23:00",
-      "matchSemantic": "fccincin-vs-dcunited-2026-10-21",
-      "source": "poisson-v92-real-data",
-      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/18267.png",
-      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/193.png",
-      "tier": "GOLD",
-      "reliabilityScore": 93.64,
-      "dataQuality": "HIGH",
-      "dataSource": "ESPN_TEAM_SCHEDULE",
-      "matchCountHome": 8,
-      "matchCountAway": 8,
-      "h2hAvailable": false,
-      "xgHome": 2.98,
-      "xgAway": 1.83,
-      "xgTotal": 4.82,
-      "formBTTS": null,
-      "analysis": "FC Cincinnati (8 matchs réels, xG 2.98) vs D.C. United (8 matchs réels, xG 1.83). xG cumulé 4.82, BTTS 79.8%, Over 2.5 85.9%. Fiabilité 93.64%. Qualité données: HIGH.",
-      "analysisData": {
-        "bttsProb": 0.7976,
-        "over25Prob": 0.859,
-        "homeLambda": 2.98,
-        "awayLambda": 1.83,
-        "xgTotal": 4.82
-      },
-      "estimatedCote": 1.25,
-      "estimatedCoteOver": 1.16,
-      "predictions": [
-        {
-          "type": "BTTS",
-          "prediction": "Oui",
-          "confidence": 80,
-          "bttsProb": 0.7976,
-          "homeLambda": 2.98,
-          "awayLambda": 1.83
-        },
-        {
-          "type": "Over 2.5",
-          "prediction": "Oui",
-          "confidence": 86,
-          "over25Prob": 0.859,
-          "homeLambda": 2.98,
-          "awayLambda": 1.83
-        }
-      ],
-      "bttsProb": 0.7976,
-      "over25Prob": 0.859,
-      "homeLambda": 2.98,
-      "awayLambda": 1.83,
-      "status": "PENDING"
-    },
     {
       "id": "lillestr-vs-realsoci-2026-10-22",
       "match": "Lillestrom vs Real Sociedad",
@@ -1678,7 +1686,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 5.75, nul: 4.7, 2: 1.51, Over 2.5: 1.61.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 5.75, draw: 4.7, 2: 1.51, Over 2.5: 1.61."
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 5.75, draw: 4.7, 2: 1.51, Over 2.5: 1.61.",
+      "status": "PENDING"
     },
     {
       "id": "fcmidtjy-vs-sinttrui-2026-10-22",
@@ -1794,7 +1803,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Cotes marché non disponibles — pronostic basé sur le modèle statistique seul.",
-      "ai_odds_insight_en": "Market odds unavailable — prediction based on the statistical model only."
+      "ai_odds_insight_en": "Market odds unavailable — prediction based on the statistical model only.",
+      "status": "PENDING"
     },
     {
       "id": "trabzons-vs-heartofm-2026-10-22",
@@ -1917,7 +1927,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 1.32, nul: 6, 2: 8.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 1.32, draw: 6, 2: 8."
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 1.32, draw: 6, 2: 8.",
+      "status": "PENDING"
     },
     {
       "id": "oficrete-vs-bayerlev-2026-10-22",
@@ -2040,7 +2051,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 11, nul: 7, 2: 1.24.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 11, draw: 7, 2: 1.24."
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 11, draw: 7, 2: 1.24.",
+      "status": "PENDING"
     },
     {
       "id": "ajaxamst-vs-atalanta-2026-10-22",
@@ -2163,7 +2175,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 2.15, nul: 3.85, 2: 3.05.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.15, draw: 3.85, 2: 3.05."
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.15, draw: 3.85, 2: 3.05.",
+      "status": "PENDING"
     },
     {
       "id": "juventus-vs-staderen-2026-10-22",
@@ -2286,7 +2299,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 1.54, nul: 4.5, 2: 5.75, Over 2.5: 1.67.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 1.54, draw: 4.5, 2: 5.75, Over 2.5: 1.67."
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 1.54, draw: 4.5, 2: 5.75, Over 2.5: 1.67.",
+      "status": "PENDING"
     },
     {
       "id": "sksturmg-vs-marseill-2026-10-22",
@@ -2409,7 +2423,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 3.5, nul: 3.65, 2: 2.05, Over 2.5: 1.69.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 3.5, draw: 3.65, 2: 2.05, Over 2.5: 1.69."
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 3.5, draw: 3.65, 2: 2.05, Over 2.5: 1.69.",
+      "status": "PENDING"
     },
     {
       "id": "tsghoffe-vs-lyon-2026-10-22",
@@ -2532,7 +2547,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 2, nul: 4, 2: 3.3.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 2, draw: 4, 2: 3.3."
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 2, draw: 4, 2: 3.3.",
+      "status": "PENDING"
     },
     {
       "id": "braga-vs-kaagent-2026-10-22",
@@ -2655,7 +2671,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 1.91, nul: 3.55, 2: 4.2, Over 2.5: 2.15.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 1.91, draw: 3.55, 2: 4.2, Over 2.5: 2.15."
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 1.91, draw: 3.55, 2: 4.2, Over 2.5: 2.15.",
+      "status": "PENDING"
     },
     {
       "id": "asmonaco-vs-scfreibu-2026-10-22",
@@ -2778,7 +2795,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 2.3, nul: 3.6, 2: 3.05, Over 2.5: 1.74.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.3, draw: 3.6, 2: 3.05, Over 2.5: 1.74."
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.3, draw: 3.6, 2: 3.05, Over 2.5: 1.74.",
+      "status": "PENDING"
     },
     {
       "id": "besiktas-vs-crystalp-2026-10-22",
@@ -2901,7 +2919,131 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 2.15, nul: 3.9, 2: 3.1.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.15, draw: 3.9, 2: 3.1."
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.15, draw: 3.9, 2: 3.1.",
+      "status": "PENDING"
+    },
+    {
+      "id": "afcbourn-vs-acmilan-2026-10-22",
+      "match": "AFC Bournemouth vs AC Milan",
+      "home": "AFC Bournemouth",
+      "away": "AC Milan",
+      "league": "UEFA Europa League",
+      "date": "2026-10-22",
+      "type": "BTTS",
+      "prediction": "Oui",
+      "proba": 0.5375,
+      "bttsProbDisplay": "53.75%",
+      "over25ProbDisplay": "49.40%",
+      "confidence": 54,
+      "time": "19:00",
+      "matchSemantic": "afcbourn-vs-acmilan-2026-10-22",
+      "source": "poisson-v92-real-data",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/349.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/103.png",
+      "tier": "SILVER",
+      "reliabilityScore": 68.27,
+      "dataQuality": "MEDIUM",
+      "dataSource": "ESPN_TEAM_SCHEDULE",
+      "matchCountHome": 7,
+      "matchCountAway": 7,
+      "h2hAvailable": false,
+      "xgHome": 1.4,
+      "xgAway": 1.25,
+      "xgTotal": 2.65,
+      "formBTTS": 70,
+      "analysis": "AFC Bournemouth : forme V-D-D-N-N (1V 2N 2D, 7 buts marqués / 10 encaissés sur 5) · AC Milan : forme V-N-V-N-N (2V 3N 0D, 10 buts marqués / 6 encaissés sur 5). Classement : AFC Bournemouth 5e (6 pts), AC Milan 16e (3 pts). Modèle Poisson : xG cumulé 2.65, BTTS 53.8%, Over 2.5 49.4%. Cotes DraftKings — 1: 2 / N: 3.7 / 2: 3.6 · Over 2.5: 1.71. Fiabilité 68.27%.",
+      "analysisData": {
+        "bttsProb": 0.5375,
+        "over25Prob": 0.494,
+        "homeLambda": 1.4,
+        "awayLambda": 1.25,
+        "xgTotal": 2.65
+      },
+      "estimatedCote": 1.86,
+      "estimatedCoteOver": 2.02,
+      "odds": {
+        "provider": "DraftKings",
+        "home": 2,
+        "draw": 3.7,
+        "away": 3.6,
+        "over25": 1.71,
+        "under25": 2.1
+      },
+      "oddsSource": "DraftKings",
+      "estimatedCoteBTTS": 1.86,
+      "formHome": {
+        "last5String": "V-D-D-N-N",
+        "wins": 1,
+        "draws": 2,
+        "losses": 2,
+        "goalsFor": 7,
+        "goalsAgainst": 10,
+        "bttsRate": 0.6,
+        "over25Rate": 0.6,
+        "cleanSheets": 1,
+        "failedToScore": 1,
+        "count": 5
+      },
+      "formAway": {
+        "last5String": "V-N-V-N-N",
+        "wins": 2,
+        "draws": 3,
+        "losses": 0,
+        "goalsFor": 10,
+        "goalsAgainst": 6,
+        "bttsRate": 0.8,
+        "over25Rate": 0.6,
+        "cleanSheets": 1,
+        "failedToScore": 0,
+        "count": 5
+      },
+      "standingsHome": {
+        "rank": 5,
+        "points": 6,
+        "played": 2,
+        "gf": 5,
+        "ga": 1
+      },
+      "standingsAway": {
+        "rank": 16,
+        "points": 3,
+        "played": 2,
+        "gf": 4,
+        "ga": 2
+      },
+      "predictions": [
+        {
+          "type": "BTTS",
+          "prediction": "Oui",
+          "confidence": 54,
+          "bttsProb": 0.5375,
+          "homeLambda": 1.4,
+          "awayLambda": 1.25
+        },
+        {
+          "type": "Over 2.5",
+          "prediction": "Non",
+          "confidence": 49,
+          "over25Prob": 0.494,
+          "homeLambda": 1.4,
+          "awayLambda": 1.25
+        }
+      ],
+      "bttsProb": 0.5375,
+      "over25Prob": 0.494,
+      "homeLambda": 1.4,
+      "awayLambda": 1.25,
+      "ai_key_fact": "AC Milan présente un taux BTTS élevé de 0.8 sur ses 5 derniers matchs.",
+      "ai_analysis": "Le modèle Poisson indique un xG de 1.4 pour AFC Bournemouth et de 1.25 pour AC Milan. Les probabilités estimées ressortent à 53.8% pour le BTTS et 49.4% pour l'Over 2.5, assorties d'une fiabilité de 68.27%. Au classement, Bournemouth pointe à la 5e position avec 6 points tandis que Milan se trouve 16e avec 3 points. Les cotes bookmaker enregistrent 2.0 pour la victoire de Bournemouth et 1.71 pour l'Over 2.5, rappelant le caractère incertain du match.",
+      "ai_form_summary": "AFC Bournemouth traverse une période mitigée avec 1 victoire, 2 nuls et 2 défaites, affichant un taux BTTS de 0.6. AC Milan reste invaincu sur ses 5 dernières sorties avec 2 victoires et 3 nuls.",
+      "ai_key_fact_en": "AC Milan presents a high 0.8 BTTS rate over their last 5 matches.",
+      "ai_analysis_en": "The Poisson model indicates an xG of 1.4 for AFC Bournemouth and 1.25 for AC Milan. Estimated probabilities stand at 53.8% for BTTS and 49.4% for Over 2.5, paired with a 68.27% reliability. In the standings, Bournemouth points to 5th position with 6 points while Milan is 16th with 3 points. Bookmaker odds record 2.0 for Bournemouth's win and 1.71 for Over 2.5, recalling the uncertain nature of the fixture.",
+      "ai_form_summary_en": "AFC Bournemouth experiences a mixed period with 1 win, 2 draws, and 2 defeats, showing a 0.6 BTTS rate. AC Milan remains undefeated in their last 5 outings with 2 wins and 3 draws.",
+      "ai_source": "gemini-v2",
+      "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
+      "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
+      "ai_odds_insight": "Le marché (DraftKings) cote 1: 2, nul: 3.7, 2: 3.6, Over 2.5: 1.71.",
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 2, draw: 3.7, 2: 3.6, Over 2.5: 1.71."
     }
   ]
 }

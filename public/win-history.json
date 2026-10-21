@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "generatedAt": "2026-10-21T20:39:58.200Z",
+  "generatedAt": "2026-10-21T23:15:51.040Z",
   "pendingPolicy": {
     "graceHours": 48,
     "rule": "Sans statut vérifié, un match futur ou récent reste « en attente » pendant exactement 48 h après son coup d'envoi.",
@@ -14,13 +14,13 @@
     "insufficientVolume": false
   },
   "stats": {
-    "total": 138,
-    "won": 93,
-    "lost": 45,
-    "pending": 64,
+    "total": 145,
+    "won": 97,
+    "lost": 48,
+    "pending": 58,
     "unverifiable": 635,
-    "archivedTotal": 837,
-    "rate": 67.4,
+    "archivedTotal": 838,
+    "rate": 66.9,
     "gold": {
       "total": 115,
       "won": 77,
@@ -28,17 +28,17 @@
       "rate": 67
     },
     "standard": {
-      "total": 23,
-      "won": 16,
-      "lost": 7,
-      "rate": 69.6
+      "total": 30,
+      "won": 20,
+      "lost": 10,
+      "rate": 66.7
     },
     "byType": {
       "btts": {
-        "total": 136,
-        "won": 92,
-        "lost": 44,
-        "rate": 67.6
+        "total": 143,
+        "won": 96,
+        "lost": 47,
+        "rate": 67.1
       },
       "over25": {
         "total": 2,
@@ -141,10 +141,10 @@
       },
       {
         "date": "2026-10-21",
-        "total": 3,
-        "won": 3,
-        "lost": 0,
-        "rate": 100
+        "total": 10,
+        "won": 7,
+        "lost": 3,
+        "rate": 70
       }
     ],
     "period": {
@@ -154,6 +154,90 @@
     }
   },
   "history": [
+    {
+      "date": "2026-10-21",
+      "match": "Sporting CP vs LASK Linz",
+      "league": "UEFA Champions League",
+      "market": "btts",
+      "tier": "STANDARD",
+      "proba": 0.6265,
+      "status": "WON",
+      "finalScore": "2-3",
+      "verifiedAt": "2026-10-21T23:03:35.688Z",
+      "source": "ESPN public"
+    },
+    {
+      "date": "2026-10-21",
+      "match": "Real Madrid vs RB Leipzig",
+      "league": "UEFA Champions League",
+      "market": "btts",
+      "tier": "STANDARD",
+      "proba": 0.6265,
+      "status": "WON",
+      "finalScore": "4-1",
+      "verifiedAt": "2026-10-21T23:03:35.688Z",
+      "source": "ESPN public"
+    },
+    {
+      "date": "2026-10-21",
+      "match": "Real Betis vs Feyenoord Rotterdam",
+      "league": "UEFA Champions League",
+      "market": "btts",
+      "tier": "STANDARD",
+      "proba": 0.6265,
+      "status": "LOST",
+      "finalScore": "1-0",
+      "verifiedAt": "2026-10-21T23:03:35.688Z",
+      "source": "ESPN public"
+    },
+    {
+      "date": "2026-10-21",
+      "match": "Internazionale vs Shakhtar Donetsk",
+      "league": "UEFA Champions League",
+      "market": "btts",
+      "tier": "STANDARD",
+      "proba": 0.6265,
+      "status": "LOST",
+      "finalScore": "1-0",
+      "verifiedAt": "2026-10-21T23:03:35.688Z",
+      "source": "ESPN public"
+    },
+    {
+      "date": "2026-10-21",
+      "match": "Club Brugge vs Lens",
+      "league": "UEFA Champions League",
+      "market": "btts",
+      "tier": "STANDARD",
+      "proba": 0.6265,
+      "status": "LOST",
+      "finalScore": "3-0",
+      "verifiedAt": "2026-10-21T23:03:35.687Z",
+      "source": "ESPN public"
+    },
+    {
+      "date": "2026-10-21",
+      "match": "Bayern Munich vs Arsenal",
+      "league": "UEFA Champions League",
+      "market": "btts",
+      "tier": "STANDARD",
+      "proba": 0.6265,
+      "status": "WON",
+      "finalScore": "2-2",
+      "verifiedAt": "2026-10-21T23:03:35.687Z",
+      "source": "ESPN public"
+    },
+    {
+      "date": "2026-10-21",
+      "match": "Aston Villa vs Viking FK",
+      "league": "UEFA Champions League",
+      "market": "btts",
+      "tier": "STANDARD",
+      "proba": 0.6265,
+      "status": "WON",
+      "finalScore": "3-1",
+      "verifiedAt": "2026-10-21T23:03:35.687Z",
+      "source": "ESPN public"
+    },
     {
       "date": "2026-10-21",
       "match": "Lille vs Galatasaray",
