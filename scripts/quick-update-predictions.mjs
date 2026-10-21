@@ -162,6 +162,22 @@ async function fetchStandings(slug) {
 // ─── Cache en mémoire pour les stats d'équipe (évite les requêtes dupliquées) ───
 const teamStatsCache = new Map()
 
+// ─── Résolution domestique pour les coupes internationales ───
+// Un match de coupe (uefa.champions) oppose des équipes dont les vraies données
+// récentes vivent dans leur championnat domestique : en octobre, chaque équipe
+// n'a que 2-3 matchs de phase de ligue terminés dans le calendrier UCL, ce qui
+// déclenchait une abstention systématique (min. 4 matchs) → 0-2 matchs du jour
+// les soirs de C3 (régression du 21/10 : 9 matchs UCL rejetés, run #851).
+// On interroge donc le calendrier DOMESTIQUE de l'équipe — données réelles,
+// jamais des moyennes de ligue fabriquées. L'abstention reste la règle si
+// aucune source ne fournit ≥ 4 matchs réels.
+const DOMESTIC_SLUGS = [
+  'eng.1', 'esp.1', 'ita.1', 'ger.1', 'fra.1',
+  'ned.1', 'por.1', 'bel.1', 'tur.1', 'aut.1',
+  'sco.1', 'nor.1', 'den.1', 'swe.1', 'gre.1', 'swi.1',
+]
+const teamSlugResolution = new Map() // teamId → slug domestique résolu
+
 // ─── Poisson functions (conservées — mathématiquement correctes) ───
 function factorial(n) {
   if (n <= 1) return 1
@@ -188,8 +204,8 @@ function over25RealProb(lambdaHome, lambdaAway) {
   return 1 - pUnder25
 }
 
-// ─── Fetch real team stats from ESPN schedule API ───
-async function fetchTeamStats(slug, teamId, teamName) {
+// ─── Fetch real team stats from ESPN schedule API (un slug donné) ───
+async function fetchTeamStatsFromSlug(slug, teamId) {
   const cacheKey = `${slug}_${teamId}`
   if (teamStatsCache.has(cacheKey)) return teamStatsCache.get(cacheKey)
 
@@ -329,6 +345,42 @@ async function fetchTeamStats(slug, teamId, teamName) {
   const result = { dataQuality: 'LOW', matchCount: 0, available: false, dataSource: 'LEAGUE_FALLBACK' }
   teamStatsCache.set(cacheKey, result)
   return result
+}
+
+// ─── Fetch team stats avec résolution domestique (coupes internationales) ───
+// 1. Calendrier de la ligue du match (comportement nominal)
+// 2. Slug domestique déjà résolu pour cette équipe
+// 3. Scan des championnats domestiques — le premier avec ≥ 4 matchs réels gagne
+// 4. Sinon : abstention honnête (aucune donnée fabriquée)
+async function fetchTeamStats(slug, teamId, teamName) {
+  const trySlug = async (s) => {
+    const key = `${s}_${teamId}`
+    if (teamStatsCache.has(key)) return teamStatsCache.get(key)
+    const stats = await fetchTeamStatsFromSlug(s, teamId)
+    teamStatsCache.set(key, stats)
+    return stats
+  }
+
+  const primary = await trySlug(slug)
+  if (hasSufficientTeamStats(primary)) return primary
+
+  const resolved = teamSlugResolution.get(String(teamId))
+  if (resolved && resolved !== slug) {
+    const viaResolved = await trySlug(resolved)
+    if (hasSufficientTeamStats(viaResolved)) return viaResolved
+  }
+
+  for (const s of DOMESTIC_SLUGS) {
+    if (s === slug) continue
+    const viaDomestic = await trySlug(s)
+    if (hasSufficientTeamStats(viaDomestic)) {
+      teamSlugResolution.set(String(teamId), s)
+      console.log(`[v91] ${teamName || teamId}: stats via ${s} (ligue du match ${slug} insuffisante — résolution domestique)`)
+      return viaDomestic
+    }
+  }
+
+  return primary
 }
 
 // ─── Assign tier ───
