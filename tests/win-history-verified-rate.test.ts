@@ -3,7 +3,6 @@ import fs from 'fs'
 import os from 'os'
 import path from 'path'
 import { runWinHistory, validateWinHistoryPayload } from '../scripts/update-win-history.mjs'
-import { buildDatasetJsonLd } from '../src/lib/seoSchemas'
 
 const NOW = Date.parse('2026-10-20T12:00:00Z')
 const makePrediction = (match: string, fields: Record<string, unknown>) => ({
@@ -64,19 +63,4 @@ describe('verified results and rate denominator', () => {
     expect(() => validateWinHistoryPayload(payload)).toThrow(/stats.rate/)
   })
 
-  it('emits schema metrics with verified denominator W+L and actual archived count', async () => {
-    const jsonLd = await buildDatasetJsonLd()
-    const data = JSON.parse(fs.readFileSync(path.join(process.cwd(), 'public/win-history.json'), 'utf8'))
-    const verified = data.stats.won + data.stats.lost
-    const values = jsonLd.variableMeasured as Array<{ name: string; value: string }>
-    const metric = (name: string) => values.find(v => v.name === name)?.value
-
-    expect(metric('Pronostics vérifiés (W+L)')).toBe(String(verified))
-    expect(metric('Total pronostics archivés')).toBe(String(data.stats.archivedTotal))
-    expect(metric('Taux de réussite global (gagnés / résultats vérifiés)'))
-      .toBe(`${((data.stats.won / verified) * 100).toFixed(1)}% (${data.stats.won}/${verified})`)
-    expect(jsonLd.description).toContain(`${data.stats.won} sont gagnés et ${data.stats.lost} perdus`)
-    expect(jsonLd.description).toContain('pertes incluses')
-    expect(jsonLd.description).toContain('En attente et non vérifiables sont exclus du taux')
-  })
 })

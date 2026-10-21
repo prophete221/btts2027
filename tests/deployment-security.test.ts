@@ -23,7 +23,8 @@ describe('deployment safety gates', () => {
     expect([...deploy.matchAll(/set ssl:verify no/g)]).toHaveLength(4)
     expect(deploy).not.toContain('set ftp:ssl-force yes')
     expect(deploy).toContain('"ftp://$FTP_SERVER"')
-    expect(deploy).toContain('run: node scripts/submit-indexnow.mjs --submit')
+    expect(deploy).toContain('run: node scripts/submit-indexnow.mjs\n')
+    expect(deploy).not.toContain('submit-indexnow.mjs --submit')
   })
   it('keeps the diagnostic workflow read-only without deployment credentials', () => {
     const diagnostic = fs.readFileSync('.github/workflows/ftp-tls-diagnostic.yml', 'utf8')

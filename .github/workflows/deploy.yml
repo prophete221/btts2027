@@ -287,5 +287,5 @@ jobs:
 
       - name: Notify Bing via IndexNow
         if: success()
-        run: node scripts/submit-indexnow.mjs --submit
+        run: node scripts/submit-indexnow.mjs
         continue-on-error: true
