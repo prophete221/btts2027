@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "generatedAt": "2026-10-20T23:05:07.502Z",
+  "generatedAt": "2026-10-21T03:39:02.388Z",
   "pendingPolicy": {
     "graceHours": 48,
     "rule": "Sans statut vérifié, un match futur ou récent reste « en attente » pendant exactement 48 h après son coup d'envoi.",
@@ -17,9 +17,9 @@
     "total": 135,
     "won": 90,
     "lost": 45,
-    "pending": 36,
+    "pending": 48,
     "unverifiable": 633,
-    "archivedTotal": 804,
+    "archivedTotal": 816,
     "rate": 66.7,
     "gold": {
       "total": 114,
@@ -149,8 +149,8 @@
     ],
     "period": {
       "from": "2026-08-08",
-      "to": "2026-10-20",
-      "days": 74
+      "to": "2026-10-21",
+      "days": 75
     }
   },
   "history": [
@@ -1776,13 +1776,13 @@
     }
   ],
   "legacyStats": {
-    "total": 345,
-    "won": 163,
-    "lost": 182,
+    "total": 333,
+    "won": 159,
+    "lost": 174,
     "pending": 0,
-    "unverifiable": 390,
-    "archivedTotal": 735,
-    "rate": 47.2,
+    "unverifiable": 352,
+    "archivedTotal": 685,
+    "rate": 47.7,
     "gold": {
       "total": 27,
       "won": 13,
@@ -1790,22 +1790,22 @@
       "rate": 48.1
     },
     "standard": {
-      "total": 318,
-      "won": 150,
-      "lost": 168,
-      "rate": 47.2
+      "total": 306,
+      "won": 146,
+      "lost": 160,
+      "rate": 47.7
     },
     "byType": {
       "btts": {
-        "total": 173,
-        "won": 78,
-        "lost": 95,
-        "rate": 45.1
+        "total": 167,
+        "won": 77,
+        "lost": 90,
+        "rate": 46.1
       },
       "over25": {
-        "total": 172,
-        "won": 85,
-        "lost": 87,
+        "total": 166,
+        "won": 82,
+        "lost": 84,
         "rate": 49.4
       }
     },
@@ -1910,9 +1910,9 @@
       }
     ],
     "period": {
-      "from": "2026-07-23",
+      "from": "2026-07-24",
       "to": "2026-08-07",
-      "days": 16
+      "days": 15
     },
     "history": [
       {
