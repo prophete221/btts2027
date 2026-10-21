@@ -234,14 +234,15 @@ export function buildBreadcrumbJsonLd(items: { name: string; path: string }[]) {
 export async function buildDatasetJsonLd() {
   let stats: {
     total?: number
-    verified?: number
+    archivedTotal?: number
     won?: number
     lost?: number
     pending?: number
-    rate?: string
+    unverifiable?: number
+    rate?: number | string
     byType?: {
-      BTTS?: { total?: number; won?: number; lost?: number; rate?: number }
-      'O2.5'?: { total?: number; won?: number; lost?: number; rate?: number }
+      btts?: { total?: number; won?: number; lost?: number; rate?: number }
+      over25?: { total?: number; won?: number; lost?: number; rate?: number }
     }
   } = {}
 
@@ -259,19 +260,28 @@ export async function buildDatasetJsonLd() {
     console.warn('[seoSchemas] buildDatasetJsonLd: could not read win-history.json:', err instanceof Error ? err.message : String(err))
   }
 
-  const total = stats.total ?? 0
-  const verified = stats.verified ?? 0
   const won = stats.won ?? 0
   const lost = stats.lost ?? 0
-  const rate = stats.rate ?? 'N/A'
-  const bttsRate = stats.byType?.BTTS?.rate ?? 'N/A'
-  const o25Rate = stats.byType?.['O2.5']?.rate ?? 'N/A'
+  const verified = won + lost
+  const archived = stats.archivedTotal ?? (verified + (stats.pending ?? 0) + (stats.unverifiable ?? 0))
+  const rate = verified > 0 ? +(won / verified * 100).toFixed(1) : null
+  const btts = stats.byType?.btts
+  const over25 = stats.byType?.over25
+  const bttsRate = btts && (btts.won ?? 0) + (btts.lost ?? 0) > 0
+    ? +((btts.won ?? 0) / ((btts.won ?? 0) + (btts.lost ?? 0)) * 100).toFixed(1)
+    : null
+  const o25Rate = over25 && (over25.won ?? 0) + (over25.lost ?? 0) > 0
+    ? +((over25.won ?? 0) / ((over25.won ?? 0) + (over25.lost ?? 0)) * 100).toFixed(1)
+    : null
+  const rateLabel = rate === null ? 'N/A' : `${rate}% (${won}/${verified})`
+  const bttsLabel = bttsRate === null ? 'N/A' : `${bttsRate}% (${btts!.won ?? 0}/${(btts!.won ?? 0) + (btts!.lost ?? 0)})`
+  const o25Label = o25Rate === null ? 'N/A' : `${o25Rate}% (${over25!.won ?? 0}/${(over25!.won ?? 0) + (over25!.lost ?? 0)})`
 
   return {
     '@context': 'https://schema.org',
     '@type': 'Dataset',
     name: 'BTTSPredict — Historique vérifiable des pronostics BTTS & Over 2.5',
-    description: `Dataset public des pronostics BTTS et Over 2.5 publiés par BTTSPredict. Sur ${verified} pronostics vérifiés (score final connu), ${won} ont été gagnants (${rate} de réussite réelle vérifiable). Répartition par type: BTTS ${bttsRate}%, Over 2.5 ${o25Rate}%. Toutes les entrées sont archivées quotidiennement dans predictions-archive/ et vérifiées via API-Football / ESPN. Aucun filtrage — gagnés ET perdus affichés. Licence CC-BY.`,
+    description: `Dataset public des pronostics BTTS et Over 2.5 publiés par BTTSPredict. Sur ${verified} pronostics vérifiés (score final connu), ${won} sont gagnés et ${lost} perdus ; le taux est calculé sur les seuls résultats vérifiés, pertes incluses (${rateLabel}). En attente et non vérifiables sont exclus du taux. Répartition par type : BTTS ${bttsLabel}, Over 2.5 ${o25Label}. Les ${archived} entrées archivées restent conservées ; seuls les résultats vérifiés sont affichés dans l'historique. Licence CC-BY.`,
     url: `${SITE_URL}/historique`,
     creator: {
       '@type': 'Organization',
@@ -297,13 +307,13 @@ export async function buildDatasetJsonLd() {
     ],
     keywords: 'pronostics BTTS, both teams to score, over 2.5 predictions, historique résultats, dataset ouvert, transparence, gagnés perdus, modèle Poisson, xG, API-Football',
     variableMeasured: [
-      { '@type': 'PropertyValue', name: 'Total pronostics archivés', value: String(total) },
+      { '@type': 'PropertyValue', name: 'Total pronostics archivés', value: String(archived) },
       { '@type': 'PropertyValue', name: 'Pronostics vérifiés (W+L)', value: String(verified) },
       { '@type': 'PropertyValue', name: 'Pronostics gagnés', value: String(won) },
       { '@type': 'PropertyValue', name: 'Pronostics perdus', value: String(lost) },
-      { '@type': 'PropertyValue', name: 'Taux de réussite global', value: rate },
-      { '@type': 'PropertyValue', name: 'Taux BTTS', value: `${bttsRate}%` },
-      { '@type': 'PropertyValue', name: 'Taux Over 2.5', value: `${o25Rate}%` },
+      { '@type': 'PropertyValue', name: 'Taux de réussite global (gagnés / résultats vérifiés)', value: rateLabel },
+      { '@type': 'PropertyValue', name: 'Taux BTTS (gagnés / résultats vérifiés)', value: bttsLabel },
+      { '@type': 'PropertyValue', name: 'Taux Over 2.5 (gagnés / résultats vérifiés)', value: o25Label },
     ],
     temporalCoverage: 'P90D',
     inLanguage: 'fr',

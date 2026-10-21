@@ -170,7 +170,12 @@ export default function ResultatsClient({ initialData }: { initialData?: any }) 
   if (!data || !data.stats) return <div className="text-center py-8 text-sm text-[#9DABBB]">{copy.loading}</div>
 
   const stats = data.stats
-  const history: ResultHistoryEntry[] = data.history || []
+  // Never render an unknown/pending status through the LOST visual treatment.
+  // The generated history should already contain verified rows only; this is
+  // a defensive UI boundary for stale or malformed JSON.
+  const history: ResultHistoryEntry[] = (data.history || []).filter((h: ResultHistoryEntry) =>
+    h.status === 'WON' || h.status === 'LOST' || (!h.status && typeof h.isWon === 'boolean')
+  )
   const won = stats.won || 0
   const lost = stats.lost || 0
   const total = won + lost
@@ -240,7 +245,7 @@ export default function ResultatsClient({ initialData }: { initialData?: any }) 
           value={String(total)}
           suffix=""
           subValue={`${won} WIN / ${lost} LOST`}
-          footnote={`${copy.allRate}: ${fmtPct(stats.rate?.toFixed(1), lang)} %`}
+          footnote={`${copy.allRate}: ${fmtPct(stats.rate?.toFixed(1), lang)} % (${total} ${copy.verifiedCount.toLowerCase()}, ${won} WIN / ${lost} LOST)`}
           delay={0}
           visible={kpiVisible}
           lang={lang}

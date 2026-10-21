@@ -43,8 +43,8 @@ const COPY = {
     market: 'Marché',
     score: 'Score',
     proba: 'Probabilité',
-    disclosure: (w: string, l: string, r: string) =>
-      `Historique complet : ${w} gagnés / ${l} perdus (${r}) — tous les résultats, gagnés et perdus, restent publiés et vérifiables.`,
+    disclosure: (w: string, l: string, n: string, r: string) =>
+      `Historique complet : ${w} gagnés / ${l} perdus sur ${n} résultats vérifiés (${r}, pertes incluses) — tous restent publiés et vérifiables.`,
     cta: 'Voir l\u2019historique complet',
     loading: 'Chargement de l\u2019historique…',
   },
@@ -57,8 +57,8 @@ const COPY = {
     market: 'Market',
     score: 'Score',
     proba: 'Probability',
-    disclosure: (w: string, l: string, r: string) =>
-      `Full record: ${w} won / ${l} lost (${r}) — every result, wins and losses, stays published and verifiable.`,
+    disclosure: (w: string, l: string, n: string, r: string) =>
+      `Full record: ${w} won / ${l} lost across ${n} verified results (${r}, losses included) — all remain published and verifiable.`,
     cta: 'View the full history',
     loading: 'Loading history…',
   },
@@ -71,8 +71,8 @@ const COPY = {
     market: 'السوق',
     score: 'النتيجة',
     proba: 'الاحتمال',
-    disclosure: (w: string, l: string, r: string) =>
-      `السجل الكامل: ${w} فوز / ${l} خسارة (${r}) — كل النتائج، الفوز والخسارة، تبقى منشورة وقابلة للتحقق.`,
+    disclosure: (w: string, l: string, n: string, r: string) =>
+      `السجل الكامل: ${w} فوز / ${l} خسارة من أصل ${n} نتيجة موثقة (${r}، والخسائر مشمولة) — جميعها منشورة وقابلة للتحقق.`,
     cta: 'عرض السجل الكامل',
     loading: 'جار تحميل السجل…',
   },
@@ -82,7 +82,7 @@ export default function VipWinHistory() {
   const { lang } = useLanguage()
   const t = COPY[lang]
   const [rows, setRows] = useState<WinRecord[] | null>(null)
-  const [stats, setStats] = useState<{ won: string; lost: string; rate: string } | null>(null)
+  const [stats, setStats] = useState<{ won: string; lost: string; total: string; rate: string } | null>(null)
 
   useEffect(() => {
     let alive = true
@@ -93,10 +93,12 @@ export default function VipWinHistory() {
         const won = (d.history ?? []).filter(rec => rec.status === 'WON').slice(0, 15)
         setRows(won)
         const s = d.stats ?? {}
+        const verified = Number(s.won ?? 0) + Number(s.lost ?? 0)
         setStats({
           won: String(s.won ?? 0),
           lost: String(s.lost ?? 0),
-          rate: typeof s.rate === 'number' ? `${s.rate}%` : String(s.rate ?? '—'),
+          total: String(verified),
+          rate: verified > 0 ? `${((Number(s.won ?? 0) / verified) * 100).toFixed(1)}%` : '—',
         })
       })
       .catch(() => { if (alive) setRows([]) })
@@ -166,7 +168,7 @@ export default function VipWinHistory() {
 
       {stats && (
         <p style={{ color: '#8FA3B8', fontSize: 12, lineHeight: 1.6, marginTop: 12 }}>
-          {t.disclosure(stats.won, stats.lost, stats.rate)}{' '}
+          {t.disclosure(stats.won, stats.lost, stats.total, stats.rate)}{' '}
           <a href={localizedPath('/resultats-verifies', lang)} style={{ color: '#2F7DFF', textDecoration: 'underline', whiteSpace: 'nowrap' }}>
             {t.cta} →
           </a>

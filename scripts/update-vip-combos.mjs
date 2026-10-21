@@ -1,7 +1,8 @@
 import fs from 'node:fs/promises'
-
 const API_KEY = process.env.ODDS_API_KEY
-const OUTPUT = 'public/vip-combos.json'
+// Aucun choix privé dans public/ ni dans le dépôt GitHub public.
+// Un service authentifié distinct sera nécessaire pour distribuer ces données.
+const OUTPUT = '.private/vip-combos.json'
 const API_BASE = 'https://api.odds-api.io/v3'
 const TIME_ZONE = 'Africa/Dakar'
 // Keep a measured lead time before kickoff. The page also re-checks every leg
@@ -138,6 +139,7 @@ async function writeUnavailable(reason, candidateCombos = null) {
 }
 
 async function main() {
+  await fs.mkdir('.private', { recursive: true, mode: 0o700 })
   const today = dakarDate()
   if (!API_KEY) {
     console.warn('[vip-combos] ODDS_API_KEY absent — no combo published')

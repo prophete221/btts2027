@@ -12,33 +12,19 @@ import { generateMatchSlug } from '@/lib/match-slug'
 import { trackAffiliateAction } from '@/lib/affiliateTracking'
 import { humanMethodLabel, predictionQuality, type PredictionQuality as DataQuality } from '@/lib/predictionQuality'
 import { analysisHeading } from '@/lib/predictionPresentation'
+import { getDakarDayDiff, getDakarMatchStatus, parseDakarDateTime } from '@/lib/dakar-date'
 
 // ─── Helpers ────────────────────────────────────────────────────────────
-function getMatchStatus(date: string, time?: string): 'live' | 'upcoming' | 'finished' {
-  if (!date) return 'finished'
-  try {
-    const today = new Date(); today.setHours(0, 0, 0, 0)
-    const matchDay = new Date(date + 'T00:00:00'); matchDay.setHours(0, 0, 0, 0)
-    if (matchDay.getTime() < today.getTime()) return 'finished'
-    if (matchDay.getTime() > today.getTime()) return 'upcoming'
-    if (!time || time === '--:--' || !/^\d{2}:\d{2}$/.test(time)) return 'upcoming'
-    const [h, m] = time.split(':').map(Number)
-    const matchDateTime = new Date(date + 'T00:00:00')
-    matchDateTime.setHours(h, m, 0, 0)
-    const diffMs = matchDateTime.getTime() - Date.now()
-    const diffHours = diffMs / (1000 * 60 * 60)
-    if (diffMs < 0 && diffHours > -2.5) return 'live'
-    if (diffMs < 0) return 'finished'
-    return 'upcoming'
-  } catch { return 'finished' }
+function getMatchStatus(date: string, time?: string): 'live' | 'upcoming' | 'past' {
+  const status = getDakarMatchStatus(date, time)
+  return status === 'finished' ? 'past' : status
 }
 
 function getTimeUntil(date: string, time?: string): { value: string; label: string } | null {
   if (!date || !time || time === '--:--' || !/^\d{2}:\d{2}$/.test(time)) return null
   try {
-    const [h, m] = time.split(':').map(Number)
-    const matchDateTime = new Date(date + 'T00:00:00')
-    matchDateTime.setHours(h, m, 0, 0)
+    const matchDateTime = parseDakarDateTime(date, time)
+    if (!matchDateTime) return null
     const diffMs = matchDateTime.getTime() - Date.now()
     if (diffMs < 0) return null
     const diffMin = Math.floor(diffMs / (1000 * 60))
@@ -53,16 +39,14 @@ function getTimeUntil(date: string, time?: string): { value: string; label: stri
 function formatDateShort(dateStr: string, lang: 'fr' | 'en' | 'ar' = 'fr') {
   if (!dateStr) return ''
   try {
-    const d = new Date(dateStr + 'T12:00:00')
-    const day = d.getDate().toString().padStart(2, '0')
-    const month = (d.getMonth() + 1).toString().padStart(2, '0')
-    const today = new Date(); today.setHours(12, 0, 0, 0)
-    const matchDate = new Date(dateStr + 'T12:00:00')
-    const diffDays = Math.round((matchDate.getTime() - today.getTime()) / (1000 * 60 * 60 * 24))
+    const d = new Date(`${dateStr}T12:00:00Z`)
+    const day = new Intl.DateTimeFormat('en-GB', { day: '2-digit', timeZone: 'Africa/Dakar' }).format(d)
+    const month = new Intl.DateTimeFormat('en-GB', { month: '2-digit', timeZone: 'Africa/Dakar' }).format(d)
+    const diffDays = getDakarDayDiff(dateStr)
     const labels = lang === 'en' ? { today: 'Today', tomorrow: 'Tomorrow', weekdays: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'] } : lang === 'ar' ? { today: 'اليوم', tomorrow: 'غداً', weekdays: ['الأحد', 'الاثنين', 'الثلاثاء', 'الأربعاء', 'الخميس', 'الجمعة', 'السبت'] } : { today: "Aujourd'hui", tomorrow: 'Demain', weekdays: ['Dim', 'Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam'] }
     if (diffDays === 0) return labels.today
     if (diffDays === 1) return labels.tomorrow
-    return `${labels.weekdays[d.getDay()]} ${day}/${month}`
+    return `${labels.weekdays[d.getUTCDay()]} ${day}/${month}`
   } catch { return dateStr }
 }
 
@@ -304,7 +288,7 @@ function PredictionCard({ match, index, initialLocale }: { match: MatchData; ind
             {status === 'upcoming' && (
               <span className="text-xs text-cendre mono tabular-nums">{match.time || '--:--'}</span>
             )}
-            {status === 'finished' && (
+            {status === 'past' && (
               <span className="text-xs text-cendre mono tabular-nums">{match.time || '--:--'}</span>
             )}
             <span className="text-xs text-cendre uppercase tracking-widest font-semibold truncate">

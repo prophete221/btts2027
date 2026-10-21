@@ -53,10 +53,10 @@ function TooltipContent({ active, payload, label }: { active?: boolean; payload?
 export default function MatchAnalyticsCharts(props: MatchAnalyticsChartsProps) {
   const lang = props.lang ?? 'fr'
   const L = lang === 'en'
-    ? { exact: 'Exact score', home: 'Home', away: 'Away', reading: 'Reading the data', values: 'Values from the published model', probByMarket: 'Probabilities by market', probAria: 'Chart of BTTS, Over 2.5 and exact-score probabilities', probNote: 'A probability is not a guarantee and does not replace risk analysis.', xgAria: "Chart of the home and away team's expected goals" }
+    ? { exact: 'Estimated exact score', home: 'Home', away: 'Away', reading: 'Match estimates', values: 'Figures from the published model', probByMarket: 'Estimated probability', probAria: 'Chart of estimated BTTS, Over 2.5 and exact-score probabilities', probNote: 'Estimates are not guarantees or final match results.', xgAria: "Chart of model-estimated goals for the home and away teams" }
     : lang === 'ar'
-      ? { exact: 'النتيجة الدقيقة', home: 'صاحب الأرض', away: 'الضيف', reading: 'قراءة البيانات', values: 'قيم من النموذج المنشور', probByMarket: 'الاحتمالات حسب السوق', probAria: 'رسم بياني لاحتمالات BTTS وOver 2.5 والنتيجة الدقيقة', probNote: 'الاحتمال ليس ضماناً ولا يغني عن تحليل المخاطر.', xgAria: 'رسم بياني للأهداف المتوقعة لصاحب الأرض والضيف' }
-      : { exact: 'Score exact', home: 'Domicile', away: 'Extérieur', reading: 'Lecture des données', values: 'Valeurs issues du modèle publié', probByMarket: 'Probabilités par marché', probAria: 'Graphique des probabilités BTTS, Over 2.5 et score exact', probNote: "Une probabilité n'est pas une garantie et ne remplace pas l'analyse du risque.", xgAria: "Graphique des expected goals de l'équipe à domicile et de l'équipe extérieure" }
+      ? { exact: 'النتيجة الدقيقة المقدّرة', home: 'صاحب الأرض', away: 'الضيف', reading: 'تقديرات المباراة', values: 'قيم من النموذج المنشور', probByMarket: 'الاحتمال المقدّر', probAria: 'رسم بياني لاحتمالات BTTS وOver 2.5 والنتيجة الدقيقة المقدّرة', probNote: 'هذه تقديرات وليست ضماناً أو نتيجة نهائية للمباراة.', xgAria: 'رسم بياني للأهداف التي يقدّرها النموذج للفريقين' }
+      : { exact: 'Score exact estimé', home: 'Domicile', away: 'Extérieur', reading: 'Estimations du match', values: 'Chiffres du modèle publié', probByMarket: 'Probabilités estimées', probAria: 'Graphique des probabilités estimées BTTS, Over 2.5 et score exact', probNote: "Ces estimations ne sont ni des garanties ni le résultat final du match.", xgAria: "Graphique des buts estimés par le modèle pour les deux équipes" }
 
   const marketData = [
     { name: 'BTTS', value: percent(props.bttsProb), color: COLORS.blue },
@@ -77,7 +77,6 @@ export default function MatchAnalyticsCharts(props: MatchAnalyticsChartsProps) {
     <section className="mb-8" aria-labelledby="match-analytics-title">
       <div className="mb-3 flex items-end justify-between gap-3">
         <div>
-          <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#2F7DFF]">Signal analytics</p>
           <h2 id="match-analytics-title" className="mt-1 text-xl font-bold text-[#F2F6FA]">{L.reading}</h2>
         </div>
         <span className="text-right text-xs text-[#9DABBB]">{L.values}</span>
@@ -110,8 +109,8 @@ export default function MatchAnalyticsCharts(props: MatchAnalyticsChartsProps) {
         {xgData.length > 0 && (
           <div className="rounded-2xl border border-[#223041] bg-[#141C25] p-4 shadow-[0_18px_50px_rgba(0,0,0,0.18)]">
             <div className="mb-3 flex items-center justify-between">
-              <h3 className="text-sm font-bold text-[#F2F6FA]">Expected goals (xG)</h3>
-              <span className="text-xs uppercase tracking-wider text-[#9DABBB]">projection</span>
+              <h3 className="text-sm font-bold text-[#F2F6FA]">Model-estimated goals</h3>
+              <span className="text-xs uppercase tracking-wider text-[#9DABBB]">estimate</span>
             </div>
             <div className="h-52" role="img" aria-label={L.xgAria}>
               <ResponsiveContainer width="100%" height="100%">
@@ -125,7 +124,7 @@ export default function MatchAnalyticsCharts(props: MatchAnalyticsChartsProps) {
               </ResponsiveContainer>
             </div>
             <div className="mt-2 flex items-center justify-between text-xs text-[#9DABBB]">
-              <span>Total xG</span>
+              <span>Estimated total goals</span>
               <strong className="font-mono text-[#2F7DFF]">{props.xgTotal?.toFixed(2) ?? '—'}</strong>
             </div>
           </div>

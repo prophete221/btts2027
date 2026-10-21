@@ -13,6 +13,8 @@
 import fs from 'fs'
 import path from 'path'
 import { generateMatchSlug } from './match-slug'
+import { isVipRow, observedFormBtts } from '../../scripts/public-predictions.mjs'
+import { getProba, getConfidence } from './predictions'
 
 export { generateMatchSlug } from './match-slug'
 
@@ -101,7 +103,7 @@ export interface MatchData {
   matchCountHome?: number
   matchCountAway?: number
   aiRisk?: string
-  formBtts?: string
+  formBtts?: string | number
   // Date de publication réelle du snapshot de données (predictions.json / archives).
   // Remplace toute date de source codée en dur dans l'UI.
   lastUpdated?: string
@@ -124,171 +126,66 @@ export function parseMatchSlug(slug: string): { home: string; away: string; date
 export function loadAllMatches(): Map<string, MatchData> {
   const archiveDir = path.join(process.cwd(), 'public', 'predictions-archive')
   const matches = new Map<string, MatchData>()
-
-  if (!fs.existsSync(archiveDir)) return matches
-
-  const files = fs.readdirSync(archiveDir).filter(f => f.endsWith('.json')).sort().slice(-14) // last 14 days only — reduce inode pressure on shared hosting
-
-  for (const file of files) {
-    try {
-      const data = JSON.parse(fs.readFileSync(path.join(archiveDir, file), 'utf8'))
-      const preds = data.predictions || data
-      if (!Array.isArray(preds)) continue
-
-      for (const p of preds) {
-        const home = p.home || ''
-        const away = p.away || ''
-        const date = (p.date || '').slice(0, 10)
-        if (!home || !away || !date) continue
-
-        const slug = generateMatchSlug(home, away, date)
-        const snapshotPublishedAt = data.lastUpdated || data.date || file.replace(/\.json$/, '')
-        if (!matches.has(slug)) {
-          matches.set(slug, {
-            slug,
-            home,
-            away,
-            league: p.league || '',
-            date,
-            time: p.time || '',
-            homeLogo: p.homeLogo,
-            awayLogo: p.awayLogo,
-            predictions: [],
-            aiExactScore: p.ai_exact_score,
-            exactScoreProb: p.exact_score_prob,
-            aiBttsProb: p.ai_btts_prob,
-            aiOver25Prob: p.ai_over25_prob,
-            aiKeyFact: p.ai_key_fact,
-            aiAnalysis: p.ai_analysis,
-            bttsProb: p.bttsProb,
-            over25Prob: p.over25Prob,
-            homeLambda: p.homeLambda,
-            awayLambda: p.awayLambda,
-            xgTotal: p.xgTotal,
-            dataQuality: p.dataQuality,
-            dataSource: p.dataSource,
-            matchCountHome: p.matchCountHome,
-            matchCountAway: p.matchCountAway,
-            aiRisk: p.ai_risk,
-            formBtts: p.formBTTS,
-            lastUpdated: snapshotPublishedAt,
-          })
-        }
-
-        const match = matches.get(slug)!
-        if (!match.aiExactScore && p.ai_exact_score) match.aiExactScore = p.ai_exact_score
-        if (!match.exactScoreProb && p.exact_score_prob) match.exactScoreProb = p.exact_score_prob
-        if (!match.aiBttsProb && p.ai_btts_prob) match.aiBttsProb = p.ai_btts_prob
-        if (!match.aiOver25Prob && p.ai_over25_prob) match.aiOver25Prob = p.ai_over25_prob
-        if (!match.aiKeyFact && p.ai_key_fact) match.aiKeyFact = p.ai_key_fact
-        if (!match.aiAnalysis && p.ai_analysis) match.aiAnalysis = p.ai_analysis
-        if (match.bttsProb == null && p.bttsProb != null) match.bttsProb = p.bttsProb
-        if (match.over25Prob == null && p.over25Prob != null) match.over25Prob = p.over25Prob
-        if (match.homeLambda == null && p.homeLambda != null) match.homeLambda = p.homeLambda
-        if (match.awayLambda == null && p.awayLambda != null) match.awayLambda = p.awayLambda
-        if (match.xgTotal == null && p.xgTotal != null) match.xgTotal = p.xgTotal
-        if (!match.dataQuality && p.dataQuality) match.dataQuality = p.dataQuality
-        if (!match.dataSource && p.dataSource) match.dataSource = p.dataSource
-        if (match.matchCountHome == null && p.matchCountHome != null) match.matchCountHome = p.matchCountHome
-        if (match.matchCountAway == null && p.matchCountAway != null) match.matchCountAway = p.matchCountAway
-        if (!match.aiRisk && p.ai_risk) match.aiRisk = p.ai_risk
-        if (!match.formBtts && p.formBTTS) match.formBtts = p.formBTTS
-        if (!match.lastUpdated && snapshotPublishedAt) match.lastUpdated = snapshotPublishedAt
-        match.predictions.push({
-          type: p.type || p.market || '',
-          market: p.type || p.market || '',
-          prediction: p.prediction || '',
-          proba: p.proba || p.confidence / 100 || 0.62,
-          confidence: p.confidence || 62,
-          tier: p.tier || 'STANDARD',
-          status: p.status,
-          isWon: p.isWon,
-          finalScore: p.finalScore,
-          verifiedAt: p.verifiedAt,
-          source: p.source || '',
+  const ingest = (data: any, fallbackDate: string, current = false) => {
+    const rows = Array.isArray(data) ? data : (data.free || data.predictions || [])
+    if (!Array.isArray(rows)) return
+    const refreshed = new Set<string>()
+    for (const p of rows) {
+      if (isVipRow(p)) continue
+      const home = p.home || '', away = p.away || '', date = (p.date || '').slice(0, 10)
+      if (!home || !away || !date) continue
+      const slug = generateMatchSlug(home, away, date)
+      const snapshotPublishedAt = p.publishedAt || data.lastUpdated || data.date || fallbackDate
+      // Le flux actuel est prioritaire pour TOUS les champs, pas seulement les champs vides.
+      // Il est lui-même restauré depuis la première publication par le finaliseur d'archives.
+      if (!matches.has(slug) || (current && !refreshed.has(slug))) {
+        matches.set(slug, {
+          slug, home, away, date, league: p.league || '', time: p.time || '',
+          homeLogo: p.homeLogo, awayLogo: p.awayLogo, predictions: [],
+          // Les anciens chiffres Gemini ne constituent pas des sorties du modèle.
+          aiKeyFact: p.ai_key_fact, aiAnalysis: p.ai_analysis,
+          bttsProb: p.bttsProb, over25Prob: p.over25Prob,
+          homeLambda: p.homeLambda, awayLambda: p.awayLambda, xgTotal: p.xgTotal,
+          dataQuality: p.dataQuality, dataSource: p.dataSource,
+          matchCountHome: p.matchCountHome, matchCountAway: p.matchCountAway,
+          aiRisk: p.ai_risk, formBtts: observedFormBtts(p) ?? undefined, lastUpdated: snapshotPublishedAt,
         })
+        refreshed.add(slug)
       }
-    } catch (e) {
-      continue
+      const match = matches.get(slug)!
+      const markets = Array.isArray(p.predictions) && p.predictions.length ? p.predictions : [p]
+      for (const market of markets) {
+        if (isVipRow(market)) continue
+        const type = market.type || market.market || p.type || p.market || ''
+        const existing = match.predictions.findIndex(row => marketKey(row.type) === marketKey(type))
+        const probability = market.proba ?? (marketKey(type) === 'btts' ? market.bttsProb : market.over25Prob)
+        const combined = { ...p, ...market, type, proba: probability ?? p.proba }
+        const row = {
+          type, market: type, prediction: market.prediction || p.prediction || '',
+          proba: getProba(combined), confidence: getConfidence(combined),
+          tier: market.tier || p.tier || 'STANDARD', status: market.status || p.status,
+          isWon: market.isWon ?? p.isWon, finalScore: market.finalScore || p.finalScore,
+          verifiedAt: market.verifiedAt || p.verifiedAt, source: market.source || p.source || '',
+        }
+        if (existing < 0) match.predictions.push(row)
+        else if (current) match.predictions[existing] = row
+      }
     }
   }
-
-  // Current predictions may contain richer AI fields than archived snapshots.
-  // Merge those fields into the same stable match records so every live prediction
-  // can link to a detailed static match page without changing the data source.
+  if (fs.existsSync(archiveDir)) {
+    const files = fs.readdirSync(archiveDir).filter(f => f.endsWith('.json')).sort().slice(-14)
+    for (const file of files) {
+      try { ingest(JSON.parse(fs.readFileSync(path.join(archiveDir, file), 'utf8')), file.replace(/\.json$/, '')) }
+      catch { /* Une archive illisible ne doit pas supprimer les autres pages. */ }
+    }
+  }
   const currentPath = path.join(process.cwd(), 'public', 'predictions.json')
   if (fs.existsSync(currentPath)) {
-    try {
-      const current = JSON.parse(fs.readFileSync(currentPath, 'utf8'))
-      const currentPredictions = current?.free || current?.predictions || []
-      if (Array.isArray(currentPredictions)) {
-        for (const p of currentPredictions) {
-          const home = p.home || ''
-          const away = p.away || ''
-          const date = (p.date || '').slice(0, 10)
-          if (!home || !away || !date) continue
-          const slug = generateMatchSlug(home, away, date)
-          let match = matches.get(slug)
-          if (!match) {
-            match = {
-              slug,
-              home,
-              away,
-              league: p.league || '',
-              date,
-              time: p.time || '',
-              homeLogo: p.homeLogo,
-              awayLogo: p.awayLogo,
-              predictions: [],
-              lastUpdated: current.lastUpdated || current.date || undefined,
-            }
-            matches.set(slug, match)
-          }
-          if (!match.lastUpdated && current.lastUpdated) match.lastUpdated = current.lastUpdated
-          if (!match.aiExactScore && p.ai_exact_score) match.aiExactScore = p.ai_exact_score
-          if (!match.exactScoreProb && p.exact_score_prob) match.exactScoreProb = p.exact_score_prob
-          if (!match.aiBttsProb && p.ai_btts_prob) match.aiBttsProb = p.ai_btts_prob
-          if (!match.aiOver25Prob && p.ai_over25_prob) match.aiOver25Prob = p.ai_over25_prob
-          if (!match.aiKeyFact && p.ai_key_fact) match.aiKeyFact = p.ai_key_fact
-          if (!match.aiAnalysis && p.ai_analysis) match.aiAnalysis = p.ai_analysis
-          if (match.bttsProb == null && p.bttsProb != null) match.bttsProb = p.bttsProb
-          if (match.over25Prob == null && p.over25Prob != null) match.over25Prob = p.over25Prob
-          if (match.homeLambda == null && p.homeLambda != null) match.homeLambda = p.homeLambda
-          if (match.awayLambda == null && p.awayLambda != null) match.awayLambda = p.awayLambda
-          if (match.xgTotal == null && p.xgTotal != null) match.xgTotal = p.xgTotal
-          const sourceMarkets = Array.isArray(p.predictions) && p.predictions.length > 0
-            ? p.predictions
-            : [p]
-          for (const sourcePrediction of sourceMarkets) {
-            const marketType = sourcePrediction.type || sourcePrediction.market || p.type || p.market || 'BTTS'
-            const hasMarket = match.predictions.some(existing =>
-              (existing.type || existing.market || '').toLowerCase() === String(marketType).toLowerCase(),
-            )
-            if (hasMarket) continue
-            match.predictions.push({
-              type: marketType,
-              market: marketType,
-              prediction: sourcePrediction.prediction || p.prediction || '',
-              proba: sourcePrediction.proba || sourcePrediction.bttsProb || sourcePrediction.over25Prob || p.proba || p.confidence / 100 || 0.62,
-              confidence: sourcePrediction.confidence || p.confidence || 62,
-              tier: sourcePrediction.tier || p.tier || 'STANDARD',
-              status: sourcePrediction.status || p.status,
-              isWon: sourcePrediction.isWon ?? p.isWon,
-              finalScore: sourcePrediction.finalScore || p.finalScore,
-              verifiedAt: sourcePrediction.verifiedAt || p.verifiedAt,
-              source: sourcePrediction.source || p.source || '',
-            })
-          }
-        }
-      }
-    } catch {
-      // Keep archived match pages available if the live data file is unavailable.
-    }
+    try { ingest(JSON.parse(fs.readFileSync(currentPath, 'utf8')), '', true) }
+    catch { /* Conserver les archives si le flux courant est indisponible. */ }
   }
-
   return matches
 }
-
 /**
  * Get a single match by slug.
  */

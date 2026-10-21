@@ -142,8 +142,10 @@ export function validateWinHistoryPayload(payload) {
         errors.push(`incohérence compteurs : total + pending + unverifiable (${accounted}) ≠ archivedTotal (${stats.archivedTotal})`);
       }
     }
-    if (typeof stats.total === 'number' && stats.total > 0 && typeof stats.won === 'number' && typeof stats.rate === 'number') {
-      const expected = +(stats.won / stats.total * 100).toFixed(1);
+    if (typeof stats.total === 'number' && typeof stats.won === 'number' && typeof stats.rate === 'number') {
+      // total is the verified denominator: W + L. Pending/unverifiable never
+      // enter the success rate, while losses remain in its denominator.
+      const expected = stats.total > 0 ? +(stats.won / stats.total * 100).toFixed(1) : 0;
       if (stats.rate !== expected) {
         errors.push(`incohérence stats.rate : ${stats.rate} ≠ won/total recalculé = ${expected}`);
       }
@@ -263,8 +265,12 @@ function processFile(file, bucket, nowMs = Date.now(), dir = DIR) {
   for (const p of preds) {
     const tier = getTier(p);
     const type = getType(p);
-    const isWon = p.status === 'WON' || p.isWon === true;
-    const isLost = p.status === 'LOST' || p.isWon === false;
+    // A recognized result status is authoritative. Legacy boolean-only records
+    // remain supported, but unknown statuses (e.g. PENDING) must not turn into
+    // losses merely because a stale `isWon: false` field is present.
+    const status = typeof p.status === 'string' ? p.status.trim().toUpperCase() : '';
+    const isWon = status === 'WON' || (!status && p.isWon === true);
+    const isLost = status === 'LOST' || (!status && p.isWon === false);
     const isVerified = isWon || isLost;
 
     if (isWon) {

@@ -8,14 +8,13 @@ import fs from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
 import { validatePredictionPayload } from './validate-predictions.mjs'
+import { deriveFormBtts, hasSufficientTeamStats } from './prediction-model.mjs'
+import { publicVipFixture } from './public-predictions.mjs'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 const PUBLIC_DIR = path.join(__dirname, '..', 'public')
 const PREDICTIONS_FILE = path.join(PUBLIC_DIR, 'predictions.json')
-const ARCHIVE_DIR = path.join(PUBLIC_DIR, 'predictions-archive')
-
-if (!fs.existsSync(ARCHIVE_DIR)) fs.mkdirSync(ARCHIVE_DIR, { recursive: true })
 
 function writeJsonAtomically(file, payload) {
   const tempFile = `${file}.${process.pid}.tmp`
@@ -29,10 +28,8 @@ const MAX_VIP = 8            // show up to 8 VIP matches
 const DISPLAY_TZ = 'Africa/Dakar'  // Senegal timezone = UTC+0 (GMT)
 const MIN_KICKOFF_LEAD_MINUTES = 30 // safety buffer for long enrichment/verification steps
 
-// ─── HIGH BTTS Leagues ───
-// Inclut les compétitions midweek (Champions League mardi/mercredi) et les
-// grands championnats (LaLiga, Serie A, Ligue 1) — sans eux, les mardis et
-// mercredis se retrouvent avec 0-1 match affiché alors que ESPN en recense 9+.
+// Ligues ESPN suivies. Aucune moyenne de ligue n'est utilisée pour fabriquer
+// une prédiction lorsque les données d'équipe sont insuffisantes.
 const ESPN_SLUGS = {
   'uefa.champions': 'UEFA Champions League',
   'eng.1': 'Premier League',
@@ -50,26 +47,6 @@ const ESPN_SLUGS = {
   'sco.1': 'Scottish Premiership',
   'usa.1': 'MLS',
 }
-
-const LEAGUE_PROFILES = {
-  'uefa.champions': { bttsRate: 0.54, avgGoals: 3.05, homeFactor: 1.30, awayFactor: 1.15 },
-  'eng.1': { bttsRate: 0.55, avgGoals: 2.82, homeFactor: 1.35, awayFactor: 1.10 },
-  'eng.2': { bttsRate: 0.56, avgGoals: 2.68, homeFactor: 1.32, awayFactor: 1.08 },
-  'ger.1': { bttsRate: 0.58, avgGoals: 3.05, homeFactor: 1.40, awayFactor: 1.15 },
-  'ger.2': { bttsRate: 0.57, avgGoals: 2.90, homeFactor: 1.35, awayFactor: 1.12 },
-  'ned.1': { bttsRate: 0.57, avgGoals: 3.15, homeFactor: 1.38, awayFactor: 1.18 },
-  'bel.1': { bttsRate: 0.55, avgGoals: 2.85, homeFactor: 1.33, awayFactor: 1.10 },
-  'swi.1': { bttsRate: 0.54, avgGoals: 2.78, homeFactor: 1.30, awayFactor: 1.08 },
-  'por.1': { bttsRate: 0.55, avgGoals: 2.72, homeFactor: 1.35, awayFactor: 1.10 },
-  'aut.1': { bttsRate: 0.54, avgGoals: 2.80, homeFactor: 1.32, awayFactor: 1.08 },
-  'sco.1': { bttsRate: 0.53, avgGoals: 2.65, homeFactor: 1.30, awayFactor: 1.05 },
-  'esp.1': { bttsRate: 0.51, avgGoals: 2.70, homeFactor: 1.35, awayFactor: 1.10 },
-  'ita.1': { bttsRate: 0.52, avgGoals: 2.75, homeFactor: 1.32, awayFactor: 1.10 },
-  'fra.1': { bttsRate: 0.50, avgGoals: 2.65, homeFactor: 1.33, awayFactor: 1.08 },
-  'usa.1': { bttsRate: 0.56, avgGoals: 3.10, homeFactor: 1.35, awayFactor: 1.12 },
-}
-
-const DEFAULT_PROFILE = { bttsRate: 0.54, avgGoals: 2.80, homeFactor: 1.33, awayFactor: 1.10 }
 
 // ─── Helpers ───
 function getTodayISO() {
@@ -463,8 +440,7 @@ async function quickUpdate() {
     for (const dateParam of dateParams) {
       const matches = await fetchESPNMatches(slug, dateParam)
       for (const m of matches) {
-        const profile = LEAGUE_PROFILES[slug] || DEFAULT_PROFILE
-        allMatches.push({ ...m, profile, slug })
+        allMatches.push({ ...m, slug })
       }
       console.log(`[v91] ${slug}/${dateParam}: ${matches.length} matches`)
     }
@@ -491,13 +467,18 @@ async function quickUpdate() {
   const rejectionReasons = []
 
   for (const m of uniqueMatches) {
-    const profile = m.profile || DEFAULT_PROFILE
-    const dateStr = m.date
     const slug = m.slug
 
     // ─── Fetch REAL team stats from ESPN ───
     const homeStats = m.homeTeamId ? await fetchTeamStats(slug, m.homeTeamId, m.home) : { available: false, dataQuality: 'LOW', matchCount: 0 }
     const awayStats = m.awayTeamId ? await fetchTeamStats(slug, m.awayTeamId, m.away) : { available: false, dataQuality: 'LOW', matchCount: 0 }
+
+    // No league-average fallback: identical fabricated inputs are not evidence.
+    if (!hasSufficientTeamStats(homeStats) || !hasSufficientTeamStats(awayStats)) {
+      rejected++
+      rejectionReasons.push(`ABSTENTION: ${m.home} vs ${m.away} - données récentes insuffisantes (min. 4 matchs par équipe)`)
+      continue
+    }
 
     // Determine data quality (worst of both teams)
     const homeQuality = homeStats.available ? homeStats.dataQuality : 'LOW'
@@ -505,28 +486,19 @@ async function quickUpdate() {
     const qualityRank = { HIGH: 3, MEDIUM: 2, LOW: 1 }
     const dataQuality = qualityRank[homeQuality] <= qualityRank[awayQuality] ? homeQuality : awayQuality
 
-    // ─── Calculate lambda from REAL data ───
-    // If real data available: use real avg scored/conceded (with home/away split when possible)
-    // If not available: fall back to LEAGUE_PROFILES (context only, not team-specific)
+    // ─── Calculate lambda from REAL data only ───
     let homeAttackXG, homeDefenseXG, awayAttackXG, awayDefenseXG
 
     if (homeStats.available && homeStats.matchCount >= 4) {
       // Real data: prefer home-specific stats for home team
       homeAttackXG = homeStats.homeAvgScored !== null ? homeStats.homeAvgScored : homeStats.avgScored
       homeDefenseXG = homeStats.homeAvgConceded !== null ? homeStats.homeAvgConceded : homeStats.avgConceded
-    } else {
-      // Fallback: league average (not team-specific — data quality LOW)
-      homeAttackXG = profile.avgGoals * 0.55
-      homeDefenseXG = profile.avgGoals * 0.45
     }
 
     if (awayStats.available && awayStats.matchCount >= 4) {
       // Real data: prefer away-specific stats for away team
       awayAttackXG = awayStats.awayAvgScored !== null ? awayStats.awayAvgScored : awayStats.avgScored
       awayDefenseXG = awayStats.awayAvgConceded !== null ? awayStats.awayAvgConceded : awayStats.avgConceded
-    } else {
-      awayAttackXG = profile.avgGoals * 0.45
-      awayDefenseXG = profile.avgGoals * 0.55
     }
 
     // Lambda = average of (team attack, opponent defense)
@@ -610,7 +582,7 @@ async function quickUpdate() {
     const bttsPrediction = {
       type: 'BTTS',
       prediction: bttsProbRaw >= 0.50 ? 'Oui' : 'Non',
-      confidence: Math.round(Math.max(40, Math.min(95, bttsProbRaw * 100))),
+      confidence: Math.round(bttsProbRaw * 100),
       bttsProb: +bttsProbRaw.toFixed(4),
       homeLambda: xgHome,
       awayLambda: xgAway,
@@ -619,7 +591,7 @@ async function quickUpdate() {
     const over25Prediction = {
       type: 'Over 2.5',
       prediction: over25ProbRaw >= 0.50 ? 'Oui' : 'Non',
-      confidence: Math.round(Math.max(40, Math.min(95, over25ProbRaw * 100))),
+      confidence: Math.round(over25ProbRaw * 100),
       over25Prob: +over25ProbRaw.toFixed(4),
       homeLambda: xgHome,
       awayLambda: xgAway,
@@ -656,7 +628,7 @@ async function quickUpdate() {
       xgHome: xgHome,
       xgAway: xgAway,
       xgTotal: xgTotal,
-      formBTTS: homeStats.available ? Math.round((homeStats.avgScored + awayStats.avgScored) / 10 * 100) : 0,
+      formBTTS: deriveFormBtts(homeStats, awayStats),
       analysis: analysis,
       // ─── DATA FIELDS the component needs ───
       // PromoVip reads these via p.analysis?.X (we mirror them here too)
@@ -707,18 +679,9 @@ async function quickUpdate() {
   // Free: top 8 by reliability (any score, always show top)
   const free = scored.slice(0, MAX_FREE)
 
-  // VIP: next 6 after free (lower reliability, "preview" teasing)
-  // Sélection VIP = copie détachée de scored, explicitement marquée vip: true.
-  // Le statut VIP n'est JAMAIS déduit du tier GOLD, d'une proba ou d'un tableau.
-  const vipPreview = scored.slice(MAX_FREE, MAX_FREE + MAX_VIP).map(p => ({ ...p, vip: true }))
-
-  // If we don't have enough matches, duplicate some from free into vip
-  // Miroirs de teasing uniquement : explicitement NON VIP (vip: false) —
-  // un match gratuit ne peut jamais être affiché comme sélection VIP.
-  if (vipPreview.length < 3 && free.length > 0) {
-    const extra = free.slice(0, 3 - vipPreview.length).map(p => ({ ...p, vipMirror: true, vip: false }))
-    vipPreview.push(...extra)
-  }
+  // Aucun choix privé n'est publié sans accès sécurisé : le preview n'expose que
+  // l'identité du match et les métadonnées de fixture explicitement autorisées.
+  const vipPreview = scored.slice(MAX_FREE, MAX_FREE + MAX_VIP).map(publicVipFixture)
 
   // ─── LOG RESULTS ───
   console.log(`\n[v91] ===== RESULTS =====`)
@@ -771,11 +734,7 @@ async function quickUpdate() {
   writeJsonAtomically(PREDICTIONS_FILE, predictionsData)
   console.log(`\n[v91] Written to predictions.json (${free.length} free, ${vipPreview.length} VIP)`)
   console.log(`[v91] File size: ${(fs.statSync(PREDICTIONS_FILE).size / 1024).toFixed(1)} KB`)
-  // ─── Archive daily ───
-  const archiveFile = path.join(ARCHIVE_DIR, `${today}.json`)
-  writeJsonAtomically(archiveFile, predictionsData)
-
-  console.log(`[v91] Archived to predictions-archive/${today}.json`)
+  console.log('[v91] Archive finalization is deferred until enrichment is complete.')
 
   console.log(`\n[v91] Done.`)
 }

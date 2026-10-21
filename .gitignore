@@ -76,3 +76,6 @@ download/*.py
 /examples/
 /mini-services/
 /3099__pycache__/
+
+# Données privées : ne jamais publier dans le dépôt ou l’export statique.
+/.private/

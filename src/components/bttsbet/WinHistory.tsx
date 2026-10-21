@@ -42,6 +42,9 @@ export default function WinHistory() {
   }
 
   const stats = data.stats
+  const verifiedHistory = Array.isArray(data.history)
+    ? data.history.filter((h: any) => h.status === 'WON' || h.status === 'LOST')
+    : []
   const gold = stats.gold || { total: 0, won: 0, lost: 0, rate: 0 }
   const hasGold = gold.total >= 10
   const goldReady = gold.rate >= 55
@@ -79,7 +82,7 @@ export default function WinHistory() {
               <div className="text-xs text-[#9DABBB]">{stats.won}W/{stats.lost}L</div>
             </div>
             <div className="mt-2 text-[10px] text-[#9DABBB]">
-              {stats.total} vérifiés • Vérifié via ESPN • Maj {majTime}
+              {stats.total} vérifiés (W+L) • Pertes incluses dans le taux • Vérifié via ESPN • Maj {majTime}
             </div>
             <div className="mt-3 h-1.5 bg-[#0B0F14] rounded-full">
               <div className="h-full bg-[#34D399] rounded-full transition-all duration-700" style={{ width: `${stats.rate}%` }}></div>
@@ -150,11 +153,11 @@ export default function WinHistory() {
         )}
 
         {/* History table */}
-        {data.history && data.history.length > 0 && (
+        {verifiedHistory.length > 0 && (
           <div className="rounded-[16px] bg-[#141C25] border border-[#6B7A8C] p-4">
             <h3 className="text-sm font-bold text-[#F2F6FA] mb-3">Derniers résultats vérifiés</h3>
             <div className="space-y-1 max-h-96 overflow-y-auto">
-              {data.history.slice(0, 30).map((h: any, i: number) => {
+              {verifiedHistory.slice(0, 30).map((h: any, i: number) => {
                 const isWon = h.status === 'WON' || h.isWon === true
                 const isGold = (h.tier || 'STANDARD').toUpperCase() === 'GOLD'
                 const market = (h.type || h.market || '').includes('Over') ? 'O2.5' : (h.type || h.market || 'BTTS')

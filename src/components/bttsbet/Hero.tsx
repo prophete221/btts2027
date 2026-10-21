@@ -7,6 +7,7 @@ import { translationsFor, type Locale, localizedPath } from '@/lib/i18n'
 import { generateMatchSlug } from '@/lib/match-slug'
 import AnimatedTitle from './HeroWordmark'
 import MovingGradientButton from './MovingGradientButton'
+import { getDakarDayDiff, hasDakarKickoffPassed } from '@/lib/dakar-date'
 
 /**
  * Hero v4 — « signal terminal » premium.
@@ -61,20 +62,16 @@ interface FeedItem {
   prediction?: string
 }
 
-/** Écart en jours UTC entre la date du match et aujourd'hui. */
+/** Écart en jours métier à Dakar entre la date du match et aujourd'hui. */
 function dayDiff(dateStr: string): number {
-  try {
-    const today = new Date(); today.setUTCHours(0, 0, 0, 0)
-    const d = new Date(dateStr + 'T00:00:00Z')
-    return Math.round((d.getTime() - today.getTime()) / 86400000)
-  } catch { return 999 }
+  return getDakarDayDiff(dateStr)
 }
 
 function formatDay(dateStr: string, lang: Locale): string {
   try {
     const loc = lang === 'en' ? 'en-GB' : lang === 'ar' ? 'ar' : 'fr-FR'
     const d = new Date(dateStr + 'T12:00:00Z')
-    return new Intl.DateTimeFormat(loc, { weekday: 'short', day: '2-digit', month: 'short', timeZone: 'UTC' }).format(d)
+    return new Intl.DateTimeFormat(loc, { weekday: 'short', day: '2-digit', month: 'short', timeZone: 'Africa/Dakar' }).format(d)
   } catch { return dateStr }
 }
 
@@ -118,9 +115,9 @@ export default function Hero({ initialLocale }: { initialLocale?: Locale } = {})
           : Array.isArray(pred?.predictions) ? pred.predictions : []
         // Signal en vedette : prochain match à venir avec les données les plus riches
         const upcoming = raw
-          .filter(m => dayDiff(m.date) >= 0)
+          .filter(m => !hasDakarKickoffPassed(m.date, m.time))
           .sort((a, b) => dataRichness(b) - dataRichness(a))
-        setFeatured(upcoming[0] || raw[0] || null)
+        setFeatured(upcoming[0] || null)
         setReady(true)
       })
     return () => { cancelled = true }
@@ -254,7 +251,7 @@ export default function Hero({ initialLocale }: { initialLocale?: Locale } = {})
                         <span key={p.type} className={`hp-live__pick${p.type === 'BTTS' ? ' is-btts' : p.type.includes('Over') ? ' is-over' : ''}`}>
                           <b>{p.type}</b>
                           <span>{pickWord(p.prediction)}</span>
-                          {p.confidence !== undefined && <i>{p.confidence}%</i>}
+                          {p.confidence !== undefined && p.confidence > 0 && p.confidence <= 100 && <i>{p.confidence}%</i>}
                         </span>
                       ))}
                       {m.ai_exact_score && (

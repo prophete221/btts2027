@@ -81,7 +81,7 @@ export function normalizeMarket(m: string): string {
 }
 
 /**
- * Probability fallback chain — never returns 0 or undefined.
+ * Probability fallback chain. Zero means no usable probability was supplied.
  *
  * Order:
  *  1. p.proba
@@ -89,40 +89,37 @@ export function normalizeMarket(m: string): string {
  *  3. p.analysis.bttsProb (if market is BTTS)
  *  4. p.analysis.over25Prob (if market is Over 2.5)
  *  5. p.confidence / 100
- *  6. Default: 0.62 (publication threshold)
+ *  6. Default: 0 (unknown)
  */
 export function getProba(p: Prediction): number {
   const market = normalizeMarket(p.type || p.market || '')
+  const validProbability = (value: unknown): value is number =>
+    typeof value === 'number' && Number.isFinite(value) && value >= 0 && value <= 1
 
-  if (p.proba && p.proba > 0) return Math.min(0.99, Math.max(0.62, p.proba))
-  if (p.probability && p.probability > 0) return Math.min(0.99, Math.max(0.62, p.probability))
+  if (validProbability(p.proba)) return p.proba
+  if (validProbability(p.probability)) return p.probability
 
   if (p.analysis) {
-    if (market === 'btts' && p.analysis.bttsProb && p.analysis.bttsProb > 0) {
-      return Math.min(0.99, Math.max(0.62, p.analysis.bttsProb))
-    }
-    if (market === 'over25' && p.analysis.over25Prob && p.analysis.over25Prob > 0) {
-      return Math.min(0.99, Math.max(0.62, p.analysis.over25Prob))
-    }
-    // Fallback to whichever is higher
-    const fallback = p.analysis.bttsProb || p.analysis.over25Prob || 0
-    if (fallback > 0) return Math.min(0.99, Math.max(0.62, fallback))
+    if (market === 'btts' && validProbability(p.analysis.bttsProb)) return p.analysis.bttsProb
+    if (market === 'over25' && validProbability(p.analysis.over25Prob)) return p.analysis.over25Prob
+    const fallback = [p.analysis.bttsProb, p.analysis.over25Prob].filter(validProbability)
+    if (fallback.length) return Math.max(...fallback)
   }
 
-  if (p.confidence && p.confidence > 0) {
-    const proba = p.confidence / 100
-    return Math.min(0.99, Math.max(0.62, proba))
+  if (typeof p.confidence === 'number' && Number.isFinite(p.confidence) && p.confidence >= 0 && p.confidence <= 100) {
+    return p.confidence / 100
   }
 
-  // Last resort — publication threshold (never 0)
-  return 0.62
+  return 0
 }
 
 /**
- * Confidence level — never returns 0.
+ * Confidence level — zero means unknown when no source value exists.
  */
 export function getConfidence(p: Prediction): number {
-  if (p.confidence && p.confidence > 0) return Math.min(99, Math.max(62, p.confidence))
+  if (typeof p.confidence === 'number' && Number.isFinite(p.confidence) && p.confidence >= 0 && p.confidence <= 100) {
+    return p.confidence
+  }
   return Math.round(getProba(p) * 100)
 }
 
@@ -133,7 +130,7 @@ export function getConfidence(p: Prediction): number {
  * 4 = real Poisson data without form
  * 3 = predicted with fallback
  * 2 = partial data
- * 1 = insufficient data (fallback to 0.62)
+ * 1 = insufficient data (probability unknown)
  */
 export function getDataQuality(p: Prediction): number {
   if (p.analysis?.hasRealData && p.analysis.homeLambda && p.analysis.awayLambda && p.analysis.homeForm && p.analysis.awayForm) {
@@ -287,8 +284,9 @@ export function countPredictions(predictions: Prediction[]): PredictionCounts {
   }
 
   for (const p of predictions) {
-    const isWon = p.status === 'WON' || p.isWon === true
-    const isLost = p.status === 'LOST' || p.isWon === false
+    const status = (p.status || '').toUpperCase()
+    const isWon = status === 'WON' || (!status && p.isWon === true)
+    const isLost = status === 'LOST' || (!status && p.isWon === false)
     const isCancelled = p.status === 'CANCELLED' || p.status === 'POSTPONED'
 
     if (isWon) {

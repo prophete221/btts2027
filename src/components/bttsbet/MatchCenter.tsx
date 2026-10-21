@@ -4,6 +4,7 @@ import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react'
 import { useLanguage } from './LanguageSwitcher'
 import { translationsFor, type Locale, localizedPath } from '@/lib/i18n'
 import { generateMatchSlug } from '@/lib/match-slug'
+import { getDakarDayDiff, hasDakarKickoffPassed } from '@/lib/dakar-date'
 
 // useLayoutEffect isomorphe (évite le warning SSR React)
 const useIsoLayoutEffect = typeof window !== 'undefined' ? useLayoutEffect : useEffect
@@ -60,23 +61,22 @@ interface HistoryRecord {
   finalScore?: string
 }
 
+const hasFinalResult = (record?: HistoryRecord) =>
+  Boolean(record?.finalScore || record?.status === 'WON' || record?.status === 'LOST')
+
 type MarketFilter = 'all' | 'btts' | 'o25' | 'exact'
 type StatusFilter = 'all' | 'upcoming' | 'finished'
 type DayFilter = 'all' | 'today' | 'tomorrow' | 'week'
 
 function dayDiff(dateStr: string): number {
-  try {
-    const today = new Date(); today.setUTCHours(0, 0, 0, 0)
-    const d = new Date(dateStr + 'T00:00:00Z')
-    return Math.round((d.getTime() - today.getTime()) / 86400000)
-  } catch { return 999 }
+  return getDakarDayDiff(dateStr)
 }
 
 function formatCardDate(dateStr: string, lang: Locale): string {
   try {
     const loc = lang === 'en' ? 'en-GB' : lang === 'ar' ? 'ar' : 'fr-FR'
     const d = new Date(dateStr + 'T12:00:00Z')
-    return new Intl.DateTimeFormat(loc, { weekday: 'short', day: '2-digit', month: '2-digit', timeZone: 'UTC' }).format(d)
+    return new Intl.DateTimeFormat(loc, { weekday: 'short', day: '2-digit', month: '2-digit', timeZone: 'Africa/Dakar' }).format(d)
   } catch { return dateStr }
 }
 
@@ -140,8 +140,10 @@ export default function MatchCenter({ initialLocale }: { initialLocale?: Locale 
       if (day === 'today' && diff !== 0) return false
       if (day === 'tomorrow' && diff !== 1) return false
       if (day === 'week' && (diff < 0 || diff > 7)) return false
-      const isFinished = diff < 0
-      if (status === 'upcoming' && isFinished) return false
+      const record = results.get(`${m.match}|${m.date}`)
+      const isFinished = hasFinalResult(record)
+      const isUpcoming = !hasDakarKickoffPassed(m.date, m.time)
+      if (status === 'upcoming' && !isUpcoming) return false
       if (status === 'finished' && !isFinished) return false
       if (market === 'btts' && !hasBtts(m)) return false
       if (market === 'o25' && !hasO25(m)) return false
@@ -150,12 +152,12 @@ export default function MatchCenter({ initialLocale }: { initialLocale?: Locale 
       return true
     }).sort((a, b) => {
       const da = dayDiff(a.date), db = dayDiff(b.date)
-      const fa = da < 0, fb = db < 0
-      if (fa !== fb) return fa ? 1 : -1 // à venir d’abord, terminés ensuite
+      const fa = hasFinalResult(results.get(`${a.match}|${a.date}`)), fb = hasFinalResult(results.get(`${b.match}|${b.date}`))
+      if (fa !== fb) return fa ? 1 : -1 // matchs sans résultat d'abord
       if (da !== db) return da - db
       return (a.time || '').localeCompare(b.time || '')
     })
-  }, [items, market, status, day, league])
+  }, [items, results, market, status, day, league])
 
   const leagues = useMemo(() => {
     const set = new Set<string>()
@@ -355,9 +357,9 @@ function MatchCard({ m, index, lang, results }: {
   const tiltPointer = useRef({ x: 0, y: 0 })
   const tiltCapable = useRef<boolean | null>(null)
   const diff = dayDiff(m.date)
-  const isFinished = diff < 0
   const record = results.get(`${m.match}|${m.date}`)
-  const hasResult = isFinished && record?.finalScore
+  const isFinished = hasFinalResult(record)
+  const hasResult = Boolean(record?.finalScore)
   const won = record?.status === 'WON'
   const lost = record?.status === 'LOST'
 
@@ -486,7 +488,7 @@ function MatchCard({ m, index, lang, results }: {
             <span key={p.type} className={`hp-pick${p.type === 'BTTS' ? ' is-btts' : ''}`}>
               <b>{p.type}</b>
               <span>{p.prediction === 'Oui' ? t.predictions.bttsYes : p.prediction === 'Non' ? t.predictions.bttsNo : p.prediction}</span>
-              {p.confidence !== undefined && <i>{p.confidence}%</i>}
+              {p.confidence !== undefined && p.confidence > 0 && p.confidence <= 100 && <i>{p.confidence}%</i>}
             </span>
           ))}
           {m.ai_exact_score && (

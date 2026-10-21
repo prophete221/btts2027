@@ -214,7 +214,7 @@ export default function LinebetClient() {
 
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <div className="lpb-rise flex justify-center mb-4" style={{ '--d': '40ms' } as CSSProperties}>
-            <span className="lpb-badge text-[10px] tracking-[0.18em]">★ Code Promo N°1 Mondial</span>
+            <span className="lpb-badge text-[10px] tracking-[0.18em]">Code promotionnel Linebet</span>
           </div>
           <h1
             className="lpb-rise text-3xl sm:text-5xl mb-3 leading-tight"
@@ -594,36 +594,6 @@ export default function LinebetClient() {
         </div>
       </section>
 
-      {/* ─────────── STICKY BOTTOM BAR (mobile only) ─────────── */}
-      <div
-        className="lpb-sticky sm:hidden fixed bottom-0 left-0 right-0 z-[80] flex items-center justify-between gap-3 px-4 py-3"
-        style={{
-          backgroundColor: BG_DARK,
-          borderTop: `1.5px solid ${GOLD}`,
-          boxShadow: '0 -8px 24px rgba(0,0,0,0.4)',
-          paddingBottom: 'calc(12px + env(safe-area-inset-bottom, 0px))',
-        }}
-      >
-        <div className="flex flex-col">
-          <span className="text-[9px] uppercase tracking-widest" style={{ color: TEXT_SEC }}>Code promo</span>
-          <span className="text-base font-black tracking-[0.12em]" style={{ color: GOLD, fontFamily: 'var(--font-mono), monospace' }}>
-            {CODE}
-          </span>
-        </div>
-        <button
-          onClick={handleCopy}
-          className="px-5 py-2.5 rounded-[10px] font-bold text-[13px]"
-          style={{
-            backgroundColor: copied ? '#2F7DFF' : GOLD,
-            color: BG_DARK,
-          }}
-        >
-          {copyFailed ? '⚠ Manuel' : copied ? '✅ Copié' : '📋 Copier'}
-        </button>
-      </div>
-
-      {/* Spacer pour sticky bar mobile (évite que le footer ne soit masqué) */}
-      <div className="sm:hidden h-[72px]" aria-hidden="true" />
     </>
   )
 }

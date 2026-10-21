@@ -184,7 +184,7 @@ export default function Btts221PromoClient({ lang, reviewDate }: { lang: Lang; r
   const signupLabel = copyFailed ? `${copy.copy} ⚠` : copied ? copy.copied : copy.copy
 
   return (
-    <main dir={copy.dir} className="min-h-screen overflow-hidden bg-[#07090D] pb-24 text-white">
+    <main dir={copy.dir} className="min-h-screen overflow-hidden bg-[#07090D] text-white">
       <div className="relative isolate">
         <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[680px] bg-[radial-gradient(circle_at_12%_0%,rgba(248, 113, 113,.18),transparent_32%),radial-gradient(circle_at_88%_6%,rgba(255,215,0,.12),transparent_28%),linear-gradient(180deg,#11141B_0%,#07090D_78%)]" />
         <div className="mx-auto max-w-6xl px-4 pb-10 pt-5 sm:px-6 sm:pb-16 sm:pt-8">
@@ -279,12 +279,6 @@ export default function Btts221PromoClient({ lang, reviewDate }: { lang: Lang; r
         </div>
       </div>
 
-      <div className="fixed inset-x-0 bottom-0 z-50 border-t border-[#F87171]/30 bg-[#07090D]/95 p-3 shadow-[0_-12px_35px_rgba(0,0,0,.45)] backdrop-blur-xl md:hidden">
-        <div className="mx-auto flex max-w-lg items-center gap-2">
-          <button type="button" onClick={handleCopy} className="flex min-w-0 flex-1 items-center justify-center gap-2 rounded-xl border border-[#E8C268]/70 bg-[#E8C268] px-3 py-3 text-sm font-black text-[#13100A] active:scale-[.98]">{copied ? copy.copied : <><code className="tracking-[.12em]">{CODE}</code><span className="text-xs">{copy.copy}</span></>}</button>
-          <a href={AFFILIATE.star888} target="_blank" rel="sponsored nofollow noopener noreferrer" onClick={handleSignup} className="flex-1 rounded-xl bg-[linear-gradient(135deg,#F87171,#D63148)] px-3 py-3 text-center text-sm font-black text-white active:scale-[.98]">{copy.mobileSignup}</a>
-        </div>
-      </div>
     </main>
   )
 }

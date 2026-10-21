@@ -69,17 +69,17 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 const SITE_URL = 'https://bttspredict.com'
 
 const MATCH_COPY: Record<Locale, {
-  home: string; predictions: string; breadcrumb: string; finalScore: string; report: string; published: string;
+  home: string; predictions: string; breadcrumb: string; finalScore: string; predictedScore: string; report: string; published: string;
   bttsSubtitle: string; overSubtitle: string; won: string; lost: string; pending: string; noFuture: string;
   keyFact: string; analysis: string; verification: string; verifiedAt: string; source: string;
   intelligence: string; further: string; today: string; todayDesc: string; premium: string; vipDesc: string; disclaimer: string;
   dataUsed: string; dataUsedDesc: string; matchesAnalyzed: string; perTeam: string; lambdaLabel: string; lambdaHint: string;
-  xgTotalLabel: string; modelSource: string; recentForm: string; formBttsLabel: string; formNote: string; conclusion: string; qualityNote: string;
+  xgTotalLabel: string; modelSource: string; recentForm: string; formBttsLabel: string; conclusion: string; qualityNote: string;
   publishedOn: string; readOfMatch: string; riskLevel: string; notAvailable: string;
 }> = {
-  fr: { home: 'Accueil', predictions: 'Pronostics', breadcrumb: 'Fil d’Ariane', finalScore: 'Score final', report: 'Rapport de signal', published: 'Données publiées', bttsSubtitle: 'Les deux équipes marquent', overSubtitle: 'Total de buts ≥ 3', won: 'Gagné', lost: 'Perdu', pending: 'En attente', noFuture: 'Aucun résultat futur n’est garanti. 18+.', keyFact: 'Statistique clé — buts attendus modélisés & données disponibles', analysis: 'Analyse statistique', verification: 'Vérification', verifiedAt: 'Vérifié le', source: 'Source : ESPN et TheSportsDB.', intelligence: 'Intelligence du match', further: 'Aller plus loin', today: 'Voir les pronostics du jour →', todayDesc: 'Tous les matchs analysés par notre modèle statistique', premium: 'Pronostics premium →', vipDesc: 'Programme VIP BTTSPredict', disclaimer: '18+ · Les paris sportifs comportent un risque de perte. Aucun résultat futur n’est garanti. BTTSPredict ne prend pas de paris et ne collecte pas de fonds. Pronostic publié à titre informatif, ne constitue pas une incitation à parier.', dataUsed: 'Données utilisées', dataUsedDesc: 'Ce que le modèle a réellement consommé pour ce match — rien d’autre.', matchesAnalyzed: 'Matchs réels analysés', perTeam: 'par équipe', lambdaLabel: 'Buts attendus modélisés (λ)', lambdaHint: 'Dérivés des buts récents réels (ESPN) — pas des xG de fournisseur.', xgTotalLabel: 'Total λ du match', modelSource: 'Modèle statistique', recentForm: 'Forme récente & contexte', formBttsLabel: 'BTTS sur les matchs récents', formNote: 'La forme est présentée via les données récentes réelles (volume de matchs, buts modélisés). Aucun indicateur de forme n’est inventé.', conclusion: 'Conclusion', qualityNote: 'Qualité des données disponibles pour ce match — ce n’est pas une probabilité de réussite.', publishedOn: 'Données publiées le', readOfMatch: 'notre lecture du match', riskLevel: 'Niveau de prudence', notAvailable: 'Non disponible' },
-  en: { home: 'Home', predictions: 'Predictions', breadcrumb: 'Breadcrumb', finalScore: 'Final score', report: 'Signal report', published: 'Published data', bttsSubtitle: 'Both teams to score', overSubtitle: 'Total goals ≥ 3', won: 'Won', lost: 'Lost', pending: 'Pending', noFuture: 'No future result is guaranteed. 18+.', keyFact: 'Key statistic — modeled expected goals & available data', analysis: 'Statistical analysis', verification: 'Verification', verifiedAt: 'Verified on', source: 'Source: ESPN and TheSportsDB.', intelligence: 'Match intelligence', further: 'Explore further', today: 'View today’s predictions →', todayDesc: 'All matches analyzed by our statistical model', premium: 'Premium predictions →', vipDesc: 'BTTSPredict VIP programme', disclaimer: '18+ · Sports betting carries a risk of loss. No future result is guaranteed. BTTSPredict does not take bets or hold funds. This prediction is informational and is not an invitation to bet.', dataUsed: 'Data used', dataUsedDesc: 'What the model actually consumed for this match — nothing else.', matchesAnalyzed: 'Real matches analyzed', perTeam: 'per team', lambdaLabel: 'Modeled expected goals (λ)', lambdaHint: 'Derived from recent real goals (ESPN) — not provider xG.', xgTotalLabel: 'Match total λ', modelSource: 'Statistical model', recentForm: 'Recent form & context', formBttsLabel: 'BTTS in recent matches', formNote: 'Form is presented through real recent data (match volume, modeled goals). No form indicator is fabricated.', conclusion: 'Conclusion', qualityNote: 'Data quality available for this match — not a success probability.', publishedOn: 'Data published on', readOfMatch: 'our read of the match', riskLevel: 'Prudence level', notAvailable: 'Not available' },
-  ar: { home: 'الرئيسية', predictions: 'التوقعات', breadcrumb: 'مسار التنقل', finalScore: 'النتيجة النهائية', report: 'تقرير الإشارة', published: 'بيانات منشورة', bttsSubtitle: 'كلا الفريقين يسجلان', overSubtitle: 'إجمالي الأهداف ≥ 3', won: 'فوز', lost: 'خسارة', pending: 'قيد الانتظار', noFuture: 'لا توجد ضمانات لأي نتيجة مستقبلية. 18+.', keyFact: 'إحصائية أساسية — أهداف متوقعة نمذجة وبيانات متاحة', analysis: 'تحليل إحصائي', verification: 'التحقق', verifiedAt: 'تم التحقق في', source: 'المصدر: ESPN وTheSportsDB.', intelligence: 'ذكاء المباراة', further: 'استكشف المزيد', today: 'عرض توقعات اليوم ←', todayDesc: 'جميع المباريات التي حللها نموذجنا الإحصائي', premium: 'التوقعات المميزة ←', vipDesc: 'برنامج VIP من BTTSPredict', disclaimer: '18+ · المراهنات الرياضية تنطوي على خطر الخسارة. لا توجد ضمانات لأي نتيجة مستقبلية. BTTSPredict لا يقبل الرهانات ولا يحتفظ بالأموال. هذا التوقع إعلامي وليس دعوة للمراهنة.', dataUsed: 'البيانات المستخدمة', dataUsedDesc: 'ما استهلاكه النموذج فعلياً لهذه المباراة — لا شيء غير ذلك.', matchesAnalyzed: 'مباريات حقيقية محللة', perTeam: 'لكل فريق', lambdaLabel: 'أهداف متوقعة نمذجة (λ)', lambdaHint: 'مشتقة من أهداف حقيقية حديثة (ESPN) — ليست xG من مزود.', xgTotalLabel: 'إجمالي λ للمباراة', modelSource: 'نموذج إحصائي', recentForm: 'الفورمة الأخيرة والسياق', formBttsLabel: 'BTTS في المباريات الأخيرة', formNote: 'تُعرض الفورمة عبر بيانات حقيقية حديثة (حجم المباريات، الأهداف النمذجة). لا يُؤلَّف أي مؤشر فورمة.', conclusion: 'الخاتمة', qualityNote: 'جودة البيانات المتاحة لهذه المباراة — ليست احتمال نجاح.', publishedOn: 'نُشرت البيانات في', readOfMatch: 'قراءتنا للمباراة', riskLevel: 'مستوى الحذر', notAvailable: 'غير متوفر' },
+  fr: { home: 'Accueil', predictions: 'Pronostics', breadcrumb: 'Fil d’Ariane', finalScore: 'Score réel vérifié', predictedScore: 'Score estimé', report: 'Pronostics du modèle', published: 'Données publiées', bttsSubtitle: 'Les deux équipes marquent', overSubtitle: 'Total de buts ≥ 3', won: 'Gagné', lost: 'Perdu', pending: 'En attente', noFuture: 'Aucun résultat futur n’est garanti. 18+.', keyFact: 'À retenir', analysis: 'Analyse statistique', verification: 'Vérification', verifiedAt: 'Vérifié le', source: 'Source : ESPN et TheSportsDB.', intelligence: 'Analyse du match', further: 'Aller plus loin', today: 'Voir les pronostics du jour →', todayDesc: 'Tous les matchs analysés par notre modèle statistique', premium: 'Pronostics premium →', vipDesc: 'Programme VIP BTTSPredict', disclaimer: '18+ · Les paris sportifs comportent un risque de perte. Aucun résultat futur n’est garanti. BTTSPredict ne prend pas de paris et ne collecte pas de fonds. Pronostic publié à titre informatif, ne constitue pas une incitation à parier.', dataUsed: 'Données utilisées', dataUsedDesc: 'Informations disponibles pour cette analyse.', matchesAnalyzed: 'Matchs pris en compte', perTeam: 'par équipe', lambdaLabel: 'Buts estimés par le modèle', lambdaHint: 'Estimations calculées à partir des buts récents disponibles ; ce ne sont pas des scores de match.', xgTotalLabel: 'Total de buts estimé', modelSource: 'Modèle statistique', recentForm: 'Forme récente', formBttsLabel: 'BTTS sur les matchs récents', conclusion: 'Conclusion', qualityNote: 'La qualité des données décrit les informations disponibles, pas les chances de gagner.', publishedOn: 'Données publiées le', readOfMatch: 'notre lecture du match', riskLevel: 'Niveau de prudence', notAvailable: 'Non disponible' },
+  en: { home: 'Home', predictions: 'Predictions', breadcrumb: 'Breadcrumb', finalScore: 'Verified result', predictedScore: 'Model score estimate', report: 'Model predictions', published: 'Published data', bttsSubtitle: 'Both teams to score', overSubtitle: 'Total goals ≥ 3', won: 'Won', lost: 'Lost', pending: 'Pending', noFuture: 'No future result is guaranteed. 18+.', keyFact: 'À retenir', analysis: 'Statistical analysis', verification: 'Verification', verifiedAt: 'Verified on', source: 'Source: ESPN and TheSportsDB.', intelligence: 'Match analysis', further: 'Explore further', today: 'View today’s predictions →', todayDesc: 'All matches analyzed by our statistical model', premium: 'Premium predictions →', vipDesc: 'BTTSPredict VIP programme', disclaimer: '18+ · Sports betting carries a risk of loss. No future result is guaranteed. BTTSPredict does not take bets or hold funds. This prediction is informational and is not an invitation to bet.', dataUsed: 'Data used', dataUsedDesc: 'Information available for this analysis.', matchesAnalyzed: 'Matches included', perTeam: 'per team', lambdaLabel: 'Model-estimated goals', lambdaHint: 'Estimates based on available recent goals; they are not match scores.', xgTotalLabel: 'Estimated total goals', modelSource: 'Statistical model', recentForm: 'Recent form', formBttsLabel: 'BTTS in recent matches', conclusion: 'Conclusion', qualityNote: 'Data quality describes the information available, not the chance of winning.', publishedOn: 'Data published on', readOfMatch: 'our read of the match', riskLevel: 'Prudence level', notAvailable: 'Not available' },
+  ar: { home: 'الرئيسية', predictions: 'التوقعات', breadcrumb: 'مسار التنقل', finalScore: 'النتيجة الفعلية المؤكدة', predictedScore: 'نتيجة تقديرية', report: 'توقعات النموذج', published: 'بيانات منشورة', bttsSubtitle: 'كلا الفريقين يسجلان', overSubtitle: 'إجمالي الأهداف ≥ 3', won: 'فوز', lost: 'خسارة', pending: 'قيد الانتظار', noFuture: 'لا توجد ضمانات لأي نتيجة مستقبلية. 18+.', keyFact: 'الخلاصة', analysis: 'تحليل إحصائي', verification: 'التحقق', verifiedAt: 'تم التحقق في', source: 'المصدر: ESPN وTheSportsDB.', intelligence: 'تحليل المباراة', further: 'استكشف المزيد', today: 'عرض توقعات اليوم ←', todayDesc: 'جميع المباريات التي حللها نموذجنا الإحصائي', premium: 'التوقعات المميزة ←', vipDesc: 'برنامج VIP من BTTSPredict', disclaimer: '18+ · المراهنات الرياضية تنطوي على خطر الخسارة. لا توجد ضمانات لأي نتيجة مستقبلية. BTTSPredict لا يقبل الرهانات ولا يحتفظ بالأموال. هذا التوقع إعلامي وليس دعوة للمراهنة.', dataUsed: 'البيانات المستخدمة', dataUsedDesc: 'البيانات المتاحة لهذا التحليل.', matchesAnalyzed: 'المباريات المشمولة', perTeam: 'لكل فريق', lambdaLabel: 'أهداف يقدّرها النموذج', lambdaHint: 'تقديرات مبنية على الأهداف الحديثة المتاحة، وليست نتيجة المباراة.', xgTotalLabel: 'إجمالي الأهداف المقدّر', modelSource: 'نموذج إحصائي', recentForm: 'الأداء الأخير', formBttsLabel: 'BTTS في المباريات الأخيرة', conclusion: 'الخاتمة', qualityNote: 'جودة البيانات تصف المعلومات المتاحة، ولا تعني فرصة الفوز.', publishedOn: 'نُشرت البيانات في', readOfMatch: 'قراءتنا للمباراة', riskLevel: 'مستوى الحذر', notAvailable: 'غير متوفر' },
 }
 
 export default async function MatchPage({ params, locale = 'fr' }: PageProps & { locale?: Locale }) {
@@ -91,10 +91,6 @@ export default async function MatchPage({ params, locale = 'fr' }: PageProps & {
 
   const { home, away, league, date, time, homeLogo, awayLogo, predictions } = match
   const verifiedHistory = getVerifiedHistoryForMatch(home, away, date)
-  const aiExactScore = match.aiExactScore || null
-  const exactScoreProb = match.exactScoreProb || null
-  const aiBttsProb = match.aiBttsProb || null
-  const aiOver25Prob = match.aiOver25Prob || null
   const aiKeyFact = match.aiKeyFact || null
   const aiAnalysis = match.aiAnalysis || null
 
@@ -124,14 +120,12 @@ export default async function MatchPage({ params, locale = 'fr' }: PageProps & {
   const won = verified.filter(p => p.status === 'WON').length
   const lost = verified.filter(p => p.status === 'LOST').length
   const pending = marketPredictions.filter(p => !p.status || p.status === 'PENDING').length
-  const finalScore = verified[0]?.finalScore || marketPredictions.find(p => p.finalScore && p.finalScore !== '-')?.finalScore || null
+  const verifiedResult = verifiedHistory.find(entry => (entry.finalScore || entry.score) && (entry.finalScore || entry.score) !== '-')
+  const finalScore = verifiedResult?.finalScore || verifiedResult?.score || null
 
   // Données réelles disponibles (aucune invention : section affichée seulement si présentes)
   const hasUsageData = match.dataQuality || match.dataSource || match.matchCountHome != null || match.aiRisk
   const hasLambda = match.homeLambda != null || match.awayLambda != null || match.xgTotal != null
-  const matchCountTotal = match.matchCountHome != null && match.matchCountAway != null
-    ? match.matchCountHome + match.matchCountAway
-    : null
 
   // Vraie date de publication/vérification issue des données (verifiedAt, sinon
   // la date de publication du snapshot). Aucune date codée en dur.
@@ -231,7 +225,7 @@ export default async function MatchPage({ params, locale = 'fr' }: PageProps & {
                 const isWon = p.status === 'WON'
                 const isLost = p.status === 'LOST'
                 const isPending = !p.status || p.status === 'PENDING'
-                const probLabel = isBtts ? aiBttsProb : isOver ? aiOver25Prob : null
+                const probLabel = Number.isFinite(p.proba) && p.proba > 0 && p.proba <= 1 ? `${Math.round(p.proba * 100)}%` : null
 
                 return (
                   <div key={i} className="p-5 rounded-2xl bg-[#141C25] border border-[#223041]">
@@ -283,6 +277,9 @@ export default async function MatchPage({ params, locale = 'fr' }: PageProps & {
             </p>
           </section>
 
+          <details className="mb-8 rounded-2xl border border-[#223041] p-4">
+            <summary className="cursor-pointer text-sm font-semibold">{locale === 'en' ? 'How was this prediction calculated?' : locale === 'ar' ? 'كيف حُسب هذا التوقع؟' : 'Comment ce pronostic a-t-il été calculé ?'}</summary>
+            <div className="mt-5">
           {/* 2. DONNÉES UTILISÉES */}
           {hasUsageData && (
             <section className="mb-10" aria-labelledby="match-data-used">
@@ -301,7 +298,7 @@ export default async function MatchPage({ params, locale = 'fr' }: PageProps & {
                   </div>
                   {hasLambda && (
                     <div className="rounded-xl bg-[#10161D] border border-[#223041] p-3">
-                      <dt className="text-xs uppercase tracking-wider text-[#9DABBB] font-bold">λ H / λ A</dt>
+                      <dt className="text-xs uppercase tracking-wider text-[#9DABBB] font-bold">{locale === 'en' ? 'Home / away goals estimate' : locale === 'ar' ? 'تقدير أهداف المضيف / الضيف' : 'Buts estimés domicile / extérieur'}</dt>
                       <dd className="text-lg font-bold text-[#F2F6FA] font-mono mt-1">
                         {match.homeLambda != null && match.awayLambda != null
                           ? `${match.homeLambda.toFixed(2)} / ${match.awayLambda.toFixed(2)}`
@@ -329,25 +326,19 @@ export default async function MatchPage({ params, locale = 'fr' }: PageProps & {
           )}
 
           {/* 3. FORME RÉCENTE & CONTEXTE (données réelles uniquement) */}
-          {(matchCountTotal != null || match.formBtts) && (
+          {match.formBtts != null && (
             <section className="mb-10" aria-labelledby="match-recent-form">
               <h2 id="match-recent-form" className="text-xl font-bold mb-4" style={{ fontFamily: 'Poppins, sans-serif' }}>{copy.recentForm}</h2>
               <div className="rounded-2xl border border-[#223041] bg-[#141C25] p-4 sm:p-5">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  {matchCountTotal != null && (
-                    <div className="flex items-center justify-between rounded-xl bg-[#10161D] border border-[#223041] px-4 py-3">
-                      <span className="text-sm text-[#9DABBB]">{copy.matchesAnalyzed}</span>
-                      <span className="text-sm font-bold text-[#F2F6FA] font-mono">{match.matchCountHome} + {match.matchCountAway} <span className="text-[#6B7A8C] font-normal">({copy.perTeam})</span></span>
-                    </div>
-                  )}
-                  {match.formBtts && (
+                  {match.formBtts != null && (
                     <div className="flex items-center justify-between rounded-xl bg-[#10161D] border border-[#223041] px-4 py-3">
                       <span className="text-sm text-[#9DABBB]">{copy.formBttsLabel}</span>
                       <span className="text-sm font-bold text-[#F2F6FA] font-mono">{match.formBtts}%</span>
                     </div>
                   )}
                 </div>
-                <p className="text-xs text-[#6B7A8C] mt-3 leading-relaxed">{copy.formNote}</p>
+
               </div>
             </section>
           )}
@@ -357,7 +348,6 @@ export default async function MatchPage({ params, locale = 'fr' }: PageProps & {
             <MatchAnalyticsCharts
               bttsProb={match.bttsProb}
               over25Prob={match.over25Prob}
-              exactScoreProb={exactScoreProb || undefined}
               homeLambda={match.homeLambda}
               awayLambda={match.awayLambda}
               xgTotal={match.xgTotal}
@@ -372,22 +362,10 @@ export default async function MatchPage({ params, locale = 'fr' }: PageProps & {
               aria-label={locale === 'en' ? 'Data quality' : locale === 'ar' ? 'جودة البيانات' : 'Qualité des données'}
             >
               <h2 className="text-sm font-bold text-[#F2F6FA] mb-3">{locale === 'en' ? 'Data quality' : locale === 'ar' ? 'جودة البيانات' : 'Qualité des données'}</h2>
-              <dl className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-center">
+              <dl className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-center">
                 <div className="rounded-lg bg-[#141C25] border border-[#223041] p-2">
                   <dt className="text-xs uppercase tracking-wider text-[#9DABBB] font-bold">{locale === 'en' ? 'Quality' : locale === 'ar' ? 'الجودة' : 'Qualité'}</dt>
                   <dd className="text-xs font-bold text-[#F2F6FA] mt-1">{match.dataQuality || copy.notAvailable}</dd>
-                </div>
-                <div className="rounded-lg bg-[#141C25] border border-[#223041] p-2">
-                  <dt className="text-xs uppercase tracking-wider text-[#9DABBB] font-bold">{copy.matchesAnalyzed}</dt>
-                  <dd className="text-xs font-bold text-[#F2F6FA] mt-1">
-                    {match.matchCountHome != null && match.matchCountAway != null
-                      ? `${match.matchCountHome} + ${match.matchCountAway}`
-                      : copy.notAvailable}
-                  </dd>
-                </div>
-                <div className="rounded-lg bg-[#141C25] border border-[#223041] p-2">
-                  <dt className="text-xs uppercase tracking-wider text-[#9DABBB] font-bold">{copy.riskLevel}</dt>
-                  <dd className="text-xs font-bold text-[#F2F6FA] mt-1">{match.aiRisk || copy.notAvailable}</dd>
                 </div>
                 <div className="rounded-lg bg-[#141C25] border border-[#223041] p-2">
                   <dt className="text-xs uppercase tracking-wider text-[#9DABBB] font-bold">Source</dt>
@@ -400,45 +378,17 @@ export default async function MatchPage({ params, locale = 'fr' }: PageProps & {
             </section>
           )}
 
-          {/* 6. CONCLUSION — SECTION RAPPORT D'ANALYSE BTTSPREDICT AI */}
-          {(aiKeyFact || aiAnalysis || aiExactScore) && (
+            </div>
+          </details>
+
+          {/* 6. Lecture du match */}
+          {(aiKeyFact || aiAnalysis) && (
             <section className="mb-10" aria-labelledby="match-conclusion">
               <h2 id="match-conclusion" className="text-xl font-bold mb-4" style={{ fontFamily: 'Poppins, sans-serif' }}>{copy.conclusion}</h2>
               <div className="rounded-2xl border border-[#223041] bg-[#141C25] p-5 shadow-[0_18px_50px_rgba(0,0,0,0.18)] sm:p-6">
                 <div className="flex items-center justify-between border-b border-[#223041] pb-3 mb-4">
-                  <h3 className="flex items-center gap-2 text-sm font-bold text-[#F2F6FA]">
-                    <span className="text-[#2F7DFF]">{copy.report}</span> — {copy.readOfMatch}
-                  </h3>
-                  {aiExactScore && (
-                    <span className="px-2.5 py-1 text-xs font-bold rounded-md font-mono" style={{ backgroundColor: 'rgba(47,125,255,0.12)', color: '#2F7DFF', border: '1px solid rgba(47,125,255,0.3)' }}>
-                      {copy.finalScore} : {aiExactScore}
-                    </span>
-                  )}
+                  <h3 className="text-sm font-bold text-[#F2F6FA]">{copy.readOfMatch}</h3>
                 </div>
-
-                {/* Probabilities row */}
-                {(exactScoreProb || aiBttsProb || aiOver25Prob) && (
-                  <div className="grid grid-cols-3 gap-2 mb-4">
-                    {exactScoreProb && (
-                      <div className="text-center rounded-lg p-2 bg-[#10161D] border border-[#223041]">
-                        <div className="text-xs uppercase tracking-wider text-[#9DABBB] font-bold">{locale === 'en' ? 'Exact score' : locale === 'ar' ? 'النتيجة الدقيقة' : 'Score exact'}</div>
-                        <div className="text-base font-bold text-[#F2F6FA] font-mono">{exactScoreProb}</div>
-                      </div>
-                    )}
-                    {aiBttsProb && (
-                      <div className="text-center rounded-lg p-2 bg-[#10161D] border border-[#223041]">
-                        <div className="text-xs uppercase tracking-wider text-[#9DABBB] font-bold">BTTS</div>
-                        <div className="text-base font-bold text-[#F2F6FA] font-mono">{aiBttsProb}</div>
-                      </div>
-                    )}
-                    {aiOver25Prob && (
-                      <div className="text-center rounded-lg p-2 bg-[#10161D] border border-[#223041]">
-                        <div className="text-xs uppercase tracking-wider text-[#9DABBB] font-bold">Over 2.5</div>
-                        <div className="text-base font-bold text-[#F2F6FA] font-mono">{aiOver25Prob}</div>
-                      </div>
-                    )}
-                  </div>
-                )}
 
                 {/* Statistique Clé */}
                 {aiKeyFact && (

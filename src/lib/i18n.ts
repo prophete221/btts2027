@@ -43,7 +43,7 @@ export const TRANSLATIONS = {
     },
     home2: {
       statusUpdated: 'Données mises à jour aujourd’hui',
-      heroTitle1: 'Plateforme [N°1 Mondiale]',
+      heroTitle1: 'Analyses [du football]',
       heroTitle2: 'BTTS & Over 2.5 Master',
       heroText: 'Meilleurs pronostics BTTS, Over 2.5 et surbets | Analyses foot fiables',
       heroCtaPrimary: 'Voir les matchs analysés',
@@ -116,7 +116,7 @@ export const TRANSLATIONS = {
     },
     hero: {
       badge: 'Match intelligence · Données vérifiées',
-      title1: 'BTTSPredict, [plateforme n°1 mondiale].', title2: 'BTTS et Over 2,5 fiable.',
+      title1: 'BTTSPredict, [analyse du football].', title2: 'BTTS et Over 2,5 fiable.',
       subtitle: 'Analyses BTTS, Over 2,5 et score exact, publiées avant le match et suivies jusqu’au résultat vérifié.',
       perfTitle: 'Performance vérifiée',
       statsWon: 'Gagnés', statsLost: 'Perdus',
@@ -163,7 +163,7 @@ export const TRANSLATIONS = {
     },
     home2: {
       statusUpdated: 'Data updated today',
-      heroTitle1: 'The [World’s No.1]',
+      heroTitle1: 'Football [analysis]',
       heroTitle2: 'BTTS & Over 2.5 Master Platform',
       heroText: 'Best BTTS, Over 2.5 and surebets picks | Reliable football analysis',
       heroCtaPrimary: 'See analysed matches',
@@ -236,7 +236,7 @@ export const TRANSLATIONS = {
     },
     hero: {
       badge: 'Match intelligence · Verified data',
-      title1: 'BTTSPredict, the [world No. 1] platform.', title2: 'Reliable BTTS & Over 2.5.',
+      title1: 'BTTSPredict, [football analysis].', title2: 'Reliable BTTS & Over 2.5.',
       subtitle: 'BTTS, Over 2.5 and correct-score analysis, published before kick-off and tracked to the verified result.',
       perfTitle: 'Verified performance',
       statsWon: 'Won', statsLost: 'Lost',
@@ -283,7 +283,7 @@ export const TRANSLATIONS = {
     },
     home2: {
       statusUpdated: 'بيانات محدّثة اليوم',
-      heroTitle1: 'المنصة [الأولى عالمياً]',
+      heroTitle1: 'منصة [تحليل كرة القدم]',
       heroTitle2: 'BTTS و Over 2.5 Master',
       heroText: 'أفضل توقعات BTTS و Over 2.5 والسيربيت | تحليلات كرة قدم موثوقة',
       heroCtaPrimary: 'عرض المباريات المُحلَّلة',
@@ -356,7 +356,7 @@ export const TRANSLATIONS = {
     },
     hero: {
       badge: 'ذكاء المباريات · بيانات موثّقة',
-      title1: 'BTTSPredict — [المنصة رقم 1 عالمياً].', title2: 'توقعات BTTS وOver 2.5 موثوقة.',
+      title1: 'BTTSPredict — [تحليل كرة القدم].', title2: 'توقعات BTTS وOver 2.5 موثوقة.',
       subtitle: 'تحليلات BTTS وOver 2.5 والنتيجة الدقيقة، تُنشر قبل المباراة وتُتابع حتى النتيجة الموثّقة.',
       perfTitle: 'الأداء الموثّق',
       statsWon: 'رابحة', statsLost: 'خاسرة',

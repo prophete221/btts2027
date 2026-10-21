@@ -66,71 +66,7 @@
       "awayLambda": 2.25
     }
   ],
-  "vipPreview": [
-    {
-      "id": "chicagof-vs-vancouve-2026-10-07",
-      "match": "Chicago Fire FC vs Vancouver Whitecaps",
-      "home": "Chicago Fire FC",
-      "away": "Vancouver Whitecaps",
-      "league": "MLS",
-      "date": "2026-10-07",
-      "type": "BTTS",
-      "prediction": "Non",
-      "proba": 0.4276,
-      "bttsProbDisplay": "42.76%",
-      "over25ProbDisplay": "55.40%",
-      "confidence": 43,
-      "time": "00:30",
-      "matchSemantic": "chicagof-vs-vancouve-2026-10-07",
-      "source": "poisson-v92-real-data",
-      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/182.png",
-      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/9727.png",
-      "tier": "SILVER",
-      "reliabilityScore": 74.96,
-      "dataQuality": "HIGH",
-      "dataSource": "ESPN_TEAM_SCHEDULE",
-      "matchCountHome": 8,
-      "matchCountAway": 8,
-      "h2hAvailable": false,
-      "xgHome": 0.65,
-      "xgAway": 2.25,
-      "xgTotal": 2.9,
-      "formBTTS": 39,
-      "analysis": "Chicago Fire FC (8 matchs réels, xG 0.65) vs Vancouver Whitecaps (8 matchs réels, xG 2.25). xG cumulé 2.9, BTTS 42.8%, Over 2.5 55.4%. Fiabilité 74.96%. Qualité données: HIGH.",
-      "analysisData": {
-        "bttsProb": 0.4276,
-        "over25Prob": 0.554,
-        "homeLambda": 0.65,
-        "awayLambda": 2.25,
-        "xgTotal": 2.9
-      },
-      "estimatedCote": 2.34,
-      "estimatedCoteOver": 1.8,
-      "predictions": [
-        {
-          "type": "BTTS",
-          "prediction": "Non",
-          "confidence": 43,
-          "bttsProb": 0.4276,
-          "homeLambda": 0.65,
-          "awayLambda": 2.25
-        },
-        {
-          "type": "Over 2.5",
-          "prediction": "Oui",
-          "confidence": 55,
-          "over25Prob": 0.554,
-          "homeLambda": 0.65,
-          "awayLambda": 2.25
-        }
-      ],
-      "bttsProb": 0.4276,
-      "over25Prob": 0.554,
-      "homeLambda": 0.65,
-      "awayLambda": 2.25,
-      "vipMirror": true
-    }
-  ],
+  "vipPreview": [],
   "stats": {
     "avgReliability": 74.96,
     "totalAnalyzed": 1,

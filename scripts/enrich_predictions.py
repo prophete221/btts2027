@@ -166,50 +166,32 @@ Analyse les {len(all_matches)} matchs suivants :
 
 # MÉTHODE (4 étapes)
 1. LECTURE DES DONNÉES : appuie-toi uniquement sur les données fournies ci-dessus (forme, classement, xG, probabilités, cotes).
-2. LECTURE DES COTES : quand les cotes réelles sont fournies, compare le favori du marché (probabilité implicite) au modèle BTTSPredict. Si l'écart est net (≥ 10 points de pourcentage) sur BTTS ou Over 2.5, signale-le comme piste de value dans ai_odds_insight. Sinon décris simplement la lecture du marché (favori, match équilibré…).
+2. LECTURE DU MARCHÉ : les cotes servent uniquement de contexte descriptif; ne calcule aucune value, probabilité ou cote.
 3. INCERTITUDE : signale brièvement les données manquantes importantes, sans bloquer l'analyse.
 4. DÉCISION : verdict prudent, jamais de garantie. Aucune promesse de gain.
 
-# CHAMPS DE SORTIE EXIGÉS PAR MATCH
-- ai_exact_score : score le plus probable cohérent avec les xG (ex: "2-1").
-- exact_score_prob : probabilité de ce score, en %, prudente.
-- ai_btts_view / ai_over25_view : ta vue BTTS / Over 2.5 en % — proche des probabilités du modèle, ajustée si la forme ou les cotes le justifient clairement.
-- winner : 1, N ou 2 (basé sur forme + classement + cotes). winner_prob : XX%.
-- team_over15 : "Equipe: OUI/NON" (au moins 1 but de l'équipe à domicile).
-- double_chance : 1X, X2 ou 12.
-- main_prediction : phrase unique prudente résumant le pronostic principal.
-- risk : FAIBLE / MOYEN / ÉLEVÉ.
-- ai_key_fact : la statistique la plus percutante des données fournies, 15 mots max.
-- ai_form_summary : 2 à 3 phrases décrivant la FORME des deux équipes (série en cours, buts marqués/encaissés, forces/faiblesses — attaque vs défense, BTTS récent). Si la forme d'une équipe est indisponible, dis-le en une demi-phrase et analyse l'autre.
-- ai_absences : 1 à 2 phrases sur les DISPONIBILITÉS/ABSENTS. Aucune donnée d'effectif ne t'est fournie : écris alors exactement une phrase du type « Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi. » Tu peux ajouter une seconde phrase de contexte (rotation, enjeu, calendrier) si les données fournies la justifient. N'invente JAMAIS de nom de blessé ou de suspendu.
-- ai_odds_insight : 1 à 2 phrases de lecture des cotes réelles fournies (favori du marché, cote Over 2.5, value éventuelle vs le modèle). Si aucune cote n'est fournie : « Cotes marché non disponibles — pronostic basé sur le modèle statistique seul. »
-- ai_analysis : L'ANALYSE SOLIDE, 4 à 6 phrases, qui résume tout ce qui concerne les deux équipes : forme des deux camps, classement, confrontation des styles (attaque/défense), lecture du marché si cotes fournies, puis la conclusion du modèle (BTTS / Over 2.5 / tendance). Français fluide et professionnel, sans listes, sans markdown.
-- VERSIONS ANGLAISES — ai_key_fact_en, ai_form_summary_en, ai_absences_en, ai_odds_insight_en, ai_analysis_en : la TRADUCTION ANGLAISE fidèle et professionnelle de chaque champ correspondant (même contenu, mêmes chiffres, mêmes réserves d'incertitude). Ne saute jamais ces champs, même si un champ source est une phrase standard.
+# CHAMPS DE SORTIE EXIGÉS PAR MATCH — TEXTE SEULEMENT
+- ai_key_fact : fait concis directement présent dans les données fournies, 15 mots max.
+- ai_form_summary : 2 à 3 phrases décrivant la forme observée des deux équipes. Si une donnée manque, le dire explicitement.
+- ai_analysis : 3 à 5 phrases professionnelles décrivant seulement les faits et tendances du modèle présents dans les données. Pas de promesse, conjecture, donnée externe ou détail inventé.
+- Traductions anglaises fidèles : ai_key_fact_en, ai_form_summary_en, ai_analysis_en.
+- N'écris rien sur les absences ni les cotes : ces champs sont remplis uniquement par le code depuis les sources fournies.
 
-# FORMAT FINAL STRICT
+# IMMUTABILITÉ DES PRONOSTICS
+- Tu rédiges uniquement ces champs textuels. Ne propose ni score exact, ni gagnant, ni nouveau verdict, ni confiance, ni risque, ni cote.
+- Ne retourne aucun champ numérique ou champ de pronostic. N'essaie jamais de corriger/modifier une probabilité, un score, une cote, un lambda, une fiabilité ou un nombre présent dans le payload.
+- Les chiffres éventuellement cités dans une phrase doivent être recopiés fidèlement des données fournies et rester du texte explicatif; ne calcule aucune valeur nouvelle.
+
+# FORMAT FINAL STRICT — OBJET DE RÉDACTION UNIQUEMENT
 Retourne uniquement un tableau JSON valide, sans Markdown et sans texte avant ou après :
 [
   {{
     "id": 0,
-    "ai_exact_score": "2-1",
-    "exact_score_prob": "18%",
-    "ai_btts_view": "74%",
-    "ai_over25_view": "68%",
-    "winner": "1 / N / 2",
-    "winner_prob": "XX%",
-    "team_over15": "Equipe: OUI/NON",
-    "double_chance": "1X / X2 / 12",
-    "main_prediction": "Phrase unique, prudente",
-    "risk": "FAIBLE / MOYEN / ÉLEVÉ",
     "ai_key_fact": "Statistique clé, 15 mots maximum",
     "ai_form_summary": "2 à 3 phrases sur la forme des deux équipes",
-    "ai_absences": "1 à 2 phrases honnêtes sur les disponibilités",
-    "ai_odds_insight": "1 à 2 phrases sur les cotes réelles",
     "ai_analysis": "4 à 6 phrases couvrant les deux équipes, le marché et la conclusion",
     "ai_key_fact_en": "English translation of ai_key_fact",
     "ai_form_summary_en": "English translation of ai_form_summary",
-    "ai_absences_en": "English translation of ai_absences",
-    "ai_odds_insight_en": "English translation of ai_odds_insight",
     "ai_analysis_en": "English translation of ai_analysis"
   }},
   ...
@@ -217,9 +199,6 @@ Retourne uniquement un tableau JSON valide, sans Markdown et sans texte avant ou
 
 # RÈGLES DE SORTIE
 - Écris les champs principaux en français et les champs suffixés « _en » en anglais professionnel.
-- Probabilités en pourcentage avec le signe %. Aucune précision non justifiée.
-- « main_prediction » prudente, ne jamais promettre un résultat.
-- N'utilise jamais « sure bet », « gain garanti » ou « 100% sûr ».
 - L'"id" doit correspondre exactement à l'index du match dans la liste ci-dessus.
 
 # ANTI-HALLUCINATION OBLIGATOIRE
@@ -252,7 +231,6 @@ def local_fallback(m) -> dict:
     odds = m.get("odds") or {}
 
     # — Forme —
-    shape = {"W": "V", "D": "N", "L": "D"}
     phrases = []
     phrases_en = []
     if form_home.get("last5String"):
@@ -350,38 +328,7 @@ def local_fallback(m) -> dict:
     form_summary = ". ".join(form_bits) + "." if form_bits else "Forme récente indisponible pour les deux équipes."
     form_summary_en = ". ".join(form_bits_en) + "." if form_bits_en else "Recent form unavailable for both teams."
 
-    # — Score exact le plus probable (Poisson simple) —
-    def poisson_p(lam, k):
-        p = 1.0
-        for i in range(1, k + 1):
-            p *= lam / i
-        return p * pow(2.718281828459045, -lam)
-    best, best_p = "1-1", 0.0
-    for gh in range(0, 5):
-        for ga in range(0, 5):
-            p = poisson_p(xgh, gh) * poisson_p(xga, ga)
-            if p > best_p:
-                best_p, best = p, f"{gh}-{ga}"
-    winner = "1" if xgh > xga * 1.15 else ("2" if xga > xgh * 1.15 else "N")
-    wp = max(btts, over) * 100 * 0.9
-    winner_prob = f"{min(72, max(34, int(wp)))}%"
-
     return {
-        "ai_exact_score": best,
-        "exact_score_prob": f"{round(best_p * 100, 1)}%",
-        "ai_btts_view": f"{btts_pct}%",
-        "ai_over25_view": f"{over_pct}%",
-        "winner": winner,
-        "ai_winner": winner,
-        "ai_winner_prob": winner_prob,
-        "team_over15": f"{home}: {'OUI' if xgh >= 1.0 else 'NON'}",
-        "ai_team_over15": f"{home}: {'OUI' if xgh >= 1.0 else 'NON'}",
-        "double_chance": "1X" if winner == "1" else ("X2" if winner == "2" else ("12" if xgh >= 1.0 or xga >= 1.0 else "X2")),
-        "ai_double_chance": "1X" if winner == "1" else ("X2" if winner == "2" else ("12" if xgh >= 1.0 or xga >= 1.0 else "X2")),
-        "main_prediction": concl,
-        "ai_main_prediction": concl,
-        "risk": "FAIBLE" if (btts >= 0.55 and over >= 0.55) else ("MOYEN" if max(btts, over) >= 0.45 else "ÉLEVÉ"),
-        "ai_risk": "FAIBLE" if (btts >= 0.55 and over >= 0.55) else ("MOYEN" if max(btts, over) >= 0.45 else "ÉLEVÉ"),
         "ai_key_fact": (
             f"{home} {form_home.get('last5String')} vs {away} {form_away.get('last5String')} — BTTS {btts_pct}%, Over 2.5 {over_pct}%"
             if (form_home.get("last5String") and form_away.get("last5String"))
@@ -482,90 +429,23 @@ def call_gemini_batch(client, all_matches: list) -> list:
     return enrichments
 
 
-def validate_prob(val):
-    if not val:
-        return False
-    try:
-        num = float(str(val).replace('%', ''))
-        return 0 <= num <= 100 and not (val == 'nan' or val == 'inf')
-    except (ValueError, TypeError):
-        return False
-
-
 def apply_enrichment(match: dict, item: dict) -> bool:
-    """Applique les champs AI d'un item Gemini sur un match. Retourne True si appliqué."""
-    idx_ok = item.get("id") is not None
-    if not idx_ok:
+    """Apply narrative fields only; all model numbers and prediction fields are immutable."""
+    if item.get("id") is None:
         return False
 
-    ai_exact_score = (item.get("ai_exact_score") or "").strip()
-    exact_score_prob = (item.get("exact_score_prob") or "").strip()
-    ai_btts_view = (item.get("ai_btts_view") or "").strip()
-    ai_over25_view = (item.get("ai_over25_view") or "").strip()
-    ai_key_fact = (item.get("ai_key_fact") or "").strip()
-    ai_analysis = (item.get("ai_analysis") or "").strip()
-    ai_form_summary = (item.get("ai_form_summary") or "").strip()
-    ai_absences = (item.get("ai_absences") or "").strip()
-    ai_odds_insight = (item.get("ai_odds_insight") or "").strip()
-    # Traductions anglaises (pages /en) — optionnelles, stockées si présentes
-    ai_key_fact_en = (item.get("ai_key_fact_en") or "").strip()
-    ai_analysis_en = (item.get("ai_analysis_en") or "").strip()
-    ai_form_summary_en = (item.get("ai_form_summary_en") or "").strip()
-    ai_absences_en = (item.get("ai_absences_en") or "").strip()
-    ai_odds_insight_en = (item.get("ai_odds_insight_en") or "").strip()
-    winner = (item.get("winner") or "").strip()
-    winner_prob = (item.get("winner_prob") or "").strip()
-    team_over15 = (item.get("team_over15") or "").strip()
-    double_chance = (item.get("double_chance") or "").strip()
-    main_prediction = (item.get("main_prediction") or "").strip()
-    risk = (item.get("risk") or "").strip()
-
-    # Une enrichment est considérée utilisable si elle porte au moins l'analyse
-    if not ai_analysis and not ai_key_fact:
+    text_fields = (
+        "ai_key_fact", "ai_analysis", "ai_form_summary",
+        "ai_key_fact_en", "ai_analysis_en", "ai_form_summary_en",
+    )
+    values = {
+        key: value.strip()
+        for key in text_fields
+        if isinstance((value := item.get(key)), str) and value.strip()
+    }
+    if not values.get("ai_analysis") and not values.get("ai_key_fact"):
         return False
-
-    if ai_exact_score:
-        match["ai_exact_score"] = ai_exact_score
-    if validate_prob(exact_score_prob):
-        match["exact_score_prob"] = exact_score_prob
-    if validate_prob(ai_btts_view):
-        match["ai_btts_view"] = ai_btts_view
-        match["ai_btts_prob"] = ai_btts_view
-    if validate_prob(ai_over25_view):
-        match["ai_over25_view"] = ai_over25_view
-        match["ai_over25_prob"] = ai_over25_view
-    if ai_key_fact:
-        match["ai_key_fact"] = ai_key_fact
-    if ai_analysis:
-        match["ai_analysis"] = ai_analysis
-    if ai_form_summary:
-        match["ai_form_summary"] = ai_form_summary
-    if ai_absences:
-        match["ai_absences"] = ai_absences
-    if ai_odds_insight:
-        match["ai_odds_insight"] = ai_odds_insight
-    if ai_key_fact_en:
-        match["ai_key_fact_en"] = ai_key_fact_en
-    if ai_analysis_en:
-        match["ai_analysis_en"] = ai_analysis_en
-    if ai_form_summary_en:
-        match["ai_form_summary_en"] = ai_form_summary_en
-    if ai_absences_en:
-        match["ai_absences_en"] = ai_absences_en
-    if ai_odds_insight_en:
-        match["ai_odds_insight_en"] = ai_odds_insight_en
-    if winner:
-        match["ai_winner"] = winner
-    if validate_prob(winner_prob):
-        match["ai_winner_prob"] = winner_prob
-    if team_over15:
-        match["ai_team_over15"] = team_over15
-    if double_chance:
-        match["ai_double_chance"] = double_chance
-    if main_prediction:
-        match["ai_main_prediction"] = main_prediction
-    if risk:
-        match["ai_risk"] = risk
+    match.update(values)
     return True
 
 
@@ -591,15 +471,17 @@ def main():
     with open(PREDICTIONS_FILE, "r", encoding="utf-8") as f:
         data = json.load(f)
 
-    free_matches = data.get("free", [])
-    vip_matches = data.get("vipPreview", [])
+    free_matches = data.get("free", data.get("predictions", []))
+    if not isinstance(free_matches, list):
+        raise ValueError("free predictions must be a list")
 
-    total = len(free_matches) + len(vip_matches)
+    total = len(free_matches)
     if total == 0:
-        print("[enrich] No matches to enrich — skipping")
-        sys.exit(0)
+        print("[enrich] No published free matches — no text to enrich")
+        data["predictions"] = free_matches
+        return
 
-    print(f"[enrich] Found {len(free_matches)} free + {len(vip_matches)} VIP = {total} matches")
+    print(f"[enrich] Found {total} free matches; VIP fixture previews are not enriched")
 
     client = None
     if genai is not None:
@@ -612,7 +494,7 @@ def main():
         except Exception as e:
             print(f"[enrich] Could not list models: {e}")
 
-        all_matches = list(free_matches) + list(vip_matches)
+        all_matches = free_matches
         print(f"[enrich] Sending batch API calls for {len(all_matches)} matches ({CHUNK_SIZE}/chunk)...")
         enrichments = call_gemini_batch(client, all_matches)
 
@@ -630,7 +512,7 @@ def main():
                 if apply_enrichment(match, item):
                     match["ai_source"] = "gemini-v2"
                     match_name = f"{match.get('home', '?')} vs {match.get('away', '?')}"
-                    print(f"  [{idx+1}] ✅ {match_name}: score={match.get('ai_exact_score')} | analysis {len(match.get('ai_analysis', ''))} chars")
+                    print(f"  [{idx+1}] ✅ {match_name}: narrative {len(match.get('ai_analysis', ''))} chars")
                     enriched_count += 1
 
         print(f"[enrich] Gemini enriched {enriched_count}/{len(all_matches)} matches")
@@ -638,7 +520,12 @@ def main():
         print("[enrich] No Gemini client — applying local fallback to all matches")
 
     # ─── FALLBACK LOCAL : garantit 100% de pronostics complets ───
-    all_matches = list(free_matches) + list(vip_matches)
+    all_matches = free_matches
+    for match in all_matches:
+        sourced_text = local_fallback(match)
+        for key in ("ai_absences", "ai_absences_en", "ai_odds_insight", "ai_odds_insight_en"):
+            match[key] = sourced_text[key]
+
     fallback_count = 0
     for match in all_matches:
         if not match.get("ai_analysis") or len(match.get("ai_analysis", "").strip()) < 80:
@@ -649,13 +536,16 @@ def main():
         print(f"[enrich] 🔧 Local fallback applied to {fallback_count}/{len(all_matches)} incomplete matches")
 
     # Rapport final
-    complete = sum(1 for m in all_matches if m.get("ai_analysis") and m.get("ai_key_fact") and m.get("ai_exact_score"))
-    print(f"[enrich] Complete pronostics: {complete}/{len(all_matches)}")
+    complete = sum(1 for m in all_matches if m.get("ai_analysis") and m.get("ai_key_fact"))
+    print(f"[enrich] Complete narrative enrichments: {complete}/{len(all_matches)}")
 
-    data["predictions"] = data.get("free", [])
-
-    with open(PREDICTIONS_FILE, "w", encoding="utf-8") as f:
+    data["free"] = free_matches
+    data["predictions"] = free_matches
+    temp_path = PREDICTIONS_FILE.with_suffix(PREDICTIONS_FILE.suffix + ".tmp")
+    with open(temp_path, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
+        f.write("\n")
+    os.replace(temp_path, PREDICTIONS_FILE)
 
     print(f"[enrich] Saved enriched predictions to {PREDICTIONS_FILE}")
     print("[enrich] Done.")

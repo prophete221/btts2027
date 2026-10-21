@@ -3,10 +3,25 @@ const ISO_TIMESTAMP = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?Z$/
 
 function rowsFromPayload(payload) {
   if (Array.isArray(payload)) return payload
-  return [
-    ...(Array.isArray(payload?.free) ? payload.free : []),
-    ...(Array.isArray(payload?.vipPreview) ? payload.vipPreview : []),
-  ]
+  return Array.isArray(payload?.free) ? payload.free : Array.isArray(payload?.predictions) ? payload.predictions : []
+}
+
+function validatePreviewRows(payload, today, errors) {
+  if (!Array.isArray(payload?.vipPreview)) return
+  payload.vipPreview.forEach((fixture, index) => {
+    const prefix = `vipPreview[${index}]`
+    for (const field of ['id', 'home', 'away', 'league', 'date']) {
+      if (typeof fixture?.[field] !== 'string' || fixture[field].trim() === '') {
+        errors.push(`${prefix}.${field} is required`)
+      }
+    }
+    if (fixture?.vip !== true) errors.push(`${prefix}.vip must be true`)
+    if (!ISO_DATE.test(fixture?.date || '')) errors.push(`${prefix}.date must be YYYY-MM-DD`)
+    else if (fixture.date < today) errors.push(`${prefix}.date is older than Africa/Dakar today`)
+    if (fixture?.time && !/^\d{2}:\d{2}$/.test(fixture.time)) {
+      errors.push(`${prefix}.time must be HH:MM when present`)
+    }
+  })
 }
 
 export function validatePredictionPayload(payload, options = {}) {
@@ -26,7 +41,8 @@ export function validatePredictionPayload(payload, options = {}) {
   }
 
   const rows = rowsFromPayload(payload)
-  if (rows.length === 0) errors.push('payload must contain at least one free or vipPreview prediction')
+  // An empty set is a legitimate abstention when no fixture has enough evidence.
+  validatePreviewRows(payload, today, errors)
 
   rows.forEach((prediction, index) => {
     const prefix = `prediction[${index}]`

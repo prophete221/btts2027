@@ -10,7 +10,9 @@
     "lint": "eslint .",
     "test": "vitest run",
     "test:watch": "vitest",
-    "test:ci": "vitest run --reporter=verbose"
+    "test:ci": "vitest run --reporter=verbose",
+    "prebuild": "node scripts/sanitize-public-data.mjs public",
+    "postbuild": "node scripts/sanitize-public-data.mjs out"
   },
   "dependencies": {
     "@dnd-kit/core": "^6.3.1",

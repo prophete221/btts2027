@@ -1,12 +1,7 @@
 {
   "date": "2026-08-23",
   "timezone": "Africa/Dakar",
-  "source": "Odds-API.io",
-  "fetchedAt": "2026-08-23T20:22:57.573Z",
   "status": "unavailable",
-  "reason": "provider_request_failed",
-  "combos": {
-    "target2": null,
-    "target5": null
-  }
+  "reason": "Les sélections privées ne sont pas distribuées par cet export statique.",
+  "combos": []
 }

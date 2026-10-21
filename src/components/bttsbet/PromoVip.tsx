@@ -1,7 +1,6 @@
 'use client'
-import { useState, useEffect, useMemo } from 'react'
-import { getDakarDateSeed, getDakarDateString } from '@/lib/dakar-date'
-import { useScrollAnimation, useCountUp } from '@/hooks/useAnimations'
+import { useState } from 'react'
+import { useScrollAnimation } from '@/hooks/useAnimations'
 import VipUnlockModal from './VipUnlockModal'
 
 const C = {
@@ -11,47 +10,9 @@ const C = {
   success:'#2F7DFF',
 }
 
-function getDailyCote(){
-  const s = getDakarDateSeed()
-  const x = Math.sin(s*9301+49297)*233280
-  return Math.round((12+(x-Math.floor(x))*18)*100)/100
-}
-
-const FALLBACK = [
-  { home:"Teungueth", away:"Jaraaf", league:"Ligue 1 Sénégal", time:"16:30" },
-  { home:"Raja", away:"Wydad", league:"Botola Pro (Maroc)", time:"20:00" },
-  { home:"ASEC", away:"AFAD", league:"Ligue 1 Côte d'Ivoire", time:"18:00" },
-  { home:"Arsenal", away:"Man City", league:"Premier League", time:"21:00" },
-  { home:"Horoya", away:"Hafia", league:"Ligue 1 Guinée", time:"17:00" },
-  { home:"FC Porto", away:"Alverca", league:"Primeira Liga", time:"19:00" },
-]
-
 export default function PromoVip() {
   const [ref, isVisible] = useScrollAnimation()
   const [showModal, setShowModal] = useState(false)
-  const [matchCount, setMatchCount] = useState(6)
-  const dailyCote = useMemo(() => getDailyCote(), [])
-  const [coteRef, coteDisplay] = useCountUp(dailyCote, 1500, { decimals: 2, threshold: 0.3 })
-
-  useEffect(() => {
-    const todayStr = getDakarDateString()
-    fetch('/predictions.json')
-      .then(r => r.json())
-      .then(data => {
-        const arr: any[] = data?.vipPreview || data?.free || data?.predictions || []
-        const seen = new Set<string>()
-        const unique: any[] = []
-        for (const p of arr) {
-          if (seen.has(p.match)) continue
-          seen.add(p.match)
-          unique.push(p)
-        }
-        const count = unique.filter(p => p.date >= todayStr).length || unique.length || 6
-        setMatchCount(Math.min(6, Math.max(4, count)))
-      })
-      .catch(() => setMatchCount(6))
-  }, [dailyCote])
-
   return (
     <>
       <section ref={ref} id="coupon-vip" className="py-4 relative">
@@ -113,7 +74,7 @@ export default function PromoVip() {
               </h2>
 
               <p className="text-[11px] mb-4" style={{ color: C.textSec }}>
-                {matchCount} pronostics VIP · Cote totale <span className="font-bold" style={{ color: C.neon }}>{coteDisplay}</span>
+                Les sélections privées ne sont pas publiées dans les fichiers du site.
               </p>
 
               {/* Premium features row */}
@@ -128,7 +89,7 @@ export default function PromoVip() {
                 </div>
                 <div className="rounded-lg py-2 px-1" style={{ backgroundColor: 'rgba(52, 211, 153,0.06)', border: `1px solid ${C.success}20` }}>
                   <div className="text-[9px] uppercase tracking-wider" style={{ color: C.textMute }}>Cote</div>
-                  <div className="text-[11px] font-bold mt-0.5" style={{ color: C.success }}>{coteDisplay}</div>
+                  <div className="text-[11px] font-bold mt-0.5" style={{ color: C.success }}>Non publiée</div>
                 </div>
               </div>
 
@@ -152,7 +113,7 @@ export default function PromoVip() {
               </button>
 
               <p className="text-[9px] mt-3" style={{ color: C.textMute }}>
-                Accès immédiat après vérification · 18+
+                Conditions d’accès à vérifier auprès de l’équipe · 18+
               </p>
             </div>
 

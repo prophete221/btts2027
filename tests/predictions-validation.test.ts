@@ -73,14 +73,12 @@ describe('validatePredictionPayload', () => {
     expect(errors).toContain('prediction[0].proba must be between 0 and 1')
   })
 
-  test('refuse un payload vide', () => {
+  test('accepte un payload vide lorsque le moteur s’abstient faute de données suffisantes', () => {
     expect(validatePredictionPayload({
       date: '2026-08-12',
       lastUpdated: '2026-08-12T12:00:00.000Z',
       free: [],
       vipPreview: [],
-    }, { today: '2026-08-12', requireTimestamp: true })).toContain(
-      'payload must contain at least one free or vipPreview prediction',
-    )
+    }, { today: '2026-08-12', requireTimestamp: true })).toEqual([])
   })
 })
