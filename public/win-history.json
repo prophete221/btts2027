@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "generatedAt": "2026-10-21T18:54:09.019Z",
+  "generatedAt": "2026-10-21T20:39:58.200Z",
   "pendingPolicy": {
     "graceHours": 48,
     "rule": "Sans statut vérifié, un match futur ou récent reste « en attente » pendant exactement 48 h après son coup d'envoi.",
@@ -14,18 +14,18 @@
     "insufficientVolume": false
   },
   "stats": {
-    "total": 137,
-    "won": 92,
+    "total": 138,
+    "won": 93,
     "lost": 45,
-    "pending": 56,
-    "unverifiable": 633,
-    "archivedTotal": 826,
-    "rate": 67.2,
+    "pending": 64,
+    "unverifiable": 635,
+    "archivedTotal": 837,
+    "rate": 67.4,
     "gold": {
-      "total": 114,
-      "won": 76,
+      "total": 115,
+      "won": 77,
       "lost": 38,
-      "rate": 66.7
+      "rate": 67
     },
     "standard": {
       "total": 23,
@@ -35,10 +35,10 @@
     },
     "byType": {
       "btts": {
-        "total": 135,
-        "won": 91,
+        "total": 136,
+        "won": 92,
         "lost": 44,
-        "rate": 67.4
+        "rate": 67.6
       },
       "over25": {
         "total": 2,
@@ -141,8 +141,8 @@
       },
       {
         "date": "2026-10-21",
-        "total": 2,
-        "won": 2,
+        "total": 3,
+        "won": 3,
         "lost": 0,
         "rate": 100
       }
@@ -176,6 +176,18 @@
       "status": "WON",
       "finalScore": "4-1",
       "verifiedAt": "2026-10-21T18:44:23.338Z",
+      "source": "ESPN public"
+    },
+    {
+      "date": "2026-10-21",
+      "match": "Levante vs Athletic Club",
+      "league": "LaLiga",
+      "market": "btts",
+      "tier": "GOLD",
+      "proba": 0.7423,
+      "status": "WON",
+      "finalScore": "3-1",
+      "verifiedAt": "2026-10-21T20:28:02.990Z",
       "source": "ESPN public"
     },
     {
