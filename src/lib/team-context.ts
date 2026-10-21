@@ -1,7 +1,9 @@
+import { isPermittedOfficialNews } from '../../scripts/official-news-policy.mjs'
 import { readFileSync } from 'node:fs'
 import { join } from 'node:path'
 
 export type TeamNewsItem = {
+  sourceId?: string
   title: string
   url: string
   publishedAt?: string
@@ -68,11 +70,6 @@ function safeHttpsUrl(value: unknown, allowedHosts: Set<string>): string | null 
   }
 }
 
-function isEspnHost(hostname: string): boolean {
-  const host = hostname.toLowerCase()
-  return host === 'espn.com' || host.endsWith('.espn.com')
-}
-
 function safeLicenseUrl(value: unknown): string | null {
   const safeUrl = safeHttpsUrl(value, CC_HOSTS)
   if (!safeUrl) return null
@@ -108,40 +105,18 @@ function normalizeNews(value: unknown, now: number, teamName?: string): TeamNews
     const publishedAt = validDate(item.publishedAt)
     const source = cleanString(item.source, 100)
     const rawTitle = typeof item.title === 'string' ? item.title : ''
-    let title = source === 'GDELT' ? 'External article' : cleanString(rawTitle, 240)
-    let license = cleanString(item.license, 100)
+    const title = cleanString(rawTitle, 240)
+    const license = cleanString(item.license, 100)
     let url: string | null = null
     let licenseUrl: string | null = null
     let publisher: string | undefined
-    let seenAt: string | undefined
     let attributionUrl: string | undefined
     if (source === 'Official') {
-      const hosts = new Set(['fk-austria.at', 'www.fccincinnati.com'])
-      const teamNames = Array.isArray(item.teamNames) ? item.teamNames.filter((value): value is string => typeof value === 'string') : []
-      try {
-        const parsed = new URL(String(item.url ?? ''))
-        if (parsed.protocol === 'https:' && hosts.has(parsed.hostname.toLowerCase()) && !parsed.username && !parsed.password) url = String(item.url)
-        const sourceUrl = new URL(String(item.attributionUrl ?? ''))
-        if (sourceUrl.protocol === 'https:' && hosts.has(sourceUrl.hostname.toLowerCase()) && sourceUrl.hostname === parsed.hostname) attributionUrl = String(item.attributionUrl)
-      } catch { /* invalid official source */ }
-      if (!teamName || !teamNames.includes(teamName) || !attributionUrl || !url) continue
-      title = 'Official publication'
-      license = 'Official publisher link only'
-      licenseUrl = null
-      publisher = cleanString(item.publisher, 253).toLowerCase()
-      if (publisher !== new URL(url).hostname.toLowerCase() && !new URL(url).hostname.toLowerCase().endsWith(`.${publisher}`)) continue
-    } else if (source === 'GDELT') {
-      try {
-        const parsed = new URL(String(item.url ?? ''))
-        const host = parsed.hostname.toLowerCase()
-        if (parsed.protocol === 'https:' && !parsed.username && !parsed.password && !parsed.port && !isEspnHost(host)
-          && !host.includes(':') && host !== 'localhost' && !host.endsWith('.localhost') && !host.endsWith('.local')
-          && !/^\d{1,3}(?:\.\d{1,3}){3}$/.test(host)) url = String(item.url)
-      } catch { /* Invalid publisher URL */ }
-      publisher = cleanString(item.publisher, 253).toLowerCase()
-      seenAt = validDate(item.seenAt) ?? undefined
-      licenseUrl = item.licenseUrl === 'https://www.gdeltproject.org/' ? 'https://www.gdeltproject.org/' : null
-      if (!publisher || !/^(?:[a-z0-9-]+\.)+[a-z]{2,}$/i.test(publisher) || (licenseUrl && license !== 'GDELT attribution') || (url && new URL(url).hostname.toLowerCase() !== publisher && !new URL(url).hostname.toLowerCase().endsWith(`.${publisher}`))) continue
+      if (!teamName || !isPermittedOfficialNews(item, { now, team: teamName })) continue
+      url = String(item.url)
+      attributionUrl = String(item.attributionUrl)
+      publisher = String(item.publisher)
+      licenseUrl = String(item.licenseUrl)
     } else if (source === 'Wikinews') {
       url = safeHttpsUrl(item.url, WIKINEWS_HOSTS)
       licenseUrl = safeLicenseUrl(item.licenseUrl)
@@ -149,12 +124,12 @@ function normalizeNews(value: unknown, now: number, teamName?: string): TeamNews
     } else {
       continue
     }
-    const effectiveDate = source === 'GDELT' ? seenAt : publishedAt
+    const effectiveDate = publishedAt
     if (!url || (source !== 'Official' && !licenseUrl) || !effectiveDate || !title || !source || !license) continue
     const timestamp = Date.parse(effectiveDate)
-    const windowMs = source === 'GDELT' ? 7 * 24 * 60 * 60 * 1000 : THIRTY_DAYS_MS
+    const windowMs = THIRTY_DAYS_MS
     if (timestamp > now || now - timestamp > windowMs) continue
-    accepted.push({ title, url, ...(publishedAt ? { publishedAt } : {}), source, license, ...(licenseUrl ? { licenseUrl } : {}), ...(publisher ? { publisher } : {}), ...(seenAt ? { seenAt } : {}), ...(attributionUrl ? { attributionUrl } : {}), ...(source === 'Official' ? { teamNames: [teamName!] } : {}) })
+    accepted.push({ title, url, ...(publishedAt ? { publishedAt } : {}), source, license, ...(licenseUrl ? { licenseUrl } : {}), ...(publisher ? { publisher } : {}), ...(attributionUrl ? { attributionUrl } : {}), ...(source === 'Official' ? { teamNames: [teamName!], sourceId: String(item.sourceId) } : {}) })
     if (accepted.length === 3) break
   }
   return accepted

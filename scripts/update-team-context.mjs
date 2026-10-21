@@ -2,7 +2,9 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { createHash } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
-import { NEWS_SOURCE_VERSION, findRecentWikinews, findTeamImage, findTeamLinks, imageCacheFresh, isPermittedNewsItem, newsCacheFresh, findRecentGdelt, findCuratedOfficialNews, request } from './team-context-sources.mjs';
+import { NEWS_SOURCE_VERSION, findRecentWikinews, findTeamImage, findTeamLinks, imageCacheFresh, newsCacheFresh, request } from './team-context-sources.mjs';
+
+import { collectOfficialNews } from './official-news-collector.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const PREDICTIONS = path.join(ROOT, 'public/predictions.json');
@@ -94,28 +96,16 @@ async function main() {
   console.log(`Open-context lookup: ${names.length} verified match-feed names (max 150, current=${currentNames.length}, archive=${archiveNames.length}).`);
 
   const currentSet = new Set(currentNames);
-  let gdeltStopped = false;
+  const official = await collectOfficialNews(currentNames);
+  for (const check of official.checks) console.log(`Official ${check.sourceId}: ${check.status}, items=${check.count}${check.reason ? ` (${check.reason})` : ''}`);
 
   for (const name of names) {
     const previous = existing.teams?.[name];
-    const officialNews = findCuratedOfficialNews(name);
-    let teamGdelt = [];
-    let gdeltError = null;
-    let gdeltDidCheck = false;
-    if (currentSet.has(name) && !gdeltStopped) {
-      const checked = Date.parse(previous?.gdeltCheckedAt ?? '');
-      if (Number.isFinite(checked) && checked <= Date.now() && Date.now() - checked < 6 * 60 * 60 * 1000 && previous?.sourceVersion === NEWS_SOURCE_VERSION) {
-        teamGdelt = (previous.gdeltNews ?? []).filter(isPermittedNewsItem);
-      } else {
-        try { teamGdelt = await findRecentGdelt(name); gdeltDidCheck = true; }
-        catch (error) { gdeltError = error; if (error?.status === 429) gdeltStopped = true; console.warn(`GDELT lookup failed for ${name}: ${error.message}`); }
-      }
-    }
-    const entry = { name, checkedAt: isoNow(), newsStatus: 'error', news: [], image: null, officialUrl: null, entityUrl: null, sourceVersion: NEWS_SOURCE_VERSION, gdeltNews: teamGdelt, gdeltCheckedAt: gdeltDidCheck ? isoNow() : previous?.gdeltCheckedAt ?? null };
-    if (teamGdelt.length) { entry.news = teamGdelt; entry.newsStatus = 'ok'; }
-    else if (officialNews.length) { entry.news = officialNews; entry.newsStatus = 'ok'; }
+    const officialNews = official.newsByTeam[name] ?? [];
+    const entry = { name, checkedAt: isoNow(), newsStatus: 'empty', news: [], image: null, officialUrl: null, entityUrl: null, sourceVersion: NEWS_SOURCE_VERSION };
+    if (officialNews.length) { entry.news = officialNews; entry.newsStatus = 'ok'; }
     else if (newsCacheFresh(previous, Date.now(), NEWS_SOURCE_VERSION)) {
-      // Preserve the original checkedAt: serving a cached result is not a source check.
+      // Only licensed Wikinews may be cached. Official sources are rechecked every run.
       entry.checkedAt = previous.checkedAt;
       entry.news = previous.news;
       entry.newsStatus = previous.newsStatus;
@@ -127,8 +117,6 @@ async function main() {
         entry.newsStatus = 'error';
         console.warn(`Wikinews fallback lookup failed for ${name}: ${error.message}`);
       }
-    } else {
-      entry.newsStatus = gdeltError || gdeltStopped ? 'error' : 'empty';
     }
 
     // Expensive identity/image lookups are limited to the teams on current free matches.
@@ -149,7 +137,7 @@ async function main() {
     console.log(`${name}: news=${entry.newsStatus}/${entry.news.length}, image=${entry.image ? entry.image.kind : 'null'}`);
   }
 
-  const result = { updatedAt: isoNow(), sourceVersion: NEWS_SOURCE_VERSION, globalNews: [], teams };
+  const result = { updatedAt: isoNow(), sourceVersion: NEWS_SOURCE_VERSION, officialSourceChecks: official.checks, globalNews: [], teams };
   await fs.writeFile(`${OUTPUT}.tmp`, `${JSON.stringify(result, null, 2)}\n`);
   await fs.rename(`${OUTPUT}.tmp`, OUTPUT);
   const summary = Object.values(teams).reduce((acc, team) => {

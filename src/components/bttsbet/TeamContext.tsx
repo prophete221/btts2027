@@ -10,7 +10,7 @@ const COPY = {
   fr: {
     heading: 'Contexte des équipes',
     news: 'Actualités récentes',
-    empty: 'Aucune actualité récente disponible dans les sources ouvertes consultées',
+    empty: 'Aucune actualité récente admissible dans les sources consultées',
     error: 'Actualités temporairement indisponibles',
     original: 'Titre original (anglais)',
     checked: 'Sources consultées le',
@@ -22,16 +22,12 @@ const COPY = {
     license: 'Licence',
     official: (name: string) => `Consulter le site officiel de ${name}`,
     wikidata: 'Fiche de référence Wikidata',
-    externalArticle: (team: string) => `Lire cet article sur ${team}`,
-    foundBy: 'Repéré par GDELT le',
-    gdeltAttribution: 'Indexé par GDELT',
-    officialPublication: (team: string) => `Publication officielle de ${team}`,
     officialSource: 'Source officielle',
   },
   en: {
     heading: 'Team context',
     news: 'Recent news',
-    empty: 'No recent news available in the open sources consulted',
+    empty: 'No eligible recent news in the sources consulted',
     error: 'News temporarily unavailable',
     original: 'Original title (English)',
     checked: 'Sources checked',
@@ -43,16 +39,12 @@ const COPY = {
     license: 'License',
     official: (name: string) => `Visit ${name}'s official website`,
     wikidata: 'Wikidata reference entry',
-    externalArticle: (team: string) => `Read this article about ${team}`,
-    foundBy: 'Found by GDELT on',
-    gdeltAttribution: 'Indexed by GDELT',
-    officialPublication: (team: string) => `Official publication by ${team}`,
     officialSource: 'Official source',
   },
   ar: {
     heading: 'سياق الفريقين',
     news: 'أخبار حديثة',
-    empty: 'لا تتوفر أخبار حديثة في المصادر المفتوحة التي تمت مراجعتها',
+    empty: 'لا تتوفر أخبار حديثة مسموح بإعادة نشرها في المصادر التي تمت مراجعتها',
     error: 'الأخبار غير متاحة مؤقتًا',
     original: 'العنوان الأصلي (بالإنجليزية)',
     checked: 'تاريخ مراجعة المصادر',
@@ -64,10 +56,6 @@ const COPY = {
     license: 'الترخيص',
     official: (name: string) => `زيارة الموقع الرسمي لفريق ${name}`,
     wikidata: 'صفحة مرجعية في ويكي بيانات',
-    externalArticle: (team: string) => `اقرأ المقال عن ${team}`,
-    foundBy: 'رصدته GDELT في',
-    gdeltAttribution: 'مفهرس بواسطة GDELT',
-    officialPublication: (team: string) => `منشور رسمي من ${team}`,
     officialSource: 'المصدر الرسمي',
   },
 } as const
@@ -128,9 +116,9 @@ function TeamCard({ team, name, locale, copy, readError }: {
         <ul className="space-y-3">
           {news.slice(0, 3).map((item, index) => (
             <li key={`${item.url}-${index}`} className="border-t border-slate-100 pt-2 text-sm dark:border-slate-700">
-              <a className="font-medium text-blue-700 underline hover:text-blue-900 dark:text-blue-300" href={item.url} target="_blank" rel="noopener noreferrer">{item.source === 'GDELT' ? copy.externalArticle(team?.name ?? name) : item.source === 'Official' ? copy.officialPublication(team?.name ?? name) : item.title}</a>
-              <p className="mt-1 text-xs text-slate-600 dark:text-slate-300">{item.source === 'GDELT' ? `${item.publisher} · ${copy.foundBy} ${displayDate(item.seenAt ?? '', locale)}` : item.source === 'Official' ? `${item.publisher} · ${displayDate(item.publishedAt ?? '', locale)}` : `${copy.original} · ${item.source} · ${displayDate(item.publishedAt ?? '', locale)}`}</p>
-              <p className="text-xs text-slate-600 dark:text-slate-300">{item.source === 'GDELT' ? <a className="underline" href={item.licenseUrl ?? item.url} target="_blank" rel="noopener noreferrer">{copy.gdeltAttribution}</a> : item.source === 'Official' ? <a className="underline" href={item.attributionUrl} target="_blank" rel="noopener noreferrer">{copy.officialSource}</a> : <a className="underline" href={item.licenseUrl ?? item.url} target="_blank" rel="noopener noreferrer">{copy.license}: {item.license}</a>}</p>
+              <a className="font-medium text-blue-700 underline hover:text-blue-900 dark:text-blue-300" href={item.url} target="_blank" rel="noopener noreferrer">{item.title}</a>
+              <p className="mt-1 text-xs text-slate-600 dark:text-slate-300">{item.source === 'Official' ? `${item.publisher} · ${displayDate(item.publishedAt ?? '', locale)}` : `${copy.original} · ${item.source} · ${displayDate(item.publishedAt ?? '', locale)}`}</p>
+              <p className="text-xs text-slate-600 dark:text-slate-300">{item.source === 'Official' ? <a className="underline" href={item.attributionUrl} target="_blank" rel="noopener noreferrer">{copy.officialSource}</a> : <a className="underline" href={item.licenseUrl ?? item.url} target="_blank" rel="noopener noreferrer">{copy.license}: {item.license}</a>}</p>
             </li>
           ))}
         </ul>

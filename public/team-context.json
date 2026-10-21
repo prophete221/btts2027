@@ -41,21 +41,8 @@
     "Austria Vienna": {
       "name": "Austria Vienna",
       "checkedAt": "2026-10-21T13:53:20.376Z",
-      "newsStatus": "ok",
-      "news": [
-        {
-          "title": "Official publication",
-          "url": "https://fk-austria.at/news/vorschau-auf-das-auswärtsspiel-in-ried-2",
-          "publishedAt": "2026-10-16",
-          "source": "Official",
-          "publisher": "fk-austria.at",
-          "attributionUrl": "https://fk-austria.at/news/vorschau-auf-das-auswärtsspiel-in-ried-2",
-          "license": "Official publisher link only",
-          "teamNames": [
-            "Austria Vienna"
-          ]
-        }
-      ],
+      "newsStatus": "empty",
+      "news": [],
       "image": {
         "url": "/team-media/56f228a4db22d06224d0.jpg",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:Generali-Arena_by_night.jpg",
@@ -101,22 +88,8 @@
     "D.C. United": {
       "name": "D.C. United",
       "checkedAt": "2026-10-21T13:53:21.554Z",
-      "newsStatus": "ok",
-      "news": [
-        {
-          "title": "Official publication",
-          "url": "https://www.fccincinnati.com/news/matchday-guide-pres-by-altafiber-fc-cincinnati-vs-dc-united-2026-10-21",
-          "publishedAt": "2026-10-20T15:00:09.771Z",
-          "source": "Official",
-          "publisher": "fccincinnati.com",
-          "attributionUrl": "https://www.fccincinnati.com/news/matchday-guide-pres-by-altafiber-fc-cincinnati-vs-dc-united-2026-10-21",
-          "license": "Official publisher link only",
-          "teamNames": [
-            "FC Cincinnati",
-            "D.C. United"
-          ]
-        }
-      ],
+      "newsStatus": "empty",
+      "news": [],
       "image": {
         "url": "/team-media/06e3cdf6fde5a6403c0f.jpg",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:Audi_Field_June_25th.jpg",
@@ -138,22 +111,8 @@
     "FC Cincinnati": {
       "name": "FC Cincinnati",
       "checkedAt": "2026-10-21T13:53:22.142Z",
-      "newsStatus": "ok",
-      "news": [
-        {
-          "title": "Official publication",
-          "url": "https://www.fccincinnati.com/news/matchday-guide-pres-by-altafiber-fc-cincinnati-vs-dc-united-2026-10-21",
-          "publishedAt": "2026-10-20T15:00:09.771Z",
-          "source": "Official",
-          "publisher": "fccincinnati.com",
-          "attributionUrl": "https://www.fccincinnati.com/news/matchday-guide-pres-by-altafiber-fc-cincinnati-vs-dc-united-2026-10-21",
-          "license": "Official publisher link only",
-          "teamNames": [
-            "FC Cincinnati",
-            "D.C. United"
-          ]
-        }
-      ],
+      "newsStatus": "empty",
+      "news": [],
       "image": {
         "url": "/team-media/438f6d4de95b31d254b6.jpg",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:Elevated_view_of_TQL_Stadium_and_its_environs_from_12th_St_and_Central_Parkway.jpg",

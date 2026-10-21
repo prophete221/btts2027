@@ -7,8 +7,8 @@ const TIMEOUT_MS = 20_000;
 const NEWS_WINDOW_MS = 30 * 24 * 60 * 60 * 1000;
 const curatedMedia = JSON.parse(readFileSync('scripts/curated-team-media.json', 'utf8'));
 const curatedAliases = { Levante: 'Levante UD' };
-const curatedOfficialNews = JSON.parse(readFileSync('scripts/curated-team-news.json', 'utf8'));
-export const NEWS_SOURCE_VERSION = 'open-news-v2-no-rss';
+export const NEWS_SOURCE_VERSION = 'open-news-v3-official-allowlist';
+import { isPermittedOfficialNews } from './official-news-policy.mjs';
 export const GDELT_DOC_URL = 'https://api.gdeltproject.org/api/v2/doc/doc';
 export const GDELT_ATTRIBUTION_URL = 'https://www.gdeltproject.org/';
 let lastGdeltRequestAt = 0;
@@ -329,28 +329,24 @@ export async function findTeamLinks(team, { requestFn = request } = {}) {
   return { officialUrl, entityUrl: `https://www.wikidata.org/wiki/${entity.id}` };
 }
 
-export function findCuratedOfficialNews(team, { now = Date.now() } = {}) {
-  return (curatedOfficialNews[team] ?? []).filter((item) => item.teamNames?.includes(team)
-    && Number.isFinite(Date.parse(item.publishedAt)) && Date.parse(item.publishedAt) <= now
-    && now - Date.parse(item.publishedAt) <= NEWS_WINDOW_MS).slice(0, 3).map((item) => ({
-      title: 'Official publication', url: item.url, publishedAt: item.publishedAt, source: 'Official',
-      publisher: item.publisher, attributionUrl: item.attributionUrl, license: 'Official publisher link only',
-      teamNames: item.teamNames,
-    }));
-}
-
-export function isPermittedNewsItem(item) {
-  if (!item || !['Wikinews', 'Official', 'GDELT'].includes(item.source)) return false;
-  if (typeof item.url !== 'string' || item.url.trim() !== item.url) return false;
-  try { return Boolean(safePublisherArticleUrl(new URL(item.url).href)); }
-  catch { return false; }
+export function isPermittedNewsItem(item, now = Date.now()) {
+  if (item?.source === 'Official') return isPermittedOfficialNews(item, { now });
+  if (item?.source !== 'Wikinews' || item.license !== 'CC BY 4.0'
+    || item.licenseUrl !== 'https://creativecommons.org/licenses/by/4.0/'
+    || typeof item.title !== 'string' || !item.title.trim()) return false;
+  try {
+    const url = new URL(item.url);
+    const published = Date.parse(item.publishedAt ?? '');
+    return url.protocol === 'https:' && url.hostname === 'en.wikinews.org' && !url.username && !url.password && !url.port
+      && url.pathname.startsWith('/wiki/') && Number.isFinite(published) && published <= now && now - published <= NEWS_WINDOW_MS;
+  } catch { return false; }
 }
 
 export function newsCacheFresh(teamEntry, now = Date.now(), sourceVersion = NEWS_SOURCE_VERSION) {
   const checked = Date.parse(teamEntry?.checkedAt ?? '');
   return Number.isFinite(checked) && checked <= now && now - checked < 6 * 60 * 60 * 1000
     && teamEntry.sourceVersion === sourceVersion && ['ok', 'empty'].includes(teamEntry.newsStatus)
-    && Array.isArray(teamEntry.news) && teamEntry.news.every(isPermittedNewsItem);
+    && Array.isArray(teamEntry.news) && teamEntry.news.every((item) => item.source === 'Wikinews' && isPermittedNewsItem(item, now));
 }
 
 export function imageCacheFresh(image, now = Date.now()) {

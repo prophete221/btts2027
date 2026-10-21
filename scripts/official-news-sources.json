@@ -1,0 +1,213 @@
+{
+  "sources": [],
+  "audit": [
+    {
+      "team": "FC Cincinnati",
+      "status": "excluded-unverified-permission",
+      "newsUrl": "https://www.fccincinnati.com/news/",
+      "termsUrl": "https://www.mlssoccer.com/legal/terms-of-service",
+      "additionalEvidenceUrl": "https://www.fccincinnati.com/tickets/obr-terms-and-conditions",
+      "robotsUrl": "https://www.fccincinnati.com/robots.txt",
+      "robotsResult": "Retrieved; wildcard allows public pages with technical exclusions.",
+      "reason": "MLS terms limit content reuse to personal non-commercial use without written permission. Exact publication/applicability of those terms on the club news site was not fully verified. No explicit commercial permission found.",
+      "feedResult": "No official feed verified.",
+      "checkedOn": "2026-10-21"
+    },
+    {
+      "team": "D.C. United",
+      "status": "excluded-unverified-permission",
+      "newsUrl": "https://www.dcunited.com/news/topics/news/",
+      "termsUrl": "https://www.mlssoccer.com/legal/terms-of-service",
+      "robotsUrl": "https://www.dcunited.com/robots.txt",
+      "robotsResult": "Retrieved; wildcard allows public pages with technical exclusions.",
+      "reason": "No explicit commercial permission found. MLS content terms require written permission for non-personal reuse, but exact applicability on this club site remains unverified.",
+      "feedResult": "The tested news index with ?feed=rss returned HTML, not a verified RSS feed.",
+      "checkedOn": "2026-10-21"
+    },
+    {
+      "team": "Austria Vienna",
+      "status": "excluded-unverified-permission",
+      "newsUrl": "https://fk-austria.at/news",
+      "termsUrl": "https://fk-austria.at/impressum",
+      "additionalEvidenceUrl": "https://presse.fk-austria.at/TermsAndConditions.aspx?l=deutsch",
+      "robotsUrl": "https://fk-austria.at/robots.txt",
+      "robotsResult": "Retrieved; technical path exclusions.",
+      "reason": "No general commercial news reuse licence in main-site imprint. Separate press-centre terms restrict commercial/advertising use; those terms are not treated as a general main-site licence.",
+      "feedResult": "Common /feed and /rss endpoints tested returned 404; no verified feed.",
+      "checkedOn": "2026-10-21"
+    },
+    {
+      "team": "SC Rheindorf Altach",
+      "status": "excluded-permission-required",
+      "newsUrl": "https://www.scra.at/news/",
+      "termsUrl": "https://www.scra.at/impressum",
+      "robotsUrl": "https://www.scra.at/robots.txt",
+      "robotsResult": "Could not retrieve; TLS/access failure, no bypass attempted.",
+      "reason": "Imprint requires written permission for uses outside legal exceptions; copies/downloads are allowed only for private non-commercial use.",
+      "feedResult": "No feed verified.",
+      "checkedOn": "2026-10-21"
+    },
+    {
+      "team": "Levante",
+      "status": "excluded-permission-required",
+      "newsUrl": "https://www.levanteud.com/en/news",
+      "termsUrl": "https://www.levanteud.com/aviso-legal",
+      "robotsUrl": "https://www.levanteud.com/robots.txt",
+      "robotsResult": "Retrieved; excludes technical paths including /api/, /preview/, /_next/.",
+      "reason": "Legal notice reserves reproduction, distribution and commercial exploitation without express written permission.",
+      "feedResult": "/rss exists as RSS, but items were not collected because commercial reuse permission was absent.",
+      "checkedOn": "2026-10-21"
+    },
+    {
+      "team": "Athletic Club",
+      "status": "excluded-unverified-permission",
+      "newsUrl": "https://www.athletic-club.eus/noticias/",
+      "termsUrl": "https://www.athletic-club.eus/en/legal-notice/",
+      "robotsUrl": "https://www.athletic-club.eus/robots.txt",
+      "robotsResult": "HTTP 403; no bypass attempted.",
+      "reason": "Legal notice provides conditional journalistic use, not an established permission for this affiliate-supported aggregation. No explicit permission established for BTTSPredict.",
+      "feedResult": "Tested feed paths blocked; no permitted feed verified.",
+      "checkedOn": "2026-10-21"
+    },
+    {
+      "team": "Borussia Mönchengladbach",
+      "status": "excluded-unverified-permission",
+      "newsUrl": "https://www.borussia.de/news",
+      "termsUrl": "https://www.borussia.de/impressum",
+      "robotsUrl": "https://www.borussia.de/robots.txt",
+      "robotsResult": "HTTP 200; wildcard Allow: /.",
+      "reason": "No explicit commercial reuse permission found in the imprint inspected.",
+      "feedResult": "/feed returned HTML, not RSS.",
+      "checkedOn": "2026-10-21"
+    },
+    {
+      "team": "SV Darmstadt 98",
+      "status": "excluded-permission-required",
+      "newsUrl": "https://www.sv98.de/aktuelles/",
+      "termsUrl": "https://www.sv98.de/impressum/",
+      "robotsUrl": "https://www.sv98.de/robots.txt",
+      "robotsResult": "HTTP 200; excludes /template/, /global_sections/, /author/.",
+      "reason": "Imprint: Ohne ausdrückliche Genehmigung des Herausgebers ist es nicht gestattet, Inhalte dieser Website zu vervielfältigen oder zu verbreiten.",
+      "feedResult": "/feed/ returned HTTP 200 application/rss+xml; existence does not grant commercial permission. News URL returned a not-found page.",
+      "checkedOn": "2026-10-21"
+    },
+    {
+      "team": "St. Pauli",
+      "status": "excluded-access-restricted",
+      "newsUrl": "https://www.fcstpauli.com/en/football/news",
+      "robotsUrl": "https://www.fcstpauli.com/robots.txt",
+      "robotsResult": "HTTP 200; named AI agents including ChatGPT-User have Disallow: /. No further pages fetched by the audit agent.",
+      "reason": "Terms not inspected and commercial permission unverified. Do not interpret a different collector user-agent as permission to bypass audit access restrictions.",
+      "feedResult": "Not verified.",
+      "checkedOn": "2026-10-21"
+    },
+    {
+      "team": "VfB Stuttgart",
+      "status": "excluded-unverified-permission",
+      "newsUrl": "https://www.vfb.de/de/1893/aktuell/neues/",
+      "termsUrl": "https://www.vfb.de/en/footer/footermenue/rechtliches/agb/",
+      "robotsUrl": "https://www.vfb.de/robots.txt",
+      "robotsResult": "HTTP 200; excludes /fileadmin/ and /templates/.",
+      "reason": "No general commercial news reuse permission found. A commercial-use restriction on forum threads is not treated as a separate news-article licence.",
+      "feedResult": "Official RSS link /templates/generated/1/raw/de.xml is under a robots-disallowed path; not fetched.",
+      "checkedOn": "2026-10-21"
+    },
+    {
+      "team": "VfL Bochum",
+      "status": "excluded-unverified-permission",
+      "newsUrl": "https://www.vfl-bochum.de/aktuelles",
+      "termsUrl": "https://www.vfl-bochum.de/impressum",
+      "robotsUrl": "https://www.vfl-bochum.de/robots.txt",
+      "robotsResult": "HTTP 404.",
+      "reason": "No explicit commercial reuse licence found in the imprint inspected.",
+      "feedResult": "/feed returned HTTP 404.",
+      "checkedOn": "2026-10-21"
+    },
+    {
+      "team": "VfL Wolfsburg",
+      "status": "excluded-permission-required",
+      "newsUrl": "https://www.vfl-wolfsburg.de/en/news/women",
+      "termsUrl": "https://www.vfl-wolfsburg.de/en/general/imprint",
+      "robotsUrl": "https://www.vfl-wolfsburg.de/robots.txt",
+      "robotsResult": "HTTP 404.",
+      "reason": "Imprint: Any copying in whole or in part regardless of media format is prohibited unless explicitly authorised. News index checked was the women's section, not complete men's-team coverage.",
+      "feedResult": "/feed returned HTTP 404.",
+      "checkedOn": "2026-10-21"
+    },
+    {
+      "team": "Bolton Wanderers",
+      "status": "excluded-partial-audit",
+      "termsUrl": "https://www.bwfc.co.uk/wanderers-tv/key-information/ts-and-cs",
+      "reason": "Only Wanderers TV terms were fetched. They restrict commercial use and content copying of that service; general news metadata permission remains unverified.",
+      "robotsResult": "Not verified.",
+      "feedResult": "Not verified.",
+      "checkedOn": "2026-10-21"
+    },
+    {
+      "team": "Nottingham Forest",
+      "status": "excluded-unreadable-terms",
+      "newsUrl": "https://www.nottinghamforest.co.uk/news/",
+      "termsUrl": "https://www.nottinghamforest.co.uk/terms-of-use",
+      "robotsUrl": "https://www.nottinghamforest.co.uk/robots.txt",
+      "robotsResult": "HTTP 200; observed Allow groups for meta-externalagent and ozone/1.0, not a reuse licence.",
+      "reason": "Terms extraction exposed the consent interface, not readable legal clauses. No commercial permission verified.",
+      "feedResult": "/rss.xml returned HTTP 200 RSS Latest News - Nottingham Forest FC; not approved for republication.",
+      "checkedOn": "2026-10-21"
+    },
+    {
+      "team": "Telstar",
+      "status": "excluded-partial-audit",
+      "newsUrl": "https://sctelstar.nl/nieuws",
+      "termsUrl": "https://sctelstar.nl/disclaimer",
+      "additionalEvidenceUrl": "https://sctelstar.nl/algemene-voorwaarden",
+      "robotsUrl": "https://sctelstar.nl/robots.txt",
+      "robotsResult": "HTTP 404.",
+      "reason": "Legal URLs identified but their text was not retrieved/verified. News index returned 200; this does not grant reuse rights.",
+      "feedResult": "Not verified.",
+      "checkedOn": "2026-10-21"
+    },
+    {
+      "team": "Málaga",
+      "status": "excluded-partial-audit",
+      "newsUrl": "https://www.malagacf.com/videos",
+      "reason": "Only the official video/news listing was fetched; legal conditions and commercial metadata permission were not verified.",
+      "robotsResult": "Not verified.",
+      "feedResult": "Not verified.",
+      "checkedOn": "2026-10-21"
+    },
+    {
+      "team": "Alavés",
+      "status": "excluded-unreadable-terms",
+      "termsUrl": "https://deportivoalaves.com/aviso-legal",
+      "additionalEvidenceUrl": "https://deportivoalaves.com/copyright",
+      "reason": "Both legal-page fetches returned navigation without usable legal text. Commercial reuse permission remains unverified.",
+      "robotsResult": "Not verified.",
+      "feedResult": "Not verified.",
+      "checkedOn": "2026-10-21"
+    },
+    {
+      "team": "Ipswich Town",
+      "status": "excluded-unreadable-terms",
+      "termsUrl": "https://www.itfc.co.uk/club/policies",
+      "reason": "Policy-page fetch returned navigation without relevant readable clauses. No permission established.",
+      "robotsResult": "Not verified.",
+      "feedResult": "Not verified.",
+      "checkedOn": "2026-10-21"
+    },
+    {
+      "team": "Middlesbrough",
+      "status": "not-tested",
+      "candidateTermsUrl": "https://www.mfc.co.uk/club/policies-and-terms",
+      "reason": "Official legal URL identified in search only; its contents, robots and feed were not verified. Not counted as a completed source audit."
+    },
+    {
+      "team": "Go Ahead Eagles",
+      "status": "not-verified-timeout",
+      "reason": "HTTP requests timed out; no usable conditions, robots or feed result established. Not counted as a completed source audit."
+    },
+    { "team": "KV Kortrijk", "status": "not-tested", "reason": "No official legal/robots/feed evidence retrieved during this audit." },
+    { "team": "KV Mechelen", "status": "not-tested", "reason": "No official legal/robots/feed evidence retrieved during this audit." },
+    { "team": "Monza", "status": "not-tested", "reason": "No official legal/robots/feed evidence retrieved during this audit." },
+    { "team": "Torino", "status": "not-tested", "reason": "No official legal/robots/feed evidence retrieved during this audit." }
+  ]
+}
