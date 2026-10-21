@@ -1,33 +1,7 @@
 {
-  "updatedAt": "2026-10-21T13:23:21.063Z",
-  "sourceVersion": "espn-rss-v1-gdelt-v1",
-  "espnFetchedAt": "2026-10-21T13:13:08.504Z",
-  "globalNews": [
-    {
-      "title": "Man City cheated because the Premier League's rules gave them no other choice",
-      "url": "https://www.espn.com/soccer/story/_/id/50221682/man-city-cheated-premier-league-was-built-unfair",
-      "publishedAt": "2026-10-21T12:30:48.000Z",
-      "source": "ESPN",
-      "license": "ESPN RSS — attribution",
-      "licenseUrl": "https://www.espn.com/espn/news/story?page=rssinfo"
-    },
-    {
-      "title": "Electric Ngumoha jolts Liverpool back to life in comeback win",
-      "url": "https://www.espn.com/soccer/story/_/id/50231666/ngumoha-sparks-liverpool-comeback-champions-league-win",
-      "publishedAt": "2026-10-21T12:30:06.000Z",
-      "source": "ESPN",
-      "license": "ESPN RSS — attribution",
-      "licenseUrl": "https://www.espn.com/espn/news/story?page=rssinfo"
-    },
-    {
-      "title": "Kimmich to miss Arsenal match after family bereavement",
-      "url": "https://www.espn.com/soccer/story/_/id/50236229/bayern-munich-joshua-kimmich-miss-arsenal-match-family-bereavement",
-      "publishedAt": "2026-10-21T12:08:25.000Z",
-      "source": "ESPN",
-      "license": "ESPN RSS — attribution",
-      "licenseUrl": "https://www.espn.com/espn/news/story?page=rssinfo"
-    }
-  ],
+  "updatedAt": "2026-10-21T13:37:12.772Z",
+  "sourceVersion": "open-news-v2-no-rss",
+  "globalNews": [],
   "teams": {
     "Athletic Club": {
       "name": "Athletic Club",
@@ -48,7 +22,7 @@
       },
       "officialUrl": "https://www.athletic-club.eus/",
       "entityUrl": "https://www.wikidata.org/wiki/Q8687",
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "Austria Vienna": {
       "name": "Austria Vienna",
@@ -82,7 +56,7 @@
       },
       "officialUrl": null,
       "entityUrl": "https://www.wikidata.org/wiki/Q131209",
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "D.C. United": {
       "name": "D.C. United",
@@ -117,7 +91,7 @@
       },
       "officialUrl": "https://www.dcunited.com/",
       "entityUrl": "https://www.wikidata.org/wiki/Q238593",
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "FC Cincinnati": {
       "name": "FC Cincinnati",
@@ -152,7 +126,7 @@
       },
       "officialUrl": "https://www.fccincinnati.com/",
       "entityUrl": "https://www.wikidata.org/wiki/Q20855983",
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "Levante": {
       "name": "Levante",
@@ -173,7 +147,7 @@
       },
       "officialUrl": "https://www.levanteud.com/",
       "entityUrl": "https://www.wikidata.org/wiki/Q8823",
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "SC Rheindorf Altach": {
       "name": "SC Rheindorf Altach",
@@ -194,7 +168,7 @@
       },
       "officialUrl": "https://www.scra.at/",
       "entityUrl": "https://www.wikidata.org/wiki/Q670438",
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "1. FC Heidenheim 1846": {
       "name": "1. FC Heidenheim 1846",
@@ -204,7 +178,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "1. FC Nürnberg": {
       "name": "1. FC Nürnberg",
@@ -214,7 +188,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "ADO Den Haag": {
       "name": "ADO Den Haag",
@@ -224,7 +198,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "AFC Bournemouth": {
       "name": "AFC Bournemouth",
@@ -234,7 +208,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "Ajax Amsterdam": {
       "name": "Ajax Amsterdam",
@@ -244,7 +218,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "Alverca": {
       "name": "Alverca",
@@ -254,7 +228,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "Antwerp": {
       "name": "Antwerp",
@@ -264,7 +238,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "Arouca": {
       "name": "Arouca",
@@ -274,26 +248,17 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "Arsenal": {
       "name": "Arsenal",
       "checkedAt": "2026-10-21T13:13:17.893Z",
-      "newsStatus": "ok",
-      "news": [
-        {
-          "title": "Kimmich to miss Arsenal match after family bereavement",
-          "url": "https://www.espn.com/soccer/story/_/id/50236229/bayern-munich-joshua-kimmich-miss-arsenal-match-family-bereavement",
-          "publishedAt": "2026-10-21T12:08:25.000Z",
-          "source": "ESPN",
-          "license": "ESPN RSS — attribution",
-          "licenseUrl": "https://www.espn.com/espn/news/story?page=rssinfo"
-        }
-      ],
+      "newsStatus": "empty",
+      "news": [],
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "Aston Villa": {
       "name": "Aston Villa",
@@ -303,7 +268,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "Atlanta United FC": {
       "name": "Atlanta United FC",
@@ -313,7 +278,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "Austin FC": {
       "name": "Austin FC",
@@ -323,7 +288,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "Austria Lustenau": {
       "name": "Austria Lustenau",
@@ -333,7 +298,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "AZ Alkmaar": {
       "name": "AZ Alkmaar",
@@ -343,26 +308,17 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "Bayern Munich": {
       "name": "Bayern Munich",
       "checkedAt": "2026-10-21T13:13:17.895Z",
-      "newsStatus": "ok",
-      "news": [
-        {
-          "title": "Kimmich to miss Arsenal match after family bereavement",
-          "url": "https://www.espn.com/soccer/story/_/id/50236229/bayern-munich-joshua-kimmich-miss-arsenal-match-family-bereavement",
-          "publishedAt": "2026-10-21T12:08:25.000Z",
-          "source": "ESPN",
-          "license": "ESPN RSS — attribution",
-          "licenseUrl": "https://www.espn.com/espn/news/story?page=rssinfo"
-        }
-      ],
+      "newsStatus": "empty",
+      "news": [],
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "Birmingham City": {
       "name": "Birmingham City",
@@ -372,7 +328,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "Blackburn Rovers": {
       "name": "Blackburn Rovers",
@@ -382,7 +338,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "Bolton Wanderers": {
       "name": "Bolton Wanderers",
@@ -392,7 +348,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "Borussia Dortmund": {
       "name": "Borussia Dortmund",
@@ -402,7 +358,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "Borussia Mönchengladbach": {
       "name": "Borussia Mönchengladbach",
@@ -412,7 +368,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "Braga": {
       "name": "Braga",
@@ -422,7 +378,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "Bristol City": {
       "name": "Bristol City",
@@ -432,7 +388,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "Burnley": {
       "name": "Burnley",
@@ -442,7 +398,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "Cardiff City": {
       "name": "Cardiff City",
@@ -452,7 +408,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "CF Montréal": {
       "name": "CF Montréal",
@@ -462,7 +418,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "Charlotte FC": {
       "name": "Charlotte FC",
@@ -472,7 +428,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "Charlton Athletic": {
       "name": "Charlton Athletic",
@@ -482,7 +438,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "Chelsea": {
       "name": "Chelsea",
@@ -492,7 +448,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "Chicago Fire FC": {
       "name": "Chicago Fire FC",
@@ -502,7 +458,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "Club Brugge": {
       "name": "Club Brugge",
@@ -512,7 +468,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "Colorado Rapids": {
       "name": "Colorado Rapids",
@@ -522,7 +478,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "Columbus Crew": {
       "name": "Columbus Crew",
@@ -532,7 +488,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "Como": {
       "name": "Como",
@@ -542,7 +498,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "Coventry City": {
       "name": "Coventry City",
@@ -552,26 +508,17 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "Crystal Palace": {
       "name": "Crystal Palace",
       "checkedAt": "2026-10-21T13:13:17.899Z",
-      "newsStatus": "ok",
-      "news": [
-        {
-          "title": "Transfer rumors, news: Manchester United keen on Palace duo",
-          "url": "https://www.espn.com/soccer/story/_/id/50235336/manchester-united-keen-palace-duo-sarr-mateta",
-          "publishedAt": "2026-10-21T08:27:18.000Z",
-          "source": "ESPN",
-          "license": "ESPN RSS — attribution",
-          "licenseUrl": "https://www.espn.com/espn/news/story?page=rssinfo"
-        }
-      ],
+      "newsStatus": "empty",
+      "news": [],
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "Derby County": {
       "name": "Derby County",
@@ -581,7 +528,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "Dundee United": {
       "name": "Dundee United",
@@ -591,7 +538,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "Dynamo Dresden": {
       "name": "Dynamo Dresden",
@@ -601,7 +548,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "Eintracht Frankfurt": {
       "name": "Eintracht Frankfurt",
@@ -611,7 +558,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "Energie Cottbus": {
       "name": "Energie Cottbus",
@@ -621,7 +568,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "Estrela": {
       "name": "Estrela",
@@ -631,7 +578,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "Excelsior": {
       "name": "Excelsior",
@@ -641,7 +588,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "FC Cologne": {
       "name": "FC Cologne",
@@ -651,7 +598,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "FC Dallas": {
       "name": "FC Dallas",
@@ -661,7 +608,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "FC Famalicao": {
       "name": "FC Famalicao",
@@ -671,7 +618,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "FC Groningen": {
       "name": "FC Groningen",
@@ -681,7 +628,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "FC Utrecht": {
       "name": "FC Utrecht",
@@ -691,7 +638,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "Feyenoord Rotterdam": {
       "name": "Feyenoord Rotterdam",
@@ -701,7 +648,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "Galatasaray": {
       "name": "Galatasaray",
@@ -711,7 +658,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "Gil Vicente": {
       "name": "Gil Vicente",
@@ -721,7 +668,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "Go Ahead Eagles": {
       "name": "Go Ahead Eagles",
@@ -731,7 +678,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "Heerenveen": {
       "name": "Heerenveen",
@@ -741,7 +688,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "Hertha Berlin": {
       "name": "Hertha Berlin",
@@ -751,7 +698,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "Holstein Kiel": {
       "name": "Holstein Kiel",
@@ -761,7 +708,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "Houston Dynamo FC": {
       "name": "Houston Dynamo FC",
@@ -771,7 +718,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "Inter Miami CF": {
       "name": "Inter Miami CF",
@@ -781,7 +728,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "Internazionale": {
       "name": "Internazionale",
@@ -791,7 +738,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "Ipswich Town": {
       "name": "Ipswich Town",
@@ -801,7 +748,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "Kaiserslautern": {
       "name": "Kaiserslautern",
@@ -811,7 +758,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "KV Kortrijk": {
       "name": "KV Kortrijk",
@@ -821,7 +768,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "KV Mechelen": {
       "name": "KV Mechelen",
@@ -831,7 +778,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "KVC Westerlo": {
       "name": "KVC Westerlo",
@@ -841,7 +788,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "LA Galaxy": {
       "name": "LA Galaxy",
@@ -851,7 +798,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "LAFC": {
       "name": "LAFC",
@@ -861,7 +808,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "LASK Linz": {
       "name": "LASK Linz",
@@ -871,7 +818,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "Lens": {
       "name": "Lens",
@@ -881,7 +828,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "Lille": {
       "name": "Lille",
@@ -891,7 +838,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "Lincoln City": {
       "name": "Lincoln City",
@@ -901,7 +848,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "Lommel SK": {
       "name": "Lommel SK",
@@ -911,26 +858,17 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "Manchester United": {
       "name": "Manchester United",
       "checkedAt": "2026-10-21T13:13:17.906Z",
-      "newsStatus": "ok",
-      "news": [
-        {
-          "title": "Transfer rumors, news: Manchester United keen on Palace duo",
-          "url": "https://www.espn.com/soccer/story/_/id/50235336/manchester-united-keen-palace-duo-sarr-mateta",
-          "publishedAt": "2026-10-21T08:27:18.000Z",
-          "source": "ESPN",
-          "license": "ESPN RSS — attribution",
-          "licenseUrl": "https://www.espn.com/espn/news/story?page=rssinfo"
-        }
-      ],
+      "newsStatus": "empty",
+      "news": [],
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "Maritimo": {
       "name": "Maritimo",
@@ -940,7 +878,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "Middlesbrough": {
       "name": "Middlesbrough",
@@ -950,7 +888,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "Millwall": {
       "name": "Millwall",
@@ -960,7 +898,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "Minnesota United FC": {
       "name": "Minnesota United FC",
@@ -970,7 +908,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "Moreirense": {
       "name": "Moreirense",
@@ -980,7 +918,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "Nashville SC": {
       "name": "Nashville SC",
@@ -990,7 +928,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "NEC Nijmegen": {
       "name": "NEC Nijmegen",
@@ -1000,7 +938,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "New England Revolution": {
       "name": "New England Revolution",
@@ -1010,7 +948,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "New York City FC": {
       "name": "New York City FC",
@@ -1020,7 +958,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "Newcastle United": {
       "name": "Newcastle United",
@@ -1030,7 +968,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "Norwich City": {
       "name": "Norwich City",
@@ -1040,7 +978,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "Nottingham Forest": {
       "name": "Nottingham Forest",
@@ -1050,7 +988,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "Orlando City SC": {
       "name": "Orlando City SC",
@@ -1060,7 +998,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "PEC Zwolle": {
       "name": "PEC Zwolle",
@@ -1070,7 +1008,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "Philadelphia Union": {
       "name": "Philadelphia Union",
@@ -1080,7 +1018,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "Portland Timbers": {
       "name": "Portland Timbers",
@@ -1090,7 +1028,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "Portsmouth": {
       "name": "Portsmouth",
@@ -1100,7 +1038,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "Preston North End": {
       "name": "Preston North End",
@@ -1110,7 +1048,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "PSV Eindhoven": {
       "name": "PSV Eindhoven",
@@ -1120,7 +1058,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "Queens Park Rangers": {
       "name": "Queens Park Rangers",
@@ -1130,7 +1068,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "Rapid Vienna": {
       "name": "Rapid Vienna",
@@ -1140,7 +1078,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "RB Leipzig": {
       "name": "RB Leipzig",
@@ -1150,7 +1088,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "Real Betis": {
       "name": "Real Betis",
@@ -1160,26 +1098,17 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "Real Madrid": {
       "name": "Real Madrid",
       "checkedAt": "2026-10-21T13:13:17.910Z",
-      "newsStatus": "ok",
-      "news": [
-        {
-          "title": "Sevilla lodge complaint after Real Madrid defeat",
-          "url": "https://www.espn.com/soccer/story/_/id/50236214/sevilla-lodge-complaint-real-madrid-defeat-laliga",
-          "publishedAt": "2026-10-21T12:08:24.000Z",
-          "source": "ESPN",
-          "license": "ESPN RSS — attribution",
-          "licenseUrl": "https://www.espn.com/espn/news/story?page=rssinfo"
-        }
-      ],
+      "newsStatus": "empty",
+      "news": [],
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "Real Salt Lake": {
       "name": "Real Salt Lake",
@@ -1189,7 +1118,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "Red Bull New York": {
       "name": "Red Bull New York",
@@ -1199,7 +1128,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "San Diego FC": {
       "name": "San Diego FC",
@@ -1209,7 +1138,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "San Jose Earthquakes": {
       "name": "San Jose Earthquakes",
@@ -1219,7 +1148,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "SC Cambuur": {
       "name": "SC Cambuur",
@@ -1229,7 +1158,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "Seattle Sounders FC": {
       "name": "Seattle Sounders FC",
@@ -1239,7 +1168,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "Shakhtar Donetsk": {
       "name": "Shakhtar Donetsk",
@@ -1249,7 +1178,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "Sheffield United": {
       "name": "Sheffield United",
@@ -1259,7 +1188,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "Sint-Truidense": {
       "name": "Sint-Truidense",
@@ -1269,7 +1198,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "Southampton": {
       "name": "Southampton",
@@ -1279,7 +1208,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "Sparta Rotterdam": {
       "name": "Sparta Rotterdam",
@@ -1289,7 +1218,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "Sporting CP": {
       "name": "Sporting CP",
@@ -1299,7 +1228,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "Sporting Kansas City": {
       "name": "Sporting Kansas City",
@@ -1309,7 +1238,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "SpVgg Greuther Fürth": {
       "name": "SpVgg Greuther Fürth",
@@ -1319,7 +1248,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "St Johnstone": {
       "name": "St Johnstone",
@@ -1329,7 +1258,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "St. Louis CITY SC": {
       "name": "St. Louis CITY SC",
@@ -1339,7 +1268,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "St. Pauli": {
       "name": "St. Pauli",
@@ -1349,7 +1278,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "Stoke City": {
       "name": "Stoke City",
@@ -1359,7 +1288,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "SV Darmstadt 98": {
       "name": "SV Darmstadt 98",
@@ -1369,7 +1298,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "Swansea City": {
       "name": "Swansea City",
@@ -1379,7 +1308,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "Telstar": {
       "name": "Telstar",
@@ -1389,7 +1318,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "Toronto FC": {
       "name": "Toronto FC",
@@ -1399,7 +1328,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "Tottenham Hotspur": {
       "name": "Tottenham Hotspur",
@@ -1409,7 +1338,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "TSV Eintracht Braunschweig": {
       "name": "TSV Eintracht Braunschweig",
@@ -1419,7 +1348,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "TSV Hartberg": {
       "name": "TSV Hartberg",
@@ -1429,7 +1358,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "Vancouver Whitecaps": {
       "name": "Vancouver Whitecaps",
@@ -1439,7 +1368,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "VfB Stuttgart": {
       "name": "VfB Stuttgart",
@@ -1449,7 +1378,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "VfL Bochum": {
       "name": "VfL Bochum",
@@ -1459,7 +1388,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "VfL Osnabruck": {
       "name": "VfL Osnabruck",
@@ -1469,7 +1398,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "VfL Wolfsburg": {
       "name": "VfL Wolfsburg",
@@ -1479,7 +1408,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "Viking FK": {
       "name": "Viking FK",
@@ -1489,7 +1418,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "Vitória de Guimaraes": {
       "name": "Vitória de Guimaraes",
@@ -1499,7 +1428,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "Waasland-Beveren": {
       "name": "Waasland-Beveren",
@@ -1509,7 +1438,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "Watford": {
       "name": "Watford",
@@ -1519,7 +1448,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "Werder Bremen": {
       "name": "Werder Bremen",
@@ -1529,7 +1458,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "West Bromwich Albion": {
       "name": "West Bromwich Albion",
@@ -1539,7 +1468,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "West Ham United": {
       "name": "West Ham United",
@@ -1549,7 +1478,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "Willem II": {
       "name": "Willem II",
@@ -1559,7 +1488,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "Wolverhampton Wanderers": {
       "name": "Wolverhampton Wanderers",
@@ -1569,7 +1498,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     },
     "Wrexham": {
       "name": "Wrexham",
@@ -1579,7 +1508,7 @@
       "image": null,
       "officialUrl": null,
       "entityUrl": null,
-      "sourceVersion": "espn-rss-v1"
+      "sourceVersion": "open-news-v2-no-rss"
     }
   }
 }

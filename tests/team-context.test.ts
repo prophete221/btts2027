@@ -109,16 +109,23 @@ describe('normalizeTeamContext', () => {
     expect(team.image).toBeNull()
   })
 
-  it('preserves ESPN RSS title and article URL exactly with attribution, while rejecting unsafe markup and hosts', () => {
-    const item = {
+  it('rejects legacy ESPN RSS entries from global and team caches, including ESPN links mislabeled as GDELT', () => {
+    const legacyEspn = {
       title: 'Club &amp; opponent: late winner', url: 'https://www.espn.com/soccer/story/_/id/1?x=2',
       publishedAt: '2026-10-21T11:00:00.000Z', source: 'ESPN', license: 'ESPN RSS — attribution',
       licenseUrl: 'https://www.espn.com/espn/news/story?page=rssinfo',
     }
-    const result = normalizeTeamContext({ globalNews: [item], teams: {} }, NOW)
-    expect(result.globalNews[0]).toEqual(item)
-    expect(normalizeTeamContext({ globalNews: [{ ...item, title: '<b>rewritten</b>' }], teams: {} }, NOW).globalNews).toEqual([])
-    expect(normalizeTeamContext({ globalNews: [{ ...item, url: 'https://notespn.com/story' }], teams: {} }, NOW).globalNews).toEqual([])
+    const mislabeledEspn = {
+      title: 'Leaked editorial headline', url: 'https://news.espn.com/story', seenAt: '2026-10-21T11:00:00.000Z',
+      source: 'GDELT', publisher: 'espn.com', license: 'GDELT attribution', licenseUrl: 'https://www.gdeltproject.org/',
+    }
+    const result = normalizeTeamContext({
+      espnFetchedAt: '2026-10-21T11:00:00.000Z', globalNews: [legacyEspn, mislabeledEspn],
+      teams: { Alpha: { ...fixture.teams['Alpha FC'], news: [legacyEspn, mislabeledEspn] } },
+    }, NOW)
+    expect(result.globalNews).toEqual([])
+    expect(result.teams.Alpha.news).toEqual([])
+    expect(result).not.toHaveProperty('espnFetchedAt')
   })
 
   it('returns an empty safe document for malformed input', () => {

@@ -2,7 +2,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { createHash } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
-import { ESPN_RSS_URL, NEWS_SOURCE_VERSION, findRecentWikinews, findTeamImage, findTeamLinks, imageCacheFresh, matchEspnNewsToTeam, newsCacheFresh, parseEspnRss, publicNewsItem, findRecentGdelt, findCuratedOfficialNews, request } from './team-context-sources.mjs';
+import { NEWS_SOURCE_VERSION, findRecentWikinews, findTeamImage, findTeamLinks, imageCacheFresh, isPermittedNewsItem, newsCacheFresh, findRecentGdelt, findCuratedOfficialNews, request } from './team-context-sources.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const PREDICTIONS = path.join(ROOT, 'public/predictions.json');
@@ -91,33 +91,13 @@ async function main() {
   // Current matchup names have priority; include only a bounded local archive roster.
   const names = [...new Set([...currentNames, ...archiveNames])].slice(0, 150);
   const teams = {};
-  console.log(`ESPN RSS lookup: ${ESPN_RSS_URL}; ${names.length} exact match-feed names (max 150, current=${currentNames.length}, archive=${archiveNames.length}).`);
+  console.log(`Open-context lookup: ${names.length} verified match-feed names (max 150, current=${currentNames.length}, archive=${archiveNames.length}).`);
 
-  let espnItems = [];
-  let espnFetchedAt = null;
-  let feedFailed = false;
-  try {
-    const xml = await request(ESPN_RSS_URL, { responseType: 'text' });
-    espnItems = parseEspnRss(xml);
-    espnFetchedAt = isoNow();
-  } catch (error) {
-    feedFailed = true;
-    console.warn(`ESPN RSS lookup failed: ${error.message}`);
-    if (existing.sourceVersion === NEWS_SOURCE_VERSION && Date.parse(existing.espnFetchedAt) <= Date.now()) {
-      const age = Date.now() - Date.parse(existing.espnFetchedAt);
-      if (age < 6 * 60 * 60 * 1000) {
-        espnItems = (existing.globalNews ?? []).map((item) => ({ ...item, _matchText: item.title }));
-        espnFetchedAt = existing.espnFetchedAt;
-      }
-    }
-  }
-  const globalNews = espnItems.slice(0, 3).map(publicNewsItem);
   const currentSet = new Set(currentNames);
   let gdeltStopped = false;
 
   for (const name of names) {
     const previous = existing.teams?.[name];
-    const teamEspn = espnItems.filter((item) => matchEspnNewsToTeam(item, [name])).slice(0, 3);
     const officialNews = findCuratedOfficialNews(name);
     let teamGdelt = [];
     let gdeltError = null;
@@ -125,7 +105,7 @@ async function main() {
     if (currentSet.has(name) && !gdeltStopped) {
       const checked = Date.parse(previous?.gdeltCheckedAt ?? '');
       if (Number.isFinite(checked) && checked <= Date.now() && Date.now() - checked < 6 * 60 * 60 * 1000 && previous?.sourceVersion === NEWS_SOURCE_VERSION) {
-        teamGdelt = previous.gdeltNews ?? [];
+        teamGdelt = (previous.gdeltNews ?? []).filter(isPermittedNewsItem);
       } else {
         try { teamGdelt = await findRecentGdelt(name); gdeltDidCheck = true; }
         catch (error) { gdeltError = error; if (error?.status === 429) gdeltStopped = true; console.warn(`GDELT lookup failed for ${name}: ${error.message}`); }
@@ -134,10 +114,7 @@ async function main() {
     const entry = { name, checkedAt: isoNow(), newsStatus: 'error', news: [], image: null, officialUrl: null, entityUrl: null, sourceVersion: NEWS_SOURCE_VERSION, gdeltNews: teamGdelt, gdeltCheckedAt: gdeltDidCheck ? isoNow() : previous?.gdeltCheckedAt ?? null };
     if (teamGdelt.length) { entry.news = teamGdelt; entry.newsStatus = 'ok'; }
     else if (officialNews.length) { entry.news = officialNews; entry.newsStatus = 'ok'; }
-    else if (teamEspn.length) {
-      entry.news = teamEspn.map(publicNewsItem);
-      entry.newsStatus = 'ok';
-    } else if (newsCacheFresh(previous, Date.now(), NEWS_SOURCE_VERSION)) {
+    else if (newsCacheFresh(previous, Date.now(), NEWS_SOURCE_VERSION)) {
       // Preserve the original checkedAt: serving a cached result is not a source check.
       entry.checkedAt = previous.checkedAt;
       entry.news = previous.news;
@@ -151,7 +128,7 @@ async function main() {
         console.warn(`Wikinews fallback lookup failed for ${name}: ${error.message}`);
       }
     } else {
-      entry.newsStatus = feedFailed || gdeltError || gdeltStopped ? 'error' : 'empty';
+      entry.newsStatus = gdeltError || gdeltStopped ? 'error' : 'empty';
     }
 
     // Expensive identity/image lookups are limited to the teams on current free matches.
@@ -172,18 +149,17 @@ async function main() {
     console.log(`${name}: news=${entry.newsStatus}/${entry.news.length}, image=${entry.image ? entry.image.kind : 'null'}`);
   }
 
-  const result = { updatedAt: isoNow(), sourceVersion: NEWS_SOURCE_VERSION, espnFetchedAt, globalNews, teams };
+  const result = { updatedAt: isoNow(), sourceVersion: NEWS_SOURCE_VERSION, globalNews: [], teams };
   await fs.writeFile(`${OUTPUT}.tmp`, `${JSON.stringify(result, null, 2)}\n`);
   await fs.rename(`${OUTPUT}.tmp`, OUTPUT);
   const summary = Object.values(teams).reduce((acc, team) => {
     acc.news += team.news.length;
-    acc.espn += team.news.filter((item) => item.source === 'ESPN').length;
     acc.wikinews += team.news.filter((item) => item.source === 'Wikinews').length;
     acc.image += Number(Boolean(team.image));
     acc.status[team.newsStatus] = (acc.status[team.newsStatus] ?? 0) + 1;
     return acc;
-  }, { news: 0, espn: 0, wikinews: 0, image: 0, status: {} });
-  console.log(`Saved ${OUTPUT}: ${summary.image}/${currentNames.length} current images; team news=${summary.news} (ESPN=${summary.espn}, Wikinews=${summary.wikinews}); global ESPN=${globalNews.length}; statuses=${JSON.stringify(summary.status)}.`);
+  }, { news: 0, wikinews: 0, image: 0, status: {} });
+  console.log(`Saved ${OUTPUT}: ${summary.image}/${currentNames.length} current images; team news=${summary.news} (Wikinews=${summary.wikinews}); statuses=${JSON.stringify(summary.status)}.`);
 }
 
 main().catch((error) => { console.error(error); process.exitCode = 1; });

@@ -8,9 +8,7 @@ const NEWS_WINDOW_MS = 30 * 24 * 60 * 60 * 1000;
 const curatedMedia = JSON.parse(readFileSync('scripts/curated-team-media.json', 'utf8'));
 const curatedAliases = { Levante: 'Levante UD' };
 const curatedOfficialNews = JSON.parse(readFileSync('scripts/curated-team-news.json', 'utf8'));
-export const ESPN_RSS_URL = 'https://www.espn.com/espn/rss/soccer/news';
-export const ESPN_TERMS_URL = 'https://www.espn.com/espn/news/story?page=rssinfo';
-export const NEWS_SOURCE_VERSION = 'espn-rss-v1-gdelt-v1';
+export const NEWS_SOURCE_VERSION = 'open-news-v2-no-rss';
 export const GDELT_DOC_URL = 'https://api.gdeltproject.org/api/v2/doc/doc';
 export const GDELT_ATTRIBUTION_URL = 'https://www.gdeltproject.org/';
 let lastGdeltRequestAt = 0;
@@ -115,53 +113,9 @@ export function allowedCreativeCommons(metadata = {}) {
   return { license, licenseUrl: url };
 }
 
-/** Decode only XML's predefined and numeric entities. DTDs/external entities are never resolved. */
-function decodeXml(value) {
-  return String(value ?? '').replace(/&(#x[\da-f]+|#\d+|amp|lt|gt|quot|apos);/gi, (entity, code) => {
-    if (code[0] !== '#') return ({ amp: '&', lt: '<', gt: '>', quot: '"', apos: "'" })[code.toLowerCase()];
-    const hex = code[1]?.toLowerCase() === 'x';
-    const point = Number.parseInt(code.slice(hex ? 2 : 1), hex ? 16 : 10);
-    if (!Number.isInteger(point) || point <= 0 || point > 0x10ffff || (point >= 0xd800 && point <= 0xdfff)) return entity;
-    return String.fromCodePoint(point);
-  });
-}
-
-function xmlText(block, tag) {
-  const match = block.match(new RegExp(`<${tag}(?:\\s[^>]*)?>([\\s\\S]*?)<\\/${tag}\\s*>`, 'i'));
-  if (!match) return '';
-  const raw = match[1];
-  const cdata = raw.trim().match(/^<!\[CDATA\[([\s\S]*?)\]\]>$/);
-  return decodeXml(cdata ? cdata[1] : raw);
-}
-
 function normalizeMatchText(value) {
   return String(value ?? '').normalize('NFKD').replace(/[\u0300-\u036f]/g, '').toLowerCase()
     .replace(/[^a-z0-9]+/g, ' ').trim().replace(/\s+/g, ' ');
-}
-
-/** Parse ESPN's public RSS XML without a general-purpose XML resolver; only item data is retained. */
-export function parseEspnRss(xml, { now = Date.now() } = {}) {
-  if (typeof xml !== 'string' || /<!DOCTYPE|<!ENTITY/i.test(xml)) return [];
-  const accepted = [];
-  const windowStart = now - NEWS_WINDOW_MS;
-  for (const block of xml.match(/<item(?:\s[^>]*)?>[\s\S]*?<\/item\s*>/gi) ?? []) {
-    const title = xmlText(block, 'title');
-    const rawUrl = xmlText(block, 'link');
-    const publishedAt = xmlText(block, 'pubDate');
-    const description = xmlText(block, 'description');
-    const timestamp = Date.parse(publishedAt);
-    let parsedUrl;
-    try { parsedUrl = new URL(rawUrl); } catch { continue; }
-    if (!title.trim() || title.length > 500 || /<[^>]*>|[\u0000-\u001f\u007f]/.test(title) || rawUrl.trim() !== rawUrl
-      || parsedUrl.protocol !== 'https:' || !['espn.com', 'www.espn.com'].includes(parsedUrl.hostname.toLowerCase())
-      || parsedUrl.username || parsedUrl.password || !Number.isFinite(timestamp) || timestamp > now || timestamp < windowStart) continue;
-    accepted.push({
-      title, url: rawUrl, publishedAt: new Date(timestamp).toISOString(), source: 'ESPN',
-      license: 'ESPN RSS — attribution', licenseUrl: ESPN_TERMS_URL,
-      _matchText: `${title} ${description.replace(/<[^>]*>/g, ' ')}`,
-    });
-  }
-  return accepted.sort((a, b) => Date.parse(b.publishedAt) - Date.parse(a.publishedAt));
 }
 
 function parseGdeltSeenDate(value) {
@@ -177,6 +131,7 @@ function safePublisherArticleUrl(value) {
     const parsed = new URL(value);
     const host = parsed.hostname.toLowerCase();
     if (parsed.protocol !== 'https:' || !host || parsed.username || parsed.password || parsed.port
+      || host === 'espn.com' || host.endsWith('.espn.com')
       || host === 'localhost' || host.endsWith('.localhost') || host.endsWith('.local')
       || /^\d{1,3}(?:\.\d{1,3}){3}$/.test(host) || parsed.href !== value) return null;
     return value;
@@ -207,24 +162,19 @@ export async function findRecentGdelt(team, { now = Date.now(), requestFn = requ
     const host = new URL(urlValue).hostname.toLowerCase();
     if (host !== publisher && !host.endsWith(`.${publisher}`)) continue;
     // Use title internally only to reject unrelated search hits; do not retain it in output.
-    if (!matchEspnNewsToTeam({ title: result?.title }, [team])) continue;
+    if (!matchesTeamNames({ title: result?.title }, [team])) continue;
     accepted.push({ title: 'External article', url: urlValue, seenAt, publisher, source: 'GDELT', license: 'GDELT attribution', licenseUrl: GDELT_ATTRIBUTION_URL });
   }
   return accepted.sort((a, b) => Date.parse(b.seenAt) - Date.parse(a.seenAt)).slice(0, 3);
 }
 
 /** Exact aliases only: caller supplies verified match-feed names; no fuzzy or inferred team identities. */
-export function matchEspnNewsToTeam(item, aliases) {
+export function matchesTeamNames(item, aliases) {
   const haystack = ` ${normalizeMatchText(item?._matchText ?? item?.title)} `;
   return (Array.isArray(aliases) ? aliases : [aliases]).some((alias) => {
     const needle = normalizeMatchText(alias);
     return needle.length > 1 && haystack.includes(` ${needle} `);
   });
-}
-
-export function publicNewsItem(item) {
-  const { _matchText, ...publicItem } = item;
-  return publicItem;
 }
 
 export async function findRecentWikinews(team, { now = Date.now(), requestFn = request } = {}) {
@@ -389,10 +339,18 @@ export function findCuratedOfficialNews(team, { now = Date.now() } = {}) {
     }));
 }
 
+export function isPermittedNewsItem(item) {
+  if (!item || !['Wikinews', 'Official', 'GDELT'].includes(item.source)) return false;
+  if (typeof item.url !== 'string' || item.url.trim() !== item.url) return false;
+  try { return Boolean(safePublisherArticleUrl(new URL(item.url).href)); }
+  catch { return false; }
+}
+
 export function newsCacheFresh(teamEntry, now = Date.now(), sourceVersion = NEWS_SOURCE_VERSION) {
   const checked = Date.parse(teamEntry?.checkedAt ?? '');
   return Number.isFinite(checked) && checked <= now && now - checked < 6 * 60 * 60 * 1000
-    && teamEntry.sourceVersion === sourceVersion && ['ok', 'empty'].includes(teamEntry.newsStatus) && Array.isArray(teamEntry.news);
+    && teamEntry.sourceVersion === sourceVersion && ['ok', 'empty'].includes(teamEntry.newsStatus)
+    && Array.isArray(teamEntry.news) && teamEntry.news.every(isPermittedNewsItem);
 }
 
 export function imageCacheFresh(image, now = Date.now()) {

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { allowedCreativeCommons, ESPN_TERMS_URL, NEWS_SOURCE_VERSION, findRecentWikinews, findTeamLinks, findRecentGdelt, imageCacheFresh, matchEspnNewsToTeam, newsCacheFresh, parseEspnRss } from '../scripts/team-context-sources.mjs';
+import { allowedCreativeCommons, NEWS_SOURCE_VERSION, findRecentWikinews, findTeamLinks, findRecentGdelt, imageCacheFresh, matchesTeamNames, newsCacheFresh, isPermittedNewsItem } from '../scripts/team-context-sources.mjs';
 
 describe('team-context Wikimedia sources', () => {
   it('accepts only known reusable licenses and preserves license provenance', () => {
@@ -53,21 +53,17 @@ describe('team-context Wikimedia sources', () => {
     expect(newsCacheFresh({ checkedAt: new Date(now + 86400000).toISOString(), newsStatus: 'empty', news: [], sourceVersion: NEWS_SOURCE_VERSION }, now)).toBe(false);
   });
 
-  it('parses only dated, safe ESPN RSS items without changing the decoded title or article URL', () => {
+  it('rejects retired RSS content in fresh caches and preserves licensed/link-only sources', () => {
     const now = Date.parse('2026-10-21T12:00:00Z')
-    const xml = `<rss><channel>
-      <item><title>Alpha &amp; Beta: &quot;winner&quot;</title><link>https://www.espn.com/soccer/story?id=7&amp;src=rss</link><description><![CDATA[Alpha scored. <b>Latest</b>]]></description><pubDate>Wed, 21 Oct 2026 10:00:00 GMT</pubDate></item>
-      <item><title>Old story</title><link>https://www.espn.com/story/old</link><pubDate>Mon, 1 Sep 2026 10:00:00 GMT</pubDate></item>
-      <item><title>Future story</title><link>https://www.espn.com/story/future</link><pubDate>Thu, 22 Oct 2026 10:00:00 GMT</pubDate></item>
-      <item><title>bad host</title><link>https://espn.com.evil.test/story</link><pubDate>Wed, 21 Oct 2026 10:00:00 GMT</pubDate></item>
-    </channel></rss>`
-    const items = parseEspnRss(xml, { now })
-    expect(items).toHaveLength(1)
-    expect(items[0]).toMatchObject({ title: 'Alpha & Beta: "winner"', url: 'https://www.espn.com/soccer/story?id=7&src=rss', license: 'ESPN RSS — attribution', licenseUrl: ESPN_TERMS_URL })
-    expect(matchEspnNewsToTeam(items[0], ['Alpha FC'])).toBe(false)
-    expect(matchEspnNewsToTeam(items[0], ['Alpha'])) .toBe(true)
-    expect(items[0].title).not.toContain('Latest')
-    expect(parseEspnRss('<!DOCTYPE x [<!ENTITY e SYSTEM "file:///etc/passwd">]><rss/>', { now })).toEqual([])
+    const rss = { title: 'Legacy publisher headline', source: 'ESPN', url: 'https://www.espn.com/soccer/story/1' }
+    const cache = { checkedAt: new Date(now).toISOString(), newsStatus: 'ok', news: [rss], sourceVersion: NEWS_SOURCE_VERSION }
+    expect(newsCacheFresh(cache, now)).toBe(false)
+    expect(isPermittedNewsItem(rss)).toBe(false)
+    expect(isPermittedNewsItem({ ...rss, source: 'GDELT' })).toBe(false)
+    expect(isPermittedNewsItem({ source: 'Official', url: 'https://fk-austria.at/news/vorschau-auf-das-auswärtsspiel-in-ried-2' })).toBe(true)
+    expect(isPermittedNewsItem({ source: 'Wikinews', url: 'https://en.wikinews.org/wiki/Football_report' })).toBe(true)
+    expect(matchesTeamNames({ title: 'Alpha FC report' }, ['Alpha FC'])).toBe(true)
+    expect(matchesTeamNames({ title: 'Alpha FC report' }, ['Different club'])).toBe(false)
   })
 
   it('returns neutral GDELT publisher links with seen dates, rejecting unrelated, stale and unsafe hits', async () => {
@@ -80,6 +76,7 @@ describe('team-context Wikimedia sources', () => {
         { title: 'Alpha FC soccer report', url: 'https://news.example.com/story', domain: 'example.com', seendate: '20261021T110000Z', socialimage: 'https://example.com/photo.jpg' },
         { title: 'Unrelated football', url: 'https://news.example.com/other', domain: 'example.com', seendate: '20261021T110000Z' },
         { title: 'Alpha FC old', url: 'https://news.example.com/old', domain: 'example.com', seendate: '20261001T110000Z' },
+        { title: 'Alpha FC ESPN story', url: 'https://www.espn.com/soccer/story/1', domain: 'espn.com', seendate: '20261021T110000Z' },
         { title: 'Alpha FC unsafe', url: 'http://news.example.com/story', domain: 'example.com', seendate: '20261021T110000Z' },
       ] }
     }) as never
@@ -95,10 +92,11 @@ describe('team-context Wikimedia sources', () => {
     expect(JSON.stringify(items)).not.toContain('socialimage')
   })
 
-  it('invalidates old source versions once when switching RSS source policy', () => {
+  it('invalidates old caches after retiring the RSS source', () => {
     const now = Date.parse('2026-10-21T12:00:00Z')
     const base = { checkedAt: new Date(now).toISOString(), newsStatus: 'empty', news: [] }
     expect(newsCacheFresh(base, now)).toBe(false)
+    expect(newsCacheFresh({ ...base, sourceVersion: 'espn-rss-v1-gdelt-v1' }, now)).toBe(false)
     expect(newsCacheFresh({ ...base, sourceVersion: NEWS_SOURCE_VERSION }, now)).toBe(true)
   })
 
