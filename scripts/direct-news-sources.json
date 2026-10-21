@@ -1,0 +1,146 @@
+{
+  "sources": [],
+  "audit": [
+    {
+      "teamNames": [
+        "Levante"
+      ],
+      "checkedOn": "2026-10-21",
+      "status": "excluded-permission-required",
+      "termsUrl": "https://www.levanteud.com/aviso-legal",
+      "permissionQuote": "Estos actos de explotación sólo podrán ser realizados en virtud de autorización expresa y por escrito del LEVANTE U.D.",
+      "metadataOnlyVerdict": "No explicit exception authorising automated commercial headline/date/link reuse established. Private/personal use is not sufficient for this affiliate-supported site.",
+      "robotsResult": "Earlier audit found technical path exclusions; not fetched again because the verified reuse condition already fails."
+    },
+    {
+      "teamNames": [
+        "FC Cincinnati",
+        "D.C. United"
+      ],
+      "checkedOn": "2026-10-21",
+      "status": "excluded-permission-unverified",
+      "termsUrl": "https://www.mlssoccer.com/legal/terms-of-service",
+      "permissionQuote": "collect information from the Services to be used for any commercial purpose",
+      "metadataOnlyVerdict": "MLS section 5.2(vi) prohibits commercial automated collection where these terms apply. The terms apply to club sites on which they are posted; exact posting/applicability on each club was not re-established. No club-specific commercial metadata permission verified; do not activate either source."
+    },
+    {
+      "teamNames": [
+        "Bolton Wanderers"
+      ],
+      "checkedOn": "2026-10-21",
+      "status": "excluded-permission-unverified",
+      "newsUrl": "https://www.bwfc.co.uk/news",
+      "termsUrl": "https://www.bwfc.co.uk/terms-and-conditions",
+      "robotsUrl": "https://www.bwfc.co.uk/robots.txt",
+      "robotsResult": "Retrieved: wildcard technical exclusions; public /news is not explicitly excluded.",
+      "structureResult": "News listing contains headlines and human-readable dates. Raw HTTP HTML inspected: no JSON-LD, time elements or article:* metadata. The tested terms URL did not yield usable conditions.",
+      "metadataOnlyVerdict": "Technically readable listing is not a commercial reuse licence. No verified general permission."
+    },
+    {
+      "teamNames": [
+        "Middlesbrough"
+      ],
+      "checkedOn": "2026-10-21",
+      "status": "excluded-unreadable-permission",
+      "newsUrl": "https://www.mfc.co.uk/news/",
+      "termsUrl": "https://www.mfc.co.uk/club/policies-and-terms",
+      "robotsUrl": "https://www.mfc.co.uk/robots.txt",
+      "robotsResult": "Only named groups meta-externalagent and ozone/1.0 observed. No explicit wildcard grant; not a reuse licence.",
+      "structureResult": "Extraction exposes the consent interface, not usable clauses or dated headlines. Raw policy HTML has no JSON-LD/time/article:* fields.",
+      "metadataOnlyVerdict": "Commercial headline/date/link permission not established. No dynamic/private endpoint queried."
+    },
+    {
+      "teamNames": [
+        "Nottingham Forest"
+      ],
+      "checkedOn": "2026-10-21",
+      "status": "excluded-unreadable-permission",
+      "termsUrl": "https://www.nottinghamforest.co.uk/terms-of-use",
+      "robotsUrl": "https://www.nottinghamforest.co.uk/robots.txt",
+      "robotsResult": "Only named groups meta-externalagent and ozone/1.0 observed. No explicit wildcard grant; not a reuse licence.",
+      "structureResult": "Terms extraction contains consent information only; raw terms HTML has no readable legal text.",
+      "metadataOnlyVerdict": "No verified automated commercial metadata permission."
+    },
+    {
+      "teamNames": [
+        "Ipswich Town"
+      ],
+      "checkedOn": "2026-10-21",
+      "status": "excluded-permission-unverified",
+      "termsUrl": "https://www.itfc.co.uk/club/policies",
+      "robotsUrl": "https://www.itfc.co.uk/robots.txt",
+      "robotsResult": "Retrieved: User-agent: * Allow: /.",
+      "structureResult": "Policy page exposes navigation only. Raw HTML contains one JSON-LD block and a time[itemprop=datePublished] element without datetime; these are not verified dated news items.",
+      "metadataOnlyVerdict": "Crawl access is allowed but no explicit commercial metadata reuse permission found."
+    },
+    {
+      "teamNames": [
+        "Torino"
+      ],
+      "checkedOn": "2026-10-21",
+      "status": "excluded-access-restricted",
+      "robotsUrl": "https://www.torinofc.it/robots.txt",
+      "newsUrl": "https://www.torinofc.it/news/all/news-details",
+      "reason": "Robots names GPTBot with Disallow: /; no further pages fetched. Ticket terms identified by search are not a verified news licence. News structure not inspected.",
+      "metadataOnlyVerdict": "No explicit automated commercial headline/date/link permission verified; source remains disabled."
+    },
+    {
+      "teamNames": [
+        "Monza"
+      ],
+      "checkedOn": "2026-10-21",
+      "status": "excluded-permission-unverified",
+      "robotsUrl": "https://www.acmonza.com/robots.txt",
+      "newsUrl": "https://www.acmonza.com/en/news/",
+      "reason": "Robots: Allow: / with technical exclusions and /privacy-policy.php disallowed. Candidate English index returned 404. No verified commercial metadata licence.",
+      "metadataOnlyVerdict": "No explicit automated commercial headline/date/link permission verified; source remains disabled."
+    },
+    {
+      "teamNames": [
+        "KV Kortrijk"
+      ],
+      "checkedOn": "2026-10-21",
+      "status": "excluded-permission-unverified",
+      "robotsUrl": "https://www.kvk.be/robots.txt",
+      "newsUrl": "https://www.kvk.be/nieuws/",
+      "reason": "Robots limits technical/admin paths, not the public listing. Listing: 23 article cards, CollectionPage JSON-LD, no time element. Disclaimer returned privacy content, not a commercial reuse licence.",
+      "metadataOnlyVerdict": "No explicit automated commercial headline/date/link permission verified; source remains disabled.",
+      "termsUrl": "https://www.kvk.be/disclaimer/"
+    },
+    {
+      "teamNames": [
+        "KV Mechelen"
+      ],
+      "checkedOn": "2026-10-21",
+      "status": "excluded-robots-unavailable",
+      "robotsUrl": "https://kvmechelen.be/robots.txt",
+      "newsUrl": "https://kvmechelen.be/nieuws/",
+      "reason": "Robots returned HTTP 503. No further site fetches; structure/terms unverified. No permission established.",
+      "metadataOnlyVerdict": "No explicit automated commercial headline/date/link permission verified; source remains disabled."
+    },
+    {
+      "teamNames": [
+        "Go Ahead Eagles"
+      ],
+      "checkedOn": "2026-10-21",
+      "status": "excluded-permission-unverified",
+      "robotsUrl": "https://www.ga-eagles.nl/robots.txt",
+      "newsUrl": "https://www.ga-eagles.nl/nieuws-algemeen/",
+      "reason": "Robots wildcard excludes /wp-content/plugins. Public cards have title/category/date/link and pagination. Disclaimer covers privacy/cookies, no express commercial metadata permission. JSON-LD/time not confirmed.",
+      "metadataOnlyVerdict": "No explicit automated commercial headline/date/link permission verified; source remains disabled.",
+      "termsUrl": "https://www.ga-eagles.nl/disclaimer/"
+    },
+    {
+      "teamNames": [
+        "Telstar"
+      ],
+      "checkedOn": "2026-10-21",
+      "status": "excluded-permission-unverified",
+      "robotsUrl": "https://sctelstar.nl/robots.txt",
+      "newsUrl": "https://sctelstar.nl/nieuws",
+      "reason": "Robots HTTP 404. Disclaimer assigns usage risk; it does not license republication. /algemene-voorwaarden covers consumer sales. Public listing titles/categories visible; date/link structured markers not confirmed due technical timeouts.",
+      "metadataOnlyVerdict": "No explicit automated commercial headline/date/link permission verified; source remains disabled.",
+      "termsUrl": "https://sctelstar.nl/disclaimer"
+    }
+  ]
+}

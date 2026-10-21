@@ -27,5 +27,12 @@
     "entityId": "Q131209",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:Generali-Arena_by_night.jpg",
     "verificationSource": "https://www.wikidata.org/wiki/Q696476"
+  },
+  "Ipswich Town": {
+    "fileName": "File:Portman Road aerial.jpg",
+    "stadium": "Portman Road",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Portman_Road_aerial.jpg",
+    "verificationSource": "https://commons.wikimedia.org/wiki/File:Portman_Road_aerial.jpg",
+    "photoDate": "2015-07-19"
   }
 }
