@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import dynamic from "next/dynamic";
 import localFont from "next/font/local";
 import "./globals.css";
+import LegacyCredentialCleanup from "@/components/bttsbet/LegacyCredentialCleanup";
 
 const BottomNavigation = dynamic(() => import("@/components/bttsbet/BottomNavigation"), { loading: () => null });
 const CookieConsent = dynamic(() => import("@/components/bttsbet/CookieConsent"), { loading: () => null });
@@ -191,6 +192,7 @@ export default function RootLayout({
       <body
         className={`${poppins.variable} ${inter.variable} ${jetbrainsMono.variable} antialiased`}
       >
+        <LegacyCredentialCleanup />
         <AnalyticsLoader />
         {children}
         <BottomNavigation />

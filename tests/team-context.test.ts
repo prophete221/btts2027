@@ -109,7 +109,19 @@ describe('normalizeTeamContext', () => {
     expect(team.image).toBeNull()
   })
 
+  it('preserves ESPN RSS title and article URL exactly with attribution, while rejecting unsafe markup and hosts', () => {
+    const item = {
+      title: 'Club &amp; opponent: late winner', url: 'https://www.espn.com/soccer/story/_/id/1?x=2',
+      publishedAt: '2026-10-21T11:00:00.000Z', source: 'ESPN', license: 'ESPN RSS — attribution',
+      licenseUrl: 'https://www.espn.com/espn/news/story?page=rssinfo',
+    }
+    const result = normalizeTeamContext({ globalNews: [item], teams: {} }, NOW)
+    expect(result.globalNews[0]).toEqual(item)
+    expect(normalizeTeamContext({ globalNews: [{ ...item, title: '<b>rewritten</b>' }], teams: {} }, NOW).globalNews).toEqual([])
+    expect(normalizeTeamContext({ globalNews: [{ ...item, url: 'https://notespn.com/story' }], teams: {} }, NOW).globalNews).toEqual([])
+  })
+
   it('returns an empty safe document for malformed input', () => {
-    expect(normalizeTeamContext(null, NOW)).toEqual({ updatedAt: '', teams: {} })
+    expect(normalizeTeamContext(null, NOW)).toMatchObject({ updatedAt: '', globalNews: [], teams: {} })
   })
 })

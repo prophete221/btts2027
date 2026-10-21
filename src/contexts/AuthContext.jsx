@@ -13,30 +13,50 @@ import {
 } from 'firebase/auth'
 import { getFirestore, doc, setDoc, getDoc, onSnapshot } from 'firebase/firestore'
 
-// ─── Firebase Config ───
-// Replace with your own Firebase project config
+// Firebase configuration must come from the application's deployment environment.
+// In particular, never substitute a demo project or a local credential store.
 const firebaseConfig = {
-  apiKey: import.meta.env.VITE_FIREBASE_API_KEY || 'AIzaSyDemoKeyReplaceMeWithYourOwn',
-  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN || 'bttsbet-demo.firebaseapp.com',
-  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID || 'bttsbet-demo',
-  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET || 'bttsbet-demo.appspot.com',
-  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID || '000000000000',
-  appId: import.meta.env.VITE_FIREBASE_APP_ID || '1:000000000000:web:0000000000000000',
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
 }
 
-// Initialize Firebase
+const firebaseConfigured = Boolean(
+  firebaseConfig.apiKey && firebaseConfig.authDomain && firebaseConfig.projectId,
+)
+
+// Delete only the two obsolete auth keys. Never read their contents: one may
+// contain plaintext credentials and the other is an untrusted identity object.
+function clearLegacyAuthStorage() {
+  try {
+    if (typeof window !== 'undefined') {
+      window.localStorage.removeItem('bttsbet_users')
+      window.localStorage.removeItem('bttsbet_user')
+    }
+  } catch (err) {
+    // Storage can be unavailable (for example, in a restricted browser context).
+    console.warn('Unable to clear legacy authentication storage:', err)
+  }
+}
+
+// Initialize Firebase only when real deployment configuration is present.
 let app
 let auth
 let db
 let googleProvider
 
-try {
-  app = initializeApp(firebaseConfig)
-  auth = getAuth(app)
-  db = getFirestore(app)
-  googleProvider = new GoogleAuthProvider()
-} catch (err) {
-  console.warn('Firebase init failed:', err.message)
+if (firebaseConfigured) {
+  try {
+    app = initializeApp(firebaseConfig)
+    auth = getAuth(app)
+    db = getFirestore(app)
+    googleProvider = new GoogleAuthProvider()
+  } catch (err) {
+    console.warn('Firebase init failed:', err.message)
+  }
 }
 
 // ─── Context ───
@@ -54,27 +74,16 @@ export function AuthProvider({ children }) {
   const [loading, setLoading] = useState(true)
   const [isFirebaseReady, setIsFirebaseReady] = useState(false)
 
-  // Check if Firebase is properly configured
   useEffect(() => {
+    clearLegacyAuthStorage()
     queueMicrotask(() => {
-      if (auth && firebaseConfig.apiKey !== 'AIzaSyDemoKeyReplaceMeWithYourOwn') {
-        setIsFirebaseReady(true)
-      } else {
-        setIsFirebaseReady(false)
-        const saved = localStorage.getItem('bttsbet_user')
-        if (saved) {
-          try {
-            const parsed = JSON.parse(saved)
-            setUser(parsed)
-            setUserProfile(parsed.profile || null)
-          } catch (e) { /* ignore */ }
-        }
-      }
-      setLoading(false)
+      const ready = Boolean(firebaseConfigured && auth)
+      setIsFirebaseReady(ready)
+      if (!ready) setLoading(false)
     })
   }, [])
 
-  // Firebase auth state listener
+  // Firebase is the sole source of authenticated identity.
   useEffect(() => {
     if (!isFirebaseReady || !auth) return
 
@@ -89,12 +98,14 @@ export function AuthProvider({ children }) {
         }
         setUser(u)
 
-        // Listen to user profile in Firestore
+        // Listen to the trusted profile keyed by the Firebase UID.
         if (db) {
           const userRef = doc(db, 'users', firebaseUser.uid)
           const unsubProfile = onSnapshot(userRef, (snap) => {
             if (snap.exists()) {
               setUserProfile(snap.data())
+            } else {
+              setUserProfile(null)
             }
           })
           return () => unsubProfile()
@@ -109,56 +120,28 @@ export function AuthProvider({ children }) {
     return () => unsubscribe()
   }, [isFirebaseReady])
 
-  // ─── Auth methods ───
-
-  const login = useCallback(async (email, password) => {
-    if (isFirebaseReady && auth) {
-      const cred = await signInWithEmailAndPassword(auth, email, password)
-      return cred.user
+  const requireFirebaseAuth = useCallback(() => {
+    if (!isFirebaseReady || !auth) {
+      throw new Error('Authentification indisponible : Firebase doit être configuré. Aucun compte local ne sera utilisé.')
     }
-    // Fallback: localStorage
-    const saved = localStorage.getItem('bttsbet_users')
-    const users = saved ? JSON.parse(saved) : {}
-    const u = users[email]
-    if (!u || u.password !== password) {
-      throw new Error('Email ou mot de passe incorrect')
-    }
-    const userData = { uid: u.uid, email, displayName: u.displayName, profile: u.profile }
-    setUser(userData)
-    setUserProfile(u.profile || null)
-    localStorage.setItem('bttsbet_user', JSON.stringify(userData))
-    return userData
   }, [isFirebaseReady])
 
+  // ─── Auth methods (kept for existing consumers) ───
+
+  const login = useCallback(async (email, password) => {
+    requireFirebaseAuth()
+    const cred = await signInWithEmailAndPassword(auth, email, password)
+    return cred.user
+  }, [requireFirebaseAuth])
+
   const register = useCallback(async (email, password, displayName) => {
-    if (isFirebaseReady && auth && db) {
-      const cred = await createUserWithEmailAndPassword(auth, email, password)
-      await updateProfile(cred.user, { displayName })
-      // Create Firestore profile
-      const profile = {
-        displayName,
-        email,
-        createdAt: new Date().toISOString(),
-        country: '',
-        phone: '',
-        linebetId: '',
-        isVip: false,
-        vipExpiry: null,
-        favoriteLeagues: [],
-        points: 0,
-        predictionsViewed: 0,
-        streak: 0,
-      }
-      await setDoc(doc(db, 'users', cred.user.uid), profile)
-      return cred.user
+    requireFirebaseAuth()
+    if (!db) {
+      throw new Error('Inscription indisponible : le profil Firebase ne peut pas être enregistré.')
     }
-    // Fallback: localStorage
-    const saved = localStorage.getItem('bttsbet_users')
-    const users = saved ? JSON.parse(saved) : {}
-    if (users[email]) {
-      throw new Error('Cet email est déjà utilisé')
-    }
-    const uid = 'local_' + Date.now()
+
+    const cred = await createUserWithEmailAndPassword(auth, email, password)
+    await updateProfile(cred.user, { displayName })
     const profile = {
       displayName,
       email,
@@ -173,71 +156,63 @@ export function AuthProvider({ children }) {
       predictionsViewed: 0,
       streak: 0,
     }
-    users[email] = { uid, password, displayName, profile }
-    localStorage.setItem('bttsbet_users', JSON.stringify(users))
-    const userData = { uid, email, displayName, profile }
-    setUser(userData)
-    setUserProfile(profile)
-    localStorage.setItem('bttsbet_user', JSON.stringify(userData))
-    return userData
-  }, [isFirebaseReady])
+    await setDoc(doc(db, 'users', cred.user.uid), profile)
+    return cred.user
+  }, [requireFirebaseAuth])
 
   const logout = useCallback(async () => {
+    clearLegacyAuthStorage()
     if (isFirebaseReady && auth) {
       await signOut(auth)
     }
     setUser(null)
     setUserProfile(null)
-    localStorage.removeItem('bttsbet_user')
   }, [isFirebaseReady])
 
   const resetPassword = useCallback(async (email) => {
-    if (isFirebaseReady && auth) {
-      await sendPasswordResetEmail(auth, email)
-    } else {
-      throw new Error('Réinitialisation disponible uniquement avec Firebase')
-    }
-  }, [isFirebaseReady])
+    requireFirebaseAuth()
+    await sendPasswordResetEmail(auth, email)
+  }, [requireFirebaseAuth])
 
   const loginWithGoogle = useCallback(async () => {
-    if (isFirebaseReady && auth && db) {
-      const cred = await signInWithPopup(auth, googleProvider)
-      // Check if user profile exists, if not create it
-      const userRef = doc(db, 'users', cred.user.uid)
-      const snap = await getDoc(userRef)
-      if (!snap.exists()) {
-        const profile = {
-          displayName: cred.user.displayName || '',
-          email: cred.user.email,
-          createdAt: new Date().toISOString(),
-          country: '',
-          phone: '',
-          linebetId: '',
-          isVip: false,
-          vipExpiry: null,
-          favoriteLeagues: [],
-          points: 0,
-          predictionsViewed: 0,
-          streak: 0,
-        }
-        await setDoc(userRef, profile)
-      }
-      return cred.user
+    requireFirebaseAuth()
+    if (!db || !googleProvider) {
+      throw new Error('Connexion Google indisponible : le profil Firebase ne peut pas être vérifié.')
     }
-    throw new Error('Connexion Google disponible uniquement avec Firebase')
-  }, [isFirebaseReady])
+
+    const cred = await signInWithPopup(auth, googleProvider)
+    const userRef = doc(db, 'users', cred.user.uid)
+    const snap = await getDoc(userRef)
+    if (!snap.exists()) {
+      const profile = {
+        displayName: cred.user.displayName || '',
+        email: cred.user.email,
+        createdAt: new Date().toISOString(),
+        country: '',
+        phone: '',
+        linebetId: '',
+        isVip: false,
+        vipExpiry: null,
+        favoriteLeagues: [],
+        points: 0,
+        predictionsViewed: 0,
+        streak: 0,
+      }
+      await setDoc(userRef, profile)
+    }
+    return cred.user
+  }, [requireFirebaseAuth])
 
   const updateUserData = useCallback(async (data) => {
-    if (isFirebaseReady && db && user) {
-      await setDoc(doc(db, 'users', user.uid), data, { merge: true })
-    } else if (user) {
-      const updated = { ...userProfile, ...data }
-      setUserProfile(updated)
-      const userData = { ...user, profile: updated }
-      setUser(userData)
-      localStorage.setItem('bttsbet_user', JSON.stringify(userData))
+    requireFirebaseAuth()
+    if (!user) {
+      throw new Error('Connectez-vous avant de modifier votre profil.')
     }
-  }, [isFirebaseReady, user, userProfile])
+    if (!db) {
+      throw new Error('Modification indisponible : le profil Firebase ne peut pas être enregistré.')
+    }
+    await setDoc(doc(db, 'users', user.uid), data, { merge: true })
+  }, [requireFirebaseAuth, user])
 
   const value = {
     user,

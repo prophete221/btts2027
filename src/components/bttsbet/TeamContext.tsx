@@ -22,6 +22,14 @@ const COPY = {
     license: 'Licence',
     official: (name: string) => `Consulter le site officiel de ${name}`,
     wikidata: 'Fiche de référence Wikidata',
+    globalHeading: 'Actualités football ESPN',
+    espnAttribution: 'Contenu fourni par ESPN',
+    attributionTerms: 'Conditions RSS ESPN',
+    externalArticle: (team: string) => `Lire cet article sur ${team}`,
+    foundBy: 'Repéré par GDELT le',
+    gdeltAttribution: 'Indexé par GDELT',
+    officialPublication: (team: string) => `Publication officielle de ${team}`,
+    officialSource: 'Source officielle',
   },
   en: {
     heading: 'Team context',
@@ -38,6 +46,14 @@ const COPY = {
     license: 'License',
     official: (name: string) => `Visit ${name}'s official website`,
     wikidata: 'Wikidata reference entry',
+    globalHeading: 'ESPN football news',
+    espnAttribution: 'Content provided by ESPN',
+    attributionTerms: 'ESPN RSS terms',
+    externalArticle: (team: string) => `Read this article about ${team}`,
+    foundBy: 'Found by GDELT on',
+    gdeltAttribution: 'Indexed by GDELT',
+    officialPublication: (team: string) => `Official publication by ${team}`,
+    officialSource: 'Official source',
   },
   ar: {
     heading: 'سياق الفريقين',
@@ -54,13 +70,24 @@ const COPY = {
     license: 'الترخيص',
     official: (name: string) => `زيارة الموقع الرسمي لفريق ${name}`,
     wikidata: 'صفحة مرجعية في ويكي بيانات',
+    globalHeading: 'أخبار كرة القدم من ESPN',
+    espnAttribution: 'المحتوى مقدم من ESPN',
+    attributionTerms: 'شروط موجز ESPN',
+    externalArticle: (team: string) => `اقرأ المقال عن ${team}`,
+    foundBy: 'رصدته GDELT في',
+    gdeltAttribution: 'مفهرس بواسطة GDELT',
+    officialPublication: (team: string) => `منشور رسمي من ${team}`,
+    officialSource: 'المصدر الرسمي',
   },
 } as const
 
-function displayDate(value: string, locale: string): string {
+export function displayDate(value: string, locale: string): string {
   const date = new Date(value)
   if (!Number.isFinite(date.getTime())) return value
   try {
+    // A source giving only a month/year must never acquire an invented day.
+    if (/^\d{4}$/.test(value)) return value
+    if (/^\d{4}-\d{2}$/.test(value)) return new Intl.DateTimeFormat(locale, { year: 'numeric', month: 'long', timeZone: 'UTC' }).format(date)
     return new Intl.DateTimeFormat(locale, { dateStyle: 'medium', timeZone: 'UTC' }).format(date)
   } catch {
     return date.toISOString().slice(0, 10)
@@ -88,7 +115,7 @@ function TeamCard({ team, name, locale, copy, readError }: {
       {team?.image ? (
         <figure className="mb-4 overflow-hidden rounded-lg bg-slate-100 dark:bg-slate-800">
           {/* Collector-managed local artwork; attribution remains visible beneath the image. */}
-          <img src={team.image.url} alt={team.image.caption} className="aspect-[16/9] w-full object-cover" loading="lazy" />
+          <img src={team.image.url} alt={team.image.caption} className="aspect-[16/9] w-full object-contain" loading="lazy" />
           <figcaption className="space-y-1 p-2 text-xs text-slate-600 dark:text-slate-300">
             <p className="font-medium">{team.image.kind === 'stadium' ? copy.stadium(team.name) : copy.team}: {team.image.caption}</p>
             <p>{copy.credit}: {team.image.author} · {displayDate(team.image.date, locale)}</p>
@@ -110,9 +137,9 @@ function TeamCard({ team, name, locale, copy, readError }: {
         <ul className="space-y-3">
           {news.slice(0, 3).map((item, index) => (
             <li key={`${item.url}-${index}`} className="border-t border-slate-100 pt-2 text-sm dark:border-slate-700">
-              <a className="font-medium text-blue-700 underline hover:text-blue-900 dark:text-blue-300" href={item.url} target="_blank" rel="noopener noreferrer">{item.title}</a>
-              <p className="mt-1 text-xs text-slate-600 dark:text-slate-300">{copy.original} · {item.source} · {displayDate(item.publishedAt, locale)}</p>
-              <p className="text-xs text-slate-600 dark:text-slate-300"><a className="underline" href={item.licenseUrl} target="_blank" rel="noopener noreferrer">{copy.license}: {item.license}</a></p>
+              <a className="font-medium text-blue-700 underline hover:text-blue-900 dark:text-blue-300" href={item.url} target="_blank" rel="noopener noreferrer">{item.source === 'GDELT' ? copy.externalArticle(team?.name ?? name) : item.source === 'Official' ? copy.officialPublication(team?.name ?? name) : item.title}</a>
+              <p className="mt-1 text-xs text-slate-600 dark:text-slate-300">{item.source === 'GDELT' ? `${item.publisher} · ${copy.foundBy} ${displayDate(item.seenAt ?? '', locale)}` : item.source === 'Official' ? `${item.publisher} · ${displayDate(item.publishedAt ?? '', locale)}` : `${copy.original} · ${item.source} · ${displayDate(item.publishedAt ?? '', locale)}`}</p>
+              <p className="text-xs text-slate-600 dark:text-slate-300">{item.source === 'GDELT' ? <a className="underline" href={item.licenseUrl ?? item.url} target="_blank" rel="noopener noreferrer">{copy.gdeltAttribution}</a> : item.source === 'Official' ? <a className="underline" href={item.attributionUrl} target="_blank" rel="noopener noreferrer">{copy.officialSource}</a> : <a className="underline" href={item.licenseUrl ?? item.url} target="_blank" rel="noopener noreferrer">{copy.license}: {item.license}</a>}</p>
             </li>
           ))}
         </ul>
@@ -130,6 +157,8 @@ export default function TeamContext({ home, away, locale }: TeamContextProps) {
   const document = loadTeamContext()
   const teams = document?.teams ?? {}
   const direction = locale.toLowerCase().startsWith('ar') ? 'rtl' : 'ltr'
+  const hasTeamNews = Boolean(teams[home]?.news.length || teams[away]?.news.length)
+  const globalNews = !hasTeamNews ? document?.globalNews ?? [] : []
 
   return (
     <section aria-label={copy.heading} dir={direction} className="my-6">
@@ -138,6 +167,14 @@ export default function TeamContext({ home, away, locale }: TeamContextProps) {
         <TeamCard team={teams[home]} name={home} locale={locale} copy={copy} readError={document === null} />
         <TeamCard team={teams[away]} name={away} locale={locale} copy={copy} readError={document === null} />
       </div>
+      {globalNews.length > 0 && <aside aria-label={copy.globalHeading} className="mt-4 rounded-xl border border-slate-200 bg-white p-4 shadow-sm dark:border-slate-700 dark:bg-slate-900">
+        <h3 className="mb-3 text-lg font-semibold text-slate-900 dark:text-white">{copy.globalHeading}</h3>
+        <ul className="space-y-3">{globalNews.slice(0, 3).map((item, index) => <li key={`${item.url}-${index}`} className="border-t border-slate-100 pt-2 text-sm dark:border-slate-700">
+          <a className="font-medium text-blue-700 underline hover:text-blue-900 dark:text-blue-300" href={item.url} target="_blank" rel="noopener noreferrer">{item.title}</a>
+          <p className="mt-1 text-xs text-slate-600 dark:text-slate-300">ESPN · {displayDate(item.publishedAt ?? '', locale)}</p>
+          <p className="text-xs text-slate-600 dark:text-slate-300">{copy.espnAttribution} · <a className="underline" href={item.licenseUrl ?? item.url} target="_blank" rel="noopener noreferrer">{copy.attributionTerms}</a></p>
+        </li>)}</ul>
+      </aside>}
     </section>
   )
 }

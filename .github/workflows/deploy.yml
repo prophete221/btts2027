@@ -47,7 +47,7 @@ jobs:
       - name: Run tests
         run: npm test
       - name: Test narrative enrichment guards
-        run: python3 -m unittest discover -s tests -p 'enrich_predictions_test.py' -v
+        run: python3 -m unittest discover -s tests -p '*_test.py' -v
         env:
           PYTHONDONTWRITEBYTECODE: '1'
 
@@ -134,7 +134,7 @@ jobs:
       - name: Run regression tests
         run: npm test
       - name: Test narrative enrichment guards
-        run: python3 -m unittest discover -s tests -p 'enrich_predictions_test.py' -v
+        run: python3 -m unittest discover -s tests -p '*_test.py' -v
         env:
           PYTHONDONTWRITEBYTECODE: '1'
       - name: Run lint
@@ -222,6 +222,8 @@ jobs:
           purge out/predictions-archive/ ./predictions-archive/ 60
           echo "✓ Purge terminée"
 
+      # Transport unchanged: verified FTPS could not be established by the read-only probe.
+      # Existing ftp:// + disabled certificate validation remains a separately reported risk.
       - name: Deploy to bttspredict.com via FTP
         env:
           FTP_SERVER: ${{ secrets.FTP_SERVER }}
@@ -285,5 +287,5 @@ jobs:
 
       - name: Notify Bing via IndexNow
         if: success()
-        run: node scripts/submit-indexnow.mjs
+        run: node scripts/submit-indexnow.mjs --submit
         continue-on-error: true

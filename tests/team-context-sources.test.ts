@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { allowedCreativeCommons, findRecentWikinews, findTeamLinks, imageCacheFresh, newsCacheFresh } from '../scripts/team-context-sources.mjs';
+import { allowedCreativeCommons, ESPN_TERMS_URL, NEWS_SOURCE_VERSION, findRecentWikinews, findTeamLinks, findRecentGdelt, imageCacheFresh, matchEspnNewsToTeam, newsCacheFresh, parseEspnRss } from '../scripts/team-context-sources.mjs';
 
 describe('team-context Wikimedia sources', () => {
   it('accepts only known reusable licenses and preserves license provenance', () => {
@@ -8,6 +8,7 @@ describe('team-context Wikimedia sources', () => {
     expect(allowedCreativeCommons({ LicenseShortName: { value: 'CC BY-SA 4.0' }, LicenseUrl: { value: 'https://creativecommons.org/licenses/by-sa/4.0/' } }))
       .toEqual({ license: 'CC BY-SA', licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/' });
     expect(allowedCreativeCommons({ LicenseShortName: { value: 'CC0 1.0' }, LicenseUrl: { value: 'https://creativecommons.org/publicdomain/zero/1.0/' } })).not.toBeNull();
+    expect(allowedCreativeCommons({ LicenseShortName: { value: 'CC0 1.0' }, LicenseUrl: { value: 'http://creativecommons.org/publicdomain/zero/1.0/deed.en' } })).toEqual({ license: 'CC0 1.0', licenseUrl: 'https://creativecommons.org/publicdomain/zero/1.0/' });
     expect(allowedCreativeCommons({ LicenseShortName: { value: 'CC BY-NC 4.0' }, LicenseUrl: { value: 'https://creativecommons.org/licenses/by-nc/4.0/' } })).toBeNull();
     expect(allowedCreativeCommons({ LicenseShortName: { value: 'CC BY-ND 4.0' }, LicenseUrl: { value: 'https://creativecommons.org/licenses/by-nd/4.0/' } })).toBeNull();
     expect(allowedCreativeCommons({ LicenseShortName: { value: 'GFDL' }, LicenseUrl: { value: 'https://www.gnu.org/copyleft/fdl.html' } })).toBeNull();
@@ -26,31 +27,82 @@ describe('team-context Wikimedia sources', () => {
         { pageid: 2, title: 'Old report about Exact Team' },
         { pageid: 3, title: 'Draft about Exact Team' },
       ] } };
-      return { query: { pages: {
-        1: { categories: [{ title: 'Category:Published' }], revisions: [{ timestamp: '2026-10-01T09:00:00Z' }] },
-        2: { categories: [{ title: 'Category:Published' }], revisions: [{ timestamp: '2026-09-01T09:00:00Z' }, { timestamp: '2026-10-20T09:00:00Z' }] },
-        3: { categories: [{ title: 'Category:Draft' }], revisions: [{ timestamp: '2026-10-02T09:00:00Z' }] },
+      if (url.searchParams.get('prop') === 'categories') return { query: { pages: {
+        1: { categories: [{ title: 'Category:Published' }] },
+        2: { categories: [{ title: 'Category:Published' }] },
+        3: { categories: [{ title: 'Category:Draft' }] },
       } } };
+      const pageid = url.searchParams.get('pageids');
+      return { query: { pages: { [pageid!]: { revisions: [{ timestamp: pageid === '1' ? '2026-10-01T09:00:00Z' : '2026-09-01T09:00:00Z' }] } } } };
     };
     const news = await findRecentWikinews('Exact Team', { now, requestFn: fakeRequest as never });
     expect(news).toHaveLength(1);
     expect(news[0]).toMatchObject({ title: 'Football report on Exact Team', publishedAt: '2026-10-01T09:00:00Z', source: 'Wikinews', license: 'CC BY 4.0' });
     expect(news[0].url).toContain('en.wikinews.org/wiki/');
-    expect(apiCalls).toHaveLength(2);
+    expect(apiCalls).toHaveLength(4);
   });
 
   it('enforces cache windows and only trusts successful news cache states', () => {
     const now = Date.parse('2026-10-21T12:00:00Z');
-    expect(newsCacheFresh({ checkedAt: new Date(now - 5 * 60 * 60 * 1000).toISOString(), newsStatus: 'empty', news: [] }, now)).toBe(true);
-    expect(newsCacheFresh({ checkedAt: new Date(now - 7 * 60 * 60 * 1000).toISOString(), newsStatus: 'ok', news: [] }, now)).toBe(false);
-    expect(newsCacheFresh({ checkedAt: new Date(now).toISOString(), newsStatus: 'error', news: [] }, now)).toBe(false);
+    expect(newsCacheFresh({ checkedAt: new Date(now - 5 * 60 * 60 * 1000).toISOString(), newsStatus: 'empty', news: [], sourceVersion: NEWS_SOURCE_VERSION }, now)).toBe(true);
+    expect(newsCacheFresh({ checkedAt: new Date(now - 7 * 60 * 60 * 1000).toISOString(), newsStatus: 'ok', news: [], sourceVersion: NEWS_SOURCE_VERSION }, now)).toBe(false);
+    expect(newsCacheFresh({ checkedAt: new Date(now).toISOString(), newsStatus: 'error', news: [], sourceVersion: NEWS_SOURCE_VERSION }, now)).toBe(false);
     expect(imageCacheFresh({ cachedAt: new Date(now - 29 * 86400000).toISOString() }, now)).toBe(true);
     expect(imageCacheFresh({ cachedAt: new Date(now - 31 * 86400000).toISOString() }, now)).toBe(false);
     expect(imageCacheFresh({ cachedAt: new Date(now + 86400000).toISOString() }, now)).toBe(false);
-    expect(newsCacheFresh({ checkedAt: new Date(now + 86400000).toISOString(), newsStatus: 'empty', news: [] }, now)).toBe(false);
+    expect(newsCacheFresh({ checkedAt: new Date(now + 86400000).toISOString(), newsStatus: 'empty', news: [], sourceVersion: NEWS_SOURCE_VERSION }, now)).toBe(false);
   });
 
-  it('does not attach identity links to an exact-name club with multiple football-team candidates', async () => {
+  it('parses only dated, safe ESPN RSS items without changing the decoded title or article URL', () => {
+    const now = Date.parse('2026-10-21T12:00:00Z')
+    const xml = `<rss><channel>
+      <item><title>Alpha &amp; Beta: &quot;winner&quot;</title><link>https://www.espn.com/soccer/story?id=7&amp;src=rss</link><description><![CDATA[Alpha scored. <b>Latest</b>]]></description><pubDate>Wed, 21 Oct 2026 10:00:00 GMT</pubDate></item>
+      <item><title>Old story</title><link>https://www.espn.com/story/old</link><pubDate>Mon, 1 Sep 2026 10:00:00 GMT</pubDate></item>
+      <item><title>Future story</title><link>https://www.espn.com/story/future</link><pubDate>Thu, 22 Oct 2026 10:00:00 GMT</pubDate></item>
+      <item><title>bad host</title><link>https://espn.com.evil.test/story</link><pubDate>Wed, 21 Oct 2026 10:00:00 GMT</pubDate></item>
+    </channel></rss>`
+    const items = parseEspnRss(xml, { now })
+    expect(items).toHaveLength(1)
+    expect(items[0]).toMatchObject({ title: 'Alpha & Beta: "winner"', url: 'https://www.espn.com/soccer/story?id=7&src=rss', license: 'ESPN RSS — attribution', licenseUrl: ESPN_TERMS_URL })
+    expect(matchEspnNewsToTeam(items[0], ['Alpha FC'])).toBe(false)
+    expect(matchEspnNewsToTeam(items[0], ['Alpha'])) .toBe(true)
+    expect(items[0].title).not.toContain('Latest')
+    expect(parseEspnRss('<!DOCTYPE x [<!ENTITY e SYSTEM "file:///etc/passwd">]><rss/>', { now })).toEqual([])
+  })
+
+  it('returns neutral GDELT publisher links with seen dates, rejecting unrelated, stale and unsafe hits', async () => {
+    const now = Date.parse('2026-10-21T12:00:00Z')
+    let requested = ''
+    const fakeRequest = (async (raw: string, options: any) => {
+      requested = raw
+      expect(options.retries).toBe(0)
+      return { articles: [
+        { title: 'Alpha FC soccer report', url: 'https://news.example.com/story', domain: 'example.com', seendate: '20261021T110000Z', socialimage: 'https://example.com/photo.jpg' },
+        { title: 'Unrelated football', url: 'https://news.example.com/other', domain: 'example.com', seendate: '20261021T110000Z' },
+        { title: 'Alpha FC old', url: 'https://news.example.com/old', domain: 'example.com', seendate: '20261001T110000Z' },
+        { title: 'Alpha FC unsafe', url: 'http://news.example.com/story', domain: 'example.com', seendate: '20261021T110000Z' },
+      ] }
+    }) as never
+    const items = await findRecentGdelt('Alpha FC', { now, sleepFn: async () => { throw new Error('unexpected wait') }, requestFn: fakeRequest })
+    const api = new URL(requested)
+    expect(api.searchParams.get('mode')).toBe('artlist')
+    expect(api.searchParams.get('format')).toBe('json')
+    expect(api.searchParams.get('timespan')).toBe('7d')
+    expect(items).toHaveLength(1)
+    expect(items[0]).toMatchObject({ title: 'External article', publisher: 'example.com', seenAt: '2026-10-21T11:00:00.000Z', source: 'GDELT' })
+    expect(items[0]).not.toHaveProperty('publishedAt')
+    expect(JSON.stringify(items)).not.toContain('Alpha FC soccer report')
+    expect(JSON.stringify(items)).not.toContain('socialimage')
+  })
+
+  it('invalidates old source versions once when switching RSS source policy', () => {
+    const now = Date.parse('2026-10-21T12:00:00Z')
+    const base = { checkedAt: new Date(now).toISOString(), newsStatus: 'empty', news: [] }
+    expect(newsCacheFresh(base, now)).toBe(false)
+    expect(newsCacheFresh({ ...base, sourceVersion: NEWS_SOURCE_VERSION }, now)).toBe(true)
+  })
+
+  it('uses the explicitly verified curated identity instead of ambiguous name search', async () => {
     let requests = 0;
     const fakeRequest = async () => {
       requests += 1;
@@ -60,7 +112,7 @@ describe('team-context Wikimedia sources', () => {
       ] };
     };
     expect(await findTeamLinks('Athletic Club', { requestFn: fakeRequest as never }))
-      .toEqual({ officialUrl: null, entityUrl: null });
+      .toEqual({ officialUrl: null, entityUrl: 'https://www.wikidata.org/wiki/Q8687' });
     expect(requests).toBe(1);
   });
 });

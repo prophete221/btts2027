@@ -1,0 +1,37 @@
+{
+  "Austria Vienna": [
+    {
+      "url": "https://fk-austria.at/news/vorschau-auf-das-ausw\u00e4rtsspiel-in-ried-2",
+      "publishedAt": "2026-10-16",
+      "publisher": "fk-austria.at",
+      "attributionUrl": "https://fk-austria.at/news/vorschau-auf-das-ausw\u00e4rtsspiel-in-ried-2",
+      "teamNames": [
+        "Austria Vienna"
+      ]
+    }
+  ],
+  "FC Cincinnati": [
+    {
+      "url": "https://www.fccincinnati.com/news/matchday-guide-pres-by-altafiber-fc-cincinnati-vs-dc-united-2026-10-21",
+      "publishedAt": "2026-10-20T15:00:09.771Z",
+      "publisher": "fccincinnati.com",
+      "attributionUrl": "https://www.fccincinnati.com/news/matchday-guide-pres-by-altafiber-fc-cincinnati-vs-dc-united-2026-10-21",
+      "teamNames": [
+        "FC Cincinnati",
+        "D.C. United"
+      ]
+    }
+  ],
+  "D.C. United": [
+    {
+      "url": "https://www.fccincinnati.com/news/matchday-guide-pres-by-altafiber-fc-cincinnati-vs-dc-united-2026-10-21",
+      "publishedAt": "2026-10-20T15:00:09.771Z",
+      "publisher": "fccincinnati.com",
+      "attributionUrl": "https://www.fccincinnati.com/news/matchday-guide-pres-by-altafiber-fc-cincinnati-vs-dc-united-2026-10-21",
+      "teamNames": [
+        "FC Cincinnati",
+        "D.C. United"
+      ]
+    }
+  ]
+}

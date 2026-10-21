@@ -1,0 +1,31 @@
+{
+  "FC Cincinnati": {
+    "fileName": "File:Elevated view of TQL Stadium and its environs from 12th St and Central Parkway.jpg",
+    "stadium": "TQL Stadium",
+    "entityId": "Q20855983",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Elevated_view_of_TQL_Stadium_and_its_environs_from_12th_St_and_Central_Parkway.jpg",
+    "verificationSource": "https://www.wikidata.org/wiki/Q54465634"
+  },
+  "Levante UD": {
+    "fileName": "File:Estadi Ciutat de València - nocturna.jpg",
+    "stadium": "Estadi Ciutat de València",
+    "entityId": "Q8823",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Estadi_Ciutat_de_Val%C3%A8ncia_-_nocturna.jpg",
+    "verificationSource": "https://www.wikidata.org/wiki/Q1122715"
+  },
+  "Athletic Club": {
+    "fileName": "File:Panorama im San Mamés Stadion.jpg",
+    "stadium": "San Mamés",
+    "entityId": "Q8687",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Panorama_im_San_Mam%C3%A9s_Stadion.jpg",
+    "verificationSource": "https://www.wikidata.org/wiki/Q182864",
+    "photoDate": "2018-08"
+  },
+  "Austria Vienna": {
+    "fileName": "File:Generali-Arena by night.jpg",
+    "stadium": "Generali-Arena",
+    "entityId": "Q131209",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Generali-Arena_by_night.jpg",
+    "verificationSource": "https://www.wikidata.org/wiki/Q696476"
+  }
+}

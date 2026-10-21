@@ -23,7 +23,7 @@ def endpoint(value):
 
 def error_code(error):
     if isinstance(error, ssl.SSLCertVerificationError):
-        return 'certificate_hostname_mismatch' if error.verify_code == 62 else 'certificate_untrusted'
+        return 'certificate_hostname_mismatch' if getattr(error, 'verify_code', None) == 62 else 'certificate_untrusted'
     if isinstance(error, (TimeoutError, socket.timeout)):
         return 'connection_timeout'
     if isinstance(error, socket.gaierror):
@@ -66,6 +66,7 @@ def probe_implicit(host, port):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--require-verified', action='store_true')
+    parser.add_argument('--require-explicit', action='store_true')
     args = parser.parse_args()
     raw = os.environ.get('FTP_SERVER', '').strip()
     report = {'credentialsUsed': False, 'transferAttempted': False, 'results': []}
@@ -81,7 +82,8 @@ def main():
         report['configurationError'] = 'missing_or_invalid_endpoint'
     report['verified'] = any(row['verified'] for row in report['results'])
     print(json.dumps(report, sort_keys=True))
-    if args.require_verified and not report['verified']:
+    acceptable = any(row['verified'] and (not args.require_explicit or row['mode'] == 'explicit') for row in report['results'])
+    if args.require_verified and not acceptable:
         return 1
     return 0
 

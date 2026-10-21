@@ -26,7 +26,10 @@ function disableAnalytics(): void {
 }
 
 function loadAnalytics(): void {
-  if (!GA_ID || typeof window === 'undefined' || document.querySelector(`script[data-bttspredict-ga="${GA_ID}"]`)) return
+  if (!GA_ID || !IS_PRODUCTION_BUILD || typeof window === 'undefined') return
+  const analyticsGlobal = window as unknown as Record<string, unknown>
+  analyticsGlobal[`ga-disable-${GA_ID}`] = false
+  if (document.querySelector(`script[data-bttspredict-ga="${GA_ID}"]`)) return
 
   const analyticsWindow = window as Window & {
     dataLayer?: unknown[]
@@ -42,7 +45,7 @@ function loadAnalytics(): void {
   document.head.appendChild(script)
 
   analyticsWindow.gtag('js', new Date())
-  analyticsWindow.gtag('config', GA_ID, { anonymize_ip: true })
+  analyticsWindow.gtag('config', GA_ID, { anonymize_ip: true, allow_google_signals: false, allow_ad_personalization_signals: false })
 }
 
 export default function AnalyticsLoader() {
@@ -50,9 +53,9 @@ export default function AnalyticsLoader() {
     if (analyticsAllowed()) loadAnalytics()
     else disableAnalytics()
 
-    const handleConsent = (event: Event) => {
-      const detail = (event as CustomEvent<{ analytics?: boolean }>).detail
-      if (detail?.analytics === true) loadAnalytics()
+    const handleConsent = () => {
+      // La préférence persistée fait foi, pas un simple événement DOM.
+      if (analyticsAllowed()) loadAnalytics()
       else disableAnalytics()
     }
     window.addEventListener('cookie-consent-changed', handleConsent)

@@ -4,10 +4,14 @@ import { join } from 'node:path'
 export type TeamNewsItem = {
   title: string
   url: string
-  publishedAt: string
+  publishedAt?: string
   source: string
-  license: string
-  licenseUrl: string
+  license?: string
+  licenseUrl?: string
+  attributionUrl?: string
+  teamNames?: string[]
+  publisher?: string
+  seenAt?: string
 }
 
 export type TeamImage = {
@@ -33,11 +37,16 @@ export type TeamContextEntry = {
 
 export type TeamContextDocument = {
   updatedAt: string
+  sourceVersion?: string
+  espnFetchedAt?: string
+  globalNews: TeamNewsItem[]
   teams: Record<string, TeamContextEntry>
 }
 
 const THIRTY_DAYS_MS = 30 * 24 * 60 * 60 * 1000
 const WIKINEWS_HOSTS = new Set(['en.wikinews.org'])
+const ESPN_HOSTS = new Set(['espn.com', 'www.espn.com'])
+const ESPN_TERMS_URL = 'https://www.espn.com/espn/news/story?page=rssinfo'
 const COMMONS_HOSTS = new Set(['commons.wikimedia.org'])
 const CC_HOSTS = new Set(['creativecommons.org', 'www.creativecommons.org'])
 
@@ -88,22 +97,67 @@ function validDate(value: unknown): string | null {
   return value
 }
 
-function normalizeNews(value: unknown, now: number): TeamNewsItem[] {
+function normalizeNews(value: unknown, now: number, teamName?: string): TeamNewsItem[] {
   if (!Array.isArray(value)) return []
   const accepted: TeamNewsItem[] = []
   for (const candidate of value) {
     if (!candidate || typeof candidate !== 'object') continue
     const item = candidate as Record<string, unknown>
-    const url = safeHttpsUrl(item.url, WIKINEWS_HOSTS)
-    const licenseUrl = safeLicenseUrl(item.licenseUrl)
     const publishedAt = validDate(item.publishedAt)
-    const title = cleanString(item.title, 240)
+    const rawTitle = typeof item.title === 'string' ? item.title : ''
+    let title = item.source === 'ESPN' ? rawTitle : item.source === 'GDELT' ? 'External article' : cleanString(rawTitle, 240)
     const source = cleanString(item.source, 100)
-    const license = cleanString(item.license, 100)
-    if (!url || !licenseUrl || !publishedAt || !title || !source || !license || !licenseMatchesUrl(license, licenseUrl)) continue
-    const timestamp = Date.parse(publishedAt)
-    if (timestamp > now || now - timestamp > THIRTY_DAYS_MS) continue
-    accepted.push({ title, url, publishedAt, source, license, licenseUrl })
+    let license = cleanString(item.license, 100)
+    let url: string | null = null
+    let licenseUrl: string | null = null
+    let publisher: string | undefined
+    let seenAt: string | undefined
+    let attributionUrl: string | undefined
+    if (source === 'Official') {
+      const hosts = new Set(['fk-austria.at', 'www.fccincinnati.com'])
+      const teamNames = Array.isArray(item.teamNames) ? item.teamNames.filter((value): value is string => typeof value === 'string') : []
+      try {
+        const parsed = new URL(String(item.url ?? ''))
+        if (parsed.protocol === 'https:' && hosts.has(parsed.hostname.toLowerCase()) && !parsed.username && !parsed.password) url = String(item.url)
+        const sourceUrl = new URL(String(item.attributionUrl ?? ''))
+        if (sourceUrl.protocol === 'https:' && hosts.has(sourceUrl.hostname.toLowerCase()) && sourceUrl.hostname === parsed.hostname) attributionUrl = String(item.attributionUrl)
+      } catch { /* invalid official source */ }
+      if (!teamName || !teamNames.includes(teamName) || !attributionUrl || !url) continue
+      title = 'Official publication'
+      license = 'Official publisher link only'
+      licenseUrl = null
+      publisher = cleanString(item.publisher, 253).toLowerCase()
+      if (publisher !== new URL(url).hostname.toLowerCase() && !new URL(url).hostname.toLowerCase().endsWith(`.${publisher}`)) continue
+    } else if (source === 'GDELT') {
+      try {
+        const parsed = new URL(String(item.url ?? ''))
+        const host = parsed.hostname.toLowerCase()
+        if (parsed.protocol === 'https:' && !parsed.username && !parsed.password && !parsed.port
+          && !host.includes(':') && host !== 'localhost' && !host.endsWith('.localhost') && !host.endsWith('.local')
+          && !/^\d{1,3}(?:\.\d{1,3}){3}$/.test(host)) url = String(item.url)
+      } catch { /* Invalid publisher URL */ }
+      publisher = cleanString(item.publisher, 253).toLowerCase()
+      seenAt = validDate(item.seenAt) ?? undefined
+      licenseUrl = item.licenseUrl === 'https://www.gdeltproject.org/' ? 'https://www.gdeltproject.org/' : null
+      if (!publisher || !/^(?:[a-z0-9-]+\.)+[a-z]{2,}$/i.test(publisher) || (licenseUrl && license !== 'GDELT attribution') || (url && new URL(url).hostname.toLowerCase() !== publisher && !new URL(url).hostname.toLowerCase().endsWith(`.${publisher}`))) continue
+    } else if (source === 'ESPN') {
+      try {
+        const parsed = new URL(String(item.url ?? ''))
+        if (parsed.protocol === 'https:' && ESPN_HOSTS.has(parsed.hostname.toLowerCase()) && !parsed.username && !parsed.password) url = String(item.url)
+      } catch { /* Invalid URL */ }
+      licenseUrl = item.licenseUrl === ESPN_TERMS_URL ? ESPN_TERMS_URL : null
+      if (license !== 'ESPN RSS — attribution' || /<[^>]*>|[\u0000-\u001f\u007f]/.test(title) || title.length > 500) continue
+    } else {
+      url = safeHttpsUrl(item.url, WIKINEWS_HOSTS)
+      licenseUrl = safeLicenseUrl(item.licenseUrl)
+      if (!licenseUrl || !licenseMatchesUrl(license, licenseUrl)) continue
+    }
+    const effectiveDate = source === 'GDELT' ? seenAt : publishedAt
+    if (!url || (source !== 'Official' && !licenseUrl) || !effectiveDate || !title || !source || !license) continue
+    const timestamp = Date.parse(effectiveDate)
+    const windowMs = source === 'GDELT' ? 7 * 24 * 60 * 60 * 1000 : THIRTY_DAYS_MS
+    if (timestamp > now || now - timestamp > windowMs) continue
+    accepted.push({ title, url, ...(publishedAt ? { publishedAt } : {}), source, license, ...(licenseUrl ? { licenseUrl } : {}), ...(publisher ? { publisher } : {}), ...(seenAt ? { seenAt } : {}), ...(attributionUrl ? { attributionUrl } : {}), ...(source === 'Official' ? { teamNames: [teamName!] } : {}) })
     if (accepted.length === 3) break
   }
   return accepted
@@ -142,7 +196,7 @@ export function normalizeTeamContext(value: unknown, now = Date.now()): TeamCont
       name,
       checkedAt,
       newsStatus: cleanString(item.newsStatus, 80) || 'ok',
-      news: normalizeNews(item.news, now),
+      news: normalizeNews(item.news, now, name),
       image: normalizeImage(item.image),
       officialUrl: safeOfficialUrl(item.officialUrl),
       entityUrl: safeWikidataUrl(item.entityUrl),
@@ -151,6 +205,9 @@ export function normalizeTeamContext(value: unknown, now = Date.now()): TeamCont
 
   return {
     updatedAt: validDate(root.updatedAt) ?? '',
+    sourceVersion: cleanString(root.sourceVersion, 80) || undefined,
+    espnFetchedAt: validDate(root.espnFetchedAt) ?? undefined,
+    globalNews: normalizeNews(root.globalNews, now).slice(0, 3),
     teams,
   }
 }

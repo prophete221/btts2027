@@ -1,29 +1,108 @@
 {
-  "updatedAt": "2026-10-21T13:03:15.935Z",
+  "updatedAt": "2026-10-21T13:23:21.063Z",
+  "sourceVersion": "espn-rss-v1-gdelt-v1",
+  "espnFetchedAt": "2026-10-21T13:13:08.504Z",
+  "globalNews": [
+    {
+      "title": "Man City cheated because the Premier League's rules gave them no other choice",
+      "url": "https://www.espn.com/soccer/story/_/id/50221682/man-city-cheated-premier-league-was-built-unfair",
+      "publishedAt": "2026-10-21T12:30:48.000Z",
+      "source": "ESPN",
+      "license": "ESPN RSS — attribution",
+      "licenseUrl": "https://www.espn.com/espn/news/story?page=rssinfo"
+    },
+    {
+      "title": "Electric Ngumoha jolts Liverpool back to life in comeback win",
+      "url": "https://www.espn.com/soccer/story/_/id/50231666/ngumoha-sparks-liverpool-comeback-champions-league-win",
+      "publishedAt": "2026-10-21T12:30:06.000Z",
+      "source": "ESPN",
+      "license": "ESPN RSS — attribution",
+      "licenseUrl": "https://www.espn.com/espn/news/story?page=rssinfo"
+    },
+    {
+      "title": "Kimmich to miss Arsenal match after family bereavement",
+      "url": "https://www.espn.com/soccer/story/_/id/50236229/bayern-munich-joshua-kimmich-miss-arsenal-match-family-bereavement",
+      "publishedAt": "2026-10-21T12:08:25.000Z",
+      "source": "ESPN",
+      "license": "ESPN RSS — attribution",
+      "licenseUrl": "https://www.espn.com/espn/news/story?page=rssinfo"
+    }
+  ],
   "teams": {
     "Athletic Club": {
       "name": "Athletic Club",
-      "checkedAt": "2026-10-21T12:59:51.254Z",
-      "newsStatus": "empty",
+      "checkedAt": "2026-10-21T13:13:09.513Z",
+      "newsStatus": "error",
       "news": [],
-      "image": null,
-      "officialUrl": null,
-      "entityUrl": null
+      "image": {
+        "url": "/team-media/f34e380b7772d373e54b.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Panorama_im_San_Mam%C3%A9s_Stadion.jpg",
+        "author": "Marco Almbauer",
+        "license": "CC0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "caption": "Athletic Club — stade San Mamés: Panorama im San Mamés Stadion",
+        "kind": "stadium",
+        "date": "2018-08",
+        "title": "File:Panorama im San Mamés Stadion.jpg",
+        "cachedAt": "2026-10-21T13:16:08.420Z"
+      },
+      "officialUrl": "https://www.athletic-club.eus/",
+      "entityUrl": "https://www.wikidata.org/wiki/Q8687",
+      "sourceVersion": "espn-rss-v1"
     },
     "Austria Vienna": {
       "name": "Austria Vienna",
-      "checkedAt": "2026-10-21T12:59:53.635Z",
-      "newsStatus": "empty",
-      "news": [],
-      "image": null,
+      "checkedAt": "2026-10-21T13:13:12.037Z",
+      "newsStatus": "ok",
+      "news": [
+        {
+          "title": "Official publication",
+          "url": "https://fk-austria.at/news/vorschau-auf-das-auswärtsspiel-in-ried-2",
+          "publishedAt": "2026-10-16",
+          "source": "Official",
+          "publisher": "fk-austria.at",
+          "attributionUrl": "https://fk-austria.at/news/vorschau-auf-das-auswärtsspiel-in-ried-2",
+          "license": "Official publisher link only",
+          "teamNames": [
+            "Austria Vienna"
+          ]
+        }
+      ],
+      "image": {
+        "url": "/team-media/56f228a4db22d06224d0.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Generali-Arena_by_night.jpg",
+        "author": "Ralphinho1",
+        "license": "CC BY-SA",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "caption": "Austria Vienna — stade Generali-Arena: The Generali-Arena serves as home stadium of FK Austria Wien. For any international games the stadium is called Viola Park.",
+        "kind": "stadium",
+        "date": "2018-11-23T17:44:40.000Z",
+        "title": "File:Generali-Arena by night.jpg",
+        "cachedAt": "2026-10-21T13:16:09.303Z"
+      },
       "officialUrl": null,
-      "entityUrl": null
+      "entityUrl": "https://www.wikidata.org/wiki/Q131209",
+      "sourceVersion": "espn-rss-v1"
     },
     "D.C. United": {
       "name": "D.C. United",
-      "checkedAt": "2026-10-21T12:59:54.511Z",
-      "newsStatus": "empty",
-      "news": [],
+      "checkedAt": "2026-10-21T13:13:13.216Z",
+      "newsStatus": "ok",
+      "news": [
+        {
+          "title": "Official publication",
+          "url": "https://www.fccincinnati.com/news/matchday-guide-pres-by-altafiber-fc-cincinnati-vs-dc-united-2026-10-21",
+          "publishedAt": "2026-10-20T15:00:09.771Z",
+          "source": "Official",
+          "publisher": "fccincinnati.com",
+          "attributionUrl": "https://www.fccincinnati.com/news/matchday-guide-pres-by-altafiber-fc-cincinnati-vs-dc-united-2026-10-21",
+          "license": "Official publisher link only",
+          "teamNames": [
+            "FC Cincinnati",
+            "D.C. United"
+          ]
+        }
+      ],
       "image": {
         "url": "/team-media/06e3cdf6fde5a6403c0f.jpg",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:Audi_Field_June_25th.jpg",
@@ -37,29 +116,68 @@
         "cachedAt": "2026-10-21T13:00:02.185Z"
       },
       "officialUrl": "https://www.dcunited.com/",
-      "entityUrl": "https://www.wikidata.org/wiki/Q238593"
+      "entityUrl": "https://www.wikidata.org/wiki/Q238593",
+      "sourceVersion": "espn-rss-v1"
     },
     "FC Cincinnati": {
       "name": "FC Cincinnati",
-      "checkedAt": "2026-10-21T12:59:57.327Z",
-      "newsStatus": "empty",
-      "news": [],
-      "image": null,
-      "officialUrl": null,
-      "entityUrl": null
+      "checkedAt": "2026-10-21T13:13:14.611Z",
+      "newsStatus": "ok",
+      "news": [
+        {
+          "title": "Official publication",
+          "url": "https://www.fccincinnati.com/news/matchday-guide-pres-by-altafiber-fc-cincinnati-vs-dc-united-2026-10-21",
+          "publishedAt": "2026-10-20T15:00:09.771Z",
+          "source": "Official",
+          "publisher": "fccincinnati.com",
+          "attributionUrl": "https://www.fccincinnati.com/news/matchday-guide-pres-by-altafiber-fc-cincinnati-vs-dc-united-2026-10-21",
+          "license": "Official publisher link only",
+          "teamNames": [
+            "FC Cincinnati",
+            "D.C. United"
+          ]
+        }
+      ],
+      "image": {
+        "url": "/team-media/438f6d4de95b31d254b6.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Elevated_view_of_TQL_Stadium_and_its_environs_from_12th_St_and_Central_Parkway.jpg",
+        "author": "Phasmatisnox",
+        "license": "CC BY-SA",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "caption": "FC Cincinnati — stade TQL Stadium: This photo of TQL stadium was taken from the roof of the Streitmann building and shows the stadium with Central Parkway and the CET building in the foreground.",
+        "kind": "stadium",
+        "date": "2022-08-26T09:28:03.000Z",
+        "title": "File:Elevated view of TQL Stadium and its environs from 12th St and Central Parkway.jpg",
+        "cachedAt": "2026-10-21T13:16:06.140Z"
+      },
+      "officialUrl": "https://www.fccincinnati.com/",
+      "entityUrl": "https://www.wikidata.org/wiki/Q20855983",
+      "sourceVersion": "espn-rss-v1"
     },
     "Levante": {
       "name": "Levante",
-      "checkedAt": "2026-10-21T12:59:59.380Z",
-      "newsStatus": "empty",
+      "checkedAt": "2026-10-21T13:13:15.610Z",
+      "newsStatus": "error",
       "news": [],
-      "image": null,
-      "officialUrl": null,
-      "entityUrl": null
+      "image": {
+        "url": "/team-media/9566c74273ed71ec2ade.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Estadi_Ciutat_de_Val%C3%A8ncia_-_nocturna.jpg",
+        "author": "Francesc Fort",
+        "license": "CC BY-SA",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "caption": "Levante — stade Estadi Ciutat de València: Estadi Ciutat de València (association football stadium in València, Spain)",
+        "kind": "stadium",
+        "date": "2021-12-05T00:00:00.000Z",
+        "title": "File:Estadi Ciutat de València - nocturna.jpg",
+        "cachedAt": "2026-10-21T13:16:07.610Z"
+      },
+      "officialUrl": "https://www.levanteud.com/",
+      "entityUrl": "https://www.wikidata.org/wiki/Q8823",
+      "sourceVersion": "espn-rss-v1"
     },
     "SC Rheindorf Altach": {
       "name": "SC Rheindorf Altach",
-      "checkedAt": "2026-10-21T13:00:00.249Z",
+      "checkedAt": "2026-10-21T13:13:16.850Z",
       "newsStatus": "empty",
       "news": [],
       "image": {
@@ -75,7 +193,1393 @@
         "cachedAt": "2026-10-21T13:00:02.185Z"
       },
       "officialUrl": "https://www.scra.at/",
-      "entityUrl": "https://www.wikidata.org/wiki/Q670438"
+      "entityUrl": "https://www.wikidata.org/wiki/Q670438",
+      "sourceVersion": "espn-rss-v1"
+    },
+    "1. FC Heidenheim 1846": {
+      "name": "1. FC Heidenheim 1846",
+      "checkedAt": "2026-10-21T13:13:17.891Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "1. FC Nürnberg": {
+      "name": "1. FC Nürnberg",
+      "checkedAt": "2026-10-21T13:13:17.891Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "ADO Den Haag": {
+      "name": "ADO Den Haag",
+      "checkedAt": "2026-10-21T13:13:17.891Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "AFC Bournemouth": {
+      "name": "AFC Bournemouth",
+      "checkedAt": "2026-10-21T13:13:17.892Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "Ajax Amsterdam": {
+      "name": "Ajax Amsterdam",
+      "checkedAt": "2026-10-21T13:13:17.892Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "Alverca": {
+      "name": "Alverca",
+      "checkedAt": "2026-10-21T13:13:17.892Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "Antwerp": {
+      "name": "Antwerp",
+      "checkedAt": "2026-10-21T13:13:17.893Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "Arouca": {
+      "name": "Arouca",
+      "checkedAt": "2026-10-21T13:13:17.893Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "Arsenal": {
+      "name": "Arsenal",
+      "checkedAt": "2026-10-21T13:13:17.893Z",
+      "newsStatus": "ok",
+      "news": [
+        {
+          "title": "Kimmich to miss Arsenal match after family bereavement",
+          "url": "https://www.espn.com/soccer/story/_/id/50236229/bayern-munich-joshua-kimmich-miss-arsenal-match-family-bereavement",
+          "publishedAt": "2026-10-21T12:08:25.000Z",
+          "source": "ESPN",
+          "license": "ESPN RSS — attribution",
+          "licenseUrl": "https://www.espn.com/espn/news/story?page=rssinfo"
+        }
+      ],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "Aston Villa": {
+      "name": "Aston Villa",
+      "checkedAt": "2026-10-21T13:13:17.893Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "Atlanta United FC": {
+      "name": "Atlanta United FC",
+      "checkedAt": "2026-10-21T13:13:17.894Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "Austin FC": {
+      "name": "Austin FC",
+      "checkedAt": "2026-10-21T13:13:17.894Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "Austria Lustenau": {
+      "name": "Austria Lustenau",
+      "checkedAt": "2026-10-21T13:13:17.894Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "AZ Alkmaar": {
+      "name": "AZ Alkmaar",
+      "checkedAt": "2026-10-21T13:13:17.894Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "Bayern Munich": {
+      "name": "Bayern Munich",
+      "checkedAt": "2026-10-21T13:13:17.895Z",
+      "newsStatus": "ok",
+      "news": [
+        {
+          "title": "Kimmich to miss Arsenal match after family bereavement",
+          "url": "https://www.espn.com/soccer/story/_/id/50236229/bayern-munich-joshua-kimmich-miss-arsenal-match-family-bereavement",
+          "publishedAt": "2026-10-21T12:08:25.000Z",
+          "source": "ESPN",
+          "license": "ESPN RSS — attribution",
+          "licenseUrl": "https://www.espn.com/espn/news/story?page=rssinfo"
+        }
+      ],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "Birmingham City": {
+      "name": "Birmingham City",
+      "checkedAt": "2026-10-21T13:13:17.895Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "Blackburn Rovers": {
+      "name": "Blackburn Rovers",
+      "checkedAt": "2026-10-21T13:13:17.895Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "Bolton Wanderers": {
+      "name": "Bolton Wanderers",
+      "checkedAt": "2026-10-21T13:13:17.895Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "Borussia Dortmund": {
+      "name": "Borussia Dortmund",
+      "checkedAt": "2026-10-21T13:13:17.896Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "Borussia Mönchengladbach": {
+      "name": "Borussia Mönchengladbach",
+      "checkedAt": "2026-10-21T13:13:17.896Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "Braga": {
+      "name": "Braga",
+      "checkedAt": "2026-10-21T13:13:17.896Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "Bristol City": {
+      "name": "Bristol City",
+      "checkedAt": "2026-10-21T13:13:17.896Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "Burnley": {
+      "name": "Burnley",
+      "checkedAt": "2026-10-21T13:13:17.896Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "Cardiff City": {
+      "name": "Cardiff City",
+      "checkedAt": "2026-10-21T13:13:17.897Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "CF Montréal": {
+      "name": "CF Montréal",
+      "checkedAt": "2026-10-21T13:13:17.897Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "Charlotte FC": {
+      "name": "Charlotte FC",
+      "checkedAt": "2026-10-21T13:13:17.897Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "Charlton Athletic": {
+      "name": "Charlton Athletic",
+      "checkedAt": "2026-10-21T13:13:17.897Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "Chelsea": {
+      "name": "Chelsea",
+      "checkedAt": "2026-10-21T13:13:17.898Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "Chicago Fire FC": {
+      "name": "Chicago Fire FC",
+      "checkedAt": "2026-10-21T13:13:17.898Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "Club Brugge": {
+      "name": "Club Brugge",
+      "checkedAt": "2026-10-21T13:13:17.898Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "Colorado Rapids": {
+      "name": "Colorado Rapids",
+      "checkedAt": "2026-10-21T13:13:17.898Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "Columbus Crew": {
+      "name": "Columbus Crew",
+      "checkedAt": "2026-10-21T13:13:17.898Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "Como": {
+      "name": "Como",
+      "checkedAt": "2026-10-21T13:13:17.898Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "Coventry City": {
+      "name": "Coventry City",
+      "checkedAt": "2026-10-21T13:13:17.899Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "Crystal Palace": {
+      "name": "Crystal Palace",
+      "checkedAt": "2026-10-21T13:13:17.899Z",
+      "newsStatus": "ok",
+      "news": [
+        {
+          "title": "Transfer rumors, news: Manchester United keen on Palace duo",
+          "url": "https://www.espn.com/soccer/story/_/id/50235336/manchester-united-keen-palace-duo-sarr-mateta",
+          "publishedAt": "2026-10-21T08:27:18.000Z",
+          "source": "ESPN",
+          "license": "ESPN RSS — attribution",
+          "licenseUrl": "https://www.espn.com/espn/news/story?page=rssinfo"
+        }
+      ],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "Derby County": {
+      "name": "Derby County",
+      "checkedAt": "2026-10-21T13:13:17.899Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "Dundee United": {
+      "name": "Dundee United",
+      "checkedAt": "2026-10-21T13:13:17.899Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "Dynamo Dresden": {
+      "name": "Dynamo Dresden",
+      "checkedAt": "2026-10-21T13:13:17.900Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "Eintracht Frankfurt": {
+      "name": "Eintracht Frankfurt",
+      "checkedAt": "2026-10-21T13:13:17.900Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "Energie Cottbus": {
+      "name": "Energie Cottbus",
+      "checkedAt": "2026-10-21T13:13:17.900Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "Estrela": {
+      "name": "Estrela",
+      "checkedAt": "2026-10-21T13:13:17.900Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "Excelsior": {
+      "name": "Excelsior",
+      "checkedAt": "2026-10-21T13:13:17.900Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "FC Cologne": {
+      "name": "FC Cologne",
+      "checkedAt": "2026-10-21T13:13:17.901Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "FC Dallas": {
+      "name": "FC Dallas",
+      "checkedAt": "2026-10-21T13:13:17.901Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "FC Famalicao": {
+      "name": "FC Famalicao",
+      "checkedAt": "2026-10-21T13:13:17.901Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "FC Groningen": {
+      "name": "FC Groningen",
+      "checkedAt": "2026-10-21T13:13:17.901Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "FC Utrecht": {
+      "name": "FC Utrecht",
+      "checkedAt": "2026-10-21T13:13:17.901Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "Feyenoord Rotterdam": {
+      "name": "Feyenoord Rotterdam",
+      "checkedAt": "2026-10-21T13:13:17.901Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "Galatasaray": {
+      "name": "Galatasaray",
+      "checkedAt": "2026-10-21T13:13:17.902Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "Gil Vicente": {
+      "name": "Gil Vicente",
+      "checkedAt": "2026-10-21T13:13:17.902Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "Go Ahead Eagles": {
+      "name": "Go Ahead Eagles",
+      "checkedAt": "2026-10-21T13:13:17.902Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "Heerenveen": {
+      "name": "Heerenveen",
+      "checkedAt": "2026-10-21T13:13:17.902Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "Hertha Berlin": {
+      "name": "Hertha Berlin",
+      "checkedAt": "2026-10-21T13:13:17.903Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "Holstein Kiel": {
+      "name": "Holstein Kiel",
+      "checkedAt": "2026-10-21T13:13:17.903Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "Houston Dynamo FC": {
+      "name": "Houston Dynamo FC",
+      "checkedAt": "2026-10-21T13:13:17.903Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "Inter Miami CF": {
+      "name": "Inter Miami CF",
+      "checkedAt": "2026-10-21T13:13:17.903Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "Internazionale": {
+      "name": "Internazionale",
+      "checkedAt": "2026-10-21T13:13:17.903Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "Ipswich Town": {
+      "name": "Ipswich Town",
+      "checkedAt": "2026-10-21T13:13:17.904Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "Kaiserslautern": {
+      "name": "Kaiserslautern",
+      "checkedAt": "2026-10-21T13:13:17.904Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "KV Kortrijk": {
+      "name": "KV Kortrijk",
+      "checkedAt": "2026-10-21T13:13:17.904Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "KV Mechelen": {
+      "name": "KV Mechelen",
+      "checkedAt": "2026-10-21T13:13:17.904Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "KVC Westerlo": {
+      "name": "KVC Westerlo",
+      "checkedAt": "2026-10-21T13:13:17.904Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "LA Galaxy": {
+      "name": "LA Galaxy",
+      "checkedAt": "2026-10-21T13:13:17.904Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "LAFC": {
+      "name": "LAFC",
+      "checkedAt": "2026-10-21T13:13:17.904Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "LASK Linz": {
+      "name": "LASK Linz",
+      "checkedAt": "2026-10-21T13:13:17.905Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "Lens": {
+      "name": "Lens",
+      "checkedAt": "2026-10-21T13:13:17.905Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "Lille": {
+      "name": "Lille",
+      "checkedAt": "2026-10-21T13:13:17.905Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "Lincoln City": {
+      "name": "Lincoln City",
+      "checkedAt": "2026-10-21T13:13:17.905Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "Lommel SK": {
+      "name": "Lommel SK",
+      "checkedAt": "2026-10-21T13:13:17.905Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "Manchester United": {
+      "name": "Manchester United",
+      "checkedAt": "2026-10-21T13:13:17.906Z",
+      "newsStatus": "ok",
+      "news": [
+        {
+          "title": "Transfer rumors, news: Manchester United keen on Palace duo",
+          "url": "https://www.espn.com/soccer/story/_/id/50235336/manchester-united-keen-palace-duo-sarr-mateta",
+          "publishedAt": "2026-10-21T08:27:18.000Z",
+          "source": "ESPN",
+          "license": "ESPN RSS — attribution",
+          "licenseUrl": "https://www.espn.com/espn/news/story?page=rssinfo"
+        }
+      ],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "Maritimo": {
+      "name": "Maritimo",
+      "checkedAt": "2026-10-21T13:13:17.906Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "Middlesbrough": {
+      "name": "Middlesbrough",
+      "checkedAt": "2026-10-21T13:13:17.906Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "Millwall": {
+      "name": "Millwall",
+      "checkedAt": "2026-10-21T13:13:17.906Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "Minnesota United FC": {
+      "name": "Minnesota United FC",
+      "checkedAt": "2026-10-21T13:13:17.906Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "Moreirense": {
+      "name": "Moreirense",
+      "checkedAt": "2026-10-21T13:13:17.907Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "Nashville SC": {
+      "name": "Nashville SC",
+      "checkedAt": "2026-10-21T13:13:17.907Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "NEC Nijmegen": {
+      "name": "NEC Nijmegen",
+      "checkedAt": "2026-10-21T13:13:17.907Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "New England Revolution": {
+      "name": "New England Revolution",
+      "checkedAt": "2026-10-21T13:13:17.907Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "New York City FC": {
+      "name": "New York City FC",
+      "checkedAt": "2026-10-21T13:13:17.907Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "Newcastle United": {
+      "name": "Newcastle United",
+      "checkedAt": "2026-10-21T13:13:17.907Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "Norwich City": {
+      "name": "Norwich City",
+      "checkedAt": "2026-10-21T13:13:17.908Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "Nottingham Forest": {
+      "name": "Nottingham Forest",
+      "checkedAt": "2026-10-21T13:13:17.908Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "Orlando City SC": {
+      "name": "Orlando City SC",
+      "checkedAt": "2026-10-21T13:13:17.908Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "PEC Zwolle": {
+      "name": "PEC Zwolle",
+      "checkedAt": "2026-10-21T13:13:17.908Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "Philadelphia Union": {
+      "name": "Philadelphia Union",
+      "checkedAt": "2026-10-21T13:13:17.908Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "Portland Timbers": {
+      "name": "Portland Timbers",
+      "checkedAt": "2026-10-21T13:13:17.908Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "Portsmouth": {
+      "name": "Portsmouth",
+      "checkedAt": "2026-10-21T13:13:17.909Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "Preston North End": {
+      "name": "Preston North End",
+      "checkedAt": "2026-10-21T13:13:17.909Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "PSV Eindhoven": {
+      "name": "PSV Eindhoven",
+      "checkedAt": "2026-10-21T13:13:17.909Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "Queens Park Rangers": {
+      "name": "Queens Park Rangers",
+      "checkedAt": "2026-10-21T13:13:17.909Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "Rapid Vienna": {
+      "name": "Rapid Vienna",
+      "checkedAt": "2026-10-21T13:13:17.909Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "RB Leipzig": {
+      "name": "RB Leipzig",
+      "checkedAt": "2026-10-21T13:13:17.910Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "Real Betis": {
+      "name": "Real Betis",
+      "checkedAt": "2026-10-21T13:13:17.910Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "Real Madrid": {
+      "name": "Real Madrid",
+      "checkedAt": "2026-10-21T13:13:17.910Z",
+      "newsStatus": "ok",
+      "news": [
+        {
+          "title": "Sevilla lodge complaint after Real Madrid defeat",
+          "url": "https://www.espn.com/soccer/story/_/id/50236214/sevilla-lodge-complaint-real-madrid-defeat-laliga",
+          "publishedAt": "2026-10-21T12:08:24.000Z",
+          "source": "ESPN",
+          "license": "ESPN RSS — attribution",
+          "licenseUrl": "https://www.espn.com/espn/news/story?page=rssinfo"
+        }
+      ],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "Real Salt Lake": {
+      "name": "Real Salt Lake",
+      "checkedAt": "2026-10-21T13:13:17.910Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "Red Bull New York": {
+      "name": "Red Bull New York",
+      "checkedAt": "2026-10-21T13:13:17.910Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "San Diego FC": {
+      "name": "San Diego FC",
+      "checkedAt": "2026-10-21T13:13:17.911Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "San Jose Earthquakes": {
+      "name": "San Jose Earthquakes",
+      "checkedAt": "2026-10-21T13:13:17.911Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "SC Cambuur": {
+      "name": "SC Cambuur",
+      "checkedAt": "2026-10-21T13:13:17.911Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "Seattle Sounders FC": {
+      "name": "Seattle Sounders FC",
+      "checkedAt": "2026-10-21T13:13:17.911Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "Shakhtar Donetsk": {
+      "name": "Shakhtar Donetsk",
+      "checkedAt": "2026-10-21T13:13:17.911Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "Sheffield United": {
+      "name": "Sheffield United",
+      "checkedAt": "2026-10-21T13:13:17.911Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "Sint-Truidense": {
+      "name": "Sint-Truidense",
+      "checkedAt": "2026-10-21T13:13:17.912Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "Southampton": {
+      "name": "Southampton",
+      "checkedAt": "2026-10-21T13:13:17.912Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "Sparta Rotterdam": {
+      "name": "Sparta Rotterdam",
+      "checkedAt": "2026-10-21T13:13:17.912Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "Sporting CP": {
+      "name": "Sporting CP",
+      "checkedAt": "2026-10-21T13:13:17.912Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "Sporting Kansas City": {
+      "name": "Sporting Kansas City",
+      "checkedAt": "2026-10-21T13:13:17.912Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "SpVgg Greuther Fürth": {
+      "name": "SpVgg Greuther Fürth",
+      "checkedAt": "2026-10-21T13:13:17.912Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "St Johnstone": {
+      "name": "St Johnstone",
+      "checkedAt": "2026-10-21T13:13:17.913Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "St. Louis CITY SC": {
+      "name": "St. Louis CITY SC",
+      "checkedAt": "2026-10-21T13:13:17.913Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "St. Pauli": {
+      "name": "St. Pauli",
+      "checkedAt": "2026-10-21T13:13:17.913Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "Stoke City": {
+      "name": "Stoke City",
+      "checkedAt": "2026-10-21T13:13:17.913Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "SV Darmstadt 98": {
+      "name": "SV Darmstadt 98",
+      "checkedAt": "2026-10-21T13:13:17.914Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "Swansea City": {
+      "name": "Swansea City",
+      "checkedAt": "2026-10-21T13:13:17.914Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "Telstar": {
+      "name": "Telstar",
+      "checkedAt": "2026-10-21T13:13:17.914Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "Toronto FC": {
+      "name": "Toronto FC",
+      "checkedAt": "2026-10-21T13:13:17.914Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "Tottenham Hotspur": {
+      "name": "Tottenham Hotspur",
+      "checkedAt": "2026-10-21T13:13:17.914Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "TSV Eintracht Braunschweig": {
+      "name": "TSV Eintracht Braunschweig",
+      "checkedAt": "2026-10-21T13:13:17.915Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "TSV Hartberg": {
+      "name": "TSV Hartberg",
+      "checkedAt": "2026-10-21T13:13:17.915Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "Vancouver Whitecaps": {
+      "name": "Vancouver Whitecaps",
+      "checkedAt": "2026-10-21T13:13:17.915Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "VfB Stuttgart": {
+      "name": "VfB Stuttgart",
+      "checkedAt": "2026-10-21T13:13:17.915Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "VfL Bochum": {
+      "name": "VfL Bochum",
+      "checkedAt": "2026-10-21T13:13:17.915Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "VfL Osnabruck": {
+      "name": "VfL Osnabruck",
+      "checkedAt": "2026-10-21T13:13:17.915Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "VfL Wolfsburg": {
+      "name": "VfL Wolfsburg",
+      "checkedAt": "2026-10-21T13:13:17.915Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "Viking FK": {
+      "name": "Viking FK",
+      "checkedAt": "2026-10-21T13:13:17.916Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "Vitória de Guimaraes": {
+      "name": "Vitória de Guimaraes",
+      "checkedAt": "2026-10-21T13:13:17.916Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "Waasland-Beveren": {
+      "name": "Waasland-Beveren",
+      "checkedAt": "2026-10-21T13:13:17.916Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "Watford": {
+      "name": "Watford",
+      "checkedAt": "2026-10-21T13:13:17.917Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "Werder Bremen": {
+      "name": "Werder Bremen",
+      "checkedAt": "2026-10-21T13:13:17.917Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "West Bromwich Albion": {
+      "name": "West Bromwich Albion",
+      "checkedAt": "2026-10-21T13:13:17.917Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "West Ham United": {
+      "name": "West Ham United",
+      "checkedAt": "2026-10-21T13:13:17.918Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "Willem II": {
+      "name": "Willem II",
+      "checkedAt": "2026-10-21T13:13:17.918Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "Wolverhampton Wanderers": {
+      "name": "Wolverhampton Wanderers",
+      "checkedAt": "2026-10-21T13:13:17.918Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
+    },
+    "Wrexham": {
+      "name": "Wrexham",
+      "checkedAt": "2026-10-21T13:13:17.918Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null,
+      "sourceVersion": "espn-rss-v1"
     }
   }
 }
