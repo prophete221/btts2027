@@ -84,6 +84,49 @@ describe('archive finalization immutability', () => {
     finalizeArchive({ predictionsFile, archiveDir })
     expect(readJson(path.join(archiveDir, '2026-11-02.json')).predictions[0].status).toBe('LOST')
   })
+
+  it('supersedes a legacy insufficient-evidence freeze when the current republication has sufficient evidence', () => {
+    const root = tempDir()
+    const archiveDir = path.join(root, 'archive')
+    const predictionsFile = path.join(root, 'predictions.json')
+    // Publication héritée (ancien régime) : compteurs de preuve insuffisants.
+    const legacy = {
+      id: 'cup-1', type: 'BTTS', date: '2026-11-01', home: 'Bayern', away: 'Arsenal',
+      proba: 0.61, confidence: 61, matchCountHome: 2, matchCountAway: 2, ai_analysis: 'Legacy text',
+    }
+    writePayload(predictionsFile, { date: '2026-11-01', free: [legacy], predictions: [legacy], vipPreview: [] })
+    finalizeArchive({ predictionsFile, archiveDir })
+
+    // Republication courante : stats domestiques réelles suffisantes.
+    const refreshed = {
+      ...legacy,
+      proba: 0.53, confidence: 53, matchCountHome: 7, matchCountAway: 8, ai_analysis: 'Domestic text',
+    }
+    writePayload(predictionsFile, { date: '2026-11-01', free: [refreshed], predictions: [refreshed], vipPreview: [] })
+    finalizeArchive({ predictionsFile, archiveDir })
+
+    const current = readJson(predictionsFile)
+    expect(current.free[0]).toMatchObject({ proba: 0.53, matchCountHome: 7, matchCountAway: 8, ai_analysis: 'Domestic text' })
+  })
+
+  it('keeps the freeze when the first publication already had sufficient evidence', () => {
+    const root = tempDir()
+    const archiveDir = path.join(root, 'archive')
+    const predictionsFile = path.join(root, 'predictions.json')
+    const legacyOk = {
+      id: 'lg-1', type: 'BTTS', date: '2026-11-01', home: 'C', away: 'D',
+      proba: 0.55, confidence: 55, matchCountHome: 8, matchCountAway: 7, ai_analysis: 'Original text',
+    }
+    writePayload(predictionsFile, { date: '2026-11-01', free: [legacyOk], predictions: [legacyOk], vipPreview: [] })
+    finalizeArchive({ predictionsFile, archiveDir })
+
+    // Une republication retouchée ne doit PAS passer même avec preuve suffisante.
+    const tampered = { ...legacyOk, proba: 0.9, confidence: 90, ai_analysis: 'Tampered text' }
+    writePayload(predictionsFile, { date: '2026-11-01', free: [tampered], predictions: [tampered], vipPreview: [] })
+    finalizeArchive({ predictionsFile, archiveDir })
+
+    expect(readJson(predictionsFile).free[0]).toMatchObject({ proba: 0.55, confidence: 55, ai_analysis: 'Original text' })
+  })
 })
 
 describe('payload validation for honest abstention and VIP fixture previews', () => {

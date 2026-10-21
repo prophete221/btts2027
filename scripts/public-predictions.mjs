@@ -21,7 +21,10 @@ export function observedFormBtts(row) {
     .filter(rate => typeof rate === 'number' && Number.isFinite(rate) && rate >= 0 && rate <= 1)
   return rates.length ? Math.round(rates.reduce((sum, rate) => sum + rate, 0) / rates.length * 100) : null
 }
-function sufficientRecordedEvidence(row) {
+// Une ligne publiée doit reposer sur des données réelles suffisantes
+// (≥ 4 matchs enregistrés par équipe) — sinon elle est retenue à l'export.
+// Les lignes sans aucun compteur (ancien schéma) restent tolérées.
+export function sufficientRecordedEvidence(row) {
   if (!('matchCountHome' in row) && !('matchCountAway' in row)) return true
   return Number.isFinite(row.matchCountHome) && row.matchCountHome >= 4 &&
     Number.isFinite(row.matchCountAway) && row.matchCountAway >= 4

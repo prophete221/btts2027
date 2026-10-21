@@ -2,6 +2,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { sufficientRecordedEvidence } from './public-predictions.mjs'
 
 // Verification may change these result fields; all prediction/model/narrative data is immutable.
 const RESULT_FIELDS = ['status', 'finalScore', 'verifiedAt', 'isWon', 'verifiedSource', 'verificationSource']
@@ -64,6 +65,24 @@ function freezeCurrentRows(rows, firstPublications, updates) {
     const key = predictionKey(row)
     const first = key ? firstPublications.get(key) : null
     if (!first) return structuredClone(row)
+    // Politique « withhold insufficient evidence » : une publication héritée
+    // dont les compteurs de preuve sont insuffisants (< 4 matchs réels par
+    // équipe — ancien régime à moyennes de ligue fabriquées) n'est PAS
+    // verrouillée lorsque la republication courante repose sur des données
+    // suffisantes (ex. résolution domestique des coupes). Sans cette
+    // exception, le gel rétablirait mc=2 et le filtre d'export éliminerait
+    // le match du site (régression du 21/10 : 6 matchs UCL masqués).
+    // Les champs de résultat restent maîtrisés par `updates` dans les deux cas.
+    if (!sufficientRecordedEvidence(first) && sufficientRecordedEvidence(row)) {
+      const refreshed = structuredClone(row)
+      const allowed = updates.get(key)
+      if (allowed) {
+        for (const field of RESULT_FIELDS) {
+          if (Object.hasOwn(allowed, field)) refreshed[field] = allowed[field]
+        }
+      }
+      return refreshed
+    }
     const frozen = structuredClone(first)
     const allowed = updates.get(key)
     if (allowed) {
