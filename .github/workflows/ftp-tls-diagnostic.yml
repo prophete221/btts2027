@@ -1,0 +1,25 @@
+name: Read-only FTPS TLS diagnostic
+
+on:
+  push:
+    branches:
+      - fix/prediction-integrity-match-pages
+    paths:
+      - .github/workflows/ftp-tls-diagnostic.yml
+      - scripts/check-ftp-tls.py
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  tls-without-login:
+    if: github.ref == 'refs/heads/fix/prediction-integrity-match-pages'
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify FTPS certificate without FTP login or transfer
+        env:
+          FTP_SERVER: ${{ secrets.FTP_SERVER }}
+        run: python3 scripts/check-ftp-tls.py
