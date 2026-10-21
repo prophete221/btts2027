@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-21T13:53:49.260Z",
+  "updatedAt": "2026-10-21T15:23:14.151Z",
   "sourceVersion": "open-news-v2-no-rss",
   "globalNews": [],
   "teams": {
@@ -40,7 +40,7 @@
     },
     "Austria Vienna": {
       "name": "Austria Vienna",
-      "checkedAt": "2026-10-21T13:53:20.376Z",
+      "checkedAt": "2026-10-21T15:23:01.821Z",
       "newsStatus": "ok",
       "news": [
         {
@@ -100,7 +100,7 @@
     },
     "D.C. United": {
       "name": "D.C. United",
-      "checkedAt": "2026-10-21T13:53:21.554Z",
+      "checkedAt": "2026-10-21T15:23:03.149Z",
       "newsStatus": "ok",
       "news": [
         {
@@ -137,7 +137,7 @@
     },
     "FC Cincinnati": {
       "name": "FC Cincinnati",
-      "checkedAt": "2026-10-21T13:53:22.142Z",
+      "checkedAt": "2026-10-21T15:23:03.705Z",
       "newsStatus": "ok",
       "news": [
         {
