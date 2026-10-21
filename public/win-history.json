@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "generatedAt": "2026-10-21T17:27:17.325Z",
+  "generatedAt": "2026-10-21T18:54:09.019Z",
   "pendingPolicy": {
     "graceHours": 48,
     "rule": "Sans statut vérifié, un match futur ou récent reste « en attente » pendant exactement 48 h après son coup d'envoi.",
@@ -14,13 +14,13 @@
     "insufficientVolume": false
   },
   "stats": {
-    "total": 135,
-    "won": 90,
+    "total": 137,
+    "won": 92,
     "lost": 45,
-    "pending": 57,
+    "pending": 56,
     "unverifiable": 633,
-    "archivedTotal": 825,
-    "rate": 66.7,
+    "archivedTotal": 826,
+    "rate": 67.2,
     "gold": {
       "total": 114,
       "won": 76,
@@ -28,17 +28,17 @@
       "rate": 66.7
     },
     "standard": {
-      "total": 21,
-      "won": 14,
+      "total": 23,
+      "won": 16,
       "lost": 7,
-      "rate": 66.7
+      "rate": 69.6
     },
     "byType": {
       "btts": {
-        "total": 133,
-        "won": 89,
+        "total": 135,
+        "won": 91,
         "lost": 44,
-        "rate": 66.9
+        "rate": 67.4
       },
       "over25": {
         "total": 2,
@@ -48,13 +48,6 @@
       }
     },
     "trend14": [
-      {
-        "date": "2026-09-12",
-        "total": 8,
-        "won": 6,
-        "lost": 2,
-        "rate": 75
-      },
       {
         "date": "2026-09-13",
         "total": 1,
@@ -145,6 +138,13 @@
         "won": 4,
         "lost": 4,
         "rate": 50
+      },
+      {
+        "date": "2026-10-21",
+        "total": 2,
+        "won": 2,
+        "lost": 0,
+        "rate": 100
       }
     ],
     "period": {
@@ -154,6 +154,30 @@
     }
   },
   "history": [
+    {
+      "date": "2026-10-21",
+      "match": "Lille vs Galatasaray",
+      "league": "UEFA Champions League",
+      "market": "btts",
+      "tier": "STANDARD",
+      "proba": 0.6265,
+      "status": "WON",
+      "finalScore": "2-4",
+      "verifiedAt": "2026-10-21T18:44:23.338Z",
+      "source": "ESPN public"
+    },
+    {
+      "date": "2026-10-21",
+      "match": "Como vs Manchester United",
+      "league": "UEFA Champions League",
+      "market": "btts",
+      "tier": "STANDARD",
+      "proba": 0.6265,
+      "status": "WON",
+      "finalScore": "4-1",
+      "verifiedAt": "2026-10-21T18:44:23.338Z",
+      "source": "ESPN public"
+    },
     {
       "date": "2026-10-17",
       "match": "Houston Dynamo FC vs FC Dallas",

@@ -2026,6 +2026,129 @@
       "over25Prob": 0.6761,
       "homeLambda": 2.82,
       "awayLambda": 0.67
+    },
+    {
+      "id": "brest-vs-nice-2026-10-23",
+      "match": "Brest vs Nice",
+      "home": "Brest",
+      "away": "Nice",
+      "league": "Ligue 1",
+      "date": "2026-10-23",
+      "type": "BTTS",
+      "prediction": "Oui",
+      "proba": 0.5097,
+      "bttsProbDisplay": "50.97%",
+      "over25ProbDisplay": "60.96%",
+      "confidence": 51,
+      "time": "18:45",
+      "matchSemantic": "brest-vs-nice-2026-10-23",
+      "source": "poisson-v92-real-data",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/6997.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/2502.png",
+      "tier": "SILVER",
+      "reliabilityScore": 69.55,
+      "dataQuality": "MEDIUM",
+      "dataSource": "ESPN_TEAM_SCHEDULE",
+      "matchCountHome": 7,
+      "matchCountAway": 7,
+      "h2hAvailable": false,
+      "xgHome": 2.32,
+      "xgAway": 0.83,
+      "xgTotal": 3.15,
+      "formBTTS": 80,
+      "analysis": "Brest : forme N-V-D-D-V (2V 1N 2D, 9 buts marqués / 6 encaissés sur 5) · Nice : forme D-V-V-D-N (2V 1N 2D, 6 buts marqués / 6 encaissés sur 5). Classement : Brest 10e (9 pts), Nice 13e (8 pts). Modèle Poisson : xG cumulé 3.15, BTTS 51.0%, Over 2.5 61.0%. Cotes DraftKings — 1: 2.25 / N: 3.4 / 2: 3.25 · Over 2.5: 1.71. Fiabilité 69.55%.",
+      "analysisData": {
+        "bttsProb": 0.5097,
+        "over25Prob": 0.6096,
+        "homeLambda": 2.32,
+        "awayLambda": 0.83,
+        "xgTotal": 3.15
+      },
+      "estimatedCote": 1.96,
+      "estimatedCoteOver": 1.64,
+      "odds": {
+        "provider": "DraftKings",
+        "home": 2.25,
+        "draw": 3.4,
+        "away": 3.25,
+        "over25": 1.71,
+        "under25": 2.1
+      },
+      "oddsSource": "DraftKings",
+      "estimatedCoteBTTS": 1.96,
+      "formHome": {
+        "last5String": "N-V-D-D-V",
+        "wins": 2,
+        "draws": 1,
+        "losses": 2,
+        "goalsFor": 9,
+        "goalsAgainst": 6,
+        "bttsRate": 0.8,
+        "over25Rate": 0.6,
+        "cleanSheets": 0,
+        "failedToScore": 1,
+        "count": 5
+      },
+      "formAway": {
+        "last5String": "D-V-V-D-N",
+        "wins": 2,
+        "draws": 1,
+        "losses": 2,
+        "goalsFor": 6,
+        "goalsAgainst": 6,
+        "bttsRate": 0.8,
+        "over25Rate": 0.6,
+        "cleanSheets": 0,
+        "failedToScore": 1,
+        "count": 5
+      },
+      "standingsHome": {
+        "rank": 10,
+        "points": 9,
+        "played": 7,
+        "gf": 13,
+        "ga": 10
+      },
+      "standingsAway": {
+        "rank": 13,
+        "points": 8,
+        "played": 7,
+        "gf": 6,
+        "ga": 9
+      },
+      "predictions": [
+        {
+          "type": "BTTS",
+          "prediction": "Oui",
+          "confidence": 51,
+          "bttsProb": 0.5097,
+          "homeLambda": 2.32,
+          "awayLambda": 0.83
+        },
+        {
+          "type": "Over 2.5",
+          "prediction": "Oui",
+          "confidence": 61,
+          "over25Prob": 0.6096,
+          "homeLambda": 2.32,
+          "awayLambda": 0.83
+        }
+      ],
+      "bttsProb": 0.5097,
+      "over25Prob": 0.6096,
+      "homeLambda": 2.32,
+      "awayLambda": 0.83,
+      "ai_key_fact": "Brest et Nice affichent tous deux un taux de BTTS de 80 % sur leurs 5 derniers matchs.",
+      "ai_analysis": "Les projections du modèle indiquent un xG de 2.32 pour Brest et de 0.83 pour Nice, avec une probabilité BTTS de 51.0 % et un Over 2.5 fixé à 61.0 %. Au classement de Ligue 1, Brest se positionne au 10e rang avec 13 buts pour et 10 contre, tandis que Nice est 13e avec 8 points en 7 matchs. Les cotes du marché proposent Brest à 2.25 et Nice à 3.25, l'Over 2.5 affichant une cote de 1.71. Le modèle présente une fiabilité de 69.55 %.",
+      "ai_form_summary": "Brest totalise 2 victoires, 1 nul et 2 défaites sur ses 5 dernières sorties avec 9 buts marqués. Nice présente un bilan similaire de 2 victoires, 1 nul et 2 défaites, mais avec 6 buts inscrits et 6 encaissés.",
+      "ai_key_fact_en": "Brest and Nice both record an 80% BTTS rate over their last 5 matches.",
+      "ai_analysis_en": "Model projections indicate an xG of 2.32 for Brest and 0.83 for Nice, with a BTTS probability of 51.0% and an Over 2.5 set at 61.0%. In the Ligue 1 standings, Brest is positioned 10th with 13 goals for and 10 against, while Nice is 13th with 8 points in 7 matches. Market odds price Brest at 2.25 and Nice at 3.25, with the Over 2.5 priced at 1.71. The model shows a reliability of 69.55%.",
+      "ai_form_summary_en": "Brest totals 2 wins, 1 draw, and 2 defeats in its last 5 outings with 9 goals scored. Nice presents a similar record of 2 wins, 1 draw, and 2 defeats, but with 6 goals scored and 6 conceded.",
+      "ai_source": "gemini-v2",
+      "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
+      "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
+      "ai_odds_insight": "Le marché (DraftKings) cote 1: 2.25, nul: 3.4, 2: 3.25, Over 2.5: 1.71.",
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.25, draw: 3.4, 2: 3.25, Over 2.5: 1.71."
     }
   ],
   "vipPreview": [
@@ -2181,6 +2304,15 @@
       "league": "Bundesliga",
       "date": "2026-10-23",
       "time": "18:30"
+    },
+    {
+      "vip": true,
+      "id": "atlticom-vs-deportiv-2026-10-24",
+      "home": "Atlético Madrid",
+      "away": "Deportivo",
+      "league": "LaLiga",
+      "date": "2026-10-24",
+      "time": "19:00"
     }
   ],
   "stats": {
@@ -2302,7 +2434,8 @@
       "bttsProb": 0.813,
       "over25Prob": 0.859,
       "homeLambda": 2.82,
-      "awayLambda": 2
+      "awayLambda": 2,
+      "status": "PENDING"
     },
     {
       "id": "levante-vs-athletic-2026-10-21",
@@ -2414,7 +2547,8 @@
       "bttsProb": 0.7423,
       "over25Prob": 0.7594,
       "homeLambda": 2.15,
-      "awayLambda": 1.83
+      "awayLambda": 1.83,
+      "status": "PENDING"
     },
     {
       "id": "como-vs-manchest-2026-10-21",
@@ -2526,7 +2660,10 @@
       "bttsProb": 0.6265,
       "over25Prob": 0.6201,
       "homeLambda": 1.83,
-      "awayLambda": 1.37
+      "awayLambda": 1.37,
+      "finalScore": "4-1",
+      "status": "WON",
+      "verifiedAt": "2026-10-21T18:44:23.338Z"
     },
     {
       "id": "lille-vs-galatasa-2026-10-21",
@@ -2638,7 +2775,10 @@
       "bttsProb": 0.6265,
       "over25Prob": 0.6201,
       "homeLambda": 1.83,
-      "awayLambda": 1.37
+      "awayLambda": 1.37,
+      "finalScore": "2-4",
+      "status": "WON",
+      "verifiedAt": "2026-10-21T18:44:23.338Z"
     },
     {
       "id": "astonvil-vs-vikingfk-2026-10-21",
@@ -2750,7 +2890,8 @@
       "bttsProb": 0.6265,
       "over25Prob": 0.6201,
       "homeLambda": 1.83,
-      "awayLambda": 1.37
+      "awayLambda": 1.37,
+      "status": "PENDING"
     },
     {
       "id": "bayernmu-vs-arsenal-2026-10-21",
@@ -2862,7 +3003,8 @@
       "bttsProb": 0.6265,
       "over25Prob": 0.6201,
       "homeLambda": 1.83,
-      "awayLambda": 1.37
+      "awayLambda": 1.37,
+      "status": "PENDING"
     },
     {
       "id": "clubbrug-vs-lens-2026-10-21",
@@ -2974,7 +3116,8 @@
       "bttsProb": 0.6265,
       "over25Prob": 0.6201,
       "homeLambda": 1.83,
-      "awayLambda": 1.37
+      "awayLambda": 1.37,
+      "status": "PENDING"
     },
     {
       "id": "internaz-vs-shakhtar-2026-10-21",
@@ -3086,7 +3229,8 @@
       "bttsProb": 0.6265,
       "over25Prob": 0.6201,
       "homeLambda": 1.83,
-      "awayLambda": 1.37
+      "awayLambda": 1.37,
+      "status": "PENDING"
     },
     {
       "id": "realbeti-vs-feyenoor-2026-10-21",
@@ -3198,7 +3342,8 @@
       "bttsProb": 0.6265,
       "over25Prob": 0.6201,
       "homeLambda": 1.83,
-      "awayLambda": 1.37
+      "awayLambda": 1.37,
+      "status": "PENDING"
     },
     {
       "id": "realmadr-vs-rbleipzi-2026-10-21",
@@ -3310,7 +3455,8 @@
       "bttsProb": 0.6265,
       "over25Prob": 0.6201,
       "homeLambda": 1.83,
-      "awayLambda": 1.37
+      "awayLambda": 1.37,
+      "status": "PENDING"
     },
     {
       "id": "sporting-vs-lasklinz-2026-10-21",
@@ -3422,7 +3568,8 @@
       "bttsProb": 0.6265,
       "over25Prob": 0.6201,
       "homeLambda": 1.83,
-      "awayLambda": 1.37
+      "awayLambda": 1.37,
+      "status": "PENDING"
     },
     {
       "id": "scrheind-vs-austriav-2026-10-23",
@@ -3534,7 +3681,8 @@
       "bttsProb": 0.697,
       "over25Prob": 0.727,
       "homeLambda": 2.27,
-      "awayLambda": 1.5
+      "awayLambda": 1.5,
+      "status": "PENDING"
     },
     {
       "id": "boltonwa-vs-middlesb-2026-10-23",
@@ -3596,7 +3744,8 @@
       "bttsProb": 0.6252,
       "over25Prob": 0.6096,
       "homeLambda": 1.44,
-      "awayLambda": 1.71
+      "awayLambda": 1.71,
+      "status": "PENDING"
     },
     {
       "id": "svdarmst-vs-stpauli-2026-10-23",
@@ -3658,7 +3807,8 @@
       "bttsProb": 0.6205,
       "over25Prob": 0.6096,
       "homeLambda": 1.77,
-      "awayLambda": 1.38
+      "awayLambda": 1.38,
+      "status": "PENDING"
     },
     {
       "id": "vflbochu-vs-vflwolfs-2026-10-23",
@@ -3720,7 +3870,8 @@
       "bttsProb": 0.5646,
       "over25Prob": 0.554,
       "homeLambda": 1.15,
-      "awayLambda": 1.75
+      "awayLambda": 1.75,
+      "status": "PENDING"
     },
     {
       "id": "torino-vs-monza-2026-10-23",
@@ -3843,7 +3994,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 2.05, nul: 3.35, 2: 3.35, Over 2.5: 1.91.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.05, draw: 3.35, 2: 3.35, Over 2.5: 1.91."
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.05, draw: 3.35, 2: 3.35, Over 2.5: 1.91.",
+      "status": "PENDING"
     },
     {
       "id": "ipswicht-vs-nottingh-2026-10-23",
@@ -3905,7 +4057,8 @@
       "bttsProb": 0.6506,
       "over25Prob": 0.6439,
       "homeLambda": 1.82,
-      "awayLambda": 1.5
+      "awayLambda": 1.5,
+      "status": "PENDING"
     },
     {
       "id": "alavs-vs-mlaga-2026-10-23",
@@ -4028,7 +4181,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 1.77, nul: 3.7, 2: 4.8, Over 2.5: 2.05.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 1.77, draw: 3.7, 2: 4.8, Over 2.5: 2.05."
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 1.77, draw: 3.7, 2: 4.8, Over 2.5: 2.05.",
+      "status": "PENDING"
     },
     {
       "id": "kvkortri-vs-kvmechel-2026-10-23",
@@ -4090,7 +4244,8 @@
       "bttsProb": 0.4876,
       "over25Prob": 0.4303,
       "homeLambda": 1.15,
-      "awayLambda": 1.25
+      "awayLambda": 1.25,
+      "status": "PENDING"
     },
     {
       "id": "goaheade-vs-telstar-2026-10-23",
@@ -4152,7 +4307,8 @@
       "bttsProb": 0.4568,
       "over25Prob": 0.4519,
       "homeLambda": 1.65,
-      "awayLambda": 0.83
+      "awayLambda": 0.83,
+      "status": "PENDING"
     },
     {
       "id": "vfbstutt-vs-borussia-2026-10-23",
@@ -4214,7 +4370,132 @@
       "bttsProb": 0.4575,
       "over25Prob": 0.6761,
       "homeLambda": 2.82,
-      "awayLambda": 0.67
+      "awayLambda": 0.67,
+      "status": "PENDING"
+    },
+    {
+      "id": "brest-vs-nice-2026-10-23",
+      "match": "Brest vs Nice",
+      "home": "Brest",
+      "away": "Nice",
+      "league": "Ligue 1",
+      "date": "2026-10-23",
+      "type": "BTTS",
+      "prediction": "Oui",
+      "proba": 0.5097,
+      "bttsProbDisplay": "50.97%",
+      "over25ProbDisplay": "60.96%",
+      "confidence": 51,
+      "time": "18:45",
+      "matchSemantic": "brest-vs-nice-2026-10-23",
+      "source": "poisson-v92-real-data",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/6997.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/2502.png",
+      "tier": "SILVER",
+      "reliabilityScore": 69.55,
+      "dataQuality": "MEDIUM",
+      "dataSource": "ESPN_TEAM_SCHEDULE",
+      "matchCountHome": 7,
+      "matchCountAway": 7,
+      "h2hAvailable": false,
+      "xgHome": 2.32,
+      "xgAway": 0.83,
+      "xgTotal": 3.15,
+      "formBTTS": 80,
+      "analysis": "Brest : forme N-V-D-D-V (2V 1N 2D, 9 buts marqués / 6 encaissés sur 5) · Nice : forme D-V-V-D-N (2V 1N 2D, 6 buts marqués / 6 encaissés sur 5). Classement : Brest 10e (9 pts), Nice 13e (8 pts). Modèle Poisson : xG cumulé 3.15, BTTS 51.0%, Over 2.5 61.0%. Cotes DraftKings — 1: 2.25 / N: 3.4 / 2: 3.25 · Over 2.5: 1.71. Fiabilité 69.55%.",
+      "analysisData": {
+        "bttsProb": 0.5097,
+        "over25Prob": 0.6096,
+        "homeLambda": 2.32,
+        "awayLambda": 0.83,
+        "xgTotal": 3.15
+      },
+      "estimatedCote": 1.96,
+      "estimatedCoteOver": 1.64,
+      "odds": {
+        "provider": "DraftKings",
+        "home": 2.25,
+        "draw": 3.4,
+        "away": 3.25,
+        "over25": 1.71,
+        "under25": 2.1
+      },
+      "oddsSource": "DraftKings",
+      "estimatedCoteBTTS": 1.96,
+      "formHome": {
+        "last5String": "N-V-D-D-V",
+        "wins": 2,
+        "draws": 1,
+        "losses": 2,
+        "goalsFor": 9,
+        "goalsAgainst": 6,
+        "bttsRate": 0.8,
+        "over25Rate": 0.6,
+        "cleanSheets": 0,
+        "failedToScore": 1,
+        "count": 5
+      },
+      "formAway": {
+        "last5String": "D-V-V-D-N",
+        "wins": 2,
+        "draws": 1,
+        "losses": 2,
+        "goalsFor": 6,
+        "goalsAgainst": 6,
+        "bttsRate": 0.8,
+        "over25Rate": 0.6,
+        "cleanSheets": 0,
+        "failedToScore": 1,
+        "count": 5
+      },
+      "standingsHome": {
+        "rank": 10,
+        "points": 9,
+        "played": 7,
+        "gf": 13,
+        "ga": 10
+      },
+      "standingsAway": {
+        "rank": 13,
+        "points": 8,
+        "played": 7,
+        "gf": 6,
+        "ga": 9
+      },
+      "predictions": [
+        {
+          "type": "BTTS",
+          "prediction": "Oui",
+          "confidence": 51,
+          "bttsProb": 0.5097,
+          "homeLambda": 2.32,
+          "awayLambda": 0.83
+        },
+        {
+          "type": "Over 2.5",
+          "prediction": "Oui",
+          "confidence": 61,
+          "over25Prob": 0.6096,
+          "homeLambda": 2.32,
+          "awayLambda": 0.83
+        }
+      ],
+      "bttsProb": 0.5097,
+      "over25Prob": 0.6096,
+      "homeLambda": 2.32,
+      "awayLambda": 0.83,
+      "ai_key_fact": "Brest et Nice affichent tous deux un taux de BTTS de 80 % sur leurs 5 derniers matchs.",
+      "ai_analysis": "Les projections du modèle indiquent un xG de 2.32 pour Brest et de 0.83 pour Nice, avec une probabilité BTTS de 51.0 % et un Over 2.5 fixé à 61.0 %. Au classement de Ligue 1, Brest se positionne au 10e rang avec 13 buts pour et 10 contre, tandis que Nice est 13e avec 8 points en 7 matchs. Les cotes du marché proposent Brest à 2.25 et Nice à 3.25, l'Over 2.5 affichant une cote de 1.71. Le modèle présente une fiabilité de 69.55 %.",
+      "ai_form_summary": "Brest totalise 2 victoires, 1 nul et 2 défaites sur ses 5 dernières sorties avec 9 buts marqués. Nice présente un bilan similaire de 2 victoires, 1 nul et 2 défaites, mais avec 6 buts inscrits et 6 encaissés.",
+      "ai_key_fact_en": "Brest and Nice both record an 80% BTTS rate over their last 5 matches.",
+      "ai_analysis_en": "Model projections indicate an xG of 2.32 for Brest and 0.83 for Nice, with a BTTS probability of 51.0% and an Over 2.5 set at 61.0%. In the Ligue 1 standings, Brest is positioned 10th with 13 goals for and 10 against, while Nice is 13th with 8 points in 7 matches. Market odds price Brest at 2.25 and Nice at 3.25, with the Over 2.5 priced at 1.71. The model shows a reliability of 69.55%.",
+      "ai_form_summary_en": "Brest totals 2 wins, 1 draw, and 2 defeats in its last 5 outings with 9 goals scored. Nice presents a similar record of 2 wins, 1 draw, and 2 defeats, but with 6 goals scored and 6 conceded.",
+      "ai_source": "gemini-v2",
+      "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
+      "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
+      "ai_odds_insight": "Le marché (DraftKings) cote 1: 2.25, nul: 3.4, 2: 3.25, Over 2.5: 1.71.",
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.25, draw: 3.4, 2: 3.25, Over 2.5: 1.71.",
+      "status": "PENDING"
     }
   ]
 }
