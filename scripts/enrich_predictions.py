@@ -184,6 +184,7 @@ Analyse les {len(all_matches)} matchs suivants :
 - ai_absences : 1 à 2 phrases sur les DISPONIBILITÉS/ABSENTS. Aucune donnée d'effectif ne t'est fournie : écris alors exactement une phrase du type « Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi. » Tu peux ajouter une seconde phrase de contexte (rotation, enjeu, calendrier) si les données fournies la justifient. N'invente JAMAIS de nom de blessé ou de suspendu.
 - ai_odds_insight : 1 à 2 phrases de lecture des cotes réelles fournies (favori du marché, cote Over 2.5, value éventuelle vs le modèle). Si aucune cote n'est fournie : « Cotes marché non disponibles — pronostic basé sur le modèle statistique seul. »
 - ai_analysis : L'ANALYSE SOLIDE, 4 à 6 phrases, qui résume tout ce qui concerne les deux équipes : forme des deux camps, classement, confrontation des styles (attaque/défense), lecture du marché si cotes fournies, puis la conclusion du modèle (BTTS / Over 2.5 / tendance). Français fluide et professionnel, sans listes, sans markdown.
+- VERSIONS ANGLAISES — ai_key_fact_en, ai_form_summary_en, ai_absences_en, ai_odds_insight_en, ai_analysis_en : la TRADUCTION ANGLAISE fidèle et professionnelle de chaque champ correspondant (même contenu, mêmes chiffres, mêmes réserves d'incertitude). Ne saute jamais ces champs, même si un champ source est une phrase standard.
 
 # FORMAT FINAL STRICT
 Retourne uniquement un tableau JSON valide, sans Markdown et sans texte avant ou après :
@@ -204,13 +205,18 @@ Retourne uniquement un tableau JSON valide, sans Markdown et sans texte avant ou
     "ai_form_summary": "2 à 3 phrases sur la forme des deux équipes",
     "ai_absences": "1 à 2 phrases honnêtes sur les disponibilités",
     "ai_odds_insight": "1 à 2 phrases sur les cotes réelles",
-    "ai_analysis": "4 à 6 phrases couvrant les deux équipes, le marché et la conclusion"
+    "ai_analysis": "4 à 6 phrases couvrant les deux équipes, le marché et la conclusion",
+    "ai_key_fact_en": "English translation of ai_key_fact",
+    "ai_form_summary_en": "English translation of ai_form_summary",
+    "ai_absences_en": "English translation of ai_absences",
+    "ai_odds_insight_en": "English translation of ai_odds_insight",
+    "ai_analysis_en": "English translation of ai_analysis"
   }},
   ...
 ]
 
 # RÈGLES DE SORTIE
-- Écris en français.
+- Écris les champs principaux en français et les champs suffixés « _en » en anglais professionnel.
 - Probabilités en pourcentage avec le signe %. Aucune précision non justifiée.
 - « main_prediction » prudente, ne jamais promettre un résultat.
 - N'utilise jamais « sure bet », « gain garanti » ou « 100% sûr ».
@@ -248,28 +254,45 @@ def local_fallback(m) -> dict:
     # — Forme —
     shape = {"W": "V", "D": "N", "L": "D"}
     phrases = []
+    phrases_en = []
     if form_home.get("last5String"):
         phrases.append(
             f"{home} aborde le match avec {form_home.get('wins', 0)} victoire(s), "
             f"{form_home.get('draws', 0)} nul(s) et {form_home.get('losses', 0)} défaite(s) sur ses 5 dernières sorties "
             f"({form_home.get('goalsFor', 0)} buts marqués, {form_home.get('goalsAgainst', 0)} encaissés)."
         )
+        phrases_en.append(
+            f"{home} come into this match with {form_home.get('wins', 0)} win(s), "
+            f"{form_home.get('draws', 0)} draw(s) and {form_home.get('losses', 0)} defeat(s) in their last 5 outings "
+            f"({form_home.get('goalsFor', 0)} goals scored, {form_home.get('goalsAgainst', 0)} conceded)."
+        )
     else:
         phrases.append(f"Les données de forme récente de {home} ne sont pas disponibles.")
+        phrases_en.append(f"Recent form data for {home} is not available.")
     if form_away.get("last5String"):
         phrases.append(
             f"{away} affiche {form_away.get('wins', 0)} victoire(s), {form_away.get('draws', 0)} nul(s) et "
             f"{form_away.get('losses', 0)} défaite(s) sur 5, pour {form_away.get('goalsFor', 0)} buts marqués "
             f"et {form_away.get('goalsAgainst', 0)} encaissés."
         )
+        phrases_en.append(
+            f"{away} record {form_away.get('wins', 0)} win(s), {form_away.get('draws', 0)} draw(s) and "
+            f"{form_away.get('losses', 0)} defeat(s) in 5, with {form_away.get('goalsFor', 0)} goals scored "
+            f"and {form_away.get('goalsAgainst', 0)} conceded."
+        )
     else:
         phrases.append(f"Les données de forme récente de {away} ne sont pas disponibles.")
+        phrases_en.append(f"Recent form data for {away} is not available.")
 
     # — Classement —
     if st_home.get("rank") and st_away.get("rank"):
         phrases.append(
             f"Au classement, {home} est {st_home['rank']}e avec {st_home.get('points', '?')} points, "
             f"face à {away}, {st_away['rank']}e avec {st_away.get('points', '?')} points."
+        )
+        phrases_en.append(
+            f"In the standings, {home} sit {st_home['rank']}th with {st_home.get('points', '?')} points, "
+            f"against {away}, {st_away['rank']}th with {st_away.get('points', '?')} points."
         )
 
     # — Cotes —
@@ -280,6 +303,11 @@ def local_fallback(m) -> dict:
             + (f", Over 2.5: {odds['over25']}" if odds.get("over25") else "")
             + f" — cotes {odds.get('provider', 'bookmaker')})."
         )
+        phrases_en.append(
+            f"The market makes {fav} the favourite (1: {odds.get('home')}, draw: {odds.get('draw')}, 2: {odds.get('away')}"
+            + (f", Over 2.5: {odds['over25']}" if odds.get("over25") else "")
+            + f" — {odds.get('provider', 'bookmaker')} odds)."
+        )
 
     # — Conclusion modèle —
     btts_pct = round(btts * 100, 1)
@@ -288,25 +316,39 @@ def local_fallback(m) -> dict:
         f"Le modèle Poisson BTTSPredict projette {xgh:.2f} buts attendus pour {home} et {xga:.2f} pour {away}, "
         f"soit BTTS à {btts_pct}% et Over 2.5 à {over_pct}%."
     )
+    phrases_en.append(
+        f"The BTTSPredict Poisson model projects {xgh:.2f} expected goals for {home} and {xga:.2f} for {away}, "
+        f"i.e. BTTS at {btts_pct}% and Over 2.5 at {over_pct}%."
+    )
     if btts >= 0.55 and over >= 0.55:
         concl = "Le scénario d'un match ouvert avec des buts des deux côtés ressort comme la tendance principale."
+        concl_en = "An open game with goals at both ends stands out as the main trend."
     elif btts >= 0.55:
         concl = "La tendance principale est un match avec des buts des deux côtés, sans garantie sur le total."
+        concl_en = "The main trend is a match with goals at both ends, with no guarantee on the total."
     elif over >= 0.55:
         concl = "La tendance principale est un total de buts élevé, avec une réserve sur la participation des deux équipes."
+        concl_en = "The main trend is a high total of goals, with a caveat on both teams scoring."
     else:
         concl = "Le modèle reste réservé : les scénarios de buts sont incertains, prudence recommandée."
+        concl_en = "The model remains cautious: goal scenarios are uncertain, prudence is recommended."
     phrases.append(concl)
+    phrases_en.append(concl_en)
 
     analysis = " ".join(phrases)
+    analysis_en = " ".join(phrases_en)
 
     # — Form summary —
     form_bits = []
+    form_bits_en = []
     if form_home.get("last5String"):
         form_bits.append(f"{home} : série {form_home['last5String']}, {form_home.get('goalsFor', 0)} buts marqués / {form_home.get('goalsAgainst', 0)} encaissés sur 5")
+        form_bits_en.append(f"{home}: streak {form_home['last5String']}, {form_home.get('goalsFor', 0)} goals scored / {form_home.get('goalsAgainst', 0)} conceded in 5")
     if form_away.get("last5String"):
         form_bits.append(f"{away} : série {form_away['last5String']}, {form_away.get('goalsFor', 0)} buts marqués / {form_away.get('goalsAgainst', 0)} encaissés sur 5")
+        form_bits_en.append(f"{away}: streak {form_away['last5String']}, {form_away.get('goalsFor', 0)} goals scored / {form_away.get('goalsAgainst', 0)} conceded in 5")
     form_summary = ". ".join(form_bits) + "." if form_bits else "Forme récente indisponible pour les deux équipes."
+    form_summary_en = ". ".join(form_bits_en) + "." if form_bits_en else "Recent form unavailable for both teams."
 
     # — Score exact le plus probable (Poisson simple) —
     def poisson_p(lam, k):
@@ -345,15 +387,29 @@ def local_fallback(m) -> dict:
             if (form_home.get("last5String") and form_away.get("last5String"))
             else f"Modèle Poisson : BTTS {btts_pct}%, Over 2.5 {over_pct}%"
         ),
+        "ai_key_fact_en": (
+            f"{home} {form_home.get('last5String')} vs {away} {form_away.get('last5String')} — BTTS {btts_pct}%, Over 2.5 {over_pct}%"
+            if (form_home.get("last5String") and form_away.get("last5String"))
+            else f"Poisson model: BTTS {btts_pct}%, Over 2.5 {over_pct}%"
+        ),
         "ai_form_summary": form_summary,
+        "ai_form_summary_en": form_summary_en,
         "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
+        "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
         "ai_odds_insight": (
             f"Le marché ({odds.get('provider', 'bookmaker')}) cote 1: {odds.get('home')}, nul: {odds.get('draw')}, 2: {odds.get('away')}"
             + (f", Over 2.5: {odds['over25']}." if odds.get("over25") else ".")
             if odds.get("home")
             else "Cotes marché non disponibles — pronostic basé sur le modèle statistique seul."
         ),
+        "ai_odds_insight_en": (
+            f"The market ({odds.get('provider', 'bookmaker')}) prices 1: {odds.get('home')}, draw: {odds.get('draw')}, 2: {odds.get('away')}"
+            + (f", Over 2.5: {odds['over25']}." if odds.get("over25") else ".")
+            if odds.get("home")
+            else "Market odds unavailable — prediction based on the statistical model only."
+        ),
         "ai_analysis": analysis,
+        "ai_analysis_en": analysis_en,
         "_fallback": True,
     }
 
@@ -451,6 +507,12 @@ def apply_enrichment(match: dict, item: dict) -> bool:
     ai_form_summary = (item.get("ai_form_summary") or "").strip()
     ai_absences = (item.get("ai_absences") or "").strip()
     ai_odds_insight = (item.get("ai_odds_insight") or "").strip()
+    # Traductions anglaises (pages /en) — optionnelles, stockées si présentes
+    ai_key_fact_en = (item.get("ai_key_fact_en") or "").strip()
+    ai_analysis_en = (item.get("ai_analysis_en") or "").strip()
+    ai_form_summary_en = (item.get("ai_form_summary_en") or "").strip()
+    ai_absences_en = (item.get("ai_absences_en") or "").strip()
+    ai_odds_insight_en = (item.get("ai_odds_insight_en") or "").strip()
     winner = (item.get("winner") or "").strip()
     winner_prob = (item.get("winner_prob") or "").strip()
     team_over15 = (item.get("team_over15") or "").strip()
@@ -482,6 +544,16 @@ def apply_enrichment(match: dict, item: dict) -> bool:
         match["ai_absences"] = ai_absences
     if ai_odds_insight:
         match["ai_odds_insight"] = ai_odds_insight
+    if ai_key_fact_en:
+        match["ai_key_fact_en"] = ai_key_fact_en
+    if ai_analysis_en:
+        match["ai_analysis_en"] = ai_analysis_en
+    if ai_form_summary_en:
+        match["ai_form_summary_en"] = ai_form_summary_en
+    if ai_absences_en:
+        match["ai_absences_en"] = ai_absences_en
+    if ai_odds_insight_en:
+        match["ai_odds_insight_en"] = ai_odds_insight_en
     if winner:
         match["ai_winner"] = winner
     if validate_prob(winner_prob):

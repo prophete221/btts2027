@@ -139,9 +139,9 @@ export default function Navbar() {
                   backgroundColor: 'rgba(47, 125, 255, 0.10)',
                   color: copied ? '#34D399' : '#4A90FF',
                 }}
-                aria-label={`Copier le code promo ${navPromoCode}`}
+                aria-label={lang === 'en' ? `Copy promo code ${navPromoCode}` : lang === 'ar' ? `انسخ الرمز الترويجي ${navPromoCode}` : `Copier le code promo ${navPromoCode}`}
               >
-                {copied ? '✓ Copié' : navPromoCode}
+                {copied ? (lang === 'en' ? '✓ Copied' : lang === 'ar' ? '✓ تم النسخ' : '✓ Copié') : navPromoCode}
               </button>
 
               {/* CTA principal — desktop */}
@@ -270,7 +270,7 @@ export default function Navbar() {
                   color: copied ? '#34D399' : '#4A90FF',
                 }}
               >
-                {copied ? '✓ Copié' : navPromoCode}
+                {copied ? (lang === 'en' ? '✓ Copied' : lang === 'ar' ? '✓ تم النسخ' : '✓ Copié') : navPromoCode}
               </button>
             </div>
           </div>

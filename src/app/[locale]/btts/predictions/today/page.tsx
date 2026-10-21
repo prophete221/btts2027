@@ -30,7 +30,7 @@ export default async function LocalizedBttsTodayPage({ params }: { params: Promi
       <Navbar />
       <main id="main-content" className="flex-1">
         <h1 className="sr-only">{value === 'ar' ? 'توقعات BTTS اليوم' : 'BTTS Predictions Today'}</h1>
-        <BttsTodayDashboard />
+        <BttsTodayDashboard initialLocale={value as Locale} />
       </main>
       <Footer />
     </div>

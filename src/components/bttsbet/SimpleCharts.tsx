@@ -24,6 +24,7 @@ export function RateBar({ label, rate, won, lost, lang, color = '#2F7DFF', note 
 }) {
   const total = won + lost
   const pct = rate !== null && total > 0 ? Math.max(0, Math.min(100, rate)) : null
+  const verifiedWord = lang === 'fr' ? `vérifié${total > 1 ? 's' : ''}` : lang === 'ar' ? 'موثقة' : 'verified'
   return (
     <div>
       <div className="flex items-baseline justify-between gap-2 mb-1.5">
@@ -33,16 +34,16 @@ export function RateBar({ label, rate, won, lost, lang, color = '#2F7DFF', note 
         </span>
       </div>
       <div className="h-2.5 rounded-full bg-[#0B0F14] border border-[#223041] overflow-hidden" role="img"
-        aria-label={`${label} : ${pct !== null ? fmtPct(pct.toFixed(1), lang) : '—'} % — ${won} WIN / ${lost} LOST / ${total} vérifiés`}>
+        aria-label={`${label} : ${pct !== null ? fmtPct(pct.toFixed(1), lang) : '—'} % — ${won} WIN / ${lost} LOST / ${total} ${verifiedWord}`}>
         {pct !== null && (
           <div className="h-full rounded-full" style={{ width: `${pct}%`, backgroundColor: color }} />
         )}
       </div>
       <div className="mt-1 text-xs text-[#9DABBB]">
-        {won} WIN · {lost} LOST · {total} vérifié{total > 1 ? 's' : ''}
+        {won} WIN · {lost} LOST · {total} {verifiedWord}
         {total > 0 && total < 30 && (
           <span className="ml-2 px-1.5 py-0.5 rounded text-[12px]" style={{ backgroundColor: 'rgba(251,191,36,0.12)', color: '#FBBF24' }}>
-            échantillon faible
+            {lang === 'fr' ? 'échantillon faible' : lang === 'ar' ? 'عينة صغيرة' : 'small sample'}
           </span>
         )}
         {note && <span className="ml-2">{note}</span>}
@@ -52,20 +53,24 @@ export function RateBar({ label, rate, won, lost, lang, color = '#2F7DFF', note 
 }
 
 /** Barre de composition unique (WIN / LOST — segments optionnels masqués si vides). */
-export function CompositionBar({ won, lost, pending = 0, unverifiable = 0, labels }: {
+export function CompositionBar({ won, lost, pending = 0, unverifiable = 0, labels, lang = 'fr' }: {
   won: number
   lost: number
   pending?: number
   unverifiable?: number
   labels: { won: string; lost: string; pending?: string; unverifiable?: string }
+  lang?: string
 }) {
   const total = won + lost + pending + unverifiable
   if (total === 0) return null
   const seg = (v: number) => `${(v / total) * 100}%`
+  const verifiedWord = lang === 'fr' ? 'vérifiés' : lang === 'ar' ? 'موثقة' : 'verified'
+  const pendingWord = lang === 'fr' ? 'en attente' : lang === 'ar' ? 'قيد الانتظار' : 'pending'
+  const unverifiableWord = lang === 'fr' ? 'non vérifiables' : lang === 'ar' ? 'غير قابلة للتحقق' : 'unverifiable'
   return (
     <div>
       <div className="h-4 rounded-full overflow-hidden flex border border-[#223041]" role="img"
-        aria-label={`${won} WIN, ${lost} LOST${pending > 0 ? `, ${pending} en attente` : ''}${unverifiable > 0 ? `, ${unverifiable} non vérifiables` : ''} sur ${total} vérifiés`}>
+        aria-label={`${won} WIN, ${lost} LOST${pending > 0 ? `, ${pending} ${pendingWord}` : ''}${unverifiable > 0 ? `, ${unverifiable} ${unverifiableWord}` : ''} / ${total} ${verifiedWord}`}>
         <div style={{ width: seg(won), backgroundColor: '#34D399' }} />
         <div style={{ width: seg(lost), backgroundColor: '#F87171' }} />
         {pending > 0 && <div style={{ width: seg(pending), backgroundColor: '#FBBF24' }} />}
@@ -80,7 +85,7 @@ export function CompositionBar({ won, lost, pending = 0, unverifiable = 0, label
         {unverifiable > 0 && labels.unverifiable && (
           <span><span className="inline-block w-2 h-2 rounded-full mr-1 align-middle" style={{ backgroundColor: '#55637A' }} />{labels.unverifiable} : {unverifiable}</span>
         )}
-        <span className="text-[#6B7A8C]">/ {total} vérifiés</span>
+        <span className="text-[#6B7A8C]">/ {total} {verifiedWord}</span>
       </div>
     </div>
   )
@@ -92,7 +97,7 @@ export function CumulativeLine({ points, lang }: {
   lang: string
 }) {
   if (points.length < 2) {
-    return <p className="text-xs text-[#9DABBB] py-6 text-center">Données insuffisantes pour tracer une évolution.</p>
+    return <p className="text-xs text-[#9DABBB] py-6 text-center">{lang === 'fr' ? 'Données insuffisantes pour tracer une évolution.' : lang === 'ar' ? 'بيانات غير كافية لتتبع التطور.' : 'Not enough data to plot a trend.'}</p>
   }
   const W = 640, H = 200, PAD_L = 34, PAD_R = 10, PAD_T = 12, PAD_B = 26
   const maxY = Math.max(...points.map(p => Math.max(p.cumWon, p.cumLost)), 1)
@@ -104,7 +109,7 @@ export function CumulativeLine({ points, lang }: {
   return (
     <div>
       <svg viewBox={`0 0 ${W} ${H}`} className="w-full h-auto" role="img"
-        aria-label={`Évolution cumulée : ${points[points.length - 1].cumWon} WIN, ${points[points.length - 1].cumLost} LOST au ${fmtDate(points[points.length - 1].date)}`}>
+        aria-label={`${lang === 'fr' ? 'Évolution cumulée' : lang === 'ar' ? 'التطور التراكمي' : 'Cumulative trend'} : ${points[points.length - 1].cumWon} WIN, ${points[points.length - 1].cumLost} LOST ${lang === 'fr' ? 'au' : lang === 'ar' ? 'حتى' : 'as of'} ${fmtDate(points[points.length - 1].date)}`}>
         {yTicks.map(t => (
           <g key={t}>
             <line x1={PAD_L} x2={W - PAD_R} y1={y(t)} y2={y(t)} stroke="#223041" strokeWidth="1" />
@@ -137,7 +142,7 @@ export function DailyBars({ days, lang }: {
   lang: string
 }) {
   if (days.length === 0) {
-    return <p className="text-xs text-[#9DABBB] py-6 text-center">Aucune vérification sur la période.</p>
+    return <p className="text-xs text-[#9DABBB] py-6 text-center">{lang === 'fr' ? 'Aucune vérification sur la période.' : lang === 'ar' ? 'لا يوجد تحقق خلال الفترة.' : 'No verification over this period.'}</p>
   }
   const max = Math.max(...days.map(d => d.won + d.lost), 1)
   return (

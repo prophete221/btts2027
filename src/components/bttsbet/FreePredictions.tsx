@@ -7,7 +7,7 @@ import { AFFILIATE } from '@/lib/constants'
 import { resolveTeamLogo } from '@/lib/teamLogos'
 import PremiumButton from './PremiumButton'
 import { useLanguage } from './LanguageSwitcher'
-import { translationsFor, type Locale } from '@/lib/i18n'
+import { translationsFor, type Locale, localizedPath } from '@/lib/i18n'
 import { generateMatchSlug } from '@/lib/match-slug'
 import { trackAffiliateAction } from '@/lib/affiliateTracking'
 import { humanMethodLabel, predictionQuality, type PredictionQuality as DataQuality } from '@/lib/predictionQuality'
@@ -96,6 +96,12 @@ interface MatchData {
   aiFormSummary?: string
   aiAbsences?: string
   aiOddsInsight?: string
+  // Traductions anglaises générées par le pipeline (fallback : champ français)
+  aiKeyFactEn?: string
+  aiAnalysisEn?: string
+  aiFormSummaryEn?: string
+  aiAbsencesEn?: string
+  aiOddsInsightEn?: string
   odds?: { provider?: string; home?: number | null; draw?: number | null; away?: number | null; over25?: number | null; under25?: number | null } | null
   quality?: DataQuality
 }
@@ -148,7 +154,7 @@ function TeamLogo({ src, name, size = 48 }: { src?: string; name: string; size?:
   return (
     <img
       src={src}
-      alt={`Logo ${name}`}
+      alt={`${name} logo`}
       className="rounded-xl object-contain flex-shrink-0 border border-edge bg-dark-800 p-1"
       style={{ width: size, height: size }}
       width={size}
@@ -221,9 +227,18 @@ function PredictionCard({ match, index, initialLocale }: { match: MatchData; ind
   const homeLogo = match.homeLogo || resolveTeamLogo(home)
   const awayLogo = match.awayLogo || resolveTeamLogo(away)
   // Slug officiel partagé avec le SSG de /match/[slug] (src/lib/match-slug.ts)
-  // — garantit un lien interne sans 404.
+  // — garantit un lien interne sans 404, préfixé par la locale courante.
   const matchDate = (match.date || '').slice(0, 10)
-  const matchHref = home && away && matchDate ? `/match/${generateMatchSlug(home, away, matchDate)}` : ''
+  const matchHref = home && away && matchDate ? localizedPath(`/match/${generateMatchSlug(home, away, matchDate)}`, lang) : ''
+
+  // Sur les pages EN, le pipeline fournit désormais des analyses anglaises
+  // (champs *_en) — repli sur le champ français si absent.
+  const pick = (fr?: string, en?: string) => (lang === 'en' && en ? en : fr)
+  const vKeyFact = pick(match.aiKeyFact, match.aiKeyFactEn)
+  const vAnalysis = pick(match.aiAnalysis, match.aiAnalysisEn)
+  const vFormSummary = pick(match.aiFormSummary, match.aiFormSummaryEn)
+  const vAbsences = pick(match.aiAbsences, match.aiAbsencesEn)
+  const vOddsInsight = pick(match.aiOddsInsight, match.aiOddsInsightEn)
 
   const status = getMatchStatus(match.date, match.time)
   const timeUntil = getTimeUntil(match.date, match.time)
@@ -373,7 +388,7 @@ function PredictionCard({ match, index, initialLocale }: { match: MatchData; ind
             >
               <div className="mt-4 pt-4 border-t border-edge space-y-3">
                 {/* Enrichissement — libellé humain */}
-                {(match.aiKeyFact || match.aiExactScore) && (
+                {(vKeyFact || match.aiExactScore) && (
                   <div className="bg-[#2F7DFF]/5 rounded-lg p-3 border border-[#2F7DFF]/20">
                     <div className="flex items-center justify-between mb-2">
                       <div className="flex items-center gap-1.5">
@@ -417,15 +432,15 @@ function PredictionCard({ match, index, initialLocale }: { match: MatchData; ind
                       </div>
                     )}
 
-                    {match.aiKeyFact && (
-                      <p className="text-sm text-[#F2F6FA] font-semibold mb-2">📊 {match.aiKeyFact}</p>
+                    {vKeyFact && (
+                      <p className="text-sm text-[#F2F6FA] font-semibold mb-2">📊 {vKeyFact}</p>
                     )}
 
                     {/* Forme récente des deux équipes */}
-                    {match.aiFormSummary && (
+                    {vFormSummary && (
                       <div className="rounded-lg p-2.5 mb-2 border border-white/5" style={{ backgroundColor: 'rgba(255,255,255,0.03)' }}>
                         <div className="text-[10px] uppercase tracking-widest text-cendre mb-1">{lang === 'en' ? 'Recent form' : lang === 'ar' ? 'الفورمة الأخيرة' : 'Forme récente (5 derniers matchs)'}</div>
-                        <p className="text-[12px] text-[#C8D2DC] leading-relaxed">📈 {match.aiFormSummary}</p>
+                        <p className="text-[12px] text-[#C8D2DC] leading-relaxed">📈 {vFormSummary}</p>
                       </div>
                     )}
 
@@ -458,18 +473,18 @@ function PredictionCard({ match, index, initialLocale }: { match: MatchData; ind
                       </div>
                     )}
 
-                    {match.aiAnalysis && (
-                      <p className="text-[13px] text-[#9DABBB] leading-relaxed mb-2">{match.aiAnalysis}</p>
+                    {vAnalysis && (
+                      <p className="text-[13px] text-[#9DABBB] leading-relaxed mb-2">{vAnalysis}</p>
                     )}
 
                     {/* Lecture des cotes par l'IA */}
-                    {match.aiOddsInsight && (
-                      <p className="text-[12px] text-[#8FA3B8] leading-relaxed mb-1.5">💰 {match.aiOddsInsight}</p>
+                    {vOddsInsight && (
+                      <p className="text-[12px] text-[#8FA3B8] leading-relaxed mb-1.5">💰 {vOddsInsight}</p>
                     )}
 
                     {/* Disponibilités / absents */}
-                    {match.aiAbsences && (
-                      <p className="text-[12px] text-[#8FA3B8] leading-relaxed">🩹 {match.aiAbsences}</p>
+                    {vAbsences && (
+                      <p className="text-[12px] text-[#8FA3B8] leading-relaxed">🩹 {vAbsences}</p>
                     )}
                   </div>
                 )}
@@ -519,7 +534,7 @@ function PredictionCard({ match, index, initialLocale }: { match: MatchData; ind
             }}
             className="flex-1 flex items-center justify-center gap-1.5 text-[13px] text-cendre hover:text-success transition-colors"
             aria-expanded={expanded}
-            aria-label={expanded ? `Voir moins d'analyse pour ${home} – ${away}` : `Voir l'analyse ${home} – ${away}`}
+            aria-label={expanded ? (lang === 'en' ? `Show less analysis for ${home} – ${away}` : lang === 'ar' ? `عرض تحليل أقل لـ ${home} – ${away}` : `Voir moins d'analyse pour ${home} – ${away}`) : (lang === 'en' ? `View analysis for ${home} – ${away}` : lang === 'ar' ? `عرض التحليل ${home} – ${away}` : `Voir l'analyse ${home} – ${away}`)}
           >
             {expanded ? (
               <>{t.predictions.analysis} <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><polyline points="18 15 12 9 6 15" /></svg></>
@@ -532,7 +547,7 @@ function PredictionCard({ match, index, initialLocale }: { match: MatchData; ind
             <a
               href={matchHref}
               className="flex items-center gap-1 px-3 text-[11px] font-semibold text-[#B8FF1A] hover:text-[#D4FF66] transition-colors whitespace-nowrap"
-              aria-label={`Analyse détaillée ${home} – ${away}`}
+              aria-label={lang === 'en' ? `Detailed analysis ${home} – ${away}` : lang === 'ar' ? `تحليل مفصل ${home} – ${away}` : `Analyse détaillée ${home} – ${away}`}
             >
               {t.predictions.matchPage || 'Match'} <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><polyline points="9 6 15 12 9 18" /></svg>
             </a>
@@ -615,6 +630,11 @@ export default function FreePredictions({ initialLocale }: { initialLocale?: Loc
               aiFormSummary: p.ai_form_summary,
               aiAbsences: p.ai_absences,
               aiOddsInsight: p.ai_odds_insight,
+              aiKeyFactEn: p.ai_key_fact_en,
+              aiAnalysisEn: p.ai_analysis_en,
+              aiFormSummaryEn: p.ai_form_summary_en,
+              aiAbsencesEn: p.ai_absences_en,
+              aiOddsInsightEn: p.ai_odds_insight_en,
               odds: p.odds || null,
               aiExactScore: p.ai_exact_score,
               exactScoreProb: p.exact_score_prob,
@@ -690,7 +710,7 @@ export default function FreePredictions({ initialLocale }: { initialLocale?: Loc
         {/* CTA — Voir tous les pronostics du jour (page dédiée) */}
         <div className="text-center mt-5">
           <a
-            href="/btts/predictions/today"
+            href={localizedPath('/btts/predictions/today', lang)}
             className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-xl text-xs font-bold transition-all"
             style={{
               background: 'linear-gradient(135deg, #2F7DFF, #2F7DFF)',

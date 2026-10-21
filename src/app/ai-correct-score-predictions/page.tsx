@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import dynamic from 'next/dynamic'
 import Link from 'next/link'
 import { useLanguage } from '@/components/bttsbet/LanguageSwitcher'
-import { translationsFor } from '@/lib/i18n'
+import { translationsFor, localizedPath } from '@/lib/i18n'
 import AnimatedTitle from '@/components/bttsbet/HeroWordmark'
 
 const Navbar = dynamic(() => import('@/components/bttsbet/Navbar'), { loading: () => null })
@@ -91,10 +91,10 @@ export default function AICorrectScorePage() {
     <div className="min-h-screen bg-[#0B0F14] flex flex-col text-[#F2F6FA]">
       <Navbar />
       <main id="main-content" className="flex-1">
-        <nav aria-label="Fil d'Ariane" className="text-xs text-[#9DABBB] mb-4 max-w-5xl mx-auto px-4 pt-8">
+        <nav aria-label={lang === 'en' ? 'Breadcrumb' : lang === 'ar' ? 'مسار التنقل' : "Fil d'Ariane"} className="text-xs text-[#9DABBB] mb-4 max-w-5xl mx-auto px-4 pt-8">
           <Link href={lang === 'fr' ? '/' : `/${lang}`} className="hover:text-[#2F7DFF]">{t.common.home}</Link>
           <span className="mx-1">/</span>
-          <span className="text-[#9DABBB]">AI Correct Score</span>
+          <span className="text-[#9DABBB]">{lang === 'fr' ? 'Score exact IA' : lang === 'ar' ? 'النتيجة الدقيقة بالذكاء الاصطناعي' : 'AI Correct Score'}</span>
         </nav>
 
         <section className="max-w-5xl mx-auto px-4 pt-4 pb-6">
@@ -182,7 +182,7 @@ export default function AICorrectScorePage() {
                       ))}
                     </div>
                     {/* Buts attendus modélisés (λ du modèle Poisson, source ESPN) */}
-                    <div className="mt-3 pt-2 border-t border-[#6B7A8C] flex justify-between text-[9px] text-[#9DABBB]" title="Buts attendus modélisés (λ) : moyennes de buts récents (ESPN) converties en modèle Poisson. Pas des xG de fournisseur.">
+                    <div className="mt-3 pt-2 border-t border-[#6B7A8C] flex justify-between text-[9px] text-[#9DABBB]" title={lang === 'en' ? 'Modeled expected goals (λ): recent real goals averages (ESPN) converted through a Poisson model. Not provider xG.' : lang === 'ar' ? 'أهداف متوقعة نمذجة (λ) من متوسطات أهداف حقيقية حديثة (ESPN) عبر نموذج بواسون. ليست xG من مزود.' : 'Buts attendus modélisés (λ) : moyennes de buts récents (ESPN) converties en modèle Poisson. Pas des xG de fournisseur.'}>
                       <span>λ Home: <strong className="text-[#9DABBB] font-mono">{m.lambdaHome.toFixed(2)}</strong></span>
                       <span>λ Away: <strong className="text-[#9DABBB] font-mono">{m.lambdaAway.toFixed(2)}</strong></span>
                     </div>
@@ -215,22 +215,22 @@ export default function AICorrectScorePage() {
         <section className="max-w-3xl mx-auto px-4 pb-12">
           <h2 className="text-2xl font-bold mb-3" style={{ fontFamily: 'Poppins, sans-serif' }}>{t.common.quickLinks}</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <Link href="/btts/predictions/today" className="block p-4 rounded-xl transition-all hover:scale-[1.01]"
+            <Link href={localizedPath('/btts/predictions/today', lang)} className="block p-4 rounded-xl transition-all hover:scale-[1.01]"
               style={{ backgroundColor: '#141C25', border: '1px solid #6B7A8C' }}>
               <div className="text-sm font-bold text-[#F2F6FA]">{lang === 'fr' ? 'Prédictions BTTS du jour →' : lang === 'en' ? 'BTTS Predictions Today →' : 'توقعات BTTS اليوم ←'}</div>
               <div className="text-xs text-[#9DABBB] mt-1">{lang === 'fr' ? 'Les deux équipes marquent' : lang === 'en' ? 'Both teams to score' : 'كلا الفريقين يسجلان'}</div>
             </Link>
-            <Link href="/over-2-5/predictions/today" className="block p-4 rounded-xl transition-all hover:scale-[1.01]"
+            <Link href={localizedPath('/over-2-5/predictions/today', lang)} className="block p-4 rounded-xl transition-all hover:scale-[1.01]"
               style={{ backgroundColor: '#141C25', border: '1px solid #6B7A8C' }}>
               <div className="text-sm font-bold text-[#F2F6FA]">{lang === 'fr' ? 'Prédictions Over 2.5 du jour →' : lang === 'en' ? 'Over 2.5 Predictions Today →' : 'توقعات Over 2.5 اليوم ←'}</div>
               <div className="text-xs text-[#9DABBB] mt-1">{lang === 'fr' ? 'Total de buts ≥ 3' : lang === 'en' ? 'Total goals ≥ 3' : 'إجمالي الأهداف ≥ 3'}</div>
             </Link>
-            <Link href="/btts-and-over-2-5-predictions-today" className="block p-4 rounded-xl transition-all hover:scale-[1.01]"
+            <Link href={localizedPath('/btts-and-over-2-5-predictions-today', lang)} className="block p-4 rounded-xl transition-all hover:scale-[1.01]"
               style={{ backgroundColor: '#141C25', border: '1px solid #6B7A8C' }}>
               <div className="text-sm font-bold text-[#F2F6FA]">{lang === 'fr' ? 'BTTS + Over 2.5 combiné →' : lang === 'en' ? 'BTTS + Over 2.5 Combined →' : 'BTTS + Over 2.5 معاً ←'}</div>
               <div className="text-xs text-[#9DABBB] mt-1">{lang === 'fr' ? 'Les deux conditions réunies' : lang === 'en' ? 'Both conditions met' : 'تحقق الشرطان'}</div>
             </Link>
-            <Link href="/methodologie" className="block p-4 rounded-xl transition-all hover:scale-[1.01]"
+            <Link href={localizedPath('/methodologie', lang)} className="block p-4 rounded-xl transition-all hover:scale-[1.01]"
               style={{ backgroundColor: '#141C25', border: '1px solid #6B7A8C' }}>
               <div className="text-sm font-bold text-[#F2F6FA]">{lang === 'fr' ? 'Méthodologie →' : lang === 'en' ? 'Methodology →' : 'المنهجية ←'}</div>
               <div className="text-xs text-[#9DABBB] mt-1">{lang === 'fr' ? 'Fonctionnement du modèle' : lang === 'en' ? 'How the model works' : 'كيف يعمل النموذج'}</div>

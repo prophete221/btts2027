@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { usePathname } from 'next/navigation'
 import { isLocale, localizedPath, LOCALE_META, SUPPORTED_LOCALES, type Locale } from '@/lib/i18n'
@@ -10,17 +10,22 @@ const STORAGE_KEY = 'bttsbet-lang'
 export function useLanguage() {
   const pathname = usePathname() || '/'
   const pathLocale = pathname.split('/').filter(Boolean)[0]
-  const [lang, setLang] = useState<Locale>(isLocale(pathLocale) ? pathLocale : 'fr')
-
-  useEffect(() => {
-    const saved = window.localStorage.getItem(STORAGE_KEY)
-    if (isLocale(saved)) queueMicrotask(() => setLang(saved))
-  }, [])
+  // L'URL est autoritaire : /en/… s'affiche toujours en anglais, /ar/… en
+  // arabe, la racine en français. (Avant, un ancien localStorage
+  // « bttsbet-lang » pouvait re-franciser les pages /en — corrigé.)
+  // Le sélecteur de langue navigue de toute façon vers l'URL localisée,
+  // donc la préférence sauvegardée n'a jamais à passer outre le chemin.
+  const [lang] = useState<Locale>(isLocale(pathLocale) ? pathLocale : 'fr')
 
   const change = (newLang: Locale) => {
-    setLang(newLang)
-    window.localStorage.setItem(STORAGE_KEY, newLang)
+    try {
+      window.localStorage.setItem(STORAGE_KEY, newLang)
+    } catch {
+      /* localStorage indisponible — la navigation suffit */
+    }
     window.dispatchEvent(new CustomEvent('lang-change', { detail: newLang }))
+    // Navigation immédiate vers l'URL localisée : l'URL reste la source
+    // unique de vérité pour la langue affichée.
     window.location.assign(localizedPath(pathname, newLang))
   }
 

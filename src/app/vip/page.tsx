@@ -5,7 +5,7 @@ import dynamic from 'next/dynamic'
 import { AFFILIATE } from '@/lib/constants'
 import { onlyVipFixtures } from '@/lib/vipPredictions'
 import { useLanguage } from '@/components/bttsbet/LanguageSwitcher'
-import type { Locale } from '@/lib/i18n'
+import { localizedPath, type Locale } from '@/lib/i18n'
 import { trackAffiliateAction, trackAffiliateCodeCopy } from '@/lib/affiliateTracking'
 import AnimatedTitle from '@/components/bttsbet/HeroWordmark'
 import { copyTextToClipboard } from '@/lib/clipboard'
@@ -618,7 +618,7 @@ export default function VipPage() {
               <p className="vipx-hero__sub">{text.heroSub}</p>
               <div className="vipx-hero__cta">
                 <a className="vipx-btn vipx-btn--gold" href="#deblocage" onClick={() => setOpenStep(1)}>{text.ctaUnlock}<span aria-hidden="true">→</span></a>
-                <a className="vipx-btn vipx-btn--ghost" href="/btts/predictions/today">{text.freeLink}</a>
+                <a className="vipx-btn vipx-btn--ghost" href={localizedPath('/btts/predictions/today', lang)}>{text.freeLink}</a>
               </div>
               <ul className="vipx-hero__trust">
                 <li><Icon.shield />{text.trust1}</li>
@@ -873,7 +873,7 @@ export default function VipPage() {
             <span className="vipx-eyebrow"><i aria-hidden="true" />{text.trustEyebrow}</span>
             <h2>{text.trustTitle}</h2>
             <p>{text.trustDesc}</p>
-            <a className="vipx-btn vipx-btn--ghost" href="/historique">{text.trustLink}<span aria-hidden="true">→</span></a>
+            <a className="vipx-btn vipx-btn--ghost" href={localizedPath('/historique', lang)}>{text.trustLink}<span aria-hidden="true">→</span></a>
           </div>
         </section>
 

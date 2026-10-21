@@ -485,7 +485,7 @@ function MatchCard({ m, index, lang, results }: {
           {picks.map(p => (
             <span key={p.type} className={`hp-pick${p.type === 'BTTS' ? ' is-btts' : ''}`}>
               <b>{p.type}</b>
-              <span>{p.prediction}</span>
+              <span>{p.prediction === 'Oui' ? t.predictions.bttsYes : p.prediction === 'Non' ? t.predictions.bttsNo : p.prediction}</span>
               {p.confidence !== undefined && <i>{p.confidence}%</i>}
             </span>
           ))}
@@ -501,9 +501,9 @@ function MatchCard({ m, index, lang, results }: {
 
       {/* Ligne 3bis : cotes réelles du marché (gratuit — ESPN/bookmaker) */}
       {m.odds && (m.odds.home || m.odds.away) && (
-        <div className="hp-mc-data" title={m.odds.provider ? `Cotes ${m.odds.provider}` : 'Cotes marché'}>
+        <div className="hp-mc-data" title={m.odds.provider ? (lang === 'en' ? `${m.odds.provider} odds` : lang === 'ar' ? `أودز ${m.odds.provider}` : `Cotes ${m.odds.provider}`) : (lang === 'en' ? 'Market odds' : lang === 'ar' ? 'أودز السوق' : 'Cotes marché')}>
           {m.odds.home !== null && m.odds.home !== undefined && <span><i>1</i> {m.odds.home}</span>}
-          {m.odds.draw !== null && m.odds.draw !== undefined && <span><i>N</i> {m.odds.draw}</span>}
+          {m.odds.draw !== null && m.odds.draw !== undefined && <span><i>{lang === 'en' ? 'D' : lang === 'ar' ? 'X' : 'N'}</i> {m.odds.draw}</span>}
           {m.odds.away !== null && m.odds.away !== undefined && <span><i>2</i> {m.odds.away}</span>}
           {m.odds.over25 !== null && m.odds.over25 !== undefined && <span><i>O2.5</i> {m.odds.over25}</span>}
         </div>
@@ -513,9 +513,9 @@ function MatchCard({ m, index, lang, results }: {
       {(m.xgTotal !== undefined || m.formBTTS !== undefined || m.reliabilityScore !== undefined) && (
         <div className="hp-mc-data">
           {m.xgHome !== undefined && m.xgAway !== undefined && (
-            <span title="xG domicile / extérieur"><i>{t.home2.mcXg}</i> {num(m.xgHome)}/{num(m.xgAway)}</span>
+            <span title={lang === 'en' ? 'Home / away xG' : lang === 'ar' ? 'xG صاحب الأرض / الضيف' : 'xG domicile / extérieur'}><i>{t.home2.mcXg}</i> {num(m.xgHome)}/{num(m.xgAway)}</span>
           )}
-          {m.xgTotal !== undefined && <span title="xG total"><i>Σ</i> {num(m.xgTotal, 1)}</span>}
+          {m.xgTotal !== undefined && <span title={lang === 'en' ? 'Total xG' : lang === 'ar' ? 'إجمالي xG' : 'xG total'}><i>Σ</i> {num(m.xgTotal, 1)}</span>}
           {m.formBTTS !== undefined && <span title={t.home2.mcForm}><i>{t.home2.mcForm}</i> {m.formBTTS}%</span>}
           {m.reliabilityScore !== undefined && (
             <span title={t.home2.mcReliability}><i>{t.home2.mcReliability}</i> {num(m.reliabilityScore, 1)}%</span>

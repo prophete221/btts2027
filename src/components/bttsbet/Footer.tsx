@@ -38,7 +38,7 @@ export default function Footer({ initialLocale }: { initialLocale?: Locale } = {
           {/* ═══ Bloc marque + liens plateforme ═══ */}
           <div className="hp-footer-brand">
             <div className="hp-footer-brand__id">
-              <a href={home} className="flex items-center gap-2" aria-label="BTTSPredict — accueil">
+              <a href={home} className="flex items-center gap-2" aria-label={lang === 'en' ? 'BTTSPredict — home' : lang === 'ar' ? 'BTTSPredict — الرئيسية' : 'BTTSPredict — accueil'}>
                 <img src="/favicon.svg" alt="" width={26} height={26} className="rounded" />
                 <span className="text-sm font-bold text-papier tracking-tight">BTTSPredict</span>
               </a>
@@ -162,14 +162,14 @@ export default function Footer({ initialLocale }: { initialLocale?: Locale } = {
 
           {/* Identité éditeur */}
           <div className="text-center text-xs text-cendre mt-4 space-y-1.5">
-            <div>{t.common.publisher} · Contact conformité: {' '}
+            <div>{t.common.publisher} · {lang === 'en' ? 'Compliance contact:' : lang === 'ar' ? 'جهة الاتصال للامتثال:' : 'Contact conformité:'} {' '}
               <a href="mailto:contact@bttspredict.com" className="underline hover:text-papier transition-colors">contact@bttspredict.com</a>
             </div>
             <div>{t.legal.noGuarantee} — 18+ {t.common.responsible}</div>
           </div>
 
           <div className="text-center text-xs text-cendre opacity-70 mt-3">
-            {LEGAL.copyright}
+            {lang === 'en' ? `© ${new Date().getFullYear()} BTTSPredict. All rights reserved.` : lang === 'ar' ? `© ${new Date().getFullYear()} BTTSPredict. جميع الحقوق محفوظة.` : LEGAL.copyright}
           </div>
         </div>
       </footer>

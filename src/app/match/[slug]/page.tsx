@@ -145,8 +145,8 @@ export default async function MatchPage({ params, locale = 'fr' }: PageProps & {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Accueil', item: `${SITE_URL}/` },
-      { '@type': 'ListItem', position: 2, name: 'Pronostics', item: `${SITE_URL}/btts/predictions/today` },
+      { '@type': 'ListItem', position: 1, name: copy.home, item: `${SITE_URL}/` },
+      { '@type': 'ListItem', position: 2, name: copy.predictions, item: `${SITE_URL}/btts/predictions/today` },
       { '@type': 'ListItem', position: 3, name: `${home} vs ${away}`, item: `${SITE_URL}/match/${slug}` },
     ],
   }
@@ -184,14 +184,14 @@ export default async function MatchPage({ params, locale = 'fr' }: PageProps & {
             <div className="flex items-center justify-center gap-4 sm:gap-8 mb-4">
               <div className="flex flex-col items-center gap-2 flex-1">
                 {homeLogo && (
-                  <img src={homeLogo} alt={`Logo ${home}`} width={80} height={80} className="rounded-xl object-contain" loading="lazy" decoding="async" />
+                  <img src={homeLogo} alt={`${home} logo`} width={80} height={80} className="rounded-xl object-contain" loading="lazy" decoding="async" />
                 )}
                 <span className="text-sm sm:text-base font-bold text-center">{home}</span>
               </div>
               <div className="text-2xl font-bold text-[#9DABBB]">vs</div>
               <div className="flex flex-col items-center gap-2 flex-1">
                 {awayLogo && (
-                  <img src={awayLogo} alt={`Logo ${away}`} width={80} height={80} className="rounded-xl object-contain" loading="lazy" decoding="async" />
+                  <img src={awayLogo} alt={`${away} logo`} width={80} height={80} className="rounded-xl object-contain" loading="lazy" decoding="async" />
                 )}
                 <span className="text-sm sm:text-base font-bold text-center">{away}</span>
               </div>
@@ -361,6 +361,7 @@ export default async function MatchPage({ params, locale = 'fr' }: PageProps & {
               homeLambda={match.homeLambda}
               awayLambda={match.awayLambda}
               xgTotal={match.xgTotal}
+              lang={locale}
             />
           </section>
 
@@ -368,16 +369,16 @@ export default async function MatchPage({ params, locale = 'fr' }: PageProps & {
           {hasUsageData && (
             <section
               className="rounded-[16px] bg-[#10161D] border border-[#223041] p-4 sm:p-5 mb-10"
-              aria-label="Qualité des données"
+              aria-label={locale === 'en' ? 'Data quality' : locale === 'ar' ? 'جودة البيانات' : 'Qualité des données'}
             >
-              <h2 className="text-sm font-bold text-[#F2F6FA] mb-3">Qualité des données</h2>
+              <h2 className="text-sm font-bold text-[#F2F6FA] mb-3">{locale === 'en' ? 'Data quality' : locale === 'ar' ? 'جودة البيانات' : 'Qualité des données'}</h2>
               <dl className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-center">
                 <div className="rounded-lg bg-[#141C25] border border-[#223041] p-2">
-                  <dt className="text-xs uppercase tracking-wider text-[#9DABBB] font-bold">Qualité</dt>
+                  <dt className="text-xs uppercase tracking-wider text-[#9DABBB] font-bold">{locale === 'en' ? 'Quality' : locale === 'ar' ? 'الجودة' : 'Qualité'}</dt>
                   <dd className="text-xs font-bold text-[#F2F6FA] mt-1">{match.dataQuality || copy.notAvailable}</dd>
                 </div>
                 <div className="rounded-lg bg-[#141C25] border border-[#223041] p-2">
-                  <dt className="text-xs uppercase tracking-wider text-[#9DABBB] font-bold">Matchs analysés</dt>
+                  <dt className="text-xs uppercase tracking-wider text-[#9DABBB] font-bold">{copy.matchesAnalyzed}</dt>
                   <dd className="text-xs font-bold text-[#F2F6FA] mt-1">
                     {match.matchCountHome != null && match.matchCountAway != null
                       ? `${match.matchCountHome} + ${match.matchCountAway}`
@@ -420,7 +421,7 @@ export default async function MatchPage({ params, locale = 'fr' }: PageProps & {
                   <div className="grid grid-cols-3 gap-2 mb-4">
                     {exactScoreProb && (
                       <div className="text-center rounded-lg p-2 bg-[#10161D] border border-[#223041]">
-                        <div className="text-xs uppercase tracking-wider text-[#9DABBB] font-bold">Score exact</div>
+                        <div className="text-xs uppercase tracking-wider text-[#9DABBB] font-bold">{locale === 'en' ? 'Exact score' : locale === 'ar' ? 'النتيجة الدقيقة' : 'Score exact'}</div>
                         <div className="text-base font-bold text-[#F2F6FA] font-mono">{exactScoreProb}</div>
                       </div>
                     )}

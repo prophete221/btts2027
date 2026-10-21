@@ -32,7 +32,7 @@ import { trackAffiliateAction } from '@/lib/affiliateTracking'
 import Link from 'next/link'
 import { generateMatchSlug } from '@/lib/match-slug'
 import { useLanguage } from './LanguageSwitcher'
-import { translationsFor } from '@/lib/i18n'
+import { translationsFor, type Locale, localizedPath } from '@/lib/i18n'
 import { getDakarDateString, getDakarMatchStatus } from '@/lib/dakar-date'
 
 // ─── Palette (V3 — bleu analyse, sémantique WIN/LOST/PENDING) ────────────────
@@ -85,6 +85,11 @@ interface RawPrediction {
   ai_form_summary?: string
   ai_absences?: string
   ai_odds_insight?: string
+  ai_key_fact_en?: string
+  ai_analysis_en?: string
+  ai_form_summary_en?: string
+  ai_absences_en?: string
+  ai_odds_insight_en?: string
   odds?: { provider?: string; home?: number | null; draw?: number | null; away?: number | null; over25?: number | null; under25?: number | null } | null
 }
 
@@ -134,6 +139,12 @@ interface MatchData {
   aiFormSummary?: string
   aiAbsences?: string
   aiOddsInsight?: string
+  // Traductions anglaises générées par le pipeline (fallback : champ français)
+  aiKeyFactEn?: string
+  aiAnalysisEn?: string
+  aiFormSummaryEn?: string
+  aiAbsencesEn?: string
+  aiOddsInsightEn?: string
   odds?: { provider?: string; home?: number | null; draw?: number | null; away?: number | null; over25?: number | null; under25?: number | null } | null
 }
 
@@ -258,7 +269,7 @@ function TeamLogo({ src, name }: { src?: string; name: string }) {
       {src && !err ? (
         <img
           src={src}
-          alt={`Logo ${name}`}
+          alt={`${name} logo`}
           loading="lazy"
           decoding="async"
           onError={() => setErr(true)}
@@ -299,7 +310,7 @@ function ProbBar({ label, value, color, dim }: { label: string; value?: number; 
 }
 
 // ─── StatusChip — LIVE pulsant / Terminé / Heure ────────────────────────
-function StatusChip({ status, time, lang }: { status: CardStatus; time: string; lang: string }) {
+function StatusChip({ status, time, lang }: { status: CardStatus; time: string; lang: Locale }) {
   if (status === 'live') {
     return (
       <span className="btx-status btx-status--live">
@@ -323,12 +334,19 @@ function MatchCard({ match, index, status, lang, insufficientDataLabel, labels, 
   match: MatchData
   index: number
   status: CardStatus
-  lang: string
+  lang: Locale
   insufficientDataLabel: string
   labels: DashboardLabels
   now: number
 }) {
   const [expanded, setExpanded] = useState(false)
+
+  // Textes d'analyse : version EN du pipeline si disponible, sinon FR.
+  const vKeyFact = lang === 'en' ? match.aiKeyFactEn || match.aiKeyFact : match.aiKeyFact
+  const vAnalysis = lang === 'en' ? match.aiAnalysisEn || match.aiAnalysis : match.aiAnalysis
+  const vFormSummary = lang === 'en' ? match.aiFormSummaryEn || match.aiFormSummary : match.aiFormSummary
+  const vAbsences = lang === 'en' ? match.aiAbsencesEn || match.aiAbsences : match.aiAbsences
+  const vOddsInsight = lang === 'en' ? match.aiOddsInsightEn || match.aiOddsInsight : match.aiOddsInsight
 
   // Statut fin pour les cartes « programmées » d'aujourd'hui : un match dont
   // l'heure est passée bascule en live/terminé via getDakarMatchStatus.
@@ -463,18 +481,18 @@ function MatchCard({ match, index, status, lang, insufficientDataLabel, labels, 
             {match.aiBttsView && (
               <div className="btx-ai__views">
                 <div className="btx-ai__view">
-                  <div className="btx-ai__view-label">BTTS · IA</div>
+                  <div className="btx-ai__view-label">{lang === 'en' ? 'BTTS · AI' : lang === 'ar' ? 'BTTS · AI' : 'BTTS · IA'}</div>
                   <div className="btx-ai__view-value" style={{ ['--vc' as string]: '#34D399' }}>{match.aiBttsView}</div>
                 </div>
                 {match.aiOver25View && (
                   <div className="btx-ai__view btx-ai__view--amber">
-                    <div className="btx-ai__view-label">Over 2.5 · IA</div>
+                    <div className="btx-ai__view-label">{lang === 'en' ? 'Over 2.5 · AI' : lang === 'ar' ? 'Over 2.5 · AI' : 'Over 2.5 · IA'}</div>
                     <div className="btx-ai__view-value" style={{ ['--vc' as string]: '#FBBF24' }}>{match.aiOver25View}</div>
                   </div>
                 )}
               </div>
             )}
-            {match.aiKeyFact && <p className="btx-ai__fact">{match.aiKeyFact}</p>}
+            {vKeyFact && <p className="btx-ai__fact">{vKeyFact}</p>}
 
             {/* Forme récente des deux équipes */}
             {match.aiFormSummary && (
@@ -482,7 +500,7 @@ function MatchCard({ match, index, status, lang, insufficientDataLabel, labels, 
                 <div style={{ fontSize: 10, letterSpacing: '0.12em', textTransform: 'uppercase', opacity: 0.6, marginBottom: 3 }}>
                   {lang === 'fr' ? 'Forme récente (5 derniers matchs)' : lang === 'en' ? 'Recent form' : 'الفورمة الأخيرة'}
                 </div>
-                <div style={{ fontSize: 12.5, lineHeight: 1.5, opacity: 0.85 }}>📈 {match.aiFormSummary}</div>
+                <div style={{ fontSize: 12.5, lineHeight: 1.5, opacity: 0.85 }}>📈 {vFormSummary}</div>
               </div>
             )}
 
@@ -498,7 +516,7 @@ function MatchCard({ match, index, status, lang, insufficientDataLabel, labels, 
                     <div style={{ fontSize: 13, fontWeight: 700, fontFamily: 'var(--font-mono, monospace)' }}>{match.odds.home ?? '—'}</div>
                   </div>
                   <div style={{ flex: 1, textAlign: 'center', padding: '3px 0', borderRadius: 8, background: 'rgba(255,255,255,0.05)' }}>
-                    <div style={{ fontSize: 9, opacity: 0.55 }}>N</div>
+                    <div style={{ fontSize: 9, opacity: 0.55 }}>{lang === 'en' ? 'D' : lang === 'ar' ? 'X' : 'N'}</div>
                     <div style={{ fontSize: 13, fontWeight: 700, fontFamily: 'var(--font-mono, monospace)' }}>{match.odds.draw ?? '—'}</div>
                   </div>
                   <div style={{ flex: 1, textAlign: 'center', padding: '3px 0', borderRadius: 8, background: 'rgba(255,255,255,0.05)' }}>
@@ -515,29 +533,27 @@ function MatchCard({ match, index, status, lang, insufficientDataLabel, labels, 
               </div>
             )}
 
-            {match.aiAnalysis && (
+            {vAnalysis && (
               <p className="btx-ai__text">
-                {expanded || match.aiAnalysis.length <= 180
-                  ? match.aiAnalysis
-                  : `${match.aiAnalysis.slice(0, 177)}…`}
+                {expanded || vAnalysis.length <= 180 ? vAnalysis : `${vAnalysis.slice(0, 177)}…`}
               </p>
             )}
 
             {/* Lecture des cotes par l'IA */}
-            {match.aiOddsInsight && (
-              <p style={{ fontSize: 12.5, lineHeight: 1.5, opacity: 0.7, margin: '0.4rem 0 0.2rem' }}>💰 {match.aiOddsInsight}</p>
+            {vOddsInsight && (
+              <p style={{ fontSize: 12.5, lineHeight: 1.5, opacity: 0.7, margin: '0.4rem 0 0.2rem' }}>💰 {vOddsInsight}</p>
             )}
 
             {/* Disponibilités / absents */}
-            {match.aiAbsences && (
-              <p style={{ fontSize: 12.5, lineHeight: 1.5, opacity: 0.7, margin: '0.2rem 0' }}>🩹 {match.aiAbsences}</p>
+            {vAbsences && (
+              <p style={{ fontSize: 12.5, lineHeight: 1.5, opacity: 0.7, margin: '0.2rem 0' }}>🩹 {vAbsences}</p>
             )}
             <div className="btx-actions" style={{ paddingInline: 0, borderTop: 'none', paddingTop: '0.55rem' }}>
-              {match.aiAnalysis && match.aiAnalysis.length > 180 && (
+              {vAnalysis && vAnalysis.length > 180 && (
                 <button
                   onClick={() => setExpanded(e => !e)}
                   aria-expanded={expanded}
-                  aria-label={expanded ? `Masquer l'analyse complète de ${match.home} vs ${match.away}` : `Voir l'analyse complète de ${match.home} vs ${match.away}`}
+                  aria-label={expanded ? (lang === 'en' ? `Hide the full analysis of ${match.home} vs ${match.away}` : lang === 'ar' ? `إخفاء التحليل الكامل لـ ${match.home} ضد ${match.away}` : `Masquer l'analyse complète de ${match.home} vs ${match.away}`) : (lang === 'en' ? `View the full analysis of ${match.home} vs ${match.away}` : lang === 'ar' ? `عرض التحليل الكامل لـ ${match.home} ضد ${match.away}` : `Voir l'analyse complète de ${match.home} vs ${match.away}`)}
                   className="btx-link"
                   style={{ background: 'none', border: 'none', padding: 0 }}
                 >
@@ -545,7 +561,7 @@ function MatchCard({ match, index, status, lang, insufficientDataLabel, labels, 
                 </button>
               )}
               <Link
-                href={`/match/${generateMatchSlug(match.home, match.away, match.date)}`}
+                href={localizedPath(`/match/${generateMatchSlug(match.home, match.away, match.date)}`, lang)}
                 className="btx-link"
               >
                 {labels.openMatch} →
@@ -558,7 +574,7 @@ function MatchCard({ match, index, status, lang, insufficientDataLabel, labels, 
         {!(match.aiAnalysis || match.aiKeyFact || match.aiBttsView || match.aiOver25View) && (
           <div className="btx-actions">
             <Link
-              href={`/match/${generateMatchSlug(match.home, match.away, match.date)}`}
+              href={localizedPath(`/match/${generateMatchSlug(match.home, match.away, match.date)}`, lang)}
               className="btx-link"
             >
               {labels.openMatch} →
@@ -571,10 +587,10 @@ function MatchCard({ match, index, status, lang, insufficientDataLabel, labels, 
 }
 
 // ─── ComboPickRow — vedette « Combo IA du jour » ────────────────────────
-function ComboPickRow({ pick, index, lang }: { pick: ComboPick; index: number; lang: string }) {
+function ComboPickRow({ pick, index, lang }: { pick: ComboPick; index: number; lang: Locale }) {
   const num = String(index + 1).padStart(2, '0')
   const marketColor = pick.market === 'BTTS' ? '#34D399' : '#FBBF24'
-  const rank = index === 0 ? 'N°1' : index === 1 ? 'N°2' : 'N°3'
+  const rank = index === 0 ? (lang === 'fr' ? 'N°1' : '#1') : index === 1 ? (lang === 'fr' ? 'N°2' : '#2') : (lang === 'fr' ? 'N°3' : '#3')
 
   return (
     <div className="btx-combo-row">
@@ -590,7 +606,7 @@ function ComboPickRow({ pick, index, lang }: { pick: ComboPick; index: number; l
         <div className="btx-combo-row__foot">
           <span>{normalizeDataSource(pick.match.dataSource)} · {pick.dataQuality}</span>
           <span>
-            {lang === 'fr' ? 'Confiance' : 'Confidence'} <span className="btx-combo-row__conf">{Math.round(pick.reliabilityScore)}%</span>
+            {lang === 'fr' ? 'Confiance' : lang === 'ar' ? 'الثقة' : 'Confidence'} <span className="btx-combo-row__conf">{Math.round(pick.reliabilityScore)}%</span>
           </span>
         </div>
       </div>
@@ -603,8 +619,11 @@ function ComboPickRow({ pick, index, lang }: { pick: ComboPick; index: number; l
 }
 
 // ─── Main Component ──────────────────────────────────────────────────────
-export default function BttsTodayDashboard() {
-  const { lang } = useLanguage()
+export default function BttsTodayDashboard({ initialLocale }: { initialLocale?: Locale } = {}) {
+  const { lang: detectedLang } = useLanguage()
+  // Sur /en|/ar, la locale de l'URL gagne (immunise contre un ancien
+  // localStorage 'bttsbet-lang' qui re-franciserait la page).
+  const lang = initialLocale ?? detectedLang
   const t = translationsFor(lang)
   const sectionRef = useRef<HTMLElement | null>(null)
 
@@ -670,6 +689,11 @@ export default function BttsTodayDashboard() {
               aiFormSummary: p.ai_form_summary,
               aiAbsences: p.ai_absences,
               aiOddsInsight: p.ai_odds_insight,
+              aiKeyFactEn: p.ai_key_fact_en,
+              aiAnalysisEn: p.ai_analysis_en,
+              aiFormSummaryEn: p.ai_form_summary_en,
+              aiAbsencesEn: p.ai_absences_en,
+              aiOddsInsightEn: p.ai_odds_insight_en,
               odds: p.odds || null,
             })
           } else {
@@ -694,6 +718,11 @@ export default function BttsTodayDashboard() {
             if (existing.aiFormSummary == null && p.ai_form_summary != null) existing.aiFormSummary = p.ai_form_summary
             if (existing.aiAbsences == null && p.ai_absences != null) existing.aiAbsences = p.ai_absences
             if (existing.aiOddsInsight == null && p.ai_odds_insight != null) existing.aiOddsInsight = p.ai_odds_insight
+            if (existing.aiKeyFactEn == null && p.ai_key_fact_en != null) existing.aiKeyFactEn = p.ai_key_fact_en
+            if (existing.aiAnalysisEn == null && p.ai_analysis_en != null) existing.aiAnalysisEn = p.ai_analysis_en
+            if (existing.aiFormSummaryEn == null && p.ai_form_summary_en != null) existing.aiFormSummaryEn = p.ai_form_summary_en
+            if (existing.aiAbsencesEn == null && p.ai_absences_en != null) existing.aiAbsencesEn = p.ai_absences_en
+            if (existing.aiOddsInsightEn == null && p.ai_odds_insight_en != null) existing.aiOddsInsightEn = p.ai_odds_insight_en
             if (existing.odds == null && p.odds != null) existing.odds = p.odds
           }
         }
@@ -1032,7 +1061,7 @@ export default function BttsTodayDashboard() {
       )}
 
       {/* ─── FILTRES ─── */}
-      <div className="btx-filters btx-rev mb-4" role="group" aria-label={lang === 'fr' ? 'Filtres de pronostics' : 'Prediction filters'} style={{ ['--d' as string]: '90ms' }}>
+      <div className="btx-filters btx-rev mb-4" role="group" aria-label={lang === 'fr' ? 'Filtres de pronostics' : lang === 'ar' ? 'مرشحات التوقعات' : 'Prediction filters'} style={{ ['--d' as string]: '90ms' }}>
         {filters.map(f => (
           <button
             key={f.id}

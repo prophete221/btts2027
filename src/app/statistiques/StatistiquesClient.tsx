@@ -210,7 +210,7 @@ export default function StatistiquesClient() {
         <div className="rounded-2xl border border-[#2F7DFF]/40 bg-[#141C25] p-5">
           <div className="text-xs uppercase tracking-wider text-[#2F7DFF] font-bold">{copy.kpiGold}</div>
           <div className="mt-1 text-3xl font-bold text-[#F2F6FA] font-mono">{fmtPct(stats.gold.rate.toFixed(1), lang)} %</div>
-          <div className="mt-1 text-xs text-[#9DABBB]">{stats.gold.won} WIN / {stats.gold.lost} LOST — {stats.gold.total} vérifié{stats.gold.total > 1 ? 's' : ''}</div>
+          <div className="mt-1 text-xs text-[#9DABBB]">{stats.gold.won} WIN / {stats.gold.lost} LOST — {stats.gold.total} {lang === 'fr' ? `vérifié${stats.gold.total > 1 ? 's' : ''}` : lang === 'ar' ? 'موثقة' : 'verified'}</div>
         </div>
         <div className="rounded-2xl border border-[#223041] bg-[#141C25] p-5">
           <div className="text-xs uppercase tracking-wider text-[#9DABBB] font-bold">{copy.kpiVerified}</div>
@@ -223,7 +223,7 @@ export default function StatistiquesClient() {
       <section className="rounded-2xl border border-[#223041] bg-[#141C25] p-4 sm:p-6 mb-8" aria-labelledby="st-composition">
         <h2 id="st-composition" className="text-base font-bold text-[#F2F6FA] mb-1" style={{ fontFamily: 'Poppins, sans-serif' }}>{copy.composition}</h2>
         <p className="text-xs text-[#9DABBB] mb-4">{copy.compositionDesc(stats.total)}</p>
-        <CompositionBar won={stats.won} lost={stats.lost}
+        <CompositionBar won={stats.won} lost={stats.lost} lang={lang}
           labels={{ won: 'WIN', lost: 'LOST' }} />
       </section>
 
