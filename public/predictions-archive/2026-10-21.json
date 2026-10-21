@@ -1,6 +1,6 @@
 {
   "date": "2026-10-21",
-  "lastUpdated": "2026-10-21T07:37:17.106Z",
+  "lastUpdated": "2026-10-21T10:16:53.174Z",
   "source": "ESPN + TheSportsDB",
   "free": [
     {
@@ -144,7 +144,7 @@
       "xgAway": 1.83,
       "xgTotal": 3.98,
       "formBTTS": 25,
-      "analysis": "Levante : forme N-N-D-D-N (0V 3N 2D, 7 buts marqués / 11 encaissés sur 5) · Athletic Club : forme N-N-N-V-V (2V 3N 0D, 6 buts marqués / 1 encaissés sur 5). Classement : Levante 17e (7 pts), Athletic Club 11e (9 pts). Modèle Poisson : xG cumulé 3.98, BTTS 74.2%, Over 2.5 75.9%. Cotes DraftKings — 1: 3.55 / N: 3.3 / 2: 2.15 · Over 2.5: 2. Fiabilité 82.22%.",
+      "analysis": "Levante : forme N-N-D-D-N (0V 3N 2D, 7 buts marqués / 11 encaissés sur 5) · Athletic Club : forme N-N-N-V-V (2V 3N 0D, 6 buts marqués / 1 encaissés sur 5). Classement : Levante 17e (7 pts), Athletic Club 11e (9 pts). Modèle Poisson : xG cumulé 3.98, BTTS 74.2%, Over 2.5 75.9%. Cotes DraftKings — 1: 3.65 / N: 3.3 / 2: 2.15 · Over 2.5: 2. Fiabilité 82.22%.",
       "analysisData": {
         "bttsProb": 0.7423,
         "over25Prob": 0.7594,
@@ -156,7 +156,7 @@
       "estimatedCoteOver": 1.32,
       "odds": {
         "provider": "DraftKings",
-        "home": 3.55,
+        "home": 3.65,
         "draw": 3.3,
         "away": 2.15,
         "over25": 2,
@@ -480,7 +480,7 @@
       "xgAway": 1.37,
       "xgTotal": 3.2,
       "formBTTS": 65,
-      "analysis": "Aston Villa : forme V-V (2V 0N 0D, 9 buts marqués / 2 encaissés sur 5) · Viking FK : forme N-D (0V 1N 1D, 4 buts marqués / 6 encaissés sur 5). Classement : Aston Villa 4e (6 pts), Viking FK 29e (1 pts). Modèle Poisson : xG cumulé 3.2, BTTS 62.6%, Over 2.5 62.0%. Cotes DraftKings — 1: 1.22 / N: 7 / 2: 11. Fiabilité 68.16%.",
+      "analysis": "Aston Villa : forme V-V (2V 0N 0D, 9 buts marqués / 2 encaissés sur 5) · Viking FK : forme N-D (0V 1N 1D, 4 buts marqués / 6 encaissés sur 5). Classement : Aston Villa 4e (6 pts), Viking FK 29e (1 pts). Modèle Poisson : xG cumulé 3.2, BTTS 62.6%, Over 2.5 62.0%. Cotes DraftKings — 1: 1.24 / N: 6.5 / 2: 10.5. Fiabilité 68.16%.",
       "analysisData": {
         "bttsProb": 0.6265,
         "over25Prob": 0.6201,
@@ -492,9 +492,9 @@
       "estimatedCoteOver": 1.61,
       "odds": {
         "provider": "DraftKings",
-        "home": 1.22,
-        "draw": 7,
-        "away": 11,
+        "home": 1.24,
+        "draw": 6.5,
+        "away": 10.5,
         "over25": null,
         "under25": null
       },
@@ -592,7 +592,7 @@
       "xgAway": 1.37,
       "xgTotal": 3.2,
       "formBTTS": 60,
-      "analysis": "Bayern Munich : forme N-V (1V 1N 0D, 8 buts marqués / 3 encaissés sur 5) · Arsenal : forme V-V (2V 0N 0D, 4 buts marqués / 0 encaissés sur 5). Classement : Bayern Munich 12e (4 pts), Arsenal 8e (6 pts). Modèle Poisson : xG cumulé 3.2, BTTS 62.6%, Over 2.5 62.0%. Cotes DraftKings — 1: 2.05 / N: 3.9 / 2: 3.25. Fiabilité 68.16%.",
+      "analysis": "Bayern Munich : forme N-V (1V 1N 0D, 8 buts marqués / 3 encaissés sur 5) · Arsenal : forme V-V (2V 0N 0D, 4 buts marqués / 0 encaissés sur 5). Classement : Bayern Munich 12e (4 pts), Arsenal 8e (6 pts). Modèle Poisson : xG cumulé 3.2, BTTS 62.6%, Over 2.5 62.0%. Cotes DraftKings — 1: 2.2 / N: 3.8 / 2: 3 · Over 2.5: 1.59. Fiabilité 68.16%.",
       "analysisData": {
         "bttsProb": 0.6265,
         "over25Prob": 0.6201,
@@ -604,11 +604,11 @@
       "estimatedCoteOver": 1.61,
       "odds": {
         "provider": "DraftKings",
-        "home": 2.05,
-        "draw": 3.9,
-        "away": 3.25,
-        "over25": null,
-        "under25": null
+        "home": 2.2,
+        "draw": 3.8,
+        "away": 3,
+        "over25": 1.59,
+        "under25": 2.4
       },
       "oddsSource": "DraftKings",
       "estimatedCoteBTTS": 1.6,
@@ -928,7 +928,7 @@
       "xgAway": 1.37,
       "xgTotal": 3.2,
       "formBTTS": 50,
-      "analysis": "Real Betis : forme V-V (2V 0N 0D, 6 buts marqués / 4 encaissés sur 5) · Feyenoord Rotterdam : forme V-D (1V 0N 1D, 4 buts marqués / 7 encaissés sur 5). Classement : Real Betis 10e (6 pts), Feyenoord Rotterdam 24e (3 pts). Modèle Poisson : xG cumulé 3.2, BTTS 62.6%, Over 2.5 62.0%. Cotes DraftKings — 1: 1.63 / N: 4.6 / 2: 4.7. Fiabilité 68.16%.",
+      "analysis": "Real Betis : forme V-V (2V 0N 0D, 6 buts marqués / 4 encaissés sur 5) · Feyenoord Rotterdam : forme V-D (1V 0N 1D, 4 buts marqués / 7 encaissés sur 5). Classement : Real Betis 10e (6 pts), Feyenoord Rotterdam 24e (3 pts). Modèle Poisson : xG cumulé 3.2, BTTS 62.6%, Over 2.5 62.0%. Cotes DraftKings — 1: 1.65 / N: 4.5 / 2: 4.5. Fiabilité 68.16%.",
       "analysisData": {
         "bttsProb": 0.6265,
         "over25Prob": 0.6201,
@@ -940,9 +940,9 @@
       "estimatedCoteOver": 1.61,
       "odds": {
         "provider": "DraftKings",
-        "home": 1.63,
-        "draw": 4.6,
-        "away": 4.7,
+        "home": 1.65,
+        "draw": 4.5,
+        "away": 4.5,
         "over25": null,
         "under25": null
       },
@@ -1152,7 +1152,7 @@
       "xgAway": 1.37,
       "xgTotal": 3.2,
       "formBTTS": 40,
-      "analysis": "Sporting CP : forme V-V (2V 0N 0D, 5 buts marqués / 1 encaissés sur 5) · LASK Linz : forme D-D (0V 0N 2D, 3 buts marqués / 7 encaissés sur 5). Classement : Sporting CP 7e (6 pts), LASK Linz 32e (? pts). Modèle Poisson : xG cumulé 3.2, BTTS 62.6%, Over 2.5 62.0%. Cotes DraftKings — 1: 1.22 / N: 7.5 / 2: 11. Fiabilité 68.16%.",
+      "analysis": "Sporting CP : forme V-V (2V 0N 0D, 5 buts marqués / 1 encaissés sur 5) · LASK Linz : forme D-D (0V 0N 2D, 3 buts marqués / 7 encaissés sur 5). Classement : Sporting CP 7e (6 pts), LASK Linz 32e (? pts). Modèle Poisson : xG cumulé 3.2, BTTS 62.6%, Over 2.5 62.0%. Cotes DraftKings — 1: 1.25 / N: 7 / 2: 10. Fiabilité 68.16%.",
       "analysisData": {
         "bttsProb": 0.6265,
         "over25Prob": 0.6201,
@@ -1164,9 +1164,9 @@
       "estimatedCoteOver": 1.61,
       "odds": {
         "provider": "DraftKings",
-        "home": 1.22,
-        "draw": 7.5,
-        "away": 11,
+        "home": 1.25,
+        "draw": 7,
+        "away": 10,
         "over25": null,
         "under25": null
       },
@@ -1491,7 +1491,7 @@
       "xgAway": 1.38,
       "xgTotal": 3.15,
       "formBTTS": 24,
-      "analysis": "SV Darmstadt 98 : forme D-V-D-V-D (2V 0N 3D, 6 buts marqués / 14 encaissés sur 5) · St. Pauli : forme N-V-N-V-N (2V 3N 0D, 7 buts marqués / 4 encaissés sur 5). Classement : SV Darmstadt 98 17e (7 pts), St. Pauli 7e (11 pts). Modèle Poisson : xG cumulé 3.15, BTTS 62.1%, Over 2.5 61.0%. Cotes DraftKings — 1: 3 / N: 3.4 / 2: 2.25 · Over 2.5: 1.65. Fiabilité 83.4%.",
+      "analysis": "SV Darmstadt 98 : forme D-V-D-V-D (2V 0N 3D, 6 buts marqués / 14 encaissés sur 5) · St. Pauli : forme N-V-N-V-N (2V 3N 0D, 7 buts marqués / 4 encaissés sur 5). Classement : SV Darmstadt 98 17e (7 pts), St. Pauli 7e (11 pts). Modèle Poisson : xG cumulé 3.15, BTTS 62.1%, Over 2.5 61.0%. Cotes DraftKings — 1: 3.1 / N: 3.45 / 2: 2.2 · Over 2.5: 1.67. Fiabilité 83.4%.",
       "analysisData": {
         "bttsProb": 0.6205,
         "over25Prob": 0.6096,
@@ -1503,10 +1503,10 @@
       "estimatedCoteOver": 1.64,
       "odds": {
         "provider": "DraftKings",
-        "home": 3,
-        "draw": 3.4,
-        "away": 2.25,
-        "over25": 1.65,
+        "home": 3.1,
+        "draw": 3.45,
+        "away": 2.2,
+        "over25": 1.67,
         "under25": 2.1
       },
       "oddsSource": "DraftKings",
@@ -1830,7 +1830,7 @@
       "xgAway": 1.5,
       "xgTotal": 3.32,
       "formBTTS": 23,
-      "analysis": "Ipswich Town : forme D-V-D-V-D (2V 0N 3D, 7 buts marqués / 9 encaissés sur 5) · Nottingham Forest : forme D-D-D-V-N (1V 1N 3D, 3 buts marqués / 6 encaissés sur 5). Classement : Ipswich Town 10e (9 pts), Nottingham Forest 19e (5 pts). Modèle Poisson : xG cumulé 3.32, BTTS 65.1%, Over 2.5 64.4%. Cotes DraftKings — 1: 3 / N: 3.55 / 2: 2.3 · Over 2.5: 1.74. Fiabilité 78.21%.",
+      "analysis": "Ipswich Town : forme D-V-D-V-D (2V 0N 3D, 7 buts marqués / 9 encaissés sur 5) · Nottingham Forest : forme D-D-D-V-N (1V 1N 3D, 3 buts marqués / 6 encaissés sur 5). Classement : Ipswich Town 10e (9 pts), Nottingham Forest 19e (5 pts). Modèle Poisson : xG cumulé 3.32, BTTS 65.1%, Over 2.5 64.4%. Cotes DraftKings — 1: 3.1 / N: 3.5 / 2: 2.25 · Over 2.5: 1.74. Fiabilité 78.21%.",
       "analysisData": {
         "bttsProb": 0.6506,
         "over25Prob": 0.6439,
@@ -1842,9 +1842,9 @@
       "estimatedCoteOver": 1.55,
       "odds": {
         "provider": "DraftKings",
-        "home": 3,
-        "draw": 3.55,
-        "away": 2.3,
+        "home": 3.1,
+        "draw": 3.5,
+        "away": 2.25,
         "over25": 1.74,
         "under25": 2.1
       },
@@ -2404,7 +2404,7 @@
       "xgAway": 1.83,
       "xgTotal": 3.98,
       "formBTTS": 25,
-      "analysis": "Levante : forme N-N-D-D-N (0V 3N 2D, 7 buts marqués / 11 encaissés sur 5) · Athletic Club : forme N-N-N-V-V (2V 3N 0D, 6 buts marqués / 1 encaissés sur 5). Classement : Levante 17e (7 pts), Athletic Club 11e (9 pts). Modèle Poisson : xG cumulé 3.98, BTTS 74.2%, Over 2.5 75.9%. Cotes DraftKings — 1: 3.55 / N: 3.3 / 2: 2.15 · Over 2.5: 2. Fiabilité 82.22%.",
+      "analysis": "Levante : forme N-N-D-D-N (0V 3N 2D, 7 buts marqués / 11 encaissés sur 5) · Athletic Club : forme N-N-N-V-V (2V 3N 0D, 6 buts marqués / 1 encaissés sur 5). Classement : Levante 17e (7 pts), Athletic Club 11e (9 pts). Modèle Poisson : xG cumulé 3.98, BTTS 74.2%, Over 2.5 75.9%. Cotes DraftKings — 1: 3.65 / N: 3.3 / 2: 2.15 · Over 2.5: 2. Fiabilité 82.22%.",
       "analysisData": {
         "bttsProb": 0.7423,
         "over25Prob": 0.7594,
@@ -2416,7 +2416,7 @@
       "estimatedCoteOver": 1.32,
       "odds": {
         "provider": "DraftKings",
-        "home": 3.55,
+        "home": 3.65,
         "draw": 3.3,
         "away": 2.15,
         "over25": 2,
@@ -2740,7 +2740,7 @@
       "xgAway": 1.37,
       "xgTotal": 3.2,
       "formBTTS": 65,
-      "analysis": "Aston Villa : forme V-V (2V 0N 0D, 9 buts marqués / 2 encaissés sur 5) · Viking FK : forme N-D (0V 1N 1D, 4 buts marqués / 6 encaissés sur 5). Classement : Aston Villa 4e (6 pts), Viking FK 29e (1 pts). Modèle Poisson : xG cumulé 3.2, BTTS 62.6%, Over 2.5 62.0%. Cotes DraftKings — 1: 1.22 / N: 7 / 2: 11. Fiabilité 68.16%.",
+      "analysis": "Aston Villa : forme V-V (2V 0N 0D, 9 buts marqués / 2 encaissés sur 5) · Viking FK : forme N-D (0V 1N 1D, 4 buts marqués / 6 encaissés sur 5). Classement : Aston Villa 4e (6 pts), Viking FK 29e (1 pts). Modèle Poisson : xG cumulé 3.2, BTTS 62.6%, Over 2.5 62.0%. Cotes DraftKings — 1: 1.24 / N: 6.5 / 2: 10.5. Fiabilité 68.16%.",
       "analysisData": {
         "bttsProb": 0.6265,
         "over25Prob": 0.6201,
@@ -2752,9 +2752,9 @@
       "estimatedCoteOver": 1.61,
       "odds": {
         "provider": "DraftKings",
-        "home": 1.22,
-        "draw": 7,
-        "away": 11,
+        "home": 1.24,
+        "draw": 6.5,
+        "away": 10.5,
         "over25": null,
         "under25": null
       },
@@ -2852,7 +2852,7 @@
       "xgAway": 1.37,
       "xgTotal": 3.2,
       "formBTTS": 60,
-      "analysis": "Bayern Munich : forme N-V (1V 1N 0D, 8 buts marqués / 3 encaissés sur 5) · Arsenal : forme V-V (2V 0N 0D, 4 buts marqués / 0 encaissés sur 5). Classement : Bayern Munich 12e (4 pts), Arsenal 8e (6 pts). Modèle Poisson : xG cumulé 3.2, BTTS 62.6%, Over 2.5 62.0%. Cotes DraftKings — 1: 2.05 / N: 3.9 / 2: 3.25. Fiabilité 68.16%.",
+      "analysis": "Bayern Munich : forme N-V (1V 1N 0D, 8 buts marqués / 3 encaissés sur 5) · Arsenal : forme V-V (2V 0N 0D, 4 buts marqués / 0 encaissés sur 5). Classement : Bayern Munich 12e (4 pts), Arsenal 8e (6 pts). Modèle Poisson : xG cumulé 3.2, BTTS 62.6%, Over 2.5 62.0%. Cotes DraftKings — 1: 2.2 / N: 3.8 / 2: 3 · Over 2.5: 1.59. Fiabilité 68.16%.",
       "analysisData": {
         "bttsProb": 0.6265,
         "over25Prob": 0.6201,
@@ -2864,11 +2864,11 @@
       "estimatedCoteOver": 1.61,
       "odds": {
         "provider": "DraftKings",
-        "home": 2.05,
-        "draw": 3.9,
-        "away": 3.25,
-        "over25": null,
-        "under25": null
+        "home": 2.2,
+        "draw": 3.8,
+        "away": 3,
+        "over25": 1.59,
+        "under25": 2.4
       },
       "oddsSource": "DraftKings",
       "estimatedCoteBTTS": 1.6,
@@ -3188,7 +3188,7 @@
       "xgAway": 1.37,
       "xgTotal": 3.2,
       "formBTTS": 50,
-      "analysis": "Real Betis : forme V-V (2V 0N 0D, 6 buts marqués / 4 encaissés sur 5) · Feyenoord Rotterdam : forme V-D (1V 0N 1D, 4 buts marqués / 7 encaissés sur 5). Classement : Real Betis 10e (6 pts), Feyenoord Rotterdam 24e (3 pts). Modèle Poisson : xG cumulé 3.2, BTTS 62.6%, Over 2.5 62.0%. Cotes DraftKings — 1: 1.63 / N: 4.6 / 2: 4.7. Fiabilité 68.16%.",
+      "analysis": "Real Betis : forme V-V (2V 0N 0D, 6 buts marqués / 4 encaissés sur 5) · Feyenoord Rotterdam : forme V-D (1V 0N 1D, 4 buts marqués / 7 encaissés sur 5). Classement : Real Betis 10e (6 pts), Feyenoord Rotterdam 24e (3 pts). Modèle Poisson : xG cumulé 3.2, BTTS 62.6%, Over 2.5 62.0%. Cotes DraftKings — 1: 1.65 / N: 4.5 / 2: 4.5. Fiabilité 68.16%.",
       "analysisData": {
         "bttsProb": 0.6265,
         "over25Prob": 0.6201,
@@ -3200,9 +3200,9 @@
       "estimatedCoteOver": 1.61,
       "odds": {
         "provider": "DraftKings",
-        "home": 1.63,
-        "draw": 4.6,
-        "away": 4.7,
+        "home": 1.65,
+        "draw": 4.5,
+        "away": 4.5,
         "over25": null,
         "under25": null
       },
@@ -3412,7 +3412,7 @@
       "xgAway": 1.37,
       "xgTotal": 3.2,
       "formBTTS": 40,
-      "analysis": "Sporting CP : forme V-V (2V 0N 0D, 5 buts marqués / 1 encaissés sur 5) · LASK Linz : forme D-D (0V 0N 2D, 3 buts marqués / 7 encaissés sur 5). Classement : Sporting CP 7e (6 pts), LASK Linz 32e (? pts). Modèle Poisson : xG cumulé 3.2, BTTS 62.6%, Over 2.5 62.0%. Cotes DraftKings — 1: 1.22 / N: 7.5 / 2: 11. Fiabilité 68.16%.",
+      "analysis": "Sporting CP : forme V-V (2V 0N 0D, 5 buts marqués / 1 encaissés sur 5) · LASK Linz : forme D-D (0V 0N 2D, 3 buts marqués / 7 encaissés sur 5). Classement : Sporting CP 7e (6 pts), LASK Linz 32e (? pts). Modèle Poisson : xG cumulé 3.2, BTTS 62.6%, Over 2.5 62.0%. Cotes DraftKings — 1: 1.25 / N: 7 / 2: 10. Fiabilité 68.16%.",
       "analysisData": {
         "bttsProb": 0.6265,
         "over25Prob": 0.6201,
@@ -3424,9 +3424,9 @@
       "estimatedCoteOver": 1.61,
       "odds": {
         "provider": "DraftKings",
-        "home": 1.22,
-        "draw": 7.5,
-        "away": 11,
+        "home": 1.25,
+        "draw": 7,
+        "away": 10,
         "over25": null,
         "under25": null
       },
