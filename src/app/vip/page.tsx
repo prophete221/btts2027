@@ -5,6 +5,7 @@ import dynamic from 'next/dynamic'
 import { AFFILIATE } from '@/lib/constants'
 import { onlyVipFixtures } from '@/lib/vipPredictions'
 import { useLanguage } from '@/components/bttsbet/LanguageSwitcher'
+import VipWinHistory from './VipWinHistory'
 import { localizedPath, type Locale } from '@/lib/i18n'
 import { trackAffiliateAction, trackAffiliateCodeCopy } from '@/lib/affiliateTracking'
 import AnimatedTitle from '@/components/bttsbet/HeroWordmark'
@@ -866,6 +867,9 @@ export default function VipPage() {
             <article><span className="vipx-benefits__icon"><Icon.users /></span><h3>{text.b6Title}</h3><p>{text.b6Desc}</p></article>
           </div>
         </section>
+
+        {/* ═══════════ HISTORIQUE VIP — 15 dernières victoires vérifiées ═══════════ */}
+        <VipWinHistory />
 
         {/* ═══════════ CONFIANCE ═══════════ */}
         <section className="vipx-trust vipx-shell">
