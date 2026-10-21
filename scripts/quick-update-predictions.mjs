@@ -32,6 +32,10 @@ const MIN_KICKOFF_LEAD_MINUTES = 30 // safety buffer for long enrichment/verific
 // une prédiction lorsque les données d'équipe sont insuffisantes.
 const ESPN_SLUGS = {
   'uefa.champions': 'UEFA Champions League',
+  // Jeudi = soirée Europa League + Conference League — sans elles, les jeudis
+  // affichaient 0 match (régression du 22/10 : 36 matchs ESPN ignorés).
+  'uefa.europa': 'UEFA Europa League',
+  'uefa.europa.conf': 'UEFA Conference League',
   'eng.1': 'Premier League',
   'eng.2': 'Championship',
   'esp.1': 'LaLiga',
@@ -41,7 +45,8 @@ const ESPN_SLUGS = {
   'ger.2': '2. Bundesliga',
   'ned.1': 'Eredivisie',
   'bel.1': 'Jupiler Pro League',
-  'swi.1': 'Swiss Super League',
+  // ⚠ swi.1 renvoie HTTP 400 sur l'API ESPN — le vrai slug suisse est sui.1.
+  'sui.1': 'Swiss Super League',
   'por.1': 'Liga Portugal',
   'aut.1': 'Austrian Bundesliga',
   'sco.1': 'Scottish Premiership',
@@ -174,7 +179,7 @@ const teamStatsCache = new Map()
 const DOMESTIC_SLUGS = [
   'eng.1', 'esp.1', 'ita.1', 'ger.1', 'fra.1',
   'ned.1', 'por.1', 'bel.1', 'tur.1', 'aut.1',
-  'sco.1', 'nor.1', 'den.1', 'swe.1', 'gre.1', 'swi.1',
+  'sco.1', 'nor.1', 'den.1', 'swe.1', 'gre.1', 'sui.1',
 ]
 const teamSlugResolution = new Map() // teamId → slug domestique résolu
 
