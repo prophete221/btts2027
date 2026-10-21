@@ -5,6 +5,7 @@ import { generateMatchSlug, getAllMatchSlugs, getMatchBySlug, getVerifiedHistory
 import Link from 'next/link'
 import MatchAnalyticsCharts from '@/components/bttsbet/MatchAnalyticsCharts'
 import MatchViewTracker from '@/components/bttsbet/MatchViewTracker'
+import TeamContext from '@/components/bttsbet/TeamContext'
 import { localizedPath, type Locale } from '@/lib/i18n'
 
 interface PageProps {
@@ -276,6 +277,8 @@ export default async function MatchPage({ params, locale = 'fr' }: PageProps & {
               {copy.noFuture}
             </p>
           </section>
+
+          <TeamContext home={home} away={away} locale={locale} />
 
           <details className="mb-8 rounded-2xl border border-[#223041] p-4">
             <summary className="cursor-pointer text-sm font-semibold">{locale === 'en' ? 'How was this prediction calculated?' : locale === 'ar' ? 'كيف حُسب هذا التوقع؟' : 'Comment ce pronostic a-t-il été calculé ?'}</summary>

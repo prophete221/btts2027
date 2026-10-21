@@ -141,6 +141,10 @@ jobs:
         run: npm run lint
       - name: Run typecheck
         run: npx tsc --noEmit
+      - name: Update open licensed team context
+        timeout-minutes: 5
+        run: node scripts/update-team-context.mjs
+        continue-on-error: true
       - name: Validate predictions dataset before build
         run: node scripts/validate-predictions.mjs public/predictions.json --require-timestamp
 
@@ -168,6 +172,8 @@ jobs:
           git config --local user.email "bot@bttspredict.com"
           git config --local user.name "BTTSPredict Bot"
           git add public/predictions.json public/win-history.json public/transfers.json public/vip-combos.json public/predictions-archive/
+          if [ -f public/team-context.json ]; then git add public/team-context.json; fi
+          if [ -d public/team-media ]; then git add public/team-media/; fi
           git diff --staged --quiet || git commit -m "chore: auto-update data"
           git push || echo "No changes"
 

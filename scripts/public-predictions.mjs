@@ -21,6 +21,11 @@ export function observedFormBtts(row) {
     .filter(rate => typeof rate === 'number' && Number.isFinite(rate) && rate >= 0 && rate <= 1)
   return rates.length ? Math.round(rates.reduce((sum, rate) => sum + rate, 0) / rates.length * 100) : null
 }
+function sufficientRecordedEvidence(row) {
+  if (!('matchCountHome' in row) && !('matchCountAway' in row)) return true
+  return Number.isFinite(row.matchCountHome) && row.matchCountHome >= 4 &&
+    Number.isFinite(row.matchCountAway) && row.matchCountAway >= 4
+}
 function withoutLegacyAiChoices(row) {
   const safe = { ...row }
   for (const field of LEGACY_AI_CHOICES) delete safe[field]
@@ -48,7 +53,10 @@ export function publicPredictionPayload(payload, { retireLegacyAiNumbers = false
   // Ces conteneurs ne sont jamais distribués par le site statique.
   delete result.combos
   for (const field of ['free', 'predictions']) {
-    if (Array.isArray(payload[field])) result[field] = payload[field].filter(row => !isVipRow(row)).map(row => retireLegacyAiNumbers ? withoutLegacyAiChoices(row) : row)
+    if (Array.isArray(payload[field])) result[field] = payload[field].filter(row => !isVipRow(row) && (!retireLegacyAiNumbers || sufficientRecordedEvidence(row))).map(row => retireLegacyAiNumbers ? withoutLegacyAiChoices(row) : row)
+  }
+  if (retireLegacyAiNumbers && Array.isArray(result.free) && result.stats) {
+    result.stats = { ...result.stats, freeCount: result.free.length }
   }
   return result
 }

@@ -30,6 +30,7 @@ describe('frontière publique des données VIP', () => {
     expect(current.free[0]).not.toHaveProperty('ai_btts_prob')
     expect(current.free[0]).not.toHaveProperty('ai_winner')
     expect(current.free[0].formBTTS).toBeNull()
+    expect(publicPredictionPayload({ free: [{ ...row, matchCountHome: 2, matchCountAway: 8 }] }, { retireLegacyAiNumbers: true }).free).toEqual([])
     expect(observedFormBtts({ formBTTS: 80, formHome: { bttsRate: 0.4 }, formAway: { bttsRate: 0.8 } })).toBe(60)
     expect(publicPredictionPayload(payload).free[0]).toEqual(row)
   })

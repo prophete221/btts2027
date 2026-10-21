@@ -1,0 +1,81 @@
+{
+  "updatedAt": "2026-10-21T13:03:15.935Z",
+  "teams": {
+    "Athletic Club": {
+      "name": "Athletic Club",
+      "checkedAt": "2026-10-21T12:59:51.254Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null
+    },
+    "Austria Vienna": {
+      "name": "Austria Vienna",
+      "checkedAt": "2026-10-21T12:59:53.635Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null
+    },
+    "D.C. United": {
+      "name": "D.C. United",
+      "checkedAt": "2026-10-21T12:59:54.511Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": {
+        "url": "/team-media/06e3cdf6fde5a6403c0f.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Audi_Field_June_25th.jpg",
+        "author": "Rainclaw7",
+        "license": "CC BY-SA",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "caption": "D.C. United — stade Audi Field: Audi Field before the 7/25/18 DC United game vs. the New York Red Bulls",
+        "kind": "stadium",
+        "date": "2018-07-25T18:37:21.000Z",
+        "title": "File:Audi Field June 25th.jpg",
+        "cachedAt": "2026-10-21T13:00:02.185Z"
+      },
+      "officialUrl": "https://www.dcunited.com/",
+      "entityUrl": "https://www.wikidata.org/wiki/Q238593"
+    },
+    "FC Cincinnati": {
+      "name": "FC Cincinnati",
+      "checkedAt": "2026-10-21T12:59:57.327Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null
+    },
+    "Levante": {
+      "name": "Levante",
+      "checkedAt": "2026-10-21T12:59:59.380Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": null,
+      "officialUrl": null,
+      "entityUrl": null
+    },
+    "SC Rheindorf Altach": {
+      "name": "SC Rheindorf Altach",
+      "checkedAt": "2026-10-21T13:00:00.249Z",
+      "newsStatus": "empty",
+      "news": [],
+      "image": {
+        "url": "/team-media/3a7b3f66c25c09c4185f.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:CashpointArenaAltach.JPG",
+        "author": "böhringer friedrich",
+        "license": "CC BY-SA",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5",
+        "caption": "SC Rheindorf Altach — stade Stadion Schnabelholz: Die Cashpoint-Arena ist ein 8.500 Zuschauer fassendes Fußballstadion in Altach , im österreichischen Bundesland Vorarlberg .",
+        "kind": "stadium",
+        "date": "2008-05-16T00:00:00.000Z",
+        "title": "File:CashpointArenaAltach.JPG",
+        "cachedAt": "2026-10-21T13:00:02.185Z"
+      },
+      "officialUrl": "https://www.scra.at/",
+      "entityUrl": "https://www.wikidata.org/wiki/Q670438"
+    }
+  }
+}
