@@ -1,13 +1,21 @@
 'use client'
 
 /**
- * GiftPopup — paquet cadeau flottant « Bonus 300% » (page d'accueil uniquement).
+ * GiftPopup — paquet cadeau flottant « Bonus 300% » (monté GLOBALEMENT dans
+ * le layout racine : visible sur toutes les pages du site).
  *
  * Comportement :
- *  - Apparaît en bas d'écran une fois l'utilisateur scrollé (~30 % de la page).
+ *  - PAGE PRIORITAIRE — /over-2-5/predictions/today (fr, /en et /ar) : la page
+ *    la plus visitée du site. Le cadeau s'affiche IMMÉDIATEMENT (après un court
+ *    délai d'entrée), sans exiger de scroll, avec une clé de fermeture dédiée
+ *    (fermer ici ne masque pas le cadeau sur les autres pages, et réciproquement).
+ *  - AUTRES PAGES : apparaît en bas d'écran une fois l'utilisateur scrollé
+ *    (~30 % de la page) ou après un filet de sécurité de 7 s — les pages
+ *    courtes (mentions légales, CGU…) ne peuvent pas atteindre 30 % de scroll,
+ *    le cadeau doit malgré tout s'afficher sur toutes les pages.
  *  - Redirige vers Linebet via le lien de parrainage AFFILIATE.linebet.
  *  - Fermable (croix) : la fermeture est mémorisée en sessionStorage pour ne
- *    plus déranger l'utilisateur pendant la session.
+ *    plus déranger l'utilisateur pendant la session (par contexte).
  *  - Mobile : positionné au-dessus de MobileTabBar (64px) + StickyCTABar (~68px).
  *  - Desktop : ancré en bas à droite.
  *  - Tracking affiliation : signup_cta_click / gift-popup-300 (consent-gated).
@@ -17,59 +25,82 @@
  */
 
 import { useEffect, useState } from 'react'
+import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 import { AFFILIATE, SITE } from '@/lib/constants'
 import { trackAffiliateAction } from '@/lib/affiliateTracking'
 import MovingGradientButton from './MovingGradientButton'
 
 const GIFT_DISMISS_KEY = 'bttsbet_gift_popup_dismissed'
+const GIFT_DISMISS_KEY_TODAY = 'bttsbet_gift_popup_dismissed_today'
+
+/** Pages prioritaires : /over-2-5/predictions/today (+ variantes /en et /ar). */
+const PRIORITY_PATH_RE = /^\/(?:en|ar)?\/?over-2-5\/predictions\/today\/?$/
 
 export default function GiftPopup() {
   const reduceMotion = useReducedMotion()
+  const pathname = usePathname() ?? ''
+  const isPriorityPage = PRIORITY_PATH_RE.test(pathname)
   // SSR-safe : caché par défaut, révélé uniquement côté client si non fermé.
   const [dismissed, setDismissed] = useState(true)
   const [visible, setVisible] = useState(false)
 
   useEffect(() => {
-    let alreadyClosed = false
+    const dismissKey = isPriorityPage ? GIFT_DISMISS_KEY_TODAY : GIFT_DISMISS_KEY
     try {
-      alreadyClosed = sessionStorage.getItem(GIFT_DISMISS_KEY) === '1'
+      if (sessionStorage.getItem(dismissKey) === '1') return
     } catch {
       /* sessionStorage indisponible — on affiche normalement */
     }
-    if (alreadyClosed) return
 
+    const reveal = () => {
+      setDismissed(false)
+      setVisible(true)
+    }
+
+    // Page prioritaire (la plus visitée) : affichage immédiat, sans scroll.
+    if (isPriorityPage) {
+      /* Léger délai : laisse l'entrée de page se terminer avant le spring. */
+      const timer = setTimeout(reveal, 900)
+      return () => clearTimeout(timer)
+    }
+
+    // Toutes les autres pages : seuil de scroll 30 % + filet de sécurité 7 s
+    // (une page plus courte que l'écran ne peut pas atteindre 30 %).
     let armed = false
-    const onScroll = () => {
+    const revealOnce = () => {
       if (armed) return
+      armed = true
+      reveal()
+      window.removeEventListener('scroll', onScroll)
+      window.removeEventListener('resize', onScroll)
+    }
+    const onScroll = () => {
       const denom = document.documentElement.scrollHeight - window.innerHeight
-      if (denom <= 0) return
-      if (window.scrollY / denom >= 0.3) {
-        armed = true
-        setVisible(true)
-        window.removeEventListener('scroll', onScroll)
-      }
+      if (denom <= 0 || window.scrollY / denom >= 0.3) revealOnce()
     }
     /* Armer au frame suivant : évite un setState synchrone dans l'effet
-       (cascade de rendus). Comportement identique — le seuil de scroll
-       est évalué dès le montage, puis à chaque scroll/resize. */
+       (cascade de rendus). Le seuil de scroll est évalué dès le montage,
+       puis à chaque scroll/resize — le filet 7 s couvre les pages courtes. */
     const arm = requestAnimationFrame(() => {
       setDismissed(false)
       onScroll()
     })
+    const fallback = setTimeout(revealOnce, 7000)
     window.addEventListener('scroll', onScroll, { passive: true })
     window.addEventListener('resize', onScroll, { passive: true })
     return () => {
       cancelAnimationFrame(arm)
+      clearTimeout(fallback)
       window.removeEventListener('scroll', onScroll)
       window.removeEventListener('resize', onScroll)
     }
-  }, [])
+  }, [isPriorityPage])
 
   const close = () => {
     setVisible(false)
     try {
-      sessionStorage.setItem(GIFT_DISMISS_KEY, '1')
+      sessionStorage.setItem(isPriorityPage ? GIFT_DISMISS_KEY_TODAY : GIFT_DISMISS_KEY, '1')
     } catch {
       /* no-op */
     }

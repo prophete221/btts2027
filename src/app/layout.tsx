@@ -6,6 +6,7 @@ import "./globals.css";
 const BottomNavigation = dynamic(() => import("@/components/bttsbet/BottomNavigation"), { loading: () => null });
 const CookieConsent = dynamic(() => import("@/components/bttsbet/CookieConsent"), { loading: () => null });
 const AnalyticsLoader = dynamic(() => import("@/components/bttsbet/AnalyticsLoader"), { loading: () => null });
+const GiftPopup = dynamic(() => import("@/components/bttsbet/GiftPopup"), { loading: () => null }); // Paquet cadeau Bonus 300% — global (SSR: null, zéro impact SEO/CLS)
 
 // ─── Local fonts (no network fetch during build) ───────────────────────────
 // Use next/font/local instead of next/font/google to avoid:
@@ -194,6 +195,7 @@ export default function RootLayout({
         {children}
         <BottomNavigation />
         <CookieConsent />
+        <GiftPopup />
         <div aria-hidden="true" className="lg:hidden" style={{ height: 'calc(64px + env(safe-area-inset-bottom, 0px))' }} />
       </body>
     </html>

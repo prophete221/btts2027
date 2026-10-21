@@ -14,7 +14,6 @@ const PartnerCard = dynamic(() => import('@/components/bttsbet/HomeEditorial').t
 const Footer = dynamic(() => import('@/components/bttsbet/Footer'), { loading: () => null })
 const ErrorBoundary = dynamic(() => import('@/components/bttsbet/ErrorBoundary'), { loading: () => null })
 const StickyCTABar = dynamic(() => import('@/components/bttsbet/StickyCTABar'), { loading: () => null })
-const GiftPopup = dynamic(() => import('@/components/bttsbet/GiftPopup'), { loading: () => null })
 
 // Tâche 002 — Title et description SEO alignés sur le Prompt Maître.
 // Title : 49 chars (limite soft 60) — description : 139 chars (limite soft 150).
@@ -287,8 +286,6 @@ export default function Home() {
       {/* Sticky CTA Bar — mobile only, appears after 60% scroll */}
       <StickyCTABar />
 
-      {/* Paquet cadeau flottant « Bonus 300% » — Linebet parrainage, fermable (accueil) */}
-      <GiftPopup />
     </div>
   )
 }
