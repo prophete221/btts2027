@@ -2172,6 +2172,15 @@
       "league": "Austrian Bundesliga",
       "date": "2026-10-24",
       "time": "15:00"
+    },
+    {
+      "vip": true,
+      "id": "vfbstutt-vs-borussia-2026-10-23",
+      "home": "VfB Stuttgart",
+      "away": "Borussia Mönchengladbach",
+      "league": "Bundesliga",
+      "date": "2026-10-23",
+      "time": "18:30"
     }
   ],
   "stats": {
