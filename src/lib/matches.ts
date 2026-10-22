@@ -64,6 +64,41 @@ export function verifiedMarketKey(value: string | undefined): string {
   return marketKey(value)
 }
 
+/** Forme détaillée d'une équipe sur ses derniers matchs (pipeline, source ESPN). */
+export interface TeamFormSummary {
+  last5String?: string
+  wins?: number
+  draws?: number
+  losses?: number
+  goalsFor?: number
+  goalsAgainst?: number
+  bttsRate?: number
+  over25Rate?: number
+  cleanSheets?: number
+  failedToScore?: number
+  count?: number
+}
+
+/** Position au classement de la compétition courante (ESPN standings). */
+export interface TeamStandings {
+  rank?: number
+  points?: number
+  played?: number
+  gf?: number
+  ga?: number
+  note?: string
+}
+
+/** Cotes moyennes du marché agrégées par le pipeline. */
+export interface MatchOdds {
+  provider?: string
+  home?: number
+  draw?: number
+  away?: number
+  over25?: number
+  under25?: number
+}
+
 export interface MatchData {
   slug: string
   home: string
@@ -108,6 +143,23 @@ export interface MatchData {
   // par le pipeline pour la section « Dernière minute » des pages /match/).
   last5Home?: Array<{ date: string; opponent: string; venue: 'H' | 'A'; score: string; result: 'W' | 'D' | 'L' }>
   last5Away?: Array<{ date: string; opponent: string; venue: 'H' | 'A'; score: string; result: 'W' | 'D' | 'L' }>
+  // Forme détaillée par équipe (pipeline quick-update-predictions.mjs, source ESPN).
+  formHome?: TeamFormSummary
+  formAway?: TeamFormSummary
+  // Classement de la compétition courante par équipe (ESPN standings).
+  standingsHome?: TeamStandings
+  standingsAway?: TeamStandings
+  // Cotes moyennes du marché (agrégées par le pipeline).
+  odds?: MatchOdds
+  // Champs éditoriaux Gemini supplémentaires : actualités d'équipe (absents)
+  // et lecture des cotes. Versions _en préférées sur les pages anglaises.
+  aiAbsences?: string
+  aiOddsInsight?: string
+  aiKeyFactEn?: string
+  aiAnalysisEn?: string
+  aiAbsencesEn?: string
+  aiOddsInsightEn?: string
+  reliabilityScore?: number
   // Date de publication réelle du snapshot de données (predictions.json / archives).
   // Remplace toute date de source codée en dur dans l'UI.
   lastUpdated?: string
@@ -155,6 +207,18 @@ export function loadAllMatches(): Map<string, MatchData> {
           aiRisk: p.ai_risk, formBtts: observedFormBtts(p) ?? undefined, lastUpdated: snapshotPublishedAt,
           last5Home: Array.isArray(p.last5Home) ? p.last5Home.slice(0, 5) : undefined,
           last5Away: Array.isArray(p.last5Away) ? p.last5Away.slice(0, 5) : undefined,
+          formHome: p.formHome || undefined,
+          formAway: p.formAway || undefined,
+          standingsHome: p.standingsHome || undefined,
+          standingsAway: p.standingsAway || undefined,
+          odds: p.odds || undefined,
+          aiAbsences: p.ai_absences || undefined,
+          aiOddsInsight: p.ai_odds_insight || undefined,
+          aiKeyFactEn: p.ai_key_fact_en || undefined,
+          aiAnalysisEn: p.ai_analysis_en || undefined,
+          aiAbsencesEn: p.ai_absences_en || undefined,
+          aiOddsInsightEn: p.ai_odds_insight_en || undefined,
+          reliabilityScore: p.reliabilityScore || undefined,
         })
         refreshed.add(slug)
       }
