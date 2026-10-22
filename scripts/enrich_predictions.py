@@ -45,6 +45,10 @@ RETRY_DELAY = 5  # seconds between retries
 RATE_LIMIT_WAIT = 20  # seconds on 429
 CHUNK_SIZE = 4
 MAX_OUTPUT_TOKENS = 8192
+# Budget temps pour les appels Gemini : le step GitHub Actions plafonne à 10 min.
+# Au-delà du budget, on arrête les appels et le fallback local couvre le reste
+# (44+ matchs publiés depuis les quotas quotidiens du 22/10).
+ENRICH_TIME_BUDGET_S = 420
 
 # ─── Gemini SDK ────────────────────────────────────────────────────────────
 try:
@@ -417,12 +421,28 @@ def _call_gemini_chunk(client, matches: list, id_offset: int) -> list:
 
 
 def call_gemini_batch(client, all_matches: list) -> list:
-    """Enrich all matches in small chunks and preserve global match indexes."""
+    """Enrich all matches in small chunks and preserve global match indexes.
+
+    Un budget temps (ENRICH_TIME_BUDGET_S) borne les appels : au-delà, on
+    s'arrête proprement et le fallback local garantit des narratives completes
+    pour les matchs restants — aucun timeout workflow ne peut casser l'étape.
+    """
     enrichments = []
+    started = time.monotonic()
+    processed = 0
     for id_offset in range(0, len(all_matches), CHUNK_SIZE):
+        elapsed = time.monotonic() - started
+        if elapsed > ENRICH_TIME_BUDGET_S:
+            remaining = len(all_matches) - processed
+            print(
+                f"[enrich] ⏱️ Time budget {ENRICH_TIME_BUDGET_S}s reached after "
+                f"{processed} matches — {remaining} remaining matches go to local fallback"
+            )
+            break
         chunk = all_matches[id_offset:id_offset + CHUNK_SIZE]
         result = _call_gemini_chunk(client, chunk, id_offset)
         enrichments.extend(result)
+        processed += len(chunk)
         if not result:
             print(f"[enrich] ⚠️ Chunk {id_offset + 1}-{id_offset + len(chunk)} returned no enrichment — local fallback will cover it")
     print(f"[enrich] Received {len(enrichments)}/{len(all_matches)} total enrichments")

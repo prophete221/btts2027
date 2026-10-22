@@ -23,8 +23,15 @@ function writeJsonAtomically(file, payload) {
 }
 
 const FUTURE_DAYS = 7        // look ahead 7 days to ensure we always have matches
-const MAX_FREE = 12           // show up to 12 free matches (Gemini-powered analysis)
-const MAX_VIP = 8            // show up to 8 VIP matches
+// Régression du 22/10 : la limite unique MAX_FREE=12 remplissait tous les slots
+// free avec les seuls matchs du jour (163 acceptés les jeudis Europa/Conference
+// après l'ajout des ligues du 20-21/10) — les matchs de demain et des jours
+// suivants n'étaient JAMAIS publiés (section « À venir » vide, onglet « Demain »
+// de la homepage vide). Publication par quotas quotidiens :
+const MAX_FREE_TODAY = 24     // matchs du jour en accès libre (budget Gemini ≈ 6 chunks)
+const MAX_PER_DAY_UPCOMING = 8 // matchs publiés par jour à venir (J+1..J+N)
+const MAX_UPCOMING_DAYS = 5   // profondeur « À venir » affichée
+const MAX_VIP = 8            // show up to 8 VIP matches (toujours des matchs du jour)
 const DISPLAY_TZ = 'Africa/Dakar'  // Senegal timezone = UTC+0 (GMT)
 const MIN_KICKOFF_LEAD_MINUTES = 30 // safety buffer for long enrichment/verification steps
 
@@ -732,26 +739,55 @@ async function quickUpdate() {
     return b.reliabilityScore - a.reliabilityScore
   })
 
-  // ─── DISPLAY-FIRST PUBLICATION ───
-  // Free: top 8 by reliability (any score, always show top)
-  const free = scored.slice(0, MAX_FREE)
+  // ─── DISPLAY-FIRST PUBLICATION (quotas quotidiens) ───
+  // scored est trié date ASC puis fiabilité DESC → chaque journée est déjà
+  // triée par fiabilité. On publie : le jour J en grand volume, puis les
+  // meilleures affiches des jours à venir pour alimenter « À venir ».
+  const todayMatches = scored.filter(p => p.date === today)
+  const upcomingDays = new Map()
+  for (const p of scored) {
+    if (typeof p.date === 'string' && p.date > today) {
+      if (!upcomingDays.has(p.date)) upcomingDays.set(p.date, [])
+      upcomingDays.get(p.date).push(p)
+    }
+  }
+  const freeToday = todayMatches.slice(0, MAX_FREE_TODAY)
+  const freeUpcoming = []
+  for (const day of [...upcomingDays.keys()].sort().slice(0, MAX_UPCOMING_DAYS)) {
+    freeUpcoming.push(...upcomingDays.get(day).slice(0, MAX_PER_DAY_UPCOMING))
+  }
+  const free = [...freeToday, ...freeUpcoming]
 
   // Aucun choix privé n'est publié sans accès sécurisé : le preview n'expose que
   // l'identité du match et les métadonnées de fixture explicitement autorisées.
-  const vipPreview = scored.slice(MAX_FREE, MAX_FREE + MAX_VIP).map(publicVipFixture)
+  // Aperçu VIP : d'abord les sélections du jour non publiées en accès libre ;
+  // si le jour est pauvre (ex. jeudis Europa où tout le jour est déjà en free),
+  // complété par les meilleures affiches à venir — l'aperçu VIP ne doit jamais
+  // être vide (la page VIP reste sinon sans sélection à présenter).
+  const freeKeys = new Set(free.map(p => `${p.home}|${p.away}|${p.date}`))
+  const notInFree = (list) => list.filter(p => !freeKeys.has(`${p.home}|${p.away}|${p.date}`))
+  const upcomingAll = scored.filter(p => typeof p.date === 'string' && p.date > today)
+  const vipPreview = [...notInFree(todayMatches), ...notInFree(upcomingAll)]
+    .sort((a, b) => {
+      const dateCmp = (a.date || '').localeCompare(b.date || '')
+      if (dateCmp !== 0) return dateCmp
+      return b.reliabilityScore - a.reliabilityScore
+    })
+    .slice(0, MAX_VIP)
+    .map(publicVipFixture)
 
   // ─── LOG RESULTS ───
   console.log(`\n[v91] ===== RESULTS =====`)
   console.log(`Total analysed: ${uniqueMatches.length}`)
   console.log(`Rejected (very low proba): ${rejected}`)
   console.log(`Published: ${scored.length}`)
-  console.log(`Free published: ${free.length} (max ${MAX_FREE})`)
-  console.log(`VIP preview: ${vipPreview.length} (max ${MAX_VIP})`)
+  console.log(`Free published: ${free.length} (du jour: ${freeToday.length}/${MAX_FREE_TODAY}, à venir: ${freeUpcoming.length}, max ${MAX_PER_DAY_UPCOMING}/jour sur ${MAX_UPCOMING_DAYS} jours)`)
+  console.log(`VIP preview: ${vipPreview.length} (max ${MAX_VIP}, sélections du jour)`)
 
   console.log(`\n--- REJECTED (first 10) ---`)
   rejectionReasons.slice(0, 10).forEach(r => console.log(r))
 
-  console.log(`\n--- FREE (top ${free.length}) ---`)
+  console.log(`\n--- FREE (${free.length}) ---`)
   free.forEach(p => console.log(`  ${p.match} | ${p.date} ${p.time} | ${p.league} | BTTS ${p.bttsProbDisplay} | O2.5 ${p.over25ProbDisplay} | xG ${p.xgTotal} | Rel ${p.reliabilityScore}`))
 
   // ─── Calculate stats ───

@@ -167,7 +167,7 @@ const copy = {
     m3Confirm: `Je confirme : dépôt de ${VIP_DEPOSIT} effectué`,
     m4Id: 'Ajoute ton ID joueur dans le message WhatsApp avant d’envoyer.',
     m4After: 'Dès que l’équipe confirme ton inscription et ton dépôt, ton accès VIP est activé et les combinés se déverrouillent.',
-    matchesTitle: 'Les matchs VIP du jour',
+    matchesTitle: 'Les prochains matchs VIP',
     matchesSub: 'Les affiches analysées par le moteur. La sélection reste verrouillée jusqu’à la vérification de ton accès.',
     conditionsTitle: 'Conditions de déblocage',
     cond1Title: 'Copie ton code promo',
@@ -204,11 +204,11 @@ const copy = {
     todo: 'À faire',
     combosEyebrow: 'Aperçu VIP',
     combosTitle: 'Les matchs sont visibles. La sélection reste verrouillée.',
-    combosIntro: 'Voici les affiches analysées aujourd’hui. Le marché et la sélection VIP se déverrouillent après vérification de ton accès.',
+    combosIntro: 'Voici les prochaines affiches analysées. Le marché et la sélection VIP se déverrouillent après vérification de ton accès.',
     kickoff: 'Coup d’envoi',
     locked: 'Sélection verrouillée',
     lockedCta: 'Débloquer',
-    combosEmpty: 'Aucune sélection VIP disponible aujourd’hui.',
+    combosEmpty: 'Aucune sélection VIP disponible pour le moment.',
     benefitsEyebrow: 'Ce que tu débloques',
     benefitsTitle: 'Un espace VIP complet, pas juste une liste',
     b1Title: 'Pronos VIP du jour',
@@ -277,7 +277,7 @@ const copy = {
     m3Confirm: `I confirm: ${VIP_DEPOSIT} deposit made`,
     m4Id: 'Add your player ID to the WhatsApp message before sending.',
     m4After: 'As soon as the team confirms your sign-up and deposit, your VIP access is activated and the combos unlock.',
-    matchesTitle: 'Today’s VIP matches',
+    matchesTitle: 'Upcoming VIP matches',
     matchesSub: 'The fixtures analysed by the engine. The selection stays locked until your access is verified.',
     conditionsTitle: 'Unlock conditions',
     cond1Title: 'Copy your promo code',
@@ -314,11 +314,11 @@ const copy = {
     todo: 'To do',
     combosEyebrow: 'VIP preview',
     combosTitle: 'Matches are visible. The selection stays locked.',
-    combosIntro: 'Here are today’s analysed fixtures. The VIP market and selection unlock once your access is verified.',
+    combosIntro: 'Here are the next analysed fixtures. The VIP market and selection unlock once your access is verified.',
     kickoff: 'Kick-off',
     locked: 'Selection locked',
     lockedCta: 'Unlock',
-    combosEmpty: 'No VIP selection available today.',
+    combosEmpty: 'No VIP selection available right now.',
     benefitsEyebrow: 'What you unlock',
     benefitsTitle: 'A complete VIP space, not just a list',
     b1Title: 'Daily VIP picks',
@@ -387,7 +387,7 @@ const copy = {
     m3Confirm: `أؤكد: تم إيداع ${VIP_DEPOSIT}`,
     m4Id: 'أضف معرّف لاعبك في رسالة واتساب قبل الإرسال.',
     m4After: 'بمجرد أن يؤكد الفريق التسجيل والإيداع، يُفعَّل وصولك إلى VIP وتُفتح التركيبات.',
-    matchesTitle: 'مباريات VIP اليوم',
+    matchesTitle: 'مباريات VIP القادمة',
     matchesSub: 'المواجهات التي حللها المحرك. يبقى الاختيار مقفلاً حتى يتم التحقق من وصولك.',
     conditionsTitle: 'شروط الفتح',
     cond1Title: 'انسخ رمزك الترويجي',
@@ -424,11 +424,11 @@ const copy = {
     todo: 'للإنجاز',
     combosEyebrow: 'معاينة VIP',
     combosTitle: 'المباريات ظاهرة. الاختيار يبقى مقفلاً.',
-    combosIntro: 'هذه مواجهات اليوم التي تم تحليلها. يُفتح سوق واختيار VIP بعد التحقق من وصولك.',
+    combosIntro: 'هذه المواجهات القادمة التي تم تحليلها. يُفتح سوق واختيار VIP بعد التحقق من وصولك.',
     kickoff: 'انطلاق المباراة',
     locked: 'الاختيار مقفل',
     lockedCta: 'فتح',
-    combosEmpty: 'لا توجد اختيارات VIP متاحة اليوم.',
+    combosEmpty: 'لا توجد اختيارات VIP متاحة حالياً.',
     benefitsEyebrow: 'ماذا تفتح',
     benefitsTitle: 'فضاء VIP كامل، وليس مجرد قائمة',
     b1Title: 'توقعات VIP اليومية',
@@ -484,8 +484,6 @@ export default function VipPage() {
   const memberCardRef = useRef<HTMLDivElement | null>(null)
   const memberTilt = useTilt(memberCardRef, 9)
 
-  const today = dakarDate()
-
   useEffect(() => {
     if (!toast) return
     const timer = window.setTimeout(() => setToast(''), 2600)
@@ -514,7 +512,9 @@ export default function VipPage() {
 
   /* Aperçu VIP : uniquement les fixtures explicitement marquées VIP par la source de données.
      Jamais de contenu gratuit (free / predictions / vipPreview non flagué) dans cet espace —
-     seule une donnée explicitement VIP (payload.vip / payload.vipPredictions, flag vip) est retenue. */
+     seule une donnée explicitement VIP (payload.vip / payload.vipPredictions, flag vip) est retenue.
+     Sélections du jour d'abord, puis prochains matchs à venir (kickoff futur) lorsque le jour
+     n'offre plus de sélection exclusive — l'aperçu reste toujours rempli et honnête. */
   useEffect(() => {
     let cancelled = false
     fetch('/predictions.json', { cache: 'no-store' })
@@ -529,15 +529,14 @@ export default function VipPage() {
           const away = fixture.away?.trim()
           const { raw, timestamp } = fixtureKickoff(fixture)
           if (!home || !away || !Number.isFinite(timestamp) || timestamp <= Date.now()) continue
-          // Sélections du jour uniquement (Africa/Dakar) : un match programmé
-          // à J+N (ex. dans 4 jours) n'est jamais présenté comme sélection du jour.
-          if (dakarDate(new Date(timestamp)) !== today) continue
           const key = `${home.toLowerCase()}|${away.toLowerCase()}|${timestamp}`
           if (seen.has(key)) continue
           seen.add(key)
           upcoming.push({ ...fixture, kickoff: raw })
           if (upcoming.length >= 4) break
         }
+        // Les matchs du jour d'abord, puis les jours suivants (chronologie réelle).
+        upcoming.sort((a, b) => Date.parse(a.kickoff || '') - Date.parse(b.kickoff || ''))
         if (!cancelled) setFixtures(upcoming)
       })
       .catch(() => {
@@ -685,11 +684,11 @@ export default function VipPage() {
               ))}
             </ol>
 
-            {/* Matchs VIP affichés dans la carte */}
+            {/* Matchs VIP affichés dans la carte — noms d'équipes floutés :
+                l'affiche intrigue, l'identité des équipes reste exclusive VIP */}
             <div className="vipx-card__matches">
               <div className="vipx-card__matches-head">
                 <h4><Icon.target />{text.matchesTitle}</h4>
-                <time dateTime={today}>{today}</time>
               </div>
               <p className="vipx-card__matches-sub">{text.matchesSub}</p>
               {fixtures.length > 0 ? (
@@ -700,7 +699,11 @@ export default function VipPage() {
                       <li key={`${fixture.home}-${fixture.away}-${raw}-${index}`}>
                         <div className="vipx-matches__teams">
                           <small>{fixture.league?.trim() || 'Football'}</small>
-                          <strong>{fixture.home} <span aria-hidden="true">vs</span> {fixture.away}</strong>
+                          <strong aria-hidden="true">
+                            <span className="vipx-blur">{fixture.home}</span>
+                            {' '}<span className="vipx-matches__vs">vs</span>{' '}
+                            <span className="vipx-blur">{fixture.away}</span>
+                          </strong>
                         </div>
                         <div className="vipx-matches__right">
                           <time dateTime={raw}>{formatKickoff(raw, lang)}</time>

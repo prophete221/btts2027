@@ -636,7 +636,15 @@ export default function FreePredictions({ initialLocale }: { initialLocale?: Loc
           const db = `${b.date}T${b.time || '23:59'}`
           return da.localeCompare(db)
         })
-        setMatches(all)
+        // La section s'intitule « Intelligence du jour » : on affiche d'abord les
+        // matchs du jour (Africa/Dakar). Si la journée est pauvre, on complète
+        // avec les prochaines affiches à venir pour ne jamais rendre la section
+        // vide — les cartes affichent la date réelle de chaque match.
+        const todayAll = all.filter(m => getDakarDayDiff(m.date) === 0)
+        const upcomingFill = todayAll.length < 6
+          ? all.filter(m => getDakarDayDiff(m.date) > 0).slice(0, 12)
+          : []
+        setMatches([...todayAll, ...upcomingFill])
         setLoading(false)
       })
       .catch(() => setLoading(false))

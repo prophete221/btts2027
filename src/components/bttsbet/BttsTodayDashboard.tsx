@@ -33,7 +33,7 @@ import Link from 'next/link'
 import { generateMatchSlug } from '@/lib/match-slug'
 import { useLanguage } from './LanguageSwitcher'
 import { translationsFor, type Locale, localizedPath } from '@/lib/i18n'
-import { getDakarDateString, getDakarMatchStatus } from '@/lib/dakar-date'
+import { getDakarDateString, getDakarMatchStatus, getDakarDayDiff } from '@/lib/dakar-date'
 
 // ─── Palette (V3 — bleu analyse, sémantique WIN/LOST/PENDING) ────────────────
 const C = {
@@ -310,7 +310,7 @@ function ProbBar({ label, value, color, dim }: { label: string; value?: number; 
 }
 
 // ─── StatusChip — LIVE pulsant / Terminé / Heure ────────────────────────
-function StatusChip({ status, time, lang }: { status: CardStatus; time: string; lang: Locale }) {
+function StatusChip({ status, time, lang, date }: { status: CardStatus; time: string; lang: Locale; date?: string }) {
   if (status === 'live') {
     return (
       <span className="btx-status btx-status--live">
@@ -326,7 +326,21 @@ function StatusChip({ status, time, lang }: { status: CardStatus; time: string; 
       </span>
     )
   }
-  return <span className="btx-status">{time || '--:--'}</span>
+  // Matchs à venir : afficher la date pour les journées suivantes (J+1 et plus)
+  // afin qu'une affiche « 19:00 » de demain ne soit pas confondue avec celle du jour.
+  let dayLabel = ''
+  if (date && /^\d{4}-\d{2}-\d{2}$/.test(date)) {
+    const diff = getDakarDayDiff(date)
+    if (diff === 1) dayLabel = lang === 'fr' ? 'Demain' : lang === 'en' ? 'Tomorrow' : 'غداً'
+    else if (diff > 1) {
+      try {
+        dayLabel = new Intl.DateTimeFormat(lang === 'en' ? 'en-GB' : lang === 'ar' ? 'ar' : 'fr-FR', {
+          timeZone: 'Africa/Dakar', day: '2-digit', month: 'short',
+        }).format(new Date(`${date}T12:00:00Z`))
+      } catch { /* date invalide — libellé absent */ }
+    }
+  }
+  return <span className="btx-status">{dayLabel ? `${dayLabel} · ` : ''}{time || '--:--'}</span>
 }
 
 // ─── Match Card — premium V3 (glass, liseré statut, sheen, barres animées) ──
@@ -379,7 +393,7 @@ function MatchCard({ match, index, status, lang, insufficientDataLabel, labels, 
         {/* ─── TOP : ligue + statut ─── */}
         <div className="btx-card__top">
           <span className="btx-league">{match.league}</span>
-          <StatusChip status={fine} time={match.time} lang={lang} />
+          <StatusChip status={fine} time={match.time} lang={lang} date={match.date} />
         </div>
 
         {/* ─── TEAMS ─── */}

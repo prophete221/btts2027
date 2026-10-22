@@ -54,7 +54,8 @@ describe('no invented data — fallbacks interdits', () => {
     expect(source).not.toMatch(/\.\.\.\(payload\.free/)
     expect(source).not.toMatch(/\.\.\.\(payload\.predictions/)
     // Message d'absence de sélection VIP exigé par le propriétaire
-    expect(source).toContain('Aucune sélection VIP disponible aujourd')
+    // (formulation « pour le moment » depuis le repli VIP vers les jours à venir)
+    expect(source).toContain('Aucune sélection VIP disponible pour le moment')
     // Parcours VIP inchangé : code Linebet, dépôt minimum, vérification WhatsApp
     expect(source).toContain("VIP_CODE = 'VISION221'")
     expect(source).toContain("VIP_DEPOSIT = '10 €'")
