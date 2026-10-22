@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "generatedAt": "2026-10-21T23:15:51.040Z",
+  "generatedAt": "2026-10-22T03:14:50.211Z",
   "pendingPolicy": {
     "graceHours": 48,
     "rule": "Sans statut vérifié, un match futur ou récent reste « en attente » pendant exactement 48 h après son coup d'envoi.",
@@ -14,18 +14,18 @@
     "insufficientVolume": false
   },
   "stats": {
-    "total": 145,
-    "won": 97,
+    "total": 146,
+    "won": 98,
     "lost": 48,
-    "pending": 58,
+    "pending": 69,
     "unverifiable": 635,
-    "archivedTotal": 838,
-    "rate": 66.9,
+    "archivedTotal": 850,
+    "rate": 67.1,
     "gold": {
-      "total": 115,
-      "won": 77,
+      "total": 116,
+      "won": 78,
       "lost": 38,
-      "rate": 67
+      "rate": 67.2
     },
     "standard": {
       "total": 30,
@@ -35,10 +35,10 @@
     },
     "byType": {
       "btts": {
-        "total": 143,
-        "won": 96,
+        "total": 144,
+        "won": 97,
         "lost": 47,
-        "rate": 67.1
+        "rate": 67.4
       },
       "over25": {
         "total": 2,
@@ -141,16 +141,16 @@
       },
       {
         "date": "2026-10-21",
-        "total": 10,
-        "won": 7,
+        "total": 11,
+        "won": 8,
         "lost": 3,
-        "rate": 70
+        "rate": 72.7
       }
     ],
     "period": {
       "from": "2026-08-08",
-      "to": "2026-10-21",
-      "days": 75
+      "to": "2026-10-22",
+      "days": 76
     }
   },
   "history": [
@@ -272,6 +272,18 @@
       "status": "WON",
       "finalScore": "3-1",
       "verifiedAt": "2026-10-21T20:28:02.990Z",
+      "source": "ESPN public"
+    },
+    {
+      "date": "2026-10-21",
+      "match": "FC Cincinnati vs D.C. United",
+      "league": "MLS",
+      "market": "btts",
+      "tier": "GOLD",
+      "proba": 0.813,
+      "status": "WON",
+      "finalScore": "2-1",
+      "verifiedAt": "2026-10-22T03:08:00.301Z",
       "source": "ESPN public"
     },
     {
@@ -1896,37 +1908,37 @@
     }
   ],
   "legacyStats": {
-    "total": 333,
-    "won": 159,
-    "lost": 174,
+    "total": 319,
+    "won": 155,
+    "lost": 164,
     "pending": 0,
-    "unverifiable": 352,
-    "archivedTotal": 685,
-    "rate": 47.7,
+    "unverifiable": 316,
+    "archivedTotal": 635,
+    "rate": 48.6,
     "gold": {
-      "total": 27,
-      "won": 13,
-      "lost": 14,
-      "rate": 48.1
+      "total": 19,
+      "won": 9,
+      "lost": 10,
+      "rate": 47.4
     },
     "standard": {
-      "total": 306,
+      "total": 300,
       "won": 146,
-      "lost": 160,
-      "rate": 47.7
+      "lost": 154,
+      "rate": 48.7
     },
     "byType": {
       "btts": {
-        "total": 167,
-        "won": 77,
-        "lost": 90,
-        "rate": 46.1
+        "total": 160,
+        "won": 75,
+        "lost": 85,
+        "rate": 46.9
       },
       "over25": {
-        "total": 166,
-        "won": 82,
-        "lost": 84,
-        "rate": 49.4
+        "total": 159,
+        "won": 80,
+        "lost": 79,
+        "rate": 50.3
       }
     },
     "trend14": [
@@ -2030,9 +2042,9 @@
       }
     ],
     "period": {
-      "from": "2026-07-24",
+      "from": "2026-07-25",
       "to": "2026-08-07",
-      "days": 15
+      "days": 14
     },
     "history": [
       {

@@ -3978,7 +3978,9 @@
       "over25Prob": 0.859,
       "homeLambda": 2.82,
       "awayLambda": 2,
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "2-1",
+      "verifiedAt": "2026-10-22T03:08:00.301Z"
     },
     {
       "id": "levante-vs-athletic-2026-10-21",
