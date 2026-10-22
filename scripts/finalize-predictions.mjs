@@ -5,7 +5,12 @@ import { fileURLToPath } from 'node:url'
 import { sufficientRecordedEvidence } from './public-predictions.mjs'
 
 // Verification may change these result fields; all prediction/model/narrative data is immutable.
-const RESULT_FIELDS = ['status', 'finalScore', 'verifiedAt', 'isWon', 'verifiedSource', 'verificationSource']
+// last5Home/last5Away (historique détaillé ESPN des 5 derniers matchs, pages /match/)
+// sont des données CONTEXTUELLES rafraîchissables, pas des champs de pronostic :
+// sans eux dans RESULT_FIELDS, le gel d'immutabilité rétablirait à chaque run la
+// première version archivée du match — publiée AVANT l'existence de ces champs —
+// et l'historique « Dernière minute » resterait à jamais vide sur le site.
+const RESULT_FIELDS = ['status', 'finalScore', 'verifiedAt', 'isWon', 'verifiedSource', 'verificationSource', 'last5Home', 'last5Away']
 
 function predictionKey(prediction) {
   const market = String(prediction?.type ?? '').trim().toLowerCase()

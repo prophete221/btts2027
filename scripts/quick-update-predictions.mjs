@@ -718,14 +718,20 @@ async function quickUpdate() {
       // ─── Historique détaillé des 5 derniers matchs de chaque équipe ───
       // (déjà fetché via ESPN_TEAM_SCHEDULE — publié pour la section
       // « Dernière minute » des pages /match/ : adversaire, score, résultat)
-      last5Home: (homeStats.recent || []).slice(0, 5).map(r => ({
-        date: r.date, opponent: r.opponent, venue: r.isHome ? 'H' : 'A',
-        score: `${r.goalsFor}-${r.goalsAgainst}`, result: r.result,
-      })),
-      last5Away: (awayStats.recent || []).slice(0, 5).map(r => ({
-        date: r.date, opponent: r.opponent, venue: r.isHome ? 'H' : 'A',
-        score: `${r.goalsFor}-${r.goalsAgainst}`, result: r.result,
-      })),
+      // Champ émis seulement si non vide : finalize (RESULT_FIELDS) ne doit
+      // jamais voir un last5 vide écraser un historique précédemment publié.
+      ...(homeStats.recent?.length ? {
+        last5Home: homeStats.recent.slice(0, 5).map(r => ({
+          date: r.date, opponent: r.opponent, venue: r.isHome ? 'H' : 'A',
+          score: `${r.goalsFor}-${r.goalsAgainst}`, result: r.result,
+        })),
+      } : {}),
+      ...(awayStats.recent?.length ? {
+        last5Away: awayStats.recent.slice(0, 5).map(r => ({
+          date: r.date, opponent: r.opponent, venue: r.isHome ? 'H' : 'A',
+          score: `${r.goalsFor}-${r.goalsAgainst}`, result: r.result,
+        })),
+      } : {}),
       standingsHome: m.standingsHome || null,
       standingsAway: m.standingsAway || null,
       // ─── BOTH predictions array (so FreePredictions has both BTTS + Over 2.5) ───
