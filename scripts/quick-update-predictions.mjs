@@ -715,6 +715,17 @@ async function quickUpdate() {
       // ─── Forme réelle (5 derniers matchs) + classement — pour l'analyse AI ───
       formHome,
       formAway,
+      // ─── Historique détaillé des 5 derniers matchs de chaque équipe ───
+      // (déjà fetché via ESPN_TEAM_SCHEDULE — publié pour la section
+      // « Dernière minute » des pages /match/ : adversaire, score, résultat)
+      last5Home: (homeStats.recent || []).slice(0, 5).map(r => ({
+        date: r.date, opponent: r.opponent, venue: r.isHome ? 'H' : 'A',
+        score: `${r.goalsFor}-${r.goalsAgainst}`, result: r.result,
+      })),
+      last5Away: (awayStats.recent || []).slice(0, 5).map(r => ({
+        date: r.date, opponent: r.opponent, venue: r.isHome ? 'H' : 'A',
+        score: `${r.goalsFor}-${r.goalsAgainst}`, result: r.result,
+      })),
       standingsHome: m.standingsHome || null,
       standingsAway: m.standingsAway || null,
       // ─── BOTH predictions array (so FreePredictions has both BTTS + Over 2.5) ───

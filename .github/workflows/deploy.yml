@@ -5,8 +5,9 @@ on:
     branches:
       - main
   schedule:
-    # Refresh predictions six times daily so completed matches are replaced promptly.
-    - cron: '0 */4 * * *'
+    # Refresh every 3 h — the diff-based FTP upload (see ftp-diff.mjs) keeps each
+    # run short, so completed matches are replaced promptly without overlap.
+    - cron: '0 */3 * * *'
   workflow_dispatch:
   pull_request:
     branches:
@@ -38,6 +39,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '22'
+          cache: 'npm'
 
       - name: Install dependencies
         run: npm ci --legacy-peer-deps
@@ -86,6 +88,16 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '22'
+          cache: 'npm'
+
+      - name: Restore Next.js build cache
+        uses: actions/cache@v4
+        with:
+          path: .next/cache
+          key: next-cache-${{ runner.os }}-${{ hashFiles('package-lock.json') }}-${{ github.sha }}
+          restore-keys: |
+            next-cache-${{ runner.os }}-${{ hashFiles('package-lock.json') }}-
+            next-cache-${{ runner.os }}-
 
       - name: Install dependencies
         run: npm ci --legacy-peer-deps
@@ -222,32 +234,49 @@ jobs:
           purge out/predictions-archive/ ./predictions-archive/ 60
           echo "✓ Purge terminée"
 
-      # Transport unchanged: verified FTPS could not be established by the read-only probe.
-      # Existing ftp:// + disabled certificate validation remains a separately reported risk.
-      - name: Deploy to bttspredict.com via FTP
+      # ═══ DÉPLOIEMENT DIFFÉRENTIEL (ftp-diff.mjs) ═══
+      # Le miroir complet (~10 000 fichiers, parallel=1) prenait des heures et
+      # maintenait le site dans un état incohérent pendant l'upload (les matchs
+      # semblaient « disparaître »). On ne transfère désormais que les fichiers
+      # dont le sha256 a changé depuis le déploiement précédent — manifeste
+      # versionné sur le serveur. Repli automatique : parallel=1 puis miroir
+      # complet historique si le diff échoue.
+      - name: Deploy to bttspredict.com via FTP (manifest diff + fallbacks)
         env:
           FTP_SERVER: ${{ secrets.FTP_SERVER }}
           FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
           FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
         run: |
           set -euo pipefail
-          # Synchronisation explicite du build statique vers la racine du site.
-          # Sans --delete : aucun fichier distant non lié au build n'est supprimé
-          # (la purge ciblée est faite par le step précédent).
-          # Parallel=1 + retries élevés pour éviter les 550 race conditions
-          # lors de la création des nouveaux dossiers /match/...
-          # .htaccess est EXCLU du miroir : le serveur refuse l'écrasement STOR
-          # (553 Permission denied) ce qui faisait échouer tout le déploiement
-          # malgré un transfert de site complet. Il est déployé par le step
-          # suivant via rm + rename.
-          lftp -u "$FTP_USERNAME,$FTP_PASSWORD" "ftp://$FTP_SERVER" -e "
-            set ssl:verify no
-            set net:timeout 60
-            set net:max-retries 5
-            set mirror:use-pget-n 1
-            mirror --reverse --no-perms --overwrite --verbose --parallel=1 --exclude '^\\.htaccess$' out/ ./
-            bye
-          "
+          ftp_run() {
+            lftp -u "$FTP_USERNAME,$FTP_PASSWORD" "ftp://$FTP_SERVER" -e "$1"
+          }
+          SETTINGS="set ssl:verify no; set net:timeout 60; set net:max-retries 5; set mirror:use-pget-n 1"
+          # 0. Manifeste du déploiement précédent — base du diff. Absent ou
+          #    illisible → prepare liste tous les fichiers (miroir complet).
+          if ! ftp_run "$SETTINGS; set net:timeout 30; set net:max-retries 2; get ./deploy-manifest.json -o out/deploy-manifest.prev.json; bye"; then
+            echo "Aucun manifeste distant (premier déploiement diff) — diff complet."
+          fi
+          # 1. Liste des fichiers modifiés/nouveaux (sha256, un pattern regex par ligne).
+          node scripts/ftp-diff.mjs prepare
+          # 2. Miroir DIFF — uniquement ces fichiers. parallel=4 est sûr sur des
+          #    fichiers existants ; en cas d'échec (550 race sur un nouveau dossier
+          #    /match/), repli parallel=1 puis miroir complet historique.
+          if [ -s out/deploy-list.txt ]; then
+            if ! ftp_run "$SETTINGS; mirror --reverse --no-perms --overwrite --verbose --parallel=4 --include-from-file=out/deploy-list.txt --exclude '^\\.htaccess$' out/ ./; bye"; then
+              echo "::warning::Miroir diff en échec — repli parallel=1"
+              if ! ftp_run "$SETTINGS; mirror --reverse --no-perms --overwrite --verbose --parallel=1 --include-from-file=out/deploy-list.txt --exclude '^\\.htaccess$' out/ ./; bye"; then
+                echo "::warning::Miroir diff toujours en échec — repli sur miroir complet historique"
+                ftp_run "$SETTINGS; mirror --reverse --no-perms --overwrite --verbose --parallel=1 --exclude '^\\.htaccess$' out/ ./; bye"
+              fi
+            fi
+          else
+            echo "Aucun fichier modifié — rien à transférer."
+          fi
+          # 3. Manifeste mis en ligne — le prochain run différera contre lui.
+          if ! ftp_run "$SETTINGS; put out/deploy-manifest.json -o ./deploy-manifest.json; bye"; then
+            echo "::warning::Manifeste non déployé — le prochain run effectuera un diff complet (plus lent mais sûr)."
+          fi
 
       - name: Deploy .htaccess (rm + rename — évite le 553 Permission denied)
         continue-on-error: true

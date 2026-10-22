@@ -104,6 +104,10 @@ export interface MatchData {
   matchCountAway?: number
   aiRisk?: string
   formBtts?: string | number
+  // Historique détaillé des 5 derniers matchs de chaque équipe (ESPN, publié
+  // par le pipeline pour la section « Dernière minute » des pages /match/).
+  last5Home?: Array<{ date: string; opponent: string; venue: 'H' | 'A'; score: string; result: 'W' | 'D' | 'L' }>
+  last5Away?: Array<{ date: string; opponent: string; venue: 'H' | 'A'; score: string; result: 'W' | 'D' | 'L' }>
   // Date de publication réelle du snapshot de données (predictions.json / archives).
   // Remplace toute date de source codée en dur dans l'UI.
   lastUpdated?: string
@@ -149,6 +153,8 @@ export function loadAllMatches(): Map<string, MatchData> {
           dataQuality: p.dataQuality, dataSource: p.dataSource,
           matchCountHome: p.matchCountHome, matchCountAway: p.matchCountAway,
           aiRisk: p.ai_risk, formBtts: observedFormBtts(p) ?? undefined, lastUpdated: snapshotPublishedAt,
+          last5Home: Array.isArray(p.last5Home) ? p.last5Home.slice(0, 5) : undefined,
+          last5Away: Array.isArray(p.last5Away) ? p.last5Away.slice(0, 5) : undefined,
         })
         refreshed.add(slug)
       }

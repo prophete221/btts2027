@@ -77,10 +77,12 @@ const MATCH_COPY: Record<Locale, {
   dataUsed: string; dataUsedDesc: string; matchesAnalyzed: string; perTeam: string; lambdaLabel: string; lambdaHint: string;
   xgTotalLabel: string; modelSource: string; recentForm: string; formBttsLabel: string; conclusion: string; qualityNote: string;
   publishedOn: string; readOfMatch: string; riskLevel: string; notAvailable: string;
+  lastMinute: string; lastMinuteSub: string; letterWin: string; letterDraw: string; letterLoss: string;
+  venueHome: string; venueAway: string; noRecent: string;
 }> = {
-  fr: { home: 'Accueil', predictions: 'Pronostics', breadcrumb: 'Fil d’Ariane', finalScore: 'Score réel vérifié', predictedScore: 'Score estimé', report: 'Pronostics du modèle', published: 'Données publiées', bttsSubtitle: 'Les deux équipes marquent', overSubtitle: 'Total de buts ≥ 3', won: 'Gagné', lost: 'Perdu', pending: 'En attente', noFuture: 'Aucun résultat futur n’est garanti. 18+.', keyFact: 'À retenir', analysis: 'Analyse statistique', verification: 'Vérification', verifiedAt: 'Vérifié le', source: 'Source : ESPN et TheSportsDB.', intelligence: 'Analyse du match', further: 'Aller plus loin', today: 'Voir les pronostics du jour →', todayDesc: 'Tous les matchs analysés par notre modèle statistique', premium: 'Pronostics premium →', vipDesc: 'Programme VIP BTTSPredict', disclaimer: '18+ · Les paris sportifs comportent un risque de perte. Aucun résultat futur n’est garanti. BTTSPredict ne prend pas de paris et ne collecte pas de fonds. Pronostic publié à titre informatif, ne constitue pas une incitation à parier.', dataUsed: 'Données utilisées', dataUsedDesc: 'Informations disponibles pour cette analyse.', matchesAnalyzed: 'Matchs pris en compte', perTeam: 'par équipe', lambdaLabel: 'Buts estimés par le modèle', lambdaHint: 'Estimations calculées à partir des buts récents disponibles ; ce ne sont pas des scores de match.', xgTotalLabel: 'Total de buts estimé', modelSource: 'Modèle statistique', recentForm: 'Forme récente', formBttsLabel: 'BTTS sur les matchs récents', conclusion: 'Conclusion', qualityNote: 'La qualité des données décrit les informations disponibles, pas les chances de gagner.', publishedOn: 'Données publiées le', readOfMatch: 'notre lecture du match', riskLevel: 'Niveau de prudence', notAvailable: 'Non disponible' },
-  en: { home: 'Home', predictions: 'Predictions', breadcrumb: 'Breadcrumb', finalScore: 'Verified result', predictedScore: 'Model score estimate', report: 'Model predictions', published: 'Published data', bttsSubtitle: 'Both teams to score', overSubtitle: 'Total goals ≥ 3', won: 'Won', lost: 'Lost', pending: 'Pending', noFuture: 'No future result is guaranteed. 18+.', keyFact: 'À retenir', analysis: 'Statistical analysis', verification: 'Verification', verifiedAt: 'Verified on', source: 'Source: ESPN and TheSportsDB.', intelligence: 'Match analysis', further: 'Explore further', today: 'View today’s predictions →', todayDesc: 'All matches analyzed by our statistical model', premium: 'Premium predictions →', vipDesc: 'BTTSPredict VIP programme', disclaimer: '18+ · Sports betting carries a risk of loss. No future result is guaranteed. BTTSPredict does not take bets or hold funds. This prediction is informational and is not an invitation to bet.', dataUsed: 'Data used', dataUsedDesc: 'Information available for this analysis.', matchesAnalyzed: 'Matches included', perTeam: 'per team', lambdaLabel: 'Model-estimated goals', lambdaHint: 'Estimates based on available recent goals; they are not match scores.', xgTotalLabel: 'Estimated total goals', modelSource: 'Statistical model', recentForm: 'Recent form', formBttsLabel: 'BTTS in recent matches', conclusion: 'Conclusion', qualityNote: 'Data quality describes the information available, not the chance of winning.', publishedOn: 'Data published on', readOfMatch: 'our read of the match', riskLevel: 'Prudence level', notAvailable: 'Not available' },
-  ar: { home: 'الرئيسية', predictions: 'التوقعات', breadcrumb: 'مسار التنقل', finalScore: 'النتيجة الفعلية المؤكدة', predictedScore: 'نتيجة تقديرية', report: 'توقعات النموذج', published: 'بيانات منشورة', bttsSubtitle: 'كلا الفريقين يسجلان', overSubtitle: 'إجمالي الأهداف ≥ 3', won: 'فوز', lost: 'خسارة', pending: 'قيد الانتظار', noFuture: 'لا توجد ضمانات لأي نتيجة مستقبلية. 18+.', keyFact: 'الخلاصة', analysis: 'تحليل إحصائي', verification: 'التحقق', verifiedAt: 'تم التحقق في', source: 'المصدر: ESPN وTheSportsDB.', intelligence: 'تحليل المباراة', further: 'استكشف المزيد', today: 'عرض توقعات اليوم ←', todayDesc: 'جميع المباريات التي حللها نموذجنا الإحصائي', premium: 'التوقعات المميزة ←', vipDesc: 'برنامج VIP من BTTSPredict', disclaimer: '18+ · المراهنات الرياضية تنطوي على خطر الخسارة. لا توجد ضمانات لأي نتيجة مستقبلية. BTTSPredict لا يقبل الرهانات ولا يحتفظ بالأموال. هذا التوقع إعلامي وليس دعوة للمراهنة.', dataUsed: 'البيانات المستخدمة', dataUsedDesc: 'البيانات المتاحة لهذا التحليل.', matchesAnalyzed: 'المباريات المشمولة', perTeam: 'لكل فريق', lambdaLabel: 'أهداف يقدّرها النموذج', lambdaHint: 'تقديرات مبنية على الأهداف الحديثة المتاحة، وليست نتيجة المباراة.', xgTotalLabel: 'إجمالي الأهداف المقدّر', modelSource: 'نموذج إحصائي', recentForm: 'الأداء الأخير', formBttsLabel: 'BTTS في المباريات الأخيرة', conclusion: 'الخاتمة', qualityNote: 'جودة البيانات تصف المعلومات المتاحة، ولا تعني فرصة الفوز.', publishedOn: 'نُشرت البيانات في', readOfMatch: 'قراءتنا للمباراة', riskLevel: 'مستوى الحذر', notAvailable: 'غير متوفر' },
+  fr: { home: 'Accueil', predictions: 'Pronostics', breadcrumb: 'Fil d’Ariane', finalScore: 'Score réel vérifié', predictedScore: 'Score estimé', report: 'Pronostics du modèle', published: 'Données publiées', bttsSubtitle: 'Les deux équipes marquent', overSubtitle: 'Total de buts ≥ 3', won: 'Gagné', lost: 'Perdu', pending: 'En attente', noFuture: 'Aucun résultat futur n’est garanti. 18+.', keyFact: 'À retenir', analysis: 'Analyse statistique', verification: 'Vérification', verifiedAt: 'Vérifié le', source: 'Source : ESPN et TheSportsDB.', intelligence: 'Analyse du match', further: 'Aller plus loin', today: 'Voir les pronostics du jour →', todayDesc: 'Tous les matchs analysés par notre modèle statistique', premium: 'Pronostics premium →', vipDesc: 'Programme VIP BTTSPredict', disclaimer: '18+ · Les paris sportifs comportent un risque de perte. Aucun résultat futur n’est garanti. BTTSPredict ne prend pas de paris et ne collecte pas de fonds. Pronostic publié à titre informatif, ne constitue pas une incitation à parier.', dataUsed: 'Données utilisées', dataUsedDesc: 'Informations disponibles pour cette analyse.', matchesAnalyzed: 'Matchs pris en compte', perTeam: 'par équipe', lambdaLabel: 'Buts estimés par le modèle', lambdaHint: 'Estimations calculées à partir des buts récents disponibles ; ce ne sont pas des scores de match.', xgTotalLabel: 'Total de buts estimé', modelSource: 'Modèle statistique', recentForm: 'Forme récente', formBttsLabel: 'BTTS sur les matchs récents', conclusion: 'Conclusion', qualityNote: 'La qualité des données décrit les informations disponibles, pas les chances de gagner.', publishedOn: 'Données publiées le', readOfMatch: 'notre lecture du match', riskLevel: 'Niveau de prudence', notAvailable: 'Non disponible', lastMinute: 'Dernière minute', lastMinuteSub: 'Historique des 5 derniers matchs de chaque équipe — source ESPN, mise à jour avant le coup d’envoi.', letterWin: 'V', letterDraw: 'N', letterLoss: 'D', venueHome: 'D', venueAway: 'E', noRecent: 'Aucun match récent enregistré pour cette équipe.' },
+  en: { home: 'Home', predictions: 'Predictions', breadcrumb: 'Breadcrumb', finalScore: 'Verified result', predictedScore: 'Model score estimate', report: 'Model predictions', published: 'Published data', bttsSubtitle: 'Both teams to score', overSubtitle: 'Total goals ≥ 3', won: 'Won', lost: 'Lost', pending: 'Pending', noFuture: 'No future result is guaranteed. 18+.', keyFact: 'À retenir', analysis: 'Statistical analysis', verification: 'Verification', verifiedAt: 'Verified on', source: 'Source: ESPN and TheSportsDB.', intelligence: 'Match analysis', further: 'Explore further', today: 'View today’s predictions →', todayDesc: 'All matches analyzed by our statistical model', premium: 'Premium predictions →', vipDesc: 'BTTSPredict VIP programme', disclaimer: '18+ · Sports betting carries a risk of loss. No future result is guaranteed. BTTSPredict does not take bets or hold funds. This prediction is informational and is not an invitation to bet.', dataUsed: 'Data used', dataUsedDesc: 'Information available for this analysis.', matchesAnalyzed: 'Matches included', perTeam: 'per team', lambdaLabel: 'Model-estimated goals', lambdaHint: 'Estimates based on available recent goals; they are not match scores.', xgTotalLabel: 'Estimated total goals', modelSource: 'Statistical model', recentForm: 'Recent form', formBttsLabel: 'BTTS in recent matches', conclusion: 'Conclusion', qualityNote: 'Data quality describes the information available, not the chance of winning.', publishedOn: 'Data published on', readOfMatch: 'our read of the match', riskLevel: 'Prudence level', notAvailable: 'Not available', lastMinute: 'Last-minute insights', lastMinuteSub: 'Each team’s last 5 matches — ESPN data, refreshed before kick-off.', letterWin: 'W', letterDraw: 'D', letterLoss: 'L', venueHome: 'H', venueAway: 'A', noRecent: 'No recent match recorded for this team.' },
+  ar: { home: 'الرئيسية', predictions: 'التوقعات', breadcrumb: 'مسار التنقل', finalScore: 'النتيجة الفعلية المؤكدة', predictedScore: 'نتيجة تقديرية', report: 'توقعات النموذج', published: 'بيانات منشورة', bttsSubtitle: 'كلا الفريقين يسجلان', overSubtitle: 'إجمالي الأهداف ≥ 3', won: 'فوز', lost: 'خسارة', pending: 'قيد الانتظار', noFuture: 'لا توجد ضمانات لأي نتيجة مستقبلية. 18+.', keyFact: 'الخلاصة', analysis: 'تحليل إحصائي', verification: 'التحقق', verifiedAt: 'تم التحقق في', source: 'المصدر: ESPN وTheSportsDB.', intelligence: 'تحليل المباراة', further: 'استكشف المزيد', today: 'عرض توقعات اليوم ←', todayDesc: 'جميع المباريات التي حللها نموذجنا الإحصائي', premium: 'التوقعات المميزة ←', vipDesc: 'برنامج VIP من BTTSPredict', disclaimer: '18+ · المراهنات الرياضية تنطوي على خطر الخسارة. لا توجد ضمانات لأي نتيجة مستقبلية. BTTSPredict لا يقبل الرهانات ولا يحتفظ بالأموال. هذا التوقع إعلامي وليس دعوة للمراهنة.', dataUsed: 'البيانات المستخدمة', dataUsedDesc: 'البيانات المتاحة لهذا التحليل.', matchesAnalyzed: 'المباريات المشمولة', perTeam: 'لكل فريق', lambdaLabel: 'أهداف يقدّرها النموذج', lambdaHint: 'تقديرات مبنية على الأهداف الحديثة المتاحة، وليست نتيجة المباراة.', xgTotalLabel: 'إجمالي الأهداف المقدّر', modelSource: 'نموذج إحصائي', recentForm: 'الأداء الأخير', formBttsLabel: 'BTTS في المباريات الأخيرة', conclusion: 'الخاتمة', qualityNote: 'جودة البيانات تصف المعلومات المتاحة، ولا تعني فرصة الفوز.', publishedOn: 'نُشرت البيانات في', readOfMatch: 'قراءتنا للمباراة', riskLevel: 'مستوى الحذر', notAvailable: 'غير متوفر', lastMinute: 'آخر اللحظات', lastMinuteSub: 'آخر 5 مباريات لكل فريق — بيانات ESPN، تُحدّث قبل انطلاق المباراة.', letterWin: 'ف', letterDraw: 'ت', letterLoss: 'خ', venueHome: 'د', venueAway: 'خ', noRecent: 'لا توجد مباريات حديثة مسجّلة لهذا الفريق.' },
 }
 
 export default async function MatchPage({ params, locale = 'fr' }: PageProps & { locale?: Locale }) {
@@ -345,6 +347,72 @@ export default async function MatchPage({ params, locale = 'fr' }: PageProps & {
               </div>
             </section>
           )}
+
+          {/* 3bis. DERNIÈRE MINUTE — historique détaillé des 5 derniers matchs
+              de chaque équipe (données réelles ESPN ; section masquée si absentes) */}
+          {(match.last5Home?.length || match.last5Away?.length) ? (
+            <section className="mb-10" aria-labelledby="match-last-minute">
+              <h2 id="match-last-minute" className="text-xl font-bold mb-1" style={{ fontFamily: 'Poppins, sans-serif' }}>{copy.lastMinute}</h2>
+              <p className="text-xs text-[#9DABBB] mb-4">{copy.lastMinuteSub}</p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {([
+                  { team: home, logo: homeLogo, records: match.last5Home || [] },
+                  { team: away, logo: awayLogo, records: match.last5Away || [] },
+                ] as const).map(side => (
+                  <div key={side.team} className="rounded-2xl border border-[#223041] bg-[#141C25] p-4">
+                    <div className="flex items-center gap-2 border-b border-[#223041] pb-3 mb-3">
+                      {side.logo && (
+                        <img src={side.logo} alt="" width={26} height={26} loading="lazy" className="shrink-0" />
+                      )}
+                      <span className="text-sm font-bold text-[#F2F6FA] truncate">{side.team}</span>
+                      <span className="ml-auto flex gap-1" aria-label={copy.recentForm}>
+                        {side.records.map((r, i) => (
+                          <i
+                            key={`${side.team}-form-${i}`}
+                            className={`not-italic inline-flex h-5 w-5 items-center justify-center rounded text-[11px] font-bold ${
+                              r.result === 'W'
+                                ? 'bg-[#1E4620] text-[#6EE787]'
+                                : r.result === 'L'
+                                  ? 'bg-[#4A1D1D] text-[#FF8A80]'
+                                  : 'bg-[#26313D] text-[#9DABBB]'
+                            }`}
+                          >
+                            {r.result === 'W' ? copy.letterWin : r.result === 'L' ? copy.letterLoss : copy.letterDraw}
+                          </i>
+                        ))}
+                      </span>
+                    </div>
+                    {side.records.length === 0 ? (
+                      <p className="text-xs text-[#9DABBB]">{copy.noRecent}</p>
+                    ) : (
+                      <ul className="space-y-2">
+                        {side.records.map((r, i) => (
+                          <li
+                            key={`${side.team}-rec-${i}`}
+                            className="flex items-center gap-2 rounded-lg bg-[#10161D] border border-[#223041] px-3 py-2 text-xs"
+                          >
+                            <span className="text-[#9DABBB] font-mono shrink-0">{r.date ? r.date.slice(5).replace('-', '/') : '—'}</span>
+                            <span className={`shrink-0 rounded px-1.5 py-0.5 text-[10px] font-bold ${r.venue === 'H' ? 'bg-[#223041] text-[#9DABBB]' : 'bg-[#1B2A3A] text-[#7FB2FF]'}`}>
+                              {r.venue === 'H' ? copy.venueHome : copy.venueAway}
+                            </span>
+                            <span className="truncate text-[#F2F6FA]">{r.opponent}</span>
+                            <span className="ml-auto shrink-0 font-mono font-bold text-[#F2F6FA]">{r.score}</span>
+                            <span
+                              className={`shrink-0 rounded px-1.5 py-0.5 text-[10px] font-bold ${
+                                r.result === 'W' ? 'bg-[#1E4620] text-[#6EE787]' : r.result === 'L' ? 'bg-[#4A1D1D] text-[#FF8A80]' : 'bg-[#26313D] text-[#9DABBB]'
+                              }`}
+                            >
+                              {r.result === 'W' ? copy.letterWin : r.result === 'L' ? copy.letterLoss : copy.letterDraw}
+                            </span>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </section>
+          ) : null}
 
           {/* 4. INDICATEURS */}
           <section className="mb-10" aria-label={copy.intelligence}>

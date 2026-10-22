@@ -4,7 +4,9 @@ import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react'
 import { useLanguage } from './LanguageSwitcher'
 import { translationsFor, type Locale, localizedPath } from '@/lib/i18n'
 import { generateMatchSlug } from '@/lib/match-slug'
-import { getDakarDayDiff, hasDakarKickoffPassed } from '@/lib/dakar-date'
+import { getDakarDayDiff, hasDakarKickoffPassed, getDakarMatchStatus, parseDakarDateTime } from '@/lib/dakar-date'
+import { KICKOFF_I18N } from '@/lib/i18n-extras'
+import ComboBuilder from './ComboBuilder'
 
 // useLayoutEffect isomorphe (évite le warning SSR React)
 const useIsoLayoutEffect = typeof window !== 'undefined' ? useLayoutEffect : useEffect
@@ -51,6 +53,8 @@ interface FeedItem {
   prediction?: string
   bttsProb?: number
   over25Prob?: number
+  estimatedCoteBTTS?: number
+  estimatedCoteOver?: number
 }
 
 interface HistoryRecord {
@@ -67,9 +71,29 @@ const hasFinalResult = (record?: HistoryRecord) =>
 type MarketFilter = 'all' | 'btts' | 'o25' | 'exact'
 type StatusFilter = 'all' | 'upcoming' | 'finished'
 type DayFilter = 'all' | 'today' | 'tomorrow' | 'week'
+type HourFilter = 'all' | '0-12' | '12-15' | '15-18' | '18-21' | '21-24'
 
 function dayDiff(dateStr: string): number {
   return getDakarDayDiff(dateStr)
+}
+
+/** Unités locales du compte à rebours (jours / heures / minutes). */
+const CD_UNITS: Record<Locale, [string, string, string]> = {
+  fr: ['j', 'h', 'min'],
+  en: ['d', 'h', 'min'],
+  ar: ['ي', 'س', 'د'],
+}
+
+/** « Commence dans 45 min » — delta lisible vers le prochain coup d'envoi Dakar. */
+function formatCountdown(ms: number, lang: Locale): string {
+  const [du, hu, mu] = CD_UNITS[lang] ?? CD_UNITS.fr
+  const mins = Math.max(0, Math.floor(ms / 60_000))
+  const d = Math.floor(mins / 1440)
+  const h = Math.floor((mins % 1440) / 60)
+  const m = mins % 60
+  if (d >= 1) return `${d} ${du} ${h} ${hu}`
+  if (h >= 1) return `${h} ${hu} ${m} ${mu}`
+  return `${m} ${mu}`
 }
 
 function formatCardDate(dateStr: string, lang: Locale): string {
@@ -98,7 +122,11 @@ export default function MatchCenter({ initialLocale }: { initialLocale?: Locale 
   const [market, setMarket] = useState<MarketFilter>('all')
   const [status, setStatus] = useState<StatusFilter>('all')
   const [day, setDay] = useState<DayFilter>('week')
+  const [hour, setHour] = useState<HourFilter>('all')
   const [league, setLeague] = useState<string>('all')
+  // Horloge partagée du compte à rebours — une seule mise à jour toutes les 30 s
+  // pour l'ensemble des cartes (évite 44 intervalles individuels).
+  const [nowTs, setNowTs] = useState<number>(() => Date.now())
   const gridRef = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {
@@ -134,6 +162,12 @@ export default function MatchCenter({ initialLocale }: { initialLocale?: Locale 
     return () => window.removeEventListener('bttspredict:league', handler)
   }, [])
 
+  // Compte à rebours temps réel — cadence 30 s, synchronisée sur l'horloge du navigateur.
+  useEffect(() => {
+    const id = window.setInterval(() => setNowTs(Date.now()), 30_000)
+    return () => window.clearInterval(id)
+  }, [])
+
   const filtered = useMemo(() => {
     return items.filter(m => {
       const diff = dayDiff(m.date)
@@ -149,6 +183,12 @@ export default function MatchCenter({ initialLocale }: { initialLocale?: Locale 
       if (market === 'o25' && !hasO25(m)) return false
       if (market === 'exact' && !hasExact(m)) return false
       if (league !== 'all' && m.league !== league) return false
+      if (hour !== 'all') {
+        const h = parseInt((m.time || '').slice(0, 2), 10)
+        if (!Number.isFinite(h)) return false
+        const [lo, hi] = hour.split('-').map(Number)
+        if (h < lo || h >= hi) return false
+      }
       return true
     }).sort((a, b) => {
       const da = dayDiff(a.date), db = dayDiff(b.date)
@@ -157,7 +197,7 @@ export default function MatchCenter({ initialLocale }: { initialLocale?: Locale 
       if (da !== db) return da - db
       return (a.time || '').localeCompare(b.time || '')
     })
-  }, [items, results, market, status, day, league])
+  }, [items, results, market, status, day, hour, league])
 
   const leagues = useMemo(() => {
     const set = new Set<string>()
@@ -250,6 +290,11 @@ export default function MatchCenter({ initialLocale }: { initialLocale?: Locale 
           </div>
         </div>
 
+        {/* Générateur de Combiné Intelligente — en tête du Match Center */}
+        {items.length > 0 && (
+          <ComboBuilder items={items} lang={lang} />
+        )}
+
         {/* Filtres — chips scrollables, compactes */}
         <div className="hp-filters" role="group" aria-label={t.home2.mcTitle}>
           <div className="hp-filter-row">
@@ -286,6 +331,28 @@ export default function MatchCenter({ initialLocale }: { initialLocale?: Locale 
                   className={`hp-chip hp-chip--ghost${day === f.id ? ' is-active' : ''}`}
                 >
                   {f.label}
+                </button>
+              ))}
+            </div>
+          </div>
+          {/* Filtre par heure de coup d'envoi (Africa/Dakar) */}
+          <div className="hp-filter-row">
+            <div className="hp-chips" role="tablist" aria-label={t.home2.mcKickoff}>
+              <button
+                onClick={() => setHour('all')}
+                aria-pressed={hour === 'all'}
+                className={`hp-chip hp-chip--ghost${hour === 'all' ? ' is-active' : ''}`}
+              >
+                {KICKOFF_I18N[lang].hourAll}
+              </button>
+              {(['0-12', '12-15', '15-18', '18-21', '21-24'] as const).map(range => (
+                <button
+                  key={range}
+                  onClick={() => setHour(range)}
+                  aria-pressed={hour === range}
+                  className={`hp-chip hp-chip--ghost${hour === range ? ' is-active' : ''}`}
+                >
+                  {range.replace('-', '–')}h
                 </button>
               ))}
             </div>
@@ -335,7 +402,7 @@ export default function MatchCenter({ initialLocale }: { initialLocale?: Locale 
         ) : (
           <div className="hp-mc-grid" ref={filtered.length > 0 ? gridRef : undefined}>
             {filtered.map((m, i) => (
-              <MatchCard key={`${m.match}-${m.date}-${m.time}`} m={m} index={i} lang={lang} results={results} />
+              <MatchCard key={`${m.match}-${m.date}-${m.time}`} m={m} index={i} lang={lang} results={results} nowTs={nowTs} />
             ))}
           </div>
         )}
@@ -345,11 +412,12 @@ export default function MatchCenter({ initialLocale }: { initialLocale?: Locale 
 }
 
 /* ═══ Carte de match ═══ */
-function MatchCard({ m, index, lang, results }: {
+function MatchCard({ m, index, lang, results, nowTs }: {
   m: FeedItem
   index: number
   lang: Locale
   results: Map<string, HistoryRecord>
+  nowTs: number
 }) {
   const t = translationsFor(lang)
   const cardRef = useRef<HTMLElement | null>(null)
@@ -362,6 +430,17 @@ function MatchCard({ m, index, lang, results }: {
   const hasResult = Boolean(record?.finalScore)
   const won = record?.status === 'WON'
   const lost = record?.status === 'LOST'
+
+  // Indicateur temps réel : statut du coup d'envoi + libellé « Commence dans … ».
+  // Recalculé à chaque tick de l'horloge partagée (nowTs, toutes les 30 s).
+  const matchStatus = getDakarMatchStatus(m.date, m.time, new Date(nowTs))
+  const kickoffMs = useMemo(() => {
+    const kickoff = parseDakarDateTime(m.date, m.time)
+    return kickoff ? kickoff.getTime() : null
+  }, [m.date, m.time])
+  const countdown = kickoffMs !== null && nowTs < kickoffMs
+    ? formatCountdown(kickoffMs - nowTs, lang)
+    : null
 
   const picks: MarketPick[] = (m.predictions?.length
     ? m.predictions
@@ -438,15 +517,26 @@ function MatchCard({ m, index, lang, results }: {
       onMouseLeave={onCardLeave}
       style={{ ['--d' as string]: `${Math.min(index, 6) * 40}ms` }}
     >
-      {/* Ligne 1 : compétition + horodatage */}
+      {/* Ligne 1 : compétition + indicateur temps réel du coup d'envoi */}
       <div className="hp-mc-top">
         <span className="hp-mc-league">{m.league}</span>
         {isFinished ? (
           <span className="hp-mc-when is-finished">{formatCardDate(m.date, lang)}</span>
+        ) : matchStatus === 'live' ? (
+          <span className="hp-mc-when is-live">
+            <span className="hp-live-dot" aria-hidden="true" />
+            {KICKOFF_I18N[lang].live}
+          </span>
         ) : (
-          <span className="hp-mc-when">
-            <time dateTime={`${m.date}T${m.time || '00:00'}:00Z`}>{m.time}</time>
-            <small>{t.home2.mcTz}</small>
+          <span
+            className="hp-mc-when is-countdown"
+            title={`${t.home2.mcKickoff} : ${m.time || '--:--'} ${t.home2.mcTz}`}
+          >
+            {countdown && (
+              <span className="hp-mc-countdown">
+                {KICKOFF_I18N[lang].startsSoon} {countdown}
+              </span>
+            )}
             {diff === 1 && <em>{t.home2.mcTomorrow}</em>}
             {diff > 1 && <em>{formatCardDate(m.date, lang)}</em>}
           </span>

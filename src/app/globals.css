@@ -5228,6 +5228,49 @@ body {
 .hp-mc-when small { color: #8B99AD; font-size: 0.625rem; font-weight: 600; }
 .hp-mc-when em { color: #9DB4CC; font-style: normal; font-size: 0.6875rem; }
 .hp-mc-when.is-finished { color: #9DB4CC; font-family: inherit; }
+/* Indicateur temps réel — « Commence dans 45 min » */
+.hp-mc-when.is-countdown { flex-direction: column; align-items: flex-end; gap: 0.15rem; }
+.hp-mc-when.is-countdown em { font-family: inherit; }
+.hp-mc-countdown { color: #6EE787; font-size: 0.75rem; font-weight: 700; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.hp-mc-when.is-live { color: #FFB86B; font-family: inherit; align-items: center; }
+.hp-live-dot {
+  width: 0.5rem; height: 0.5rem; border-radius: 9999px;
+  background: #FFB86B; box-shadow: 0 0 0 0 rgba(255, 184, 107, 0.5);
+  animation: hp-live-pulse 1.6s ease-out infinite;
+}
+@keyframes hp-live-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(255, 184, 107, 0.55); }
+  70% { box-shadow: 0 0 0 7px rgba(255, 184, 107, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 184, 107, 0); }
+}
+@media (prefers-reduced-motion: reduce) { .hp-live-dot { animation: none; } }
+
+/* ═══ AI Combo Builder ═══ */
+.cbx-chip {
+  appearance: none; cursor: pointer;
+  border: 1px solid #223041; border-radius: 9999px;
+  background: #0B0F14; color: #9DABBB;
+  padding: 0.3rem 0.8rem;
+  font-size: 0.8125rem; font-weight: 700; font-variant-numeric: tabular-nums;
+  transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
+}
+.cbx-chip:hover { border-color: #2F7DFF; color: #F2F6FA; }
+.cbx-chip.is-active { border-color: #2F7DFF; background: rgba(47, 125, 255, 0.14); color: #F2F6FA; }
+.cbx-chip:focus-visible { outline: 2px solid #2F7DFF; outline-offset: 2px; }
+.cbx-link {
+  color: #2F7DFF; font-size: 0.6875rem; font-weight: 700; text-decoration: none;
+  border: 1px solid rgba(47, 125, 255, 0.35); border-radius: 9999px; padding: 0.2rem 0.55rem;
+  white-space: nowrap;
+}
+.cbx-link:hover { background: rgba(47, 125, 255, 0.12); }
+.cbx-copy {
+  appearance: none; cursor: pointer;
+  border: 1px solid #223041; border-radius: 9999px;
+  background: #0B0F14; color: #F2F6FA;
+  padding: 0.3rem 0.9rem; font-size: 0.75rem; font-weight: 700;
+}
+.cbx-copy:hover { border-color: #2F7DFF; color: #2F7DFF; }
+.cbx-copy:focus-visible { outline: 2px solid #2F7DFF; outline-offset: 2px; }
 .hp-mc-teams { display: grid; gap: 0.35rem; }
 .hp-mc-team {
   display: flex;
