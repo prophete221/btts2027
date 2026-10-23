@@ -9,6 +9,15 @@ on:
     # run short, so completed matches are replaced promptly without overlap.
     - cron: '0 */3 * * *'
   workflow_dispatch:
+    inputs:
+      mode:
+        description: "full = pronos+Gemini+build+FTP | code = build+FTP seulement (rapide)"
+        required: false
+        default: full
+        type: choice
+        options:
+          - full
+          - code
   pull_request:
     branches:
       - main
@@ -21,7 +30,8 @@ permissions:
 # concurrentes, git push en échec avalé). On sérialise les runs.
 concurrency:
   group: deploy-${{ github.ref }}
-  cancel-in-progress: false
+  # Un nouveau push/run annule l'ancien : un seul déploiement utile, pas de file.
+  cancel-in-progress: true
 
 jobs:
   pull-request-checks:
@@ -81,6 +91,7 @@ jobs:
           ref: main
 
       - name: Prune old predictions archives (keep 90)
+        if: ${{ github.event_name == 'schedule' || github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && inputs.mode != 'code') }}
         timeout-minutes: 2
         run: node scripts/prune-archives.mjs
 
@@ -105,21 +116,26 @@ jobs:
           PUPPETEER_SKIP_DOWNLOAD: 'true'
 
       - name: Update predictions (ESPN API)
+        if: ${{ github.event_name == 'schedule' || github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && inputs.mode != 'code') }}
         timeout-minutes: 5
         run: node scripts/quick-update-predictions.mjs
 
       - name: Validate fresh predictions before enrichment
+        if: ${{ github.event_name == 'schedule' || github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && inputs.mode != 'code') }}
         run: node scripts/validate-predictions.mjs public/predictions.json --require-timestamp
 
       - name: Setup Python for Gemini enrichment
+        if: ${{ github.event_name == 'schedule' || github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && inputs.mode != 'code') }}
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
 
       - name: Install google-genai
+        if: ${{ github.event_name == 'schedule' || github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && inputs.mode != 'code') }}
         run: pip install google-genai
 
       - name: Enrichir les pronostics avec Gemini
+        if: ${{ github.event_name == 'schedule' || github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && inputs.mode != 'code') }}
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         timeout-minutes: 10
@@ -127,18 +143,40 @@ jobs:
         continue-on-error: true
 
       - name: Finalize enriched immutable publication
+        if: ${{ github.event_name == 'schedule' || github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && inputs.mode != 'code') }}
         run: node scripts/finalize-predictions.mjs
       - name: Verify results (GOLD priority — free ESPN, no API key)
+        if: ${{ github.event_name == 'schedule' || github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && inputs.mode != 'code') }}
         id: verify
         timeout-minutes: 20
         run: node scripts/verify-results.mjs
         continue-on-error: true
 
       - name: Update win history (runs even if verify timed out)
+        if: ${{ github.event_name == 'schedule' || github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && inputs.mode != 'code') }}
         timeout-minutes: 3
         run: node scripts/update-win-history.mjs
 
+      - name: Verify public history exclusions applied
+        if: ${{ github.event_name == 'schedule' || github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && inputs.mode != 'code') }}
+        run: |
+          node -e "
+            const fs=require('fs');
+            const wh=JSON.parse(fs.readFileSync('public/win-history.json','utf8'));
+            const ex=JSON.parse(fs.readFileSync('public/history-exclusions.json','utf8'));
+            const keys=new Set((ex.entries||[]).map(e=>e.key||e));
+            const lost=wh.history.filter(h=>h.status==='LOST');
+            const leaked=lost.filter(h=>keys.has(h.date+'|'+h.match+'|'+(h.market||'btts')));
+            console.log('stats', wh.stats.total, wh.stats.won, wh.stats.lost, wh.stats.rate+'%');
+            if (leaked.length) {
+              console.error('FAIL: '+leaked.length+' LOST exclus encore dans history');
+              process.exit(1);
+            }
+            console.log('OK exclusions respectées ('+keys.size+' clés)');
+          "
+
       - name: Update transfers
+        if: ${{ github.event_name == 'schedule' || github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && inputs.mode != 'code') }}
         timeout-minutes: 2
         run: node scripts/scrape-transfers.mjs
         continue-on-error: true
@@ -154,10 +192,12 @@ jobs:
       - name: Run typecheck
         run: npx tsc --noEmit
       - name: Update open licensed team context
+        if: ${{ github.event_name == 'schedule' || github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && inputs.mode != 'code') }}
         timeout-minutes: 5
         run: node scripts/update-team-context.mjs
         continue-on-error: true
       - name: Validate predictions dataset before build
+        if: ${{ github.event_name == 'schedule' || github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && inputs.mode != 'code') }}
         run: node scripts/validate-predictions.mjs public/predictions.json --require-timestamp
 
       - name: Build static export
@@ -183,7 +223,7 @@ jobs:
         run: |
           git config --local user.email "bot@bttspredict.com"
           git config --local user.name "BTTSPredict Bot"
-          git add public/predictions.json public/win-history.json public/transfers.json public/vip-combos.json public/predictions-archive/
+          git add public/predictions.json public/win-history.json public/history-exclusions.json public/transfers.json public/vip-combos.json public/predictions-archive/ 2>/dev/null || git add public/predictions.json public/win-history.json public/transfers.json public/vip-combos.json public/predictions-archive/
           if [ -f public/team-context.json ]; then git add public/team-context.json; fi
           if [ -d public/team-media ]; then git add public/team-media/; fi
           git diff --staged --quiet || git commit -m "chore: auto-update data"
