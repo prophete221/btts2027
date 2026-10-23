@@ -35,8 +35,8 @@ export const VIP_POLICY = {
   promoCode: 'VISION221',
   minimumDeposit: '10 €',
   minimumDepositXof: '≈ 6 560 XOF',
-  activation: 'Après vérification manuelle sur WhatsApp',
-  verificationTime: 'Dans la journée, selon les horaires de publication',
+  activation: 'Compte créé via notre lien + code VISION221 (WhatsApp optionnel pour l’accès VIP)',
+  verificationTime: 'Inscription immédiate ; VIP sous 24 h si demandé',
 } as const
 
 export const BOOKMAKERS = [
