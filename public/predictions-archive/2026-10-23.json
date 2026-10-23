@@ -1827,7 +1827,8 @@
           "score": "1-2",
           "result": "L"
         }
-      ]
+      ],
+      "status": "PENDING"
     },
     {
       "id": "fcutrech-vs-peczwoll-2026-10-24",
@@ -1963,7 +1964,8 @@
           "score": "2-2",
           "result": "D"
         }
-      ]
+      ],
+      "status": "PENDING"
     },
     {
       "id": "fcheiden-vs-energiec-2026-10-24",
@@ -2160,7 +2162,8 @@
           "score": "4-4",
           "result": "D"
         }
-      ]
+      ],
+      "status": "PENDING"
     },
     {
       "id": "wsgswaro-vs-grazerak-2026-10-24",
@@ -2357,7 +2360,8 @@
           "score": "0-0",
           "result": "D"
         }
-      ]
+      ],
+      "status": "PENDING"
     },
     {
       "id": "adodenha-vs-heerenve-2026-10-24",
@@ -2554,7 +2558,8 @@
           "score": "2-3",
           "result": "L"
         }
-      ]
+      ],
+      "status": "PENDING"
     },
     {
       "id": "kvcweste-vs-waasland-2026-10-24",
@@ -2751,7 +2756,8 @@
           "score": "0-4",
           "result": "L"
         }
-      ]
+      ],
+      "status": "PENDING"
     },
     {
       "id": "tsvhartb-vs-wolfsber-2026-10-24",
@@ -2948,7 +2954,8 @@
           "score": "1-3",
           "result": "L"
         }
-      ]
+      ],
+      "status": "PENDING"
     },
     {
       "id": "atlticom-vs-deportiv-2026-10-24",
@@ -3145,7 +3152,8 @@
           "score": "1-1",
           "result": "D"
         }
-      ]
+      ],
+      "status": "PENDING"
     },
     {
       "id": "philadel-vs-newengla-2026-10-24",
@@ -3342,7 +3350,8 @@
           "score": "4-2",
           "result": "W"
         }
-      ]
+      ],
+      "status": "PENDING"
     },
     {
       "id": "psveindh-vs-feyenoor-2026-10-25",
@@ -3539,7 +3548,8 @@
           "score": "3-1",
           "result": "W"
         }
-      ]
+      ],
+      "status": "PENDING"
     },
     {
       "id": "houstond-vs-minnesot-2026-10-25",
@@ -3736,7 +3746,8 @@
           "score": "2-3",
           "result": "L"
         }
-      ]
+      ],
+      "status": "PENDING"
     },
     {
       "id": "necnijme-vs-fcgronin-2026-10-25",
@@ -3933,7 +3944,8 @@
           "score": "2-2",
           "result": "D"
         }
-      ]
+      ],
+      "status": "PENDING"
     },
     {
       "id": "spartaro-vs-ajaxamst-2026-10-25",
@@ -4130,7 +4142,8 @@
           "score": "5-1",
           "result": "W"
         }
-      ]
+      ],
+      "status": "PENDING"
     },
     {
       "id": "sandiego-vs-seattles-2026-10-25",
@@ -4327,7 +4340,8 @@
           "score": "3-1",
           "result": "W"
         }
-      ]
+      ],
+      "status": "PENDING"
     },
     {
       "id": "sporting-vs-austinfc-2026-10-25",
@@ -4524,7 +4538,8 @@
           "score": "0-0",
           "result": "D"
         }
-      ]
+      ],
+      "status": "PENDING"
     },
     {
       "id": "portland-vs-charlott-2026-10-25",
@@ -4721,7 +4736,8 @@
           "score": "2-1",
           "result": "W"
         }
-      ]
+      ],
+      "status": "PENDING"
     },
     {
       "id": "fortunas-vs-excelsio-2026-10-25",
@@ -4918,7 +4934,8 @@
           "score": "2-2",
           "result": "D"
         }
-      ]
+      ],
+      "status": "PENDING"
     },
     {
       "id": "sevilla-vs-osasuna-2026-10-26",
@@ -5115,7 +5132,8 @@
           "score": "0-2",
           "result": "L"
         }
-      ]
+      ],
+      "status": "PENDING"
     },
     {
       "id": "santacla-vs-benfica-2026-10-26",
@@ -5312,7 +5330,8 @@
           "score": "3-0",
           "result": "W"
         }
-      ]
+      ],
+      "status": "PENDING"
     },
     {
       "id": "lafc-vs-lagalaxy-2026-10-26",
@@ -5509,7 +5528,8 @@
           "score": "3-2",
           "result": "W"
         }
-      ]
+      ],
+      "status": "PENDING"
     },
     {
       "id": "torino-vs-como-2026-10-27",
@@ -5705,7 +5725,8 @@
           "score": "4-1",
           "result": "W"
         }
-      ]
+      ],
+      "status": "PENDING"
     },
     {
       "id": "sassuolo-vs-lazio-2026-10-27",
@@ -5902,7 +5923,8 @@
           "score": "2-1",
           "result": "W"
         }
-      ]
+      ],
+      "status": "PENDING"
     },
     {
       "id": "asroma-vs-cagliari-2026-10-27",
@@ -6099,7 +6121,8 @@
           "score": "1-0",
           "result": "W"
         }
-      ]
+      ],
+      "status": "PENDING"
     },
     {
       "id": "torontof-vs-dcunited-2026-10-28",
@@ -6289,7 +6312,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Cotes marché non disponibles — pronostic basé sur le modèle statistique seul.",
-      "ai_odds_insight_en": "Market odds unavailable — prediction based on the statistical model only."
+      "ai_odds_insight_en": "Market odds unavailable — prediction based on the statistical model only.",
+      "status": "PENDING"
     },
     {
       "id": "intermia-vs-fccincin-2026-10-28",
@@ -6479,7 +6503,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Cotes marché non disponibles — pronostic basé sur le modèle statistique seul.",
-      "ai_odds_insight_en": "Market odds unavailable — prediction based on the statistical model only."
+      "ai_odds_insight_en": "Market odds unavailable — prediction based on the statistical model only.",
+      "status": "PENDING"
     },
     {
       "id": "celtic-vs-dundeeun-2026-10-28",
@@ -6669,7 +6694,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Cotes marché non disponibles — pronostic basé sur le modèle statistique seul.",
-      "ai_odds_insight_en": "Market odds unavailable — prediction based on the statistical model only."
+      "ai_odds_insight_en": "Market odds unavailable — prediction based on the statistical model only.",
+      "status": "PENDING"
     },
     {
       "id": "stmirren-vs-hibernia-2026-10-28",
@@ -6858,7 +6884,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Cotes marché non disponibles — pronostic basé sur le modèle statistique seul.",
-      "ai_odds_insight_en": "Market odds unavailable — prediction based on the statistical model only."
+      "ai_odds_insight_en": "Market odds unavailable — prediction based on the statistical model only.",
+      "status": "PENDING"
     },
     {
       "id": "stjohnst-vs-motherwe-2026-10-28",
@@ -7048,7 +7075,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Cotes marché non disponibles — pronostic basé sur le modèle statistique seul.",
-      "ai_odds_insight_en": "Market odds unavailable — prediction based on the statistical model only."
+      "ai_odds_insight_en": "Market odds unavailable — prediction based on the statistical model only.",
+      "status": "PENDING"
     },
     {
       "id": "parma-vs-udinese-2026-10-28",
@@ -7245,7 +7273,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 2.85, nul: 3.1, 2: 2.35, Over 2.5: 2.15.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.85, draw: 3.1, 2: 2.35, Over 2.5: 2.15."
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.85, draw: 3.1, 2: 2.35, Over 2.5: 2.15.",
+      "status": "PENDING"
     },
     {
       "id": "heartofm-vs-rangers-2026-10-28",
@@ -7435,7 +7464,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Cotes marché non disponibles — pronostic basé sur le modèle statistique seul.",
-      "ai_odds_insight_en": "Market odds unavailable — prediction based on the statistical model only."
+      "ai_odds_insight_en": "Market odds unavailable — prediction based on the statistical model only.",
+      "status": "PENDING"
     },
     {
       "id": "monza-vs-napoli-2026-10-28",
@@ -7631,7 +7661,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 3.65, nul: 3.65, 2: 1.83, Over 2.5: 1.69.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 3.65, draw: 3.65, 2: 1.83, Over 2.5: 1.69."
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 3.65, draw: 3.65, 2: 1.83, Over 2.5: 1.69.",
+      "status": "PENDING"
     }
   ],
   "vipPreview": [
