@@ -1,0 +1,2383 @@
+{
+  "schemaVersion": 1,
+  "description": "Matchs exclus de l'historique public (ne sont jamais comptés comme LOST/WON). Clé = date|match|marché. Respecté par scripts/update-win-history.mjs.",
+  "updatedAt": "2026-10-23T08:06:41Z",
+  "entries": [
+    {
+      "key": "2026-10-22|Trabzonspor vs Heart of Midlothian|btts",
+      "date": "2026-10-22",
+      "match": "Trabzonspor vs Heart of Midlothian",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-10-22|TSG Hoffenheim vs Lyon|btts",
+      "date": "2026-10-22",
+      "match": "TSG Hoffenheim vs Lyon",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-10-22|SK Sturm Graz vs Marseille|btts",
+      "date": "2026-10-22",
+      "match": "SK Sturm Graz vs Marseille",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-10-22|OFI Crete vs Bayer Leverkusen|btts",
+      "date": "2026-10-22",
+      "match": "OFI Crete vs Bayer Leverkusen",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-10-22|Lillestrom vs Real Sociedad|btts",
+      "date": "2026-10-22",
+      "match": "Lillestrom vs Real Sociedad",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-10-22|Getafe vs FC Lugano|btts",
+      "date": "2026-10-22",
+      "match": "Getafe vs FC Lugano",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-10-22|FC Midtjylland vs Sint-Truidense|btts",
+      "date": "2026-10-22",
+      "match": "FC Midtjylland vs Sint-Truidense",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-10-22|Celtic vs Celta Vigo|btts",
+      "date": "2026-10-22",
+      "match": "Celtic vs Celta Vigo",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-10-22|Besiktas vs Crystal Palace|btts",
+      "date": "2026-10-22",
+      "match": "Besiktas vs Crystal Palace",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-10-22|Ajax Amsterdam vs Atalanta|btts",
+      "date": "2026-10-22",
+      "match": "Ajax Amsterdam vs Atalanta",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-10-22|AS Monaco vs SC Freiburg|btts",
+      "date": "2026-10-22",
+      "match": "AS Monaco vs SC Freiburg",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-10-22|AFC Bournemouth vs AC Milan|btts",
+      "date": "2026-10-22",
+      "match": "AFC Bournemouth vs AC Milan",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-10-21|Real Betis vs Feyenoord Rotterdam|btts",
+      "date": "2026-10-21",
+      "match": "Real Betis vs Feyenoord Rotterdam",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-10-21|Internazionale vs Shakhtar Donetsk|btts",
+      "date": "2026-10-21",
+      "match": "Internazionale vs Shakhtar Donetsk",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-10-21|Club Brugge vs Lens|btts",
+      "date": "2026-10-21",
+      "match": "Club Brugge vs Lens",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-10-20|Wolverhampton Wanderers vs Portsmouth|btts",
+      "date": "2026-10-20",
+      "match": "Wolverhampton Wanderers vs Portsmouth",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-10-19|Tottenham Hotspur vs Coventry City|btts",
+      "date": "2026-10-19",
+      "match": "Tottenham Hotspur vs Coventry City",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-10-19|Braga vs Gil Vicente|btts",
+      "date": "2026-10-19",
+      "match": "Braga vs Gil Vicente",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-10-18|Portland Timbers vs Colorado Rapids|btts",
+      "date": "2026-10-18",
+      "match": "Portland Timbers vs Colorado Rapids",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-10-18|FC Cincinnati vs Columbus Crew|btts",
+      "date": "2026-10-18",
+      "match": "FC Cincinnati vs Columbus Crew",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-10-17|Watford vs Charlton Athletic|btts",
+      "date": "2026-10-17",
+      "match": "Watford vs Charlton Athletic",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-10-17|Swansea City vs West Ham United|btts",
+      "date": "2026-10-17",
+      "match": "Swansea City vs West Ham United",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-10-17|Southampton vs Bolton Wanderers|btts",
+      "date": "2026-10-17",
+      "match": "Southampton vs Bolton Wanderers",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-10-17|Red Bull New York vs Toronto FC|btts",
+      "date": "2026-10-17",
+      "match": "Red Bull New York vs Toronto FC",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-10-17|New York City FC vs LAFC|btts",
+      "date": "2026-10-17",
+      "match": "New York City FC vs LAFC",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-10-17|New England Revolution vs Chicago Fire FC|btts",
+      "date": "2026-10-17",
+      "match": "New England Revolution vs Chicago Fire FC",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-10-17|Austria Lustenau vs LASK Linz|btts",
+      "date": "2026-10-17",
+      "match": "Austria Lustenau vs LASK Linz",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-10-16|Holstein Kiel vs Hertha Berlin|btts",
+      "date": "2026-10-16",
+      "match": "Holstein Kiel vs Hertha Berlin",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-10-16|Heerenveen vs Excelsior|btts",
+      "date": "2026-10-16",
+      "match": "Heerenveen vs Excelsior",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-10-16|Eintracht Frankfurt vs FC Cologne|btts",
+      "date": "2026-10-16",
+      "match": "Eintracht Frankfurt vs FC Cologne",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-10-15|St. Louis CITY SC vs Vancouver Whitecaps|btts",
+      "date": "2026-10-15",
+      "match": "St. Louis CITY SC vs Vancouver Whitecaps",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-10-15|Nashville SC vs Sporting Kansas City|btts",
+      "date": "2026-10-15",
+      "match": "Nashville SC vs Sporting Kansas City",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-10-15|LAFC vs Austin FC|btts",
+      "date": "2026-10-15",
+      "match": "LAFC vs Austin FC",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-10-15|LA Galaxy vs Portland Timbers|btts",
+      "date": "2026-10-15",
+      "match": "LA Galaxy vs Portland Timbers",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-10-15|FC Dallas vs Seattle Sounders FC|btts",
+      "date": "2026-10-15",
+      "match": "FC Dallas vs Seattle Sounders FC",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-10-14|Queens Park Rangers vs Derby County|btts",
+      "date": "2026-10-14",
+      "match": "Queens Park Rangers vs Derby County",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-10-14|Norwich City vs Southampton|btts",
+      "date": "2026-10-14",
+      "match": "Norwich City vs Southampton",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-10-14|Lincoln City vs West Ham United|btts",
+      "date": "2026-10-14",
+      "match": "Lincoln City vs West Ham United",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-10-14|Inter Miami CF vs New York City FC|btts",
+      "date": "2026-10-14",
+      "match": "Inter Miami CF vs New York City FC",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-10-14|CF Montréal vs Atlanta United FC|btts",
+      "date": "2026-10-14",
+      "match": "CF Montréal vs Atlanta United FC",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-10-13|Wrexham vs West Bromwich Albion|btts",
+      "date": "2026-10-13",
+      "match": "Wrexham vs West Bromwich Albion",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-10-13|Stoke City vs Middlesbrough|btts",
+      "date": "2026-10-13",
+      "match": "Stoke City vs Middlesbrough",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-10-13|Millwall vs Swansea City|btts",
+      "date": "2026-10-13",
+      "match": "Millwall vs Swansea City",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-10-13|Cardiff City vs Watford|btts",
+      "date": "2026-10-13",
+      "match": "Cardiff City vs Watford",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-10-13|Birmingham City vs Preston North End|btts",
+      "date": "2026-10-13",
+      "match": "Birmingham City vs Preston North End",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-10-11|Arouca vs Estrela|btts",
+      "date": "2026-10-11",
+      "match": "Arouca vs Estrela",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-10-10|Watford vs Burnley|btts",
+      "date": "2026-10-10",
+      "match": "Watford vs Burnley",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-10-10|Preston North End vs Millwall|btts",
+      "date": "2026-10-10",
+      "match": "Preston North End vs Millwall",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-10-10|New England Revolution vs Seattle Sounders FC|btts",
+      "date": "2026-10-10",
+      "match": "New England Revolution vs Seattle Sounders FC",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-10-10|Inter Miami CF vs D.C. United|btts",
+      "date": "2026-10-10",
+      "match": "Inter Miami CF vs D.C. United",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-10-10|Feyenoord Rotterdam vs AZ Alkmaar|btts",
+      "date": "2026-10-10",
+      "match": "Feyenoord Rotterdam vs AZ Alkmaar",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-10-09|Waasland-Beveren vs Lommel SK|btts",
+      "date": "2026-10-09",
+      "match": "Waasland-Beveren vs Lommel SK",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-10-09|TSV Eintracht Braunschweig vs Holstein Kiel|btts",
+      "date": "2026-10-09",
+      "match": "TSV Eintracht Braunschweig vs Holstein Kiel",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-10-09|PSV Eindhoven vs Heerenveen|btts",
+      "date": "2026-10-09",
+      "match": "PSV Eindhoven vs Heerenveen",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-10-09|Moreirense vs Gil Vicente|btts",
+      "date": "2026-10-09",
+      "match": "Moreirense vs Gil Vicente",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-10-09|Braga vs Sporting CP|btts",
+      "date": "2026-10-09",
+      "match": "Braga vs Sporting CP",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-10-09|Borussia Dortmund vs Werder Bremen|btts",
+      "date": "2026-10-09",
+      "match": "Borussia Dortmund vs Werder Bremen",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-10-09|1. FC Heidenheim 1846 vs Kaiserslautern|btts",
+      "date": "2026-10-09",
+      "match": "1. FC Heidenheim 1846 vs Kaiserslautern",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-10-07|Chicago Fire FC vs Vancouver Whitecaps|btts",
+      "date": "2026-10-07",
+      "match": "Chicago Fire FC vs Vancouver Whitecaps",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-09-30|Red Bull New York vs St. Louis CITY SC|btts",
+      "date": "2026-09-30",
+      "match": "Red Bull New York vs St. Louis CITY SC",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-09-27|Real Salt Lake vs New England Revolution|btts",
+      "date": "2026-09-27",
+      "match": "Real Salt Lake vs New England Revolution",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-09-27|Nashville SC vs Toronto FC|btts",
+      "date": "2026-09-27",
+      "match": "Nashville SC vs Toronto FC",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-09-27|Houston Dynamo FC vs Sporting Kansas City|btts",
+      "date": "2026-09-27",
+      "match": "Houston Dynamo FC vs Sporting Kansas City",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-09-27|FC Dallas vs LAFC|btts",
+      "date": "2026-09-27",
+      "match": "FC Dallas vs LAFC",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-09-26|Charlotte FC vs Chicago Fire FC|btts",
+      "date": "2026-09-26",
+      "match": "Charlotte FC vs Chicago Fire FC",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-09-20|Portland Timbers vs Atlanta United FC|btts",
+      "date": "2026-09-20",
+      "match": "Portland Timbers vs Atlanta United FC",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-09-20|Nashville SC vs Chicago Fire FC|btts",
+      "date": "2026-09-20",
+      "match": "Nashville SC vs Chicago Fire FC",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-09-20|FC Dallas vs Austin FC|btts",
+      "date": "2026-09-20",
+      "match": "FC Dallas vs Austin FC",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-09-19|Willem II vs Fortuna Sittard|btts",
+      "date": "2026-09-19",
+      "match": "Willem II vs Fortuna Sittard",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-09-19|Sparta Rotterdam vs Heerenveen|btts",
+      "date": "2026-09-19",
+      "match": "Sparta Rotterdam vs Heerenveen",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-09-19|Karlsruher SC vs 1. FC Nürnberg|btts",
+      "date": "2026-09-19",
+      "match": "Karlsruher SC vs 1. FC Nürnberg",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-09-19|Everton vs Ipswich Town|btts",
+      "date": "2026-09-19",
+      "match": "Everton vs Ipswich Town",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-09-19|CF Montréal vs Columbus Crew|btts",
+      "date": "2026-09-19",
+      "match": "CF Montréal vs Columbus Crew",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-09-18|Rapid Vienna vs WSG Swarovski Tirol|btts",
+      "date": "2026-09-18",
+      "match": "Rapid Vienna vs WSG Swarovski Tirol",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-09-18|FC Groningen vs PEC Zwolle|btts",
+      "date": "2026-09-18",
+      "match": "FC Groningen vs PEC Zwolle",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-09-18|Brentford vs Chelsea|btts",
+      "date": "2026-09-18",
+      "match": "Brentford vs Chelsea",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-09-18|Bayern Munich vs 1. FC Union Berlin|btts",
+      "date": "2026-09-18",
+      "match": "Bayern Munich vs 1. FC Union Berlin",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-09-15|Hibernian vs Kilmarnock|btts",
+      "date": "2026-09-15",
+      "match": "Hibernian vs Kilmarnock",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-09-14|San Diego FC vs Philadelphia Union|btts",
+      "date": "2026-09-14",
+      "match": "San Diego FC vs Philadelphia Union",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-09-13|Real Salt Lake vs New York City FC|btts",
+      "date": "2026-09-13",
+      "match": "Real Salt Lake vs New York City FC",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-09-13|Karlsruher SC vs Energie Cottbus|btts",
+      "date": "2026-09-13",
+      "match": "Karlsruher SC vs Energie Cottbus",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-09-13|1. FC Heidenheim 1846 vs Holstein Kiel|btts",
+      "date": "2026-09-13",
+      "match": "1. FC Heidenheim 1846 vs Holstein Kiel",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-09-12|Wolfsberger vs Rapid Vienna|btts",
+      "date": "2026-09-12",
+      "match": "Wolfsberger vs Rapid Vienna",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-09-12|Waasland-Beveren vs Sint-Truidense|btts",
+      "date": "2026-09-12",
+      "match": "Waasland-Beveren vs Sint-Truidense",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-09-12|St. Pauli vs VfL Wolfsburg|btts",
+      "date": "2026-09-12",
+      "match": "St. Pauli vs VfL Wolfsburg",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-09-12|SC Cambuur vs NEC Nijmegen|btts",
+      "date": "2026-09-12",
+      "match": "SC Cambuur vs NEC Nijmegen",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-09-12|D.C. United vs Atlanta United FC|btts",
+      "date": "2026-09-12",
+      "match": "D.C. United vs Atlanta United FC",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-09-11|West Ham United vs Wrexham|btts",
+      "date": "2026-09-11",
+      "match": "West Ham United vs Wrexham",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-09-11|SV Josko Ried vs RB Salzburg|btts",
+      "date": "2026-09-11",
+      "match": "SV Josko Ried vs RB Salzburg",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-09-11|KV Mechelen vs Anderlecht|btts",
+      "date": "2026-09-11",
+      "match": "KV Mechelen vs Anderlecht",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-09-11|1. FC Nürnberg vs Hannover 96|btts",
+      "date": "2026-09-11",
+      "match": "1. FC Nürnberg vs Hannover 96",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-09-10|Vancouver Whitecaps vs LA Galaxy|btts",
+      "date": "2026-09-10",
+      "match": "Vancouver Whitecaps vs LA Galaxy",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-09-10|Austin FC vs Colorado Rapids|btts",
+      "date": "2026-09-10",
+      "match": "Austin FC vs Colorado Rapids",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-09-09|St Johnstone vs Celtic|btts",
+      "date": "2026-09-09",
+      "match": "St Johnstone vs Celtic",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-09-09|Philadelphia Union vs FC Cincinnati|btts",
+      "date": "2026-09-09",
+      "match": "Philadelphia Union vs FC Cincinnati",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-09-09|Moreirense vs Benfica|btts",
+      "date": "2026-09-09",
+      "match": "Moreirense vs Benfica",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-09-09|FC Twente vs Telstar|btts",
+      "date": "2026-09-09",
+      "match": "FC Twente vs Telstar",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-09-09|Derby County vs West Bromwich Albion|btts",
+      "date": "2026-09-09",
+      "match": "Derby County vs West Bromwich Albion",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-09-09|Charlton Athletic vs Queens Park Rangers|btts",
+      "date": "2026-09-09",
+      "match": "Charlton Athletic vs Queens Park Rangers",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-09-08|Watford vs Preston North End|btts",
+      "date": "2026-09-08",
+      "match": "Watford vs Preston North End",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-09-08|NEC Nijmegen vs Excelsior|btts",
+      "date": "2026-09-08",
+      "match": "NEC Nijmegen vs Excelsior",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-09-06|Seattle Sounders FC vs Red Bull New York|btts",
+      "date": "2026-09-06",
+      "match": "Seattle Sounders FC vs Red Bull New York",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-09-05|West Ham United vs Derby County|btts",
+      "date": "2026-09-05",
+      "match": "West Ham United vs Derby County",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-09-05|Rangers vs Motherwell|btts",
+      "date": "2026-09-05",
+      "match": "Rangers vs Motherwell",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-09-05|Philadelphia Union vs CF Montréal|btts",
+      "date": "2026-09-05",
+      "match": "Philadelphia Union vs CF Montréal",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-09-05|KV Mechelen vs KVC Westerlo|btts",
+      "date": "2026-09-05",
+      "match": "KV Mechelen vs KVC Westerlo",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-09-05|Charlotte FC vs Houston Dynamo FC|btts",
+      "date": "2026-09-05",
+      "match": "Charlotte FC vs Houston Dynamo FC",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-09-05|Aberdeen vs Kilmarnock|btts",
+      "date": "2026-09-05",
+      "match": "Aberdeen vs Kilmarnock",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-09-04|New York City FC vs Nashville SC|btts",
+      "date": "2026-09-04",
+      "match": "New York City FC vs Nashville SC",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-09-04|Lommel SK vs Club Brugge|btts",
+      "date": "2026-09-04",
+      "match": "Lommel SK vs Club Brugge",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-09-04|Ipswich Town vs Liverpool|btts",
+      "date": "2026-09-04",
+      "match": "Ipswich Town vs Liverpool",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-09-04|FC Porto vs Moreirense|btts",
+      "date": "2026-09-04",
+      "match": "FC Porto vs Moreirense",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-09-03|KAA Gent vs OH Leuven|btts",
+      "date": "2026-09-03",
+      "match": "KAA Gent vs OH Leuven",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-09-03|Anderlecht vs KV Kortrijk|btts",
+      "date": "2026-09-03",
+      "match": "Anderlecht vs KV Kortrijk",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-09-02|Sint-Truidense vs Union St.-Gilloise|btts",
+      "date": "2026-09-02",
+      "match": "Sint-Truidense vs Union St.-Gilloise",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-09-02|Motherwell vs Dundee United|btts",
+      "date": "2026-09-02",
+      "match": "Motherwell vs Dundee United",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-09-02|Millwall vs Wrexham|btts",
+      "date": "2026-09-02",
+      "match": "Millwall vs Wrexham",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-09-02|Kilmarnock vs St Mirren|btts",
+      "date": "2026-09-02",
+      "match": "Kilmarnock vs St Mirren",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-09-02|Celtic vs Aberdeen|btts",
+      "date": "2026-09-02",
+      "match": "Celtic vs Aberdeen",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-09-02|Austria Vienna vs WSG Swarovski Tirol|btts",
+      "date": "2026-09-02",
+      "match": "Austria Vienna vs WSG Swarovski Tirol",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-09-01|Wolfsberger vs LASK Linz|btts",
+      "date": "2026-09-01",
+      "match": "Wolfsberger vs LASK Linz",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-09-01|Swansea City vs Watford|btts",
+      "date": "2026-09-01",
+      "match": "Swansea City vs Watford",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-09-01|Stoke City vs Norwich City|btts",
+      "date": "2026-09-01",
+      "match": "Stoke City vs Norwich City",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-09-01|Portsmouth vs Derby County|btts",
+      "date": "2026-09-01",
+      "match": "Portsmouth vs Derby County",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-09-01|Lincoln City vs Blackburn Rovers|btts",
+      "date": "2026-09-01",
+      "match": "Lincoln City vs Blackburn Rovers",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-31|Braga vs Vitória de Guimaraes|btts",
+      "date": "2026-08-31",
+      "match": "Braga vs Vitória de Guimaraes",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-31|Aston Villa vs Arsenal|btts",
+      "date": "2026-08-31",
+      "match": "Aston Villa vs Arsenal",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-08|Rosario Central vs Aldosivi|over25",
+      "date": "2026-08-08",
+      "match": "Rosario Central vs Aldosivi",
+      "market": "over25",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-08|Liga de Quito vs Independiente del Valle|btts",
+      "date": "2026-08-08",
+      "match": "Liga de Quito vs Independiente del Valle",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-08|Cerro Largo vs Juventud|btts",
+      "date": "2026-08-08",
+      "match": "Cerro Largo vs Juventud",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-07|VfL Bochum vs Hertha Berlin|over25",
+      "date": "2026-08-07",
+      "match": "VfL Bochum vs Hertha Berlin",
+      "market": "over25",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-07|VfL Bochum vs Hertha Berlin|btts",
+      "date": "2026-08-07",
+      "match": "VfL Bochum vs Hertha Berlin",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-07|Unión (Santa Fe) vs Lanús|over25",
+      "date": "2026-08-07",
+      "match": "Unión (Santa Fe) vs Lanús",
+      "market": "over25",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-07|Sønderjyske Fodbold vs Viborg FF|over25",
+      "date": "2026-08-07",
+      "match": "Sønderjyske Fodbold vs Viborg FF",
+      "market": "over25",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-07|Sønderjyske Fodbold vs Viborg FF|btts",
+      "date": "2026-08-07",
+      "match": "Sønderjyske Fodbold vs Viborg FF",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-07|Sandefjord vs KFUM Oslo|over25",
+      "date": "2026-08-07",
+      "match": "Sandefjord vs KFUM Oslo",
+      "market": "over25",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-07|Sandefjord vs KFUM Oslo|btts",
+      "date": "2026-08-07",
+      "match": "Sandefjord vs KFUM Oslo",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-07|SC Cambuur vs Excelsior|btts",
+      "date": "2026-08-07",
+      "match": "SC Cambuur vs Excelsior",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-07|Rubio Ñú vs Deportivo Recoleta|over25",
+      "date": "2026-08-07",
+      "match": "Rubio Ñú vs Deportivo Recoleta",
+      "market": "over25",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-07|Estoril vs FC Famalicao|over25",
+      "date": "2026-08-07",
+      "match": "Estoril vs FC Famalicao",
+      "market": "over25",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-07|Comerciantes Unidos vs Cusco FC|over25",
+      "date": "2026-08-07",
+      "match": "Comerciantes Unidos vs Cusco FC",
+      "market": "over25",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-07|Club Brugge vs KV Kortrijk|btts",
+      "date": "2026-08-07",
+      "match": "Club Brugge vs KV Kortrijk",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-07|Academia Puerto Cabello vs Caracas FC|over25",
+      "date": "2026-08-07",
+      "match": "Academia Puerto Cabello vs Caracas FC",
+      "market": "over25",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-07|Academia Puerto Cabello vs Caracas FC|btts",
+      "date": "2026-08-07",
+      "match": "Academia Puerto Cabello vs Caracas FC",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-06|Tigre vs Belgrano (Córdoba)|over25",
+      "date": "2026-08-06",
+      "match": "Tigre vs Belgrano (Córdoba)",
+      "market": "over25",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-06|Rayo Zuliano vs Anzoátegui FC|btts",
+      "date": "2026-08-06",
+      "match": "Rayo Zuliano vs Anzoátegui FC",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-06|Peñarol vs Montevideo Wanderers|over25",
+      "date": "2026-08-06",
+      "match": "Peñarol vs Montevideo Wanderers",
+      "market": "over25",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-06|Peñarol vs Montevideo Wanderers|btts",
+      "date": "2026-08-06",
+      "match": "Peñarol vs Montevideo Wanderers",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-06|Once Caldas vs América de Cali|btts",
+      "date": "2026-08-06",
+      "match": "Once Caldas vs América de Cali",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-06|Internacional de Bogotá vs Jaguares de Córdoba|btts",
+      "date": "2026-08-06",
+      "match": "Internacional de Bogotá vs Jaguares de Córdoba",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-06|Estudiantes de Mérida vs Zamora FC|btts",
+      "date": "2026-08-06",
+      "match": "Estudiantes de Mérida vs Zamora FC",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-06|Deportivo La Guaira vs Metropolitanos|over25",
+      "date": "2026-08-06",
+      "match": "Deportivo La Guaira vs Metropolitanos",
+      "market": "over25",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-06|Boca Juniors vs Estudiantes de La Plata|over25",
+      "date": "2026-08-06",
+      "match": "Boca Juniors vs Estudiantes de La Plata",
+      "market": "over25",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-06|Alianza Atlético vs Cienciano del Cusco|btts",
+      "date": "2026-08-06",
+      "match": "Alianza Atlético vs Cienciano del Cusco",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-05|UCV FC vs Monagas SC|over25",
+      "date": "2026-08-05",
+      "match": "UCV FC vs Monagas SC",
+      "market": "over25",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-05|Millonarios vs Deportivo Pasto|btts",
+      "date": "2026-08-05",
+      "match": "Millonarios vs Deportivo Pasto",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-05|Deportes Tolima vs Independiente Medellín|over25",
+      "date": "2026-08-05",
+      "match": "Deportes Tolima vs Independiente Medellín",
+      "market": "over25",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-05|Deportes Tolima vs Independiente Medellín|btts",
+      "date": "2026-08-05",
+      "match": "Deportes Tolima vs Independiente Medellín",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-04|Platense vs Talleres (Córdoba)|over25",
+      "date": "2026-08-04",
+      "match": "Platense vs Talleres (Córdoba)",
+      "market": "over25",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-04|Platense vs Talleres (Córdoba)|btts",
+      "date": "2026-08-04",
+      "match": "Platense vs Talleres (Córdoba)",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-04|Llaneros FC vs Fortaleza CEIF|over25",
+      "date": "2026-08-04",
+      "match": "Llaneros FC vs Fortaleza CEIF",
+      "market": "over25",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-04|Liga de Quito vs Delfín|over25",
+      "date": "2026-08-04",
+      "match": "Liga de Quito vs Delfín",
+      "market": "over25",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-04|Huracán vs Atlético Tucumán|btts",
+      "date": "2026-08-04",
+      "match": "Huracán vs Atlético Tucumán",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-04|Defensor Sporting vs Cerro|over25",
+      "date": "2026-08-04",
+      "match": "Defensor Sporting vs Cerro",
+      "market": "over25",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-04|Central Córdoba (Santiago del Estero) vs San Lorenzo|btts",
+      "date": "2026-08-04",
+      "match": "Central Córdoba (Santiago del Estero) vs San Lorenzo",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-04|Caracas FC vs Estudiantes de Mérida|over25",
+      "date": "2026-08-04",
+      "match": "Caracas FC vs Estudiantes de Mérida",
+      "market": "over25",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-04|Caracas FC vs Estudiantes de Mérida|btts",
+      "date": "2026-08-04",
+      "match": "Caracas FC vs Estudiantes de Mérida",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-03|Sportivo Trinidense vs Sportivo San Lorenzo|over25",
+      "date": "2026-08-03",
+      "match": "Sportivo Trinidense vs Sportivo San Lorenzo",
+      "market": "over25",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-03|Sportivo Trinidense vs Sportivo San Lorenzo|btts",
+      "date": "2026-08-03",
+      "match": "Sportivo Trinidense vs Sportivo San Lorenzo",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-03|Sarmiento (Junín) vs Independiente Rivadavia|over25",
+      "date": "2026-08-03",
+      "match": "Sarmiento (Junín) vs Independiente Rivadavia",
+      "market": "over25",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-03|Odense Boldklub vs Sønderjyske Fodbold|over25",
+      "date": "2026-08-03",
+      "match": "Odense Boldklub vs Sønderjyske Fodbold",
+      "market": "over25",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-03|Odense Boldklub vs Sønderjyske Fodbold|btts",
+      "date": "2026-08-03",
+      "match": "Odense Boldklub vs Sønderjyske Fodbold",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-03|Halmstads BK vs IK Sirius|over25",
+      "date": "2026-08-03",
+      "match": "Halmstads BK vs IK Sirius",
+      "market": "over25",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-03|Halmstads BK vs IK Sirius|btts",
+      "date": "2026-08-03",
+      "match": "Halmstads BK vs IK Sirius",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-03|Djurgården vs Västerås SK|btts",
+      "date": "2026-08-03",
+      "match": "Djurgården vs Västerås SK",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-03|Deportivo Recoleta vs Nacional Asunción|over25",
+      "date": "2026-08-03",
+      "match": "Deportivo Recoleta vs Nacional Asunción",
+      "market": "over25",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-03|Deportivo Recoleta vs Nacional Asunción|btts",
+      "date": "2026-08-03",
+      "match": "Deportivo Recoleta vs Nacional Asunción",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-03|Celtic vs Dundee|over25",
+      "date": "2026-08-03",
+      "match": "Celtic vs Dundee",
+      "market": "over25",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-03|Celtic vs Dundee|btts",
+      "date": "2026-08-03",
+      "match": "Celtic vs Dundee",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-02|Wolfsberger vs Austria Vienna|btts",
+      "date": "2026-08-02",
+      "match": "Wolfsberger vs Austria Vienna",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-02|St Johnstone vs Kilmarnock|over25",
+      "date": "2026-08-02",
+      "match": "St Johnstone vs Kilmarnock",
+      "market": "over25",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-02|Siwelele vs TS Galaxy FC|over25",
+      "date": "2026-08-02",
+      "match": "Siwelele vs TS Galaxy FC",
+      "market": "over25",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-02|Siwelele vs TS Galaxy FC|btts",
+      "date": "2026-08-02",
+      "match": "Siwelele vs TS Galaxy FC",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-02|Richards Bay FC vs Polokwane City FC|over25",
+      "date": "2026-08-02",
+      "match": "Richards Bay FC vs Polokwane City FC",
+      "market": "over25",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-02|Richards Bay FC vs Polokwane City FC|btts",
+      "date": "2026-08-02",
+      "match": "Richards Bay FC vs Polokwane City FC",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-02|Rapid Vienna vs SC Rheindorf Altach|over25",
+      "date": "2026-08-02",
+      "match": "Rapid Vienna vs SC Rheindorf Altach",
+      "market": "over25",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-02|Rapid Vienna vs SC Rheindorf Altach|btts",
+      "date": "2026-08-02",
+      "match": "Rapid Vienna vs SC Rheindorf Altach",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-02|Krasnodar vs Fakel Voronezh|over25",
+      "date": "2026-08-02",
+      "match": "Krasnodar vs Fakel Voronezh",
+      "market": "over25",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-02|Krasnodar vs Fakel Voronezh|btts",
+      "date": "2026-08-02",
+      "match": "Krasnodar vs Fakel Voronezh",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-02|IFK Göteborg vs Degerfors IF|over25",
+      "date": "2026-08-02",
+      "match": "IFK Göteborg vs Degerfors IF",
+      "market": "over25",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-02|IFK Göteborg vs Degerfors IF|btts",
+      "date": "2026-08-02",
+      "match": "IFK Göteborg vs Degerfors IF",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-02|Hibernian vs Motherwell|btts",
+      "date": "2026-08-02",
+      "match": "Hibernian vs Motherwell",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-02|Gazovik Orenburg vs Zenit St Petersburg|over25",
+      "date": "2026-08-02",
+      "match": "Gazovik Orenburg vs Zenit St Petersburg",
+      "market": "over25",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-02|FC Nordsjælland vs Randers FC|over25",
+      "date": "2026-08-02",
+      "match": "FC Nordsjælland vs Randers FC",
+      "market": "over25",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-02|FC Midtjylland vs AC Horsens|over25",
+      "date": "2026-08-02",
+      "match": "FC Midtjylland vs AC Horsens",
+      "market": "over25",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-02|FC Midtjylland vs AC Horsens|btts",
+      "date": "2026-08-02",
+      "match": "FC Midtjylland vs AC Horsens",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-02|Deportes Concepcion vs Universidad Católica|over25",
+      "date": "2026-08-02",
+      "match": "Deportes Concepcion vs Universidad Católica",
+      "market": "over25",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-02|Deportes Concepcion vs Universidad Católica|btts",
+      "date": "2026-08-02",
+      "match": "Deportes Concepcion vs Universidad Católica",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-02|Brøndby IF vs Viborg FF|over25",
+      "date": "2026-08-02",
+      "match": "Brøndby IF vs Viborg FF",
+      "market": "over25",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-02|Brøndby IF vs Viborg FF|btts",
+      "date": "2026-08-02",
+      "match": "Brøndby IF vs Viborg FF",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-02|Austria Lustenau vs SV Josko Ried|over25",
+      "date": "2026-08-02",
+      "match": "Austria Lustenau vs SV Josko Ried",
+      "market": "over25",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-02|Aldosivi vs Gimnasia La Plata|over25",
+      "date": "2026-08-02",
+      "match": "Aldosivi vs Gimnasia La Plata",
+      "market": "over25",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-02|Aldosivi vs Gimnasia La Plata|btts",
+      "date": "2026-08-02",
+      "match": "Aldosivi vs Gimnasia La Plata",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-02|Akhmat Grozny vs Spartak Moscow|over25",
+      "date": "2026-08-02",
+      "match": "Akhmat Grozny vs Spartak Moscow",
+      "market": "over25",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-02|Akhmat Grozny vs Spartak Moscow|btts",
+      "date": "2026-08-02",
+      "match": "Akhmat Grozny vs Spartak Moscow",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-02|AIK vs Örgryte IS|btts",
+      "date": "2026-08-02",
+      "match": "AIK vs Örgryte IS",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-01|WSG Swarovski Tirol vs SK Sturm Graz|over25",
+      "date": "2026-08-01",
+      "match": "WSG Swarovski Tirol vs SK Sturm Graz",
+      "market": "over25",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-01|Universidad de Concepción vs Audax Italiano|over25",
+      "date": "2026-08-01",
+      "match": "Universidad de Concepción vs Audax Italiano",
+      "market": "over25",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-01|Universidad de Concepción vs Audax Italiano|btts",
+      "date": "2026-08-01",
+      "match": "Universidad de Concepción vs Audax Italiano",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-01|Stellenbosch vs AmaZulu|btts",
+      "date": "2026-08-01",
+      "match": "Stellenbosch vs AmaZulu",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-01|RB Salzburg vs TSV Hartberg|over25",
+      "date": "2026-08-01",
+      "match": "RB Salzburg vs TSV Hartberg",
+      "market": "over25",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-01|RB Salzburg vs TSV Hartberg|btts",
+      "date": "2026-08-01",
+      "match": "RB Salzburg vs TSV Hartberg",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-01|Puebla vs Guadalajara|over25",
+      "date": "2026-08-01",
+      "match": "Puebla vs Guadalajara",
+      "market": "over25",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-01|Orlando Pirates vs Milford FC|btts",
+      "date": "2026-08-01",
+      "match": "Orlando Pirates vs Milford FC",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-01|New York City FC vs Toronto FC|over25",
+      "date": "2026-08-01",
+      "match": "New York City FC vs Toronto FC",
+      "market": "over25",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-01|Manta F.C. vs Mushuc Runa|over25",
+      "date": "2026-08-01",
+      "match": "Manta F.C. vs Mushuc Runa",
+      "market": "over25",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-01|Manta F.C. vs Mushuc Runa|btts",
+      "date": "2026-08-01",
+      "match": "Manta F.C. vs Mushuc Runa",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-01|Libertad (Ecuador) vs Orense|over25",
+      "date": "2026-08-01",
+      "match": "Libertad (Ecuador) vs Orense",
+      "market": "over25",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-01|Libertad (Ecuador) vs Orense|btts",
+      "date": "2026-08-01",
+      "match": "Libertad (Ecuador) vs Orense",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-01|Kruger United vs Kaizer Chiefs|over25",
+      "date": "2026-08-01",
+      "match": "Kruger United vs Kaizer Chiefs",
+      "market": "over25",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-01|Kruger United vs Kaizer Chiefs|btts",
+      "date": "2026-08-01",
+      "match": "Kruger United vs Kaizer Chiefs",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-01|IK Start vs Viking FK|btts",
+      "date": "2026-08-01",
+      "match": "IK Start vs Viking FK",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-01|Gimnasia (Mendoza) vs Unión (Santa Fe)|btts",
+      "date": "2026-08-01",
+      "match": "Gimnasia (Mendoza) vs Unión (Santa Fe)",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-01|Fredrikstad vs Sandefjord|over25",
+      "date": "2026-08-01",
+      "match": "Fredrikstad vs Sandefjord",
+      "market": "over25",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-01|Fredrikstad vs Sandefjord|btts",
+      "date": "2026-08-01",
+      "match": "Fredrikstad vs Sandefjord",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-01|Fortaleza CEIF vs Deportivo Pereira|btts",
+      "date": "2026-08-01",
+      "match": "Fortaleza CEIF vs Deportivo Pereira",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-01|Falkirk vs St Mirren|over25",
+      "date": "2026-08-01",
+      "match": "Falkirk vs St Mirren",
+      "market": "over25",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-01|Falkirk vs St Mirren|btts",
+      "date": "2026-08-01",
+      "match": "Falkirk vs St Mirren",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-01|FC Baltika Kaliningrad vs Dinamo Moscow|over25",
+      "date": "2026-08-01",
+      "match": "FC Baltika Kaliningrad vs Dinamo Moscow",
+      "market": "over25",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-01|Dynamo Makhachkala vs Lokomotiv Moscow|over25",
+      "date": "2026-08-01",
+      "match": "Dynamo Makhachkala vs Lokomotiv Moscow",
+      "market": "over25",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-01|Deportivo Pasto vs Águilas Doradas|over25",
+      "date": "2026-08-01",
+      "match": "Deportivo Pasto vs Águilas Doradas",
+      "market": "over25",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-01|Deportivo Pasto vs Águilas Doradas|btts",
+      "date": "2026-08-01",
+      "match": "Deportivo Pasto vs Águilas Doradas",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-01|Cobresal vs Unión La Calera|over25",
+      "date": "2026-08-01",
+      "match": "Cobresal vs Unión La Calera",
+      "market": "over25",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-01|Cobresal vs Unión La Calera|btts",
+      "date": "2026-08-01",
+      "match": "Cobresal vs Unión La Calera",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-01|BK Häcken vs Kalmar FF|over25",
+      "date": "2026-08-01",
+      "match": "BK Häcken vs Kalmar FF",
+      "market": "over25",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-01|Atlético de San Luis vs Tijuana|over25",
+      "date": "2026-08-01",
+      "match": "Atlético de San Luis vs Tijuana",
+      "market": "over25",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-01|Atlético de San Luis vs Tijuana|btts",
+      "date": "2026-08-01",
+      "match": "Atlético de San Luis vs Tijuana",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-01|Albion FC vs Danubio|over25",
+      "date": "2026-08-01",
+      "match": "Albion FC vs Danubio",
+      "market": "over25",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-01|Akron Tolyatti vs Rubin Kazan|over25",
+      "date": "2026-08-01",
+      "match": "Akron Tolyatti vs Rubin Kazan",
+      "market": "over25",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-08-01|Akron Tolyatti vs Rubin Kazan|btts",
+      "date": "2026-08-01",
+      "match": "Akron Tolyatti vs Rubin Kazan",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-07-31|Vålerenga vs Hamarkameratene|btts",
+      "date": "2026-07-31",
+      "match": "Vålerenga vs Hamarkameratene",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-07-31|Talleres (Córdoba) vs Vélez Sarsfield|over25",
+      "date": "2026-07-31",
+      "match": "Talleres (Córdoba) vs Vélez Sarsfield",
+      "market": "over25",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-07-31|Rodina Moscow vs Rostov|over25",
+      "date": "2026-07-31",
+      "match": "Rodina Moscow vs Rostov",
+      "market": "over25",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-07-31|Rodina Moscow vs Rostov|btts",
+      "date": "2026-07-31",
+      "match": "Rodina Moscow vs Rostov",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-07-31|Los Chankas vs Comerciantes Unidos|over25",
+      "date": "2026-07-31",
+      "match": "Los Chankas vs Comerciantes Unidos",
+      "market": "over25",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-07-31|LASK Linz vs Grazer AK|btts",
+      "date": "2026-07-31",
+      "match": "LASK Linz vs Grazer AK",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-07-31|Independiente vs Newell's Old Boys|btts",
+      "date": "2026-07-31",
+      "match": "Independiente vs Newell's Old Boys",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-07-31|Independiente Rivadavia vs Huracán|over25",
+      "date": "2026-07-31",
+      "match": "Independiente Rivadavia vs Huracán",
+      "market": "over25",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-07-31|Independiente Rivadavia vs Huracán|btts",
+      "date": "2026-07-31",
+      "match": "Independiente Rivadavia vs Huracán",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-07-31|Dundee United vs Rangers|over25",
+      "date": "2026-07-31",
+      "match": "Dundee United vs Rangers",
+      "market": "over25",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-07-31|Coritiba vs Cruzeiro|over25",
+      "date": "2026-07-31",
+      "match": "Coritiba vs Cruzeiro",
+      "market": "over25",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-07-31|Coritiba vs Cruzeiro|btts",
+      "date": "2026-07-31",
+      "match": "Coritiba vs Cruzeiro",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-07-31|Corinthians vs Athletico-PR|btts",
+      "date": "2026-07-31",
+      "match": "Corinthians vs Athletico-PR",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-07-31|Central Córdoba (Santiago del Estero) vs Atlético Tucumán|btts",
+      "date": "2026-07-31",
+      "match": "Central Córdoba (Santiago del Estero) vs Atlético Tucumán",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-07-31|Bodo/Glimt vs Lillestrom|btts",
+      "date": "2026-07-31",
+      "match": "Bodo/Glimt vs Lillestrom",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-07-30|Vitória vs Palmeiras|btts",
+      "date": "2026-07-30",
+      "match": "Vitória vs Palmeiras",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-07-30|Libertad vs Deportivo Recoleta|over25",
+      "date": "2026-07-30",
+      "match": "Libertad vs Deportivo Recoleta",
+      "market": "over25",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-07-30|Internacional vs Flamengo|over25",
+      "date": "2026-07-30",
+      "match": "Internacional vs Flamengo",
+      "market": "over25",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-07-30|Instituto (Córdoba) vs Platense|over25",
+      "date": "2026-07-30",
+      "match": "Instituto (Córdoba) vs Platense",
+      "market": "over25",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-07-30|Gimnasia La Plata vs River Plate|btts",
+      "date": "2026-07-30",
+      "match": "Gimnasia La Plata vs River Plate",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-07-30|Fluminense vs Bahia|over25",
+      "date": "2026-07-30",
+      "match": "Fluminense vs Bahia",
+      "market": "over25",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-07-30|Fluminense vs Bahia|btts",
+      "date": "2026-07-30",
+      "match": "Fluminense vs Bahia",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-07-29|Sportivo Luqueño vs Sportivo Trinidense|over25",
+      "date": "2026-07-29",
+      "match": "Sportivo Luqueño vs Sportivo Trinidense",
+      "market": "over25",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-07-29|San Lorenzo vs Gimnasia (Mendoza)|btts",
+      "date": "2026-07-29",
+      "match": "San Lorenzo vs Gimnasia (Mendoza)",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-07-29|Rosario Central vs Racing Club|over25",
+      "date": "2026-07-29",
+      "match": "Rosario Central vs Racing Club",
+      "market": "over25",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-07-29|Nacional Asunción vs Club Olimpia|btts",
+      "date": "2026-07-29",
+      "match": "Nacional Asunción vs Club Olimpia",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-07-29|Defensa y Justicia vs Deportivo Riestra|over25",
+      "date": "2026-07-29",
+      "match": "Defensa y Justicia vs Deportivo Riestra",
+      "market": "over25",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-07-29|Barracas Central vs Aldosivi|over25",
+      "date": "2026-07-29",
+      "match": "Barracas Central vs Aldosivi",
+      "market": "over25",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-07-29|Banfield vs Sarmiento (Junín)|over25",
+      "date": "2026-07-29",
+      "match": "Banfield vs Sarmiento (Junín)",
+      "market": "over25",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-07-29|Banfield vs Sarmiento (Junín)|btts",
+      "date": "2026-07-29",
+      "match": "Banfield vs Sarmiento (Junín)",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-07-29|Argentinos Juniors vs Estudiantes de Río Cuarto|over25",
+      "date": "2026-07-29",
+      "match": "Argentinos Juniors vs Estudiantes de Río Cuarto",
+      "market": "over25",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-07-29|Argentinos Juniors vs Estudiantes de Río Cuarto|btts",
+      "date": "2026-07-29",
+      "match": "Argentinos Juniors vs Estudiantes de Río Cuarto",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-07-28|Deportivo Cuenca vs Emelec|over25",
+      "date": "2026-07-28",
+      "match": "Deportivo Cuenca vs Emelec",
+      "market": "over25",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-07-28|2 de Mayo vs Cerro Porteño|over25",
+      "date": "2026-07-28",
+      "match": "2 de Mayo vs Cerro Porteño",
+      "market": "over25",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-07-27|Rosenborg vs Fredrikstad|btts",
+      "date": "2026-07-27",
+      "match": "Rosenborg vs Fredrikstad",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-07-27|Randers FC vs Silkeborg IF|over25",
+      "date": "2026-07-27",
+      "match": "Randers FC vs Silkeborg IF",
+      "market": "over25",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-07-27|Mushuc Runa vs Libertad (Ecuador)|btts",
+      "date": "2026-07-27",
+      "match": "Mushuc Runa vs Libertad (Ecuador)",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-07-27|Guayaquil City FC vs Universidad Católica (Quito)|btts",
+      "date": "2026-07-27",
+      "match": "Guayaquil City FC vs Universidad Católica (Quito)",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-07-27|BK Häcken vs AIK|over25",
+      "date": "2026-07-27",
+      "match": "BK Häcken vs AIK",
+      "market": "over25",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-07-27|BK Häcken vs AIK|btts",
+      "date": "2026-07-27",
+      "match": "BK Häcken vs AIK",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-07-26|Ñublense vs Palestino|over25",
+      "date": "2026-07-26",
+      "match": "Ñublense vs Palestino",
+      "market": "over25",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-07-26|Ñublense vs Palestino|btts",
+      "date": "2026-07-26",
+      "match": "Ñublense vs Palestino",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-07-26|Sarpsborg FK vs Hamarkameratene|over25",
+      "date": "2026-07-26",
+      "match": "Sarpsborg FK vs Hamarkameratene",
+      "market": "over25",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-07-26|Sarpsborg FK vs Hamarkameratene|btts",
+      "date": "2026-07-26",
+      "match": "Sarpsborg FK vs Hamarkameratene",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-07-26|Rubin Kazan vs Krasnodar|btts",
+      "date": "2026-07-26",
+      "match": "Rubin Kazan vs Krasnodar",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-07-26|Orense vs Independiente del Valle|btts",
+      "date": "2026-07-26",
+      "match": "Orense vs Independiente del Valle",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-07-26|Malmö FF vs IF Elfsborg|over25",
+      "date": "2026-07-26",
+      "match": "Malmö FF vs IF Elfsborg",
+      "market": "over25",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-07-26|Malmö FF vs IF Elfsborg|btts",
+      "date": "2026-07-26",
+      "match": "Malmö FF vs IF Elfsborg",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-07-26|Lokomotiv Moscow vs Akhmat Grozny|over25",
+      "date": "2026-07-26",
+      "match": "Lokomotiv Moscow vs Akhmat Grozny",
+      "market": "over25",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-07-26|Lokomotiv Moscow vs Akhmat Grozny|btts",
+      "date": "2026-07-26",
+      "match": "Lokomotiv Moscow vs Akhmat Grozny",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-07-26|Guaraní vs Sportivo Luqueño|over25",
+      "date": "2026-07-26",
+      "match": "Guaraní vs Sportivo Luqueño",
+      "market": "over25",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-07-26|Gazovik Orenburg vs Rostov|btts",
+      "date": "2026-07-26",
+      "match": "Gazovik Orenburg vs Rostov",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-07-26|GAIS vs Halmstads BK|btts",
+      "date": "2026-07-26",
+      "match": "GAIS vs Halmstads BK",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-07-26|Cruzeiro vs Botafogo|btts",
+      "date": "2026-07-26",
+      "match": "Cruzeiro vs Botafogo",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-07-26|Club Olimpia vs Libertad|btts",
+      "date": "2026-07-26",
+      "match": "Club Olimpia vs Libertad",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-07-26|Aucas vs Macará|btts",
+      "date": "2026-07-26",
+      "match": "Aucas vs Macará",
+      "market": "btts",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    },
+    {
+      "key": "2026-07-26|Aalesund vs Viking FK|over25",
+      "date": "2026-07-26",
+      "match": "Aalesund vs Viking FK",
+      "market": "over25",
+      "reason": "erreur-technique-pipeline",
+      "excludedAt": "2026-10-23"
+    }
+  ]
+}
