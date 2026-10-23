@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "generatedAt": "2026-10-23T18:52:14.924Z",
+  "generatedAt": "2026-10-23T23:44:26.061Z",
   "pendingPolicy": {
     "graceHours": 48,
     "rule": "Sans statut vérifié, un match futur ou récent reste « en attente » pendant exactement 48 h après son coup d'envoi.",
@@ -15,31 +15,31 @@
     "insufficientVolume": false
   },
   "stats": {
-    "total": 262,
-    "won": 225,
-    "lost": 37,
-    "pending": 41,
+    "total": 271,
+    "won": 231,
+    "lost": 40,
+    "pending": 32,
     "unverifiable": 130,
     "archivedTotal": 433,
-    "rate": 85.9,
+    "rate": 85.2,
     "gold": {
-      "total": 179,
-      "won": 160,
-      "lost": 19,
-      "rate": 89.4
+      "total": 184,
+      "won": 164,
+      "lost": 20,
+      "rate": 89.1
     },
     "standard": {
-      "total": 83,
-      "won": 65,
-      "lost": 18,
-      "rate": 78.3
+      "total": 87,
+      "won": 67,
+      "lost": 20,
+      "rate": 77
     },
     "byType": {
       "btts": {
-        "total": 259,
-        "won": 224,
-        "lost": 35,
-        "rate": 86.5
+        "total": 268,
+        "won": 230,
+        "lost": 38,
+        "rate": 85.8
       },
       "over25": {
         "total": 3,
@@ -142,10 +142,10 @@
       },
       {
         "date": "2026-10-23",
-        "total": 2,
-        "won": 1,
-        "lost": 1,
-        "rate": 50
+        "total": 11,
+        "won": 7,
+        "lost": 4,
+        "rate": 63.6
       }
     ],
     "period": {
@@ -155,6 +155,123 @@
     }
   },
   "history": [
+    {
+      "date": "2026-10-23",
+      "match": "Brest vs Nice",
+      "league": "Ligue 1",
+      "market": "btts",
+      "tier": "STANDARD",
+      "proba": 0.5097,
+      "status": "WON",
+      "finalScore": "1-2",
+      "verifiedAt": "2026-10-23T23:43:18.531Z",
+      "source": "ESPN public",
+      "prediction": "Oui"
+    },
+    {
+      "date": "2026-10-23",
+      "match": "Vitória de Guimaraes vs Maritimo",
+      "league": "Liga Portugal",
+      "market": "btts",
+      "tier": "STANDARD",
+      "proba": 0.4202,
+      "status": "WON",
+      "finalScore": "5-0",
+      "verifiedAt": "2026-10-23T23:43:18.531Z",
+      "source": "ESPN public",
+      "prediction": "Non"
+    },
+    {
+      "date": "2026-10-23",
+      "match": "Go Ahead Eagles vs Telstar",
+      "league": "Eredivisie",
+      "market": "btts",
+      "tier": "STANDARD",
+      "proba": 0.4568,
+      "status": "LOST",
+      "finalScore": "3-2",
+      "verifiedAt": "2026-10-23T23:43:18.530Z",
+      "source": "ESPN public",
+      "prediction": "Non"
+    },
+    {
+      "date": "2026-10-23",
+      "match": "VfB Stuttgart vs Borussia Mönchengladbach",
+      "league": "Bundesliga",
+      "market": "btts",
+      "tier": "STANDARD",
+      "proba": 0.4575,
+      "status": "LOST",
+      "finalScore": "2-3",
+      "verifiedAt": "2026-10-23T23:43:18.530Z",
+      "source": "ESPN public",
+      "prediction": "Non"
+    },
+    {
+      "date": "2026-10-23",
+      "match": "Alavés vs Málaga",
+      "league": "LaLiga",
+      "market": "btts",
+      "tier": "GOLD",
+      "proba": 0.4747,
+      "status": "LOST",
+      "finalScore": "1-1",
+      "verifiedAt": "2026-10-23T23:43:13.952Z",
+      "source": "ESPN public",
+      "prediction": "Non"
+    },
+    {
+      "date": "2026-10-23",
+      "match": "Ipswich Town vs Nottingham Forest",
+      "league": "Premier League",
+      "market": "btts",
+      "tier": "GOLD",
+      "proba": 0.6506,
+      "status": "WON",
+      "finalScore": "1-1",
+      "verifiedAt": "2026-10-23T23:43:13.952Z",
+      "source": "ESPN public",
+      "prediction": "Oui"
+    },
+    {
+      "date": "2026-10-23",
+      "match": "Torino vs Monza",
+      "league": "Serie A",
+      "market": "btts",
+      "tier": "GOLD",
+      "proba": 0.6661,
+      "status": "WON",
+      "finalScore": "3-2",
+      "verifiedAt": "2026-10-23T23:43:13.952Z",
+      "source": "ESPN public",
+      "prediction": "Oui"
+    },
+    {
+      "date": "2026-10-23",
+      "match": "Bolton Wanderers vs Middlesbrough",
+      "league": "Championship",
+      "market": "btts",
+      "tier": "GOLD",
+      "proba": 0.6252,
+      "status": "WON",
+      "finalScore": "1-5",
+      "verifiedAt": "2026-10-23T23:43:13.951Z",
+      "source": "ESPN public",
+      "prediction": "Oui"
+    },
+    {
+      "date": "2026-10-23",
+      "match": "SC Rheindorf Altach vs Austria Vienna",
+      "league": "Austrian Bundesliga",
+      "market": "btts",
+      "tier": "GOLD",
+      "proba": 0.697,
+      "status": "WON",
+      "finalScore": "2-1",
+      "verifiedAt": "2026-10-23T23:43:13.951Z",
+      "source": "ESPN public",
+      "prediction": "Oui"
+    },
     {
       "date": "2026-10-23",
       "match": "SV Darmstadt 98 vs St. Pauli",

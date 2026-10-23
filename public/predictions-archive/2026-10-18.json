@@ -1079,7 +1079,9 @@
       "over25Prob": 0.727,
       "homeLambda": 2.27,
       "awayLambda": 1.5,
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "2-1",
+      "verifiedAt": "2026-10-23T23:43:13.951Z"
     },
     {
       "id": "boltonwa-vs-middlesb-2026-10-23",
@@ -1142,7 +1144,9 @@
       "over25Prob": 0.6096,
       "homeLambda": 1.44,
       "awayLambda": 1.71,
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "1-5",
+      "verifiedAt": "2026-10-23T23:43:13.951Z"
     },
     {
       "id": "svdarmst-vs-stpauli-2026-10-23",
@@ -1335,7 +1339,9 @@
       "over25Prob": 0.6439,
       "homeLambda": 1.82,
       "awayLambda": 1.5,
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "1-1",
+      "verifiedAt": "2026-10-23T23:43:13.952Z"
     },
     {
       "id": "kvkortri-vs-kvmechel-2026-10-23",
@@ -1461,7 +1467,9 @@
       "over25Prob": 0.4519,
       "homeLambda": 1.65,
       "awayLambda": 0.83,
-      "status": "PENDING"
+      "status": "LOST",
+      "finalScore": "3-2",
+      "verifiedAt": "2026-10-23T23:43:18.530Z"
     },
     {
       "id": "vfbstutt-vs-borussia-2026-10-23",
@@ -1524,7 +1532,9 @@
       "over25Prob": 0.6761,
       "homeLambda": 2.82,
       "awayLambda": 0.67,
-      "status": "PENDING"
+      "status": "LOST",
+      "finalScore": "2-3",
+      "verifiedAt": "2026-10-23T23:43:18.530Z"
     }
   ]
 }

@@ -5243,7 +5243,9 @@
       "over25Prob": 0.727,
       "homeLambda": 2.27,
       "awayLambda": 1.5,
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "2-1",
+      "verifiedAt": "2026-10-23T23:43:13.951Z"
     },
     {
       "id": "boltonwa-vs-middlesb-2026-10-23",
@@ -5306,7 +5308,9 @@
       "over25Prob": 0.6096,
       "homeLambda": 1.44,
       "awayLambda": 1.71,
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "1-5",
+      "verifiedAt": "2026-10-23T23:43:13.951Z"
     },
     {
       "id": "svdarmst-vs-stpauli-2026-10-23",
@@ -5560,7 +5564,9 @@
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 2.05, nul: 3.35, 2: 3.35, Over 2.5: 1.91.",
       "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.05, draw: 3.35, 2: 3.35, Over 2.5: 1.91.",
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "3-2",
+      "verifiedAt": "2026-10-23T23:43:13.952Z"
     },
     {
       "id": "ipswicht-vs-nottingh-2026-10-23",
@@ -5623,7 +5629,9 @@
       "over25Prob": 0.6439,
       "homeLambda": 1.82,
       "awayLambda": 1.5,
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "1-1",
+      "verifiedAt": "2026-10-23T23:43:13.952Z"
     },
     {
       "id": "alavs-vs-mlaga-2026-10-23",
@@ -5747,7 +5755,9 @@
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 1.77, nul: 3.7, 2: 4.8, Over 2.5: 2.05.",
       "ai_odds_insight_en": "The market (DraftKings) prices 1: 1.77, draw: 3.7, 2: 4.8, Over 2.5: 2.05.",
-      "status": "PENDING"
+      "status": "LOST",
+      "finalScore": "1-1",
+      "verifiedAt": "2026-10-23T23:43:13.952Z"
     },
     {
       "id": "kvkortri-vs-kvmechel-2026-10-23",
@@ -5873,7 +5883,9 @@
       "over25Prob": 0.4519,
       "homeLambda": 1.65,
       "awayLambda": 0.83,
-      "status": "PENDING"
+      "status": "LOST",
+      "finalScore": "3-2",
+      "verifiedAt": "2026-10-23T23:43:18.530Z"
     },
     {
       "id": "vfbstutt-vs-borussia-2026-10-23",
@@ -5936,7 +5948,9 @@
       "over25Prob": 0.6761,
       "homeLambda": 2.82,
       "awayLambda": 0.67,
-      "status": "PENDING"
+      "status": "LOST",
+      "finalScore": "2-3",
+      "verifiedAt": "2026-10-23T23:43:18.530Z"
     },
     {
       "id": "brest-vs-nice-2026-10-23",
@@ -6060,7 +6074,9 @@
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 2.25, nul: 3.4, 2: 3.25, Over 2.5: 1.71.",
       "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.25, draw: 3.4, 2: 3.25, Over 2.5: 1.71.",
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "1-2",
+      "verifiedAt": "2026-10-23T23:43:18.531Z"
     },
     {
       "id": "lillestr-vs-realsoci-2026-10-22",

@@ -1,145 +1,8 @@
 {
   "date": "2026-10-23",
-  "lastUpdated": "2026-10-23T18:49:59.494Z",
+  "lastUpdated": "2026-10-23T23:42:10.856Z",
   "source": "ESPN + TheSportsDB",
   "free": [
-    {
-      "id": "vitriade-vs-maritimo-2026-10-23",
-      "match": "Vitória de Guimaraes vs Maritimo",
-      "home": "Vitória de Guimaraes",
-      "away": "Maritimo",
-      "league": "Liga Portugal",
-      "date": "2026-10-23",
-      "type": "BTTS",
-      "prediction": "Non",
-      "proba": 0.4202,
-      "bttsProbDisplay": "42.02%",
-      "over25ProbDisplay": "36.39%",
-      "confidence": 42,
-      "time": "19:45",
-      "matchSemantic": "vitriade-vs-maritimo-2026-10-23",
-      "source": "poisson-v92-real-data",
-      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/5309.png",
-      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/552.png",
-      "tier": "SILVER",
-      "reliabilityScore": 68.38,
-      "dataQuality": "HIGH",
-      "dataSource": "ESPN_TEAM_SCHEDULE",
-      "matchCountHome": 8,
-      "matchCountAway": 8,
-      "h2hAvailable": false,
-      "xgHome": 1.27,
-      "xgAway": 0.88,
-      "xgTotal": 2.15,
-      "formBTTS": null,
-      "analysis": "Vitória de Guimaraes (8 matchs réels, xG 1.27) vs Maritimo (8 matchs réels, xG 0.88). xG cumulé 2.15, BTTS 42.0%, Over 2.5 36.4%. Fiabilité 68.38%. Qualité données: HIGH.",
-      "analysisData": {
-        "bttsProb": 0.4202,
-        "over25Prob": 0.3639,
-        "homeLambda": 1.27,
-        "awayLambda": 0.88,
-        "xgTotal": 2.15
-      },
-      "estimatedCote": 2.38,
-      "estimatedCoteOver": 2.75,
-      "predictions": [
-        {
-          "type": "BTTS",
-          "prediction": "Non",
-          "confidence": 42,
-          "bttsProb": 0.4202,
-          "homeLambda": 1.27,
-          "awayLambda": 0.88
-        },
-        {
-          "type": "Over 2.5",
-          "prediction": "Non",
-          "confidence": 40,
-          "over25Prob": 0.3639,
-          "homeLambda": 1.27,
-          "awayLambda": 0.88
-        }
-      ],
-      "bttsProb": 0.4202,
-      "over25Prob": 0.3639,
-      "homeLambda": 1.27,
-      "awayLambda": 0.88,
-      "status": "PENDING",
-      "last5Home": [
-        {
-          "date": "2026-10-11",
-          "opponent": "Benfica",
-          "venue": "A",
-          "score": "0-2",
-          "result": "L"
-        },
-        {
-          "date": "2026-09-20",
-          "opponent": "Moreirense",
-          "venue": "H",
-          "score": "1-1",
-          "result": "D"
-        },
-        {
-          "date": "2026-09-12",
-          "opponent": "Académico de Viseu",
-          "venue": "A",
-          "score": "1-2",
-          "result": "L"
-        },
-        {
-          "date": "2026-09-06",
-          "opponent": "Casa Pia",
-          "venue": "H",
-          "score": "0-0",
-          "result": "D"
-        },
-        {
-          "date": "2026-08-31",
-          "opponent": "Braga",
-          "venue": "A",
-          "score": "0-1",
-          "result": "L"
-        }
-      ],
-      "last5Away": [
-        {
-          "date": "2026-10-10",
-          "opponent": "FC Porto",
-          "venue": "H",
-          "score": "1-2",
-          "result": "L"
-        },
-        {
-          "date": "2026-09-19",
-          "opponent": "Gil Vicente",
-          "venue": "A",
-          "score": "1-1",
-          "result": "D"
-        },
-        {
-          "date": "2026-09-14",
-          "opponent": "Moreirense",
-          "venue": "A",
-          "score": "1-3",
-          "result": "L"
-        },
-        {
-          "date": "2026-09-05",
-          "opponent": "Benfica",
-          "venue": "H",
-          "score": "0-3",
-          "result": "L"
-        },
-        {
-          "date": "2026-08-29",
-          "opponent": "Arouca",
-          "venue": "A",
-          "score": "1-2",
-          "result": "L"
-        }
-      ]
-    },
     {
       "id": "fcutrech-vs-peczwoll-2026-10-24",
       "match": "FC Utrecht vs PEC Zwolle",
@@ -4036,7 +3899,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 1.44, nul: 5, 2: 6.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 1.44, draw: 5, 2: 6."
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 1.44, draw: 5, 2: 6.",
+      "status": "PENDING"
     },
     {
       "id": "torino-vs-como-2026-10-27",
@@ -4161,6 +4025,13 @@
       "ai_odds_insight_en": "The market (DraftKings) prices 1: 4.5, draw: 3.45, 2: 1.71, Over 2.5: 1.71.",
       "last5Home": [
         {
+          "date": "2026-10-23",
+          "opponent": "Monza",
+          "venue": "H",
+          "score": "3-2",
+          "result": "W"
+        },
+        {
           "date": "2026-10-19",
           "opponent": "Parma",
           "venue": "A",
@@ -4187,13 +4058,6 @@
           "venue": "H",
           "score": "0-2",
           "result": "L"
-        },
-        {
-          "date": "2026-09-05",
-          "opponent": "Fiorentina",
-          "venue": "A",
-          "score": "2-1",
-          "result": "W"
         }
       ],
       "last5Away": [
@@ -6051,6 +5915,13 @@
       },
       "last5Home": [
         {
+          "date": "2026-10-23",
+          "opponent": "Torino",
+          "venue": "A",
+          "score": "2-3",
+          "result": "L"
+        },
+        {
           "date": "2026-10-19",
           "opponent": "Cagliari",
           "venue": "H",
@@ -6077,13 +5948,6 @@
           "venue": "A",
           "score": "2-3",
           "result": "L"
-        },
-        {
-          "date": "2026-09-06",
-          "opponent": "Parma",
-          "venue": "A",
-          "score": "1-1",
-          "result": "D"
         }
       ],
       "last5Away": [
@@ -6247,151 +6111,14 @@
     }
   ],
   "stats": {
-    "avgReliability": 80.25,
-    "totalAnalyzed": 142,
+    "avgReliability": 80.38,
+    "totalAnalyzed": 141,
     "totalRejected": 2,
-    "totalAccepted": 140,
-    "freeCount": 32,
+    "totalAccepted": 139,
+    "freeCount": 31,
     "vipCount": 8
   },
   "predictions": [
-    {
-      "id": "vitriade-vs-maritimo-2026-10-23",
-      "match": "Vitória de Guimaraes vs Maritimo",
-      "home": "Vitória de Guimaraes",
-      "away": "Maritimo",
-      "league": "Liga Portugal",
-      "date": "2026-10-23",
-      "type": "BTTS",
-      "prediction": "Non",
-      "proba": 0.4202,
-      "bttsProbDisplay": "42.02%",
-      "over25ProbDisplay": "36.39%",
-      "confidence": 42,
-      "time": "19:45",
-      "matchSemantic": "vitriade-vs-maritimo-2026-10-23",
-      "source": "poisson-v92-real-data",
-      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/5309.png",
-      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/552.png",
-      "tier": "SILVER",
-      "reliabilityScore": 68.38,
-      "dataQuality": "HIGH",
-      "dataSource": "ESPN_TEAM_SCHEDULE",
-      "matchCountHome": 8,
-      "matchCountAway": 8,
-      "h2hAvailable": false,
-      "xgHome": 1.27,
-      "xgAway": 0.88,
-      "xgTotal": 2.15,
-      "formBTTS": null,
-      "analysis": "Vitória de Guimaraes (8 matchs réels, xG 1.27) vs Maritimo (8 matchs réels, xG 0.88). xG cumulé 2.15, BTTS 42.0%, Over 2.5 36.4%. Fiabilité 68.38%. Qualité données: HIGH.",
-      "analysisData": {
-        "bttsProb": 0.4202,
-        "over25Prob": 0.3639,
-        "homeLambda": 1.27,
-        "awayLambda": 0.88,
-        "xgTotal": 2.15
-      },
-      "estimatedCote": 2.38,
-      "estimatedCoteOver": 2.75,
-      "predictions": [
-        {
-          "type": "BTTS",
-          "prediction": "Non",
-          "confidence": 42,
-          "bttsProb": 0.4202,
-          "homeLambda": 1.27,
-          "awayLambda": 0.88
-        },
-        {
-          "type": "Over 2.5",
-          "prediction": "Non",
-          "confidence": 40,
-          "over25Prob": 0.3639,
-          "homeLambda": 1.27,
-          "awayLambda": 0.88
-        }
-      ],
-      "bttsProb": 0.4202,
-      "over25Prob": 0.3639,
-      "homeLambda": 1.27,
-      "awayLambda": 0.88,
-      "status": "PENDING",
-      "last5Home": [
-        {
-          "date": "2026-10-11",
-          "opponent": "Benfica",
-          "venue": "A",
-          "score": "0-2",
-          "result": "L"
-        },
-        {
-          "date": "2026-09-20",
-          "opponent": "Moreirense",
-          "venue": "H",
-          "score": "1-1",
-          "result": "D"
-        },
-        {
-          "date": "2026-09-12",
-          "opponent": "Académico de Viseu",
-          "venue": "A",
-          "score": "1-2",
-          "result": "L"
-        },
-        {
-          "date": "2026-09-06",
-          "opponent": "Casa Pia",
-          "venue": "H",
-          "score": "0-0",
-          "result": "D"
-        },
-        {
-          "date": "2026-08-31",
-          "opponent": "Braga",
-          "venue": "A",
-          "score": "0-1",
-          "result": "L"
-        }
-      ],
-      "last5Away": [
-        {
-          "date": "2026-10-10",
-          "opponent": "FC Porto",
-          "venue": "H",
-          "score": "1-2",
-          "result": "L"
-        },
-        {
-          "date": "2026-09-19",
-          "opponent": "Gil Vicente",
-          "venue": "A",
-          "score": "1-1",
-          "result": "D"
-        },
-        {
-          "date": "2026-09-14",
-          "opponent": "Moreirense",
-          "venue": "A",
-          "score": "1-3",
-          "result": "L"
-        },
-        {
-          "date": "2026-09-05",
-          "opponent": "Benfica",
-          "venue": "H",
-          "score": "0-3",
-          "result": "L"
-        },
-        {
-          "date": "2026-08-29",
-          "opponent": "Arouca",
-          "venue": "A",
-          "score": "1-2",
-          "result": "L"
-        }
-      ]
-    },
     {
       "id": "fcutrech-vs-peczwoll-2026-10-24",
       "match": "FC Utrecht vs PEC Zwolle",
@@ -10288,7 +10015,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 1.44, nul: 5, 2: 6.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 1.44, draw: 5, 2: 6."
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 1.44, draw: 5, 2: 6.",
+      "status": "PENDING"
     },
     {
       "id": "torino-vs-como-2026-10-27",
@@ -10413,6 +10141,13 @@
       "ai_odds_insight_en": "The market (DraftKings) prices 1: 4.5, draw: 3.45, 2: 1.71, Over 2.5: 1.71.",
       "last5Home": [
         {
+          "date": "2026-10-23",
+          "opponent": "Monza",
+          "venue": "H",
+          "score": "3-2",
+          "result": "W"
+        },
+        {
           "date": "2026-10-19",
           "opponent": "Parma",
           "venue": "A",
@@ -10439,13 +10174,6 @@
           "venue": "H",
           "score": "0-2",
           "result": "L"
-        },
-        {
-          "date": "2026-09-05",
-          "opponent": "Fiorentina",
-          "venue": "A",
-          "score": "2-1",
-          "result": "W"
         }
       ],
       "last5Away": [
@@ -12303,6 +12031,13 @@
       },
       "last5Home": [
         {
+          "date": "2026-10-23",
+          "opponent": "Torino",
+          "venue": "A",
+          "score": "2-3",
+          "result": "L"
+        },
+        {
           "date": "2026-10-19",
           "opponent": "Cagliari",
           "venue": "H",
@@ -12329,13 +12064,6 @@
           "venue": "A",
           "score": "2-3",
           "result": "L"
-        },
-        {
-          "date": "2026-09-06",
-          "opponent": "Parma",
-          "venue": "A",
-          "score": "1-1",
-          "result": "D"
         }
       ],
       "last5Away": [
