@@ -118,11 +118,11 @@ export default function GiftPopup() {
           transition={{ type: 'spring', stiffness: 320, damping: 19 }}
           className="hp-gift"
           role="complementary"
-          aria-label="Offre exclusive Linebet — bonus 300%"
+          aria-label="Exclusive Linebet offer — 300% bonus"
         >
           <div className="hp-gift-card">
             {/* Fermeture — l'utilisateur garde le contrôle */}
-            <button onClick={close} className="hp-gift-close" aria-label="Fermer l'offre bonus" data-cta="gift-popup-close">
+            <button onClick={close} className="hp-gift-close" aria-label="Close bonus offer" data-cta="gift-popup-close">
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" aria-hidden="true">
                 <line x1="18" y1="6" x2="6" y2="18" />
                 <line x1="6" y1="6" x2="18" y2="18" />
@@ -135,12 +135,12 @@ export default function GiftPopup() {
               animate={
                 reduceMotion
                   ? undefined
-                  : { y: [0, -7, 0], rotate: [0, -5, 4, 0] }
+                  : { y: [0, -5, 0], rotate: [0, -4, 3, 0] }
               }
               transition={reduceMotion ? undefined : { duration: 2.8, repeat: Infinity, ease: 'easeInOut' }}
               aria-hidden="true"
             >
-              <svg width="54" height="54" viewBox="0 0 64 64" fill="none">
+              <svg width="42" height="42" viewBox="0 0 64 64" fill="none">
                 <defs>
                   <linearGradient id="hpGiftBox" x1="0" y1="0" x2="0" y2="1">
                     <stop offset="0" stopColor="#00E27A" />
@@ -175,10 +175,10 @@ export default function GiftPopup() {
             {/* Offre */}
             <div className="hp-gift-body">
               <p className="hp-gift-bonus">
-                Bonus <span>300%</span>
+                <span>300%</span> Bonus
               </p>
               <p className="hp-gift-sub">
-                1. Clique ci-dessous · 2. Entre le code <b>{SITE.promoCode}</b>
+                1. Click below · 2. Enter code <b>{SITE.promoCode}</b>
               </p>
               <MovingGradientButton
                 href={AFFILIATE.linebet}
@@ -186,16 +186,16 @@ export default function GiftPopup() {
                 rel="sponsored nofollow noopener noreferrer"
                 dataCta="gift-popup-300"
                 onClick={() => trackAffiliateAction('linebet', 'signup_cta_click', 'gift-popup-300')}
-                padding="0 0.9rem"
-                rounded={12}
-                style={{ height: 38, width: '100%' }}
-                font={{ fontWeight: 800, fontSize: '13px' }}
+                padding="0 0.7rem"
+                rounded={10}
+                style={{ height: 32, width: '100%' }}
+                font={{ fontWeight: 800, fontSize: '12px' }}
                 colors={{ fill: '#07271A', hoverFill: '#0B3A26', textColor: '#E9FFF3', hoverTextColor: '#FFFFFF' }}
                 border={{ borderWidth: 1.5, borderStyle: 'solid', borderColor: 'rgba(0, 210, 122, 0.45)' }}
                 stroke={{ headColor: '#8CFFC1', color: '#00C26E', direction: 'cw', movement: 'step', count: 2, trail: 72, speed: 14 }}
               >
-                S&apos;inscrire avec {SITE.promoCode}
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                Sign up · {SITE.promoCode}
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                   <line x1="5" y1="12" x2="19" y2="12" />
                   <polyline points="12 5 19 12 12 19" />
                 </svg>
