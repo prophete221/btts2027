@@ -6181,6 +6181,7 @@ body::before {
 }
 
 .rv-cell--match { color: #F5F5F7; font-weight: 600; }
+.rv-cell--pick { text-align: center; font-weight: 600; color: #D1D1D6; }
 .rv-cell--proba { text-align: center; font-family: var(--font-mono), monospace; }
 .rv-cell--score { text-align: center; color: #F5F5F7; font-family: var(--font-mono), monospace; font-weight: 600; }
 .rv-cell--result { text-align: center; }

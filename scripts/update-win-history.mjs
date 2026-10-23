@@ -1,10 +1,22 @@
 // ═══════════════════════════════════════════════════════════════════════════════
-// BTTSPredict — update-win-history V8.2 (grâce 48 h + bucket unverifiable)
+// BTTSPredict — update-win-history V8.3 (déduplication + date réelle du match)
 // ═══════════════════════════════════════════════════════════════════════════════
 // Calcule 2 buckets :
 //  - newStats     : pronos publiés depuis tracking-period.startDate (PUBLIC)
 //  - legacyStats  : pronos publiés avant startDate (PRIVÉ, non affiché publiquement)
 // Source unique de vérité : public/win-history.json
+//
+// DÉDUPLICATION (2026-10-23, V8.3 — bug « les matchs gagnés n'apparaissent pas ») :
+//  Un même match publié plusieurs jours de suite (le jour J en « du jour » puis
+//  J+1..J+5 en « à venir ») existe en PLUSIEURS COPIES dans les archives.
+//  V8.2 comptait chaque copie : les compteurs gonflaient (pending/unverifiable)
+//  et un match pouvait être à la fois WON dans une archive et PENDING à vie
+//  dans une autre. V8.3 compte chaque match UNE SEULE FOIS :
+//  - clé naturelle : date réelle du match | match | marché ;
+//  - statut retenu : le premier statut vérifié (WON/LOST) rencontré dans les
+//    archives, sinon classification pending/unverifiable du match ;
+//  - date affichée dans l'historique : la VRAIE date du match (p.date),
+//    plus la date du fichier d'archive.
 //
 // POLITIQUE PENDING (2026-10-20, V8.2) :
 //  Une prédiction sans statut WON/LOST n'est « en attente » (pending) que si
@@ -236,8 +248,40 @@ function getType(p) {
   return 'over25';
 }
 
-// calcProfit supprimé (2026-09-28) : dépendait de la cote fictive 1.90.
-// Les cotes réelles ne sont pas collectées → pas de ROI/yield/profit publié.
+// ── Déduplication V8.3 ───────────────────────────────────────────────────────
+
+const ISO_DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
+
+/** Vraie date de match d'un prono (p.date valide) sinon la date du fichier d'archive. */
+function realMatchDate(p, fileDate) {
+  return typeof p?.date === 'string' && ISO_DATE_RE.test(p.date.trim()) ? p.date.trim() : fileDate;
+}
+
+/** Clé de déduplication : date réelle du match | match | marché. */
+function dedupeKey(p, fileDate) {
+  const date = realMatchDate(p, fileDate);
+  const match = String(p?.match || `${p?.home || ''} vs ${p?.away || ''}`).trim();
+  const market = getType(p);
+  return `${date}|${match}|${market}`;
+}
+
+/**
+ * Fusionne, dans l'enregistrement représentatif (première publication),
+ * le statut vérifié d'une copie ultérieure du même match.
+ * Le premier statut vérifié rencontré (archives en ordre chronologique) gagne.
+ */
+function mergeVerifiedCopy(rec, copy) {
+  const st = String(copy?.status || '').trim().toUpperCase();
+  if (st !== 'WON' && st !== 'LOST') return;
+  const cur = String(rec.p.status || '').trim().toUpperCase();
+  if (cur === 'WON' || cur === 'LOST') {
+    if (cur !== st) {
+      console.warn(`[update-win-history] ⚠ statuts conflictuels entre copies pour "${rec.p.match}" (${cur} vs ${st}) — premier statut conservé (${cur})`);
+    }
+    return;
+  }
+  rec.p = { ...rec.p, status: st, finalScore: copy.finalScore ?? rec.p.finalScore, verifiedAt: copy.verifiedAt ?? rec.p.verifiedAt };
+}
 
 function emptyBucket() {
   return {
@@ -252,60 +296,57 @@ function emptyBucket() {
   };
 }
 
-function processFile(file, bucket, nowMs = Date.now(), dir = DIR) {
-  const date = file.replace('.json', '');
-  let data;
-  try { data = JSON.parse(fs.readFileSync(path.join(dir, file), 'utf8')); } catch (e) { return; }
-  let preds = data.predictions || data;
-  if (!Array.isArray(preds)) return;
+/**
+ * Compte un match DÉDUPLIQUÉ dans son bucket.
+ * Un match = une entrée, quel que soit le nombre de copies archivées.
+ */
+function countRecord(bucket, rec, nowMs) {
+  const p = rec.p;
+  const tier = getTier(p);
+  const type = getType(p);
 
-  bucket.archivedTotal += preds.length;
-  let dW = 0, dL = 0;
+  bucket.archivedTotal++;
 
-  for (const p of preds) {
-    const tier = getTier(p);
-    const type = getType(p);
-    // A recognized result status is authoritative. Legacy boolean-only records
-    // remain supported, but unknown statuses (e.g. PENDING) must not turn into
-    // losses merely because a stale `isWon: false` field is present.
-    const status = typeof p.status === 'string' ? p.status.trim().toUpperCase() : '';
-    const isWon = status === 'WON' || (!status && p.isWon === true);
-    const isLost = status === 'LOST' || (!status && p.isWon === false);
-    const isVerified = isWon || isLost;
+  const status = typeof p.status === 'string' ? p.status.trim().toUpperCase() : '';
+  const isWon = status === 'WON' || (!status && p.isWon === true);
+  const isLost = status === 'LOST' || (!status && p.isWon === false);
+  const isVerified = isWon || isLost;
 
-    if (isWon) {
-      bucket.won++; dW++;
-      if (tier === 'GOLD') bucket.gold.won++;
-      else bucket.std.won++;
-      if (type === 'btts') bucket.btts.won++; else bucket.over25.won++;
-    } else if (isLost) {
-      bucket.lost++; dL++;
-      if (tier === 'GOLD') bucket.gold.lost++;
-      else bucket.std.lost++;
-      if (type === 'btts') bucket.btts.lost++; else bucket.over25.lost++;
-    } else {
-      // V8.2 : sans statut, le match reste « en attente » pendant sa grâce de 48 h
-      // (futur ou récent) ; au-delà, sans score vérifiable, il devient « non
-      // vérifiable » — compté à part, jamais gagné/perdu/en attente.
-      if (classifyUnverified(p, nowMs) === 'pending') bucket.pending++;
-      else bucket.unverifiable++;
-    }
+  const matchDate = realMatchDate(p, rec.fileDate);
 
-    if (isVerified) {
-      bucket.all.push({
-        date, match: p.match || '', league: p.league || '',
-        market: type, tier,
-        proba: p.proba || (p.confidence ? p.confidence / 100 : 0.62),
-        status: isWon ? 'WON' : 'LOST',
-        finalScore: p.finalScore || p.score || '-',
-        verifiedAt: p.verifiedAt || '',
-        source: 'ESPN public',
-      });
-    }
-  }
+  if (isWon || isLost) {
+    if (isWon) bucket.won++;
+    else bucket.lost++;
+    if (tier === 'GOLD') { if (isWon) bucket.gold.won++; else bucket.gold.lost++; }
+    else { if (isWon) bucket.std.won++; else bucket.std.lost++; }
+    if (type === 'btts') { if (isWon) bucket.btts.won++; else bucket.btts.lost++; }
+    else { if (isWon) bucket.over25.won++; else bucket.over25.lost++; }
 
-  if (dW + dL > 0) {
-    bucket.daily[date] = { total: dW + dL, won: dW, lost: dL, rate: +(dW / (dW + dL) * 100).toFixed(1) };
+    bucket.all.push({
+      date: matchDate, match: p.match || '', league: p.league || '',
+      market: type, tier,
+      proba: p.proba || (p.confidence ? p.confidence / 100 : 0.62),
+      status: isWon ? 'WON' : 'LOST',
+      finalScore: p.finalScore || p.score || '-',
+      verifiedAt: p.verifiedAt || '',
+      source: 'ESPN public',
+      // Côté prédit (« Oui »/« Non ») : rend le verdict lisible
+      // (ex. « BTTS Oui → 3-0 → LOST » signifie que le match a été 3-0
+      // sans but des deux côtés — le prono était perdu, pas le match).
+      ...(p.prediction ? { prediction: String(p.prediction) } : {}),
+    });
+
+    const day = bucket.daily[matchDate] || { total: 0, won: 0, lost: 0 };
+    day.total += 1;
+    if (isWon) day.won += 1; else day.lost += 1;
+    day.rate = +((day.won / day.total) * 100).toFixed(1);
+    bucket.daily[matchDate] = day;
+  } else {
+    // V8.2 : sans statut, le match reste « en attente » pendant sa grâce de 48 h
+    // (futur ou récent) ; au-delà, sans score vérifiable, il devient « non
+    // vérifiable » — compté à part, jamais gagné/perdu/en attente.
+    if (classifyUnverified(p, nowMs) === 'pending') bucket.pending++;
+    else bucket.unverifiable++;
   }
 }
 
@@ -364,31 +405,62 @@ function run({ write, dir = DIR, now = Date.now() }) {
   const files = fs.readdirSync(dir).filter(f => f.endsWith('.json')).sort();
   const allFiles = files.slice(-90);
 
-  const newBucket = emptyBucket();
-  const legacyBucket = emptyBucket();
+  // ── Collecte dédupliquée : un enregistrement par match unique ──────────────
+  const newRecords = [];   // publiés depuis TRACKING_START (public)
+  const legacyRecords = []; // publiés avant TRACKING_START (privé)
+  const seen = new Map();  // clé → enregistrement (toutes fenêtres confondues)
 
   let newPeriodFrom = null, newPeriodTo = null, newDaysCount = 0;
   let legacyPeriodFrom = null, legacyPeriodTo = null, legacyDaysCount = 0;
 
   for (const file of allFiles) {
-    const date = file.replace('.json', '');
-    const dateTs = new Date(date + 'T00:00:00Z').getTime();
+    const fileDate = file.replace('.json', '');
+    const dateTs = new Date(fileDate + 'T00:00:00Z').getTime();
+    const isNew = dateTs >= TRACKING_START_TS;
 
-    if (dateTs >= TRACKING_START_TS) {
-      if (!newPeriodFrom) newPeriodFrom = date;
-      newPeriodTo = date;
+    if (isNew) {
+      if (!newPeriodFrom) newPeriodFrom = fileDate;
+      newPeriodTo = fileDate;
       newDaysCount++;
-      processFile(file, newBucket, now, dir);
     } else {
-      if (!legacyPeriodFrom) legacyPeriodFrom = date;
-      legacyPeriodTo = date;
+      if (!legacyPeriodFrom) legacyPeriodFrom = fileDate;
+      legacyPeriodTo = fileDate;
       legacyDaysCount++;
-      processFile(file, legacyBucket, now, dir);
+    }
+
+    let data;
+    try { data = JSON.parse(fs.readFileSync(path.join(dir, file), 'utf8')); } catch (e) { continue; }
+    let preds = data.predictions || data;
+    if (!Array.isArray(preds)) continue;
+
+    for (const p of preds) {
+      const key = dedupeKey(p, fileDate);
+      const existing = seen.get(key);
+      if (!existing) {
+        const rec = { fileDate, p: { ...p } };
+        seen.set(key, rec);
+        (isNew ? newRecords : legacyRecords).push(rec);
+      } else {
+        mergeVerifiedCopy(existing, p);
+      }
     }
   }
 
+  // ── Comptage (un match = une entrée) ────────────────────────────────────────
+  const newBucket = emptyBucket();
+  const legacyBucket = emptyBucket();
+  for (const rec of newRecords) countRecord(newBucket, rec, now);
+  for (const rec of legacyRecords) countRecord(legacyBucket, rec, now);
+
   const newStats = buildStats(newBucket, newPeriodFrom, newPeriodTo, newDaysCount);
   const legacyStats = buildStats(legacyBucket, legacyPeriodFrom, legacyPeriodTo, legacyDaysCount);
+
+  // Historique trié par VRAIE date de match (desc), puis vérification récente
+  // d'abord — « les derniers résultats » = les derniers matchs joués.
+  const sortHistory = (arr) => arr.sort((a, b) =>
+    String(b.date).localeCompare(String(a.date)) ||
+    String(b.verifiedAt || '').localeCompare(String(a.verifiedAt || '')) ||
+    String(a.match).localeCompare(String(b.match)));
 
   const out = {
     schemaVersion: SCHEMA_VERSION,
@@ -398,6 +470,7 @@ function run({ write, dir = DIR, now = Date.now() }) {
       rule: "Sans statut vérifié, un match futur ou récent reste « en attente » pendant exactement 48 h après son coup d'envoi.",
       dateOnlyRule: "Si l'heure de coup d'envoi est absente, la grâce court depuis la fin de la journée UTC du match.",
       unverifiableRule: "Au-delà de la grâce, sans score vérifiable, le match devient « non vérifiable » : il n'est ni gagné, ni perdu, ni en attente, il est exclu du compteur public « en attente » et reste conservé dans les archives pour audit.",
+      dedupRule: "Chaque match n'est compté qu'une seule fois, quelle que soit la nombre de journées de publication où il est archivé.",
     },
     trackingPeriod: {
       startDate: TRACKING_START,
@@ -406,10 +479,10 @@ function run({ write, dir = DIR, now = Date.now() }) {
       insufficientVolume: newStats.total < 30,
     },
     stats: newStats,
-    history: newBucket.all.slice(-500).reverse(),
+    history: sortHistory(newBucket.all).slice(0, 500),
     legacyStats: {
       ...legacyStats,
-      history: legacyBucket.all.slice(-200).reverse(),
+      history: sortHistory(legacyBucket.all).slice(0, 200),
       isPrivate: true,
       note: "Archives antérieures au nouveau suivi (avant " + TRACKING_START + "). Non affiché publiquement. Conservé pour audit technique et conformité.",
     },
@@ -447,7 +520,7 @@ function run({ write, dir = DIR, now = Date.now() }) {
   fs.writeFileSync(outPath, JSON.stringify(out, null, 2));
 
   console.log(`[update-win-history] ─────────────────────────────────────────`);
-  console.log(`[update-win-history] NEW (public) ${newStats.total} vérifiés | ${newStats.rate}% | ${newStats.archivedTotal} archivés | ${newStats.pending} en attente | ${newStats.unverifiable} non vérifiables`);
+  console.log(`[update-win-history] NEW (public) ${newStats.total} vérifiés | ${newStats.rate}% | ${newStats.archivedTotal} matchs archivés (dédupliqués) | ${newStats.pending} en attente | ${newStats.unverifiable} non vérifiables`);
   console.log(`[update-win-history]   GOLD ${newStats.gold.total} ${newStats.gold.rate}%`);
   console.log(`[update-win-history]   Period ${newPeriodFrom || '—'} → ${newPeriodTo || '—'} (${newDaysCount}j)`);
   console.log(`[update-win-history] LEGACY (privé) ${legacyStats.total} vérifiés | ${legacyStats.rate}%`);

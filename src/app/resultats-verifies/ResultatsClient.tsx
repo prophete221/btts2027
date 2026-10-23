@@ -24,6 +24,7 @@ type ResultHistoryEntry = {
   match: string
   type?: string
   market?: string
+  prediction?: string
   status?: string
   isWon?: boolean
   tier?: string
@@ -45,6 +46,7 @@ type Copy = {
   date: string
   match: string
   market: string
+  pick: string
   proba: string
   score: string
   result: string
@@ -56,18 +58,20 @@ type Copy = {
   over: string
   won: string
   lost: string
+  yes: string
+  no: string
   source: string
 }
 
 const COPIES: Record<'fr' | 'en' | 'ar', Copy> = {
   fr: {
-    loading: 'Chargement…', verified: 'Vérifiés', allRate: 'Taux global', goldPicks: 'Sélections Gold', verifiedCount: 'vérifiés', premiumSelection: 'Sélection premium', last30: '30 derniers jours', lastScan: 'Dernière vérification', detailed: 'Tableau détaillé (100 derniers)', date: 'Date', match: 'Match', market: 'Marché', proba: 'Proba modèle', score: 'Score', result: 'Résultat', empty: 'Aucun résultat vérifié.', marketBreakdown: 'Performance par marché', sample: 'vérifiés', noMarketData: 'Pas encore de données suffisantes par marché.', btts: 'BTTS', over: 'Over 2.5', won: 'WIN', lost: 'LOST', source: 'Source : ESPN',
+    loading: 'Chargement…', verified: 'Vérifiés', allRate: 'Taux global', goldPicks: 'Sélections Gold', verifiedCount: 'vérifiés', premiumSelection: 'Sélection premium', last30: '30 derniers jours', lastScan: 'Dernière vérification', detailed: 'Tableau détaillé (100 derniers)', date: 'Date', match: 'Match', market: 'Marché', pick: 'Prono', proba: 'Proba modèle', score: 'Score', result: 'Résultat', empty: 'Aucun résultat vérifié.', marketBreakdown: 'Performance par marché', sample: 'vérifiés', noMarketData: 'Pas encore de données suffisantes par marché.', btts: 'BTTS', over: 'Over 2.5', won: 'WIN', lost: 'LOST', yes: 'Oui', no: 'Non', source: 'Source : ESPN',
   },
   en: {
-    loading: 'Loading…', verified: 'Verified', allRate: 'Overall rate', goldPicks: 'Gold picks', verifiedCount: 'verified', premiumSelection: 'Premium selection', last30: 'Last 30 days', lastScan: 'Last verification', detailed: 'Detailed table (last 100)', date: 'Date', match: 'Match', market: 'Market', proba: 'Model proba', score: 'Score', result: 'Result', empty: 'No verified result.', marketBreakdown: 'Performance by market', sample: 'verified', noMarketData: 'Not enough market-level data yet.', btts: 'BTTS', over: 'Over 2.5', won: 'WIN', lost: 'LOST', source: 'Source: ESPN',
+    loading: 'Loading…', verified: 'Verified', allRate: 'Overall rate', goldPicks: 'Gold picks', verifiedCount: 'verified', premiumSelection: 'Premium selection', last30: 'Last 30 days', lastScan: 'Last verification', detailed: 'Detailed table (last 100)', date: 'Date', match: 'Match', market: 'Market', pick: 'Pick', proba: 'Model proba', score: 'Score', result: 'Result', empty: 'No verified result.', marketBreakdown: 'Performance by market', sample: 'verified', noMarketData: 'Not enough market-level data yet.', btts: 'BTTS', over: 'Over 2.5', won: 'WIN', lost: 'LOST', yes: 'Yes', no: 'No', source: 'Source: ESPN',
   },
   ar: {
-    loading: 'جار التحميل…', verified: 'موثق', allRate: 'المعدل العام', goldPicks: 'اختيارات Gold', verifiedCount: 'موثق', premiumSelection: 'اختيار مميز', last30: 'آخر 30 يوماً', lastScan: 'آخر تحقق', detailed: 'الجدول التفصيلي (آخر 100)', date: 'التاريخ', match: 'المباراة', market: 'السوق', proba: 'احتمال النموذج', score: 'النتيجة', result: 'الحالة', empty: 'لا توجد نتائج موثقة.', marketBreakdown: 'الأداء حسب السوق', sample: 'موثق', noMarketData: 'لا توجد بيانات كافية حسب السوق بعد.', btts: 'BTTS', over: 'أكثر من 2.5', won: 'فوز', lost: 'خسارة', source: 'المصدر: ESPN',
+    loading: 'جار التحميل…', verified: 'موثق', allRate: 'المعدل العام', goldPicks: 'اختيارات Gold', verifiedCount: 'موثق', premiumSelection: 'اختيار مميز', last30: 'آخر 30 يوماً', lastScan: 'آخر تحقق', detailed: 'الجدول التفصيلي (آخر 100)', date: 'التاريخ', match: 'المباراة', market: 'السوق', pick: 'الاختيار', proba: 'احتمال النموذج', score: 'النتيجة', result: 'الحالة', empty: 'لا توجد نتائج موثقة.', marketBreakdown: 'الأداء حسب السوق', sample: 'موثق', noMarketData: 'لا توجد بيانات كافية حسب السوق بعد.', btts: 'BTTS', over: 'أكثر من 2.5', won: 'فوز', lost: 'خسارة', yes: 'نعم', no: 'لا', source: 'المصدر: ESPN',
   },
 }
 
@@ -211,6 +215,15 @@ export default function ResultatsClient({ initialData }: { initialData?: any }) 
     return t || '-'
   }
 
+  /** Côté prédit (« Oui »/« Non ») : rend le verdict lisible (ex. BTTS Oui → 3-0 → LOST). */
+  function getPick(h: ResultHistoryEntry): string {
+    const v = (h.prediction || '').trim().toLowerCase()
+    if (!v) return '—'
+    if (v === 'non' || v === 'no') return copy.no
+    if (v === 'oui' || v === 'yes') return copy.yes
+    return h.prediction as string
+  }
+
   const marketStats = [
     { label: copy.btts, rows: history.filter(h => (h.type || h.market || '').toUpperCase().includes('BTTS')) },
     { label: copy.over, rows: history.filter(h => (h.type || h.market || '').toUpperCase().includes('OVER')) },
@@ -328,6 +341,7 @@ export default function ResultatsClient({ initialData }: { initialData?: any }) 
                 <th className="text-left">{copy.date}</th>
                 <th className="text-left">{copy.match}</th>
                 <th className="text-left">{copy.market}</th>
+                <th className="rv-th-center">{copy.pick}</th>
                 <th className="rv-th-center">{copy.proba}</th>
                 <th className="rv-th-center">{copy.score}</th>
                 <th className="rv-th-center">{copy.result}</th>
@@ -335,7 +349,7 @@ export default function ResultatsClient({ initialData }: { initialData?: any }) 
             </thead>
             <tbody>
               {dedupedHistory.length === 0 ? (
-                <tr><td colSpan={6} className="rv-empty-cell">{copy.empty}</td></tr>
+                <tr><td colSpan={7} className="rv-empty-cell">{copy.empty}</td></tr>
               ) : dedupedHistory.slice(0, 100).map((h, i) => {
                 const isWon = h.status === 'WON' || h.isWon === true
                 const isGold = (h.tier || 'STANDARD').toUpperCase() === 'GOLD'
@@ -354,6 +368,7 @@ export default function ResultatsClient({ initialData }: { initialData?: any }) 
                       {getMarket(h)}
                       {isGold && <span className="rv-gold-flag">GOLD</span>}
                     </td>
+                    <td className="rv-cell rv-cell--pick">{getPick(h)}</td>
                     <td className="rv-cell rv-cell--proba">{probaPct}</td>
                     <td className="rv-cell rv-cell--score">{h.finalScore || h.score || '-'}</td>
                     <td className="rv-cell rv-cell--result">
