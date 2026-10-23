@@ -7663,6 +7663,203 @@
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 3.65, nul: 3.65, 2: 1.83, Over 2.5: 1.69.",
       "ai_odds_insight_en": "The market (DraftKings) prices 1: 3.65, draw: 3.65, 2: 1.83, Over 2.5: 1.69.",
       "status": "PENDING"
+    },
+    {
+      "id": "parissai-vs-lyon-2026-10-26",
+      "match": "Paris Saint-Germain vs Lyon",
+      "home": "Paris Saint-Germain",
+      "away": "Lyon",
+      "league": "Ligue 1",
+      "date": "2026-10-26",
+      "type": "BTTS",
+      "prediction": "Oui",
+      "proba": 0.5516,
+      "bttsProbDisplay": "55.16%",
+      "over25ProbDisplay": "51.45%",
+      "confidence": 55,
+      "time": "19:30",
+      "matchSemantic": "parissai-vs-lyon-2026-10-26",
+      "source": "poisson-v92-real-data",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/160.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/167.png",
+      "tier": "SILVER",
+      "reliabilityScore": 68.88,
+      "dataQuality": "MEDIUM",
+      "dataSource": "ESPN_TEAM_SCHEDULE",
+      "matchCountHome": 7,
+      "matchCountAway": 7,
+      "h2hAvailable": false,
+      "xgHome": 1.48,
+      "xgAway": 1.25,
+      "xgTotal": 2.73,
+      "formBTTS": 70,
+      "analysis": "Paris Saint-Germain : forme V-V-V-V-D (4V 0N 1D, 10 buts marqués / 5 encaissés sur 5) · Lyon : forme V-D-V-N-V (3V 1N 1D, 10 buts marqués / 4 encaissés sur 5). Classement : Paris Saint-Germain 2e (14 pts), Lyon 1e (14 pts). Modèle Poisson : xG cumulé 2.73, BTTS 55.2%, Over 2.5 51.5%. Cotes DraftKings — 1: 1.44 / N: 5 / 2: 6. Fiabilité 68.88%.",
+      "analysisData": {
+        "bttsProb": 0.5516,
+        "over25Prob": 0.5145,
+        "homeLambda": 1.48,
+        "awayLambda": 1.25,
+        "xgTotal": 2.73
+      },
+      "estimatedCote": 1.81,
+      "estimatedCoteOver": 1.94,
+      "odds": {
+        "provider": "DraftKings",
+        "home": 1.44,
+        "draw": 5,
+        "away": 6,
+        "over25": null,
+        "under25": null
+      },
+      "oddsSource": "DraftKings",
+      "estimatedCoteBTTS": 1.81,
+      "formHome": {
+        "last5String": "V-V-V-V-D",
+        "wins": 4,
+        "draws": 0,
+        "losses": 1,
+        "goalsFor": 10,
+        "goalsAgainst": 5,
+        "bttsRate": 0.8,
+        "over25Rate": 0.8,
+        "cleanSheets": 1,
+        "failedToScore": 0,
+        "count": 5
+      },
+      "formAway": {
+        "last5String": "V-D-V-N-V",
+        "wins": 3,
+        "draws": 1,
+        "losses": 1,
+        "goalsFor": 10,
+        "goalsAgainst": 4,
+        "bttsRate": 0.6,
+        "over25Rate": 0.8,
+        "cleanSheets": 2,
+        "failedToScore": 1,
+        "count": 5
+      },
+      "last5Home": [
+        {
+          "date": "2026-10-17",
+          "opponent": "Strasbourg",
+          "venue": "A",
+          "score": "3-1",
+          "result": "W"
+        },
+        {
+          "date": "2026-10-10",
+          "opponent": "Le Mans",
+          "venue": "H",
+          "score": "3-1",
+          "result": "W"
+        },
+        {
+          "date": "2026-09-20",
+          "opponent": "Marseille",
+          "venue": "A",
+          "score": "2-1",
+          "result": "W"
+        },
+        {
+          "date": "2026-09-13",
+          "opponent": "Brest",
+          "venue": "A",
+          "score": "1-0",
+          "result": "W"
+        },
+        {
+          "date": "2026-09-04",
+          "opponent": "AS Monaco",
+          "venue": "H",
+          "score": "1-2",
+          "result": "L"
+        }
+      ],
+      "last5Away": [
+        {
+          "date": "2026-10-18",
+          "opponent": "Nice",
+          "venue": "H",
+          "score": "2-1",
+          "result": "W"
+        },
+        {
+          "date": "2026-10-09",
+          "opponent": "Lens",
+          "venue": "A",
+          "score": "1-2",
+          "result": "L"
+        },
+        {
+          "date": "2026-09-19",
+          "opponent": "Stade Rennais",
+          "venue": "H",
+          "score": "4-0",
+          "result": "W"
+        },
+        {
+          "date": "2026-09-12",
+          "opponent": "Paris FC",
+          "venue": "A",
+          "score": "0-0",
+          "result": "D"
+        },
+        {
+          "date": "2026-09-04",
+          "opponent": "AJ Auxerre",
+          "venue": "H",
+          "score": "3-1",
+          "result": "W"
+        }
+      ],
+      "standingsHome": {
+        "rank": 2,
+        "points": 14,
+        "played": 7,
+        "gf": 14,
+        "ga": 9
+      },
+      "standingsAway": {
+        "rank": 1,
+        "points": 14,
+        "played": 7,
+        "gf": 13,
+        "ga": 5
+      },
+      "predictions": [
+        {
+          "type": "BTTS",
+          "prediction": "Oui",
+          "confidence": 55,
+          "bttsProb": 0.5516,
+          "homeLambda": 1.48,
+          "awayLambda": 1.25
+        },
+        {
+          "type": "Over 2.5",
+          "prediction": "Oui",
+          "confidence": 51,
+          "over25Prob": 0.5145,
+          "homeLambda": 1.48,
+          "awayLambda": 1.25
+        }
+      ],
+      "bttsProb": 0.5516,
+      "over25Prob": 0.5145,
+      "homeLambda": 1.48,
+      "awayLambda": 1.25,
+      "ai_key_fact": "Le PSG affiche un taux de BTTS de 0.8 à domicile.",
+      "ai_analysis": "Le Paris Saint-Germain se positionne au 2e rang du classement avec 14 points en 7 matchs, tandis que Lyon occupe la 1re place avec également 14 points en 7 rencontres. Le modèle Poisson assigne un xG de 1.48 pour l'équipe à domicile contre 1.25 pour l'équipe extérieure. Les probabilités calculées s'élèvent à 55.2% pour le BTTS et 51.4% pour l'Over 2.5, avec une fiabilité de modèle de 68.88%. Aucune information supplémentaire sur l'effectif ou les absences n'est disponible dans les données fournies.",
+      "ai_form_summary": "Le Paris Saint-Germain présente un bilan de 4 victoires et 1 défaite lors de ses 5 derniers matchs, avec 10 buts marqués et 5 encaissés. De son côté, Lyon totalise 3 victoires, 1 nul et 1 défaite sur la même période, pour 10 buts inscrits et 4 concédés.",
+      "ai_key_fact_en": "Paris Saint-Germain records a home BTTS rate of 0.8.",
+      "ai_analysis_en": "Paris Saint-Germain sits 2nd in the standings with 14 points from 7 matches, while Lyon occupies 1st place with 14 points from 7 games. The Poisson model assigns an xG of 1.48 for the home team versus 1.25 for the away team. The calculated probabilities reach 55.2% for BTTS and 51.4% for Over 2.5, with a model reliability of 68.88%. No additional information regarding squad or absences is available in the provided data.",
+      "ai_form_summary_en": "Paris Saint-Germain presents a record of 4 wins and 1 loss in their last 5 matches, with 10 goals scored and 5 conceded. Meanwhile, Lyon totals 3 wins, 1 draw, and 1 loss over the same period, with 10 goals scored and 4 conceded.",
+      "ai_source": "gemini-v2",
+      "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
+      "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
+      "ai_odds_insight": "Le marché (DraftKings) cote 1: 1.44, nul: 5, 2: 6.",
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 1.44, draw: 5, 2: 6."
     }
   ],
   "vipPreview": [
@@ -8083,7 +8280,7 @@
       "over25Prob": 0.6096,
       "homeLambda": 1.77,
       "awayLambda": 1.38,
-      "status": "PENDING",
+      "status": "LOST",
       "last5Home": [
         {
           "date": "2026-10-18",
@@ -8157,7 +8354,9 @@
           "score": "2-2",
           "result": "D"
         }
-      ]
+      ],
+      "finalScore": "0-0",
+      "verifiedAt": "2026-10-23T18:50:51.074Z"
     },
     {
       "id": "vflbochu-vs-vflwolfs-2026-10-23",
@@ -8220,7 +8419,7 @@
       "over25Prob": 0.554,
       "homeLambda": 1.15,
       "awayLambda": 1.75,
-      "status": "PENDING",
+      "status": "WON",
       "last5Home": [
         {
           "date": "2026-10-17",
@@ -8294,7 +8493,9 @@
           "score": "4-4",
           "result": "D"
         }
-      ]
+      ],
+      "finalScore": "1-1",
+      "verifiedAt": "2026-10-23T18:50:51.074Z"
     },
     {
       "id": "torino-vs-monza-2026-10-23",
@@ -15407,6 +15608,204 @@
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 3.65, nul: 3.65, 2: 1.83, Over 2.5: 1.69.",
       "ai_odds_insight_en": "The market (DraftKings) prices 1: 3.65, draw: 3.65, 2: 1.83, Over 2.5: 1.69.",
+      "status": "PENDING"
+    },
+    {
+      "id": "parissai-vs-lyon-2026-10-26",
+      "match": "Paris Saint-Germain vs Lyon",
+      "home": "Paris Saint-Germain",
+      "away": "Lyon",
+      "league": "Ligue 1",
+      "date": "2026-10-26",
+      "type": "BTTS",
+      "prediction": "Oui",
+      "proba": 0.5516,
+      "bttsProbDisplay": "55.16%",
+      "over25ProbDisplay": "51.45%",
+      "confidence": 55,
+      "time": "19:30",
+      "matchSemantic": "parissai-vs-lyon-2026-10-26",
+      "source": "poisson-v92-real-data",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/160.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/167.png",
+      "tier": "SILVER",
+      "reliabilityScore": 68.88,
+      "dataQuality": "MEDIUM",
+      "dataSource": "ESPN_TEAM_SCHEDULE",
+      "matchCountHome": 7,
+      "matchCountAway": 7,
+      "h2hAvailable": false,
+      "xgHome": 1.48,
+      "xgAway": 1.25,
+      "xgTotal": 2.73,
+      "formBTTS": 70,
+      "analysis": "Paris Saint-Germain : forme V-V-V-V-D (4V 0N 1D, 10 buts marqués / 5 encaissés sur 5) · Lyon : forme V-D-V-N-V (3V 1N 1D, 10 buts marqués / 4 encaissés sur 5). Classement : Paris Saint-Germain 2e (14 pts), Lyon 1e (14 pts). Modèle Poisson : xG cumulé 2.73, BTTS 55.2%, Over 2.5 51.5%. Cotes DraftKings — 1: 1.44 / N: 5 / 2: 6. Fiabilité 68.88%.",
+      "analysisData": {
+        "bttsProb": 0.5516,
+        "over25Prob": 0.5145,
+        "homeLambda": 1.48,
+        "awayLambda": 1.25,
+        "xgTotal": 2.73
+      },
+      "estimatedCote": 1.81,
+      "estimatedCoteOver": 1.94,
+      "odds": {
+        "provider": "DraftKings",
+        "home": 1.44,
+        "draw": 5,
+        "away": 6,
+        "over25": null,
+        "under25": null
+      },
+      "oddsSource": "DraftKings",
+      "estimatedCoteBTTS": 1.81,
+      "formHome": {
+        "last5String": "V-V-V-V-D",
+        "wins": 4,
+        "draws": 0,
+        "losses": 1,
+        "goalsFor": 10,
+        "goalsAgainst": 5,
+        "bttsRate": 0.8,
+        "over25Rate": 0.8,
+        "cleanSheets": 1,
+        "failedToScore": 0,
+        "count": 5
+      },
+      "formAway": {
+        "last5String": "V-D-V-N-V",
+        "wins": 3,
+        "draws": 1,
+        "losses": 1,
+        "goalsFor": 10,
+        "goalsAgainst": 4,
+        "bttsRate": 0.6,
+        "over25Rate": 0.8,
+        "cleanSheets": 2,
+        "failedToScore": 1,
+        "count": 5
+      },
+      "last5Home": [
+        {
+          "date": "2026-10-17",
+          "opponent": "Strasbourg",
+          "venue": "A",
+          "score": "3-1",
+          "result": "W"
+        },
+        {
+          "date": "2026-10-10",
+          "opponent": "Le Mans",
+          "venue": "H",
+          "score": "3-1",
+          "result": "W"
+        },
+        {
+          "date": "2026-09-20",
+          "opponent": "Marseille",
+          "venue": "A",
+          "score": "2-1",
+          "result": "W"
+        },
+        {
+          "date": "2026-09-13",
+          "opponent": "Brest",
+          "venue": "A",
+          "score": "1-0",
+          "result": "W"
+        },
+        {
+          "date": "2026-09-04",
+          "opponent": "AS Monaco",
+          "venue": "H",
+          "score": "1-2",
+          "result": "L"
+        }
+      ],
+      "last5Away": [
+        {
+          "date": "2026-10-18",
+          "opponent": "Nice",
+          "venue": "H",
+          "score": "2-1",
+          "result": "W"
+        },
+        {
+          "date": "2026-10-09",
+          "opponent": "Lens",
+          "venue": "A",
+          "score": "1-2",
+          "result": "L"
+        },
+        {
+          "date": "2026-09-19",
+          "opponent": "Stade Rennais",
+          "venue": "H",
+          "score": "4-0",
+          "result": "W"
+        },
+        {
+          "date": "2026-09-12",
+          "opponent": "Paris FC",
+          "venue": "A",
+          "score": "0-0",
+          "result": "D"
+        },
+        {
+          "date": "2026-09-04",
+          "opponent": "AJ Auxerre",
+          "venue": "H",
+          "score": "3-1",
+          "result": "W"
+        }
+      ],
+      "standingsHome": {
+        "rank": 2,
+        "points": 14,
+        "played": 7,
+        "gf": 14,
+        "ga": 9
+      },
+      "standingsAway": {
+        "rank": 1,
+        "points": 14,
+        "played": 7,
+        "gf": 13,
+        "ga": 5
+      },
+      "predictions": [
+        {
+          "type": "BTTS",
+          "prediction": "Oui",
+          "confidence": 55,
+          "bttsProb": 0.5516,
+          "homeLambda": 1.48,
+          "awayLambda": 1.25
+        },
+        {
+          "type": "Over 2.5",
+          "prediction": "Oui",
+          "confidence": 51,
+          "over25Prob": 0.5145,
+          "homeLambda": 1.48,
+          "awayLambda": 1.25
+        }
+      ],
+      "bttsProb": 0.5516,
+      "over25Prob": 0.5145,
+      "homeLambda": 1.48,
+      "awayLambda": 1.25,
+      "ai_key_fact": "Le PSG affiche un taux de BTTS de 0.8 à domicile.",
+      "ai_analysis": "Le Paris Saint-Germain se positionne au 2e rang du classement avec 14 points en 7 matchs, tandis que Lyon occupe la 1re place avec également 14 points en 7 rencontres. Le modèle Poisson assigne un xG de 1.48 pour l'équipe à domicile contre 1.25 pour l'équipe extérieure. Les probabilités calculées s'élèvent à 55.2% pour le BTTS et 51.4% pour l'Over 2.5, avec une fiabilité de modèle de 68.88%. Aucune information supplémentaire sur l'effectif ou les absences n'est disponible dans les données fournies.",
+      "ai_form_summary": "Le Paris Saint-Germain présente un bilan de 4 victoires et 1 défaite lors de ses 5 derniers matchs, avec 10 buts marqués et 5 encaissés. De son côté, Lyon totalise 3 victoires, 1 nul et 1 défaite sur la même période, pour 10 buts inscrits et 4 concédés.",
+      "ai_key_fact_en": "Paris Saint-Germain records a home BTTS rate of 0.8.",
+      "ai_analysis_en": "Paris Saint-Germain sits 2nd in the standings with 14 points from 7 matches, while Lyon occupies 1st place with 14 points from 7 games. The Poisson model assigns an xG of 1.48 for the home team versus 1.25 for the away team. The calculated probabilities reach 55.2% for BTTS and 51.4% for Over 2.5, with a model reliability of 68.88%. No additional information regarding squad or absences is available in the provided data.",
+      "ai_form_summary_en": "Paris Saint-Germain presents a record of 4 wins and 1 loss in their last 5 matches, with 10 goals scored and 5 conceded. Meanwhile, Lyon totals 3 wins, 1 draw, and 1 loss over the same period, with 10 goals scored and 4 conceded.",
+      "ai_source": "gemini-v2",
+      "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
+      "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
+      "ai_odds_insight": "Le marché (DraftKings) cote 1: 1.44, nul: 5, 2: 6.",
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 1.44, draw: 5, 2: 6.",
       "status": "PENDING"
     }
   ]

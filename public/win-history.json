@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "generatedAt": "2026-10-23T14:07:00.367Z",
+  "generatedAt": "2026-10-23T18:52:14.924Z",
   "pendingPolicy": {
     "graceHours": 48,
     "rule": "Sans statut vérifié, un match futur ou récent reste « en attente » pendant exactement 48 h après son coup d'envoi.",
@@ -15,18 +15,18 @@
     "insufficientVolume": false
   },
   "stats": {
-    "total": 260,
-    "won": 224,
-    "lost": 36,
-    "pending": 42,
+    "total": 262,
+    "won": 225,
+    "lost": 37,
+    "pending": 41,
     "unverifiable": 130,
-    "archivedTotal": 432,
-    "rate": 86.2,
+    "archivedTotal": 433,
+    "rate": 85.9,
     "gold": {
-      "total": 177,
-      "won": 159,
-      "lost": 18,
-      "rate": 89.8
+      "total": 179,
+      "won": 160,
+      "lost": 19,
+      "rate": 89.4
     },
     "standard": {
       "total": 83,
@@ -36,10 +36,10 @@
     },
     "byType": {
       "btts": {
-        "total": 257,
-        "won": 223,
-        "lost": 34,
-        "rate": 86.8
+        "total": 259,
+        "won": 224,
+        "lost": 35,
+        "rate": 86.5
       },
       "over25": {
         "total": 3,
@@ -49,13 +49,6 @@
       }
     },
     "trend14": [
-      {
-        "date": "2026-09-27",
-        "total": 4,
-        "won": 4,
-        "lost": 0,
-        "rate": 100
-      },
       {
         "date": "2026-10-02",
         "total": 1,
@@ -146,6 +139,13 @@
         "won": 2,
         "lost": 0,
         "rate": 100
+      },
+      {
+        "date": "2026-10-23",
+        "total": 2,
+        "won": 1,
+        "lost": 1,
+        "rate": 50
       }
     ],
     "period": {
@@ -155,6 +155,32 @@
     }
   },
   "history": [
+    {
+      "date": "2026-10-23",
+      "match": "SV Darmstadt 98 vs St. Pauli",
+      "league": "2. Bundesliga",
+      "market": "btts",
+      "tier": "GOLD",
+      "proba": 0.6205,
+      "status": "LOST",
+      "finalScore": "0-0",
+      "verifiedAt": "2026-10-23T18:50:51.074Z",
+      "source": "ESPN public",
+      "prediction": "Oui"
+    },
+    {
+      "date": "2026-10-23",
+      "match": "VfL Bochum vs VfL Wolfsburg",
+      "league": "2. Bundesliga",
+      "market": "btts",
+      "tier": "GOLD",
+      "proba": 0.5646,
+      "status": "WON",
+      "finalScore": "1-1",
+      "verifiedAt": "2026-10-23T18:50:51.074Z",
+      "source": "ESPN public",
+      "prediction": "Oui"
+    },
     {
       "date": "2026-10-22",
       "match": "Braga vs KAA Gent",

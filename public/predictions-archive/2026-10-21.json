@@ -5369,7 +5369,9 @@
       "over25Prob": 0.6096,
       "homeLambda": 1.77,
       "awayLambda": 1.38,
-      "status": "PENDING"
+      "status": "LOST",
+      "finalScore": "0-0",
+      "verifiedAt": "2026-10-23T18:50:51.074Z"
     },
     {
       "id": "vflbochu-vs-vflwolfs-2026-10-23",
@@ -5432,7 +5434,9 @@
       "over25Prob": 0.554,
       "homeLambda": 1.15,
       "awayLambda": 1.75,
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "1-1",
+      "verifiedAt": "2026-10-23T18:50:51.074Z"
     },
     {
       "id": "torino-vs-monza-2026-10-23",
