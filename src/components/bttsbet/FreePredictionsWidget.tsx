@@ -37,9 +37,15 @@ export default function FreePredictionsWidget() {
     fetch('/predictions.json')
       .then(r => r.json())
       .then(data => {
-        const preds = data.predictions || []
+        const preds = data.free || data.predictions || []
         const today = new Date().toLocaleDateString('sv-SE', { timeZone: 'Africa/Dakar' })
-        const todayPreds = preds.filter((p: Prediction) => p.date === today).slice(0, 4)
+        let todayPreds = preds.filter((p: Prediction) => p.date === today).slice(0, 4)
+        // Si la journée est vide, montrer les prochains matchs (évite "0 pronostic")
+        if (todayPreds.length === 0) {
+          todayPreds = preds
+            .filter((p: Prediction) => (p.date || '') >= today)
+            .slice(0, 4)
+        }
         setPredictions(todayPreds)
         setLoading(false)
       })
@@ -69,7 +75,7 @@ export default function FreePredictionsWidget() {
         <div className="mb-4 rounded-xl border px-3 py-2.5" style={{ borderColor: 'var(--border)', backgroundColor: 'var(--card)' }}>
           <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
             <p className="text-[11px] leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-              Pour suivre une sélection, vérifie d’abord les conditions de l’opérateur. Code promo : <strong style={{ color: 'var(--brand-indigo)' }}>VISION221</strong>.
+              1. S&apos;inscrire via notre lien Linebet · 2. Entrer le code <strong>VISION221</strong> avant le dépôt. Pour suivre une sélection, vérifie d’abord les conditions de l’opérateur. Code promo : <strong style={{ color: 'var(--brand-indigo)' }}>VISION221</strong>.
             </p>
             <a href="/code-promo-linebet-senegal" className="shrink-0 text-[11px] font-bold" style={{ color: 'var(--brand-indigo)' }}>
               Voir le guide →
@@ -103,7 +109,7 @@ export default function FreePredictionsWidget() {
             data-cta="free-predictions-linebet"
             aria-label="Ouvrir Linebet avec le code promo VISION221"
           >
-            Ouvrir Linebet · Code VISION221 →
+            S&apos;inscrire sur Linebet · code VISION221 →
           </a>
         </div>
       </div>
