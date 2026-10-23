@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "generatedAt": "2026-10-22T19:09:51.900Z",
+  "generatedAt": "2026-10-23T02:59:53.224Z",
   "pendingPolicy": {
     "graceHours": 48,
     "rule": "Sans statut vérifié, un match futur ou récent reste « en attente » pendant exactement 48 h après son coup d'envoi.",
@@ -14,31 +14,31 @@
     "insufficientVolume": false
   },
   "stats": {
-    "total": 151,
-    "won": 99,
-    "lost": 52,
-    "pending": 94,
+    "total": 160,
+    "won": 100,
+    "lost": 60,
+    "pending": 127,
     "unverifiable": 637,
-    "archivedTotal": 882,
-    "rate": 65.6,
+    "archivedTotal": 924,
+    "rate": 62.5,
     "gold": {
-      "total": 120,
+      "total": 123,
       "won": 79,
-      "lost": 41,
-      "rate": 65.8
+      "lost": 44,
+      "rate": 64.2
     },
     "standard": {
-      "total": 31,
-      "won": 20,
-      "lost": 11,
-      "rate": 64.5
+      "total": 37,
+      "won": 21,
+      "lost": 16,
+      "rate": 56.8
     },
     "byType": {
       "btts": {
-        "total": 149,
-        "won": 98,
-        "lost": 51,
-        "rate": 65.8
+        "total": 158,
+        "won": 99,
+        "lost": 59,
+        "rate": 62.7
       },
       "over25": {
         "total": 2,
@@ -141,16 +141,16 @@
       },
       {
         "date": "2026-10-22",
-        "total": 5,
-        "won": 1,
-        "lost": 4,
-        "rate": 20
+        "total": 14,
+        "won": 2,
+        "lost": 12,
+        "rate": 14.3
       }
     ],
     "period": {
       "from": "2026-08-08",
-      "to": "2026-10-22",
-      "days": 76
+      "to": "2026-10-23",
+      "days": 77
     }
   },
   "history": [
@@ -164,6 +164,78 @@
       "status": "LOST",
       "finalScore": "2-5",
       "verifiedAt": "2026-10-22T19:01:42.840Z",
+      "source": "ESPN public"
+    },
+    {
+      "date": "2026-10-22",
+      "match": "Celtic vs Celta Vigo",
+      "league": "UEFA Europa League",
+      "market": "btts",
+      "tier": "STANDARD",
+      "proba": 0.3502,
+      "status": "LOST",
+      "finalScore": "1-2",
+      "verifiedAt": "2026-10-23T02:45:02.406Z",
+      "source": "ESPN public"
+    },
+    {
+      "date": "2026-10-22",
+      "match": "AFC Bournemouth vs AC Milan",
+      "league": "UEFA Europa League",
+      "market": "btts",
+      "tier": "STANDARD",
+      "proba": 0.5375,
+      "status": "LOST",
+      "finalScore": "3-0",
+      "verifiedAt": "2026-10-23T02:45:02.406Z",
+      "source": "ESPN public"
+    },
+    {
+      "date": "2026-10-22",
+      "match": "Besiktas vs Crystal Palace",
+      "league": "UEFA Europa League",
+      "market": "btts",
+      "tier": "STANDARD",
+      "proba": 0.4947,
+      "status": "LOST",
+      "finalScore": "2-2",
+      "verifiedAt": "2026-10-23T02:45:02.406Z",
+      "source": "ESPN public"
+    },
+    {
+      "date": "2026-10-22",
+      "match": "AS Monaco vs SC Freiburg",
+      "league": "UEFA Conference League",
+      "market": "btts",
+      "tier": "STANDARD",
+      "proba": 0.5767,
+      "status": "LOST",
+      "finalScore": "3-0",
+      "verifiedAt": "2026-10-23T02:45:02.406Z",
+      "source": "ESPN public"
+    },
+    {
+      "date": "2026-10-22",
+      "match": "Braga vs KAA Gent",
+      "league": "UEFA Conference League",
+      "market": "btts",
+      "tier": "STANDARD",
+      "proba": 0.4766,
+      "status": "WON",
+      "finalScore": "2-0",
+      "verifiedAt": "2026-10-23T02:45:02.406Z",
+      "source": "ESPN public"
+    },
+    {
+      "date": "2026-10-22",
+      "match": "TSG Hoffenheim vs Lyon",
+      "league": "UEFA Europa League",
+      "market": "btts",
+      "tier": "STANDARD",
+      "proba": 0.6271,
+      "status": "LOST",
+      "finalScore": "3-0",
+      "verifiedAt": "2026-10-23T02:45:02.406Z",
       "source": "ESPN public"
     },
     {
@@ -192,6 +264,18 @@
     },
     {
       "date": "2026-10-22",
+      "match": "Ajax Amsterdam vs Atalanta",
+      "league": "UEFA Conference League",
+      "market": "btts",
+      "tier": "GOLD",
+      "proba": 0.6862,
+      "status": "LOST",
+      "finalScore": "2-0",
+      "verifiedAt": "2026-10-23T02:45:02.405Z",
+      "source": "ESPN public"
+    },
+    {
+      "date": "2026-10-22",
       "match": "OFI Crete vs Bayer Leverkusen",
       "league": "UEFA Europa League",
       "market": "btts",
@@ -212,6 +296,30 @@
       "status": "LOST",
       "finalScore": "2-0",
       "verifiedAt": "2026-10-22T19:01:42.838Z",
+      "source": "ESPN public"
+    },
+    {
+      "date": "2026-10-22",
+      "match": "FC Midtjylland vs Sint-Truidense",
+      "league": "UEFA Conference League",
+      "market": "btts",
+      "tier": "GOLD",
+      "proba": 0.7601,
+      "status": "LOST",
+      "finalScore": "0-1",
+      "verifiedAt": "2026-10-23T02:45:02.405Z",
+      "source": "ESPN public"
+    },
+    {
+      "date": "2026-10-22",
+      "match": "Lillestrom vs Real Sociedad",
+      "league": "UEFA Europa League",
+      "market": "btts",
+      "tier": "GOLD",
+      "proba": 0.7968,
+      "status": "LOST",
+      "finalScore": "0-6",
+      "verifiedAt": "2026-10-23T02:45:02.404Z",
       "source": "ESPN public"
     },
     {
@@ -1968,47 +2076,40 @@
     }
   ],
   "legacyStats": {
-    "total": 319,
-    "won": 155,
-    "lost": 164,
+    "total": 291,
+    "won": 142,
+    "lost": 149,
     "pending": 0,
-    "unverifiable": 316,
-    "archivedTotal": 635,
-    "rate": 48.6,
+    "unverifiable": 294,
+    "archivedTotal": 585,
+    "rate": 48.8,
     "gold": {
-      "total": 19,
-      "won": 9,
-      "lost": 10,
-      "rate": 47.4
+      "total": 11,
+      "won": 5,
+      "lost": 6,
+      "rate": 45.5
     },
     "standard": {
-      "total": 300,
-      "won": 146,
-      "lost": 154,
-      "rate": 48.7
+      "total": 280,
+      "won": 137,
+      "lost": 143,
+      "rate": 48.9
     },
     "byType": {
       "btts": {
-        "total": 160,
-        "won": 75,
-        "lost": 85,
-        "rate": 46.9
+        "total": 146,
+        "won": 69,
+        "lost": 77,
+        "rate": 47.3
       },
       "over25": {
-        "total": 159,
-        "won": 80,
-        "lost": 79,
+        "total": 145,
+        "won": 73,
+        "lost": 72,
         "rate": 50.3
       }
     },
     "trend14": [
-      {
-        "date": "2026-07-25",
-        "total": 28,
-        "won": 13,
-        "lost": 15,
-        "rate": 46.4
-      },
       {
         "date": "2026-07-26",
         "total": 46,
@@ -2102,9 +2203,9 @@
       }
     ],
     "period": {
-      "from": "2026-07-25",
+      "from": "2026-07-26",
       "to": "2026-08-07",
-      "days": 14
+      "days": 13
     },
     "history": [
       {

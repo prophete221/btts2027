@@ -8531,7 +8531,7 @@
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 5.75, nul: 4.7, 2: 1.51, Over 2.5: 1.61.",
       "ai_odds_insight_en": "The market (DraftKings) prices 1: 5.75, draw: 4.7, 2: 1.51, Over 2.5: 1.61.",
-      "status": "PENDING",
+      "status": "LOST",
       "last5Home": [
         {
           "date": "2026-10-18",
@@ -8605,7 +8605,9 @@
           "score": "3-2",
           "result": "W"
         }
-      ]
+      ],
+      "finalScore": "0-6",
+      "verifiedAt": "2026-10-23T02:45:02.404Z"
     },
     {
       "id": "fcmidtjy-vs-sinttrui-2026-10-22",
@@ -8722,7 +8724,7 @@
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Cotes marché non disponibles — pronostic basé sur le modèle statistique seul.",
       "ai_odds_insight_en": "Market odds unavailable — prediction based on the statistical model only.",
-      "status": "PENDING",
+      "status": "LOST",
       "last5Home": [
         {
           "date": "2026-10-19",
@@ -8796,7 +8798,9 @@
           "score": "0-3",
           "result": "L"
         }
-      ]
+      ],
+      "finalScore": "0-1",
+      "verifiedAt": "2026-10-23T02:45:02.405Z"
     },
     {
       "id": "trabzons-vs-heartofm-2026-10-22",
@@ -9320,7 +9324,7 @@
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 2.15, nul: 3.85, 2: 3.05.",
       "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.15, draw: 3.85, 2: 3.05.",
-      "status": "PENDING",
+      "status": "LOST",
       "last5Home": [
         {
           "date": "2026-10-18",
@@ -9394,7 +9398,9 @@
           "score": "1-2",
           "result": "L"
         }
-      ]
+      ],
+      "finalScore": "2-0",
+      "verifiedAt": "2026-10-23T02:45:02.405Z"
     },
     {
       "id": "juventus-vs-staderen-2026-10-22",
@@ -9918,7 +9924,7 @@
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 2, nul: 4, 2: 3.3.",
       "ai_odds_insight_en": "The market (DraftKings) prices 1: 2, draw: 4, 2: 3.3.",
-      "status": "PENDING",
+      "status": "LOST",
       "last5Home": [
         {
           "date": "2026-10-18",
@@ -9992,7 +9998,9 @@
           "score": "3-1",
           "result": "W"
         }
-      ]
+      ],
+      "finalScore": "3-0",
+      "verifiedAt": "2026-10-23T02:45:02.406Z"
     },
     {
       "id": "braga-vs-kaagent-2026-10-22",
@@ -10116,7 +10124,7 @@
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 1.91, nul: 3.55, 2: 4.2, Over 2.5: 2.15.",
       "ai_odds_insight_en": "The market (DraftKings) prices 1: 1.91, draw: 3.55, 2: 4.2, Over 2.5: 2.15.",
-      "status": "PENDING",
+      "status": "WON",
       "last5Home": [
         {
           "date": "2026-10-19",
@@ -10190,7 +10198,9 @@
           "score": "1-0",
           "result": "W"
         }
-      ]
+      ],
+      "finalScore": "2-0",
+      "verifiedAt": "2026-10-23T02:45:02.406Z"
     },
     {
       "id": "asmonaco-vs-scfreibu-2026-10-22",
@@ -10314,7 +10324,7 @@
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 2.3, nul: 3.6, 2: 3.05, Over 2.5: 1.74.",
       "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.3, draw: 3.6, 2: 3.05, Over 2.5: 1.74.",
-      "status": "PENDING",
+      "status": "LOST",
       "last5Home": [
         {
           "date": "2026-10-18",
@@ -10388,7 +10398,9 @@
           "score": "1-0",
           "result": "W"
         }
-      ]
+      ],
+      "finalScore": "3-0",
+      "verifiedAt": "2026-10-23T02:45:02.406Z"
     },
     {
       "id": "besiktas-vs-crystalp-2026-10-22",
@@ -10512,7 +10524,7 @@
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 2.15, nul: 3.9, 2: 3.1.",
       "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.15, draw: 3.9, 2: 3.1.",
-      "status": "PENDING",
+      "status": "LOST",
       "last5Home": [
         {
           "date": "2026-10-19",
@@ -10586,7 +10598,9 @@
           "score": "3-2",
           "result": "W"
         }
-      ]
+      ],
+      "finalScore": "2-2",
+      "verifiedAt": "2026-10-23T02:45:02.406Z"
     },
     {
       "id": "afcbourn-vs-acmilan-2026-10-22",
@@ -10784,7 +10798,9 @@
           "result": "D"
         }
       ],
-      "status": "PENDING"
+      "status": "LOST",
+      "finalScore": "3-0",
+      "verifiedAt": "2026-10-23T02:45:02.406Z"
     },
     {
       "id": "celtic-vs-celtavig-2026-10-22",
@@ -10982,7 +10998,9 @@
           "result": "D"
         }
       ],
-      "status": "PENDING"
+      "status": "LOST",
+      "finalScore": "1-2",
+      "verifiedAt": "2026-10-23T02:45:02.406Z"
     },
     {
       "id": "getafe-vs-fclugano-2026-10-22",

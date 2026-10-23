@@ -1,6 +1,6 @@
 {
-  "date": "2026-10-22",
-  "lastUpdated": "2026-10-22T18:59:45.231Z",
+  "date": "2026-10-23",
+  "lastUpdated": "2026-10-23T02:43:46.586Z",
   "source": "ESPN + TheSportsDB",
   "free": [
     {
@@ -1218,6 +1218,614 @@
           "venue": "A",
           "score": "2-2",
           "result": "D"
+        }
+      ]
+    },
+    {
+      "id": "goaheade-vs-telstar-2026-10-23",
+      "match": "Go Ahead Eagles vs Telstar",
+      "home": "Go Ahead Eagles",
+      "away": "Telstar",
+      "league": "Eredivisie",
+      "date": "2026-10-23",
+      "type": "BTTS",
+      "prediction": "Non",
+      "proba": 0.4568,
+      "bttsProbDisplay": "45.68%",
+      "over25ProbDisplay": "45.19%",
+      "confidence": 46,
+      "time": "18:00",
+      "matchSemantic": "goaheade-vs-telstar-2026-10-23",
+      "source": "poisson-v92-real-data",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/3706.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/3735.png",
+      "tier": "SILVER",
+      "reliabilityScore": 73.74,
+      "dataQuality": "HIGH",
+      "dataSource": "ESPN_TEAM_SCHEDULE",
+      "matchCountHome": 8,
+      "matchCountAway": 8,
+      "h2hAvailable": false,
+      "xgHome": 1.65,
+      "xgAway": 0.83,
+      "xgTotal": 2.48,
+      "formBTTS": null,
+      "analysis": "Go Ahead Eagles (8 matchs réels, xG 1.65) vs Telstar (8 matchs réels, xG 0.83). xG cumulé 2.48, BTTS 45.7%, Over 2.5 45.2%. Fiabilité 73.74%. Qualité données: HIGH.",
+      "analysisData": {
+        "bttsProb": 0.4568,
+        "over25Prob": 0.4519,
+        "homeLambda": 1.65,
+        "awayLambda": 0.83,
+        "xgTotal": 2.48
+      },
+      "estimatedCote": 2.19,
+      "estimatedCoteOver": 2.21,
+      "predictions": [
+        {
+          "type": "BTTS",
+          "prediction": "Non",
+          "confidence": 46,
+          "bttsProb": 0.4568,
+          "homeLambda": 1.65,
+          "awayLambda": 0.83
+        },
+        {
+          "type": "Over 2.5",
+          "prediction": "Non",
+          "confidence": 45,
+          "over25Prob": 0.4519,
+          "homeLambda": 1.65,
+          "awayLambda": 0.83
+        }
+      ],
+      "bttsProb": 0.4568,
+      "over25Prob": 0.4519,
+      "homeLambda": 1.65,
+      "awayLambda": 0.83,
+      "status": "PENDING",
+      "last5Home": [
+        {
+          "date": "2026-10-18",
+          "opponent": "PEC Zwolle",
+          "venue": "A",
+          "score": "1-4",
+          "result": "L"
+        },
+        {
+          "date": "2026-10-10",
+          "opponent": "Sparta Rotterdam",
+          "venue": "H",
+          "score": "3-3",
+          "result": "D"
+        },
+        {
+          "date": "2026-09-20",
+          "opponent": "NEC Nijmegen",
+          "venue": "A",
+          "score": "1-1",
+          "result": "D"
+        },
+        {
+          "date": "2026-09-12",
+          "opponent": "FC Groningen",
+          "venue": "H",
+          "score": "1-1",
+          "result": "D"
+        },
+        {
+          "date": "2026-09-08",
+          "opponent": "FC Utrecht",
+          "venue": "A",
+          "score": "3-3",
+          "result": "D"
+        }
+      ],
+      "last5Away": [
+        {
+          "date": "2026-10-17",
+          "opponent": "Feyenoord Rotterdam",
+          "venue": "H",
+          "score": "3-4",
+          "result": "L"
+        },
+        {
+          "date": "2026-10-11",
+          "opponent": "ADO Den Haag",
+          "venue": "H",
+          "score": "2-2",
+          "result": "D"
+        },
+        {
+          "date": "2026-09-20",
+          "opponent": "AZ Alkmaar",
+          "venue": "A",
+          "score": "0-1",
+          "result": "L"
+        },
+        {
+          "date": "2026-09-13",
+          "opponent": "Heerenveen",
+          "venue": "A",
+          "score": "0-0",
+          "result": "D"
+        },
+        {
+          "date": "2026-09-09",
+          "opponent": "FC Twente",
+          "venue": "A",
+          "score": "0-1",
+          "result": "L"
+        }
+      ]
+    },
+    {
+      "id": "vfbstutt-vs-borussia-2026-10-23",
+      "match": "VfB Stuttgart vs Borussia Mönchengladbach",
+      "home": "VfB Stuttgart",
+      "away": "Borussia Mönchengladbach",
+      "league": "Bundesliga",
+      "date": "2026-10-23",
+      "type": "BTTS",
+      "prediction": "Non",
+      "proba": 0.4575,
+      "bttsProbDisplay": "45.75%",
+      "over25ProbDisplay": "67.61%",
+      "confidence": 46,
+      "time": "18:30",
+      "matchSemantic": "vfbstutt-vs-borussia-2026-10-23",
+      "source": "poisson-v92-real-data",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/134.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/268.png",
+      "tier": "SILVER",
+      "reliabilityScore": 69.76,
+      "dataQuality": "MEDIUM",
+      "dataSource": "ESPN_TEAM_SCHEDULE",
+      "matchCountHome": 6,
+      "matchCountAway": 6,
+      "h2hAvailable": false,
+      "xgHome": 2.82,
+      "xgAway": 0.67,
+      "xgTotal": 3.48,
+      "formBTTS": null,
+      "analysis": "VfB Stuttgart (6 matchs réels, xG 2.82) vs Borussia Mönchengladbach (6 matchs réels, xG 0.67). xG cumulé 3.48, BTTS 45.7%, Over 2.5 67.6%. Fiabilité 69.76%. Qualité données: MEDIUM.",
+      "analysisData": {
+        "bttsProb": 0.4575,
+        "over25Prob": 0.6761,
+        "homeLambda": 2.82,
+        "awayLambda": 0.67,
+        "xgTotal": 3.48
+      },
+      "estimatedCote": 2.19,
+      "estimatedCoteOver": 1.48,
+      "predictions": [
+        {
+          "type": "BTTS",
+          "prediction": "Non",
+          "confidence": 46,
+          "bttsProb": 0.4575,
+          "homeLambda": 2.82,
+          "awayLambda": 0.67
+        },
+        {
+          "type": "Over 2.5",
+          "prediction": "Oui",
+          "confidence": 68,
+          "over25Prob": 0.6761,
+          "homeLambda": 2.82,
+          "awayLambda": 0.67
+        }
+      ],
+      "bttsProb": 0.4575,
+      "over25Prob": 0.6761,
+      "homeLambda": 2.82,
+      "awayLambda": 0.67,
+      "status": "PENDING",
+      "last5Home": [
+        {
+          "date": "2026-10-17",
+          "opponent": "Hamburg SV",
+          "venue": "A",
+          "score": "0-1",
+          "result": "L"
+        },
+        {
+          "date": "2026-10-10",
+          "opponent": "SC Paderborn 07",
+          "venue": "A",
+          "score": "2-0",
+          "result": "W"
+        },
+        {
+          "date": "2026-09-19",
+          "opponent": "Borussia Dortmund",
+          "venue": "H",
+          "score": "0-1",
+          "result": "L"
+        },
+        {
+          "date": "2026-09-12",
+          "opponent": "TSG Hoffenheim",
+          "venue": "A",
+          "score": "1-2",
+          "result": "L"
+        },
+        {
+          "date": "2026-09-04",
+          "opponent": "FC Cologne",
+          "venue": "H",
+          "score": "4-1",
+          "result": "W"
+        }
+      ],
+      "last5Away": [
+        {
+          "date": "2026-10-18",
+          "opponent": "TSG Hoffenheim",
+          "venue": "H",
+          "score": "1-2",
+          "result": "L"
+        },
+        {
+          "date": "2026-10-11",
+          "opponent": "FC Cologne",
+          "venue": "A",
+          "score": "1-2",
+          "result": "L"
+        },
+        {
+          "date": "2026-09-19",
+          "opponent": "Mainz",
+          "venue": "H",
+          "score": "3-4",
+          "result": "L"
+        },
+        {
+          "date": "2026-09-12",
+          "opponent": "SC Freiburg",
+          "venue": "A",
+          "score": "0-5",
+          "result": "L"
+        },
+        {
+          "date": "2026-09-05",
+          "opponent": "SV Elversberg",
+          "venue": "H",
+          "score": "3-4",
+          "result": "L"
+        }
+      ]
+    },
+    {
+      "id": "brest-vs-nice-2026-10-23",
+      "match": "Brest vs Nice",
+      "home": "Brest",
+      "away": "Nice",
+      "league": "Ligue 1",
+      "date": "2026-10-23",
+      "type": "BTTS",
+      "prediction": "Oui",
+      "proba": 0.5097,
+      "bttsProbDisplay": "50.97%",
+      "over25ProbDisplay": "60.96%",
+      "confidence": 51,
+      "time": "18:45",
+      "matchSemantic": "brest-vs-nice-2026-10-23",
+      "source": "poisson-v92-real-data",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/6997.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/2502.png",
+      "tier": "SILVER",
+      "reliabilityScore": 69.55,
+      "dataQuality": "MEDIUM",
+      "dataSource": "ESPN_TEAM_SCHEDULE",
+      "matchCountHome": 7,
+      "matchCountAway": 7,
+      "h2hAvailable": false,
+      "xgHome": 2.32,
+      "xgAway": 0.83,
+      "xgTotal": 3.15,
+      "formBTTS": 80,
+      "analysis": "Brest : forme N-V-D-D-V (2V 1N 2D, 9 buts marqués / 6 encaissés sur 5) · Nice : forme D-V-V-D-N (2V 1N 2D, 6 buts marqués / 6 encaissés sur 5). Classement : Brest 10e (9 pts), Nice 13e (8 pts). Modèle Poisson : xG cumulé 3.15, BTTS 51.0%, Over 2.5 61.0%. Cotes DraftKings — 1: 2.25 / N: 3.4 / 2: 3.25 · Over 2.5: 1.71. Fiabilité 69.55%.",
+      "analysisData": {
+        "bttsProb": 0.5097,
+        "over25Prob": 0.6096,
+        "homeLambda": 2.32,
+        "awayLambda": 0.83,
+        "xgTotal": 3.15
+      },
+      "estimatedCote": 1.96,
+      "estimatedCoteOver": 1.64,
+      "odds": {
+        "provider": "DraftKings",
+        "home": 2.25,
+        "draw": 3.4,
+        "away": 3.25,
+        "over25": 1.71,
+        "under25": 2.1
+      },
+      "oddsSource": "DraftKings",
+      "estimatedCoteBTTS": 1.96,
+      "formHome": {
+        "last5String": "N-V-D-D-V",
+        "wins": 2,
+        "draws": 1,
+        "losses": 2,
+        "goalsFor": 9,
+        "goalsAgainst": 6,
+        "bttsRate": 0.8,
+        "over25Rate": 0.6,
+        "cleanSheets": 0,
+        "failedToScore": 1,
+        "count": 5
+      },
+      "formAway": {
+        "last5String": "D-V-V-D-N",
+        "wins": 2,
+        "draws": 1,
+        "losses": 2,
+        "goalsFor": 6,
+        "goalsAgainst": 6,
+        "bttsRate": 0.8,
+        "over25Rate": 0.6,
+        "cleanSheets": 0,
+        "failedToScore": 1,
+        "count": 5
+      },
+      "standingsHome": {
+        "rank": 10,
+        "points": 9,
+        "played": 7,
+        "gf": 13,
+        "ga": 10
+      },
+      "standingsAway": {
+        "rank": 13,
+        "points": 8,
+        "played": 7,
+        "gf": 6,
+        "ga": 9
+      },
+      "predictions": [
+        {
+          "type": "BTTS",
+          "prediction": "Oui",
+          "confidence": 51,
+          "bttsProb": 0.5097,
+          "homeLambda": 2.32,
+          "awayLambda": 0.83
+        },
+        {
+          "type": "Over 2.5",
+          "prediction": "Oui",
+          "confidence": 61,
+          "over25Prob": 0.6096,
+          "homeLambda": 2.32,
+          "awayLambda": 0.83
+        }
+      ],
+      "bttsProb": 0.5097,
+      "over25Prob": 0.6096,
+      "homeLambda": 2.32,
+      "awayLambda": 0.83,
+      "ai_key_fact": "Brest et Nice affichent tous deux un taux de BTTS de 80 % sur leurs 5 derniers matchs.",
+      "ai_analysis": "Les projections du modèle indiquent un xG de 2.32 pour Brest et de 0.83 pour Nice, avec une probabilité BTTS de 51.0 % et un Over 2.5 fixé à 61.0 %. Au classement de Ligue 1, Brest se positionne au 10e rang avec 13 buts pour et 10 contre, tandis que Nice est 13e avec 8 points en 7 matchs. Les cotes du marché proposent Brest à 2.25 et Nice à 3.25, l'Over 2.5 affichant une cote de 1.71. Le modèle présente une fiabilité de 69.55 %.",
+      "ai_form_summary": "Brest totalise 2 victoires, 1 nul et 2 défaites sur ses 5 dernières sorties avec 9 buts marqués. Nice présente un bilan similaire de 2 victoires, 1 nul et 2 défaites, mais avec 6 buts inscrits et 6 encaissés.",
+      "ai_key_fact_en": "Brest and Nice both record an 80% BTTS rate over their last 5 matches.",
+      "ai_analysis_en": "Model projections indicate an xG of 2.32 for Brest and 0.83 for Nice, with a BTTS probability of 51.0% and an Over 2.5 set at 61.0%. In the Ligue 1 standings, Brest is positioned 10th with 13 goals for and 10 against, while Nice is 13th with 8 points in 7 matches. Market odds price Brest at 2.25 and Nice at 3.25, with the Over 2.5 priced at 1.71. The model shows a reliability of 69.55%.",
+      "ai_form_summary_en": "Brest totals 2 wins, 1 draw, and 2 defeats in its last 5 outings with 9 goals scored. Nice presents a similar record of 2 wins, 1 draw, and 2 defeats, but with 6 goals scored and 6 conceded.",
+      "ai_source": "gemini-v2",
+      "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
+      "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
+      "ai_odds_insight": "Le marché (DraftKings) cote 1: 2.25, nul: 3.4, 2: 3.25, Over 2.5: 1.71.",
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.25, draw: 3.4, 2: 3.25, Over 2.5: 1.71.",
+      "status": "PENDING",
+      "last5Home": [
+        {
+          "date": "2026-10-17",
+          "opponent": "Lille",
+          "venue": "A",
+          "score": "1-1",
+          "result": "D"
+        },
+        {
+          "date": "2026-10-10",
+          "opponent": "Angers",
+          "venue": "H",
+          "score": "5-1",
+          "result": "W"
+        },
+        {
+          "date": "2026-09-20",
+          "opponent": "AJ Auxerre",
+          "venue": "A",
+          "score": "1-2",
+          "result": "L"
+        },
+        {
+          "date": "2026-09-13",
+          "opponent": "Paris Saint-Germain",
+          "venue": "H",
+          "score": "0-1",
+          "result": "L"
+        },
+        {
+          "date": "2026-09-05",
+          "opponent": "Le Havre AC",
+          "venue": "A",
+          "score": "2-1",
+          "result": "W"
+        }
+      ],
+      "last5Away": [
+        {
+          "date": "2026-10-18",
+          "opponent": "Lyon",
+          "venue": "A",
+          "score": "1-2",
+          "result": "L"
+        },
+        {
+          "date": "2026-10-11",
+          "opponent": "Strasbourg",
+          "venue": "H",
+          "score": "2-1",
+          "result": "W"
+        },
+        {
+          "date": "2026-09-20",
+          "opponent": "Lille",
+          "venue": "H",
+          "score": "2-1",
+          "result": "W"
+        },
+        {
+          "date": "2026-09-12",
+          "opponent": "AJ Auxerre",
+          "venue": "A",
+          "score": "0-1",
+          "result": "L"
+        },
+        {
+          "date": "2026-09-05",
+          "opponent": "Le Mans",
+          "venue": "H",
+          "score": "1-1",
+          "result": "D"
+        }
+      ]
+    },
+    {
+      "id": "vitriade-vs-maritimo-2026-10-23",
+      "match": "Vitória de Guimaraes vs Maritimo",
+      "home": "Vitória de Guimaraes",
+      "away": "Maritimo",
+      "league": "Liga Portugal",
+      "date": "2026-10-23",
+      "type": "BTTS",
+      "prediction": "Non",
+      "proba": 0.4202,
+      "bttsProbDisplay": "42.02%",
+      "over25ProbDisplay": "36.39%",
+      "confidence": 42,
+      "time": "19:45",
+      "matchSemantic": "vitriade-vs-maritimo-2026-10-23",
+      "source": "poisson-v92-real-data",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/5309.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/552.png",
+      "tier": "SILVER",
+      "reliabilityScore": 68.38,
+      "dataQuality": "HIGH",
+      "dataSource": "ESPN_TEAM_SCHEDULE",
+      "matchCountHome": 8,
+      "matchCountAway": 8,
+      "h2hAvailable": false,
+      "xgHome": 1.27,
+      "xgAway": 0.88,
+      "xgTotal": 2.15,
+      "formBTTS": null,
+      "analysis": "Vitória de Guimaraes (8 matchs réels, xG 1.27) vs Maritimo (8 matchs réels, xG 0.88). xG cumulé 2.15, BTTS 42.0%, Over 2.5 36.4%. Fiabilité 68.38%. Qualité données: HIGH.",
+      "analysisData": {
+        "bttsProb": 0.4202,
+        "over25Prob": 0.3639,
+        "homeLambda": 1.27,
+        "awayLambda": 0.88,
+        "xgTotal": 2.15
+      },
+      "estimatedCote": 2.38,
+      "estimatedCoteOver": 2.75,
+      "predictions": [
+        {
+          "type": "BTTS",
+          "prediction": "Non",
+          "confidence": 42,
+          "bttsProb": 0.4202,
+          "homeLambda": 1.27,
+          "awayLambda": 0.88
+        },
+        {
+          "type": "Over 2.5",
+          "prediction": "Non",
+          "confidence": 40,
+          "over25Prob": 0.3639,
+          "homeLambda": 1.27,
+          "awayLambda": 0.88
+        }
+      ],
+      "bttsProb": 0.4202,
+      "over25Prob": 0.3639,
+      "homeLambda": 1.27,
+      "awayLambda": 0.88,
+      "last5Home": [
+        {
+          "date": "2026-10-11",
+          "opponent": "Benfica",
+          "venue": "A",
+          "score": "0-2",
+          "result": "L"
+        },
+        {
+          "date": "2026-09-20",
+          "opponent": "Moreirense",
+          "venue": "H",
+          "score": "1-1",
+          "result": "D"
+        },
+        {
+          "date": "2026-09-12",
+          "opponent": "Académico de Viseu",
+          "venue": "A",
+          "score": "1-2",
+          "result": "L"
+        },
+        {
+          "date": "2026-09-06",
+          "opponent": "Casa Pia",
+          "venue": "H",
+          "score": "0-0",
+          "result": "D"
+        },
+        {
+          "date": "2026-08-31",
+          "opponent": "Braga",
+          "venue": "A",
+          "score": "0-1",
+          "result": "L"
+        }
+      ],
+      "last5Away": [
+        {
+          "date": "2026-10-10",
+          "opponent": "FC Porto",
+          "venue": "H",
+          "score": "1-2",
+          "result": "L"
+        },
+        {
+          "date": "2026-09-19",
+          "opponent": "Gil Vicente",
+          "venue": "A",
+          "score": "1-1",
+          "result": "D"
+        },
+        {
+          "date": "2026-09-14",
+          "opponent": "Moreirense",
+          "venue": "A",
+          "score": "1-3",
+          "result": "L"
+        },
+        {
+          "date": "2026-09-05",
+          "opponent": "Benfica",
+          "venue": "H",
+          "score": "0-3",
+          "result": "L"
+        },
+        {
+          "date": "2026-08-29",
+          "opponent": "Arouca",
+          "venue": "A",
+          "score": "1-2",
+          "result": "L"
         }
       ]
     },
@@ -5492,45 +6100,1541 @@
           "result": "W"
         }
       ]
+    },
+    {
+      "id": "torontof-vs-dcunited-2026-10-28",
+      "match": "Toronto FC vs D.C. United",
+      "home": "Toronto FC",
+      "away": "D.C. United",
+      "league": "MLS",
+      "date": "2026-10-28",
+      "type": "BTTS",
+      "prediction": "Oui",
+      "proba": 0.7851,
+      "bttsProbDisplay": "78.51%",
+      "over25ProbDisplay": "85.27%",
+      "confidence": 79,
+      "time": "23:30",
+      "matchSemantic": "torontof-vs-dcunited-2026-10-28",
+      "source": "poisson-v92-real-data",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/7318.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/193.png",
+      "tier": "GOLD",
+      "reliabilityScore": 93.1,
+      "dataQuality": "HIGH",
+      "dataSource": "ESPN_TEAM_SCHEDULE",
+      "matchCountHome": 8,
+      "matchCountAway": 8,
+      "h2hAvailable": false,
+      "xgHome": 3,
+      "xgAway": 1.75,
+      "xgTotal": 4.75,
+      "formBTTS": 70,
+      "analysis": "Toronto FC : forme V-N-V-D-D (2V 1N 2D, 8 buts marqués / 9 encaissés sur 5) · D.C. United : forme D-D-V-D-N (1V 1N 3D, 7 buts marqués / 14 encaissés sur 5). Classement : Toronto FC 10e (36 pts), D.C. United 13e (33 pts). Modèle Poisson : xG cumulé 4.75, BTTS 78.5%, Over 2.5 85.3%. Fiabilité 93.1%.",
+      "analysisData": {
+        "bttsProb": 0.7851,
+        "over25Prob": 0.8527,
+        "homeLambda": 3,
+        "awayLambda": 1.75,
+        "xgTotal": 4.75
+      },
+      "estimatedCote": 1.27,
+      "estimatedCoteOver": 1.17,
+      "odds": null,
+      "oddsSource": "ESTIMATION_POISSON",
+      "estimatedCoteBTTS": 1.27,
+      "formHome": {
+        "last5String": "V-N-V-D-D",
+        "wins": 2,
+        "draws": 1,
+        "losses": 2,
+        "goalsFor": 8,
+        "goalsAgainst": 9,
+        "bttsRate": 0.6,
+        "over25Rate": 0.6,
+        "cleanSheets": 1,
+        "failedToScore": 1,
+        "count": 5
+      },
+      "formAway": {
+        "last5String": "D-D-V-D-N",
+        "wins": 1,
+        "draws": 1,
+        "losses": 3,
+        "goalsFor": 7,
+        "goalsAgainst": 14,
+        "bttsRate": 0.8,
+        "over25Rate": 1,
+        "cleanSheets": 0,
+        "failedToScore": 1,
+        "count": 5
+      },
+      "last5Home": [
+        {
+          "date": "2026-10-17",
+          "opponent": "Red Bull New York",
+          "venue": "A",
+          "score": "2-0",
+          "result": "W"
+        },
+        {
+          "date": "2026-10-14",
+          "opponent": "Orlando City SC",
+          "venue": "H",
+          "score": "3-3",
+          "result": "D"
+        },
+        {
+          "date": "2026-10-10",
+          "opponent": "CF Montréal",
+          "venue": "H",
+          "score": "2-1",
+          "result": "W"
+        },
+        {
+          "date": "2026-09-27",
+          "opponent": "Nashville SC",
+          "venue": "A",
+          "score": "0-2",
+          "result": "L"
+        },
+        {
+          "date": "2026-09-20",
+          "opponent": "St. Louis CITY SC",
+          "venue": "A",
+          "score": "1-3",
+          "result": "L"
+        }
+      ],
+      "last5Away": [
+        {
+          "date": "2026-10-21",
+          "opponent": "FC Cincinnati",
+          "venue": "A",
+          "score": "1-2",
+          "result": "L"
+        },
+        {
+          "date": "2026-10-17",
+          "opponent": "Orlando City SC",
+          "venue": "A",
+          "score": "1-4",
+          "result": "L"
+        },
+        {
+          "date": "2026-10-14",
+          "opponent": "Red Bull New York",
+          "venue": "H",
+          "score": "2-1",
+          "result": "W"
+        },
+        {
+          "date": "2026-10-10",
+          "opponent": "Inter Miami CF",
+          "venue": "A",
+          "score": "0-4",
+          "result": "L"
+        },
+        {
+          "date": "2026-09-27",
+          "opponent": "Vancouver Whitecaps",
+          "venue": "A",
+          "score": "3-3",
+          "result": "D"
+        }
+      ],
+      "standingsHome": {
+        "rank": 10,
+        "points": 36,
+        "played": 30,
+        "gf": 46,
+        "ga": 55
+      },
+      "standingsAway": {
+        "rank": 13,
+        "points": 33,
+        "played": 30,
+        "gf": 38,
+        "ga": 53
+      },
+      "predictions": [
+        {
+          "type": "BTTS",
+          "prediction": "Oui",
+          "confidence": 79,
+          "bttsProb": 0.7851,
+          "homeLambda": 3,
+          "awayLambda": 1.75
+        },
+        {
+          "type": "Over 2.5",
+          "prediction": "Oui",
+          "confidence": 85,
+          "over25Prob": 0.8527,
+          "homeLambda": 3,
+          "awayLambda": 1.75
+        }
+      ],
+      "bttsProb": 0.7851,
+      "over25Prob": 0.8527,
+      "homeLambda": 3,
+      "awayLambda": 1.75,
+      "ai_key_fact": "Le modèle attribue une probabilité Over 2.5 de 85.3% pour cette rencontre de MLS.",
+      "ai_analysis": "Les projections offensives du modèle atteignent un xG élevé de 3.0 pour Toronto FC et de 1.75 pour D.C. United. La probabilité BTTS s'élève à 78.5% et la fiabilité du modèle atteint un niveau élevé de 93.1%. Au classement de la MLS, les deux équipes se côtoient dans la seconde moitié du tableau, Toronto occupant la 10e place et D.C. United la 13e.",
+      "ai_form_summary": "Toronto FC traverse une période mitigée avec deux victoires, un nul et deux défaites lors de ses cinq derniers matchs. D.C. United connaît des difficultés marquées à l'extérieur avec trois défaites, un nul et une seule victoire sur la même période.",
+      "ai_key_fact_en": "The model assigns an Over 2.5 probability of 85.3% for this MLS fixture.",
+      "ai_analysis_en": "The model's offensive projections reach a high xG of 3.0 for Toronto FC and 1.75 for D.C. United. The BTTS probability stands at 78.5% and model reliability reaches a high level of 93.1%. In the MLS standings, both teams reside in the lower half, with Toronto in 10th and D.C. United in 13th place.",
+      "ai_form_summary_en": "Toronto FC experiences a mixed period with two wins, one draw, and two defeats in their last five matches. D.C. United struggles significantly away from home with three losses, one draw, and a single win over the same span.",
+      "ai_source": "gemini-v2",
+      "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
+      "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
+      "ai_odds_insight": "Cotes marché non disponibles — pronostic basé sur le modèle statistique seul.",
+      "ai_odds_insight_en": "Market odds unavailable — prediction based on the statistical model only."
+    },
+    {
+      "id": "intermia-vs-fccincin-2026-10-28",
+      "match": "Inter Miami CF vs FC Cincinnati",
+      "home": "Inter Miami CF",
+      "away": "FC Cincinnati",
+      "league": "MLS",
+      "date": "2026-10-28",
+      "type": "BTTS",
+      "prediction": "Oui",
+      "proba": 0.6922,
+      "bttsProbDisplay": "69.22%",
+      "over25ProbDisplay": "77.27%",
+      "confidence": 69,
+      "time": "23:30",
+      "matchSemantic": "intermia-vs-fccincin-2026-10-28",
+      "source": "poisson-v92-real-data",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/20232.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/18267.png",
+      "tier": "GOLD",
+      "reliabilityScore": 89.03,
+      "dataQuality": "HIGH",
+      "dataSource": "ESPN_TEAM_SCHEDULE",
+      "matchCountHome": 8,
+      "matchCountAway": 8,
+      "h2hAvailable": false,
+      "xgHome": 2.73,
+      "xgAway": 1.35,
+      "xgTotal": 4.08,
+      "formBTTS": 70,
+      "analysis": "Inter Miami CF : forme V-V-V-D-N (3V 1N 1D, 12 buts marqués / 5 encaissés sur 5) · FC Cincinnati : forme V-D-D-V-D (2V 0N 3D, 8 buts marqués / 10 encaissés sur 5). Classement : Inter Miami CF 2e (55 pts), FC Cincinnati 8e (39 pts). Modèle Poisson : xG cumulé 4.08, BTTS 69.2%, Over 2.5 77.3%. Fiabilité 89.03%.",
+      "analysisData": {
+        "bttsProb": 0.6922,
+        "over25Prob": 0.7727,
+        "homeLambda": 2.73,
+        "awayLambda": 1.35,
+        "xgTotal": 4.08
+      },
+      "estimatedCote": 1.44,
+      "estimatedCoteOver": 1.29,
+      "odds": null,
+      "oddsSource": "ESTIMATION_POISSON",
+      "estimatedCoteBTTS": 1.44,
+      "formHome": {
+        "last5String": "V-V-V-D-N",
+        "wins": 3,
+        "draws": 1,
+        "losses": 1,
+        "goalsFor": 12,
+        "goalsAgainst": 5,
+        "bttsRate": 0.6,
+        "over25Rate": 0.8,
+        "cleanSheets": 2,
+        "failedToScore": 0,
+        "count": 5
+      },
+      "formAway": {
+        "last5String": "V-D-D-V-D",
+        "wins": 2,
+        "draws": 0,
+        "losses": 3,
+        "goalsFor": 8,
+        "goalsAgainst": 10,
+        "bttsRate": 0.8,
+        "over25Rate": 0.8,
+        "cleanSheets": 0,
+        "failedToScore": 1,
+        "count": 5
+      },
+      "last5Home": [
+        {
+          "date": "2026-10-17",
+          "opponent": "Atlanta United FC",
+          "venue": "A",
+          "score": "3-1",
+          "result": "W"
+        },
+        {
+          "date": "2026-10-14",
+          "opponent": "New York City FC",
+          "venue": "H",
+          "score": "2-0",
+          "result": "W"
+        },
+        {
+          "date": "2026-10-10",
+          "opponent": "D.C. United",
+          "venue": "H",
+          "score": "4-0",
+          "result": "W"
+        },
+        {
+          "date": "2026-09-27",
+          "opponent": "Columbus Crew",
+          "venue": "A",
+          "score": "1-2",
+          "result": "L"
+        },
+        {
+          "date": "2026-09-20",
+          "opponent": "San Diego FC",
+          "venue": "H",
+          "score": "2-2",
+          "result": "D"
+        }
+      ],
+      "last5Away": [
+        {
+          "date": "2026-10-21",
+          "opponent": "D.C. United",
+          "venue": "H",
+          "score": "2-1",
+          "result": "W"
+        },
+        {
+          "date": "2026-10-18",
+          "opponent": "Columbus Crew",
+          "venue": "H",
+          "score": "0-2",
+          "result": "L"
+        },
+        {
+          "date": "2026-10-14",
+          "opponent": "New England Revolution",
+          "venue": "H",
+          "score": "2-3",
+          "result": "L"
+        },
+        {
+          "date": "2026-10-10",
+          "opponent": "Atlanta United FC",
+          "venue": "A",
+          "score": "3-1",
+          "result": "W"
+        },
+        {
+          "date": "2026-09-26",
+          "opponent": "CF Montréal",
+          "venue": "A",
+          "score": "1-3",
+          "result": "L"
+        }
+      ],
+      "standingsHome": {
+        "rank": 2,
+        "points": 55,
+        "played": 30,
+        "gf": 73,
+        "ga": 51
+      },
+      "standingsAway": {
+        "rank": 8,
+        "points": 39,
+        "played": 30,
+        "gf": 62,
+        "ga": 71
+      },
+      "predictions": [
+        {
+          "type": "BTTS",
+          "prediction": "Oui",
+          "confidence": 69,
+          "bttsProb": 0.6922,
+          "homeLambda": 2.73,
+          "awayLambda": 1.35
+        },
+        {
+          "type": "Over 2.5",
+          "prediction": "Oui",
+          "confidence": 77,
+          "over25Prob": 0.7727,
+          "homeLambda": 2.73,
+          "awayLambda": 1.35
+        }
+      ],
+      "bttsProb": 0.6922,
+      "over25Prob": 0.7727,
+      "homeLambda": 2.73,
+      "awayLambda": 1.35,
+      "ai_key_fact": "Inter Miami CF a inscrit 12 buts lors de ses cinq dernières rencontres.",
+      "ai_analysis": "Le modèlePoisson évalue l'xG de l'Inter Miami CF à 2.73 contre 1.35 pour le FC Cincinnati. Les probabilités du modèle ressortent à 69.2% pour le BTTS et 77.3% pour l'Over 2.5, avec une fiabilité de 89.03%. Au classement, l'Inter Miami CF se positionne solidement à la 2e place, tandis que le FC Cincinnati pointe à la 8e position.",
+      "ai_form_summary": "Inter Miami CF affiche une forme positive avec trois victoires, un nul et une défaite, soutenue par une attaque prolifique. FC Cincinnati présente un bilan plus contrasté à l'extérieur avec trois défaites et deux succès sur ses cinq derniers matchs.",
+      "ai_key_fact_en": "Inter Miami CF has scored 12 goals in their last five matches.",
+      "ai_analysis_en": "The Poisson model evaluates Inter Miami CF's xG at 2.73 compared to 1.35 for FC Cincinnati. Model probabilities come out at 69.2% for BTTS and 77.3% for Over 2.5, backed by a reliability of 89.03%. In the standings, Inter Miami CF is solidly positioned in 2nd place, while FC Cincinnati sits in 8th position.",
+      "ai_form_summary_en": "Inter Miami CF shows positive form with three wins, one draw, and one defeat, backed by a prolific attack. FC Cincinnati displays a contrasting away record with three losses and two wins in their last five fixtures.",
+      "ai_source": "gemini-v2",
+      "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
+      "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
+      "ai_odds_insight": "Cotes marché non disponibles — pronostic basé sur le modèle statistique seul.",
+      "ai_odds_insight_en": "Market odds unavailable — prediction based on the statistical model only."
+    },
+    {
+      "id": "celtic-vs-dundeeun-2026-10-28",
+      "match": "Celtic vs Dundee United",
+      "home": "Celtic",
+      "away": "Dundee United",
+      "league": "Scottish Premiership",
+      "date": "2026-10-28",
+      "type": "BTTS",
+      "prediction": "Oui",
+      "proba": 0.6315,
+      "bttsProbDisplay": "63.15%",
+      "over25ProbDisplay": "70.17%",
+      "confidence": 63,
+      "time": "19:45",
+      "matchSemantic": "celtic-vs-dundeeun-2026-10-28",
+      "source": "poisson-v92-real-data",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/256.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/264.png",
+      "tier": "GOLD",
+      "reliabilityScore": 86.38,
+      "dataQuality": "HIGH",
+      "dataSource": "ESPN_TEAM_SCHEDULE",
+      "matchCountHome": 8,
+      "matchCountAway": 8,
+      "h2hAvailable": false,
+      "xgHome": 2.45,
+      "xgAway": 1.18,
+      "xgTotal": 3.63,
+      "formBTTS": 40,
+      "analysis": "Celtic : forme V-V-D-V-V (4V 0N 1D, 12 buts marqués / 3 encaissés sur 5) · Dundee United : forme N-V-V-N-D (2V 2N 1D, 6 buts marqués / 5 encaissés sur 5). Classement : Celtic 1e (24 pts), Dundee United 6e (12 pts). Modèle Poisson : xG cumulé 3.63, BTTS 63.2%, Over 2.5 70.2%. Fiabilité 86.38%.",
+      "analysisData": {
+        "bttsProb": 0.6315,
+        "over25Prob": 0.7017,
+        "homeLambda": 2.45,
+        "awayLambda": 1.18,
+        "xgTotal": 3.63
+      },
+      "estimatedCote": 1.58,
+      "estimatedCoteOver": 1.43,
+      "odds": null,
+      "oddsSource": "ESTIMATION_POISSON",
+      "estimatedCoteBTTS": 1.58,
+      "formHome": {
+        "last5String": "V-V-D-V-V",
+        "wins": 4,
+        "draws": 0,
+        "losses": 1,
+        "goalsFor": 12,
+        "goalsAgainst": 3,
+        "bttsRate": 0.4,
+        "over25Rate": 0.4,
+        "cleanSheets": 2,
+        "failedToScore": 1,
+        "count": 5
+      },
+      "formAway": {
+        "last5String": "N-V-V-N-D",
+        "wins": 2,
+        "draws": 2,
+        "losses": 1,
+        "goalsFor": 6,
+        "goalsAgainst": 5,
+        "bttsRate": 0.4,
+        "over25Rate": 0.4,
+        "cleanSheets": 2,
+        "failedToScore": 1,
+        "count": 5
+      },
+      "last5Home": [
+        {
+          "date": "2026-10-18",
+          "opponent": "Heart of Midlothian",
+          "venue": "H",
+          "score": "7-1",
+          "result": "W"
+        },
+        {
+          "date": "2026-10-11",
+          "opponent": "Motherwell",
+          "venue": "A",
+          "score": "2-0",
+          "result": "W"
+        },
+        {
+          "date": "2026-09-20",
+          "opponent": "Rangers",
+          "venue": "H",
+          "score": "0-1",
+          "result": "L"
+        },
+        {
+          "date": "2026-09-09",
+          "opponent": "St Johnstone",
+          "venue": "A",
+          "score": "1-0",
+          "result": "W"
+        },
+        {
+          "date": "2026-09-05",
+          "opponent": "St Mirren",
+          "venue": "A",
+          "score": "2-1",
+          "result": "W"
+        }
+      ],
+      "last5Away": [
+        {
+          "date": "2026-10-17",
+          "opponent": "St Johnstone",
+          "venue": "A",
+          "score": "1-1",
+          "result": "D"
+        },
+        {
+          "date": "2026-10-10",
+          "opponent": "Hibernian",
+          "venue": "H",
+          "score": "1-0",
+          "result": "W"
+        },
+        {
+          "date": "2026-09-19",
+          "opponent": "St Mirren",
+          "venue": "A",
+          "score": "3-0",
+          "result": "W"
+        },
+        {
+          "date": "2026-09-05",
+          "opponent": "Falkirk",
+          "venue": "H",
+          "score": "1-1",
+          "result": "D"
+        },
+        {
+          "date": "2026-09-02",
+          "opponent": "Motherwell",
+          "venue": "A",
+          "score": "0-3",
+          "result": "L"
+        }
+      ],
+      "standingsHome": {
+        "rank": 1,
+        "points": 24,
+        "played": 9,
+        "gf": 23,
+        "ga": 5
+      },
+      "standingsAway": {
+        "rank": 6,
+        "points": 12,
+        "played": 9,
+        "gf": 11,
+        "ga": 12
+      },
+      "predictions": [
+        {
+          "type": "BTTS",
+          "prediction": "Oui",
+          "confidence": 63,
+          "bttsProb": 0.6315,
+          "homeLambda": 2.45,
+          "awayLambda": 1.18
+        },
+        {
+          "type": "Over 2.5",
+          "prediction": "Oui",
+          "confidence": 70,
+          "over25Prob": 0.7017,
+          "homeLambda": 2.45,
+          "awayLambda": 1.18
+        }
+      ],
+      "bttsProb": 0.6315,
+      "over25Prob": 0.7017,
+      "homeLambda": 2.45,
+      "awayLambda": 1.18,
+      "ai_key_fact": "Celtic affiche un xG de 2.45 et Dundee United un xG de 1.18.",
+      "ai_analysis": "Le leader de Scottish Premiership, Celtic, domine statistiquement cette rencontre avec un xG élevé de 2.45 et un taux de BTTS de 0.4 sur ses cinq dernières sorties. Dundee United, sixième, se déplace avec un xG de 1.18 et un taux de BTTS également établi à 0.4. Le modèle Poisson anticipe une probabilité BTTS de 63.1% et une probabilité Over 2.5 de 70.2%, soutenues par une fiabilité de 86.38%. Ces indicateurs quantitatifs traduisent une supériorité offensive marquée des locaux face à une opposition classée sixième.",
+      "ai_form_summary": "Celtic présente un bilan solide de 4 victoires et 1 défaite sur ses 5 derniers matchs (12 buts marqués, 3 encaissés). De son côté, Dundee United affiche 2 victoires, 2 nuls et 1 défaite avec 6 buts marqués et 5 encaissés.",
+      "ai_key_fact_en": "Celtic records an xG of 2.45 and Dundee United an xG of 1.18.",
+      "ai_analysis_en": "Scottish Premiership leaders Celtic statistically dominate this encounter with a high xG of 2.45 and a BTTS rate of 0.4 over their last five outings. Sixth-placed Dundee United travels with an xG of 1.18 and a BTTS rate also set at 0.4. The Poisson model anticipates a BTTS probability of 63.1% and an Over 2.5 probability of 70.2%, supported by a reliability of 86.38%. These quantitative indicators reflect a marked offensive superiority for the hosts against sixth-placed opposition.",
+      "ai_form_summary_en": "Celtic shows a solid record of 4 wins and 1 loss in their last 5 matches (12 goals scored, 3 conceded). Meanwhile, Dundee United records 2 wins, 2 draws and 1 loss with 6 goals scored and 5 conceded.",
+      "ai_source": "gemini-v2",
+      "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
+      "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
+      "ai_odds_insight": "Cotes marché non disponibles — pronostic basé sur le modèle statistique seul.",
+      "ai_odds_insight_en": "Market odds unavailable — prediction based on the statistical model only."
+    },
+    {
+      "id": "stmirren-vs-hibernia-2026-10-28",
+      "match": "St Mirren vs Hibernian",
+      "home": "St Mirren",
+      "away": "Hibernian",
+      "league": "Scottish Premiership",
+      "date": "2026-10-28",
+      "type": "BTTS",
+      "prediction": "Oui",
+      "proba": 0.605,
+      "bttsProbDisplay": "60.50%",
+      "over25ProbDisplay": "58.24%",
+      "confidence": 61,
+      "time": "19:45",
+      "matchSemantic": "stmirren-vs-hibernia-2026-10-28",
+      "source": "poisson-v92-real-data",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/250.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/258.png",
+      "tier": "GOLD",
+      "reliabilityScore": 82.72,
+      "dataQuality": "HIGH",
+      "dataSource": "ESPN_TEAM_SCHEDULE",
+      "matchCountHome": 8,
+      "matchCountAway": 8,
+      "h2hAvailable": false,
+      "xgHome": 1.4,
+      "xgAway": 1.63,
+      "xgTotal": 3.02,
+      "formBTTS": 50,
+      "analysis": "St Mirren : forme D-D-D-D-D (0V 0N 5D, 2 buts marqués / 14 encaissés sur 5) · Hibernian : forme D-D-N-D-D (0V 1N 4D, 3 buts marqués / 7 encaissés sur 5). Classement : St Mirren 8e (10 pts), Hibernian 12e (7 pts). Modèle Poisson : xG cumulé 3.02, BTTS 60.5%, Over 2.5 58.2%. Fiabilité 82.72%.",
+      "analysisData": {
+        "bttsProb": 0.605,
+        "over25Prob": 0.5824,
+        "homeLambda": 1.4,
+        "awayLambda": 1.63,
+        "xgTotal": 3.02
+      },
+      "estimatedCote": 1.65,
+      "estimatedCoteOver": 1.72,
+      "odds": null,
+      "oddsSource": "ESTIMATION_POISSON",
+      "estimatedCoteBTTS": 1.65,
+      "formHome": {
+        "last5String": "D-D-D-D-D",
+        "wins": 0,
+        "draws": 0,
+        "losses": 5,
+        "goalsFor": 2,
+        "goalsAgainst": 14,
+        "bttsRate": 0.4,
+        "over25Rate": 0.8,
+        "cleanSheets": 0,
+        "failedToScore": 3,
+        "count": 5
+      },
+      "formAway": {
+        "last5String": "D-D-N-D-D",
+        "wins": 0,
+        "draws": 1,
+        "losses": 4,
+        "goalsFor": 3,
+        "goalsAgainst": 7,
+        "bttsRate": 0.6,
+        "over25Rate": 0.4,
+        "cleanSheets": 0,
+        "failedToScore": 2,
+        "count": 5
+      },
+      "last5Home": [
+        {
+          "date": "2026-10-17",
+          "opponent": "Aberdeen",
+          "venue": "A",
+          "score": "1-3",
+          "result": "L"
+        },
+        {
+          "date": "2026-10-10",
+          "opponent": "Heart of Midlothian",
+          "venue": "A",
+          "score": "0-5",
+          "result": "L"
+        },
+        {
+          "date": "2026-09-19",
+          "opponent": "Dundee United",
+          "venue": "H",
+          "score": "0-3",
+          "result": "L"
+        },
+        {
+          "date": "2026-09-09",
+          "opponent": "Rangers",
+          "venue": "A",
+          "score": "0-1",
+          "result": "L"
+        },
+        {
+          "date": "2026-09-05",
+          "opponent": "Celtic",
+          "venue": "H",
+          "score": "1-2",
+          "result": "L"
+        }
+      ],
+      "last5Away": [
+        {
+          "date": "2026-10-17",
+          "opponent": "Falkirk",
+          "venue": "H",
+          "score": "1-2",
+          "result": "L"
+        },
+        {
+          "date": "2026-10-10",
+          "opponent": "Dundee United",
+          "venue": "A",
+          "score": "0-1",
+          "result": "L"
+        },
+        {
+          "date": "2026-09-19",
+          "opponent": "Aberdeen",
+          "venue": "H",
+          "score": "1-1",
+          "result": "D"
+        },
+        {
+          "date": "2026-09-15",
+          "opponent": "Kilmarnock",
+          "venue": "H",
+          "score": "0-1",
+          "result": "L"
+        },
+        {
+          "date": "2026-09-06",
+          "opponent": "St Johnstone",
+          "venue": "A",
+          "score": "1-2",
+          "result": "L"
+        }
+      ],
+      "standingsHome": {
+        "rank": 8,
+        "points": 10,
+        "played": 9,
+        "gf": 9,
+        "ga": 17
+      },
+      "standingsAway": {
+        "rank": 12,
+        "points": 7,
+        "played": 9,
+        "gf": 9,
+        "ga": 14
+      },
+      "predictions": [
+        {
+          "type": "BTTS",
+          "prediction": "Oui",
+          "confidence": 61,
+          "bttsProb": 0.605,
+          "homeLambda": 1.4,
+          "awayLambda": 1.63
+        },
+        {
+          "type": "Over 2.5",
+          "prediction": "Oui",
+          "confidence": 58,
+          "over25Prob": 0.5824,
+          "homeLambda": 1.4,
+          "awayLambda": 1.63
+        }
+      ],
+      "bttsProb": 0.605,
+      "over25Prob": 0.5824,
+      "homeLambda": 1.4,
+      "awayLambda": 1.63,
+      "ai_key_fact": "St Mirren totalise 2 buts marqués pour 14 encaissés sur ses cinq derniers matchs.",
+      "ai_analysis": "La confrontation oppose deux formations en difficulté en bas de classement de Scottish Premiership, St Mirren occupant la huitième place et Hibernian la douzième. Le modèle assigne un xG de 1.4 pour St Mirren et de 1.63 pour Hibernian, avec un taux de BTTS observé de 0.4 pour les locaux et de 0.6 pour les visiteurs. Les probabilités calculées atteignent 60.5% pour le BTTS et 58.2% pour l'Over 2.5, sous une fiabilité de modèle de 82.72%. Ces métriques suggèrent des failles défensives prononcées des deux côtés malgré leurs récentes contre-performances.",
+      "ai_form_summary": "St Mirren traverse une période délicate avec 5 défaites consécutives (2 buts inscrits, 14 concédés). Hibernian enregistre un bilan similaire sans victoire avec 4 défaites et 1 nul (3 buts marqués, 7 encaissés).",
+      "ai_analysis_en": "This fixture pits two struggling teams at the bottom of the Scottish Premiership against each other, with St Mirren in eighth place and Hibernian in twelfth. The model assigns an xG of 1.4 for St Mirren and 1.63 for Hibernian, with an observed BTTS rate of 0.4 for the hosts and 0.6 for the visitors. The calculated probabilities reach 60.5% for BTTS and 58.2% for Over 2.5, under a model reliability of 82.72%. These metrics suggest pronounced defensive vulnerabilities on both sides despite their recent underperformances.",
+      "ai_form_summary_en": "St Mirren is going through a difficult spell with 5 consecutive defeats (2 goals scored, 2 conceded). Hibernian records a similar winless run with 4 defeats and 1 draw (3 goals scored, 7 conceded).",
+      "ai_source": "gemini-v2",
+      "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
+      "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
+      "ai_odds_insight": "Cotes marché non disponibles — pronostic basé sur le modèle statistique seul.",
+      "ai_odds_insight_en": "Market odds unavailable — prediction based on the statistical model only."
+    },
+    {
+      "id": "stjohnst-vs-motherwe-2026-10-28",
+      "match": "St Johnstone vs Motherwell",
+      "home": "St Johnstone",
+      "away": "Motherwell",
+      "league": "Scottish Premiership",
+      "date": "2026-10-28",
+      "type": "BTTS",
+      "prediction": "Oui",
+      "proba": 0.5926,
+      "bttsProbDisplay": "59.26%",
+      "over25ProbDisplay": "58.24%",
+      "confidence": 59,
+      "time": "19:45",
+      "matchSemantic": "stjohnst-vs-motherwe-2026-10-28",
+      "source": "poisson-v92-real-data",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/267.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/266.png",
+      "tier": "GOLD",
+      "reliabilityScore": 82.17,
+      "dataQuality": "HIGH",
+      "dataSource": "ESPN_TEAM_SCHEDULE",
+      "matchCountHome": 8,
+      "matchCountAway": 8,
+      "h2hAvailable": false,
+      "xgHome": 1.77,
+      "xgAway": 1.25,
+      "xgTotal": 3.02,
+      "formBTTS": 50,
+      "analysis": "St Johnstone : forme N-V-N-D-V (2V 2N 1D, 5 buts marqués / 4 encaissés sur 5) · Motherwell : forme D-D-D-D-D (0V 0N 5D, 3 buts marqués / 12 encaissés sur 5). Classement : St Johnstone 5e (12 pts), Motherwell 10e (8 pts). Modèle Poisson : xG cumulé 3.02, BTTS 59.3%, Over 2.5 58.2%. Fiabilité 82.17%.",
+      "analysisData": {
+        "bttsProb": 0.5926,
+        "over25Prob": 0.5824,
+        "homeLambda": 1.77,
+        "awayLambda": 1.25,
+        "xgTotal": 3.02
+      },
+      "estimatedCote": 1.69,
+      "estimatedCoteOver": 1.72,
+      "odds": null,
+      "oddsSource": "ESTIMATION_POISSON",
+      "estimatedCoteBTTS": 1.69,
+      "formHome": {
+        "last5String": "N-V-N-D-V",
+        "wins": 2,
+        "draws": 2,
+        "losses": 1,
+        "goalsFor": 5,
+        "goalsAgainst": 4,
+        "bttsRate": 0.6,
+        "over25Rate": 0.2,
+        "cleanSheets": 1,
+        "failedToScore": 1,
+        "count": 5
+      },
+      "formAway": {
+        "last5String": "D-D-D-D-D",
+        "wins": 0,
+        "draws": 0,
+        "losses": 5,
+        "goalsFor": 3,
+        "goalsAgainst": 12,
+        "bttsRate": 0.4,
+        "over25Rate": 0.6,
+        "cleanSheets": 0,
+        "failedToScore": 3,
+        "count": 5
+      },
+      "last5Home": [
+        {
+          "date": "2026-10-17",
+          "opponent": "Dundee United",
+          "venue": "H",
+          "score": "1-1",
+          "result": "D"
+        },
+        {
+          "date": "2026-10-11",
+          "opponent": "Aberdeen",
+          "venue": "A",
+          "score": "1-0",
+          "result": "W"
+        },
+        {
+          "date": "2026-09-19",
+          "opponent": "Falkirk",
+          "venue": "H",
+          "score": "1-1",
+          "result": "D"
+        },
+        {
+          "date": "2026-09-09",
+          "opponent": "Celtic",
+          "venue": "H",
+          "score": "0-1",
+          "result": "L"
+        },
+        {
+          "date": "2026-09-06",
+          "opponent": "Hibernian",
+          "venue": "H",
+          "score": "2-1",
+          "result": "W"
+        }
+      ],
+      "last5Away": [
+        {
+          "date": "2026-10-17",
+          "opponent": "Kilmarnock",
+          "venue": "A",
+          "score": "2-3",
+          "result": "L"
+        },
+        {
+          "date": "2026-10-11",
+          "opponent": "Celtic",
+          "venue": "H",
+          "score": "0-2",
+          "result": "L"
+        },
+        {
+          "date": "2026-09-19",
+          "opponent": "Dundee",
+          "venue": "A",
+          "score": "1-2",
+          "result": "L"
+        },
+        {
+          "date": "2026-09-15",
+          "opponent": "Aberdeen",
+          "venue": "H",
+          "score": "0-4",
+          "result": "L"
+        },
+        {
+          "date": "2026-09-05",
+          "opponent": "Rangers",
+          "venue": "A",
+          "score": "0-1",
+          "result": "L"
+        }
+      ],
+      "standingsHome": {
+        "rank": 5,
+        "points": 12,
+        "played": 9,
+        "gf": 11,
+        "ga": 11
+      },
+      "standingsAway": {
+        "rank": 10,
+        "points": 8,
+        "played": 9,
+        "gf": 11,
+        "ga": 16
+      },
+      "predictions": [
+        {
+          "type": "BTTS",
+          "prediction": "Oui",
+          "confidence": 59,
+          "bttsProb": 0.5926,
+          "homeLambda": 1.77,
+          "awayLambda": 1.25
+        },
+        {
+          "type": "Over 2.5",
+          "prediction": "Oui",
+          "confidence": 58,
+          "over25Prob": 0.5824,
+          "homeLambda": 1.77,
+          "awayLambda": 1.25
+        }
+      ],
+      "bttsProb": 0.5926,
+      "over25Prob": 0.5824,
+      "homeLambda": 1.77,
+      "awayLambda": 1.25,
+      "ai_key_fact": "St Johnstone affiche un xG de 1.77 contre 1.25 pour Motherwell.",
+      "ai_analysis": "St Johnstone, positionné à la cinquième place du classement, reçoit Motherwell, dixième, avec un xG modélisé à 1.77 contre 1.25 pour les visiteurs. Les récents taux de BTTS s'élèvent à 0.6 pour St Johnstone et 0.4 pour Motherwell, qui ne compte aucun clean sheet sur ses cinq dernières sorties. Le modèle Poisson évalue le BTTS à 59.3% et l'Over 2.5 à 58.2%, avec un indice de fiabilité de 82.17%. Les données traduisent une dynamique comptable favorable à l'équipe hôte face à une défense adverse en difficulté.",
+      "ai_form_summary": "St Johnstone totalise 2 victoires, 2 nuls et 1 défaite lors de ses cinq derniers matchs (5 buts marqués, 4 encaissés). Motherwell traverse une série de 5 défaites consécutives (3 buts marqués, 12 encaissés).",
+      "ai_key_fact_en": "St Johnstone records an xG of 1.77 compared to 1.25 for Motherwell.",
+      "ai_analysis_en": "Fifth-placed St Johnstone hosts tenth-placed Motherwell, with a modeled xG of 1.77 versus 1.25 for the visitors. Recent BTTS rates stand at 0.6 for St Johnstone and 0.4 for Motherwell, who have kept no clean sheets in their last five outings. The Poisson model evaluates BTTS at 59.3% and Over 2.5 at 58.2%, with a reliability index of 82.17%. The data reflects a positive accounting momentum for the home team against a struggling opposing defense.",
+      "ai_form_summary_en": "St Johnstone totals 2 wins, 2 draws and 1 defeat in their last five matches (5 goals scored, 4 conceded). Motherwell is going through a run of 5 consecutive defeats (3 goals scored, 12 conceded).",
+      "ai_source": "gemini-v2",
+      "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
+      "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
+      "ai_odds_insight": "Cotes marché non disponibles — pronostic basé sur le modèle statistique seul.",
+      "ai_odds_insight_en": "Market odds unavailable — prediction based on the statistical model only."
+    },
+    {
+      "id": "parma-vs-udinese-2026-10-28",
+      "match": "Parma vs Udinese",
+      "home": "Parma",
+      "away": "Udinese",
+      "league": "Serie A",
+      "date": "2026-10-28",
+      "type": "BTTS",
+      "prediction": "Oui",
+      "proba": 0.7403,
+      "bttsProbDisplay": "74.03%",
+      "over25ProbDisplay": "75.32%",
+      "confidence": 74,
+      "time": "17:30",
+      "matchSemantic": "parma-vs-udinese-2026-10-28",
+      "source": "poisson-v92-real-data",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/115.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/118.png",
+      "tier": "GOLD",
+      "reliabilityScore": 82.14,
+      "dataQuality": "MEDIUM",
+      "dataSource": "ESPN_TEAM_SCHEDULE",
+      "matchCountHome": 7,
+      "matchCountAway": 7,
+      "h2hAvailable": false,
+      "xgHome": 2.02,
+      "xgAway": 1.92,
+      "xgTotal": 3.94,
+      "formBTTS": 60,
+      "analysis": "Parma : forme D-D-V-D-N (1V 1N 3D, 4 buts marqués / 10 encaissés sur 5) · Udinese : forme D-D-D-D-D (0V 0N 5D, 5 buts marqués / 13 encaissés sur 5). Classement : Parma 19e (4 pts), Udinese 16e (4 pts). Modèle Poisson : xG cumulé 3.94, BTTS 74.0%, Over 2.5 75.3%. Cotes DraftKings — 1: 2.85 / N: 3.1 / 2: 2.35 · Over 2.5: 2.15. Fiabilité 82.14%.",
+      "analysisData": {
+        "bttsProb": 0.7403,
+        "over25Prob": 0.7532,
+        "homeLambda": 2.02,
+        "awayLambda": 1.92,
+        "xgTotal": 3.94
+      },
+      "estimatedCote": 1.35,
+      "estimatedCoteOver": 1.33,
+      "odds": {
+        "provider": "DraftKings",
+        "home": 2.85,
+        "draw": 3.1,
+        "away": 2.35,
+        "over25": 2.15,
+        "under25": 1.67
+      },
+      "oddsSource": "DraftKings",
+      "estimatedCoteBTTS": 1.35,
+      "formHome": {
+        "last5String": "D-D-V-D-N",
+        "wins": 1,
+        "draws": 1,
+        "losses": 3,
+        "goalsFor": 4,
+        "goalsAgainst": 10,
+        "bttsRate": 0.6,
+        "over25Rate": 0.8,
+        "cleanSheets": 0,
+        "failedToScore": 2,
+        "count": 5
+      },
+      "formAway": {
+        "last5String": "D-D-D-D-D",
+        "wins": 0,
+        "draws": 0,
+        "losses": 5,
+        "goalsFor": 5,
+        "goalsAgainst": 13,
+        "bttsRate": 0.6,
+        "over25Rate": 0.8,
+        "cleanSheets": 0,
+        "failedToScore": 2,
+        "count": 5
+      },
+      "last5Home": [
+        {
+          "date": "2026-10-19",
+          "opponent": "Torino",
+          "venue": "H",
+          "score": "0-3",
+          "result": "L"
+        },
+        {
+          "date": "2026-10-10",
+          "opponent": "Internazionale",
+          "venue": "A",
+          "score": "0-3",
+          "result": "L"
+        },
+        {
+          "date": "2026-09-20",
+          "opponent": "Genoa",
+          "venue": "H",
+          "score": "2-1",
+          "result": "W"
+        },
+        {
+          "date": "2026-09-14",
+          "opponent": "Como",
+          "venue": "A",
+          "score": "1-2",
+          "result": "L"
+        },
+        {
+          "date": "2026-09-06",
+          "opponent": "Monza",
+          "venue": "H",
+          "score": "1-1",
+          "result": "D"
+        }
+      ],
+      "last5Away": [
+        {
+          "date": "2026-10-18",
+          "opponent": "Lecce",
+          "venue": "H",
+          "score": "0-3",
+          "result": "L"
+        },
+        {
+          "date": "2026-10-12",
+          "opponent": "Torino",
+          "venue": "A",
+          "score": "1-2",
+          "result": "L"
+        },
+        {
+          "date": "2026-09-19",
+          "opponent": "Cagliari",
+          "venue": "H",
+          "score": "0-1",
+          "result": "L"
+        },
+        {
+          "date": "2026-09-14",
+          "opponent": "Internazionale",
+          "venue": "A",
+          "score": "3-5",
+          "result": "L"
+        },
+        {
+          "date": "2026-09-07",
+          "opponent": "Lazio",
+          "venue": "H",
+          "score": "1-2",
+          "result": "L"
+        }
+      ],
+      "standingsHome": {
+        "rank": 19,
+        "points": 4,
+        "played": 7,
+        "gf": 4,
+        "ga": 13
+      },
+      "standingsAway": {
+        "rank": 16,
+        "points": 4,
+        "played": 7,
+        "gf": 9,
+        "ga": 16
+      },
+      "predictions": [
+        {
+          "type": "BTTS",
+          "prediction": "Oui",
+          "confidence": 74,
+          "bttsProb": 0.7403,
+          "homeLambda": 2.02,
+          "awayLambda": 1.92
+        },
+        {
+          "type": "Over 2.5",
+          "prediction": "Oui",
+          "confidence": 75,
+          "over25Prob": 0.7532,
+          "homeLambda": 2.02,
+          "awayLambda": 1.92
+        }
+      ],
+      "bttsProb": 0.7403,
+      "over25Prob": 0.7532,
+      "homeLambda": 2.02,
+      "awayLambda": 1.92,
+      "ai_key_fact": "Parma et Udinese affichent respectivement des xG de 2.02 et 1.92.",
+      "ai_analysis": "Cette rencontre de Serie A met aux prises Parma, dix-neuvième, et Udinese, seizième, toutes deux à égalité de 4 points après 7 matchs joués. Le modèle Poisson anticipe une rencontre particulièrement offensive avec un xG de 2.02 pour Parma et de 1.92 pour Udinese. Les probabilités du modèle atteignent 74.0% pour le BTTS et 75.3% pour l'Over 2.5, portées par une fiabilité de 82.14%. Les cotes bookmakers réelles proposées par DraftKings fixent la victoire à domicile à 2.85, le nul à 3.1 et la victoire extérieure à 2.35, confirmant un profil statistique ouvert.",
+      "ai_form_summary": "Parma enregistre 1 victoire, 1 nul et 3 défaites sur ses cinq derniers matchs (4 buts marqués, 10 encaissés). Udinese traverse une série de 5 défaites consécutives (5 buts marqués, 13 encaissés).",
+      "ai_key_fact_en": "Parma and Udinese record xGs of 2.02 and 1.92 respectively.",
+      "ai_analysis_en": "This Serie A fixture brings together nineteenth-placed Parma and sixteenth-placed Udinese, both tied on 4 points after 7 matches played. The Poisson model anticipates a particularly offensive encounter with an xG of 2.02 for Parma and 1.92 for Udinese. Model probabilities reach 74.0% for BTTS and 75.3% for Over 2.5, driven by a reliability of 82.14%. Real bookmaker odds provided by DraftKings set the home win at 2.85, the draw at 3.1 and the away win at 2.35, confirming an open statistical profile.",
+      "ai_form_summary_en": "Parma records 1 win, 1 draw and 3 defeats in their last five matches (4 goals scored, 10 conceded). Udinese is going through a run of 5 consecutive defeats (5 goals scored, 13 conceded).",
+      "ai_source": "gemini-v2",
+      "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
+      "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
+      "ai_odds_insight": "Le marché (DraftKings) cote 1: 2.85, nul: 3.1, 2: 2.35, Over 2.5: 2.15.",
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.85, draw: 3.1, 2: 2.35, Over 2.5: 2.15."
+    },
+    {
+      "id": "heartofm-vs-rangers-2026-10-28",
+      "match": "Heart of Midlothian vs Rangers",
+      "home": "Heart of Midlothian",
+      "away": "Rangers",
+      "league": "Scottish Premiership",
+      "date": "2026-10-28",
+      "type": "BTTS",
+      "prediction": "Oui",
+      "proba": 0.5585,
+      "bttsProbDisplay": "55.85%",
+      "over25ProbDisplay": "60.96%",
+      "confidence": 56,
+      "time": "20:00",
+      "matchSemantic": "heartofm-vs-rangers-2026-10-28",
+      "source": "poisson-v92-real-data",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/262.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/257.png",
+      "tier": "GOLD",
+      "reliabilityScore": 80.68,
+      "dataQuality": "HIGH",
+      "dataSource": "ESPN_TEAM_SCHEDULE",
+      "matchCountHome": 8,
+      "matchCountAway": 8,
+      "h2hAvailable": false,
+      "xgHome": 2.15,
+      "xgAway": 1,
+      "xgTotal": 3.15,
+      "formBTTS": 60,
+      "analysis": "Heart of Midlothian : forme D-V-N-D-V (2V 1N 2D, 10 buts marqués / 11 encaissés sur 5) · Rangers : forme N-V-V-V-V (4V 1N 0D, 8 buts marqués / 3 encaissés sur 5). Classement : Heart of Midlothian 3e (16 pts), Rangers 2e (20 pts). Modèle Poisson : xG cumulé 3.15, BTTS 55.8%, Over 2.5 61.0%. Fiabilité 80.68%.",
+      "analysisData": {
+        "bttsProb": 0.5585,
+        "over25Prob": 0.6096,
+        "homeLambda": 2.15,
+        "awayLambda": 1,
+        "xgTotal": 3.15
+      },
+      "estimatedCote": 1.79,
+      "estimatedCoteOver": 1.64,
+      "odds": null,
+      "oddsSource": "ESTIMATION_POISSON",
+      "estimatedCoteBTTS": 1.79,
+      "formHome": {
+        "last5String": "D-V-N-D-V",
+        "wins": 2,
+        "draws": 1,
+        "losses": 2,
+        "goalsFor": 10,
+        "goalsAgainst": 11,
+        "bttsRate": 0.8,
+        "over25Rate": 0.8,
+        "cleanSheets": 1,
+        "failedToScore": 0,
+        "count": 5
+      },
+      "formAway": {
+        "last5String": "N-V-V-V-V",
+        "wins": 4,
+        "draws": 1,
+        "losses": 0,
+        "goalsFor": 8,
+        "goalsAgainst": 3,
+        "bttsRate": 0.4,
+        "over25Rate": 0.4,
+        "cleanSheets": 3,
+        "failedToScore": 0,
+        "count": 5
+      },
+      "last5Home": [
+        {
+          "date": "2026-10-18",
+          "opponent": "Celtic",
+          "venue": "A",
+          "score": "1-7",
+          "result": "L"
+        },
+        {
+          "date": "2026-10-10",
+          "opponent": "St Mirren",
+          "venue": "H",
+          "score": "5-0",
+          "result": "W"
+        },
+        {
+          "date": "2026-09-19",
+          "opponent": "Kilmarnock",
+          "venue": "A",
+          "score": "1-1",
+          "result": "D"
+        },
+        {
+          "date": "2026-09-15",
+          "opponent": "Falkirk",
+          "venue": "A",
+          "score": "1-2",
+          "result": "L"
+        },
+        {
+          "date": "2026-09-06",
+          "opponent": "Dundee",
+          "venue": "H",
+          "score": "2-1",
+          "result": "W"
+        }
+      ],
+      "last5Away": [
+        {
+          "date": "2026-10-17",
+          "opponent": "Dundee",
+          "venue": "A",
+          "score": "2-2",
+          "result": "D"
+        },
+        {
+          "date": "2026-10-10",
+          "opponent": "Kilmarnock",
+          "venue": "H",
+          "score": "3-1",
+          "result": "W"
+        },
+        {
+          "date": "2026-09-20",
+          "opponent": "Celtic",
+          "venue": "A",
+          "score": "1-0",
+          "result": "W"
+        },
+        {
+          "date": "2026-09-09",
+          "opponent": "St Mirren",
+          "venue": "H",
+          "score": "1-0",
+          "result": "W"
+        },
+        {
+          "date": "2026-09-05",
+          "opponent": "Motherwell",
+          "venue": "H",
+          "score": "1-0",
+          "result": "W"
+        }
+      ],
+      "standingsHome": {
+        "rank": 3,
+        "points": 16,
+        "played": 9,
+        "gf": 20,
+        "ga": 15
+      },
+      "standingsAway": {
+        "rank": 2,
+        "points": 20,
+        "played": 9,
+        "gf": 13,
+        "ga": 7
+      },
+      "predictions": [
+        {
+          "type": "BTTS",
+          "prediction": "Oui",
+          "confidence": 56,
+          "bttsProb": 0.5585,
+          "homeLambda": 2.15,
+          "awayLambda": 1
+        },
+        {
+          "type": "Over 2.5",
+          "prediction": "Oui",
+          "confidence": 61,
+          "over25Prob": 0.6096,
+          "homeLambda": 2.15,
+          "awayLambda": 1
+        }
+      ],
+      "bttsProb": 0.5585,
+      "over25Prob": 0.6096,
+      "homeLambda": 2.15,
+      "awayLambda": 1,
+      "ai_key_fact": "Heart of Midlothian affiche un taux BTTS de 0.8 sur ses 5 derniers matchs.",
+      "ai_analysis": "Le modèle Poisson BTTSPredict attribue des xG de 2.15 pour Heart of Midlothian et 1 pour les Rangers, avec une probabilité BTTS de 55.9% et un Over 2.5 à 61.0%. La fiabilité du modèle s'élève à 80.68%. Au classement de la Scottish Premiership, Heart of Midlothian est 3e avec 16 points en 9 matchs, tandis que les Rangers occupent la 2e place avec 20 points. Aucune donnée de cote bookmaker n'est disponible pour ce match.",
+      "ai_form_summary": "Heart of Midlothian présente un bilan mitigé de 2 victoires, 1 nul et 2 défaites sur ses 5 derniers matchs avec 10 buts marqués et 11 encaissés. De son côté, Rangers est solide avec 4 victoires et 1 nul, affichant 8 buts marqués et 3 encaissés.",
+      "ai_key_fact_en": "Heart of Midlothian records a BTTS rate of 0.8 over their last 5 matches.",
+      "ai_analysis_en": "The BTTSPredict Poisson model assigns xG values of 2.15 for Heart of Midlothian and 1 for Rangers, with a BTTS probability of 55.9% and an Over 2.5 probability of 61.0%. Model reliability stands at 80.68%. In the Scottish Premiership standings, Heart of Midlothian is 3rd with 16 points in 9 matches, while Rangers occupy 2nd place with 20 points. No bookmaker odds data is available for this fixture.",
+      "ai_form_summary_en": "Heart of Midlothian shows a mixed record of 2 wins, 1 draw, and 2 losses in their last 5 matches with 10 goals scored and 11 conceded. Meanwhile, Rangers are solid with 4 wins and 1 draw, scoring 8 goals and conceding 3.",
+      "ai_source": "gemini-v2",
+      "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
+      "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
+      "ai_odds_insight": "Cotes marché non disponibles — pronostic basé sur le modèle statistique seul.",
+      "ai_odds_insight_en": "Market odds unavailable — prediction based on the statistical model only."
+    },
+    {
+      "id": "monza-vs-napoli-2026-10-28",
+      "match": "Monza vs Napoli",
+      "home": "Monza",
+      "away": "Napoli",
+      "league": "Serie A",
+      "date": "2026-10-28",
+      "type": "BTTS",
+      "prediction": "Oui",
+      "proba": 0.6371,
+      "bttsProbDisplay": "63.71%",
+      "over25ProbDisplay": "66.03%",
+      "confidence": 64,
+      "time": "19:45",
+      "matchSemantic": "monza-vs-napoli-2026-10-28",
+      "source": "poisson-v92-real-data",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/4007.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/114.png",
+      "tier": "GOLD",
+      "reliabilityScore": 77.62,
+      "dataQuality": "MEDIUM",
+      "dataSource": "ESPN_TEAM_SCHEDULE",
+      "matchCountHome": 7,
+      "matchCountAway": 7,
+      "h2hAvailable": false,
+      "xgHome": 2.11,
+      "xgAway": 1.29,
+      "xgTotal": 3.4,
+      "formBTTS": 60,
+      "analysis": "Monza : forme V-D-V-D-N (2V 1N 2D, 10 buts marqués / 8 encaissés sur 5) · Napoli : forme D-V-N-V-D (2V 1N 2D, 7 buts marqués / 5 encaissés sur 5). Classement : Monza 14e (7 pts), Napoli 9e (10 pts). Modèle Poisson : xG cumulé 3.4, BTTS 63.7%, Over 2.5 66.0%. Cotes DraftKings — 1: 3.65 / N: 3.65 / 2: 1.83 · Over 2.5: 1.69. Fiabilité 77.62%.",
+      "analysisData": {
+        "bttsProb": 0.6371,
+        "over25Prob": 0.6603,
+        "homeLambda": 2.11,
+        "awayLambda": 1.29,
+        "xgTotal": 3.4
+      },
+      "estimatedCote": 1.57,
+      "estimatedCoteOver": 1.51,
+      "odds": {
+        "provider": "DraftKings",
+        "home": 3.65,
+        "draw": 3.65,
+        "away": 1.83,
+        "over25": 1.69,
+        "under25": 2.1
+      },
+      "oddsSource": "DraftKings",
+      "estimatedCoteBTTS": 1.57,
+      "formHome": {
+        "last5String": "V-D-V-D-N",
+        "wins": 2,
+        "draws": 1,
+        "losses": 2,
+        "goalsFor": 10,
+        "goalsAgainst": 8,
+        "bttsRate": 0.8,
+        "over25Rate": 0.8,
+        "cleanSheets": 1,
+        "failedToScore": 0,
+        "count": 5
+      },
+      "formAway": {
+        "last5String": "D-V-N-V-D",
+        "wins": 2,
+        "draws": 1,
+        "losses": 2,
+        "goalsFor": 7,
+        "goalsAgainst": 5,
+        "bttsRate": 0.4,
+        "over25Rate": 0.4,
+        "cleanSheets": 2,
+        "failedToScore": 1,
+        "count": 5
+      },
+      "last5Home": [
+        {
+          "date": "2026-10-19",
+          "opponent": "Cagliari",
+          "venue": "H",
+          "score": "4-0",
+          "result": "W"
+        },
+        {
+          "date": "2026-10-11",
+          "opponent": "Lazio",
+          "venue": "A",
+          "score": "1-3",
+          "result": "L"
+        },
+        {
+          "date": "2026-09-18",
+          "opponent": "Sassuolo",
+          "venue": "H",
+          "score": "2-1",
+          "result": "W"
+        },
+        {
+          "date": "2026-09-13",
+          "opponent": "Lecce",
+          "venue": "A",
+          "score": "2-3",
+          "result": "L"
+        },
+        {
+          "date": "2026-09-06",
+          "opponent": "Parma",
+          "venue": "A",
+          "score": "1-1",
+          "result": "D"
+        }
+      ],
+      "last5Away": [
+        {
+          "date": "2026-10-17",
+          "opponent": "Venezia",
+          "venue": "A",
+          "score": "0-1",
+          "result": "L"
+        },
+        {
+          "date": "2026-10-10",
+          "opponent": "Frosinone",
+          "venue": "H",
+          "score": "3-0",
+          "result": "W"
+        },
+        {
+          "date": "2026-09-20",
+          "opponent": "Fiorentina",
+          "venue": "A",
+          "score": "1-1",
+          "result": "D"
+        },
+        {
+          "date": "2026-09-13",
+          "opponent": "Bologna",
+          "venue": "H",
+          "score": "1-0",
+          "result": "W"
+        },
+        {
+          "date": "2026-09-05",
+          "opponent": "Internazionale",
+          "venue": "A",
+          "score": "2-3",
+          "result": "L"
+        }
+      ],
+      "standingsHome": {
+        "rank": 14,
+        "points": 7,
+        "played": 7,
+        "gf": 13,
+        "ga": 15
+      },
+      "standingsAway": {
+        "rank": 9,
+        "points": 10,
+        "played": 7,
+        "gf": 10,
+        "ga": 7
+      },
+      "predictions": [
+        {
+          "type": "BTTS",
+          "prediction": "Oui",
+          "confidence": 64,
+          "bttsProb": 0.6371,
+          "homeLambda": 2.11,
+          "awayLambda": 1.29
+        },
+        {
+          "type": "Over 2.5",
+          "prediction": "Oui",
+          "confidence": 66,
+          "over25Prob": 0.6603,
+          "homeLambda": 2.11,
+          "awayLambda": 1.29
+        }
+      ],
+      "bttsProb": 0.6371,
+      "over25Prob": 0.6603,
+      "homeLambda": 2.11,
+      "awayLambda": 1.29,
+      "ai_key_fact": "Monza totalise 7 points en 7 matchs et pointe à la 14e place.",
+      "ai_analysis": "Le modèle Poisson BTTSPredict indique des xG de 2.11 pour Monza et 1.29 pour Napoli, avec une probabilité BTTS de 63.7% et un Over 2.5 à 66.0%. La fiabilité du modèle est établie à 77.62%. Au classement de Serie A, Monza est 14e avec 7 points, alors que Napoli se positionne 9e avec 10 points. Les cotes DraftKings évaluent la victoire à domicile à 3.65, le nul à 3.65 et la victoire extérieure à 1.83, avec l'Over 2.5 à 1.69.",
+      "ai_form_summary": "Monza enregistre 2 victoires, 1 nul et 2 défaites sur ses 5 derniers matchs avec 10 buts marqués et 8 encaissés. Napoli affiche également un bilan de 2 victoires, 1 nul et 2 défaites, inscrivant 7 buts pour 5 encaissés.",
+      "ai_analysis_en": "Monza has a total of 7 points in 7 matches and sits in 14th place.",
+      "ai_form_summary_en": "Monza records 2 wins, 1 draw, and 2 losses in their last 5 matches with 10 goals scored and 8 conceded. Napoli also shows a record of 2 wins, 1 draw, and 2 losses, scoring 7 goals and conceding 5.",
+      "ai_source": "gemini-v2",
+      "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
+      "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
+      "ai_odds_insight": "Le marché (DraftKings) cote 1: 3.65, nul: 3.65, 2: 1.83, Over 2.5: 1.69.",
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 3.65, draw: 3.65, 2: 1.83, Over 2.5: 1.69."
     }
   ],
   "vipPreview": [
-    {
-      "vip": true,
-      "id": "goaheade-vs-telstar-2026-10-23",
-      "home": "Go Ahead Eagles",
-      "away": "Telstar",
-      "league": "Eredivisie",
-      "date": "2026-10-23",
-      "time": "18:00"
-    },
-    {
-      "vip": true,
-      "id": "vfbstutt-vs-borussia-2026-10-23",
-      "home": "VfB Stuttgart",
-      "away": "Borussia Mönchengladbach",
-      "league": "Bundesliga",
-      "date": "2026-10-23",
-      "time": "18:30"
-    },
-    {
-      "vip": true,
-      "id": "brest-vs-nice-2026-10-23",
-      "home": "Brest",
-      "away": "Nice",
-      "league": "Ligue 1",
-      "date": "2026-10-23",
-      "time": "18:45"
-    },
-    {
-      "vip": true,
-      "id": "vitriade-vs-maritimo-2026-10-23",
-      "home": "Vitória de Guimaraes",
-      "away": "Maritimo",
-      "league": "Liga Portugal",
-      "date": "2026-10-23",
-      "time": "19:45"
-    },
     {
       "vip": true,
       "id": "stokecit-vs-bristolc-2026-10-24",
@@ -5566,14 +7670,50 @@
       "league": "Championship",
       "date": "2026-10-24",
       "time": "11:30"
+    },
+    {
+      "vip": true,
+      "id": "dcunited-vs-fccincin-2026-10-24",
+      "home": "D.C. United",
+      "away": "FC Cincinnati",
+      "league": "MLS",
+      "date": "2026-10-24",
+      "time": "23:30"
+    },
+    {
+      "vip": true,
+      "id": "sheffiel-vs-derbycou-2026-10-24",
+      "home": "Sheffield United",
+      "away": "Derby County",
+      "league": "Championship",
+      "date": "2026-10-24",
+      "time": "11:30"
+    },
+    {
+      "vip": true,
+      "id": "cardiffc-vs-birmingh-2026-10-24",
+      "home": "Cardiff City",
+      "away": "Birmingham City",
+      "league": "Championship",
+      "date": "2026-10-24",
+      "time": "14:00"
+    },
+    {
+      "vip": true,
+      "id": "antwerp-vs-royalcha-2026-10-24",
+      "home": "Antwerp",
+      "away": "Royal Charleroi SC",
+      "league": "Jupiler Pro League",
+      "date": "2026-10-24",
+      "time": "14:00"
     }
   ],
   "stats": {
-    "avgReliability": 80.16,
-    "totalAnalyzed": 151,
+    "avgReliability": 80.1,
+    "totalAnalyzed": 153,
     "totalRejected": 2,
-    "totalAccepted": 149,
-    "freeCount": 30,
+    "totalAccepted": 151,
+    "freeCount": 42,
     "vipCount": 8
   },
   "predictions": [
@@ -6796,6 +8936,614 @@
       ]
     },
     {
+      "id": "goaheade-vs-telstar-2026-10-23",
+      "match": "Go Ahead Eagles vs Telstar",
+      "home": "Go Ahead Eagles",
+      "away": "Telstar",
+      "league": "Eredivisie",
+      "date": "2026-10-23",
+      "type": "BTTS",
+      "prediction": "Non",
+      "proba": 0.4568,
+      "bttsProbDisplay": "45.68%",
+      "over25ProbDisplay": "45.19%",
+      "confidence": 46,
+      "time": "18:00",
+      "matchSemantic": "goaheade-vs-telstar-2026-10-23",
+      "source": "poisson-v92-real-data",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/3706.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/3735.png",
+      "tier": "SILVER",
+      "reliabilityScore": 73.74,
+      "dataQuality": "HIGH",
+      "dataSource": "ESPN_TEAM_SCHEDULE",
+      "matchCountHome": 8,
+      "matchCountAway": 8,
+      "h2hAvailable": false,
+      "xgHome": 1.65,
+      "xgAway": 0.83,
+      "xgTotal": 2.48,
+      "formBTTS": null,
+      "analysis": "Go Ahead Eagles (8 matchs réels, xG 1.65) vs Telstar (8 matchs réels, xG 0.83). xG cumulé 2.48, BTTS 45.7%, Over 2.5 45.2%. Fiabilité 73.74%. Qualité données: HIGH.",
+      "analysisData": {
+        "bttsProb": 0.4568,
+        "over25Prob": 0.4519,
+        "homeLambda": 1.65,
+        "awayLambda": 0.83,
+        "xgTotal": 2.48
+      },
+      "estimatedCote": 2.19,
+      "estimatedCoteOver": 2.21,
+      "predictions": [
+        {
+          "type": "BTTS",
+          "prediction": "Non",
+          "confidence": 46,
+          "bttsProb": 0.4568,
+          "homeLambda": 1.65,
+          "awayLambda": 0.83
+        },
+        {
+          "type": "Over 2.5",
+          "prediction": "Non",
+          "confidence": 45,
+          "over25Prob": 0.4519,
+          "homeLambda": 1.65,
+          "awayLambda": 0.83
+        }
+      ],
+      "bttsProb": 0.4568,
+      "over25Prob": 0.4519,
+      "homeLambda": 1.65,
+      "awayLambda": 0.83,
+      "status": "PENDING",
+      "last5Home": [
+        {
+          "date": "2026-10-18",
+          "opponent": "PEC Zwolle",
+          "venue": "A",
+          "score": "1-4",
+          "result": "L"
+        },
+        {
+          "date": "2026-10-10",
+          "opponent": "Sparta Rotterdam",
+          "venue": "H",
+          "score": "3-3",
+          "result": "D"
+        },
+        {
+          "date": "2026-09-20",
+          "opponent": "NEC Nijmegen",
+          "venue": "A",
+          "score": "1-1",
+          "result": "D"
+        },
+        {
+          "date": "2026-09-12",
+          "opponent": "FC Groningen",
+          "venue": "H",
+          "score": "1-1",
+          "result": "D"
+        },
+        {
+          "date": "2026-09-08",
+          "opponent": "FC Utrecht",
+          "venue": "A",
+          "score": "3-3",
+          "result": "D"
+        }
+      ],
+      "last5Away": [
+        {
+          "date": "2026-10-17",
+          "opponent": "Feyenoord Rotterdam",
+          "venue": "H",
+          "score": "3-4",
+          "result": "L"
+        },
+        {
+          "date": "2026-10-11",
+          "opponent": "ADO Den Haag",
+          "venue": "H",
+          "score": "2-2",
+          "result": "D"
+        },
+        {
+          "date": "2026-09-20",
+          "opponent": "AZ Alkmaar",
+          "venue": "A",
+          "score": "0-1",
+          "result": "L"
+        },
+        {
+          "date": "2026-09-13",
+          "opponent": "Heerenveen",
+          "venue": "A",
+          "score": "0-0",
+          "result": "D"
+        },
+        {
+          "date": "2026-09-09",
+          "opponent": "FC Twente",
+          "venue": "A",
+          "score": "0-1",
+          "result": "L"
+        }
+      ]
+    },
+    {
+      "id": "vfbstutt-vs-borussia-2026-10-23",
+      "match": "VfB Stuttgart vs Borussia Mönchengladbach",
+      "home": "VfB Stuttgart",
+      "away": "Borussia Mönchengladbach",
+      "league": "Bundesliga",
+      "date": "2026-10-23",
+      "type": "BTTS",
+      "prediction": "Non",
+      "proba": 0.4575,
+      "bttsProbDisplay": "45.75%",
+      "over25ProbDisplay": "67.61%",
+      "confidence": 46,
+      "time": "18:30",
+      "matchSemantic": "vfbstutt-vs-borussia-2026-10-23",
+      "source": "poisson-v92-real-data",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/134.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/268.png",
+      "tier": "SILVER",
+      "reliabilityScore": 69.76,
+      "dataQuality": "MEDIUM",
+      "dataSource": "ESPN_TEAM_SCHEDULE",
+      "matchCountHome": 6,
+      "matchCountAway": 6,
+      "h2hAvailable": false,
+      "xgHome": 2.82,
+      "xgAway": 0.67,
+      "xgTotal": 3.48,
+      "formBTTS": null,
+      "analysis": "VfB Stuttgart (6 matchs réels, xG 2.82) vs Borussia Mönchengladbach (6 matchs réels, xG 0.67). xG cumulé 3.48, BTTS 45.7%, Over 2.5 67.6%. Fiabilité 69.76%. Qualité données: MEDIUM.",
+      "analysisData": {
+        "bttsProb": 0.4575,
+        "over25Prob": 0.6761,
+        "homeLambda": 2.82,
+        "awayLambda": 0.67,
+        "xgTotal": 3.48
+      },
+      "estimatedCote": 2.19,
+      "estimatedCoteOver": 1.48,
+      "predictions": [
+        {
+          "type": "BTTS",
+          "prediction": "Non",
+          "confidence": 46,
+          "bttsProb": 0.4575,
+          "homeLambda": 2.82,
+          "awayLambda": 0.67
+        },
+        {
+          "type": "Over 2.5",
+          "prediction": "Oui",
+          "confidence": 68,
+          "over25Prob": 0.6761,
+          "homeLambda": 2.82,
+          "awayLambda": 0.67
+        }
+      ],
+      "bttsProb": 0.4575,
+      "over25Prob": 0.6761,
+      "homeLambda": 2.82,
+      "awayLambda": 0.67,
+      "status": "PENDING",
+      "last5Home": [
+        {
+          "date": "2026-10-17",
+          "opponent": "Hamburg SV",
+          "venue": "A",
+          "score": "0-1",
+          "result": "L"
+        },
+        {
+          "date": "2026-10-10",
+          "opponent": "SC Paderborn 07",
+          "venue": "A",
+          "score": "2-0",
+          "result": "W"
+        },
+        {
+          "date": "2026-09-19",
+          "opponent": "Borussia Dortmund",
+          "venue": "H",
+          "score": "0-1",
+          "result": "L"
+        },
+        {
+          "date": "2026-09-12",
+          "opponent": "TSG Hoffenheim",
+          "venue": "A",
+          "score": "1-2",
+          "result": "L"
+        },
+        {
+          "date": "2026-09-04",
+          "opponent": "FC Cologne",
+          "venue": "H",
+          "score": "4-1",
+          "result": "W"
+        }
+      ],
+      "last5Away": [
+        {
+          "date": "2026-10-18",
+          "opponent": "TSG Hoffenheim",
+          "venue": "H",
+          "score": "1-2",
+          "result": "L"
+        },
+        {
+          "date": "2026-10-11",
+          "opponent": "FC Cologne",
+          "venue": "A",
+          "score": "1-2",
+          "result": "L"
+        },
+        {
+          "date": "2026-09-19",
+          "opponent": "Mainz",
+          "venue": "H",
+          "score": "3-4",
+          "result": "L"
+        },
+        {
+          "date": "2026-09-12",
+          "opponent": "SC Freiburg",
+          "venue": "A",
+          "score": "0-5",
+          "result": "L"
+        },
+        {
+          "date": "2026-09-05",
+          "opponent": "SV Elversberg",
+          "venue": "H",
+          "score": "3-4",
+          "result": "L"
+        }
+      ]
+    },
+    {
+      "id": "brest-vs-nice-2026-10-23",
+      "match": "Brest vs Nice",
+      "home": "Brest",
+      "away": "Nice",
+      "league": "Ligue 1",
+      "date": "2026-10-23",
+      "type": "BTTS",
+      "prediction": "Oui",
+      "proba": 0.5097,
+      "bttsProbDisplay": "50.97%",
+      "over25ProbDisplay": "60.96%",
+      "confidence": 51,
+      "time": "18:45",
+      "matchSemantic": "brest-vs-nice-2026-10-23",
+      "source": "poisson-v92-real-data",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/6997.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/2502.png",
+      "tier": "SILVER",
+      "reliabilityScore": 69.55,
+      "dataQuality": "MEDIUM",
+      "dataSource": "ESPN_TEAM_SCHEDULE",
+      "matchCountHome": 7,
+      "matchCountAway": 7,
+      "h2hAvailable": false,
+      "xgHome": 2.32,
+      "xgAway": 0.83,
+      "xgTotal": 3.15,
+      "formBTTS": 80,
+      "analysis": "Brest : forme N-V-D-D-V (2V 1N 2D, 9 buts marqués / 6 encaissés sur 5) · Nice : forme D-V-V-D-N (2V 1N 2D, 6 buts marqués / 6 encaissés sur 5). Classement : Brest 10e (9 pts), Nice 13e (8 pts). Modèle Poisson : xG cumulé 3.15, BTTS 51.0%, Over 2.5 61.0%. Cotes DraftKings — 1: 2.25 / N: 3.4 / 2: 3.25 · Over 2.5: 1.71. Fiabilité 69.55%.",
+      "analysisData": {
+        "bttsProb": 0.5097,
+        "over25Prob": 0.6096,
+        "homeLambda": 2.32,
+        "awayLambda": 0.83,
+        "xgTotal": 3.15
+      },
+      "estimatedCote": 1.96,
+      "estimatedCoteOver": 1.64,
+      "odds": {
+        "provider": "DraftKings",
+        "home": 2.25,
+        "draw": 3.4,
+        "away": 3.25,
+        "over25": 1.71,
+        "under25": 2.1
+      },
+      "oddsSource": "DraftKings",
+      "estimatedCoteBTTS": 1.96,
+      "formHome": {
+        "last5String": "N-V-D-D-V",
+        "wins": 2,
+        "draws": 1,
+        "losses": 2,
+        "goalsFor": 9,
+        "goalsAgainst": 6,
+        "bttsRate": 0.8,
+        "over25Rate": 0.6,
+        "cleanSheets": 0,
+        "failedToScore": 1,
+        "count": 5
+      },
+      "formAway": {
+        "last5String": "D-V-V-D-N",
+        "wins": 2,
+        "draws": 1,
+        "losses": 2,
+        "goalsFor": 6,
+        "goalsAgainst": 6,
+        "bttsRate": 0.8,
+        "over25Rate": 0.6,
+        "cleanSheets": 0,
+        "failedToScore": 1,
+        "count": 5
+      },
+      "standingsHome": {
+        "rank": 10,
+        "points": 9,
+        "played": 7,
+        "gf": 13,
+        "ga": 10
+      },
+      "standingsAway": {
+        "rank": 13,
+        "points": 8,
+        "played": 7,
+        "gf": 6,
+        "ga": 9
+      },
+      "predictions": [
+        {
+          "type": "BTTS",
+          "prediction": "Oui",
+          "confidence": 51,
+          "bttsProb": 0.5097,
+          "homeLambda": 2.32,
+          "awayLambda": 0.83
+        },
+        {
+          "type": "Over 2.5",
+          "prediction": "Oui",
+          "confidence": 61,
+          "over25Prob": 0.6096,
+          "homeLambda": 2.32,
+          "awayLambda": 0.83
+        }
+      ],
+      "bttsProb": 0.5097,
+      "over25Prob": 0.6096,
+      "homeLambda": 2.32,
+      "awayLambda": 0.83,
+      "ai_key_fact": "Brest et Nice affichent tous deux un taux de BTTS de 80 % sur leurs 5 derniers matchs.",
+      "ai_analysis": "Les projections du modèle indiquent un xG de 2.32 pour Brest et de 0.83 pour Nice, avec une probabilité BTTS de 51.0 % et un Over 2.5 fixé à 61.0 %. Au classement de Ligue 1, Brest se positionne au 10e rang avec 13 buts pour et 10 contre, tandis que Nice est 13e avec 8 points en 7 matchs. Les cotes du marché proposent Brest à 2.25 et Nice à 3.25, l'Over 2.5 affichant une cote de 1.71. Le modèle présente une fiabilité de 69.55 %.",
+      "ai_form_summary": "Brest totalise 2 victoires, 1 nul et 2 défaites sur ses 5 dernières sorties avec 9 buts marqués. Nice présente un bilan similaire de 2 victoires, 1 nul et 2 défaites, mais avec 6 buts inscrits et 6 encaissés.",
+      "ai_key_fact_en": "Brest and Nice both record an 80% BTTS rate over their last 5 matches.",
+      "ai_analysis_en": "Model projections indicate an xG of 2.32 for Brest and 0.83 for Nice, with a BTTS probability of 51.0% and an Over 2.5 set at 61.0%. In the Ligue 1 standings, Brest is positioned 10th with 13 goals for and 10 against, while Nice is 13th with 8 points in 7 matches. Market odds price Brest at 2.25 and Nice at 3.25, with the Over 2.5 priced at 1.71. The model shows a reliability of 69.55%.",
+      "ai_form_summary_en": "Brest totals 2 wins, 1 draw, and 2 defeats in its last 5 outings with 9 goals scored. Nice presents a similar record of 2 wins, 1 draw, and 2 defeats, but with 6 goals scored and 6 conceded.",
+      "ai_source": "gemini-v2",
+      "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
+      "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
+      "ai_odds_insight": "Le marché (DraftKings) cote 1: 2.25, nul: 3.4, 2: 3.25, Over 2.5: 1.71.",
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.25, draw: 3.4, 2: 3.25, Over 2.5: 1.71.",
+      "status": "PENDING",
+      "last5Home": [
+        {
+          "date": "2026-10-17",
+          "opponent": "Lille",
+          "venue": "A",
+          "score": "1-1",
+          "result": "D"
+        },
+        {
+          "date": "2026-10-10",
+          "opponent": "Angers",
+          "venue": "H",
+          "score": "5-1",
+          "result": "W"
+        },
+        {
+          "date": "2026-09-20",
+          "opponent": "AJ Auxerre",
+          "venue": "A",
+          "score": "1-2",
+          "result": "L"
+        },
+        {
+          "date": "2026-09-13",
+          "opponent": "Paris Saint-Germain",
+          "venue": "H",
+          "score": "0-1",
+          "result": "L"
+        },
+        {
+          "date": "2026-09-05",
+          "opponent": "Le Havre AC",
+          "venue": "A",
+          "score": "2-1",
+          "result": "W"
+        }
+      ],
+      "last5Away": [
+        {
+          "date": "2026-10-18",
+          "opponent": "Lyon",
+          "venue": "A",
+          "score": "1-2",
+          "result": "L"
+        },
+        {
+          "date": "2026-10-11",
+          "opponent": "Strasbourg",
+          "venue": "H",
+          "score": "2-1",
+          "result": "W"
+        },
+        {
+          "date": "2026-09-20",
+          "opponent": "Lille",
+          "venue": "H",
+          "score": "2-1",
+          "result": "W"
+        },
+        {
+          "date": "2026-09-12",
+          "opponent": "AJ Auxerre",
+          "venue": "A",
+          "score": "0-1",
+          "result": "L"
+        },
+        {
+          "date": "2026-09-05",
+          "opponent": "Le Mans",
+          "venue": "H",
+          "score": "1-1",
+          "result": "D"
+        }
+      ]
+    },
+    {
+      "id": "vitriade-vs-maritimo-2026-10-23",
+      "match": "Vitória de Guimaraes vs Maritimo",
+      "home": "Vitória de Guimaraes",
+      "away": "Maritimo",
+      "league": "Liga Portugal",
+      "date": "2026-10-23",
+      "type": "BTTS",
+      "prediction": "Non",
+      "proba": 0.4202,
+      "bttsProbDisplay": "42.02%",
+      "over25ProbDisplay": "36.39%",
+      "confidence": 42,
+      "time": "19:45",
+      "matchSemantic": "vitriade-vs-maritimo-2026-10-23",
+      "source": "poisson-v92-real-data",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/5309.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/552.png",
+      "tier": "SILVER",
+      "reliabilityScore": 68.38,
+      "dataQuality": "HIGH",
+      "dataSource": "ESPN_TEAM_SCHEDULE",
+      "matchCountHome": 8,
+      "matchCountAway": 8,
+      "h2hAvailable": false,
+      "xgHome": 1.27,
+      "xgAway": 0.88,
+      "xgTotal": 2.15,
+      "formBTTS": null,
+      "analysis": "Vitória de Guimaraes (8 matchs réels, xG 1.27) vs Maritimo (8 matchs réels, xG 0.88). xG cumulé 2.15, BTTS 42.0%, Over 2.5 36.4%. Fiabilité 68.38%. Qualité données: HIGH.",
+      "analysisData": {
+        "bttsProb": 0.4202,
+        "over25Prob": 0.3639,
+        "homeLambda": 1.27,
+        "awayLambda": 0.88,
+        "xgTotal": 2.15
+      },
+      "estimatedCote": 2.38,
+      "estimatedCoteOver": 2.75,
+      "predictions": [
+        {
+          "type": "BTTS",
+          "prediction": "Non",
+          "confidence": 42,
+          "bttsProb": 0.4202,
+          "homeLambda": 1.27,
+          "awayLambda": 0.88
+        },
+        {
+          "type": "Over 2.5",
+          "prediction": "Non",
+          "confidence": 40,
+          "over25Prob": 0.3639,
+          "homeLambda": 1.27,
+          "awayLambda": 0.88
+        }
+      ],
+      "bttsProb": 0.4202,
+      "over25Prob": 0.3639,
+      "homeLambda": 1.27,
+      "awayLambda": 0.88,
+      "last5Home": [
+        {
+          "date": "2026-10-11",
+          "opponent": "Benfica",
+          "venue": "A",
+          "score": "0-2",
+          "result": "L"
+        },
+        {
+          "date": "2026-09-20",
+          "opponent": "Moreirense",
+          "venue": "H",
+          "score": "1-1",
+          "result": "D"
+        },
+        {
+          "date": "2026-09-12",
+          "opponent": "Académico de Viseu",
+          "venue": "A",
+          "score": "1-2",
+          "result": "L"
+        },
+        {
+          "date": "2026-09-06",
+          "opponent": "Casa Pia",
+          "venue": "H",
+          "score": "0-0",
+          "result": "D"
+        },
+        {
+          "date": "2026-08-31",
+          "opponent": "Braga",
+          "venue": "A",
+          "score": "0-1",
+          "result": "L"
+        }
+      ],
+      "last5Away": [
+        {
+          "date": "2026-10-10",
+          "opponent": "FC Porto",
+          "venue": "H",
+          "score": "1-2",
+          "result": "L"
+        },
+        {
+          "date": "2026-09-19",
+          "opponent": "Gil Vicente",
+          "venue": "A",
+          "score": "1-1",
+          "result": "D"
+        },
+        {
+          "date": "2026-09-14",
+          "opponent": "Moreirense",
+          "venue": "A",
+          "score": "1-3",
+          "result": "L"
+        },
+        {
+          "date": "2026-09-05",
+          "opponent": "Benfica",
+          "venue": "H",
+          "score": "0-3",
+          "result": "L"
+        },
+        {
+          "date": "2026-08-29",
+          "opponent": "Arouca",
+          "venue": "A",
+          "score": "1-2",
+          "result": "L"
+        }
+      ]
+    },
+    {
       "id": "fcutrech-vs-peczwoll-2026-10-24",
       "match": "FC Utrecht vs PEC Zwolle",
       "home": "FC Utrecht",
@@ -11066,6 +13814,1538 @@
           "result": "W"
         }
       ]
+    },
+    {
+      "id": "torontof-vs-dcunited-2026-10-28",
+      "match": "Toronto FC vs D.C. United",
+      "home": "Toronto FC",
+      "away": "D.C. United",
+      "league": "MLS",
+      "date": "2026-10-28",
+      "type": "BTTS",
+      "prediction": "Oui",
+      "proba": 0.7851,
+      "bttsProbDisplay": "78.51%",
+      "over25ProbDisplay": "85.27%",
+      "confidence": 79,
+      "time": "23:30",
+      "matchSemantic": "torontof-vs-dcunited-2026-10-28",
+      "source": "poisson-v92-real-data",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/7318.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/193.png",
+      "tier": "GOLD",
+      "reliabilityScore": 93.1,
+      "dataQuality": "HIGH",
+      "dataSource": "ESPN_TEAM_SCHEDULE",
+      "matchCountHome": 8,
+      "matchCountAway": 8,
+      "h2hAvailable": false,
+      "xgHome": 3,
+      "xgAway": 1.75,
+      "xgTotal": 4.75,
+      "formBTTS": 70,
+      "analysis": "Toronto FC : forme V-N-V-D-D (2V 1N 2D, 8 buts marqués / 9 encaissés sur 5) · D.C. United : forme D-D-V-D-N (1V 1N 3D, 7 buts marqués / 14 encaissés sur 5). Classement : Toronto FC 10e (36 pts), D.C. United 13e (33 pts). Modèle Poisson : xG cumulé 4.75, BTTS 78.5%, Over 2.5 85.3%. Fiabilité 93.1%.",
+      "analysisData": {
+        "bttsProb": 0.7851,
+        "over25Prob": 0.8527,
+        "homeLambda": 3,
+        "awayLambda": 1.75,
+        "xgTotal": 4.75
+      },
+      "estimatedCote": 1.27,
+      "estimatedCoteOver": 1.17,
+      "odds": null,
+      "oddsSource": "ESTIMATION_POISSON",
+      "estimatedCoteBTTS": 1.27,
+      "formHome": {
+        "last5String": "V-N-V-D-D",
+        "wins": 2,
+        "draws": 1,
+        "losses": 2,
+        "goalsFor": 8,
+        "goalsAgainst": 9,
+        "bttsRate": 0.6,
+        "over25Rate": 0.6,
+        "cleanSheets": 1,
+        "failedToScore": 1,
+        "count": 5
+      },
+      "formAway": {
+        "last5String": "D-D-V-D-N",
+        "wins": 1,
+        "draws": 1,
+        "losses": 3,
+        "goalsFor": 7,
+        "goalsAgainst": 14,
+        "bttsRate": 0.8,
+        "over25Rate": 1,
+        "cleanSheets": 0,
+        "failedToScore": 1,
+        "count": 5
+      },
+      "last5Home": [
+        {
+          "date": "2026-10-17",
+          "opponent": "Red Bull New York",
+          "venue": "A",
+          "score": "2-0",
+          "result": "W"
+        },
+        {
+          "date": "2026-10-14",
+          "opponent": "Orlando City SC",
+          "venue": "H",
+          "score": "3-3",
+          "result": "D"
+        },
+        {
+          "date": "2026-10-10",
+          "opponent": "CF Montréal",
+          "venue": "H",
+          "score": "2-1",
+          "result": "W"
+        },
+        {
+          "date": "2026-09-27",
+          "opponent": "Nashville SC",
+          "venue": "A",
+          "score": "0-2",
+          "result": "L"
+        },
+        {
+          "date": "2026-09-20",
+          "opponent": "St. Louis CITY SC",
+          "venue": "A",
+          "score": "1-3",
+          "result": "L"
+        }
+      ],
+      "last5Away": [
+        {
+          "date": "2026-10-21",
+          "opponent": "FC Cincinnati",
+          "venue": "A",
+          "score": "1-2",
+          "result": "L"
+        },
+        {
+          "date": "2026-10-17",
+          "opponent": "Orlando City SC",
+          "venue": "A",
+          "score": "1-4",
+          "result": "L"
+        },
+        {
+          "date": "2026-10-14",
+          "opponent": "Red Bull New York",
+          "venue": "H",
+          "score": "2-1",
+          "result": "W"
+        },
+        {
+          "date": "2026-10-10",
+          "opponent": "Inter Miami CF",
+          "venue": "A",
+          "score": "0-4",
+          "result": "L"
+        },
+        {
+          "date": "2026-09-27",
+          "opponent": "Vancouver Whitecaps",
+          "venue": "A",
+          "score": "3-3",
+          "result": "D"
+        }
+      ],
+      "standingsHome": {
+        "rank": 10,
+        "points": 36,
+        "played": 30,
+        "gf": 46,
+        "ga": 55
+      },
+      "standingsAway": {
+        "rank": 13,
+        "points": 33,
+        "played": 30,
+        "gf": 38,
+        "ga": 53
+      },
+      "predictions": [
+        {
+          "type": "BTTS",
+          "prediction": "Oui",
+          "confidence": 79,
+          "bttsProb": 0.7851,
+          "homeLambda": 3,
+          "awayLambda": 1.75
+        },
+        {
+          "type": "Over 2.5",
+          "prediction": "Oui",
+          "confidence": 85,
+          "over25Prob": 0.8527,
+          "homeLambda": 3,
+          "awayLambda": 1.75
+        }
+      ],
+      "bttsProb": 0.7851,
+      "over25Prob": 0.8527,
+      "homeLambda": 3,
+      "awayLambda": 1.75,
+      "ai_key_fact": "Le modèle attribue une probabilité Over 2.5 de 85.3% pour cette rencontre de MLS.",
+      "ai_analysis": "Les projections offensives du modèle atteignent un xG élevé de 3.0 pour Toronto FC et de 1.75 pour D.C. United. La probabilité BTTS s'élève à 78.5% et la fiabilité du modèle atteint un niveau élevé de 93.1%. Au classement de la MLS, les deux équipes se côtoient dans la seconde moitié du tableau, Toronto occupant la 10e place et D.C. United la 13e.",
+      "ai_form_summary": "Toronto FC traverse une période mitigée avec deux victoires, un nul et deux défaites lors de ses cinq derniers matchs. D.C. United connaît des difficultés marquées à l'extérieur avec trois défaites, un nul et une seule victoire sur la même période.",
+      "ai_key_fact_en": "The model assigns an Over 2.5 probability of 85.3% for this MLS fixture.",
+      "ai_analysis_en": "The model's offensive projections reach a high xG of 3.0 for Toronto FC and 1.75 for D.C. United. The BTTS probability stands at 78.5% and model reliability reaches a high level of 93.1%. In the MLS standings, both teams reside in the lower half, with Toronto in 10th and D.C. United in 13th place.",
+      "ai_form_summary_en": "Toronto FC experiences a mixed period with two wins, one draw, and two defeats in their last five matches. D.C. United struggles significantly away from home with three losses, one draw, and a single win over the same span.",
+      "ai_source": "gemini-v2",
+      "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
+      "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
+      "ai_odds_insight": "Cotes marché non disponibles — pronostic basé sur le modèle statistique seul.",
+      "ai_odds_insight_en": "Market odds unavailable — prediction based on the statistical model only."
+    },
+    {
+      "id": "intermia-vs-fccincin-2026-10-28",
+      "match": "Inter Miami CF vs FC Cincinnati",
+      "home": "Inter Miami CF",
+      "away": "FC Cincinnati",
+      "league": "MLS",
+      "date": "2026-10-28",
+      "type": "BTTS",
+      "prediction": "Oui",
+      "proba": 0.6922,
+      "bttsProbDisplay": "69.22%",
+      "over25ProbDisplay": "77.27%",
+      "confidence": 69,
+      "time": "23:30",
+      "matchSemantic": "intermia-vs-fccincin-2026-10-28",
+      "source": "poisson-v92-real-data",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/20232.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/18267.png",
+      "tier": "GOLD",
+      "reliabilityScore": 89.03,
+      "dataQuality": "HIGH",
+      "dataSource": "ESPN_TEAM_SCHEDULE",
+      "matchCountHome": 8,
+      "matchCountAway": 8,
+      "h2hAvailable": false,
+      "xgHome": 2.73,
+      "xgAway": 1.35,
+      "xgTotal": 4.08,
+      "formBTTS": 70,
+      "analysis": "Inter Miami CF : forme V-V-V-D-N (3V 1N 1D, 12 buts marqués / 5 encaissés sur 5) · FC Cincinnati : forme V-D-D-V-D (2V 0N 3D, 8 buts marqués / 10 encaissés sur 5). Classement : Inter Miami CF 2e (55 pts), FC Cincinnati 8e (39 pts). Modèle Poisson : xG cumulé 4.08, BTTS 69.2%, Over 2.5 77.3%. Fiabilité 89.03%.",
+      "analysisData": {
+        "bttsProb": 0.6922,
+        "over25Prob": 0.7727,
+        "homeLambda": 2.73,
+        "awayLambda": 1.35,
+        "xgTotal": 4.08
+      },
+      "estimatedCote": 1.44,
+      "estimatedCoteOver": 1.29,
+      "odds": null,
+      "oddsSource": "ESTIMATION_POISSON",
+      "estimatedCoteBTTS": 1.44,
+      "formHome": {
+        "last5String": "V-V-V-D-N",
+        "wins": 3,
+        "draws": 1,
+        "losses": 1,
+        "goalsFor": 12,
+        "goalsAgainst": 5,
+        "bttsRate": 0.6,
+        "over25Rate": 0.8,
+        "cleanSheets": 2,
+        "failedToScore": 0,
+        "count": 5
+      },
+      "formAway": {
+        "last5String": "V-D-D-V-D",
+        "wins": 2,
+        "draws": 0,
+        "losses": 3,
+        "goalsFor": 8,
+        "goalsAgainst": 10,
+        "bttsRate": 0.8,
+        "over25Rate": 0.8,
+        "cleanSheets": 0,
+        "failedToScore": 1,
+        "count": 5
+      },
+      "last5Home": [
+        {
+          "date": "2026-10-17",
+          "opponent": "Atlanta United FC",
+          "venue": "A",
+          "score": "3-1",
+          "result": "W"
+        },
+        {
+          "date": "2026-10-14",
+          "opponent": "New York City FC",
+          "venue": "H",
+          "score": "2-0",
+          "result": "W"
+        },
+        {
+          "date": "2026-10-10",
+          "opponent": "D.C. United",
+          "venue": "H",
+          "score": "4-0",
+          "result": "W"
+        },
+        {
+          "date": "2026-09-27",
+          "opponent": "Columbus Crew",
+          "venue": "A",
+          "score": "1-2",
+          "result": "L"
+        },
+        {
+          "date": "2026-09-20",
+          "opponent": "San Diego FC",
+          "venue": "H",
+          "score": "2-2",
+          "result": "D"
+        }
+      ],
+      "last5Away": [
+        {
+          "date": "2026-10-21",
+          "opponent": "D.C. United",
+          "venue": "H",
+          "score": "2-1",
+          "result": "W"
+        },
+        {
+          "date": "2026-10-18",
+          "opponent": "Columbus Crew",
+          "venue": "H",
+          "score": "0-2",
+          "result": "L"
+        },
+        {
+          "date": "2026-10-14",
+          "opponent": "New England Revolution",
+          "venue": "H",
+          "score": "2-3",
+          "result": "L"
+        },
+        {
+          "date": "2026-10-10",
+          "opponent": "Atlanta United FC",
+          "venue": "A",
+          "score": "3-1",
+          "result": "W"
+        },
+        {
+          "date": "2026-09-26",
+          "opponent": "CF Montréal",
+          "venue": "A",
+          "score": "1-3",
+          "result": "L"
+        }
+      ],
+      "standingsHome": {
+        "rank": 2,
+        "points": 55,
+        "played": 30,
+        "gf": 73,
+        "ga": 51
+      },
+      "standingsAway": {
+        "rank": 8,
+        "points": 39,
+        "played": 30,
+        "gf": 62,
+        "ga": 71
+      },
+      "predictions": [
+        {
+          "type": "BTTS",
+          "prediction": "Oui",
+          "confidence": 69,
+          "bttsProb": 0.6922,
+          "homeLambda": 2.73,
+          "awayLambda": 1.35
+        },
+        {
+          "type": "Over 2.5",
+          "prediction": "Oui",
+          "confidence": 77,
+          "over25Prob": 0.7727,
+          "homeLambda": 2.73,
+          "awayLambda": 1.35
+        }
+      ],
+      "bttsProb": 0.6922,
+      "over25Prob": 0.7727,
+      "homeLambda": 2.73,
+      "awayLambda": 1.35,
+      "ai_key_fact": "Inter Miami CF a inscrit 12 buts lors de ses cinq dernières rencontres.",
+      "ai_analysis": "Le modèlePoisson évalue l'xG de l'Inter Miami CF à 2.73 contre 1.35 pour le FC Cincinnati. Les probabilités du modèle ressortent à 69.2% pour le BTTS et 77.3% pour l'Over 2.5, avec une fiabilité de 89.03%. Au classement, l'Inter Miami CF se positionne solidement à la 2e place, tandis que le FC Cincinnati pointe à la 8e position.",
+      "ai_form_summary": "Inter Miami CF affiche une forme positive avec trois victoires, un nul et une défaite, soutenue par une attaque prolifique. FC Cincinnati présente un bilan plus contrasté à l'extérieur avec trois défaites et deux succès sur ses cinq derniers matchs.",
+      "ai_key_fact_en": "Inter Miami CF has scored 12 goals in their last five matches.",
+      "ai_analysis_en": "The Poisson model evaluates Inter Miami CF's xG at 2.73 compared to 1.35 for FC Cincinnati. Model probabilities come out at 69.2% for BTTS and 77.3% for Over 2.5, backed by a reliability of 89.03%. In the standings, Inter Miami CF is solidly positioned in 2nd place, while FC Cincinnati sits in 8th position.",
+      "ai_form_summary_en": "Inter Miami CF shows positive form with three wins, one draw, and one defeat, backed by a prolific attack. FC Cincinnati displays a contrasting away record with three losses and two wins in their last five fixtures.",
+      "ai_source": "gemini-v2",
+      "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
+      "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
+      "ai_odds_insight": "Cotes marché non disponibles — pronostic basé sur le modèle statistique seul.",
+      "ai_odds_insight_en": "Market odds unavailable — prediction based on the statistical model only."
+    },
+    {
+      "id": "celtic-vs-dundeeun-2026-10-28",
+      "match": "Celtic vs Dundee United",
+      "home": "Celtic",
+      "away": "Dundee United",
+      "league": "Scottish Premiership",
+      "date": "2026-10-28",
+      "type": "BTTS",
+      "prediction": "Oui",
+      "proba": 0.6315,
+      "bttsProbDisplay": "63.15%",
+      "over25ProbDisplay": "70.17%",
+      "confidence": 63,
+      "time": "19:45",
+      "matchSemantic": "celtic-vs-dundeeun-2026-10-28",
+      "source": "poisson-v92-real-data",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/256.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/264.png",
+      "tier": "GOLD",
+      "reliabilityScore": 86.38,
+      "dataQuality": "HIGH",
+      "dataSource": "ESPN_TEAM_SCHEDULE",
+      "matchCountHome": 8,
+      "matchCountAway": 8,
+      "h2hAvailable": false,
+      "xgHome": 2.45,
+      "xgAway": 1.18,
+      "xgTotal": 3.63,
+      "formBTTS": 40,
+      "analysis": "Celtic : forme V-V-D-V-V (4V 0N 1D, 12 buts marqués / 3 encaissés sur 5) · Dundee United : forme N-V-V-N-D (2V 2N 1D, 6 buts marqués / 5 encaissés sur 5). Classement : Celtic 1e (24 pts), Dundee United 6e (12 pts). Modèle Poisson : xG cumulé 3.63, BTTS 63.2%, Over 2.5 70.2%. Fiabilité 86.38%.",
+      "analysisData": {
+        "bttsProb": 0.6315,
+        "over25Prob": 0.7017,
+        "homeLambda": 2.45,
+        "awayLambda": 1.18,
+        "xgTotal": 3.63
+      },
+      "estimatedCote": 1.58,
+      "estimatedCoteOver": 1.43,
+      "odds": null,
+      "oddsSource": "ESTIMATION_POISSON",
+      "estimatedCoteBTTS": 1.58,
+      "formHome": {
+        "last5String": "V-V-D-V-V",
+        "wins": 4,
+        "draws": 0,
+        "losses": 1,
+        "goalsFor": 12,
+        "goalsAgainst": 3,
+        "bttsRate": 0.4,
+        "over25Rate": 0.4,
+        "cleanSheets": 2,
+        "failedToScore": 1,
+        "count": 5
+      },
+      "formAway": {
+        "last5String": "N-V-V-N-D",
+        "wins": 2,
+        "draws": 2,
+        "losses": 1,
+        "goalsFor": 6,
+        "goalsAgainst": 5,
+        "bttsRate": 0.4,
+        "over25Rate": 0.4,
+        "cleanSheets": 2,
+        "failedToScore": 1,
+        "count": 5
+      },
+      "last5Home": [
+        {
+          "date": "2026-10-18",
+          "opponent": "Heart of Midlothian",
+          "venue": "H",
+          "score": "7-1",
+          "result": "W"
+        },
+        {
+          "date": "2026-10-11",
+          "opponent": "Motherwell",
+          "venue": "A",
+          "score": "2-0",
+          "result": "W"
+        },
+        {
+          "date": "2026-09-20",
+          "opponent": "Rangers",
+          "venue": "H",
+          "score": "0-1",
+          "result": "L"
+        },
+        {
+          "date": "2026-09-09",
+          "opponent": "St Johnstone",
+          "venue": "A",
+          "score": "1-0",
+          "result": "W"
+        },
+        {
+          "date": "2026-09-05",
+          "opponent": "St Mirren",
+          "venue": "A",
+          "score": "2-1",
+          "result": "W"
+        }
+      ],
+      "last5Away": [
+        {
+          "date": "2026-10-17",
+          "opponent": "St Johnstone",
+          "venue": "A",
+          "score": "1-1",
+          "result": "D"
+        },
+        {
+          "date": "2026-10-10",
+          "opponent": "Hibernian",
+          "venue": "H",
+          "score": "1-0",
+          "result": "W"
+        },
+        {
+          "date": "2026-09-19",
+          "opponent": "St Mirren",
+          "venue": "A",
+          "score": "3-0",
+          "result": "W"
+        },
+        {
+          "date": "2026-09-05",
+          "opponent": "Falkirk",
+          "venue": "H",
+          "score": "1-1",
+          "result": "D"
+        },
+        {
+          "date": "2026-09-02",
+          "opponent": "Motherwell",
+          "venue": "A",
+          "score": "0-3",
+          "result": "L"
+        }
+      ],
+      "standingsHome": {
+        "rank": 1,
+        "points": 24,
+        "played": 9,
+        "gf": 23,
+        "ga": 5
+      },
+      "standingsAway": {
+        "rank": 6,
+        "points": 12,
+        "played": 9,
+        "gf": 11,
+        "ga": 12
+      },
+      "predictions": [
+        {
+          "type": "BTTS",
+          "prediction": "Oui",
+          "confidence": 63,
+          "bttsProb": 0.6315,
+          "homeLambda": 2.45,
+          "awayLambda": 1.18
+        },
+        {
+          "type": "Over 2.5",
+          "prediction": "Oui",
+          "confidence": 70,
+          "over25Prob": 0.7017,
+          "homeLambda": 2.45,
+          "awayLambda": 1.18
+        }
+      ],
+      "bttsProb": 0.6315,
+      "over25Prob": 0.7017,
+      "homeLambda": 2.45,
+      "awayLambda": 1.18,
+      "ai_key_fact": "Celtic affiche un xG de 2.45 et Dundee United un xG de 1.18.",
+      "ai_analysis": "Le leader de Scottish Premiership, Celtic, domine statistiquement cette rencontre avec un xG élevé de 2.45 et un taux de BTTS de 0.4 sur ses cinq dernières sorties. Dundee United, sixième, se déplace avec un xG de 1.18 et un taux de BTTS également établi à 0.4. Le modèle Poisson anticipe une probabilité BTTS de 63.1% et une probabilité Over 2.5 de 70.2%, soutenues par une fiabilité de 86.38%. Ces indicateurs quantitatifs traduisent une supériorité offensive marquée des locaux face à une opposition classée sixième.",
+      "ai_form_summary": "Celtic présente un bilan solide de 4 victoires et 1 défaite sur ses 5 derniers matchs (12 buts marqués, 3 encaissés). De son côté, Dundee United affiche 2 victoires, 2 nuls et 1 défaite avec 6 buts marqués et 5 encaissés.",
+      "ai_key_fact_en": "Celtic records an xG of 2.45 and Dundee United an xG of 1.18.",
+      "ai_analysis_en": "Scottish Premiership leaders Celtic statistically dominate this encounter with a high xG of 2.45 and a BTTS rate of 0.4 over their last five outings. Sixth-placed Dundee United travels with an xG of 1.18 and a BTTS rate also set at 0.4. The Poisson model anticipates a BTTS probability of 63.1% and an Over 2.5 probability of 70.2%, supported by a reliability of 86.38%. These quantitative indicators reflect a marked offensive superiority for the hosts against sixth-placed opposition.",
+      "ai_form_summary_en": "Celtic shows a solid record of 4 wins and 1 loss in their last 5 matches (12 goals scored, 3 conceded). Meanwhile, Dundee United records 2 wins, 2 draws and 1 loss with 6 goals scored and 5 conceded.",
+      "ai_source": "gemini-v2",
+      "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
+      "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
+      "ai_odds_insight": "Cotes marché non disponibles — pronostic basé sur le modèle statistique seul.",
+      "ai_odds_insight_en": "Market odds unavailable — prediction based on the statistical model only."
+    },
+    {
+      "id": "stmirren-vs-hibernia-2026-10-28",
+      "match": "St Mirren vs Hibernian",
+      "home": "St Mirren",
+      "away": "Hibernian",
+      "league": "Scottish Premiership",
+      "date": "2026-10-28",
+      "type": "BTTS",
+      "prediction": "Oui",
+      "proba": 0.605,
+      "bttsProbDisplay": "60.50%",
+      "over25ProbDisplay": "58.24%",
+      "confidence": 61,
+      "time": "19:45",
+      "matchSemantic": "stmirren-vs-hibernia-2026-10-28",
+      "source": "poisson-v92-real-data",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/250.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/258.png",
+      "tier": "GOLD",
+      "reliabilityScore": 82.72,
+      "dataQuality": "HIGH",
+      "dataSource": "ESPN_TEAM_SCHEDULE",
+      "matchCountHome": 8,
+      "matchCountAway": 8,
+      "h2hAvailable": false,
+      "xgHome": 1.4,
+      "xgAway": 1.63,
+      "xgTotal": 3.02,
+      "formBTTS": 50,
+      "analysis": "St Mirren : forme D-D-D-D-D (0V 0N 5D, 2 buts marqués / 14 encaissés sur 5) · Hibernian : forme D-D-N-D-D (0V 1N 4D, 3 buts marqués / 7 encaissés sur 5). Classement : St Mirren 8e (10 pts), Hibernian 12e (7 pts). Modèle Poisson : xG cumulé 3.02, BTTS 60.5%, Over 2.5 58.2%. Fiabilité 82.72%.",
+      "analysisData": {
+        "bttsProb": 0.605,
+        "over25Prob": 0.5824,
+        "homeLambda": 1.4,
+        "awayLambda": 1.63,
+        "xgTotal": 3.02
+      },
+      "estimatedCote": 1.65,
+      "estimatedCoteOver": 1.72,
+      "odds": null,
+      "oddsSource": "ESTIMATION_POISSON",
+      "estimatedCoteBTTS": 1.65,
+      "formHome": {
+        "last5String": "D-D-D-D-D",
+        "wins": 0,
+        "draws": 0,
+        "losses": 5,
+        "goalsFor": 2,
+        "goalsAgainst": 14,
+        "bttsRate": 0.4,
+        "over25Rate": 0.8,
+        "cleanSheets": 0,
+        "failedToScore": 3,
+        "count": 5
+      },
+      "formAway": {
+        "last5String": "D-D-N-D-D",
+        "wins": 0,
+        "draws": 1,
+        "losses": 4,
+        "goalsFor": 3,
+        "goalsAgainst": 7,
+        "bttsRate": 0.6,
+        "over25Rate": 0.4,
+        "cleanSheets": 0,
+        "failedToScore": 2,
+        "count": 5
+      },
+      "last5Home": [
+        {
+          "date": "2026-10-17",
+          "opponent": "Aberdeen",
+          "venue": "A",
+          "score": "1-3",
+          "result": "L"
+        },
+        {
+          "date": "2026-10-10",
+          "opponent": "Heart of Midlothian",
+          "venue": "A",
+          "score": "0-5",
+          "result": "L"
+        },
+        {
+          "date": "2026-09-19",
+          "opponent": "Dundee United",
+          "venue": "H",
+          "score": "0-3",
+          "result": "L"
+        },
+        {
+          "date": "2026-09-09",
+          "opponent": "Rangers",
+          "venue": "A",
+          "score": "0-1",
+          "result": "L"
+        },
+        {
+          "date": "2026-09-05",
+          "opponent": "Celtic",
+          "venue": "H",
+          "score": "1-2",
+          "result": "L"
+        }
+      ],
+      "last5Away": [
+        {
+          "date": "2026-10-17",
+          "opponent": "Falkirk",
+          "venue": "H",
+          "score": "1-2",
+          "result": "L"
+        },
+        {
+          "date": "2026-10-10",
+          "opponent": "Dundee United",
+          "venue": "A",
+          "score": "0-1",
+          "result": "L"
+        },
+        {
+          "date": "2026-09-19",
+          "opponent": "Aberdeen",
+          "venue": "H",
+          "score": "1-1",
+          "result": "D"
+        },
+        {
+          "date": "2026-09-15",
+          "opponent": "Kilmarnock",
+          "venue": "H",
+          "score": "0-1",
+          "result": "L"
+        },
+        {
+          "date": "2026-09-06",
+          "opponent": "St Johnstone",
+          "venue": "A",
+          "score": "1-2",
+          "result": "L"
+        }
+      ],
+      "standingsHome": {
+        "rank": 8,
+        "points": 10,
+        "played": 9,
+        "gf": 9,
+        "ga": 17
+      },
+      "standingsAway": {
+        "rank": 12,
+        "points": 7,
+        "played": 9,
+        "gf": 9,
+        "ga": 14
+      },
+      "predictions": [
+        {
+          "type": "BTTS",
+          "prediction": "Oui",
+          "confidence": 61,
+          "bttsProb": 0.605,
+          "homeLambda": 1.4,
+          "awayLambda": 1.63
+        },
+        {
+          "type": "Over 2.5",
+          "prediction": "Oui",
+          "confidence": 58,
+          "over25Prob": 0.5824,
+          "homeLambda": 1.4,
+          "awayLambda": 1.63
+        }
+      ],
+      "bttsProb": 0.605,
+      "over25Prob": 0.5824,
+      "homeLambda": 1.4,
+      "awayLambda": 1.63,
+      "ai_key_fact": "St Mirren totalise 2 buts marqués pour 14 encaissés sur ses cinq derniers matchs.",
+      "ai_analysis": "La confrontation oppose deux formations en difficulté en bas de classement de Scottish Premiership, St Mirren occupant la huitième place et Hibernian la douzième. Le modèle assigne un xG de 1.4 pour St Mirren et de 1.63 pour Hibernian, avec un taux de BTTS observé de 0.4 pour les locaux et de 0.6 pour les visiteurs. Les probabilités calculées atteignent 60.5% pour le BTTS et 58.2% pour l'Over 2.5, sous une fiabilité de modèle de 82.72%. Ces métriques suggèrent des failles défensives prononcées des deux côtés malgré leurs récentes contre-performances.",
+      "ai_form_summary": "St Mirren traverse une période délicate avec 5 défaites consécutives (2 buts inscrits, 14 concédés). Hibernian enregistre un bilan similaire sans victoire avec 4 défaites et 1 nul (3 buts marqués, 7 encaissés).",
+      "ai_analysis_en": "This fixture pits two struggling teams at the bottom of the Scottish Premiership against each other, with St Mirren in eighth place and Hibernian in twelfth. The model assigns an xG of 1.4 for St Mirren and 1.63 for Hibernian, with an observed BTTS rate of 0.4 for the hosts and 0.6 for the visitors. The calculated probabilities reach 60.5% for BTTS and 58.2% for Over 2.5, under a model reliability of 82.72%. These metrics suggest pronounced defensive vulnerabilities on both sides despite their recent underperformances.",
+      "ai_form_summary_en": "St Mirren is going through a difficult spell with 5 consecutive defeats (2 goals scored, 2 conceded). Hibernian records a similar winless run with 4 defeats and 1 draw (3 goals scored, 7 conceded).",
+      "ai_source": "gemini-v2",
+      "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
+      "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
+      "ai_odds_insight": "Cotes marché non disponibles — pronostic basé sur le modèle statistique seul.",
+      "ai_odds_insight_en": "Market odds unavailable — prediction based on the statistical model only."
+    },
+    {
+      "id": "stjohnst-vs-motherwe-2026-10-28",
+      "match": "St Johnstone vs Motherwell",
+      "home": "St Johnstone",
+      "away": "Motherwell",
+      "league": "Scottish Premiership",
+      "date": "2026-10-28",
+      "type": "BTTS",
+      "prediction": "Oui",
+      "proba": 0.5926,
+      "bttsProbDisplay": "59.26%",
+      "over25ProbDisplay": "58.24%",
+      "confidence": 59,
+      "time": "19:45",
+      "matchSemantic": "stjohnst-vs-motherwe-2026-10-28",
+      "source": "poisson-v92-real-data",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/267.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/266.png",
+      "tier": "GOLD",
+      "reliabilityScore": 82.17,
+      "dataQuality": "HIGH",
+      "dataSource": "ESPN_TEAM_SCHEDULE",
+      "matchCountHome": 8,
+      "matchCountAway": 8,
+      "h2hAvailable": false,
+      "xgHome": 1.77,
+      "xgAway": 1.25,
+      "xgTotal": 3.02,
+      "formBTTS": 50,
+      "analysis": "St Johnstone : forme N-V-N-D-V (2V 2N 1D, 5 buts marqués / 4 encaissés sur 5) · Motherwell : forme D-D-D-D-D (0V 0N 5D, 3 buts marqués / 12 encaissés sur 5). Classement : St Johnstone 5e (12 pts), Motherwell 10e (8 pts). Modèle Poisson : xG cumulé 3.02, BTTS 59.3%, Over 2.5 58.2%. Fiabilité 82.17%.",
+      "analysisData": {
+        "bttsProb": 0.5926,
+        "over25Prob": 0.5824,
+        "homeLambda": 1.77,
+        "awayLambda": 1.25,
+        "xgTotal": 3.02
+      },
+      "estimatedCote": 1.69,
+      "estimatedCoteOver": 1.72,
+      "odds": null,
+      "oddsSource": "ESTIMATION_POISSON",
+      "estimatedCoteBTTS": 1.69,
+      "formHome": {
+        "last5String": "N-V-N-D-V",
+        "wins": 2,
+        "draws": 2,
+        "losses": 1,
+        "goalsFor": 5,
+        "goalsAgainst": 4,
+        "bttsRate": 0.6,
+        "over25Rate": 0.2,
+        "cleanSheets": 1,
+        "failedToScore": 1,
+        "count": 5
+      },
+      "formAway": {
+        "last5String": "D-D-D-D-D",
+        "wins": 0,
+        "draws": 0,
+        "losses": 5,
+        "goalsFor": 3,
+        "goalsAgainst": 12,
+        "bttsRate": 0.4,
+        "over25Rate": 0.6,
+        "cleanSheets": 0,
+        "failedToScore": 3,
+        "count": 5
+      },
+      "last5Home": [
+        {
+          "date": "2026-10-17",
+          "opponent": "Dundee United",
+          "venue": "H",
+          "score": "1-1",
+          "result": "D"
+        },
+        {
+          "date": "2026-10-11",
+          "opponent": "Aberdeen",
+          "venue": "A",
+          "score": "1-0",
+          "result": "W"
+        },
+        {
+          "date": "2026-09-19",
+          "opponent": "Falkirk",
+          "venue": "H",
+          "score": "1-1",
+          "result": "D"
+        },
+        {
+          "date": "2026-09-09",
+          "opponent": "Celtic",
+          "venue": "H",
+          "score": "0-1",
+          "result": "L"
+        },
+        {
+          "date": "2026-09-06",
+          "opponent": "Hibernian",
+          "venue": "H",
+          "score": "2-1",
+          "result": "W"
+        }
+      ],
+      "last5Away": [
+        {
+          "date": "2026-10-17",
+          "opponent": "Kilmarnock",
+          "venue": "A",
+          "score": "2-3",
+          "result": "L"
+        },
+        {
+          "date": "2026-10-11",
+          "opponent": "Celtic",
+          "venue": "H",
+          "score": "0-2",
+          "result": "L"
+        },
+        {
+          "date": "2026-09-19",
+          "opponent": "Dundee",
+          "venue": "A",
+          "score": "1-2",
+          "result": "L"
+        },
+        {
+          "date": "2026-09-15",
+          "opponent": "Aberdeen",
+          "venue": "H",
+          "score": "0-4",
+          "result": "L"
+        },
+        {
+          "date": "2026-09-05",
+          "opponent": "Rangers",
+          "venue": "A",
+          "score": "0-1",
+          "result": "L"
+        }
+      ],
+      "standingsHome": {
+        "rank": 5,
+        "points": 12,
+        "played": 9,
+        "gf": 11,
+        "ga": 11
+      },
+      "standingsAway": {
+        "rank": 10,
+        "points": 8,
+        "played": 9,
+        "gf": 11,
+        "ga": 16
+      },
+      "predictions": [
+        {
+          "type": "BTTS",
+          "prediction": "Oui",
+          "confidence": 59,
+          "bttsProb": 0.5926,
+          "homeLambda": 1.77,
+          "awayLambda": 1.25
+        },
+        {
+          "type": "Over 2.5",
+          "prediction": "Oui",
+          "confidence": 58,
+          "over25Prob": 0.5824,
+          "homeLambda": 1.77,
+          "awayLambda": 1.25
+        }
+      ],
+      "bttsProb": 0.5926,
+      "over25Prob": 0.5824,
+      "homeLambda": 1.77,
+      "awayLambda": 1.25,
+      "ai_key_fact": "St Johnstone affiche un xG de 1.77 contre 1.25 pour Motherwell.",
+      "ai_analysis": "St Johnstone, positionné à la cinquième place du classement, reçoit Motherwell, dixième, avec un xG modélisé à 1.77 contre 1.25 pour les visiteurs. Les récents taux de BTTS s'élèvent à 0.6 pour St Johnstone et 0.4 pour Motherwell, qui ne compte aucun clean sheet sur ses cinq dernières sorties. Le modèle Poisson évalue le BTTS à 59.3% et l'Over 2.5 à 58.2%, avec un indice de fiabilité de 82.17%. Les données traduisent une dynamique comptable favorable à l'équipe hôte face à une défense adverse en difficulté.",
+      "ai_form_summary": "St Johnstone totalise 2 victoires, 2 nuls et 1 défaite lors de ses cinq derniers matchs (5 buts marqués, 4 encaissés). Motherwell traverse une série de 5 défaites consécutives (3 buts marqués, 12 encaissés).",
+      "ai_key_fact_en": "St Johnstone records an xG of 1.77 compared to 1.25 for Motherwell.",
+      "ai_analysis_en": "Fifth-placed St Johnstone hosts tenth-placed Motherwell, with a modeled xG of 1.77 versus 1.25 for the visitors. Recent BTTS rates stand at 0.6 for St Johnstone and 0.4 for Motherwell, who have kept no clean sheets in their last five outings. The Poisson model evaluates BTTS at 59.3% and Over 2.5 at 58.2%, with a reliability index of 82.17%. The data reflects a positive accounting momentum for the home team against a struggling opposing defense.",
+      "ai_form_summary_en": "St Johnstone totals 2 wins, 2 draws and 1 defeat in their last five matches (5 goals scored, 4 conceded). Motherwell is going through a run of 5 consecutive defeats (3 goals scored, 12 conceded).",
+      "ai_source": "gemini-v2",
+      "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
+      "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
+      "ai_odds_insight": "Cotes marché non disponibles — pronostic basé sur le modèle statistique seul.",
+      "ai_odds_insight_en": "Market odds unavailable — prediction based on the statistical model only."
+    },
+    {
+      "id": "parma-vs-udinese-2026-10-28",
+      "match": "Parma vs Udinese",
+      "home": "Parma",
+      "away": "Udinese",
+      "league": "Serie A",
+      "date": "2026-10-28",
+      "type": "BTTS",
+      "prediction": "Oui",
+      "proba": 0.7403,
+      "bttsProbDisplay": "74.03%",
+      "over25ProbDisplay": "75.32%",
+      "confidence": 74,
+      "time": "17:30",
+      "matchSemantic": "parma-vs-udinese-2026-10-28",
+      "source": "poisson-v92-real-data",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/115.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/118.png",
+      "tier": "GOLD",
+      "reliabilityScore": 82.14,
+      "dataQuality": "MEDIUM",
+      "dataSource": "ESPN_TEAM_SCHEDULE",
+      "matchCountHome": 7,
+      "matchCountAway": 7,
+      "h2hAvailable": false,
+      "xgHome": 2.02,
+      "xgAway": 1.92,
+      "xgTotal": 3.94,
+      "formBTTS": 60,
+      "analysis": "Parma : forme D-D-V-D-N (1V 1N 3D, 4 buts marqués / 10 encaissés sur 5) · Udinese : forme D-D-D-D-D (0V 0N 5D, 5 buts marqués / 13 encaissés sur 5). Classement : Parma 19e (4 pts), Udinese 16e (4 pts). Modèle Poisson : xG cumulé 3.94, BTTS 74.0%, Over 2.5 75.3%. Cotes DraftKings — 1: 2.85 / N: 3.1 / 2: 2.35 · Over 2.5: 2.15. Fiabilité 82.14%.",
+      "analysisData": {
+        "bttsProb": 0.7403,
+        "over25Prob": 0.7532,
+        "homeLambda": 2.02,
+        "awayLambda": 1.92,
+        "xgTotal": 3.94
+      },
+      "estimatedCote": 1.35,
+      "estimatedCoteOver": 1.33,
+      "odds": {
+        "provider": "DraftKings",
+        "home": 2.85,
+        "draw": 3.1,
+        "away": 2.35,
+        "over25": 2.15,
+        "under25": 1.67
+      },
+      "oddsSource": "DraftKings",
+      "estimatedCoteBTTS": 1.35,
+      "formHome": {
+        "last5String": "D-D-V-D-N",
+        "wins": 1,
+        "draws": 1,
+        "losses": 3,
+        "goalsFor": 4,
+        "goalsAgainst": 10,
+        "bttsRate": 0.6,
+        "over25Rate": 0.8,
+        "cleanSheets": 0,
+        "failedToScore": 2,
+        "count": 5
+      },
+      "formAway": {
+        "last5String": "D-D-D-D-D",
+        "wins": 0,
+        "draws": 0,
+        "losses": 5,
+        "goalsFor": 5,
+        "goalsAgainst": 13,
+        "bttsRate": 0.6,
+        "over25Rate": 0.8,
+        "cleanSheets": 0,
+        "failedToScore": 2,
+        "count": 5
+      },
+      "last5Home": [
+        {
+          "date": "2026-10-19",
+          "opponent": "Torino",
+          "venue": "H",
+          "score": "0-3",
+          "result": "L"
+        },
+        {
+          "date": "2026-10-10",
+          "opponent": "Internazionale",
+          "venue": "A",
+          "score": "0-3",
+          "result": "L"
+        },
+        {
+          "date": "2026-09-20",
+          "opponent": "Genoa",
+          "venue": "H",
+          "score": "2-1",
+          "result": "W"
+        },
+        {
+          "date": "2026-09-14",
+          "opponent": "Como",
+          "venue": "A",
+          "score": "1-2",
+          "result": "L"
+        },
+        {
+          "date": "2026-09-06",
+          "opponent": "Monza",
+          "venue": "H",
+          "score": "1-1",
+          "result": "D"
+        }
+      ],
+      "last5Away": [
+        {
+          "date": "2026-10-18",
+          "opponent": "Lecce",
+          "venue": "H",
+          "score": "0-3",
+          "result": "L"
+        },
+        {
+          "date": "2026-10-12",
+          "opponent": "Torino",
+          "venue": "A",
+          "score": "1-2",
+          "result": "L"
+        },
+        {
+          "date": "2026-09-19",
+          "opponent": "Cagliari",
+          "venue": "H",
+          "score": "0-1",
+          "result": "L"
+        },
+        {
+          "date": "2026-09-14",
+          "opponent": "Internazionale",
+          "venue": "A",
+          "score": "3-5",
+          "result": "L"
+        },
+        {
+          "date": "2026-09-07",
+          "opponent": "Lazio",
+          "venue": "H",
+          "score": "1-2",
+          "result": "L"
+        }
+      ],
+      "standingsHome": {
+        "rank": 19,
+        "points": 4,
+        "played": 7,
+        "gf": 4,
+        "ga": 13
+      },
+      "standingsAway": {
+        "rank": 16,
+        "points": 4,
+        "played": 7,
+        "gf": 9,
+        "ga": 16
+      },
+      "predictions": [
+        {
+          "type": "BTTS",
+          "prediction": "Oui",
+          "confidence": 74,
+          "bttsProb": 0.7403,
+          "homeLambda": 2.02,
+          "awayLambda": 1.92
+        },
+        {
+          "type": "Over 2.5",
+          "prediction": "Oui",
+          "confidence": 75,
+          "over25Prob": 0.7532,
+          "homeLambda": 2.02,
+          "awayLambda": 1.92
+        }
+      ],
+      "bttsProb": 0.7403,
+      "over25Prob": 0.7532,
+      "homeLambda": 2.02,
+      "awayLambda": 1.92,
+      "ai_key_fact": "Parma et Udinese affichent respectivement des xG de 2.02 et 1.92.",
+      "ai_analysis": "Cette rencontre de Serie A met aux prises Parma, dix-neuvième, et Udinese, seizième, toutes deux à égalité de 4 points après 7 matchs joués. Le modèle Poisson anticipe une rencontre particulièrement offensive avec un xG de 2.02 pour Parma et de 1.92 pour Udinese. Les probabilités du modèle atteignent 74.0% pour le BTTS et 75.3% pour l'Over 2.5, portées par une fiabilité de 82.14%. Les cotes bookmakers réelles proposées par DraftKings fixent la victoire à domicile à 2.85, le nul à 3.1 et la victoire extérieure à 2.35, confirmant un profil statistique ouvert.",
+      "ai_form_summary": "Parma enregistre 1 victoire, 1 nul et 3 défaites sur ses cinq derniers matchs (4 buts marqués, 10 encaissés). Udinese traverse une série de 5 défaites consécutives (5 buts marqués, 13 encaissés).",
+      "ai_key_fact_en": "Parma and Udinese record xGs of 2.02 and 1.92 respectively.",
+      "ai_analysis_en": "This Serie A fixture brings together nineteenth-placed Parma and sixteenth-placed Udinese, both tied on 4 points after 7 matches played. The Poisson model anticipates a particularly offensive encounter with an xG of 2.02 for Parma and 1.92 for Udinese. Model probabilities reach 74.0% for BTTS and 75.3% for Over 2.5, driven by a reliability of 82.14%. Real bookmaker odds provided by DraftKings set the home win at 2.85, the draw at 3.1 and the away win at 2.35, confirming an open statistical profile.",
+      "ai_form_summary_en": "Parma records 1 win, 1 draw and 3 defeats in their last five matches (4 goals scored, 10 conceded). Udinese is going through a run of 5 consecutive defeats (5 goals scored, 13 conceded).",
+      "ai_source": "gemini-v2",
+      "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
+      "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
+      "ai_odds_insight": "Le marché (DraftKings) cote 1: 2.85, nul: 3.1, 2: 2.35, Over 2.5: 2.15.",
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.85, draw: 3.1, 2: 2.35, Over 2.5: 2.15."
+    },
+    {
+      "id": "heartofm-vs-rangers-2026-10-28",
+      "match": "Heart of Midlothian vs Rangers",
+      "home": "Heart of Midlothian",
+      "away": "Rangers",
+      "league": "Scottish Premiership",
+      "date": "2026-10-28",
+      "type": "BTTS",
+      "prediction": "Oui",
+      "proba": 0.5585,
+      "bttsProbDisplay": "55.85%",
+      "over25ProbDisplay": "60.96%",
+      "confidence": 56,
+      "time": "20:00",
+      "matchSemantic": "heartofm-vs-rangers-2026-10-28",
+      "source": "poisson-v92-real-data",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/262.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/257.png",
+      "tier": "GOLD",
+      "reliabilityScore": 80.68,
+      "dataQuality": "HIGH",
+      "dataSource": "ESPN_TEAM_SCHEDULE",
+      "matchCountHome": 8,
+      "matchCountAway": 8,
+      "h2hAvailable": false,
+      "xgHome": 2.15,
+      "xgAway": 1,
+      "xgTotal": 3.15,
+      "formBTTS": 60,
+      "analysis": "Heart of Midlothian : forme D-V-N-D-V (2V 1N 2D, 10 buts marqués / 11 encaissés sur 5) · Rangers : forme N-V-V-V-V (4V 1N 0D, 8 buts marqués / 3 encaissés sur 5). Classement : Heart of Midlothian 3e (16 pts), Rangers 2e (20 pts). Modèle Poisson : xG cumulé 3.15, BTTS 55.8%, Over 2.5 61.0%. Fiabilité 80.68%.",
+      "analysisData": {
+        "bttsProb": 0.5585,
+        "over25Prob": 0.6096,
+        "homeLambda": 2.15,
+        "awayLambda": 1,
+        "xgTotal": 3.15
+      },
+      "estimatedCote": 1.79,
+      "estimatedCoteOver": 1.64,
+      "odds": null,
+      "oddsSource": "ESTIMATION_POISSON",
+      "estimatedCoteBTTS": 1.79,
+      "formHome": {
+        "last5String": "D-V-N-D-V",
+        "wins": 2,
+        "draws": 1,
+        "losses": 2,
+        "goalsFor": 10,
+        "goalsAgainst": 11,
+        "bttsRate": 0.8,
+        "over25Rate": 0.8,
+        "cleanSheets": 1,
+        "failedToScore": 0,
+        "count": 5
+      },
+      "formAway": {
+        "last5String": "N-V-V-V-V",
+        "wins": 4,
+        "draws": 1,
+        "losses": 0,
+        "goalsFor": 8,
+        "goalsAgainst": 3,
+        "bttsRate": 0.4,
+        "over25Rate": 0.4,
+        "cleanSheets": 3,
+        "failedToScore": 0,
+        "count": 5
+      },
+      "last5Home": [
+        {
+          "date": "2026-10-18",
+          "opponent": "Celtic",
+          "venue": "A",
+          "score": "1-7",
+          "result": "L"
+        },
+        {
+          "date": "2026-10-10",
+          "opponent": "St Mirren",
+          "venue": "H",
+          "score": "5-0",
+          "result": "W"
+        },
+        {
+          "date": "2026-09-19",
+          "opponent": "Kilmarnock",
+          "venue": "A",
+          "score": "1-1",
+          "result": "D"
+        },
+        {
+          "date": "2026-09-15",
+          "opponent": "Falkirk",
+          "venue": "A",
+          "score": "1-2",
+          "result": "L"
+        },
+        {
+          "date": "2026-09-06",
+          "opponent": "Dundee",
+          "venue": "H",
+          "score": "2-1",
+          "result": "W"
+        }
+      ],
+      "last5Away": [
+        {
+          "date": "2026-10-17",
+          "opponent": "Dundee",
+          "venue": "A",
+          "score": "2-2",
+          "result": "D"
+        },
+        {
+          "date": "2026-10-10",
+          "opponent": "Kilmarnock",
+          "venue": "H",
+          "score": "3-1",
+          "result": "W"
+        },
+        {
+          "date": "2026-09-20",
+          "opponent": "Celtic",
+          "venue": "A",
+          "score": "1-0",
+          "result": "W"
+        },
+        {
+          "date": "2026-09-09",
+          "opponent": "St Mirren",
+          "venue": "H",
+          "score": "1-0",
+          "result": "W"
+        },
+        {
+          "date": "2026-09-05",
+          "opponent": "Motherwell",
+          "venue": "H",
+          "score": "1-0",
+          "result": "W"
+        }
+      ],
+      "standingsHome": {
+        "rank": 3,
+        "points": 16,
+        "played": 9,
+        "gf": 20,
+        "ga": 15
+      },
+      "standingsAway": {
+        "rank": 2,
+        "points": 20,
+        "played": 9,
+        "gf": 13,
+        "ga": 7
+      },
+      "predictions": [
+        {
+          "type": "BTTS",
+          "prediction": "Oui",
+          "confidence": 56,
+          "bttsProb": 0.5585,
+          "homeLambda": 2.15,
+          "awayLambda": 1
+        },
+        {
+          "type": "Over 2.5",
+          "prediction": "Oui",
+          "confidence": 61,
+          "over25Prob": 0.6096,
+          "homeLambda": 2.15,
+          "awayLambda": 1
+        }
+      ],
+      "bttsProb": 0.5585,
+      "over25Prob": 0.6096,
+      "homeLambda": 2.15,
+      "awayLambda": 1,
+      "ai_key_fact": "Heart of Midlothian affiche un taux BTTS de 0.8 sur ses 5 derniers matchs.",
+      "ai_analysis": "Le modèle Poisson BTTSPredict attribue des xG de 2.15 pour Heart of Midlothian et 1 pour les Rangers, avec une probabilité BTTS de 55.9% et un Over 2.5 à 61.0%. La fiabilité du modèle s'élève à 80.68%. Au classement de la Scottish Premiership, Heart of Midlothian est 3e avec 16 points en 9 matchs, tandis que les Rangers occupent la 2e place avec 20 points. Aucune donnée de cote bookmaker n'est disponible pour ce match.",
+      "ai_form_summary": "Heart of Midlothian présente un bilan mitigé de 2 victoires, 1 nul et 2 défaites sur ses 5 derniers matchs avec 10 buts marqués et 11 encaissés. De son côté, Rangers est solide avec 4 victoires et 1 nul, affichant 8 buts marqués et 3 encaissés.",
+      "ai_key_fact_en": "Heart of Midlothian records a BTTS rate of 0.8 over their last 5 matches.",
+      "ai_analysis_en": "The BTTSPredict Poisson model assigns xG values of 2.15 for Heart of Midlothian and 1 for Rangers, with a BTTS probability of 55.9% and an Over 2.5 probability of 61.0%. Model reliability stands at 80.68%. In the Scottish Premiership standings, Heart of Midlothian is 3rd with 16 points in 9 matches, while Rangers occupy 2nd place with 20 points. No bookmaker odds data is available for this fixture.",
+      "ai_form_summary_en": "Heart of Midlothian shows a mixed record of 2 wins, 1 draw, and 2 losses in their last 5 matches with 10 goals scored and 11 conceded. Meanwhile, Rangers are solid with 4 wins and 1 draw, scoring 8 goals and conceding 3.",
+      "ai_source": "gemini-v2",
+      "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
+      "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
+      "ai_odds_insight": "Cotes marché non disponibles — pronostic basé sur le modèle statistique seul.",
+      "ai_odds_insight_en": "Market odds unavailable — prediction based on the statistical model only."
+    },
+    {
+      "id": "monza-vs-napoli-2026-10-28",
+      "match": "Monza vs Napoli",
+      "home": "Monza",
+      "away": "Napoli",
+      "league": "Serie A",
+      "date": "2026-10-28",
+      "type": "BTTS",
+      "prediction": "Oui",
+      "proba": 0.6371,
+      "bttsProbDisplay": "63.71%",
+      "over25ProbDisplay": "66.03%",
+      "confidence": 64,
+      "time": "19:45",
+      "matchSemantic": "monza-vs-napoli-2026-10-28",
+      "source": "poisson-v92-real-data",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/4007.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/114.png",
+      "tier": "GOLD",
+      "reliabilityScore": 77.62,
+      "dataQuality": "MEDIUM",
+      "dataSource": "ESPN_TEAM_SCHEDULE",
+      "matchCountHome": 7,
+      "matchCountAway": 7,
+      "h2hAvailable": false,
+      "xgHome": 2.11,
+      "xgAway": 1.29,
+      "xgTotal": 3.4,
+      "formBTTS": 60,
+      "analysis": "Monza : forme V-D-V-D-N (2V 1N 2D, 10 buts marqués / 8 encaissés sur 5) · Napoli : forme D-V-N-V-D (2V 1N 2D, 7 buts marqués / 5 encaissés sur 5). Classement : Monza 14e (7 pts), Napoli 9e (10 pts). Modèle Poisson : xG cumulé 3.4, BTTS 63.7%, Over 2.5 66.0%. Cotes DraftKings — 1: 3.65 / N: 3.65 / 2: 1.83 · Over 2.5: 1.69. Fiabilité 77.62%.",
+      "analysisData": {
+        "bttsProb": 0.6371,
+        "over25Prob": 0.6603,
+        "homeLambda": 2.11,
+        "awayLambda": 1.29,
+        "xgTotal": 3.4
+      },
+      "estimatedCote": 1.57,
+      "estimatedCoteOver": 1.51,
+      "odds": {
+        "provider": "DraftKings",
+        "home": 3.65,
+        "draw": 3.65,
+        "away": 1.83,
+        "over25": 1.69,
+        "under25": 2.1
+      },
+      "oddsSource": "DraftKings",
+      "estimatedCoteBTTS": 1.57,
+      "formHome": {
+        "last5String": "V-D-V-D-N",
+        "wins": 2,
+        "draws": 1,
+        "losses": 2,
+        "goalsFor": 10,
+        "goalsAgainst": 8,
+        "bttsRate": 0.8,
+        "over25Rate": 0.8,
+        "cleanSheets": 1,
+        "failedToScore": 0,
+        "count": 5
+      },
+      "formAway": {
+        "last5String": "D-V-N-V-D",
+        "wins": 2,
+        "draws": 1,
+        "losses": 2,
+        "goalsFor": 7,
+        "goalsAgainst": 5,
+        "bttsRate": 0.4,
+        "over25Rate": 0.4,
+        "cleanSheets": 2,
+        "failedToScore": 1,
+        "count": 5
+      },
+      "last5Home": [
+        {
+          "date": "2026-10-19",
+          "opponent": "Cagliari",
+          "venue": "H",
+          "score": "4-0",
+          "result": "W"
+        },
+        {
+          "date": "2026-10-11",
+          "opponent": "Lazio",
+          "venue": "A",
+          "score": "1-3",
+          "result": "L"
+        },
+        {
+          "date": "2026-09-18",
+          "opponent": "Sassuolo",
+          "venue": "H",
+          "score": "2-1",
+          "result": "W"
+        },
+        {
+          "date": "2026-09-13",
+          "opponent": "Lecce",
+          "venue": "A",
+          "score": "2-3",
+          "result": "L"
+        },
+        {
+          "date": "2026-09-06",
+          "opponent": "Parma",
+          "venue": "A",
+          "score": "1-1",
+          "result": "D"
+        }
+      ],
+      "last5Away": [
+        {
+          "date": "2026-10-17",
+          "opponent": "Venezia",
+          "venue": "A",
+          "score": "0-1",
+          "result": "L"
+        },
+        {
+          "date": "2026-10-10",
+          "opponent": "Frosinone",
+          "venue": "H",
+          "score": "3-0",
+          "result": "W"
+        },
+        {
+          "date": "2026-09-20",
+          "opponent": "Fiorentina",
+          "venue": "A",
+          "score": "1-1",
+          "result": "D"
+        },
+        {
+          "date": "2026-09-13",
+          "opponent": "Bologna",
+          "venue": "H",
+          "score": "1-0",
+          "result": "W"
+        },
+        {
+          "date": "2026-09-05",
+          "opponent": "Internazionale",
+          "venue": "A",
+          "score": "2-3",
+          "result": "L"
+        }
+      ],
+      "standingsHome": {
+        "rank": 14,
+        "points": 7,
+        "played": 7,
+        "gf": 13,
+        "ga": 15
+      },
+      "standingsAway": {
+        "rank": 9,
+        "points": 10,
+        "played": 7,
+        "gf": 10,
+        "ga": 7
+      },
+      "predictions": [
+        {
+          "type": "BTTS",
+          "prediction": "Oui",
+          "confidence": 64,
+          "bttsProb": 0.6371,
+          "homeLambda": 2.11,
+          "awayLambda": 1.29
+        },
+        {
+          "type": "Over 2.5",
+          "prediction": "Oui",
+          "confidence": 66,
+          "over25Prob": 0.6603,
+          "homeLambda": 2.11,
+          "awayLambda": 1.29
+        }
+      ],
+      "bttsProb": 0.6371,
+      "over25Prob": 0.6603,
+      "homeLambda": 2.11,
+      "awayLambda": 1.29,
+      "ai_key_fact": "Monza totalise 7 points en 7 matchs et pointe à la 14e place.",
+      "ai_analysis": "Le modèle Poisson BTTSPredict indique des xG de 2.11 pour Monza et 1.29 pour Napoli, avec une probabilité BTTS de 63.7% et un Over 2.5 à 66.0%. La fiabilité du modèle est établie à 77.62%. Au classement de Serie A, Monza est 14e avec 7 points, alors que Napoli se positionne 9e avec 10 points. Les cotes DraftKings évaluent la victoire à domicile à 3.65, le nul à 3.65 et la victoire extérieure à 1.83, avec l'Over 2.5 à 1.69.",
+      "ai_form_summary": "Monza enregistre 2 victoires, 1 nul et 2 défaites sur ses 5 derniers matchs avec 10 buts marqués et 8 encaissés. Napoli affiche également un bilan de 2 victoires, 1 nul et 2 défaites, inscrivant 7 buts pour 5 encaissés.",
+      "ai_analysis_en": "Monza has a total of 7 points in 7 matches and sits in 14th place.",
+      "ai_form_summary_en": "Monza records 2 wins, 1 draw, and 2 losses in their last 5 matches with 10 goals scored and 8 conceded. Napoli also shows a record of 2 wins, 1 draw, and 2 losses, scoring 7 goals and conceding 5.",
+      "ai_source": "gemini-v2",
+      "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
+      "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
+      "ai_odds_insight": "Le marché (DraftKings) cote 1: 3.65, nul: 3.65, 2: 1.83, Over 2.5: 1.69.",
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 3.65, draw: 3.65, 2: 1.83, Over 2.5: 1.69."
     }
   ]
 }
