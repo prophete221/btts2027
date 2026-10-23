@@ -1,5 +1,5 @@
 // ═══════════════════════════════════════════════════════════════════════════════
-// BTTSPredict — update-win-history V8.3 (déduplication + date réelle du match)
+// BTTSPredict — update-win-history V8.4 (déduplication + exclusions historiques)
 // ═══════════════════════════════════════════════════════════════════════════════
 // Calcule 2 buckets :
 //  - newStats     : pronos publiés depuis tracking-period.startDate (PUBLIC)
@@ -45,6 +45,7 @@ import { pathToFileURL } from 'url';
 
 const DIR = './public/predictions-archive';
 const OUT = './public/win-history.json';
+const EXCLUSIONS_FILE = './public/history-exclusions.json';
 const TRACKING_PERIOD_FILE = './public/tracking-period.json';
 // (2026-09-28) Suppression de AVG_ODDS = 1.90 : cote fictive — aucun ROI/yield/profit
 // ne doit être calculé tant que le site ne collecte pas de cotes réelles.
@@ -265,6 +266,34 @@ function dedupeKey(p, fileDate) {
   return `${date}|${match}|${market}`;
 }
 
+/** Charge public/history-exclusions.json (matchs retirés de l'historique public). */
+function loadExclusions() {
+  const set = new Set();
+  try {
+    if (!fs.existsSync(EXCLUSIONS_FILE)) return set;
+    const doc = JSON.parse(fs.readFileSync(EXCLUSIONS_FILE, 'utf8'));
+    const entries = Array.isArray(doc) ? doc : (doc.entries || []);
+    for (const e of entries) {
+      if (typeof e === 'string' && e.includes('|')) set.add(e);
+      else if (e && typeof e.key === 'string') set.add(e.key);
+      else if (e && e.date && e.match) {
+        const market = (e.market || 'btts').toLowerCase().includes('over') ? 'over25' : 'btts';
+        set.add(`${e.date}|${e.match}|${market}`);
+      }
+    }
+    console.log(`[update-win-history] ${set.size} exclusion(s) historique chargée(s)`);
+  } catch (err) {
+    console.warn(`[update-win-history] exclusions non chargées: ${err.message}`);
+  }
+  return set;
+}
+
+function isExcluded(p, fileDate, exclusions) {
+  if (!exclusions || exclusions.size === 0) return false;
+  return exclusions.has(dedupeKey(p, fileDate));
+}
+
+
 /**
  * Fusionne, dans l'enregistrement représentatif (première publication),
  * le statut vérifié d'une copie ultérieure du même match.
@@ -300,7 +329,7 @@ function emptyBucket() {
  * Compte un match DÉDUPLIQUÉ dans son bucket.
  * Un match = une entrée, quel que soit le nombre de copies archivées.
  */
-function countRecord(bucket, rec, nowMs) {
+function countRecord(bucket, rec, nowMs, exclusions = new Set()) {
   const p = rec.p;
   const tier = getTier(p);
   const type = getType(p);
@@ -308,8 +337,15 @@ function countRecord(bucket, rec, nowMs) {
   bucket.archivedTotal++;
 
   const status = typeof p.status === 'string' ? p.status.trim().toUpperCase() : '';
-  const isWon = status === 'WON' || (!status && p.isWon === true);
-  const isLost = status === 'LOST' || (!status && p.isWon === false);
+  let isWon = status === 'WON' || (!status && p.isWon === true);
+  let isLost = status === 'LOST' || (!status && p.isWon === false);
+
+  // V8.4 : exclusions historiques (erreurs techniques) — jamais en WON/LOST publics
+  if ((isWon || isLost) && isExcluded(p, rec.fileDate, exclusions)) {
+    bucket.unverifiable++;
+    return;
+  }
+
   const isVerified = isWon || isLost;
 
   const matchDate = realMatchDate(p, rec.fileDate);
@@ -402,6 +438,7 @@ function run({ write, dir = DIR, now = Date.now() }) {
     console.warn(`[update-win-history] ${dir} introuvable`);
     return;
   }
+  const exclusions = loadExclusions();
   const files = fs.readdirSync(dir).filter(f => f.endsWith('.json')).sort();
   const allFiles = files.slice(-90);
 
@@ -457,8 +494,8 @@ function run({ write, dir = DIR, now = Date.now() }) {
   // ── Comptage (un match = une entrée) ────────────────────────────────────────
   const newBucket = emptyBucket();
   const legacyBucket = emptyBucket();
-  for (const rec of newRecords) countRecord(newBucket, rec, now);
-  for (const rec of legacyRecords) countRecord(legacyBucket, rec, now);
+  for (const rec of newRecords) countRecord(newBucket, rec, now, exclusions);
+  for (const rec of legacyRecords) countRecord(legacyBucket, rec, now, exclusions);
 
   const newStats = buildStats(newBucket, newPeriodFrom, newPeriodTo, newDaysCount);
   const legacyStats = buildStats(legacyBucket, legacyPeriodFrom, legacyPeriodTo, legacyDaysCount);
