@@ -836,7 +836,9 @@
         "hasRealData": true
       },
       "tier": "STANDARD",
-      "status": "PENDING"
+      "status": "LOST",
+      "finalScore": "1-2",
+      "verifiedAt": "2026-10-23T05:48:13.327Z"
     },
     {
       "match": "Akron Tolyatti vs Rubin Kazan",
@@ -859,7 +861,9 @@
         "hasRealData": true
       },
       "tier": "STANDARD",
-      "status": "PENDING"
+      "status": "LOST",
+      "finalScore": "1-2",
+      "verifiedAt": "2026-10-23T05:48:13.327Z"
     },
     {
       "match": "BK Häcken vs Kalmar FF",
@@ -882,7 +886,9 @@
         "hasRealData": true
       },
       "tier": "STANDARD",
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "1-1",
+      "verifiedAt": "2026-10-23T05:48:13.327Z"
     },
     {
       "match": "BK Häcken vs Kalmar FF",
@@ -905,7 +911,9 @@
         "hasRealData": true
       },
       "tier": "STANDARD",
-      "status": "PENDING"
+      "status": "LOST",
+      "finalScore": "1-1",
+      "verifiedAt": "2026-10-23T05:48:13.327Z"
     },
     {
       "match": "Golden Arrows vs Chippa United",
@@ -928,7 +936,9 @@
         "hasRealData": true
       },
       "tier": "STANDARD",
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "0-0",
+      "verifiedAt": "2026-10-23T05:48:13.327Z"
     },
     {
       "match": "Golden Arrows vs Chippa United",
@@ -951,7 +961,9 @@
         "hasRealData": true
       },
       "tier": "STANDARD",
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "0-0",
+      "verifiedAt": "2026-10-23T05:48:13.327Z"
     },
     {
       "match": "Orlando Pirates vs Milford FC",
@@ -974,7 +986,9 @@
         "hasRealData": true
       },
       "tier": "STANDARD",
-      "status": "PENDING"
+      "status": "LOST",
+      "finalScore": "2-0",
+      "verifiedAt": "2026-10-23T05:48:13.327Z"
     },
     {
       "match": "Orlando Pirates vs Milford FC",
@@ -997,7 +1011,9 @@
         "hasRealData": true
       },
       "tier": "STANDARD",
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "2-0",
+      "verifiedAt": "2026-10-23T05:48:13.328Z"
     },
     {
       "match": "Stellenbosch vs AmaZulu",
@@ -1020,7 +1036,9 @@
         "hasRealData": true
       },
       "tier": "STANDARD",
-      "status": "PENDING"
+      "status": "LOST",
+      "finalScore": "0-1",
+      "verifiedAt": "2026-10-23T05:48:13.328Z"
     },
     {
       "match": "Stellenbosch vs AmaZulu",
@@ -1043,7 +1061,9 @@
         "hasRealData": true
       },
       "tier": "STANDARD",
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "0-1",
+      "verifiedAt": "2026-10-23T05:48:13.328Z"
     },
     {
       "match": "CSKA Moscow vs Krylia Sovetov",
@@ -1066,7 +1086,9 @@
         "hasRealData": true
       },
       "tier": "STANDARD",
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "1-1",
+      "verifiedAt": "2026-10-23T05:48:13.328Z"
     },
     {
       "match": "CSKA Moscow vs Krylia Sovetov",
@@ -1089,7 +1111,9 @@
         "hasRealData": true
       },
       "tier": "STANDARD",
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "1-1",
+      "verifiedAt": "2026-10-23T05:48:13.328Z"
     },
     {
       "match": "Falkirk vs St Mirren",
@@ -1112,7 +1136,9 @@
         "hasRealData": true
       },
       "tier": "STANDARD",
-      "status": "PENDING"
+      "status": "LOST",
+      "finalScore": "0-2",
+      "verifiedAt": "2026-10-23T05:48:13.328Z"
     },
     {
       "match": "Falkirk vs St Mirren",
@@ -1135,7 +1161,9 @@
         "hasRealData": true
       },
       "tier": "STANDARD",
-      "status": "PENDING"
+      "status": "LOST",
+      "finalScore": "0-2",
+      "verifiedAt": "2026-10-23T05:48:13.328Z"
     },
     {
       "match": "Fredrikstad vs Sandefjord",
@@ -1158,7 +1186,9 @@
         "hasRealData": true
       },
       "tier": "STANDARD",
-      "status": "PENDING"
+      "status": "LOST",
+      "finalScore": "1-0",
+      "verifiedAt": "2026-10-23T05:48:13.328Z"
     },
     {
       "match": "Fredrikstad vs Sandefjord",
@@ -1181,7 +1211,9 @@
         "hasRealData": true
       },
       "tier": "STANDARD",
-      "status": "PENDING"
+      "status": "LOST",
+      "finalScore": "1-0",
+      "verifiedAt": "2026-10-23T05:48:13.328Z"
     },
     {
       "match": "WSG Swarovski Tirol vs SK Sturm Graz",
@@ -1204,7 +1236,9 @@
         "hasRealData": true
       },
       "tier": "STANDARD",
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "1-1",
+      "verifiedAt": "2026-10-23T05:48:13.328Z"
     },
     {
       "match": "WSG Swarovski Tirol vs SK Sturm Graz",
@@ -1227,7 +1261,9 @@
         "hasRealData": true
       },
       "tier": "STANDARD",
-      "status": "PENDING"
+      "status": "LOST",
+      "finalScore": "1-1",
+      "verifiedAt": "2026-10-23T05:48:13.328Z"
     }
   ]
 }

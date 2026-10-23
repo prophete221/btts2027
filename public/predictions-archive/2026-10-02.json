@@ -136,7 +136,10 @@
       "bttsProb": 0.4276,
       "over25Prob": 0.554,
       "homeLambda": 0.65,
-      "awayLambda": 2.25
+      "awayLambda": 2.25,
+      "status": "LOST",
+      "finalScore": "3-1",
+      "verifiedAt": "2026-10-23T05:42:29.846Z"
     }
   ]
 }

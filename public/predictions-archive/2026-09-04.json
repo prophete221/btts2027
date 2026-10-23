@@ -884,7 +884,9 @@
       "over25Prob": 0.8575,
       "homeLambda": 3,
       "awayLambda": 1.8,
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "2-2",
+      "verifiedAt": "2026-10-23T05:45:18.466Z"
     },
     {
       "id": "torontof-vs-chicagof-2026-09-05",
@@ -947,7 +949,9 @@
       "over25Prob": 0.7284,
       "homeLambda": 2.15,
       "awayLambda": 1.63,
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "4-4",
+      "verifiedAt": "2026-10-23T05:45:18.467Z"
     },
     {
       "id": "fccincin-vs-dcunited-2026-09-05",
@@ -1073,7 +1077,9 @@
       "over25Prob": 0.7469,
       "homeLambda": 2.77,
       "awayLambda": 1.13,
-      "status": "PENDING"
+      "status": "LOST",
+      "finalScore": "2-0",
+      "verifiedAt": "2026-10-23T05:45:18.467Z"
     },
     {
       "id": "fcutrech-vs-goaheade-2026-09-05",
@@ -1199,7 +1205,9 @@
       "over25Prob": 0.8753,
       "homeLambda": 3,
       "awayLambda": 2,
-      "status": "PENDING"
+      "status": "LOST",
+      "finalScore": "0-4",
+      "verifiedAt": "2026-10-23T05:45:18.468Z"
     },
     {
       "id": "aberdeen-vs-kilmarno-2026-09-05",
@@ -1262,7 +1270,9 @@
       "over25Prob": 0.8426,
       "homeLambda": 2.65,
       "awayLambda": 2,
-      "status": "PENDING"
+      "status": "LOST",
+      "finalScore": "0-0",
+      "verifiedAt": "2026-10-23T05:45:18.468Z"
     },
     {
       "id": "stmirren-vs-celtic-2026-09-05",
@@ -1325,7 +1335,9 @@
       "over25Prob": 0.8426,
       "homeLambda": 1.65,
       "awayLambda": 3,
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "1-2",
+      "verifiedAt": "2026-10-23T05:45:18.468Z"
     },
     {
       "id": "royalcha-vs-unionstg-2026-09-05",
@@ -1388,7 +1400,9 @@
       "over25Prob": 0.7469,
       "homeLambda": 1.65,
       "awayLambda": 2.25,
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "2-3",
+      "verifiedAt": "2026-10-23T05:45:18.469Z"
     },
     {
       "id": "rangers-vs-motherwe-2026-09-05",
@@ -1451,7 +1465,9 @@
       "over25Prob": 0.7469,
       "homeLambda": 1.65,
       "awayLambda": 2.25,
-      "status": "PENDING"
+      "status": "LOST",
+      "finalScore": "1-0",
+      "verifiedAt": "2026-10-23T05:45:18.469Z"
     },
     {
       "id": "westhamu-vs-derbycou-2026-09-05",
@@ -1514,7 +1530,9 @@
       "over25Prob": 0.706,
       "homeLambda": 1.9,
       "awayLambda": 1.75,
-      "status": "PENDING"
+      "status": "LOST",
+      "finalScore": "3-0",
+      "verifiedAt": "2026-10-23T05:45:18.469Z"
     }
   ]
 }

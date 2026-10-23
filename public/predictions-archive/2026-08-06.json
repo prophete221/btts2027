@@ -284,7 +284,9 @@
         "hasRealData": true
       },
       "tier": "STANDARD",
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "3-4",
+      "verifiedAt": "2026-10-23T05:47:31.833Z"
     },
     {
       "match": "Yokohama F. Marinos vs Kashima Antlers",
@@ -307,7 +309,9 @@
         "hasRealData": true
       },
       "tier": "STANDARD",
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "3-4",
+      "verifiedAt": "2026-10-23T05:47:31.833Z"
     },
     {
       "match": "Gamba Osaka vs Urawa Red Diamonds",
@@ -330,7 +334,9 @@
         "hasRealData": true
       },
       "tier": "STANDARD",
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "4-3",
+      "verifiedAt": "2026-10-23T05:47:31.833Z"
     },
     {
       "match": "Gamba Osaka vs Urawa Red Diamonds",
@@ -353,7 +359,9 @@
         "hasRealData": true
       },
       "tier": "STANDARD",
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "4-3",
+      "verifiedAt": "2026-10-23T05:47:31.833Z"
     },
     {
       "match": "Sønderjyske Fodbold vs Viborg FF",
@@ -376,7 +384,9 @@
         "hasRealData": true
       },
       "tier": "STANDARD",
-      "status": "PENDING"
+      "status": "LOST",
+      "finalScore": "0-0",
+      "verifiedAt": "2026-10-23T05:47:31.833Z"
     },
     {
       "match": "Sønderjyske Fodbold vs Viborg FF",
@@ -399,7 +409,9 @@
         "hasRealData": true
       },
       "tier": "STANDARD",
-      "status": "PENDING"
+      "status": "LOST",
+      "finalScore": "0-0",
+      "verifiedAt": "2026-10-23T05:47:31.834Z"
     },
     {
       "match": "Sandefjord vs KFUM Oslo",
@@ -422,7 +434,9 @@
         "hasRealData": true
       },
       "tier": "STANDARD",
-      "status": "PENDING"
+      "status": "LOST",
+      "finalScore": "0-1",
+      "verifiedAt": "2026-10-23T05:47:31.834Z"
     },
     {
       "match": "Sandefjord vs KFUM Oslo",
@@ -445,7 +459,9 @@
         "hasRealData": true
       },
       "tier": "STANDARD",
-      "status": "PENDING"
+      "status": "LOST",
+      "finalScore": "0-1",
+      "verifiedAt": "2026-10-23T05:47:31.834Z"
     },
     {
       "match": "SC Rheindorf Altach vs WSG Swarovski Tirol",
@@ -468,7 +484,9 @@
         "hasRealData": true
       },
       "tier": "STANDARD",
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "3-1",
+      "verifiedAt": "2026-10-23T05:47:31.834Z"
     },
     {
       "match": "SC Rheindorf Altach vs WSG Swarovski Tirol",
@@ -491,7 +509,9 @@
         "hasRealData": true
       },
       "tier": "STANDARD",
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "3-1",
+      "verifiedAt": "2026-10-23T05:47:31.834Z"
     },
     {
       "match": "SC Cambuur vs Excelsior",
@@ -514,7 +534,9 @@
         "hasRealData": true
       },
       "tier": "STANDARD",
-      "status": "PENDING"
+      "status": "LOST",
+      "finalScore": "0-4",
+      "verifiedAt": "2026-10-23T05:47:31.834Z"
     },
     {
       "match": "SC Cambuur vs Excelsior",
@@ -537,7 +559,9 @@
         "hasRealData": true
       },
       "tier": "STANDARD",
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "0-4",
+      "verifiedAt": "2026-10-23T05:47:31.834Z"
     },
     {
       "match": "Sport Huancayo vs Los Chankas",
@@ -560,7 +584,9 @@
         "hasRealData": true
       },
       "tier": "STANDARD",
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "1-1",
+      "verifiedAt": "2026-10-23T05:47:31.834Z"
     },
     {
       "match": "Sport Huancayo vs Los Chankas",
@@ -583,7 +609,9 @@
         "hasRealData": true
       },
       "tier": "STANDARD",
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "1-1",
+      "verifiedAt": "2026-10-23T05:47:31.834Z"
     },
     {
       "match": "VfL Bochum vs Hertha Berlin",
@@ -606,7 +634,9 @@
         "hasRealData": true
       },
       "tier": "STANDARD",
-      "status": "PENDING"
+      "status": "LOST",
+      "finalScore": "0-1",
+      "verifiedAt": "2026-10-23T05:47:31.834Z"
     },
     {
       "match": "VfL Bochum vs Hertha Berlin",
@@ -629,7 +659,9 @@
         "hasRealData": true
       },
       "tier": "STANDARD",
-      "status": "PENDING"
+      "status": "LOST",
+      "finalScore": "0-1",
+      "verifiedAt": "2026-10-23T05:47:31.834Z"
     },
     {
       "match": "Club Brugge vs KV Kortrijk",
@@ -652,7 +684,9 @@
         "hasRealData": true
       },
       "tier": "STANDARD",
-      "status": "PENDING"
+      "status": "LOST",
+      "finalScore": "3-0",
+      "verifiedAt": "2026-10-23T05:47:31.834Z"
     },
     {
       "match": "Club Brugge vs KV Kortrijk",
@@ -675,7 +709,9 @@
         "hasRealData": true
       },
       "tier": "STANDARD",
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "3-0",
+      "verifiedAt": "2026-10-23T05:47:31.834Z"
     },
     {
       "match": "Estoril vs FC Famalicao",
@@ -698,7 +734,9 @@
         "hasRealData": true
       },
       "tier": "STANDARD",
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "1-1",
+      "verifiedAt": "2026-10-23T05:47:31.834Z"
     },
     {
       "match": "Estoril vs FC Famalicao",
@@ -721,7 +759,9 @@
         "hasRealData": true
       },
       "tier": "STANDARD",
-      "status": "PENDING"
+      "status": "LOST",
+      "finalScore": "1-1",
+      "verifiedAt": "2026-10-23T05:47:31.834Z"
     },
     {
       "match": "Comerciantes Unidos vs Cusco FC",
@@ -744,7 +784,9 @@
         "hasRealData": true
       },
       "tier": "STANDARD",
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "3-1",
+      "verifiedAt": "2026-10-23T05:47:31.835Z"
     },
     {
       "match": "Comerciantes Unidos vs Cusco FC",
@@ -767,7 +809,9 @@
         "hasRealData": true
       },
       "tier": "STANDARD",
-      "status": "PENDING"
+      "status": "LOST",
+      "finalScore": "3-1",
+      "verifiedAt": "2026-10-23T05:47:31.835Z"
     },
     {
       "match": "Rubio Ñú vs Deportivo Recoleta",
@@ -790,7 +834,9 @@
         "hasRealData": true
       },
       "tier": "STANDARD",
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "1-3",
+      "verifiedAt": "2026-10-23T05:47:31.835Z"
     },
     {
       "match": "Rubio Ñú vs Deportivo Recoleta",
@@ -813,7 +859,9 @@
         "hasRealData": true
       },
       "tier": "STANDARD",
-      "status": "PENDING"
+      "status": "LOST",
+      "finalScore": "1-3",
+      "verifiedAt": "2026-10-23T05:47:31.835Z"
     },
     {
       "match": "Cerro Largo vs Juventud",
@@ -836,7 +884,9 @@
         "hasRealData": true
       },
       "tier": "STANDARD",
-      "status": "PENDING"
+      "status": "LOST",
+      "finalScore": "1-1",
+      "verifiedAt": "2026-10-23T05:47:31.835Z"
     },
     {
       "match": "Cerro Largo vs Juventud",
@@ -859,7 +909,9 @@
         "hasRealData": true
       },
       "tier": "STANDARD",
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "1-1",
+      "verifiedAt": "2026-10-23T05:47:31.835Z"
     },
     {
       "match": "Rosario Central vs Aldosivi",
@@ -882,7 +934,9 @@
         "hasRealData": true
       },
       "tier": "STANDARD",
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "2-1",
+      "verifiedAt": "2026-10-23T05:47:31.836Z"
     },
     {
       "match": "Rosario Central vs Aldosivi",
@@ -905,7 +959,9 @@
         "hasRealData": true
       },
       "tier": "STANDARD",
-      "status": "PENDING"
+      "status": "LOST",
+      "finalScore": "2-1",
+      "verifiedAt": "2026-10-23T05:47:31.836Z"
     },
     {
       "match": "Liga de Quito vs Independiente del Valle",
@@ -928,7 +984,9 @@
         "hasRealData": true
       },
       "tier": "STANDARD",
-      "status": "PENDING"
+      "status": "LOST",
+      "finalScore": "0-2",
+      "verifiedAt": "2026-10-23T05:47:31.836Z"
     },
     {
       "match": "Liga de Quito vs Independiente del Valle",
@@ -951,7 +1009,9 @@
         "hasRealData": true
       },
       "tier": "STANDARD",
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "0-2",
+      "verifiedAt": "2026-10-23T05:47:31.836Z"
     }
   ]
 }

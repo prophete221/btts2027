@@ -1144,7 +1144,9 @@
       "over25Prob": 0.7995,
       "homeLambda": 1.65,
       "awayLambda": 2.63,
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "4-1",
+      "verifiedAt": "2026-10-23T05:41:09.888Z"
     },
     {
       "id": "fccincin-vs-columbus-2026-10-18",
@@ -1207,7 +1209,9 @@
       "over25Prob": 0.7594,
       "homeLambda": 1.98,
       "awayLambda": 2,
-      "status": "PENDING"
+      "status": "LOST",
+      "finalScore": "0-2",
+      "verifiedAt": "2026-10-23T05:41:09.888Z"
     },
     {
       "id": "sporting-vs-realsalt-2026-10-18",
@@ -1335,7 +1339,9 @@
       "over25Prob": 0.7995,
       "homeLambda": 1.52,
       "awayLambda": 2.75,
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "2-2",
+      "verifiedAt": "2026-10-23T05:41:09.888Z"
     },
     {
       "id": "portland-vs-colorado-2026-10-18",
@@ -1463,7 +1469,9 @@
       "over25Prob": 0.7655,
       "homeLambda": 1.44,
       "awayLambda": 2.58,
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "2-5",
+      "verifiedAt": "2026-10-23T05:41:09.888Z"
     },
     {
       "id": "houstond-vs-fcdallas-2026-10-18",

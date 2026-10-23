@@ -884,7 +884,9 @@
       "over25Prob": 0.4411,
       "homeLambda": 1.36,
       "awayLambda": 1.08,
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "2-0",
+      "verifiedAt": "2026-10-23T05:43:29.759Z"
     },
     {
       "id": "philadel-vs-orlandoc-2026-09-26",
@@ -947,7 +949,9 @@
       "over25Prob": 0.8443,
       "homeLambda": 3,
       "awayLambda": 1.67,
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "4-2",
+      "verifiedAt": "2026-10-23T05:43:07.551Z"
     },
     {
       "id": "charlott-vs-chicagof-2026-09-26",
@@ -1010,7 +1014,9 @@
       "over25Prob": 0.6761,
       "homeLambda": 2.25,
       "awayLambda": 1.23,
-      "status": "PENDING"
+      "status": "LOST",
+      "finalScore": "0-1",
+      "verifiedAt": "2026-10-23T05:43:07.551Z"
     },
     {
       "id": "cfmontra-vs-fccincin-2026-09-26",
@@ -1073,7 +1079,9 @@
       "over25Prob": 0.6603,
       "homeLambda": 2.15,
       "awayLambda": 1.25,
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "3-1",
+      "verifiedAt": "2026-10-23T05:43:07.551Z"
     },
     {
       "id": "atlantau-vs-newyorkc-2026-09-26",
@@ -1136,7 +1144,9 @@
       "over25Prob": 0.554,
       "homeLambda": 1.4,
       "awayLambda": 1.5,
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "2-2",
+      "verifiedAt": "2026-10-23T05:43:07.551Z"
     },
     {
       "id": "redbulln-vs-stlouisc-2026-09-26",
@@ -1262,7 +1272,9 @@
       "over25Prob": 0.7831,
       "homeLambda": 1.9,
       "awayLambda": 2.25,
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "3-1",
+      "verifiedAt": "2026-10-23T05:43:14.896Z"
     },
     {
       "id": "sanjosee-vs-portland-2026-09-27",
@@ -1325,7 +1337,9 @@
       "over25Prob": 0.6522,
       "homeLambda": 1.61,
       "awayLambda": 1.75,
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "3-1",
+      "verifiedAt": "2026-10-23T05:43:14.897Z"
     },
     {
       "id": "realsalt-vs-newengla-2026-09-27",
@@ -1388,7 +1402,9 @@
       "over25Prob": 0.6853,
       "homeLambda": 1.33,
       "awayLambda": 2.2,
-      "status": "PENDING"
+      "status": "LOST",
+      "finalScore": "3-0",
+      "verifiedAt": "2026-10-23T05:43:14.896Z"
     },
     {
       "id": "vancouve-vs-dcunited-2026-09-27",
@@ -1451,7 +1467,9 @@
       "over25Prob": 0.6304,
       "homeLambda": 2.15,
       "awayLambda": 1.1,
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "3-3",
+      "verifiedAt": "2026-10-23T05:43:14.897Z"
     },
     {
       "id": "nashvill-vs-torontof-2026-09-27",
@@ -1514,7 +1532,9 @@
       "over25Prob": 0.743,
       "homeLambda": 3,
       "awayLambda": 0.88,
-      "status": "PENDING"
+      "status": "LOST",
+      "finalScore": "2-0",
+      "verifiedAt": "2026-10-23T05:43:14.898Z"
     }
   ]
 }

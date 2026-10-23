@@ -1144,7 +1144,9 @@
       "over25Prob": 0.6603,
       "homeLambda": 2.4,
       "awayLambda": 1,
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "2-1",
+      "verifiedAt": "2026-10-23T05:46:14.653Z"
     },
     {
       "id": "newengla-vs-newyorkc-2026-08-23",
@@ -1207,7 +1209,9 @@
       "over25Prob": 0.4816,
       "homeLambda": 1.5,
       "awayLambda": 1.1,
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "1-1",
+      "verifiedAt": "2026-10-23T05:46:14.653Z"
     },
     {
       "id": "vancouve-vs-fcdallas-2026-08-23",
@@ -1402,7 +1406,9 @@
       "over25Prob": 0.6406,
       "homeLambda": 1.88,
       "awayLambda": 1.42,
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "3-1",
+      "verifiedAt": "2026-10-23T05:46:14.653Z"
     },
     {
       "id": "psveindh-vs-fcgronin-2026-08-23",
@@ -1465,7 +1471,9 @@
       "over25Prob": 0.6406,
       "homeLambda": 1.88,
       "awayLambda": 1.42,
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "5-1",
+      "verifiedAt": "2026-10-23T05:46:14.653Z"
     },
     {
       "id": "sccambuu-vs-feyenoor-2026-08-23",
@@ -1528,7 +1536,9 @@
       "over25Prob": 0.6406,
       "homeLambda": 1.88,
       "awayLambda": 1.42,
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "2-5",
+      "verifiedAt": "2026-10-23T05:46:14.653Z"
     }
   ]
 }

@@ -1274,7 +1274,9 @@
       "over25Prob": 0.7691,
       "homeLambda": 1.88,
       "awayLambda": 2.17,
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "4-1",
+      "verifiedAt": "2026-10-23T05:46:55.259Z"
     },
     {
       "id": "orlandoc-vs-fccincin-2026-08-15",
@@ -1337,7 +1339,9 @@
       "over25Prob": 0.7715,
       "homeLambda": 2.27,
       "awayLambda": 1.79,
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "1-1",
+      "verifiedAt": "2026-10-23T05:46:55.259Z"
     },
     {
       "id": "atlantau-vs-redbulln-2026-08-15",
@@ -1400,7 +1404,9 @@
       "over25Prob": 0.7202,
       "homeLambda": 1.98,
       "awayLambda": 1.75,
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "2-1",
+      "verifiedAt": "2026-10-23T05:46:55.259Z"
     },
     {
       "id": "torontof-vs-newengla-2026-08-15",
@@ -1463,7 +1469,9 @@
       "over25Prob": 0.6603,
       "homeLambda": 1.65,
       "awayLambda": 1.75,
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "2-1",
+      "verifiedAt": "2026-10-23T05:46:55.260Z"
     },
     {
       "id": "charlott-vs-columbus-2026-08-15",
@@ -1526,7 +1534,9 @@
       "over25Prob": 0.6406,
       "homeLambda": 2.08,
       "awayLambda": 1.23,
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "3-1",
+      "verifiedAt": "2026-10-23T05:46:55.260Z"
     }
   ]
 }

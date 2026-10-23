@@ -807,8 +807,10 @@
         "dataQuality": 4,
         "hasRealData": true
       },
-      "status": "PENDING",
-      "tier": "STANDARD"
+      "status": "WON",
+      "tier": "STANDARD",
+      "finalScore": "2-0",
+      "verifiedAt": "2026-10-23T05:47:59.633Z"
     },
     {
       "match": "Carabobo vs Trujillanos",
@@ -830,8 +832,10 @@
         "dataQuality": 4,
         "hasRealData": true
       },
-      "status": "PENDING",
-      "tier": "STANDARD"
+      "status": "WON",
+      "tier": "STANDARD",
+      "finalScore": "2-0",
+      "verifiedAt": "2026-10-23T05:47:59.633Z"
     },
     {
       "match": "Llaneros FC vs Fortaleza CEIF",
@@ -853,8 +857,10 @@
         "dataQuality": 4,
         "hasRealData": true
       },
-      "status": "PENDING",
-      "tier": "STANDARD"
+      "status": "WON",
+      "tier": "STANDARD",
+      "finalScore": "3-1",
+      "verifiedAt": "2026-10-23T05:47:59.633Z"
     },
     {
       "match": "Llaneros FC vs Fortaleza CEIF",
@@ -876,8 +882,10 @@
         "dataQuality": 4,
         "hasRealData": true
       },
-      "status": "PENDING",
-      "tier": "STANDARD"
+      "status": "LOST",
+      "tier": "STANDARD",
+      "finalScore": "3-1",
+      "verifiedAt": "2026-10-23T05:47:59.633Z"
     },
     {
       "match": "UCV FC vs Monagas SC",
@@ -899,8 +907,10 @@
         "dataQuality": 4,
         "hasRealData": true
       },
-      "status": "PENDING",
-      "tier": "STANDARD"
+      "status": "WON",
+      "tier": "STANDARD",
+      "finalScore": "2-1",
+      "verifiedAt": "2026-10-23T05:47:59.633Z"
     },
     {
       "match": "UCV FC vs Monagas SC",
@@ -922,8 +932,10 @@
         "dataQuality": 4,
         "hasRealData": true
       },
-      "status": "PENDING",
-      "tier": "STANDARD"
+      "status": "LOST",
+      "tier": "STANDARD",
+      "finalScore": "2-1",
+      "verifiedAt": "2026-10-23T05:47:59.634Z"
     },
     {
       "match": "Deportivo Táchira vs Portuguesa",
@@ -945,8 +957,10 @@
         "dataQuality": 4,
         "hasRealData": true
       },
-      "status": "PENDING",
-      "tier": "STANDARD"
+      "status": "WON",
+      "tier": "STANDARD",
+      "finalScore": "1-0",
+      "verifiedAt": "2026-10-23T05:47:59.634Z"
     },
     {
       "match": "Deportivo Táchira vs Portuguesa",
@@ -968,8 +982,10 @@
         "dataQuality": 4,
         "hasRealData": true
       },
-      "status": "PENDING",
-      "tier": "STANDARD"
+      "status": "WON",
+      "tier": "STANDARD",
+      "finalScore": "1-0",
+      "verifiedAt": "2026-10-23T05:47:59.634Z"
     },
     {
       "match": "Deportes Tolima vs Independiente Medellín",
@@ -991,8 +1007,10 @@
         "dataQuality": 4,
         "hasRealData": true
       },
-      "status": "PENDING",
-      "tier": "STANDARD"
+      "status": "LOST",
+      "tier": "STANDARD",
+      "finalScore": "2-3",
+      "verifiedAt": "2026-10-23T05:47:59.634Z"
     },
     {
       "match": "Deportes Tolima vs Independiente Medellín",
@@ -1014,8 +1032,10 @@
         "dataQuality": 4,
         "hasRealData": true
       },
-      "status": "PENDING",
-      "tier": "STANDARD"
+      "status": "LOST",
+      "tier": "STANDARD",
+      "finalScore": "2-3",
+      "verifiedAt": "2026-10-23T05:47:59.634Z"
     },
     {
       "match": "Millonarios vs Deportivo Pasto",
@@ -1037,8 +1057,10 @@
         "dataQuality": 4,
         "hasRealData": true
       },
-      "status": "PENDING",
-      "tier": "STANDARD"
+      "status": "LOST",
+      "tier": "STANDARD",
+      "finalScore": "2-0",
+      "verifiedAt": "2026-10-23T05:47:59.634Z"
     },
     {
       "match": "Millonarios vs Deportivo Pasto",
@@ -1060,8 +1082,10 @@
         "dataQuality": 4,
         "hasRealData": true
       },
-      "status": "PENDING",
-      "tier": "STANDARD"
+      "status": "WON",
+      "tier": "STANDARD",
+      "finalScore": "2-0",
+      "verifiedAt": "2026-10-23T05:47:59.634Z"
     },
     {
       "match": "Boca Juniors vs Estudiantes de La Plata",
@@ -1083,8 +1107,10 @@
         "dataQuality": 4,
         "hasRealData": true
       },
-      "status": "PENDING",
-      "tier": "STANDARD"
+      "status": "WON",
+      "tier": "STANDARD",
+      "finalScore": "1-0",
+      "verifiedAt": "2026-10-23T05:47:46.554Z"
     },
     {
       "match": "Boca Juniors vs Estudiantes de La Plata",
@@ -1106,8 +1132,10 @@
         "dataQuality": 4,
         "hasRealData": true
       },
-      "status": "PENDING",
-      "tier": "STANDARD"
+      "status": "LOST",
+      "tier": "STANDARD",
+      "finalScore": "1-0",
+      "verifiedAt": "2026-10-23T05:47:46.554Z"
     },
     {
       "match": "Deportivo La Guaira vs Metropolitanos",
@@ -1129,8 +1157,10 @@
         "dataQuality": 4,
         "hasRealData": true
       },
-      "status": "PENDING",
-      "tier": "STANDARD"
+      "status": "WON",
+      "tier": "STANDARD",
+      "finalScore": "1-2",
+      "verifiedAt": "2026-10-23T05:47:46.554Z"
     },
     {
       "match": "Deportivo La Guaira vs Metropolitanos",
@@ -1152,8 +1182,10 @@
         "dataQuality": 4,
         "hasRealData": true
       },
-      "status": "PENDING",
-      "tier": "STANDARD"
+      "status": "LOST",
+      "tier": "STANDARD",
+      "finalScore": "1-2",
+      "verifiedAt": "2026-10-23T05:47:46.554Z"
     },
     {
       "match": "Peñarol vs Montevideo Wanderers",
@@ -1175,8 +1207,10 @@
         "dataQuality": 4,
         "hasRealData": true
       },
-      "status": "PENDING",
-      "tier": "STANDARD"
+      "status": "LOST",
+      "tier": "STANDARD",
+      "finalScore": "5-1",
+      "verifiedAt": "2026-10-23T05:47:46.554Z"
     },
     {
       "match": "Peñarol vs Montevideo Wanderers",
@@ -1198,8 +1232,10 @@
         "dataQuality": 4,
         "hasRealData": true
       },
-      "status": "PENDING",
-      "tier": "STANDARD"
+      "status": "LOST",
+      "tier": "STANDARD",
+      "finalScore": "5-1",
+      "verifiedAt": "2026-10-23T05:47:46.554Z"
     },
     {
       "match": "Internacional de Bogotá vs Jaguares de Córdoba",
@@ -1221,8 +1257,10 @@
         "dataQuality": 4,
         "hasRealData": true
       },
-      "status": "PENDING",
-      "tier": "STANDARD"
+      "status": "LOST",
+      "tier": "STANDARD",
+      "finalScore": "1-0",
+      "verifiedAt": "2026-10-23T05:47:46.554Z"
     },
     {
       "match": "Internacional de Bogotá vs Jaguares de Córdoba",
@@ -1244,8 +1282,10 @@
         "dataQuality": 4,
         "hasRealData": true
       },
-      "status": "PENDING",
-      "tier": "STANDARD"
+      "status": "WON",
+      "tier": "STANDARD",
+      "finalScore": "1-0",
+      "verifiedAt": "2026-10-23T05:47:46.554Z"
     }
   ]
 }

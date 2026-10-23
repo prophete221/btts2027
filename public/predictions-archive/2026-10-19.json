@@ -818,7 +818,10 @@
       "bttsProb": 0.4695,
       "over25Prob": 0.4411,
       "homeLambda": 1.52,
-      "awayLambda": 0.92
+      "awayLambda": 0.92,
+      "finalScore": "1-1",
+      "status": "LOST",
+      "verifiedAt": "2026-10-23T05:40:56.408Z"
     },
     {
       "id": "fccincin-vs-dcunited-2026-10-21",
@@ -880,7 +883,10 @@
       "bttsProb": 0.813,
       "over25Prob": 0.859,
       "homeLambda": 2.82,
-      "awayLambda": 2
+      "awayLambda": 2,
+      "status": "WON",
+      "finalScore": "2-1",
+      "verifiedAt": "2026-10-23T05:40:50.703Z"
     },
     {
       "id": "scrheind-vs-austriav-2026-10-23",
@@ -942,7 +948,8 @@
       "bttsProb": 0.697,
       "over25Prob": 0.727,
       "homeLambda": 2.27,
-      "awayLambda": 1.5
+      "awayLambda": 1.5,
+      "status": "PENDING"
     },
     {
       "id": "boltonwa-vs-middlesb-2026-10-23",
@@ -1004,7 +1011,8 @@
       "bttsProb": 0.6252,
       "over25Prob": 0.6096,
       "homeLambda": 1.44,
-      "awayLambda": 1.71
+      "awayLambda": 1.71,
+      "status": "PENDING"
     },
     {
       "id": "svdarmst-vs-stpauli-2026-10-23",
@@ -1066,7 +1074,8 @@
       "bttsProb": 0.6205,
       "over25Prob": 0.6096,
       "homeLambda": 1.77,
-      "awayLambda": 1.38
+      "awayLambda": 1.38,
+      "status": "PENDING"
     },
     {
       "id": "vflbochu-vs-vflwolfs-2026-10-23",
@@ -1128,7 +1137,8 @@
       "bttsProb": 0.5646,
       "over25Prob": 0.554,
       "homeLambda": 1.15,
-      "awayLambda": 1.75
+      "awayLambda": 1.75,
+      "status": "PENDING"
     },
     {
       "id": "ipswicht-vs-nottingh-2026-10-23",
@@ -1190,7 +1200,8 @@
       "bttsProb": 0.6506,
       "over25Prob": 0.6439,
       "homeLambda": 1.82,
-      "awayLambda": 1.5
+      "awayLambda": 1.5,
+      "status": "PENDING"
     },
     {
       "id": "kvkortri-vs-kvmechel-2026-10-23",
@@ -1252,7 +1263,8 @@
       "bttsProb": 0.4876,
       "over25Prob": 0.4303,
       "homeLambda": 1.15,
-      "awayLambda": 1.25
+      "awayLambda": 1.25,
+      "status": "PENDING"
     },
     {
       "id": "goaheade-vs-telstar-2026-10-23",
@@ -1314,7 +1326,8 @@
       "bttsProb": 0.4568,
       "over25Prob": 0.4519,
       "homeLambda": 1.65,
-      "awayLambda": 0.83
+      "awayLambda": 0.83,
+      "status": "PENDING"
     },
     {
       "id": "vfbstutt-vs-borussia-2026-10-23",
@@ -1376,7 +1389,8 @@
       "bttsProb": 0.4575,
       "over25Prob": 0.6761,
       "homeLambda": 2.82,
-      "awayLambda": 0.67
+      "awayLambda": 0.67,
+      "status": "PENDING"
     },
     {
       "id": "vitriade-vs-maritimo-2026-10-23",
@@ -1438,7 +1452,8 @@
       "bttsProb": 0.4202,
       "over25Prob": 0.3639,
       "homeLambda": 1.27,
-      "awayLambda": 0.88
+      "awayLambda": 0.88,
+      "status": "PENDING"
     },
     {
       "id": "fcutrech-vs-peczwoll-2026-10-24",
@@ -1500,7 +1515,8 @@
       "bttsProb": 0.8013,
       "over25Prob": 0.8292,
       "homeLambda": 2.15,
-      "awayLambda": 2.38
+      "awayLambda": 2.38,
+      "status": "PENDING"
     }
   ]
 }

@@ -1274,7 +1274,9 @@
       "over25Prob": 0.6522,
       "homeLambda": 1.94,
       "awayLambda": 1.42,
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "2-1",
+      "verifiedAt": "2026-10-23T05:42:59.723Z"
     },
     {
       "id": "vancouve-vs-dcunited-2026-09-27",

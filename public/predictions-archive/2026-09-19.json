@@ -1404,7 +1404,9 @@
       "over25Prob": 0.6698,
       "homeLambda": 2.17,
       "awayLambda": 1.27,
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "2-2",
+      "verifiedAt": "2026-10-23T05:43:37.194Z"
     },
     {
       "id": "sporting-vs-philadel-2026-09-20",
@@ -1532,7 +1534,9 @@
       "over25Prob": 0.8667,
       "homeLambda": 2.65,
       "awayLambda": 2.25,
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "1-1",
+      "verifiedAt": "2026-10-23T05:43:37.194Z"
     }
   ]
 }

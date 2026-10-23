@@ -1471,7 +1471,9 @@
       "over25Prob": 0.8874,
       "homeLambda": 2.65,
       "awayLambda": 2.5,
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "2-1",
+      "verifiedAt": "2026-10-23T05:45:18.466Z"
     },
     {
       "id": "vancouve-vs-stlouisc-2026-09-06",

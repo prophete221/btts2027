@@ -491,8 +491,10 @@
         "dataQuality": 4,
         "hasRealData": true
       },
-      "status": "PENDING",
-      "tier": "STANDARD"
+      "status": "LOST",
+      "tier": "STANDARD",
+      "finalScore": "0-3",
+      "verifiedAt": "2026-10-23T05:48:13.330Z"
     },
     {
       "match": "Vålerenga vs Hamarkameratene",
@@ -514,8 +516,10 @@
         "dataQuality": 4,
         "hasRealData": true
       },
-      "status": "PENDING",
-      "tier": "STANDARD"
+      "status": "WON",
+      "tier": "STANDARD",
+      "finalScore": "0-3",
+      "verifiedAt": "2026-10-23T05:48:13.331Z"
     },
     {
       "match": "Rodina Moscow vs Rostov",
@@ -537,8 +541,10 @@
         "dataQuality": 4,
         "hasRealData": true
       },
-      "status": "PENDING",
-      "tier": "STANDARD"
+      "status": "LOST",
+      "tier": "STANDARD",
+      "finalScore": "2-4",
+      "verifiedAt": "2026-10-23T05:48:13.331Z"
     },
     {
       "match": "Rodina Moscow vs Rostov",
@@ -560,8 +566,10 @@
         "dataQuality": 4,
         "hasRealData": true
       },
-      "status": "PENDING",
-      "tier": "STANDARD"
+      "status": "LOST",
+      "tier": "STANDARD",
+      "finalScore": "2-4",
+      "verifiedAt": "2026-10-23T05:48:13.331Z"
     },
     {
       "match": "LASK Linz vs Grazer AK",
@@ -583,8 +591,10 @@
         "dataQuality": 4,
         "hasRealData": true
       },
-      "status": "PENDING",
-      "tier": "STANDARD"
+      "status": "LOST",
+      "tier": "STANDARD",
+      "finalScore": "3-0",
+      "verifiedAt": "2026-10-23T05:48:13.331Z"
     },
     {
       "match": "LASK Linz vs Grazer AK",
@@ -606,8 +616,10 @@
         "dataQuality": 4,
         "hasRealData": true
       },
-      "status": "PENDING",
-      "tier": "STANDARD"
+      "status": "WON",
+      "tier": "STANDARD",
+      "finalScore": "3-0",
+      "verifiedAt": "2026-10-23T05:48:13.331Z"
     },
     {
       "match": "Dundee United vs Rangers",
@@ -629,8 +641,10 @@
         "dataQuality": 4,
         "hasRealData": true
       },
-      "status": "PENDING",
-      "tier": "STANDARD"
+      "status": "WON",
+      "tier": "STANDARD",
+      "finalScore": "1-1",
+      "verifiedAt": "2026-10-23T05:48:13.331Z"
     },
     {
       "match": "Dundee United vs Rangers",
@@ -652,8 +666,10 @@
         "dataQuality": 4,
         "hasRealData": true
       },
-      "status": "PENDING",
-      "tier": "STANDARD"
+      "status": "LOST",
+      "tier": "STANDARD",
+      "finalScore": "1-1",
+      "verifiedAt": "2026-10-23T05:48:13.331Z"
     },
     {
       "match": "Bodo/Glimt vs Lillestrom",
@@ -675,8 +691,10 @@
         "dataQuality": 4,
         "hasRealData": true
       },
-      "status": "PENDING",
-      "tier": "STANDARD"
+      "status": "LOST",
+      "tier": "STANDARD",
+      "finalScore": "4-0",
+      "verifiedAt": "2026-10-23T05:48:13.331Z"
     },
     {
       "match": "Bodo/Glimt vs Lillestrom",
@@ -698,8 +716,10 @@
         "dataQuality": 4,
         "hasRealData": true
       },
-      "status": "PENDING",
-      "tier": "STANDARD"
+      "status": "WON",
+      "tier": "STANDARD",
+      "finalScore": "4-0",
+      "verifiedAt": "2026-10-23T05:48:13.331Z"
     },
     {
       "match": "Los Chankas vs Comerciantes Unidos",
@@ -721,8 +741,10 @@
         "dataQuality": 4,
         "hasRealData": true
       },
-      "status": "PENDING",
-      "tier": "STANDARD"
+      "status": "WON",
+      "tier": "STANDARD",
+      "finalScore": "3-2",
+      "verifiedAt": "2026-10-23T05:48:13.331Z"
     },
     {
       "match": "Los Chankas vs Comerciantes Unidos",
@@ -744,8 +766,10 @@
         "dataQuality": 4,
         "hasRealData": true
       },
-      "status": "PENDING",
-      "tier": "STANDARD"
+      "status": "LOST",
+      "tier": "STANDARD",
+      "finalScore": "3-2",
+      "verifiedAt": "2026-10-23T05:48:13.331Z"
     },
     {
       "match": "Portuguesa vs Carabobo",
@@ -767,8 +791,10 @@
         "dataQuality": 4,
         "hasRealData": true
       },
-      "status": "PENDING",
-      "tier": "STANDARD"
+      "status": "WON",
+      "tier": "STANDARD",
+      "finalScore": "1-0",
+      "verifiedAt": "2026-10-23T05:48:13.331Z"
     },
     {
       "match": "Portuguesa vs Carabobo",
@@ -790,8 +816,10 @@
         "dataQuality": 4,
         "hasRealData": true
       },
-      "status": "PENDING",
-      "tier": "STANDARD"
+      "status": "WON",
+      "tier": "STANDARD",
+      "finalScore": "1-0",
+      "verifiedAt": "2026-10-23T05:48:13.331Z"
     },
     {
       "match": "Montevideo City Torque vs Montevideo Wanderers",
@@ -813,8 +841,10 @@
         "dataQuality": 4,
         "hasRealData": true
       },
-      "status": "PENDING",
-      "tier": "STANDARD"
+      "status": "WON",
+      "tier": "STANDARD",
+      "finalScore": "0-2",
+      "verifiedAt": "2026-10-23T05:48:13.331Z"
     },
     {
       "match": "Montevideo City Torque vs Montevideo Wanderers",
@@ -836,8 +866,10 @@
         "dataQuality": 4,
         "hasRealData": true
       },
-      "status": "PENDING",
-      "tier": "STANDARD"
+      "status": "WON",
+      "tier": "STANDARD",
+      "finalScore": "0-2",
+      "verifiedAt": "2026-10-23T05:48:13.331Z"
     },
     {
       "match": "Anzoátegui FC vs Deportivo Táchira",
@@ -905,8 +937,10 @@
         "dataQuality": 4,
         "hasRealData": true
       },
-      "status": "PENDING",
-      "tier": "STANDARD"
+      "status": "WON",
+      "tier": "STANDARD",
+      "finalScore": "1-1",
+      "verifiedAt": "2026-10-23T05:48:13.332Z"
     },
     {
       "match": "New York City FC vs Toronto FC",
@@ -928,8 +962,10 @@
         "dataQuality": 4,
         "hasRealData": true
       },
-      "status": "PENDING",
-      "tier": "STANDARD"
+      "status": "LOST",
+      "tier": "STANDARD",
+      "finalScore": "1-1",
+      "verifiedAt": "2026-10-23T05:48:13.332Z"
     },
     {
       "match": "Libertad (Ecuador) vs Orense",
@@ -951,8 +987,10 @@
         "dataQuality": 4,
         "hasRealData": true
       },
-      "status": "PENDING",
-      "tier": "STANDARD"
+      "status": "LOST",
+      "tier": "STANDARD",
+      "finalScore": "3-0",
+      "verifiedAt": "2026-10-23T05:48:13.332Z"
     },
     {
       "match": "Libertad (Ecuador) vs Orense",
@@ -974,8 +1012,10 @@
         "dataQuality": 4,
         "hasRealData": true
       },
-      "status": "PENDING",
-      "tier": "STANDARD"
+      "status": "LOST",
+      "tier": "STANDARD",
+      "finalScore": "3-0",
+      "verifiedAt": "2026-10-23T05:48:13.332Z"
     },
     {
       "match": "Universidad de Concepción vs Audax Italiano",
@@ -997,8 +1037,10 @@
         "dataQuality": 4,
         "hasRealData": true
       },
-      "status": "PENDING",
-      "tier": "STANDARD"
+      "status": "LOST",
+      "tier": "STANDARD",
+      "finalScore": "0-1",
+      "verifiedAt": "2026-10-23T05:48:13.332Z"
     },
     {
       "match": "Universidad de Concepción vs Audax Italiano",
@@ -1020,8 +1062,10 @@
         "dataQuality": 4,
         "hasRealData": true
       },
-      "status": "PENDING",
-      "tier": "STANDARD"
+      "status": "LOST",
+      "tier": "STANDARD",
+      "finalScore": "0-1",
+      "verifiedAt": "2026-10-23T05:48:13.332Z"
     },
     {
       "match": "Fortaleza CEIF vs Deportivo Pereira",
@@ -1043,8 +1087,10 @@
         "dataQuality": 4,
         "hasRealData": true
       },
-      "status": "PENDING",
-      "tier": "STANDARD"
+      "status": "LOST",
+      "tier": "STANDARD",
+      "finalScore": "0-0",
+      "verifiedAt": "2026-10-23T05:48:13.332Z"
     },
     {
       "match": "Fortaleza CEIF vs Deportivo Pereira",
@@ -1066,8 +1112,10 @@
         "dataQuality": 4,
         "hasRealData": true
       },
-      "status": "PENDING",
-      "tier": "STANDARD"
+      "status": "WON",
+      "tier": "STANDARD",
+      "finalScore": "0-0",
+      "verifiedAt": "2026-10-23T05:48:13.332Z"
     },
     {
       "match": "Puebla vs Guadalajara",
@@ -1089,8 +1137,10 @@
         "dataQuality": 4,
         "hasRealData": true
       },
-      "status": "PENDING",
-      "tier": "STANDARD"
+      "status": "WON",
+      "tier": "STANDARD",
+      "finalScore": "1-1",
+      "verifiedAt": "2026-10-23T05:48:13.333Z"
     },
     {
       "match": "Puebla vs Guadalajara",
@@ -1112,8 +1162,10 @@
         "dataQuality": 4,
         "hasRealData": true
       },
-      "status": "PENDING",
-      "tier": "STANDARD"
+      "status": "LOST",
+      "tier": "STANDARD",
+      "finalScore": "1-1",
+      "verifiedAt": "2026-10-23T05:48:13.333Z"
     },
     {
       "match": "Atlético de San Luis vs Tijuana",
@@ -1135,8 +1187,10 @@
         "dataQuality": 4,
         "hasRealData": true
       },
-      "status": "PENDING",
-      "tier": "STANDARD"
+      "status": "LOST",
+      "tier": "STANDARD",
+      "finalScore": "0-0",
+      "verifiedAt": "2026-10-23T05:48:13.333Z"
     },
     {
       "match": "Atlético de San Luis vs Tijuana",
@@ -1158,8 +1212,10 @@
         "dataQuality": 4,
         "hasRealData": true
       },
-      "status": "PENDING",
-      "tier": "STANDARD"
+      "status": "LOST",
+      "tier": "STANDARD",
+      "finalScore": "0-0",
+      "verifiedAt": "2026-10-23T05:48:13.333Z"
     },
     {
       "match": "FC Juarez vs Pumas UNAM",
@@ -1181,8 +1237,10 @@
         "dataQuality": 4,
         "hasRealData": true
       },
-      "status": "PENDING",
-      "tier": "STANDARD"
+      "status": "WON",
+      "tier": "STANDARD",
+      "finalScore": "1-5",
+      "verifiedAt": "2026-10-23T05:48:13.333Z"
     },
     {
       "match": "FC Juarez vs Pumas UNAM",
@@ -1204,8 +1262,10 @@
         "dataQuality": 4,
         "hasRealData": true
       },
-      "status": "PENDING",
-      "tier": "STANDARD"
+      "status": "WON",
+      "tier": "STANDARD",
+      "finalScore": "1-5",
+      "verifiedAt": "2026-10-23T05:48:13.333Z"
     }
   ]
 }

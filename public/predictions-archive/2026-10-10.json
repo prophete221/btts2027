@@ -819,7 +819,9 @@
       "over25Prob": 0.8292,
       "homeLambda": 2.9,
       "awayLambda": 1.63,
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "6-2",
+      "verifiedAt": "2026-10-23T05:42:00.095Z"
     },
     {
       "id": "sporting-vs-portland-2026-10-11",
@@ -947,7 +949,9 @@
       "over25Prob": 0.8996,
       "homeLambda": 2.65,
       "awayLambda": 2.67,
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "3-1",
+      "verifiedAt": "2026-10-23T05:42:00.095Z"
     },
     {
       "id": "arouca-vs-estrela-2026-10-11",
@@ -1010,7 +1014,9 @@
       "over25Prob": 0.8047,
       "homeLambda": 2.48,
       "awayLambda": 1.83,
-      "status": "PENDING"
+      "status": "LOST",
+      "finalScore": "1-0",
+      "verifiedAt": "2026-10-23T05:42:00.095Z"
     },
     {
       "id": "kvcweste-vs-antwerp-2026-10-11",
@@ -1073,7 +1079,9 @@
       "over25Prob": 0.7831,
       "homeLambda": 1.98,
       "awayLambda": 2.17,
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "5-1",
+      "verifiedAt": "2026-10-23T05:42:00.095Z"
     },
     {
       "id": "crystalp-vs-nottingh-2026-10-11",
@@ -1136,7 +1144,9 @@
       "over25Prob": 0.8149,
       "homeLambda": 1.65,
       "awayLambda": 2.75,
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "3-1",
+      "verifiedAt": "2026-10-23T05:42:00.095Z"
     },
     {
       "id": "kvmechel-vs-sinttrui-2026-10-11",
@@ -1199,7 +1209,9 @@
       "over25Prob": 0.7831,
       "homeLambda": 1.65,
       "awayLambda": 2.5,
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "4-3",
+      "verifiedAt": "2026-10-23T05:42:00.095Z"
     },
     {
       "id": "minnesot-vs-houstond-2026-10-11",
@@ -1327,7 +1339,9 @@
       "over25Prob": 0.7338,
       "homeLambda": 1.98,
       "awayLambda": 1.83,
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "1-5",
+      "verifiedAt": "2026-10-23T05:42:00.096Z"
     },
     {
       "id": "lafc-vs-vancouve-2026-10-11",
@@ -1455,7 +1469,9 @@
       "over25Prob": 0.7594,
       "homeLambda": 2.48,
       "awayLambda": 1.5,
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "2-1",
+      "verifiedAt": "2026-10-23T05:42:00.096Z"
     },
     {
       "id": "telstar-vs-adodenha-2026-10-11",
@@ -1518,7 +1534,9 @@
       "over25Prob": 0.706,
       "homeLambda": 1.77,
       "awayLambda": 1.88,
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "2-2",
+      "verifiedAt": "2026-10-23T05:42:00.096Z"
     }
   ]
 }

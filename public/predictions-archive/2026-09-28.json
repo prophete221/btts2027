@@ -198,7 +198,10 @@
       "bttsProb": 0.5754,
       "over25Prob": 0.5916,
       "homeLambda": 1.11,
-      "awayLambda": 1.96
+      "awayLambda": 1.96,
+      "status": "LOST",
+      "finalScore": "0-3",
+      "verifiedAt": "2026-10-23T05:42:52.805Z"
     },
     {
       "id": "seattles-vs-sporting-2026-10-02",
@@ -260,7 +263,10 @@
       "bttsProb": 0.612,
       "over25Prob": 0.6201,
       "homeLambda": 1.95,
-      "awayLambda": 1.25
+      "awayLambda": 1.25,
+      "status": "WON",
+      "finalScore": "2-1",
+      "verifiedAt": "2026-10-23T05:42:45.068Z"
     }
   ]
 }

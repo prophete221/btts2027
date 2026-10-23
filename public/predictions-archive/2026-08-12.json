@@ -816,7 +816,10 @@
       "bttsProb": 0.6424,
       "over25Prob": 0.6406,
       "homeLambda": 1.88,
-      "awayLambda": 1.42
+      "awayLambda": 1.42,
+      "status": "WON",
+      "finalScore": "1-3",
+      "verifiedAt": "2026-10-23T05:47:02.525Z"
     },
     {
       "id": "holstein-vs-stpauli-2026-08-14",
@@ -878,7 +881,10 @@
       "bttsProb": 0.6015,
       "over25Prob": 0.5879,
       "homeLambda": 1.74,
-      "awayLambda": 1.3
+      "awayLambda": 1.3,
+      "status": "WON",
+      "finalScore": "2-2",
+      "verifiedAt": "2026-10-23T05:47:02.525Z"
     },
     {
       "id": "tsveintr-vs-vflbochu-2026-08-14",
@@ -940,7 +946,10 @@
       "bttsProb": 0.6015,
       "over25Prob": 0.5879,
       "homeLambda": 1.74,
-      "awayLambda": 1.3
+      "awayLambda": 1.3,
+      "status": "LOST",
+      "finalScore": "0-1",
+      "verifiedAt": "2026-10-23T05:47:02.525Z"
     },
     {
       "id": "cerclebr-vs-sinttrui-2026-08-14",
@@ -1002,7 +1011,10 @@
       "bttsProb": 0.5929,
       "over25Prob": 0.5768,
       "homeLambda": 1.72,
-      "awayLambda": 1.28
+      "awayLambda": 1.28,
+      "status": "WON",
+      "finalScore": "3-3",
+      "verifiedAt": "2026-10-23T05:47:02.525Z"
     },
     {
       "id": "lasklinz-vs-svjoskor-2026-08-14",
@@ -1064,7 +1076,10 @@
       "bttsProb": 0.5842,
       "over25Prob": 0.5655,
       "homeLambda": 1.69,
-      "awayLambda": 1.26
+      "awayLambda": 1.26,
+      "status": "WON",
+      "finalScore": "4-1",
+      "verifiedAt": "2026-10-23T05:47:02.525Z"
     },
     {
       "id": "sporting-vs-vitriade-2026-08-14",
@@ -1126,7 +1141,10 @@
       "bttsProb": 0.5698,
       "over25Prob": 0.5471,
       "homeLambda": 1.65,
-      "awayLambda": 1.22
+      "awayLambda": 1.22,
+      "status": "WON",
+      "finalScore": "3-2",
+      "verifiedAt": "2026-10-23T05:47:02.525Z"
     },
     {
       "id": "wolverha-vs-blackbur-2026-08-14",
@@ -1188,7 +1206,10 @@
       "bttsProb": 0.5625,
       "over25Prob": 0.5377,
       "homeLambda": 1.62,
-      "awayLambda": 1.21
+      "awayLambda": 1.21,
+      "status": "WON",
+      "finalScore": "2-2",
+      "verifiedAt": "2026-10-23T05:47:02.525Z"
     },
     {
       "id": "nashvill-vs-intermia-2026-08-15",
@@ -1250,7 +1271,10 @@
       "bttsProb": 0.7508,
       "over25Prob": 0.7691,
       "homeLambda": 1.88,
-      "awayLambda": 2.17
+      "awayLambda": 2.17,
+      "status": "WON",
+      "finalScore": "4-1",
+      "verifiedAt": "2026-10-23T05:46:55.259Z"
     },
     {
       "id": "orlandoc-vs-fccincin-2026-08-15",
@@ -1312,7 +1336,10 @@
       "bttsProb": 0.7477,
       "over25Prob": 0.7715,
       "homeLambda": 2.27,
-      "awayLambda": 1.79
+      "awayLambda": 1.79,
+      "status": "WON",
+      "finalScore": "1-1",
+      "verifiedAt": "2026-10-23T05:46:55.259Z"
     },
     {
       "id": "atlantau-vs-redbulln-2026-08-15",
@@ -1374,7 +1401,10 @@
       "bttsProb": 0.7125,
       "over25Prob": 0.7202,
       "homeLambda": 1.98,
-      "awayLambda": 1.75
+      "awayLambda": 1.75,
+      "status": "WON",
+      "finalScore": "2-1",
+      "verifiedAt": "2026-10-23T05:46:55.259Z"
     },
     {
       "id": "torontof-vs-newengla-2026-08-15",
@@ -1436,7 +1466,10 @@
       "bttsProb": 0.6675,
       "over25Prob": 0.6603,
       "homeLambda": 1.65,
-      "awayLambda": 1.75
+      "awayLambda": 1.75,
+      "status": "WON",
+      "finalScore": "2-1",
+      "verifiedAt": "2026-10-23T05:46:55.260Z"
     },
     {
       "id": "charlott-vs-columbus-2026-08-15",
@@ -1498,7 +1531,10 @@
       "bttsProb": 0.6176,
       "over25Prob": 0.6406,
       "homeLambda": 2.08,
-      "awayLambda": 1.23
+      "awayLambda": 1.23,
+      "status": "WON",
+      "finalScore": "3-1",
+      "verifiedAt": "2026-10-23T05:46:55.260Z"
     }
   ]
 }

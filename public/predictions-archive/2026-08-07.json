@@ -23,7 +23,9 @@
         "dataQuality": 5,
         "hasRealData": true
       },
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "4-3",
+      "verifiedAt": "2026-10-23T05:47:24.698Z"
     },
     {
       "match": "1. FC Heidenheim 1846 vs VfL Osnabruck",
@@ -47,7 +49,9 @@
         "dataQuality": 5,
         "hasRealData": true
       },
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "4-3",
+      "verifiedAt": "2026-10-23T05:47:24.698Z"
     },
     {
       "match": "St. Pauli vs SpVgg Greuther Fürth",
@@ -71,7 +75,9 @@
         "dataQuality": 5,
         "hasRealData": true
       },
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "1-1",
+      "verifiedAt": "2026-10-23T05:47:17.650Z"
     },
     {
       "match": "St. Pauli vs SpVgg Greuther Fürth",
@@ -95,7 +101,9 @@
         "dataQuality": 5,
         "hasRealData": true
       },
-      "status": "PENDING"
+      "status": "LOST",
+      "finalScore": "1-1",
+      "verifiedAt": "2026-10-23T05:47:17.650Z"
     },
     {
       "match": "SC Cambuur vs Excelsior",

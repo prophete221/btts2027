@@ -383,8 +383,10 @@
         "dataQuality": 4,
         "hasRealData": true
       },
-      "status": "PENDING",
-      "tier": "STANDARD"
+      "status": "WON",
+      "tier": "STANDARD",
+      "finalScore": "1-1",
+      "verifiedAt": "2026-10-23T05:48:33.585Z"
     },
     {
       "match": "Rubio Ñú vs Sportivo Ameliano",
@@ -406,8 +408,10 @@
         "dataQuality": 4,
         "hasRealData": true
       },
-      "status": "PENDING",
-      "tier": "STANDARD"
+      "status": "WON",
+      "tier": "STANDARD",
+      "finalScore": "1-1",
+      "verifiedAt": "2026-10-23T05:48:33.585Z"
     },
     {
       "match": "2 de Mayo vs Cerro Porteño",
@@ -429,8 +433,10 @@
         "dataQuality": 4,
         "hasRealData": true
       },
-      "status": "PENDING",
-      "tier": "STANDARD"
+      "status": "WON",
+      "tier": "STANDARD",
+      "finalScore": "2-1",
+      "verifiedAt": "2026-10-23T05:48:33.585Z"
     },
     {
       "match": "2 de Mayo vs Cerro Porteño",
@@ -452,8 +458,10 @@
         "dataQuality": 4,
         "hasRealData": true
       },
-      "status": "PENDING",
-      "tier": "STANDARD"
+      "status": "LOST",
+      "tier": "STANDARD",
+      "finalScore": "2-1",
+      "verifiedAt": "2026-10-23T05:48:33.585Z"
     },
     {
       "match": "Banfield vs Sarmiento (Junín)",
@@ -475,8 +483,10 @@
         "dataQuality": 4,
         "hasRealData": true
       },
-      "status": "PENDING",
-      "tier": "STANDARD"
+      "status": "LOST",
+      "tier": "STANDARD",
+      "finalScore": "3-2",
+      "verifiedAt": "2026-10-23T05:48:33.585Z"
     },
     {
       "match": "Banfield vs Sarmiento (Junín)",
@@ -498,8 +508,10 @@
         "dataQuality": 4,
         "hasRealData": true
       },
-      "status": "PENDING",
-      "tier": "STANDARD"
+      "status": "LOST",
+      "tier": "STANDARD",
+      "finalScore": "3-2",
+      "verifiedAt": "2026-10-23T05:48:33.585Z"
     },
     {
       "match": "San Lorenzo vs Gimnasia (Mendoza)",
@@ -521,8 +533,10 @@
         "dataQuality": 4,
         "hasRealData": true
       },
-      "status": "PENDING",
-      "tier": "STANDARD"
+      "status": "LOST",
+      "tier": "STANDARD",
+      "finalScore": "1-0",
+      "verifiedAt": "2026-10-23T05:48:33.585Z"
     },
     {
       "match": "San Lorenzo vs Gimnasia (Mendoza)",
@@ -544,8 +558,10 @@
         "dataQuality": 4,
         "hasRealData": true
       },
-      "status": "PENDING",
-      "tier": "STANDARD"
+      "status": "WON",
+      "tier": "STANDARD",
+      "finalScore": "1-0",
+      "verifiedAt": "2026-10-23T05:48:33.585Z"
     },
     {
       "match": "Argentinos Juniors vs Estudiantes de Río Cuarto",
@@ -567,8 +583,10 @@
         "dataQuality": 4,
         "hasRealData": true
       },
-      "status": "PENDING",
-      "tier": "STANDARD"
+      "status": "LOST",
+      "tier": "STANDARD",
+      "finalScore": "3-0",
+      "verifiedAt": "2026-10-23T05:48:33.585Z"
     },
     {
       "match": "Argentinos Juniors vs Estudiantes de Río Cuarto",
@@ -590,8 +608,10 @@
         "dataQuality": 4,
         "hasRealData": true
       },
-      "status": "PENDING",
-      "tier": "STANDARD"
+      "status": "LOST",
+      "tier": "STANDARD",
+      "finalScore": "3-0",
+      "verifiedAt": "2026-10-23T05:48:33.585Z"
     },
     {
       "match": "Rosario Central vs Racing Club",
@@ -613,8 +633,10 @@
         "dataQuality": 4,
         "hasRealData": true
       },
-      "status": "PENDING",
-      "tier": "STANDARD"
+      "status": "WON",
+      "tier": "STANDARD",
+      "finalScore": "0-0",
+      "verifiedAt": "2026-10-23T05:48:33.585Z"
     },
     {
       "match": "Rosario Central vs Racing Club",
@@ -636,8 +658,10 @@
         "dataQuality": 4,
         "hasRealData": true
       },
-      "status": "PENDING",
-      "tier": "STANDARD"
+      "status": "LOST",
+      "tier": "STANDARD",
+      "finalScore": "0-0",
+      "verifiedAt": "2026-10-23T05:48:33.585Z"
     },
     {
       "match": "Barracas Central vs Aldosivi",
@@ -659,8 +683,10 @@
         "dataQuality": 4,
         "hasRealData": true
       },
-      "status": "PENDING",
-      "tier": "STANDARD"
+      "status": "WON",
+      "tier": "STANDARD",
+      "finalScore": "1-0",
+      "verifiedAt": "2026-10-23T05:48:26.883Z"
     },
     {
       "match": "Barracas Central vs Aldosivi",
@@ -682,8 +708,10 @@
         "dataQuality": 4,
         "hasRealData": true
       },
-      "status": "PENDING",
-      "tier": "STANDARD"
+      "status": "LOST",
+      "tier": "STANDARD",
+      "finalScore": "1-0",
+      "verifiedAt": "2026-10-23T05:48:26.883Z"
     },
     {
       "match": "Sportivo Luqueño vs Sportivo Trinidense",
@@ -705,8 +733,10 @@
         "dataQuality": 4,
         "hasRealData": true
       },
-      "status": "PENDING",
-      "tier": "STANDARD"
+      "status": "WON",
+      "tier": "STANDARD",
+      "finalScore": "1-4",
+      "verifiedAt": "2026-10-23T05:48:26.883Z"
     },
     {
       "match": "Sportivo Luqueño vs Sportivo Trinidense",
@@ -728,8 +758,10 @@
         "dataQuality": 4,
         "hasRealData": true
       },
-      "status": "PENDING",
-      "tier": "STANDARD"
+      "status": "LOST",
+      "tier": "STANDARD",
+      "finalScore": "1-4",
+      "verifiedAt": "2026-10-23T05:48:26.883Z"
     },
     {
       "match": "Defensa y Justicia vs Deportivo Riestra",
@@ -751,8 +783,10 @@
         "dataQuality": 4,
         "hasRealData": true
       },
-      "status": "PENDING",
-      "tier": "STANDARD"
+      "status": "WON",
+      "tier": "STANDARD",
+      "finalScore": "2-1",
+      "verifiedAt": "2026-10-23T05:48:26.883Z"
     },
     {
       "match": "Defensa y Justicia vs Deportivo Riestra",
@@ -774,8 +808,10 @@
         "dataQuality": 4,
         "hasRealData": true
       },
-      "status": "PENDING",
-      "tier": "STANDARD"
+      "status": "LOST",
+      "tier": "STANDARD",
+      "finalScore": "2-1",
+      "verifiedAt": "2026-10-23T05:48:26.883Z"
     },
     {
       "match": "Nacional Asunción vs Club Olimpia",
@@ -797,8 +833,10 @@
         "dataQuality": 4,
         "hasRealData": true
       },
-      "status": "PENDING",
-      "tier": "STANDARD"
+      "status": "WON",
+      "tier": "STANDARD",
+      "finalScore": "2-0",
+      "verifiedAt": "2026-10-23T05:48:26.883Z"
     },
     {
       "match": "Nacional Asunción vs Club Olimpia",
@@ -820,8 +858,10 @@
         "dataQuality": 4,
         "hasRealData": true
       },
-      "status": "PENDING",
-      "tier": "STANDARD"
+      "status": "WON",
+      "tier": "STANDARD",
+      "finalScore": "2-0",
+      "verifiedAt": "2026-10-23T05:48:26.883Z"
     },
     {
       "match": "Gimnasia La Plata vs River Plate",
@@ -843,8 +883,10 @@
         "dataQuality": 4,
         "hasRealData": true
       },
-      "status": "PENDING",
-      "tier": "STANDARD"
+      "status": "LOST",
+      "tier": "STANDARD",
+      "finalScore": "1-0",
+      "verifiedAt": "2026-10-23T05:48:33.582Z"
     },
     {
       "match": "Gimnasia La Plata vs River Plate",
@@ -866,8 +908,10 @@
         "dataQuality": 4,
         "hasRealData": true
       },
-      "status": "PENDING",
-      "tier": "STANDARD"
+      "status": "WON",
+      "tier": "STANDARD",
+      "finalScore": "1-0",
+      "verifiedAt": "2026-10-23T05:48:33.582Z"
     },
     {
       "match": "Internacional vs Flamengo",
@@ -889,8 +933,10 @@
         "dataQuality": 4,
         "hasRealData": true
       },
-      "status": "PENDING",
-      "tier": "STANDARD"
+      "status": "WON",
+      "tier": "STANDARD",
+      "finalScore": "1-1",
+      "verifiedAt": "2026-10-23T05:48:33.582Z"
     },
     {
       "match": "Internacional vs Flamengo",
@@ -912,8 +958,10 @@
         "dataQuality": 4,
         "hasRealData": true
       },
-      "status": "PENDING",
-      "tier": "STANDARD"
+      "status": "LOST",
+      "tier": "STANDARD",
+      "finalScore": "1-1",
+      "verifiedAt": "2026-10-23T05:48:33.582Z"
     },
     {
       "match": "Mirassol vs Remo",
@@ -935,8 +983,10 @@
         "dataQuality": 4,
         "hasRealData": true
       },
-      "status": "PENDING",
-      "tier": "STANDARD"
+      "status": "WON",
+      "tier": "STANDARD",
+      "finalScore": "2-1",
+      "verifiedAt": "2026-10-23T05:48:33.582Z"
     },
     {
       "match": "Mirassol vs Remo",
@@ -958,8 +1008,10 @@
         "dataQuality": 4,
         "hasRealData": true
       },
-      "status": "PENDING",
-      "tier": "STANDARD"
+      "status": "WON",
+      "tier": "STANDARD",
+      "finalScore": "2-1",
+      "verifiedAt": "2026-10-23T05:48:33.582Z"
     },
     {
       "match": "MLS All-Stars vs Liga MX All-Stars",
@@ -981,8 +1033,10 @@
         "dataQuality": 4,
         "hasRealData": true
       },
-      "status": "PENDING",
-      "tier": "STANDARD"
+      "status": "WON",
+      "tier": "STANDARD",
+      "finalScore": "4-3",
+      "verifiedAt": "2026-10-23T05:48:33.582Z"
     },
     {
       "match": "MLS All-Stars vs Liga MX All-Stars",
@@ -1004,8 +1058,10 @@
         "dataQuality": 4,
         "hasRealData": true
       },
-      "status": "PENDING",
-      "tier": "STANDARD"
+      "status": "WON",
+      "tier": "STANDARD",
+      "finalScore": "4-3",
+      "verifiedAt": "2026-10-23T05:48:33.582Z"
     },
     {
       "match": "Instituto (Córdoba) vs Platense",
@@ -1027,8 +1083,10 @@
         "dataQuality": 4,
         "hasRealData": true
       },
-      "status": "PENDING",
-      "tier": "STANDARD"
+      "status": "WON",
+      "tier": "STANDARD",
+      "finalScore": "2-1",
+      "verifiedAt": "2026-10-23T05:48:33.582Z"
     },
     {
       "match": "Instituto (Córdoba) vs Platense",
@@ -1050,8 +1108,10 @@
         "dataQuality": 4,
         "hasRealData": true
       },
-      "status": "PENDING",
-      "tier": "STANDARD"
+      "status": "LOST",
+      "tier": "STANDARD",
+      "finalScore": "2-1",
+      "verifiedAt": "2026-10-23T05:48:33.582Z"
     },
     {
       "match": "Fluminense vs Bahia",
@@ -1073,8 +1133,10 @@
         "dataQuality": 4,
         "hasRealData": true
       },
-      "status": "PENDING",
-      "tier": "STANDARD"
+      "status": "LOST",
+      "tier": "STANDARD",
+      "finalScore": "0-0",
+      "verifiedAt": "2026-10-23T05:48:33.582Z"
     },
     {
       "match": "Fluminense vs Bahia",
@@ -1096,8 +1158,10 @@
         "dataQuality": 4,
         "hasRealData": true
       },
-      "status": "PENDING",
-      "tier": "STANDARD"
+      "status": "LOST",
+      "tier": "STANDARD",
+      "finalScore": "0-0",
+      "verifiedAt": "2026-10-23T05:48:33.583Z"
     },
     {
       "match": "Vitória vs Palmeiras",
@@ -1119,8 +1183,10 @@
         "dataQuality": 4,
         "hasRealData": true
       },
-      "status": "PENDING",
-      "tier": "STANDARD"
+      "status": "LOST",
+      "tier": "STANDARD",
+      "finalScore": "0-4",
+      "verifiedAt": "2026-10-23T05:48:33.583Z"
     },
     {
       "match": "Vitória vs Palmeiras",
@@ -1142,8 +1208,10 @@
         "dataQuality": 4,
         "hasRealData": true
       },
-      "status": "PENDING",
-      "tier": "STANDARD"
+      "status": "WON",
+      "tier": "STANDARD",
+      "finalScore": "0-4",
+      "verifiedAt": "2026-10-23T05:48:33.583Z"
     },
     {
       "match": "Sportivo San Lorenzo vs Guaraní",
@@ -1165,8 +1233,10 @@
         "dataQuality": 4,
         "hasRealData": true
       },
-      "status": "PENDING",
-      "tier": "STANDARD"
+      "status": "WON",
+      "tier": "STANDARD",
+      "finalScore": "0-1",
+      "verifiedAt": "2026-10-23T05:48:33.583Z"
     },
     {
       "match": "Sportivo San Lorenzo vs Guaraní",
@@ -1188,8 +1258,10 @@
         "dataQuality": 4,
         "hasRealData": true
       },
-      "status": "PENDING",
-      "tier": "STANDARD"
+      "status": "WON",
+      "tier": "STANDARD",
+      "finalScore": "0-1",
+      "verifiedAt": "2026-10-23T05:48:33.583Z"
     }
   ]
 }

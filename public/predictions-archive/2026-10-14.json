@@ -1404,7 +1404,9 @@
       "over25Prob": 0.8149,
       "homeLambda": 2.4,
       "awayLambda": 2,
-      "status": "PENDING"
+      "status": "LOST",
+      "finalScore": "1-0",
+      "verifiedAt": "2026-10-23T05:41:24.578Z"
     },
     {
       "id": "burnley-vs-wolverha-2026-10-16",
@@ -1467,7 +1469,9 @@
       "over25Prob": 0.6042,
       "homeLambda": 1.57,
       "awayLambda": 1.55,
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "1-2",
+      "verifiedAt": "2026-10-23T05:41:24.578Z"
     },
     {
       "id": "energiec-vs-fcnrnber-2026-10-16",
@@ -1530,7 +1534,9 @@
       "over25Prob": 0.7831,
       "homeLambda": 1.98,
       "awayLambda": 2.17,
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "1-1",
+      "verifiedAt": "2026-10-23T05:41:24.578Z"
     }
   ]
 }

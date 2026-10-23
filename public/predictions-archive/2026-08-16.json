@@ -1079,7 +1079,9 @@
       "over25Prob": 0.5471,
       "homeLambda": 1.65,
       "awayLambda": 1.22,
-      "status": "PENDING"
+      "status": "LOST",
+      "finalScore": "0-7",
+      "verifiedAt": "2026-10-23T05:46:48.658Z"
     },
     {
       "id": "cardiffc-vs-wrexham-2026-08-17",
@@ -1142,7 +1144,9 @@
       "over25Prob": 0.5377,
       "homeLambda": 1.62,
       "awayLambda": 1.21,
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "1-1",
+      "verifiedAt": "2026-10-23T05:46:48.658Z"
     },
     {
       "id": "fccincin-vs-newyorkc-2026-08-19",
@@ -1205,7 +1209,9 @@
       "over25Prob": 0.8667,
       "homeLambda": 2.77,
       "awayLambda": 2.13,
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "2-1",
+      "verifiedAt": "2026-10-23T05:46:34.721Z"
     },
     {
       "id": "philadel-vs-intermia-2026-08-19",
@@ -1268,7 +1274,9 @@
       "over25Prob": 0.7391,
       "homeLambda": 2.08,
       "awayLambda": 1.77,
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "2-2",
+      "verifiedAt": "2026-10-23T05:46:34.722Z"
     },
     {
       "id": "torontof-vs-charlott-2026-08-19",
@@ -1331,7 +1339,9 @@
       "over25Prob": 0.706,
       "homeLambda": 1.65,
       "awayLambda": 2,
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "3-3",
+      "verifiedAt": "2026-10-23T05:46:34.722Z"
     },
     {
       "id": "columbus-vs-cfmontra-2026-08-19",
@@ -1394,7 +1404,9 @@
       "over25Prob": 0.7202,
       "homeLambda": 2.23,
       "awayLambda": 1.5,
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "1-2",
+      "verifiedAt": "2026-10-23T05:46:34.722Z"
     },
     {
       "id": "dcunited-vs-newengla-2026-08-19",
@@ -1457,7 +1469,9 @@
       "over25Prob": 0.6943,
       "homeLambda": 1.98,
       "awayLambda": 1.6,
-      "status": "PENDING"
+      "status": "LOST",
+      "finalScore": "0-3",
+      "verifiedAt": "2026-10-23T05:46:34.722Z"
     },
     {
       "id": "orlandoc-vs-chicagof-2026-08-19",
@@ -1520,7 +1534,9 @@
       "over25Prob": 0.6838,
       "homeLambda": 1.9,
       "awayLambda": 1.63,
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "1-2",
+      "verifiedAt": "2026-10-23T05:46:34.722Z"
     }
   ]
 }

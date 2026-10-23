@@ -326,7 +326,9 @@
       "over25Prob": 0.6201,
       "homeLambda": 1.95,
       "awayLambda": 1.25,
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "2-1",
+      "verifiedAt": "2026-10-23T05:42:45.068Z"
     },
     {
       "id": "chicagof-vs-vancouve-2026-10-07",
@@ -389,7 +391,9 @@
       "over25Prob": 0.554,
       "homeLambda": 0.65,
       "awayLambda": 2.25,
-      "status": "PENDING"
+      "status": "LOST",
+      "finalScore": "3-1",
+      "verifiedAt": "2026-10-23T05:42:29.846Z"
     }
   ]
 }

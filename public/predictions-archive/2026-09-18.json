@@ -886,7 +886,9 @@
       "over25Prob": 0.7338,
       "homeLambda": 1.73,
       "awayLambda": 2.08,
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "4-2",
+      "verifiedAt": "2026-10-23T05:43:44.443Z"
     },
     {
       "id": "cfmontra-vs-columbus-2026-09-19",
@@ -949,7 +951,9 @@
       "over25Prob": 0.727,
       "homeLambda": 2.15,
       "awayLambda": 1.63,
-      "status": "PENDING"
+      "status": "LOST",
+      "finalScore": "0-2",
+      "verifiedAt": "2026-10-23T05:43:44.443Z"
     },
     {
       "id": "dcunited-vs-charlott-2026-09-19",
@@ -1012,7 +1016,9 @@
       "over25Prob": 0.627,
       "homeLambda": 1.55,
       "awayLambda": 1.68,
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "1-2",
+      "verifiedAt": "2026-10-23T05:43:44.444Z"
     },
     {
       "id": "adodenha-vs-sccambuu-2026-09-19",
@@ -1075,7 +1081,9 @@
       "over25Prob": 0.8426,
       "homeLambda": 2.15,
       "awayLambda": 2.5,
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "1-1",
+      "verifiedAt": "2026-10-23T05:43:44.444Z"
     },
     {
       "id": "karlsruh-vs-fcnrnber-2026-09-19",
@@ -1138,7 +1146,9 @@
       "over25Prob": 0.859,
       "homeLambda": 1.82,
       "awayLambda": 3,
-      "status": "PENDING"
+      "status": "LOST",
+      "finalScore": "0-1",
+      "verifiedAt": "2026-10-23T05:43:44.444Z"
     },
     {
       "id": "everton-vs-ipswicht-2026-09-19",
@@ -1201,7 +1211,9 @@
       "over25Prob": 0.8426,
       "homeLambda": 2.9,
       "awayLambda": 1.75,
-      "status": "PENDING"
+      "status": "LOST",
+      "finalScore": "1-0",
+      "verifiedAt": "2026-10-23T05:43:44.444Z"
     },
     {
       "id": "ajaxamst-vs-excelsio-2026-09-19",
@@ -1264,7 +1276,9 @@
       "over25Prob": 0.8047,
       "homeLambda": 1.82,
       "awayLambda": 2.5,
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "2-2",
+      "verifiedAt": "2026-10-23T05:43:44.444Z"
     },
     {
       "id": "holstein-vs-vflosnab-2026-09-19",
@@ -1327,7 +1341,9 @@
       "over25Prob": 0.7831,
       "homeLambda": 2.15,
       "awayLambda": 2,
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "1-1",
+      "verifiedAt": "2026-10-23T05:43:44.444Z"
     },
     {
       "id": "willemii-vs-fortunas-2026-09-19",
@@ -1390,7 +1406,9 @@
       "over25Prob": 0.8245,
       "homeLambda": 1.65,
       "awayLambda": 2.83,
-      "status": "PENDING"
+      "status": "LOST",
+      "finalScore": "0-1",
+      "verifiedAt": "2026-10-23T05:43:44.444Z"
     },
     {
       "id": "sanjosee-vs-lafc-2026-09-19",
@@ -1453,7 +1471,9 @@
       "over25Prob": 0.5952,
       "homeLambda": 1.35,
       "awayLambda": 1.73,
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "2-2",
+      "verifiedAt": "2026-10-23T05:43:44.445Z"
     },
     {
       "id": "spartaro-vs-heerenve-2026-09-19",
@@ -1516,7 +1536,9 @@
       "over25Prob": 0.7594,
       "homeLambda": 1.98,
       "awayLambda": 2,
-      "status": "PENDING"
+      "status": "LOST",
+      "finalScore": "0-4",
+      "verifiedAt": "2026-10-23T05:43:44.445Z"
     }
   ]
 }

@@ -1343,7 +1343,9 @@
       "over25Prob": 0.8753,
       "homeLambda": 3,
       "awayLambda": 2,
-      "status": "PENDING"
+      "status": "LOST",
+      "finalScore": "1-0",
+      "verifiedAt": "2026-10-23T05:44:13.568Z"
     },
     {
       "id": "karlsruh-vs-energiec-2026-09-13",
@@ -1406,7 +1408,9 @@
       "over25Prob": 0.9052,
       "homeLambda": 2.9,
       "awayLambda": 2.5,
-      "status": "PENDING"
+      "status": "LOST",
+      "finalScore": "0-3",
+      "verifiedAt": "2026-10-23T05:44:13.568Z"
     },
     {
       "id": "chicagof-vs-newengla-2026-09-13",
@@ -1469,7 +1473,9 @@
       "over25Prob": 0.6096,
       "homeLambda": 1.65,
       "awayLambda": 1.5,
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "1-2",
+      "verifiedAt": "2026-10-23T05:44:13.568Z"
     },
     {
       "id": "psveindh-vs-spartaro-2026-09-13",
@@ -1532,7 +1538,9 @@
       "over25Prob": 0.8149,
       "homeLambda": 2.65,
       "awayLambda": 1.75,
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "4-1",
+      "verifiedAt": "2026-10-23T05:44:13.568Z"
     }
   ]
 }
