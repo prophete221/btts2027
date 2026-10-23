@@ -6902,12 +6902,12 @@ body::before {
   position: relative;
   display: flex;
   align-items: center;
-  gap: 0.85rem;
+  gap: 0.6rem;
   width: fit-content;
   max-width: 100%;
   margin-left: auto;
-  padding: 0.9rem 1rem 0.9rem 0.85rem;
-  border-radius: 18px;
+  padding: 0.65rem 0.75rem 0.65rem 0.65rem;
+  border-radius: 14px;
   background: linear-gradient(155deg, #0F2318 0%, #0B1A14 48%, #0A1520 100%);
   border: 1px solid rgba(0, 210, 122, 0.32);
   box-shadow:
@@ -6942,7 +6942,7 @@ body::before {
 .hp-gift-bonus {
   margin: 0;
   color: #F2F6FA;
-  font-size: 1.02rem;
+  font-size: 0.88rem;
   font-weight: 900;
   letter-spacing: 0.02em;
   line-height: 1.15;
@@ -6953,9 +6953,9 @@ body::before {
   text-shadow: 0 0 18px rgba(255, 213, 74, 0.38);
 }
 .hp-gift-sub {
-  margin: 0 0 0.45rem;
+  margin: 0 0 0.3rem;
   color: #9DABBB;
-  font-size: 0.68rem;
+  font-size: 0.62rem;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -6967,14 +6967,14 @@ body::before {
 }
 .hp-gift-close {
   position: absolute;
-  top: -9px;
-  right: -9px;
+  top: -8px;
+  right: -8px;
   z-index: 2;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 26px;
-  height: 26px;
+  width: 22px;
+  height: 22px;
   border-radius: 50%;
   border: 1px solid rgba(148, 184, 220, 0.28);
   background: #1A2634;
