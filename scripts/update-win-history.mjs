@@ -406,8 +406,6 @@ function run({ write, dir = DIR, now = Date.now() }) {
   const allFiles = files.slice(-90);
 
   // ── Collecte dédupliquée : un enregistrement par match unique ──────────────
-  const newRecords = [];   // publiés depuis TRACKING_START (public)
-  const legacyRecords = []; // publiés avant TRACKING_START (privé)
   const seen = new Map();  // clé → enregistrement (toutes fenêtres confondues)
 
   let newPeriodFrom = null, newPeriodTo = null, newDaysCount = 0;
@@ -437,13 +435,23 @@ function run({ write, dir = DIR, now = Date.now() }) {
       const key = dedupeKey(p, fileDate);
       const existing = seen.get(key);
       if (!existing) {
-        const rec = { fileDate, p: { ...p } };
-        seen.set(key, rec);
-        (isNew ? newRecords : legacyRecords).push(rec);
+        seen.set(key, { fileDate, isNew, p: { ...p } });
       } else {
+        // Un match publié à cheval sur la bascule de suivi (ex. publié en
+        // « à venir » avant startDate puis vérifié après) reste PUBLIC :
+        // l'ancien comptage par copie plaçait sa copie vérifiée dans le
+        // bucket public — on conserve ce rattachement.
+        if (isNew) existing.isNew = true;
         mergeVerifiedCopy(existing, p);
       }
     }
+  }
+
+  // ── Répartition par bucket (après fusion) ──────────────────────────────────
+  const newRecords = [];   // au moins une copie publiée depuis TRACKING_START (public)
+  const legacyRecords = []; // toutes les copies publiées avant TRACKING_START (privé)
+  for (const rec of seen.values()) {
+    (rec.isNew ? newRecords : legacyRecords).push(rec);
   }
 
   // ── Comptage (un match = une entrée) ────────────────────────────────────────

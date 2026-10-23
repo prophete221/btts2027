@@ -205,4 +205,33 @@ describe('update-win-history V8.3 — déduplication des copies de matchs', () =
       fs.rmSync(dir, { recursive: true, force: true })
     }
   })
+
+  it('un match publié avant le début du suivi mais vérifié après reste PUBLIC (bascule 2026-08-08)', () => {
+    // Régression du run #867 : la première publication (archive pré-suivi,
+    // « à venir ») ne doit pas reléguer le match dans le bucket privé legacy
+    // quand une copie postérieure (jour du match) porte le statut vérifié —
+    // l'ancien comptage par copie plaçait cette copie dans le bucket public.
+    const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'win-history-straddle-'))
+    try {
+      const heidenheim = (over: Record<string, unknown> = {}) => ({
+        id: '1fcheidenh-vs-vflosnab-2026-08-08',
+        match: '1. FC Heidenheim 1846 vs VfL Osnabruck',
+        home: '1. FC Heidenheim 1846', away: 'VfL Osnabruck',
+        league: '2. Bundesliga', type: 'BTTS', prediction: 'Oui', proba: 0.71,
+        date: '2026-08-08', time: '12:30',
+        ...over,
+      })
+      writeArchive(dir, '2026-08-07.json', [heidenheim()]) // pré-suivi : PENDING
+      writeArchive(dir, '2026-08-08.json', [heidenheim({ status: 'WON', finalScore: '4-3', verifiedAt: '2026-08-09T03:00:00.000Z' })])
+      const out = runWinHistory({ write: false, dir, now: Date.parse('2026-08-10T12:00:00Z') })!
+      expect(out.stats.total).toBe(1)
+      expect(out.stats.won).toBe(1)
+      expect(out.stats.archivedTotal).toBe(1) // un seul match unique, pas 2 copies
+      const hist = out.history as Array<Record<string, unknown>>
+      expect(hist).toHaveLength(1)
+      expect(hist[0]).toMatchObject({ date: '2026-08-08', status: 'WON', finalScore: '4-3' })
+    } finally {
+      fs.rmSync(dir, { recursive: true, force: true })
+    }
+  })
 })
