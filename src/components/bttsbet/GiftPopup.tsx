@@ -178,7 +178,7 @@ export default function GiftPopup() {
                 Bonus <span>300%</span>
               </p>
               <p className="hp-gift-sub">
-                Exclusif Linebet · code <b>{SITE.promoCode}</b>
+                1. Clique ci-dessous · 2. Entre le code <b>{SITE.promoCode}</b>
               </p>
               <MovingGradientButton
                 href={AFFILIATE.linebet}
@@ -194,7 +194,7 @@ export default function GiftPopup() {
                 border={{ borderWidth: 1.5, borderStyle: 'solid', borderColor: 'rgba(0, 210, 122, 0.45)' }}
                 stroke={{ headColor: '#8CFFC1', color: '#00C26E', direction: 'cw', movement: 'step', count: 2, trail: 72, speed: 14 }}
               >
-                J&apos;en profite
+                S&apos;inscrire avec {SITE.promoCode}
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                   <line x1="5" y1="12" x2="19" y2="12" />
                   <polyline points="12 5 19 12 12 19" />
