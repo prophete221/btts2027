@@ -1,602 +1,8 @@
 {
   "date": "2026-10-24",
-  "lastUpdated": "2026-10-24T17:45:01.691Z",
+  "lastUpdated": "2026-10-24T20:01:25.642Z",
   "source": "ESPN + TheSportsDB",
   "free": [
-    {
-      "id": "adodenha-vs-heerenve-2026-10-24",
-      "match": "ADO Den Haag vs Heerenveen",
-      "home": "ADO Den Haag",
-      "away": "Heerenveen",
-      "league": "Eredivisie",
-      "date": "2026-10-24",
-      "type": "BTTS",
-      "prediction": "Oui",
-      "proba": 0.7115,
-      "bttsProbDisplay": "71.15%",
-      "over25ProbDisplay": "72.70%",
-      "confidence": 71,
-      "time": "19:00",
-      "matchSemantic": "adodenha-vs-heerenve-2026-10-24",
-      "source": "poisson-v92-real-data",
-      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/2726.png",
-      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/146.png",
-      "tier": "GOLD",
-      "reliabilityScore": 89.88,
-      "dataQuality": "HIGH",
-      "dataSource": "ESPN_TEAM_SCHEDULE",
-      "matchCountHome": 8,
-      "matchCountAway": 8,
-      "h2hAvailable": false,
-      "xgHome": 1.65,
-      "xgAway": 2.13,
-      "xgTotal": 3.77,
-      "formBTTS": 50,
-      "analysis": "ADO Den Haag : forme V-N-N-D-D (1V 2N 2D, 7 buts marqués / 9 encaissés sur 5) · Heerenveen : forme V-D-V-N-D (2V 1N 2D, 10 buts marqués / 5 encaissés sur 5). Classement : ADO Den Haag 17e (6 pts), Heerenveen 8e (12 pts). Modèle Poisson : xG cumulé 3.77, BTTS 71.1%, Over 2.5 72.7%. Cotes DraftKings — 1: 3.2 / N: 3.85 / 2: 2. Fiabilité 89.88%.",
-      "analysisData": {
-        "bttsProb": 0.7115,
-        "over25Prob": 0.727,
-        "homeLambda": 1.65,
-        "awayLambda": 2.13,
-        "xgTotal": 3.77
-      },
-      "estimatedCote": 1.41,
-      "estimatedCoteOver": 1.38,
-      "odds": {
-        "provider": "DraftKings",
-        "home": 3.2,
-        "draw": 3.85,
-        "away": 2,
-        "over25": null,
-        "under25": null
-      },
-      "oddsSource": "DraftKings",
-      "estimatedCoteBTTS": 1.41,
-      "formHome": {
-        "last5String": "V-N-N-D-D",
-        "wins": 1,
-        "draws": 2,
-        "losses": 2,
-        "goalsFor": 7,
-        "goalsAgainst": 9,
-        "bttsRate": 0.8,
-        "over25Rate": 0.6,
-        "cleanSheets": 0,
-        "failedToScore": 1,
-        "count": 5
-      },
-      "formAway": {
-        "last5String": "V-D-V-N-D",
-        "wins": 2,
-        "draws": 1,
-        "losses": 2,
-        "goalsFor": 10,
-        "goalsAgainst": 5,
-        "bttsRate": 0.2,
-        "over25Rate": 0.6,
-        "cleanSheets": 3,
-        "failedToScore": 2,
-        "count": 5
-      },
-      "standingsHome": {
-        "rank": 17,
-        "points": 6,
-        "played": 9,
-        "gf": 11,
-        "ga": 20
-      },
-      "standingsAway": {
-        "rank": 8,
-        "points": 12,
-        "played": 9,
-        "gf": 15,
-        "ga": 11
-      },
-      "predictions": [
-        {
-          "type": "BTTS",
-          "prediction": "Oui",
-          "confidence": 71,
-          "bttsProb": 0.7115,
-          "homeLambda": 1.65,
-          "awayLambda": 2.13
-        },
-        {
-          "type": "Over 2.5",
-          "prediction": "Oui",
-          "confidence": 73,
-          "over25Prob": 0.727,
-          "homeLambda": 1.65,
-          "awayLambda": 2.13
-        }
-      ],
-      "bttsProb": 0.7115,
-      "over25Prob": 0.727,
-      "homeLambda": 1.65,
-      "awayLambda": 2.13,
-      "ai_key_fact": "Modèle Poisson : xG domicile 1.65, xG extérieur 2.13, BTTS 71.2%.",
-      "ai_analysis": "Les statistiques du modèle indiquent un xG de 1.65 pour ADO Den Haag et de 2.13 pour Heerenveen. La probabilité BTTS est estimée à 71.2% et l'Over 2.5 atteint 72.7% avec une fiabilité de 89.88%. Au classement de l'Eredivisie, ADO Den Haag occupe la 17e place avec 6 points tandis qu'Heerenveen se positionne au 8e rang avec 12 points. Aucune information relative aux absences n'est disponible dans les données.",
-      "ai_form_summary": "ADO Den Haag totalise 1V-2N-2D sur ses 5 derniers matchs avec un taux BTTS de 0.8. Heerenveen affiche 2V-1N-2D avec 10 buts marqués et 3 clean sheets.",
-      "ai_key_fact_en": "Poisson model: home xG 1.65, away xG 2.13, BTTS 71.2%.",
-      "ai_analysis_en": "Model statistics indicate an xG of 1.65 for ADO Den Haag and 2.13 for Heerenveen. The BTTS probability is estimated at 71.2% and Over 2.5 reaches 72.7% with a reliability of 89.88%. In the Eredivisie standings, ADO Den Haag occupies 17th place with 6 points while Heerenveen ranks 8th with 12 points. No information regarding absences is available in the data.",
-      "ai_form_summary_en": "ADO Den Haag totals 1W-2D-2L over their last 5 matches with a BTTS rate of 0.8. Heerenveen records 2W-1D-2L with 10 goals scored and 3 clean sheets.",
-      "ai_source": "gemini-v2",
-      "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
-      "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
-      "ai_odds_insight": "Le marché (DraftKings) cote 1: 3.2, nul: 3.85, 2: 2.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 3.2, draw: 3.85, 2: 2.",
-      "last5Home": [
-        {
-          "date": "2026-10-17",
-          "opponent": "PSV Eindhoven",
-          "venue": "H",
-          "score": "2-1",
-          "result": "W"
-        },
-        {
-          "date": "2026-10-11",
-          "opponent": "Telstar",
-          "venue": "A",
-          "score": "2-2",
-          "result": "D"
-        },
-        {
-          "date": "2026-09-19",
-          "opponent": "SC Cambuur",
-          "venue": "H",
-          "score": "1-1",
-          "result": "D"
-        },
-        {
-          "date": "2026-09-12",
-          "opponent": "FC Twente",
-          "venue": "A",
-          "score": "0-2",
-          "result": "L"
-        },
-        {
-          "date": "2026-09-06",
-          "opponent": "Fortuna Sittard",
-          "venue": "H",
-          "score": "2-3",
-          "result": "L"
-        }
-      ],
-      "last5Away": [
-        {
-          "date": "2026-10-16",
-          "opponent": "Excelsior",
-          "venue": "H",
-          "score": "4-0",
-          "result": "W"
-        },
-        {
-          "date": "2026-10-09",
-          "opponent": "PSV Eindhoven",
-          "venue": "A",
-          "score": "0-2",
-          "result": "L"
-        },
-        {
-          "date": "2026-09-19",
-          "opponent": "Sparta Rotterdam",
-          "venue": "A",
-          "score": "4-0",
-          "result": "W"
-        },
-        {
-          "date": "2026-09-13",
-          "opponent": "Telstar",
-          "venue": "H",
-          "score": "0-0",
-          "result": "D"
-        },
-        {
-          "date": "2026-09-06",
-          "opponent": "AZ Alkmaar",
-          "venue": "H",
-          "score": "2-3",
-          "result": "L"
-        }
-      ],
-      "status": "PENDING"
-    },
-    {
-      "id": "kvcweste-vs-waasland-2026-10-24",
-      "match": "KVC Westerlo vs Waasland-Beveren",
-      "home": "KVC Westerlo",
-      "away": "Waasland-Beveren",
-      "league": "Jupiler Pro League",
-      "date": "2026-10-24",
-      "type": "BTTS",
-      "prediction": "Oui",
-      "proba": 0.71,
-      "bttsProbDisplay": "71.00%",
-      "over25ProbDisplay": "81.19%",
-      "confidence": 71,
-      "time": "18:45",
-      "matchSemantic": "kvcweste-vs-waasland-2026-10-24",
-      "source": "poisson-v92-real-data",
-      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/606.png",
-      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/13450.png",
-      "tier": "GOLD",
-      "reliabilityScore": 89.81,
-      "dataQuality": "HIGH",
-      "dataSource": "ESPN_TEAM_SCHEDULE",
-      "matchCountHome": 8,
-      "matchCountAway": 8,
-      "h2hAvailable": false,
-      "xgHome": 3,
-      "xgAway": 1.38,
-      "xgTotal": 4.38,
-      "formBTTS": 40,
-      "analysis": "KVC Westerlo : forme V-V-V-V-N (4V 1N 0D, 17 buts marqués / 5 encaissés sur 5) · Waasland-Beveren : forme D-D-V-V-D (2V 0N 3D, 6 buts marqués / 8 encaissés sur 5). Classement : KVC Westerlo 6e (13 pts), Waasland-Beveren 11e (9 pts). Modèle Poisson : xG cumulé 4.38, BTTS 71.0%, Over 2.5 81.2%. Cotes DraftKings — 1: 2.05 / N: 3.75 / 2: 3.15. Fiabilité 89.81%.",
-      "analysisData": {
-        "bttsProb": 0.71,
-        "over25Prob": 0.8119,
-        "homeLambda": 3,
-        "awayLambda": 1.38,
-        "xgTotal": 4.38
-      },
-      "estimatedCote": 1.41,
-      "estimatedCoteOver": 1.23,
-      "odds": {
-        "provider": "DraftKings",
-        "home": 2.05,
-        "draw": 3.75,
-        "away": 3.15,
-        "over25": null,
-        "under25": null
-      },
-      "oddsSource": "DraftKings",
-      "estimatedCoteBTTS": 1.41,
-      "formHome": {
-        "last5String": "V-V-V-V-N",
-        "wins": 4,
-        "draws": 1,
-        "losses": 0,
-        "goalsFor": 17,
-        "goalsAgainst": 5,
-        "bttsRate": 0.6,
-        "over25Rate": 0.8,
-        "cleanSheets": 2,
-        "failedToScore": 0,
-        "count": 5
-      },
-      "formAway": {
-        "last5String": "D-D-V-V-D",
-        "wins": 2,
-        "draws": 0,
-        "losses": 3,
-        "goalsFor": 6,
-        "goalsAgainst": 8,
-        "bttsRate": 0.2,
-        "over25Rate": 0.6,
-        "cleanSheets": 2,
-        "failedToScore": 2,
-        "count": 5
-      },
-      "standingsHome": {
-        "rank": 6,
-        "points": 13,
-        "played": 8,
-        "gf": 20,
-        "ga": 17
-      },
-      "standingsAway": {
-        "rank": 11,
-        "points": 9,
-        "played": 8,
-        "gf": 8,
-        "ga": 14
-      },
-      "predictions": [
-        {
-          "type": "BTTS",
-          "prediction": "Oui",
-          "confidence": 71,
-          "bttsProb": 0.71,
-          "homeLambda": 3,
-          "awayLambda": 1.38
-        },
-        {
-          "type": "Over 2.5",
-          "prediction": "Oui",
-          "confidence": 81,
-          "over25Prob": 0.8119,
-          "homeLambda": 3,
-          "awayLambda": 1.38
-        }
-      ],
-      "bttsProb": 0.71,
-      "over25Prob": 0.8119,
-      "homeLambda": 3,
-      "awayLambda": 1.38,
-      "ai_key_fact": "Modèle Poisson : xG domicile 3.00, xG extérieur 1.38, BTTS 71.0%.",
-      "ai_analysis": "Le modèle projette un net avantage offensif pour les locaux avec un xG de 3.00 contre 1.38 pour les visiteurs. La probabilité du BTTS s'élève à 71.0% et l'Over 2.5 atteint 81.2% avec une fiabilité globale de 89.81%. Au classement de la Jupiler Pro League, KVC Westerlo est 6e avec 13 points et Waasland-Beveren pointe à la 11e place avec 9 points. Aucune donnée d'effectif n'est fournie concernant les absences.",
-      "ai_form_summary": "KVC Westerlo reste sur une solide série de 4V-1N-0D avec 17 buts marqués lors de ses 5 derniers matchs. Waasland-Beveren affiche 2V-0N-3D avec 6 buts inscrits et 8 encaissés.",
-      "ai_key_fact_en": "Poisson model: home xG 3.00, away xG 1.38, BTTS 71.0%.",
-      "ai_analysis_en": "The model projects a clear offensive advantage for the hosts with an xG of 3.00 against 1.38 for the visitors. The BTTS probability stands at 71.0% and Over 2.5 reaches 81.2% with an overall reliability of 89.81%. In the Jupiler Pro League standings, KVC Westerlo is 6th with 13 points and Waasland-Beveren points to 11th place with 9 points. No squad data is provided regarding absences.",
-      "ai_form_summary_en": "KVC Westerlo is on a solid run of 4W-1D-0L with 17 goals scored in their last 5 matches. Waasland-Beveren records 2W-0D-3L with 6 goals scored and 8 conceded.",
-      "ai_source": "gemini-v2",
-      "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
-      "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
-      "ai_odds_insight": "Le marché (DraftKings) cote 1: 2.05, nul: 3.75, 2: 3.15.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.05, draw: 3.75, 2: 3.15.",
-      "last5Home": [
-        {
-          "date": "2026-10-11",
-          "opponent": "Antwerp",
-          "venue": "H",
-          "score": "5-1",
-          "result": "W"
-        },
-        {
-          "date": "2026-09-20",
-          "opponent": "Sint-Truidense",
-          "venue": "A",
-          "score": "2-0",
-          "result": "W"
-        },
-        {
-          "date": "2026-09-12",
-          "opponent": "Standard Liege",
-          "venue": "H",
-          "score": "4-2",
-          "result": "W"
-        },
-        {
-          "date": "2026-09-05",
-          "opponent": "KV Mechelen",
-          "venue": "A",
-          "score": "4-0",
-          "result": "W"
-        },
-        {
-          "date": "2026-08-30",
-          "opponent": "Zulte-Waregem",
-          "venue": "H",
-          "score": "2-2",
-          "result": "D"
-        }
-      ],
-      "last5Away": [
-        {
-          "date": "2026-10-09",
-          "opponent": "Lommel SK",
-          "venue": "H",
-          "score": "1-3",
-          "result": "L"
-        },
-        {
-          "date": "2026-09-20",
-          "opponent": "KV Kortrijk",
-          "venue": "A",
-          "score": "0-1",
-          "result": "L"
-        },
-        {
-          "date": "2026-09-12",
-          "opponent": "Sint-Truidense",
-          "venue": "H",
-          "score": "2-0",
-          "result": "W"
-        },
-        {
-          "date": "2026-09-06",
-          "opponent": "Oud-Heverlee Leuven",
-          "venue": "H",
-          "score": "3-0",
-          "result": "W"
-        },
-        {
-          "date": "2026-08-28",
-          "opponent": "Racing Genk",
-          "venue": "A",
-          "score": "0-4",
-          "result": "L"
-        }
-      ],
-      "status": "PENDING"
-    },
-    {
-      "id": "atlticom-vs-deportiv-2026-10-24",
-      "match": "Atlético Madrid vs Deportivo",
-      "home": "Atlético Madrid",
-      "away": "Deportivo",
-      "league": "LaLiga",
-      "date": "2026-10-24",
-      "type": "BTTS",
-      "prediction": "Oui",
-      "proba": 0.6765,
-      "bttsProbDisplay": "67.65%",
-      "over25ProbDisplay": "72.02%",
-      "confidence": 68,
-      "time": "19:00",
-      "matchSemantic": "atlticom-vs-deportiv-2026-10-24",
-      "source": "poisson-v92-real-data",
-      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/1068.png",
-      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/90.png",
-      "tier": "GOLD",
-      "reliabilityScore": 88.35,
-      "dataQuality": "HIGH",
-      "dataSource": "ESPN_TEAM_SCHEDULE",
-      "matchCountHome": 8,
-      "matchCountAway": 8,
-      "h2hAvailable": false,
-      "xgHome": 2.36,
-      "xgAway": 1.38,
-      "xgTotal": 3.73,
-      "formBTTS": 60,
-      "analysis": "Atlético Madrid : forme V-V-V-V-V (5V 0N 0D, 12 buts marqués / 2 encaissés sur 5) · Deportivo : forme N-D-N-D-N (0V 3N 2D, 5 buts marqués / 7 encaissés sur 5). Classement : Atlético Madrid 2e (22 pts), Deportivo 9e (11 pts). Modèle Poisson : xG cumulé 3.73, BTTS 67.6%, Over 2.5 72.0%. Cotes DraftKings — 1: 1.29 / N: 5.75 / 2: 10 · Over 2.5: 1.57. Fiabilité 88.35%.",
-      "analysisData": {
-        "bttsProb": 0.6765,
-        "over25Prob": 0.7202,
-        "homeLambda": 2.36,
-        "awayLambda": 1.38,
-        "xgTotal": 3.73
-      },
-      "estimatedCote": 1.48,
-      "estimatedCoteOver": 1.39,
-      "odds": {
-        "provider": "DraftKings",
-        "home": 1.29,
-        "draw": 5.75,
-        "away": 10,
-        "over25": 1.57,
-        "under25": 2.4
-      },
-      "oddsSource": "DraftKings",
-      "estimatedCoteBTTS": 1.48,
-      "formHome": {
-        "last5String": "V-V-V-V-V",
-        "wins": 5,
-        "draws": 0,
-        "losses": 0,
-        "goalsFor": 12,
-        "goalsAgainst": 2,
-        "bttsRate": 0.4,
-        "over25Rate": 0.8,
-        "cleanSheets": 3,
-        "failedToScore": 0,
-        "count": 5
-      },
-      "formAway": {
-        "last5String": "N-D-N-D-N",
-        "wins": 0,
-        "draws": 3,
-        "losses": 2,
-        "goalsFor": 5,
-        "goalsAgainst": 7,
-        "bttsRate": 0.8,
-        "over25Rate": 0.2,
-        "cleanSheets": 0,
-        "failedToScore": 1,
-        "count": 5
-      },
-      "standingsHome": {
-        "rank": 2,
-        "points": 22,
-        "played": 9,
-        "gf": 19,
-        "ga": 8
-      },
-      "standingsAway": {
-        "rank": 9,
-        "points": 11,
-        "played": 9,
-        "gf": 13,
-        "ga": 12
-      },
-      "predictions": [
-        {
-          "type": "BTTS",
-          "prediction": "Oui",
-          "confidence": 68,
-          "bttsProb": 0.6765,
-          "homeLambda": 2.36,
-          "awayLambda": 1.38
-        },
-        {
-          "type": "Over 2.5",
-          "prediction": "Oui",
-          "confidence": 72,
-          "over25Prob": 0.7202,
-          "homeLambda": 2.36,
-          "awayLambda": 1.38
-        }
-      ],
-      "bttsProb": 0.6765,
-      "over25Prob": 0.7202,
-      "homeLambda": 2.36,
-      "awayLambda": 1.38,
-      "ai_key_fact": "Atlético Madrid présente un bilan parfait à domicile sur ses cinq derniers matchs.",
-      "ai_analysis": "Les statistiques des deux équipes révèlent une supériorité nette de l'Atlético Madrid, second au classement, face à un Deportivo positionné à la neuvième place. Le modèle Poisson anticipe des xG respectifs de 2.36 pour l'équipe hôte et 1.38 pour les visiteurs. Les probabilités indiquent un taux de BTTS à 67.7% et un Over 2.5 à 72.0%. La fiabilité globale du modèle s'établit à 88.35%.",
-      "ai_form_summary": "L'Atlético Madrid enchaîne une série de cinq victoires consécutives avec 12 buts marqués et 2 encaissés. En face, Deportivo traverse une période délicate avec trois nuls et deux défaites en cinq rencontres.",
-      "ai_key_fact_en": "Atletico Madrid shows a perfect home record over their last five matches.",
-      "ai_analysis_en": "Team statistics reveal a clear superiority for Atletico Madrid, second in the standings, against Deportivo, placed ninth. The Poisson model anticipates respective xG of 2.36 for the home team and 1.38 for the visitors. Probabilities indicate a BTTS rate of 67.7% and an Over 2.5 of 72.0%. The overall model reliability stands at 88.35%.",
-      "ai_form_summary_en": "Atletico Madrid is on a five-match winning streak with 12 goals scored and 2 conceded. Meanwhile, Deportivo is going through a delicate period with three draws and two defeats in five games.",
-      "ai_source": "gemini-v2",
-      "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
-      "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
-      "ai_odds_insight": "Le marché (DraftKings) cote 1: 1.29, nul: 5.75, 2: 10, Over 2.5: 1.57.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 1.29, draw: 5.75, 2: 10, Over 2.5: 1.57.",
-      "last5Home": [
-        {
-          "date": "2026-10-17",
-          "opponent": "Espanyol",
-          "venue": "A",
-          "score": "1-0",
-          "result": "W"
-        },
-        {
-          "date": "2026-10-10",
-          "opponent": "Alavés",
-          "venue": "A",
-          "score": "2-1",
-          "result": "W"
-        },
-        {
-          "date": "2026-09-20",
-          "opponent": "Real Madrid",
-          "venue": "H",
-          "score": "2-1",
-          "result": "W"
-        },
-        {
-          "date": "2026-09-16",
-          "opponent": "Osasuna",
-          "venue": "H",
-          "score": "4-0",
-          "result": "W"
-        },
-        {
-          "date": "2026-09-13",
-          "opponent": "Real Sociedad",
-          "venue": "A",
-          "score": "3-0",
-          "result": "W"
-        }
-      ],
-      "last5Away": [
-        {
-          "date": "2026-10-16",
-          "opponent": "Levante",
-          "venue": "H",
-          "score": "1-1",
-          "result": "D"
-        },
-        {
-          "date": "2026-10-11",
-          "opponent": "Real Sociedad",
-          "venue": "A",
-          "score": "2-3",
-          "result": "L"
-        },
-        {
-          "date": "2026-09-20",
-          "opponent": "Real Betis",
-          "venue": "H",
-          "score": "1-1",
-          "result": "D"
-        },
-        {
-          "date": "2026-09-16",
-          "opponent": "Sevilla",
-          "venue": "H",
-          "score": "0-1",
-          "result": "L"
-        },
-        {
-          "date": "2026-09-13",
-          "opponent": "Getafe",
-          "venue": "A",
-          "score": "1-1",
-          "result": "D"
-        }
-      ],
-      "status": "PENDING"
-    },
     {
       "id": "philadel-vs-newengla-2026-10-24",
       "match": "Philadelphia Union vs New England Revolution",
@@ -1192,402 +598,6 @@
       "status": "PENDING"
     },
     {
-      "id": "raallalo-vs-zultewar-2026-10-24",
-      "match": "RAAL La Louvière vs Zulte-Waregem",
-      "home": "RAAL La Louvière",
-      "away": "Zulte-Waregem",
-      "league": "Jupiler Pro League",
-      "date": "2026-10-24",
-      "type": "BTTS",
-      "prediction": "Oui",
-      "proba": 0.6277,
-      "bttsProbDisplay": "62.77%",
-      "over25ProbDisplay": "60.96%",
-      "confidence": 63,
-      "time": "18:45",
-      "matchSemantic": "raallalo-vs-zultewar-2026-10-24",
-      "source": "poisson-v92-real-data",
-      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/131235.png",
-      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/4691.png",
-      "tier": "GOLD",
-      "reliabilityScore": 83.71,
-      "dataQuality": "HIGH",
-      "dataSource": "ESPN_TEAM_SCHEDULE",
-      "matchCountHome": 8,
-      "matchCountAway": 8,
-      "h2hAvailable": false,
-      "xgHome": 1.65,
-      "xgAway": 1.5,
-      "xgTotal": 3.15,
-      "formBTTS": 30,
-      "analysis": "RAAL La Louvière : forme D-D-V-D-N (1V 1N 3D, 6 buts marqués / 12 encaissés sur 5) · Zulte-Waregem : forme D-D-D-V-N (1V 1N 3D, 4 buts marqués / 8 encaissés sur 5). Classement : RAAL La Louvière 16e (4 pts), Zulte-Waregem 8e (11 pts). Modèle Poisson : xG cumulé 3.15, BTTS 62.8%, Over 2.5 61.0%. Cotes DraftKings — 1: 3 / N: 3.4 / 2: 2.3 · Over 2.5: 1.87. Fiabilité 83.71%.",
-      "analysisData": {
-        "bttsProb": 0.6277,
-        "over25Prob": 0.6096,
-        "homeLambda": 1.65,
-        "awayLambda": 1.5,
-        "xgTotal": 3.15
-      },
-      "estimatedCote": 1.59,
-      "estimatedCoteOver": 1.64,
-      "odds": {
-        "provider": "DraftKings",
-        "home": 3,
-        "draw": 3.4,
-        "away": 2.3,
-        "over25": 1.87,
-        "under25": 1.87
-      },
-      "oddsSource": "DraftKings",
-      "estimatedCoteBTTS": 1.59,
-      "formHome": {
-        "last5String": "D-D-V-D-N",
-        "wins": 1,
-        "draws": 1,
-        "losses": 3,
-        "goalsFor": 6,
-        "goalsAgainst": 12,
-        "bttsRate": 0.4,
-        "over25Rate": 0.8,
-        "cleanSheets": 1,
-        "failedToScore": 2,
-        "count": 5
-      },
-      "formAway": {
-        "last5String": "D-D-D-V-N",
-        "wins": 1,
-        "draws": 1,
-        "losses": 3,
-        "goalsFor": 4,
-        "goalsAgainst": 8,
-        "bttsRate": 0.2,
-        "over25Rate": 0.4,
-        "cleanSheets": 1,
-        "failedToScore": 3,
-        "count": 5
-      },
-      "last5Home": [
-        {
-          "date": "2026-10-10",
-          "opponent": "Club Brugge",
-          "venue": "H",
-          "score": "1-4",
-          "result": "L"
-        },
-        {
-          "date": "2026-09-19",
-          "opponent": "Oud-Heverlee Leuven",
-          "venue": "A",
-          "score": "0-2",
-          "result": "L"
-        },
-        {
-          "date": "2026-09-13",
-          "opponent": "KV Kortrijk",
-          "venue": "H",
-          "score": "3-0",
-          "result": "W"
-        },
-        {
-          "date": "2026-09-05",
-          "opponent": "Sint-Truidense",
-          "venue": "A",
-          "score": "0-4",
-          "result": "L"
-        },
-        {
-          "date": "2026-08-29",
-          "opponent": "KV Mechelen",
-          "venue": "H",
-          "score": "2-2",
-          "result": "D"
-        }
-      ],
-      "last5Away": [
-        {
-          "date": "2026-10-10",
-          "opponent": "KAA Gent",
-          "venue": "H",
-          "score": "0-2",
-          "result": "L"
-        },
-        {
-          "date": "2026-09-19",
-          "opponent": "Anderlecht",
-          "venue": "A",
-          "score": "0-3",
-          "result": "L"
-        },
-        {
-          "date": "2026-09-13",
-          "opponent": "Royal Charleroi SC",
-          "venue": "H",
-          "score": "0-1",
-          "result": "L"
-        },
-        {
-          "date": "2026-09-06",
-          "opponent": "KV Kortrijk",
-          "venue": "A",
-          "score": "2-0",
-          "result": "W"
-        },
-        {
-          "date": "2026-08-30",
-          "opponent": "KVC Westerlo",
-          "venue": "A",
-          "score": "2-2",
-          "result": "D"
-        }
-      ],
-      "standingsHome": {
-        "rank": 16,
-        "points": 4,
-        "played": 8,
-        "gf": 8,
-        "ga": 18
-      },
-      "standingsAway": {
-        "rank": 8,
-        "points": 11,
-        "played": 8,
-        "gf": 10,
-        "ga": 9
-      },
-      "predictions": [
-        {
-          "type": "BTTS",
-          "prediction": "Oui",
-          "confidence": 63,
-          "bttsProb": 0.6277,
-          "homeLambda": 1.65,
-          "awayLambda": 1.5
-        },
-        {
-          "type": "Over 2.5",
-          "prediction": "Oui",
-          "confidence": 61,
-          "over25Prob": 0.6096,
-          "homeLambda": 1.65,
-          "awayLambda": 1.5
-        }
-      ],
-      "bttsProb": 0.6277,
-      "over25Prob": 0.6096,
-      "homeLambda": 1.65,
-      "awayLambda": 1.5,
-      "ai_key_fact": "RAAL La Louvière est 16e et Zulte-Waregem se classe 8e du championnat.",
-      "ai_analysis": "Le modèle Poisson prévoit des xG de 1.65 pour RAAL La Louvière et de 1.5 pour Zulte-Waregem. La probabilité BTTS est estimée à 62.8% et celle de l'Over 2.5 atteint 61.0%, avec un indice de fiabilité de 83.71%. Les cotes des bookmakers placent Zulte-Waregem légèrement favori à l'extérieur.",
-      "ai_form_summary": "RAAL La Louvière traverse une phase délicate avec une seule victoire et trois défaites lors de ses cinq derniers matchs. Zulte-Waregem affiche également un bilan de une victoire, un nul et trois défaites sur la même séquence.",
-      "ai_key_fact_en": "RAAL La Louvière is 16th and Zulte-Waregem ranks 8th in the championship.",
-      "ai_analysis_en": "The Poisson model forecasts xGs of 1.65 for RAAL La Louvière and 1.5 for Zulte-Waregem. The BTTS probability is estimated at 62.8% and that of Over 2.5 reaches 61.0%, with a reliability index of 83.71%. Bookmaker odds place Zulte-Waregem as a slight away favorite.",
-      "ai_form_summary_en": "RAAL La Louvière is going through a delicate phase with a single win and three defeats in their last five matches. Zulte-Waregem also displays a record of one win, one draw, and three defeats over the same sequence.",
-      "ai_source": "gemini-v2",
-      "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
-      "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
-      "ai_odds_insight": "Le marché (DraftKings) cote 1: 3, nul: 3.4, 2: 2.3, Over 2.5: 1.87.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 3, draw: 3.4, 2: 2.3, Over 2.5: 1.87.",
-      "status": "PENDING"
-    },
-    {
-      "id": "fcnrnber-vs-kaisersl-2026-10-24",
-      "match": "1. FC Nürnberg vs Kaiserslautern",
-      "home": "1. FC Nürnberg",
-      "away": "Kaiserslautern",
-      "league": "2. Bundesliga",
-      "date": "2026-10-24",
-      "type": "BTTS",
-      "prediction": "Oui",
-      "proba": 0.5671,
-      "bttsProbDisplay": "56.71%",
-      "over25ProbDisplay": "63.55%",
-      "confidence": 57,
-      "time": "18:30",
-      "matchSemantic": "fcnrnber-vs-kaisersl-2026-10-24",
-      "source": "poisson-v92-real-data",
-      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/269.png",
-      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/130.png",
-      "tier": "GOLD",
-      "reliabilityScore": 83.56,
-      "dataQuality": "HIGH",
-      "dataSource": "ESPN_TEAM_SCHEDULE",
-      "matchCountHome": 8,
-      "matchCountAway": 8,
-      "h2hAvailable": false,
-      "xgHome": 2.27,
-      "xgAway": 1,
-      "xgTotal": 3.27,
-      "formBTTS": 40,
-      "analysis": "1. FC Nürnberg : forme N-N-V-V-N (2V 3N 0D, 10 buts marqués / 8 encaissés sur 5) · Kaiserslautern : forme V-N-V-D-V (3V 1N 1D, 6 buts marqués / 3 encaissés sur 5). Classement : 1. FC Nürnberg 2e (18 pts), Kaiserslautern 4e (15 pts). Modèle Poisson : xG cumulé 3.27, BTTS 56.7%, Over 2.5 63.6%. Cotes DraftKings — 1: 2.05 / N: 3.85 / 2: 3.25. Fiabilité 83.56%.",
-      "analysisData": {
-        "bttsProb": 0.5671,
-        "over25Prob": 0.6355,
-        "homeLambda": 2.27,
-        "awayLambda": 1,
-        "xgTotal": 3.27
-      },
-      "estimatedCote": 1.76,
-      "estimatedCoteOver": 1.57,
-      "odds": {
-        "provider": "DraftKings",
-        "home": 2.05,
-        "draw": 3.85,
-        "away": 3.25,
-        "over25": null,
-        "under25": null
-      },
-      "oddsSource": "DraftKings",
-      "estimatedCoteBTTS": 1.76,
-      "formHome": {
-        "last5String": "N-N-V-V-N",
-        "wins": 2,
-        "draws": 3,
-        "losses": 0,
-        "goalsFor": 10,
-        "goalsAgainst": 8,
-        "bttsRate": 0.8,
-        "over25Rate": 0.6,
-        "cleanSheets": 1,
-        "failedToScore": 0,
-        "count": 5
-      },
-      "formAway": {
-        "last5String": "V-N-V-D-V",
-        "wins": 3,
-        "draws": 1,
-        "losses": 1,
-        "goalsFor": 6,
-        "goalsAgainst": 3,
-        "bttsRate": 0,
-        "over25Rate": 0.4,
-        "cleanSheets": 4,
-        "failedToScore": 2,
-        "count": 5
-      },
-      "last5Home": [
-        {
-          "date": "2026-10-16",
-          "opponent": "Energie Cottbus",
-          "venue": "A",
-          "score": "1-1",
-          "result": "D"
-        },
-        {
-          "date": "2026-10-10",
-          "opponent": "VfL Wolfsburg",
-          "venue": "H",
-          "score": "4-4",
-          "result": "D"
-        },
-        {
-          "date": "2026-09-19",
-          "opponent": "Karlsruher SC",
-          "venue": "A",
-          "score": "1-0",
-          "result": "W"
-        },
-        {
-          "date": "2026-09-11",
-          "opponent": "Hannover 96",
-          "venue": "H",
-          "score": "2-1",
-          "result": "W"
-        },
-        {
-          "date": "2026-09-05",
-          "opponent": "Holstein Kiel",
-          "venue": "A",
-          "score": "2-2",
-          "result": "D"
-        }
-      ],
-      "last5Away": [
-        {
-          "date": "2026-10-17",
-          "opponent": "VfL Bochum",
-          "venue": "H",
-          "score": "2-0",
-          "result": "W"
-        },
-        {
-          "date": "2026-10-09",
-          "opponent": "1. FC Heidenheim 1846",
-          "venue": "A",
-          "score": "0-0",
-          "result": "D"
-        },
-        {
-          "date": "2026-09-19",
-          "opponent": "TSV Eintracht Braunschweig",
-          "venue": "H",
-          "score": "1-0",
-          "result": "W"
-        },
-        {
-          "date": "2026-09-12",
-          "opponent": "1. FC Magdeburg",
-          "venue": "A",
-          "score": "0-3",
-          "result": "L"
-        },
-        {
-          "date": "2026-09-05",
-          "opponent": "SV Darmstadt 98",
-          "venue": "H",
-          "score": "3-0",
-          "result": "W"
-        }
-      ],
-      "standingsHome": {
-        "rank": 2,
-        "points": 18,
-        "played": 8,
-        "gf": 21,
-        "ga": 11
-      },
-      "standingsAway": {
-        "rank": 4,
-        "points": 15,
-        "played": 8,
-        "gf": 8,
-        "ga": 4
-      },
-      "predictions": [
-        {
-          "type": "BTTS",
-          "prediction": "Oui",
-          "confidence": 57,
-          "bttsProb": 0.5671,
-          "homeLambda": 2.27,
-          "awayLambda": 1
-        },
-        {
-          "type": "Over 2.5",
-          "prediction": "Oui",
-          "confidence": 64,
-          "over25Prob": 0.6355,
-          "homeLambda": 2.27,
-          "awayLambda": 1
-        }
-      ],
-      "bttsProb": 0.5671,
-      "over25Prob": 0.6355,
-      "homeLambda": 2.27,
-      "awayLambda": 1,
-      "ai_key_fact": "Nürnberg affiche un taux de BTTS à domicile de 80% sur ses cinq derniers matchs.",
-      "ai_analysis": "Le modèle Poisson de BTTSPredict attribue un xG de 2.27 pour l'équipe à domicile et de 1.0 pour l'extérieur, traduisant une domination offensive potentielle de Nürnberg. Les probabilités calculées atteignent 56.7% pour le BTTS et 63.5% pour l'Over 2.5, avec une fiabilité de modèle évaluée à 83.56%. Les cotes de DraftKings situent la victoire de Nürnberg à 2.05, le nul à 3.85 et le succès extérieur à 3.25. Aucune donnée sur l'Over et l'Under 2.5 n'est disponible auprès de ce bookmaker.",
-      "ai_form_summary": "Le 1. FC Nürnberg présente une forme stable avec deux victoires et trois nuls, affichant dix buts marqués et huit encaissés. De son côté, Kaiserslautern totalise trois victoires, un nul et une défaite, s'appuyant sur une défense solide avec quatre clean sheets.",
-      "ai_key_fact_en": "Nuremberg boasts an 80% home BTTS rate over their last five matches.",
-      "ai_analysis_en": "The BTTSPredict Poisson model assigns an xG of 2.27 for the home team and 1.0 for the away team, reflecting potential offensive dominance by Nuremberg. Calculated probabilities reach 56.7% for BTTS and 63.5% for Over 2.5, with a model reliability rated at 83.56%. DraftKings odds price a Nuremberg win at 2.05, a draw at 3.85, and an away victory at 3.25. No data for Over and Under 2.5 is available from this bookmaker.",
-      "ai_form_summary_en": "1. FC Nürnberg shows stable form with two wins and three draws, scoring ten goals and conceding eight. Meanwhile, Kaiserslautern records three wins, one draw, and one defeat, relying on a solid defense with four clean sheets.",
-      "ai_source": "gemini-v2",
-      "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
-      "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
-      "ai_odds_insight": "Le marché (DraftKings) cote 1: 2.05, nul: 3.85, 2: 3.25.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.05, draw: 3.85, 2: 3.25.",
-      "status": "PENDING"
-    },
-    {
       "id": "orlandoc-vs-newyorkc-2026-10-24",
       "match": "Orlando City SC vs New York City FC",
       "home": "Orlando City SC",
@@ -1982,794 +992,6 @@
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 2.55, nul: 3.7, 2: 2.4.",
       "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.55, draw: 3.7, 2: 2.4.",
       "status": "PENDING"
-    },
-    {
-      "id": "columbus-vs-torontof-2026-10-24",
-      "match": "Columbus Crew vs Toronto FC",
-      "home": "Columbus Crew",
-      "away": "Toronto FC",
-      "league": "MLS",
-      "date": "2026-10-24",
-      "type": "BTTS",
-      "prediction": "Non",
-      "proba": 0.4662,
-      "bttsProbDisplay": "46.62%",
-      "over25ProbDisplay": "55.40%",
-      "confidence": 47,
-      "time": "19:30",
-      "matchSemantic": "columbus-vs-torontof-2026-10-24",
-      "source": "poisson-v92-real-data",
-      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/183.png",
-      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/7318.png",
-      "tier": "GOLD",
-      "reliabilityScore": 76.65,
-      "dataQuality": "HIGH",
-      "dataSource": "ESPN_TEAM_SCHEDULE",
-      "matchCountHome": 8,
-      "matchCountAway": 8,
-      "h2hAvailable": false,
-      "xgHome": 2.15,
-      "xgAway": 0.75,
-      "xgTotal": 2.9,
-      "formBTTS": 60,
-      "analysis": "Columbus Crew : forme V-V-D-V-V (4V 0N 1D, 11 buts marqués / 5 encaissés sur 5) · Toronto FC : forme V-N-V-D-D (2V 1N 2D, 8 buts marqués / 9 encaissés sur 5). Classement : Columbus Crew 11e (35 pts), Toronto FC 10e (36 pts). Modèle Poisson : xG cumulé 2.9, BTTS 46.6%, Over 2.5 55.4%. Cotes DraftKings — 1: 1.65 / N: 4.2 / 2: 4.3. Fiabilité 76.65%.",
-      "analysisData": {
-        "bttsProb": 0.4662,
-        "over25Prob": 0.554,
-        "homeLambda": 2.15,
-        "awayLambda": 0.75,
-        "xgTotal": 2.9
-      },
-      "estimatedCote": 2.15,
-      "estimatedCoteOver": 1.8,
-      "odds": {
-        "provider": "DraftKings",
-        "home": 1.65,
-        "draw": 4.2,
-        "away": 4.3,
-        "over25": null,
-        "under25": null
-      },
-      "oddsSource": "DraftKings",
-      "estimatedCoteBTTS": 2.15,
-      "formHome": {
-        "last5String": "V-V-D-V-V",
-        "wins": 4,
-        "draws": 0,
-        "losses": 1,
-        "goalsFor": 11,
-        "goalsAgainst": 5,
-        "bttsRate": 0.6,
-        "over25Rate": 0.6,
-        "cleanSheets": 2,
-        "failedToScore": 0,
-        "count": 5
-      },
-      "formAway": {
-        "last5String": "V-N-V-D-D",
-        "wins": 2,
-        "draws": 1,
-        "losses": 2,
-        "goalsFor": 8,
-        "goalsAgainst": 9,
-        "bttsRate": 0.6,
-        "over25Rate": 0.6,
-        "cleanSheets": 1,
-        "failedToScore": 1,
-        "count": 5
-      },
-      "last5Home": [
-        {
-          "date": "2026-10-18",
-          "opponent": "FC Cincinnati",
-          "venue": "A",
-          "score": "2-0",
-          "result": "W"
-        },
-        {
-          "date": "2026-10-14",
-          "opponent": "Charlotte FC",
-          "venue": "H",
-          "score": "3-1",
-          "result": "W"
-        },
-        {
-          "date": "2026-10-10",
-          "opponent": "Orlando City SC",
-          "venue": "A",
-          "score": "2-3",
-          "result": "L"
-        },
-        {
-          "date": "2026-09-27",
-          "opponent": "Inter Miami CF",
-          "venue": "H",
-          "score": "2-1",
-          "result": "W"
-        },
-        {
-          "date": "2026-09-19",
-          "opponent": "CF Montréal",
-          "venue": "A",
-          "score": "2-0",
-          "result": "W"
-        }
-      ],
-      "last5Away": [
-        {
-          "date": "2026-10-17",
-          "opponent": "Red Bull New York",
-          "venue": "A",
-          "score": "2-0",
-          "result": "W"
-        },
-        {
-          "date": "2026-10-14",
-          "opponent": "Orlando City SC",
-          "venue": "H",
-          "score": "3-3",
-          "result": "D"
-        },
-        {
-          "date": "2026-10-10",
-          "opponent": "CF Montréal",
-          "venue": "H",
-          "score": "2-1",
-          "result": "W"
-        },
-        {
-          "date": "2026-09-27",
-          "opponent": "Nashville SC",
-          "venue": "A",
-          "score": "0-2",
-          "result": "L"
-        },
-        {
-          "date": "2026-09-20",
-          "opponent": "St. Louis CITY SC",
-          "venue": "A",
-          "score": "1-3",
-          "result": "L"
-        }
-      ],
-      "standingsHome": {
-        "rank": 11,
-        "points": 35,
-        "played": 30,
-        "gf": 46,
-        "ga": 47
-      },
-      "standingsAway": {
-        "rank": 10,
-        "points": 36,
-        "played": 30,
-        "gf": 46,
-        "ga": 55
-      },
-      "predictions": [
-        {
-          "type": "BTTS",
-          "prediction": "Non",
-          "confidence": 47,
-          "bttsProb": 0.4662,
-          "homeLambda": 2.15,
-          "awayLambda": 0.75
-        },
-        {
-          "type": "Over 2.5",
-          "prediction": "Oui",
-          "confidence": 55,
-          "over25Prob": 0.554,
-          "homeLambda": 2.15,
-          "awayLambda": 0.75
-        }
-      ],
-      "bttsProb": 0.4662,
-      "over25Prob": 0.554,
-      "homeLambda": 2.15,
-      "awayLambda": 0.75,
-      "ai_key_fact": "Columbus Crew totalise quatre victoires sur ses cinq derniers matchs.",
-      "ai_analysis": "Le modèle Poisson met en avant un net avantage offensif pour Columbus Crew avec un xG de 2.15, comparé à 0.75 pour Toronto FC. Les probabilités affichées atteignent 46.6% pour le BTTS et 55.4% pour l'Over 2.5, sous une fiabilité de modèle de 76.65%. Au classement, Columbus Crew se positionne à la 11e place avec 35 points, juste devant Toronto FC, 10e avec 36 points. Les cotes de DraftKings reflètent le statut de favori des locaux à 1.65, contre 4.2 pour le match nul et 4.3 pour la victoire de Toronto. Les statistiques traduisent une supériorité théorique de Columbus à domicile.",
-      "ai_form_summary": "Columbus Crew enchaîne une bonne série de 4V-0N-1D, avec 11 buts marqués et 5 encaissés. Toronto FC affiche un bilan plus modéré de 2V-1N-2D, comptant 8 buts inscrits et 9 concédés.",
-      "ai_key_fact_en": "Columbus Crew totals four wins in their last five matches.",
-      "ai_analysis_en": "The Poisson model highlights a clear offensive advantage for Columbus Crew with an xG of 2.15, compared to 0.75 for Toronto FC. Displayed probabilities reach 46.6% for BTTS and 55.4% for Over 2.5, under a model reliability of 76.65%. In the standings, Columbus Crew is positioned 11th with 35 points, just behind Toronto FC, who are 10th with 36 points. DraftKings odds reflect the favorites status of the hosts at 1.65, versus 4.2 for a draw and 4.3 for a Toronto win. The statistics translate Columbus's theoretical superiority at home.",
-      "ai_form_summary_en": "Columbus Crew puts together a strong run of 4W-0D-1L, with 11 goals scored and 5 conceded. Toronto FC records a more moderate balance of 2W-1D-2L, tallying 8 goals scored and 9 conceded.",
-      "ai_source": "gemini-v2",
-      "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
-      "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
-      "ai_odds_insight": "Le marché (DraftKings) cote 1: 1.65, nul: 4.2, 2: 4.3.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 1.65, draw: 4.2, 2: 4.3."
-    },
-    {
-      "id": "gilvicen-vs-fcporto-2026-10-24",
-      "match": "Gil Vicente vs FC Porto",
-      "home": "Gil Vicente",
-      "away": "FC Porto",
-      "league": "Liga Portugal",
-      "date": "2026-10-24",
-      "type": "BTTS",
-      "prediction": "Non",
-      "proba": 0.4766,
-      "bttsProbDisplay": "47.66%",
-      "over25ProbDisplay": "46.26%",
-      "confidence": 48,
-      "time": "19:30",
-      "matchSemantic": "gilvicen-vs-fcporto-2026-10-24",
-      "source": "poisson-v92-real-data",
-      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/3699.png",
-      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/437.png",
-      "tier": "SILVER",
-      "reliabilityScore": 74.6,
-      "dataQuality": "HIGH",
-      "dataSource": "ESPN_TEAM_SCHEDULE",
-      "matchCountHome": 8,
-      "matchCountAway": 8,
-      "h2hAvailable": false,
-      "xgHome": 0.9,
-      "xgAway": 1.63,
-      "xgTotal": 2.52,
-      "formBTTS": 70,
-      "analysis": "Gil Vicente : forme V-V-N-D-D (2V 1N 2D, 5 buts marqués / 6 encaissés sur 5) · FC Porto : forme V-V-V-V-V (5V 0N 0D, 14 buts marqués / 4 encaissés sur 5). Classement : Gil Vicente 7e (14 pts), FC Porto 1e (24 pts). Modèle Poisson : xG cumulé 2.52, BTTS 47.7%, Over 2.5 46.3%. Cotes DraftKings — 1: 7 / N: 4.6 / 2: 1.43 · Over 2.5: 1.83. Fiabilité 74.6%.",
-      "analysisData": {
-        "bttsProb": 0.4766,
-        "over25Prob": 0.4626,
-        "homeLambda": 0.9,
-        "awayLambda": 1.63,
-        "xgTotal": 2.52
-      },
-      "estimatedCote": 2.1,
-      "estimatedCoteOver": 2.16,
-      "odds": {
-        "provider": "DraftKings",
-        "home": 7,
-        "draw": 4.6,
-        "away": 1.43,
-        "over25": 1.83,
-        "under25": 1.91
-      },
-      "oddsSource": "DraftKings",
-      "estimatedCoteBTTS": 2.1,
-      "formHome": {
-        "last5String": "V-V-N-D-D",
-        "wins": 2,
-        "draws": 1,
-        "losses": 2,
-        "goalsFor": 5,
-        "goalsAgainst": 6,
-        "bttsRate": 0.6,
-        "over25Rate": 0.4,
-        "cleanSheets": 1,
-        "failedToScore": 1,
-        "count": 5
-      },
-      "formAway": {
-        "last5String": "V-V-V-V-V",
-        "wins": 5,
-        "draws": 0,
-        "losses": 0,
-        "goalsFor": 14,
-        "goalsAgainst": 4,
-        "bttsRate": 0.8,
-        "over25Rate": 1,
-        "cleanSheets": 1,
-        "failedToScore": 0,
-        "count": 5
-      },
-      "last5Home": [
-        {
-          "date": "2026-10-19",
-          "opponent": "Braga",
-          "venue": "A",
-          "score": "2-1",
-          "result": "W"
-        },
-        {
-          "date": "2026-10-09",
-          "opponent": "Moreirense",
-          "venue": "A",
-          "score": "1-0",
-          "result": "W"
-        },
-        {
-          "date": "2026-09-19",
-          "opponent": "Maritimo",
-          "venue": "H",
-          "score": "1-1",
-          "result": "D"
-        },
-        {
-          "date": "2026-09-13",
-          "opponent": "Benfica",
-          "venue": "A",
-          "score": "1-3",
-          "result": "L"
-        },
-        {
-          "date": "2026-09-06",
-          "opponent": "Académico de Viseu",
-          "venue": "H",
-          "score": "0-1",
-          "result": "L"
-        }
-      ],
-      "last5Away": [
-        {
-          "date": "2026-10-10",
-          "opponent": "Maritimo",
-          "venue": "A",
-          "score": "2-1",
-          "result": "W"
-        },
-        {
-          "date": "2026-09-20",
-          "opponent": "Benfica",
-          "venue": "H",
-          "score": "3-1",
-          "result": "W"
-        },
-        {
-          "date": "2026-09-12",
-          "opponent": "Casa Pia",
-          "venue": "A",
-          "score": "4-1",
-          "result": "W"
-        },
-        {
-          "date": "2026-09-04",
-          "opponent": "Moreirense",
-          "venue": "H",
-          "score": "2-1",
-          "result": "W"
-        },
-        {
-          "date": "2026-08-29",
-          "opponent": "Académico de Viseu",
-          "venue": "A",
-          "score": "3-0",
-          "result": "W"
-        }
-      ],
-      "standingsHome": {
-        "rank": 7,
-        "points": 14,
-        "played": 8,
-        "gf": 8,
-        "ga": 6
-      },
-      "standingsAway": {
-        "rank": 1,
-        "points": 24,
-        "played": 8,
-        "gf": 20,
-        "ga": 4
-      },
-      "predictions": [
-        {
-          "type": "BTTS",
-          "prediction": "Non",
-          "confidence": 48,
-          "bttsProb": 0.4766,
-          "homeLambda": 0.9,
-          "awayLambda": 1.63
-        },
-        {
-          "type": "Over 2.5",
-          "prediction": "Non",
-          "confidence": 46,
-          "over25Prob": 0.4626,
-          "homeLambda": 0.9,
-          "awayLambda": 1.63
-        }
-      ],
-      "bttsProb": 0.4766,
-      "over25Prob": 0.4626,
-      "homeLambda": 0.9,
-      "awayLambda": 1.63,
-      "ai_key_fact": "Le FC Porto réalise un parcours parfait avec cinq victoires consécutives à l'extérieur.",
-      "ai_analysis": "Le modèle Poisson attribue un xG de 0.9 à Gil Vicente et de 1.63 au FC Porto. Les probabilités du modèle s'établissent à 47.7% pour le BTTS et 46.3% pour l'Over 2.5, avec un indice de fiabilité de 74.6%. En Liga Portugal, Gil Vicente occupe la 7e place avec 14 points en 8 matchs, tandis que le FC Porto domine le championnat en étant 1er avec 24 points. Les cotes du bookmaker DraftKings confirment la hiérarchie avec une cote de 7 pour la victoire de Gil Vicente, 4.6 pour le nul et 1.43 pour le succès du FC Porto. Le marché propose également l'Over 2.5 à 1.83 et l'Under 2.5 à 1.91.",
-      "ai_form_summary": "Gil Vicente présente un bilan de 2V-1N-2D lors de ses cinq dernières rencontres, inscrivant 5 buts et en encaissant 6. Le FC Porto domine pleinement avec 5V-0N-0D, totalisant 14 buts marqués pour seulement 4 concédés.",
-      "ai_key_fact_en": "FC Porto maintains a perfect run with five consecutive away victories.",
-      "ai_analysis_en": "The Poisson model assigns an xG of 0.9 to Gil Vicente and 1.63 to FC Porto. Model probabilities stand at 47.7% for BTTS and 46.3% for Over 2.5, with a reliability index of 74.6%. In Liga Portugal, Gil Vicente occupies 7th place with 14 points from 8 matches, while FC Porto dominates the league in 1st place with 24 points. DraftKings bookmaker odds confirm the hierarchy with odds of 7 for a Gil Vicente win, 4.6 for a draw, and 1.43 for FC Porto's success. The market also prices Over 2.5 at 1.83 and Under 2.5 at 1.91.",
-      "ai_form_summary_en": "Gil Vicente posts a record of 2W-1D-2L in their last five fixtures, scoring 5 goals and conceding 6. FC Porto fully dominates with 5W-0D-5L (corrected from 5V-0N-0D), totaling 14 goals scored for only 4 conceded.",
-      "ai_source": "gemini-v2",
-      "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
-      "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
-      "ai_odds_insight": "Le marché (DraftKings) cote 1: 7, nul: 4.6, 2: 1.43, Over 2.5: 1.83.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 7, draw: 4.6, 2: 1.43, Over 2.5: 1.83."
-    },
-    {
-      "id": "lens-vs-parisfc-2026-10-24",
-      "match": "Lens vs Paris FC",
-      "home": "Lens",
-      "away": "Paris FC",
-      "league": "Ligue 1",
-      "date": "2026-10-24",
-      "type": "BTTS",
-      "prediction": "Oui",
-      "proba": 0.5767,
-      "bttsProbDisplay": "57.67%",
-      "over25ProbDisplay": "57.31%",
-      "confidence": 58,
-      "time": "18:45",
-      "matchSemantic": "lens-vs-parisfc-2026-10-24",
-      "source": "poisson-v92-real-data",
-      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/175.png",
-      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/6851.png",
-      "tier": "SILVER",
-      "reliabilityScore": 72.48,
-      "dataQuality": "MEDIUM",
-      "dataSource": "ESPN_TEAM_SCHEDULE",
-      "matchCountHome": 7,
-      "matchCountAway": 7,
-      "h2hAvailable": false,
-      "xgHome": 1.82,
-      "xgAway": 1.17,
-      "xgTotal": 2.98,
-      "formBTTS": 70,
-      "analysis": "Lens : forme V-V-D-N-D (2V 1N 2D, 8 buts marqués / 7 encaissés sur 5) · Paris FC : forme V-D-V-N-V (3V 1N 1D, 9 buts marqués / 7 encaissés sur 5). Classement : Lens 9e (10 pts), Paris FC 3e (14 pts). Modèle Poisson : xG cumulé 2.98, BTTS 57.7%, Over 2.5 57.3%. Cotes DraftKings — 1: 2.55 / N: 3.5 / 2: 2.7 · Over 2.5: 1.65. Fiabilité 72.48%.",
-      "analysisData": {
-        "bttsProb": 0.5767,
-        "over25Prob": 0.5731,
-        "homeLambda": 1.82,
-        "awayLambda": 1.17,
-        "xgTotal": 2.98
-      },
-      "estimatedCote": 1.73,
-      "estimatedCoteOver": 1.75,
-      "odds": {
-        "provider": "DraftKings",
-        "home": 2.55,
-        "draw": 3.5,
-        "away": 2.7,
-        "over25": 1.65,
-        "under25": 2.25
-      },
-      "oddsSource": "DraftKings",
-      "estimatedCoteBTTS": 1.73,
-      "formHome": {
-        "last5String": "V-V-D-N-D",
-        "wins": 2,
-        "draws": 1,
-        "losses": 2,
-        "goalsFor": 8,
-        "goalsAgainst": 7,
-        "bttsRate": 0.8,
-        "over25Rate": 0.8,
-        "cleanSheets": 0,
-        "failedToScore": 1,
-        "count": 5
-      },
-      "formAway": {
-        "last5String": "V-D-V-N-V",
-        "wins": 3,
-        "draws": 1,
-        "losses": 1,
-        "goalsFor": 9,
-        "goalsAgainst": 7,
-        "bttsRate": 0.6,
-        "over25Rate": 0.6,
-        "cleanSheets": 1,
-        "failedToScore": 2,
-        "count": 5
-      },
-      "last5Home": [
-        {
-          "date": "2026-10-17",
-          "opponent": "Troyes",
-          "venue": "A",
-          "score": "3-1",
-          "result": "W"
-        },
-        {
-          "date": "2026-10-09",
-          "opponent": "Lyon",
-          "venue": "H",
-          "score": "2-1",
-          "result": "W"
-        },
-        {
-          "date": "2026-09-18",
-          "opponent": "AS Monaco",
-          "venue": "A",
-          "score": "1-2",
-          "result": "L"
-        },
-        {
-          "date": "2026-09-13",
-          "opponent": "Le Mans",
-          "venue": "A",
-          "score": "2-2",
-          "result": "D"
-        },
-        {
-          "date": "2026-09-05",
-          "opponent": "Lorient",
-          "venue": "H",
-          "score": "0-1",
-          "result": "L"
-        }
-      ],
-      "last5Away": [
-        {
-          "date": "2026-10-18",
-          "opponent": "Stade Rennais",
-          "venue": "H",
-          "score": "4-3",
-          "result": "W"
-        },
-        {
-          "date": "2026-10-10",
-          "opponent": "Lorient",
-          "venue": "A",
-          "score": "0-1",
-          "result": "L"
-        },
-        {
-          "date": "2026-09-19",
-          "opponent": "Strasbourg",
-          "venue": "H",
-          "score": "2-1",
-          "result": "W"
-        },
-        {
-          "date": "2026-09-12",
-          "opponent": "Lyon",
-          "venue": "H",
-          "score": "0-0",
-          "result": "D"
-        },
-        {
-          "date": "2026-09-06",
-          "opponent": "Marseille",
-          "venue": "A",
-          "score": "3-2",
-          "result": "W"
-        }
-      ],
-      "standingsHome": {
-        "rank": 9,
-        "points": 10,
-        "played": 7,
-        "gf": 14,
-        "ga": 11
-      },
-      "standingsAway": {
-        "rank": 3,
-        "points": 14,
-        "played": 7,
-        "gf": 12,
-        "ga": 7
-      },
-      "predictions": [
-        {
-          "type": "BTTS",
-          "prediction": "Oui",
-          "confidence": 58,
-          "bttsProb": 0.5767,
-          "homeLambda": 1.82,
-          "awayLambda": 1.17
-        },
-        {
-          "type": "Over 2.5",
-          "prediction": "Oui",
-          "confidence": 57,
-          "over25Prob": 0.5731,
-          "homeLambda": 1.82,
-          "awayLambda": 1.17
-        }
-      ],
-      "bttsProb": 0.5767,
-      "over25Prob": 0.5731,
-      "homeLambda": 1.82,
-      "awayLambda": 1.17,
-      "ai_key_fact": "Lens présente un taux BTTS de 0.8 sur ses 5 derniers matchs.",
-      "ai_analysis": "Le modèle Poisson anticipe un xG de 1.82 pour Lens et de 1.17 pour Paris FC, générant une probabilité de 57.7% pour le BTTS et de 57.3% pour l'Over 2.5. Lens se classe 9e avec 10 points en 7 matchs, tandis que Paris FC occupe la 3e place avec 14 points. La fiabilité du modèle s'établit à 72.48%. Aucune information supplémentaire sur l'effectif n'est fournie dans les données.",
-      "ai_form_summary": "Sur ses 5 derniers matchs, Lens affiche un bilan de 2 victoires, 1 nul et 2 défaites avec 8 buts marqués et 7 encaissés. En face, Paris FC totalise 3 victoires, 1 nul et 1 défaite pour 9 buts inscrits et 7 concédés.",
-      "ai_key_fact_en": "Lens shows a BTTS rate of 0.8 over its last 5 matches.",
-      "ai_analysis_en": "The Poisson model anticipates an xG of 1.82 for Lens and 1.17 for Paris FC, generating a 57.7% probability for BTTS and 57.3% for Over 2.5. Lens ranks 9th with 10 points in 7 matches, whereas Paris FC occupies 3rd place with 14 points. Model reliability stands at 72.48%. No additional squad information is provided in the data.",
-      "ai_form_summary_en": "Over their last 5 matches, Lens records 2 wins, 1 draw and 2 losses with 8 goals scored and 7 conceded. Meanwhile, Paris FC tallies 3 wins, 1 draw and 1 loss with 9 goals scored and 7 conceded.",
-      "ai_source": "gemini-v2",
-      "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
-      "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
-      "ai_odds_insight": "Le marché (DraftKings) cote 1: 2.55, nul: 3.5, 2: 2.7, Over 2.5: 1.65.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.55, draw: 3.5, 2: 2.7, Over 2.5: 1.65."
-    },
-    {
-      "id": "lazio-vs-parma-2026-10-24",
-      "match": "Lazio vs Parma",
-      "home": "Lazio",
-      "away": "Parma",
-      "league": "Serie A",
-      "date": "2026-10-24",
-      "type": "BTTS",
-      "prediction": "Non",
-      "proba": 0.4386,
-      "bttsProbDisplay": "43.86%",
-      "over25ProbDisplay": "57.31%",
-      "confidence": 44,
-      "time": "18:45",
-      "matchSemantic": "lazio-vs-parma-2026-10-24",
-      "source": "poisson-v92-real-data",
-      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/112.png",
-      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/115.png",
-      "tier": "SILVER",
-      "reliabilityScore": 66.44,
-      "dataQuality": "MEDIUM",
-      "dataSource": "ESPN_TEAM_SCHEDULE",
-      "matchCountHome": 7,
-      "matchCountAway": 7,
-      "h2hAvailable": false,
-      "xgHome": 2.32,
-      "xgAway": 0.67,
-      "xgTotal": 2.98,
-      "formBTTS": 60,
-      "analysis": "Lazio : forme V-V-V-N-V (4V 1N 0D, 12 buts marqués / 4 encaissés sur 5) · Parma : forme D-D-V-D-N (1V 1N 3D, 4 buts marqués / 10 encaissés sur 5). Classement : Lazio 2e (19 pts), Parma 19e (4 pts). Modèle Poisson : xG cumulé 2.98, BTTS 43.9%, Over 2.5 57.3%. Cotes DraftKings — 1: 1.4 / N: 4.2 / 2: 7.5 · Over 2.5: 1.87. Fiabilité 66.44%.",
-      "analysisData": {
-        "bttsProb": 0.4386,
-        "over25Prob": 0.5731,
-        "homeLambda": 2.32,
-        "awayLambda": 0.67,
-        "xgTotal": 2.98
-      },
-      "estimatedCote": 2.28,
-      "estimatedCoteOver": 1.75,
-      "odds": {
-        "provider": "DraftKings",
-        "home": 1.4,
-        "draw": 4.2,
-        "away": 7.5,
-        "over25": 1.87,
-        "under25": 1.91
-      },
-      "oddsSource": "DraftKings",
-      "estimatedCoteBTTS": 2.28,
-      "formHome": {
-        "last5String": "V-V-V-N-V",
-        "wins": 4,
-        "draws": 1,
-        "losses": 0,
-        "goalsFor": 12,
-        "goalsAgainst": 4,
-        "bttsRate": 0.6,
-        "over25Rate": 0.8,
-        "cleanSheets": 2,
-        "failedToScore": 0,
-        "count": 5
-      },
-      "formAway": {
-        "last5String": "D-D-V-D-N",
-        "wins": 1,
-        "draws": 1,
-        "losses": 3,
-        "goalsFor": 4,
-        "goalsAgainst": 10,
-        "bttsRate": 0.6,
-        "over25Rate": 0.8,
-        "cleanSheets": 0,
-        "failedToScore": 2,
-        "count": 5
-      },
-      "last5Home": [
-        {
-          "date": "2026-10-18",
-          "opponent": "Juventus",
-          "venue": "A",
-          "score": "3-0",
-          "result": "W"
-        },
-        {
-          "date": "2026-10-11",
-          "opponent": "Monza",
-          "venue": "H",
-          "score": "3-1",
-          "result": "W"
-        },
-        {
-          "date": "2026-09-19",
-          "opponent": "Venezia",
-          "venue": "A",
-          "score": "2-0",
-          "result": "W"
-        },
-        {
-          "date": "2026-09-12",
-          "opponent": "AC Milan",
-          "venue": "H",
-          "score": "2-2",
-          "result": "D"
-        },
-        {
-          "date": "2026-09-07",
-          "opponent": "Udinese",
-          "venue": "A",
-          "score": "2-1",
-          "result": "W"
-        }
-      ],
-      "last5Away": [
-        {
-          "date": "2026-10-19",
-          "opponent": "Torino",
-          "venue": "H",
-          "score": "0-3",
-          "result": "L"
-        },
-        {
-          "date": "2026-10-10",
-          "opponent": "Internazionale",
-          "venue": "A",
-          "score": "0-3",
-          "result": "L"
-        },
-        {
-          "date": "2026-09-20",
-          "opponent": "Genoa",
-          "venue": "H",
-          "score": "2-1",
-          "result": "W"
-        },
-        {
-          "date": "2026-09-14",
-          "opponent": "Como",
-          "venue": "A",
-          "score": "1-2",
-          "result": "L"
-        },
-        {
-          "date": "2026-09-06",
-          "opponent": "Monza",
-          "venue": "H",
-          "score": "1-1",
-          "result": "D"
-        }
-      ],
-      "standingsHome": {
-        "rank": 2,
-        "points": 19,
-        "played": 7,
-        "gf": 14,
-        "ga": 4
-      },
-      "standingsAway": {
-        "rank": 19,
-        "points": 4,
-        "played": 7,
-        "gf": 4,
-        "ga": 13
-      },
-      "predictions": [
-        {
-          "type": "BTTS",
-          "prediction": "Non",
-          "confidence": 44,
-          "bttsProb": 0.4386,
-          "homeLambda": 2.32,
-          "awayLambda": 0.67
-        },
-        {
-          "type": "Over 2.5",
-          "prediction": "Oui",
-          "confidence": 57,
-          "over25Prob": 0.5731,
-          "homeLambda": 2.32,
-          "awayLambda": 0.67
-        }
-      ],
-      "bttsProb": 0.4386,
-      "over25Prob": 0.5731,
-      "homeLambda": 2.32,
-      "awayLambda": 0.67,
-      "ai_key_fact": "Lazio affiche une dynamique solide avec 4 victoires sur ses 5 derniers matchs.",
-      "ai_analysis": "Le modèle attribue un xG de 2.32 à Lazio et de 0.67 à Parma, avec une probabilité BTTS estimée à 43.9% et l'Over 2.5 à 57.3%. Au classement, Lazio pointe au 2e rang avec 19 points en 7 matchs, alors que Parma se trouve à la 19e place avec 4 points. La fiabilité globale du modèle atteint 66.44%. Aucune information supplémentaire sur l'effectif n'est fournie dans les données.",
-      "ai_form_summary": "Lazio enregistre 4 victoires et 1 nul lors de ses 5 dernières sorties, inscrivant 12 buts pour 4 encaissés. Parma traverse une période difficile avec 1 victoire, 1 nul et 3 défaites, marquant 4 buts et en concédant 10.",
-      "ai_key_fact_en": "Lazio displays solid momentum with 4 wins in their last 5 matches.",
-      "ai_analysis_en": "The model assigns an xG of 2.32 to Lazio and 0.67 to Parma, with an estimated BTTS probability of 43.9% and Over 2.5 at 57.3%. In the standings, Lazio sits 2nd with 19 points in 7 matches, whereas Parma is 19th with 4 points. Overall model reliability reaches 66.44%. No additional squad information is provided in the data.",
-      "ai_form_summary_en": "Lazio records 4 wins and 1 draw in their last 5 outings, scoring 12 goals with 4 conceded. Parma goes through a difficult spell with 1 win, 1 draw and 3 losses, scoring 4 goals and conceding 10.",
-      "ai_source": "gemini-v2",
-      "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
-      "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
-      "ai_odds_insight": "Le marché (DraftKings) cote 1: 1.4, nul: 4.2, 2: 7.5, Over 2.5: 1.87.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 1.4, draw: 4.2, 2: 7.5, Over 2.5: 1.87."
     },
     {
       "id": "psveindh-vs-feyenoor-2026-10-25",
@@ -5345,6 +3567,204 @@
       "status": "PENDING"
     },
     {
+      "id": "asroma-vs-cagliari-2026-10-27",
+      "match": "AS Roma vs Cagliari",
+      "home": "AS Roma",
+      "away": "Cagliari",
+      "league": "Serie A",
+      "date": "2026-10-27",
+      "type": "BTTS",
+      "prediction": "Oui",
+      "proba": 0.5062,
+      "bttsProbDisplay": "50.62%",
+      "over25ProbDisplay": "55.40%",
+      "confidence": 51,
+      "time": "19:45",
+      "matchSemantic": "asroma-vs-cagliari-2026-10-27",
+      "source": "poisson-v92-real-data",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/104.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/2925.png",
+      "tier": "SILVER",
+      "reliabilityScore": 69.39,
+      "dataQuality": "MEDIUM",
+      "dataSource": "ESPN_TEAM_SCHEDULE",
+      "matchCountHome": 7,
+      "matchCountAway": 7,
+      "h2hAvailable": false,
+      "xgHome": 2.02,
+      "xgAway": 0.88,
+      "xgTotal": 2.9,
+      "formBTTS": 40,
+      "analysis": "AS Roma : forme V-N-N-V-V (3V 2N 0D, 8 buts marqués / 3 encaissés sur 5) · Cagliari : forme D-N-V-V-V (3V 1N 1D, 5 buts marqués / 6 encaissés sur 5). Classement : AS Roma 3e (17 pts), Cagliari 7e (13 pts). Modèle Poisson : xG cumulé 2.9, BTTS 50.6%, Over 2.5 55.4%. Cotes DraftKings — 1: 1.32 / N: 4.6 / 2: 8.5 · Over 2.5: 1.69. Fiabilité 69.39%.",
+      "analysisData": {
+        "bttsProb": 0.5062,
+        "over25Prob": 0.554,
+        "homeLambda": 2.02,
+        "awayLambda": 0.88,
+        "xgTotal": 2.9
+      },
+      "estimatedCote": 1.98,
+      "estimatedCoteOver": 1.8,
+      "odds": {
+        "provider": "DraftKings",
+        "home": 1.32,
+        "draw": 4.6,
+        "away": 8.5,
+        "over25": 1.69,
+        "under25": 2.1
+      },
+      "oddsSource": "DraftKings",
+      "estimatedCoteBTTS": 1.98,
+      "formHome": {
+        "last5String": "V-N-N-V-V",
+        "wins": 3,
+        "draws": 2,
+        "losses": 0,
+        "goalsFor": 8,
+        "goalsAgainst": 3,
+        "bttsRate": 0.4,
+        "over25Rate": 0.4,
+        "cleanSheets": 3,
+        "failedToScore": 1,
+        "count": 5
+      },
+      "formAway": {
+        "last5String": "D-N-V-V-V",
+        "wins": 3,
+        "draws": 1,
+        "losses": 1,
+        "goalsFor": 5,
+        "goalsAgainst": 6,
+        "bttsRate": 0.4,
+        "over25Rate": 0.4,
+        "cleanSheets": 2,
+        "failedToScore": 1,
+        "count": 5
+      },
+      "standingsHome": {
+        "rank": 3,
+        "points": 17,
+        "played": 7,
+        "gf": 16,
+        "ga": 3
+      },
+      "standingsAway": {
+        "rank": 7,
+        "points": 13,
+        "played": 7,
+        "gf": 6,
+        "ga": 7
+      },
+      "predictions": [
+        {
+          "type": "BTTS",
+          "prediction": "Oui",
+          "confidence": 51,
+          "bttsProb": 0.5062,
+          "homeLambda": 2.02,
+          "awayLambda": 0.88
+        },
+        {
+          "type": "Over 2.5",
+          "prediction": "Oui",
+          "confidence": 55,
+          "over25Prob": 0.554,
+          "homeLambda": 2.02,
+          "awayLambda": 0.88
+        }
+      ],
+      "bttsProb": 0.5062,
+      "over25Prob": 0.554,
+      "homeLambda": 2.02,
+      "awayLambda": 0.88,
+      "ai_key_fact": "L'AS Roma possède la meilleure défense à domicile avec 3 buts encaissés.",
+      "ai_analysis": "Le modèle Poisson attribue un net avantage xG à l'AS Roma avec 2.02 contre 0.88 pour Cagliari, qui se positionne 7e en Serie A. Les probabilités du modèle affichent 50.6% pour le BTTS et 55.4% pour l'Over 2.5, avec une fiabilité de 69.39%. Les cotes du marché placent l'AS Roma nettement favorite à 1.32, soit une probabilité implicite de 75.8%. Aucune donnée d'effectif n'est mentionnée dans les sources. Les chiffres indiquent une assise défensive solide pour les locaux face à des visiteurs aux ambitions mesurées à l'extérieur.",
+      "ai_form_summary": "L'AS Roma à domicile présente un bilan de 3V-2N-0D sur ses 5 derniers matchs avec un taux BTTS de 0.4. Cagliari à l'extérieur affiche 3V-1N-1D et un taux BTTS de 0.4.",
+      "ai_key_fact_en": "AS Roma boasts the best home defense with only 3 goals conceded.",
+      "ai_analysis_en": "The Poisson model assigns a clear xG advantage to AS Roma with 2.02 against Cagliari's 0.88, with the visitors positioned 7th in Serie A. Model probabilities show 50.6% for BTTS and 55.4% for Over 2.5, with 69.39% reliability. Market odds price AS Roma as clear favorites at 1.32, reflecting a 75.8% implicit probability. No squad data is mentioned in the sources. The figures indicate a solid defensive foundation for the hosts against visitors with measured away ambitions.",
+      "ai_form_summary_en": "AS Roma at home presents a 3W-2D-0L record in their last 5 matches with a 0.4 BTTS rate. Cagliari away shows 3W-1D-1L and a 0.4 BTTS rate.",
+      "ai_source": "gemini-v2",
+      "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
+      "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
+      "ai_odds_insight": "Le marché (DraftKings) cote 1: 1.32, nul: 4.6, 2: 8.5, Over 2.5: 1.69.",
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 1.32, draw: 4.6, 2: 8.5, Over 2.5: 1.69.",
+      "last5Home": [
+        {
+          "date": "2026-10-24",
+          "opponent": "Napoli",
+          "venue": "A",
+          "score": "3-3",
+          "result": "D"
+        },
+        {
+          "date": "2026-10-17",
+          "opponent": "Genoa",
+          "venue": "H",
+          "score": "2-0",
+          "result": "W"
+        },
+        {
+          "date": "2026-10-11",
+          "opponent": "Como",
+          "venue": "A",
+          "score": "0-0",
+          "result": "D"
+        },
+        {
+          "date": "2026-09-19",
+          "opponent": "Internazionale",
+          "venue": "H",
+          "score": "2-2",
+          "result": "D"
+        },
+        {
+          "date": "2026-09-14",
+          "opponent": "Torino",
+          "venue": "A",
+          "score": "2-0",
+          "result": "W"
+        }
+      ],
+      "last5Away": [
+        {
+          "date": "2026-10-24",
+          "opponent": "Bologna",
+          "venue": "H",
+          "score": "0-2",
+          "result": "L"
+        },
+        {
+          "date": "2026-10-19",
+          "opponent": "Monza",
+          "venue": "A",
+          "score": "0-4",
+          "result": "L"
+        },
+        {
+          "date": "2026-10-11",
+          "opponent": "Juventus",
+          "venue": "H",
+          "score": "1-1",
+          "result": "D"
+        },
+        {
+          "date": "2026-09-19",
+          "opponent": "Udinese",
+          "venue": "A",
+          "score": "1-0",
+          "result": "W"
+        },
+        {
+          "date": "2026-09-12",
+          "opponent": "Atalanta",
+          "venue": "A",
+          "score": "2-1",
+          "result": "W"
+        }
+      ],
+      "status": "PENDING"
+    },
+    {
       "id": "sassuolo-vs-lazio-2026-10-27",
       "match": "Sassuolo vs Lazio",
       "home": "Sassuolo",
@@ -5535,204 +3955,6 @@
         {
           "date": "2026-09-07",
           "opponent": "Udinese",
-          "venue": "A",
-          "score": "2-1",
-          "result": "W"
-        }
-      ],
-      "status": "PENDING"
-    },
-    {
-      "id": "asroma-vs-cagliari-2026-10-27",
-      "match": "AS Roma vs Cagliari",
-      "home": "AS Roma",
-      "away": "Cagliari",
-      "league": "Serie A",
-      "date": "2026-10-27",
-      "type": "BTTS",
-      "prediction": "Oui",
-      "proba": 0.5062,
-      "bttsProbDisplay": "50.62%",
-      "over25ProbDisplay": "55.40%",
-      "confidence": 51,
-      "time": "19:45",
-      "matchSemantic": "asroma-vs-cagliari-2026-10-27",
-      "source": "poisson-v92-real-data",
-      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/104.png",
-      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/2925.png",
-      "tier": "SILVER",
-      "reliabilityScore": 69.39,
-      "dataQuality": "MEDIUM",
-      "dataSource": "ESPN_TEAM_SCHEDULE",
-      "matchCountHome": 7,
-      "matchCountAway": 7,
-      "h2hAvailable": false,
-      "xgHome": 2.02,
-      "xgAway": 0.88,
-      "xgTotal": 2.9,
-      "formBTTS": 40,
-      "analysis": "AS Roma : forme V-N-N-V-V (3V 2N 0D, 8 buts marqués / 3 encaissés sur 5) · Cagliari : forme D-N-V-V-V (3V 1N 1D, 5 buts marqués / 6 encaissés sur 5). Classement : AS Roma 3e (17 pts), Cagliari 7e (13 pts). Modèle Poisson : xG cumulé 2.9, BTTS 50.6%, Over 2.5 55.4%. Cotes DraftKings — 1: 1.32 / N: 4.6 / 2: 8.5 · Over 2.5: 1.69. Fiabilité 69.39%.",
-      "analysisData": {
-        "bttsProb": 0.5062,
-        "over25Prob": 0.554,
-        "homeLambda": 2.02,
-        "awayLambda": 0.88,
-        "xgTotal": 2.9
-      },
-      "estimatedCote": 1.98,
-      "estimatedCoteOver": 1.8,
-      "odds": {
-        "provider": "DraftKings",
-        "home": 1.32,
-        "draw": 4.6,
-        "away": 8.5,
-        "over25": 1.69,
-        "under25": 2.1
-      },
-      "oddsSource": "DraftKings",
-      "estimatedCoteBTTS": 1.98,
-      "formHome": {
-        "last5String": "V-N-N-V-V",
-        "wins": 3,
-        "draws": 2,
-        "losses": 0,
-        "goalsFor": 8,
-        "goalsAgainst": 3,
-        "bttsRate": 0.4,
-        "over25Rate": 0.4,
-        "cleanSheets": 3,
-        "failedToScore": 1,
-        "count": 5
-      },
-      "formAway": {
-        "last5String": "D-N-V-V-V",
-        "wins": 3,
-        "draws": 1,
-        "losses": 1,
-        "goalsFor": 5,
-        "goalsAgainst": 6,
-        "bttsRate": 0.4,
-        "over25Rate": 0.4,
-        "cleanSheets": 2,
-        "failedToScore": 1,
-        "count": 5
-      },
-      "standingsHome": {
-        "rank": 3,
-        "points": 17,
-        "played": 7,
-        "gf": 16,
-        "ga": 3
-      },
-      "standingsAway": {
-        "rank": 7,
-        "points": 13,
-        "played": 7,
-        "gf": 6,
-        "ga": 7
-      },
-      "predictions": [
-        {
-          "type": "BTTS",
-          "prediction": "Oui",
-          "confidence": 51,
-          "bttsProb": 0.5062,
-          "homeLambda": 2.02,
-          "awayLambda": 0.88
-        },
-        {
-          "type": "Over 2.5",
-          "prediction": "Oui",
-          "confidence": 55,
-          "over25Prob": 0.554,
-          "homeLambda": 2.02,
-          "awayLambda": 0.88
-        }
-      ],
-      "bttsProb": 0.5062,
-      "over25Prob": 0.554,
-      "homeLambda": 2.02,
-      "awayLambda": 0.88,
-      "ai_key_fact": "L'AS Roma possède la meilleure défense à domicile avec 3 buts encaissés.",
-      "ai_analysis": "Le modèle Poisson attribue un net avantage xG à l'AS Roma avec 2.02 contre 0.88 pour Cagliari, qui se positionne 7e en Serie A. Les probabilités du modèle affichent 50.6% pour le BTTS et 55.4% pour l'Over 2.5, avec une fiabilité de 69.39%. Les cotes du marché placent l'AS Roma nettement favorite à 1.32, soit une probabilité implicite de 75.8%. Aucune donnée d'effectif n'est mentionnée dans les sources. Les chiffres indiquent une assise défensive solide pour les locaux face à des visiteurs aux ambitions mesurées à l'extérieur.",
-      "ai_form_summary": "L'AS Roma à domicile présente un bilan de 3V-2N-0D sur ses 5 derniers matchs avec un taux BTTS de 0.4. Cagliari à l'extérieur affiche 3V-1N-1D et un taux BTTS de 0.4.",
-      "ai_key_fact_en": "AS Roma boasts the best home defense with only 3 goals conceded.",
-      "ai_analysis_en": "The Poisson model assigns a clear xG advantage to AS Roma with 2.02 against Cagliari's 0.88, with the visitors positioned 7th in Serie A. Model probabilities show 50.6% for BTTS and 55.4% for Over 2.5, with 69.39% reliability. Market odds price AS Roma as clear favorites at 1.32, reflecting a 75.8% implicit probability. No squad data is mentioned in the sources. The figures indicate a solid defensive foundation for the hosts against visitors with measured away ambitions.",
-      "ai_form_summary_en": "AS Roma at home presents a 3W-2D-0L record in their last 5 matches with a 0.4 BTTS rate. Cagliari away shows 3W-1D-1L and a 0.4 BTTS rate.",
-      "ai_source": "gemini-v2",
-      "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
-      "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
-      "ai_odds_insight": "Le marché (DraftKings) cote 1: 1.32, nul: 4.6, 2: 8.5, Over 2.5: 1.69.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 1.32, draw: 4.6, 2: 8.5, Over 2.5: 1.69.",
-      "last5Home": [
-        {
-          "date": "2026-10-17",
-          "opponent": "Genoa",
-          "venue": "H",
-          "score": "2-0",
-          "result": "W"
-        },
-        {
-          "date": "2026-10-11",
-          "opponent": "Como",
-          "venue": "A",
-          "score": "0-0",
-          "result": "D"
-        },
-        {
-          "date": "2026-09-19",
-          "opponent": "Internazionale",
-          "venue": "H",
-          "score": "2-2",
-          "result": "D"
-        },
-        {
-          "date": "2026-09-14",
-          "opponent": "Torino",
-          "venue": "A",
-          "score": "2-0",
-          "result": "W"
-        },
-        {
-          "date": "2026-09-05",
-          "opponent": "Atalanta",
-          "venue": "H",
-          "score": "2-1",
-          "result": "W"
-        }
-      ],
-      "last5Away": [
-        {
-          "date": "2026-10-24",
-          "opponent": "Bologna",
-          "venue": "H",
-          "score": "0-2",
-          "result": "L"
-        },
-        {
-          "date": "2026-10-19",
-          "opponent": "Monza",
-          "venue": "A",
-          "score": "0-4",
-          "result": "L"
-        },
-        {
-          "date": "2026-10-11",
-          "opponent": "Juventus",
-          "venue": "H",
-          "score": "1-1",
-          "result": "D"
-        },
-        {
-          "date": "2026-09-19",
-          "opponent": "Udinese",
-          "venue": "A",
-          "score": "1-0",
-          "result": "W"
-        },
-        {
-          "date": "2026-09-12",
-          "opponent": "Atalanta",
           "venue": "A",
           "score": "2-1",
           "result": "W"
@@ -6504,6 +4726,203 @@
       "status": "PENDING"
     },
     {
+      "id": "monza-vs-napoli-2026-10-28",
+      "match": "Monza vs Napoli",
+      "home": "Monza",
+      "away": "Napoli",
+      "league": "Serie A",
+      "date": "2026-10-28",
+      "type": "BTTS",
+      "prediction": "Oui",
+      "proba": 0.6371,
+      "bttsProbDisplay": "63.71%",
+      "over25ProbDisplay": "66.03%",
+      "confidence": 64,
+      "time": "19:45",
+      "matchSemantic": "monza-vs-napoli-2026-10-28",
+      "source": "poisson-v92-real-data",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/4007.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/114.png",
+      "tier": "GOLD",
+      "reliabilityScore": 77.62,
+      "dataQuality": "MEDIUM",
+      "dataSource": "ESPN_TEAM_SCHEDULE",
+      "matchCountHome": 7,
+      "matchCountAway": 7,
+      "h2hAvailable": false,
+      "xgHome": 2.11,
+      "xgAway": 1.29,
+      "xgTotal": 3.4,
+      "formBTTS": 60,
+      "analysis": "Monza : forme V-D-V-D-N (2V 1N 2D, 10 buts marqués / 8 encaissés sur 5) · Napoli : forme D-V-N-V-D (2V 1N 2D, 7 buts marqués / 5 encaissés sur 5). Classement : Monza 14e (7 pts), Napoli 9e (10 pts). Modèle Poisson : xG cumulé 3.4, BTTS 63.7%, Over 2.5 66.0%. Cotes DraftKings — 1: 3.65 / N: 3.65 / 2: 1.83 · Over 2.5: 1.69. Fiabilité 77.62%.",
+      "analysisData": {
+        "bttsProb": 0.6371,
+        "over25Prob": 0.6603,
+        "homeLambda": 2.11,
+        "awayLambda": 1.29,
+        "xgTotal": 3.4
+      },
+      "estimatedCote": 1.57,
+      "estimatedCoteOver": 1.51,
+      "odds": {
+        "provider": "DraftKings",
+        "home": 3.65,
+        "draw": 3.65,
+        "away": 1.83,
+        "over25": 1.69,
+        "under25": 2.1
+      },
+      "oddsSource": "DraftKings",
+      "estimatedCoteBTTS": 1.57,
+      "formHome": {
+        "last5String": "V-D-V-D-N",
+        "wins": 2,
+        "draws": 1,
+        "losses": 2,
+        "goalsFor": 10,
+        "goalsAgainst": 8,
+        "bttsRate": 0.8,
+        "over25Rate": 0.8,
+        "cleanSheets": 1,
+        "failedToScore": 0,
+        "count": 5
+      },
+      "formAway": {
+        "last5String": "D-V-N-V-D",
+        "wins": 2,
+        "draws": 1,
+        "losses": 2,
+        "goalsFor": 7,
+        "goalsAgainst": 5,
+        "bttsRate": 0.4,
+        "over25Rate": 0.4,
+        "cleanSheets": 2,
+        "failedToScore": 1,
+        "count": 5
+      },
+      "last5Home": [
+        {
+          "date": "2026-10-23",
+          "opponent": "Torino",
+          "venue": "A",
+          "score": "2-3",
+          "result": "L"
+        },
+        {
+          "date": "2026-10-19",
+          "opponent": "Cagliari",
+          "venue": "H",
+          "score": "4-0",
+          "result": "W"
+        },
+        {
+          "date": "2026-10-11",
+          "opponent": "Lazio",
+          "venue": "A",
+          "score": "1-3",
+          "result": "L"
+        },
+        {
+          "date": "2026-09-18",
+          "opponent": "Sassuolo",
+          "venue": "H",
+          "score": "2-1",
+          "result": "W"
+        },
+        {
+          "date": "2026-09-13",
+          "opponent": "Lecce",
+          "venue": "A",
+          "score": "2-3",
+          "result": "L"
+        }
+      ],
+      "last5Away": [
+        {
+          "date": "2026-10-24",
+          "opponent": "AS Roma",
+          "venue": "H",
+          "score": "3-3",
+          "result": "D"
+        },
+        {
+          "date": "2026-10-17",
+          "opponent": "Venezia",
+          "venue": "A",
+          "score": "0-1",
+          "result": "L"
+        },
+        {
+          "date": "2026-10-10",
+          "opponent": "Frosinone",
+          "venue": "H",
+          "score": "3-0",
+          "result": "W"
+        },
+        {
+          "date": "2026-09-20",
+          "opponent": "Fiorentina",
+          "venue": "A",
+          "score": "1-1",
+          "result": "D"
+        },
+        {
+          "date": "2026-09-13",
+          "opponent": "Bologna",
+          "venue": "H",
+          "score": "1-0",
+          "result": "W"
+        }
+      ],
+      "standingsHome": {
+        "rank": 14,
+        "points": 7,
+        "played": 7,
+        "gf": 13,
+        "ga": 15
+      },
+      "standingsAway": {
+        "rank": 9,
+        "points": 10,
+        "played": 7,
+        "gf": 10,
+        "ga": 7
+      },
+      "predictions": [
+        {
+          "type": "BTTS",
+          "prediction": "Oui",
+          "confidence": 64,
+          "bttsProb": 0.6371,
+          "homeLambda": 2.11,
+          "awayLambda": 1.29
+        },
+        {
+          "type": "Over 2.5",
+          "prediction": "Oui",
+          "confidence": 66,
+          "over25Prob": 0.6603,
+          "homeLambda": 2.11,
+          "awayLambda": 1.29
+        }
+      ],
+      "bttsProb": 0.6371,
+      "over25Prob": 0.6603,
+      "homeLambda": 2.11,
+      "awayLambda": 1.29,
+      "ai_key_fact": "Monza totalise 7 points en 7 matchs et pointe à la 14e place.",
+      "ai_analysis": "Le modèle Poisson BTTSPredict indique des xG de 2.11 pour Monza et 1.29 pour Napoli, avec une probabilité BTTS de 63.7% et un Over 2.5 à 66.0%. La fiabilité du modèle est établie à 77.62%. Au classement de Serie A, Monza est 14e avec 7 points, alors que Napoli se positionne 9e avec 10 points. Les cotes DraftKings évaluent la victoire à domicile à 3.65, le nul à 3.65 et la victoire extérieure à 1.83, avec l'Over 2.5 à 1.69.",
+      "ai_form_summary": "Monza enregistre 2 victoires, 1 nul et 2 défaites sur ses 5 derniers matchs avec 10 buts marqués et 8 encaissés. Napoli affiche également un bilan de 2 victoires, 1 nul et 2 défaites, inscrivant 7 buts pour 5 encaissés.",
+      "ai_analysis_en": "Monza has a total of 7 points in 7 matches and sits in 14th place.",
+      "ai_form_summary_en": "Monza records 2 wins, 1 draw, and 2 losses in their last 5 matches with 10 goals scored and 8 conceded. Napoli also shows a record of 2 wins, 1 draw, and 2 losses, scoring 7 goals and conceding 5.",
+      "ai_source": "gemini-v2",
+      "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
+      "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
+      "ai_odds_insight": "Le marché (DraftKings) cote 1: 3.65, nul: 3.65, 2: 1.83, Over 2.5: 1.69.",
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 3.65, draw: 3.65, 2: 1.83, Over 2.5: 1.69.",
+      "status": "PENDING"
+    },
+    {
       "id": "stjohnst-vs-motherwe-2026-10-28",
       "match": "St Johnstone vs Motherwell",
       "home": "St Johnstone",
@@ -7084,203 +5503,6 @@
       "status": "PENDING"
     },
     {
-      "id": "monza-vs-napoli-2026-10-28",
-      "match": "Monza vs Napoli",
-      "home": "Monza",
-      "away": "Napoli",
-      "league": "Serie A",
-      "date": "2026-10-28",
-      "type": "BTTS",
-      "prediction": "Oui",
-      "proba": 0.6371,
-      "bttsProbDisplay": "63.71%",
-      "over25ProbDisplay": "66.03%",
-      "confidence": 64,
-      "time": "19:45",
-      "matchSemantic": "monza-vs-napoli-2026-10-28",
-      "source": "poisson-v92-real-data",
-      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/4007.png",
-      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/114.png",
-      "tier": "GOLD",
-      "reliabilityScore": 77.62,
-      "dataQuality": "MEDIUM",
-      "dataSource": "ESPN_TEAM_SCHEDULE",
-      "matchCountHome": 7,
-      "matchCountAway": 7,
-      "h2hAvailable": false,
-      "xgHome": 2.11,
-      "xgAway": 1.29,
-      "xgTotal": 3.4,
-      "formBTTS": 60,
-      "analysis": "Monza : forme V-D-V-D-N (2V 1N 2D, 10 buts marqués / 8 encaissés sur 5) · Napoli : forme D-V-N-V-D (2V 1N 2D, 7 buts marqués / 5 encaissés sur 5). Classement : Monza 14e (7 pts), Napoli 9e (10 pts). Modèle Poisson : xG cumulé 3.4, BTTS 63.7%, Over 2.5 66.0%. Cotes DraftKings — 1: 3.65 / N: 3.65 / 2: 1.83 · Over 2.5: 1.69. Fiabilité 77.62%.",
-      "analysisData": {
-        "bttsProb": 0.6371,
-        "over25Prob": 0.6603,
-        "homeLambda": 2.11,
-        "awayLambda": 1.29,
-        "xgTotal": 3.4
-      },
-      "estimatedCote": 1.57,
-      "estimatedCoteOver": 1.51,
-      "odds": {
-        "provider": "DraftKings",
-        "home": 3.65,
-        "draw": 3.65,
-        "away": 1.83,
-        "over25": 1.69,
-        "under25": 2.1
-      },
-      "oddsSource": "DraftKings",
-      "estimatedCoteBTTS": 1.57,
-      "formHome": {
-        "last5String": "V-D-V-D-N",
-        "wins": 2,
-        "draws": 1,
-        "losses": 2,
-        "goalsFor": 10,
-        "goalsAgainst": 8,
-        "bttsRate": 0.8,
-        "over25Rate": 0.8,
-        "cleanSheets": 1,
-        "failedToScore": 0,
-        "count": 5
-      },
-      "formAway": {
-        "last5String": "D-V-N-V-D",
-        "wins": 2,
-        "draws": 1,
-        "losses": 2,
-        "goalsFor": 7,
-        "goalsAgainst": 5,
-        "bttsRate": 0.4,
-        "over25Rate": 0.4,
-        "cleanSheets": 2,
-        "failedToScore": 1,
-        "count": 5
-      },
-      "last5Home": [
-        {
-          "date": "2026-10-23",
-          "opponent": "Torino",
-          "venue": "A",
-          "score": "2-3",
-          "result": "L"
-        },
-        {
-          "date": "2026-10-19",
-          "opponent": "Cagliari",
-          "venue": "H",
-          "score": "4-0",
-          "result": "W"
-        },
-        {
-          "date": "2026-10-11",
-          "opponent": "Lazio",
-          "venue": "A",
-          "score": "1-3",
-          "result": "L"
-        },
-        {
-          "date": "2026-09-18",
-          "opponent": "Sassuolo",
-          "venue": "H",
-          "score": "2-1",
-          "result": "W"
-        },
-        {
-          "date": "2026-09-13",
-          "opponent": "Lecce",
-          "venue": "A",
-          "score": "2-3",
-          "result": "L"
-        }
-      ],
-      "last5Away": [
-        {
-          "date": "2026-10-17",
-          "opponent": "Venezia",
-          "venue": "A",
-          "score": "0-1",
-          "result": "L"
-        },
-        {
-          "date": "2026-10-10",
-          "opponent": "Frosinone",
-          "venue": "H",
-          "score": "3-0",
-          "result": "W"
-        },
-        {
-          "date": "2026-09-20",
-          "opponent": "Fiorentina",
-          "venue": "A",
-          "score": "1-1",
-          "result": "D"
-        },
-        {
-          "date": "2026-09-13",
-          "opponent": "Bologna",
-          "venue": "H",
-          "score": "1-0",
-          "result": "W"
-        },
-        {
-          "date": "2026-09-05",
-          "opponent": "Internazionale",
-          "venue": "A",
-          "score": "2-3",
-          "result": "L"
-        }
-      ],
-      "standingsHome": {
-        "rank": 14,
-        "points": 7,
-        "played": 7,
-        "gf": 13,
-        "ga": 15
-      },
-      "standingsAway": {
-        "rank": 9,
-        "points": 10,
-        "played": 7,
-        "gf": 10,
-        "ga": 7
-      },
-      "predictions": [
-        {
-          "type": "BTTS",
-          "prediction": "Oui",
-          "confidence": 64,
-          "bttsProb": 0.6371,
-          "homeLambda": 2.11,
-          "awayLambda": 1.29
-        },
-        {
-          "type": "Over 2.5",
-          "prediction": "Oui",
-          "confidence": 66,
-          "over25Prob": 0.6603,
-          "homeLambda": 2.11,
-          "awayLambda": 1.29
-        }
-      ],
-      "bttsProb": 0.6371,
-      "over25Prob": 0.6603,
-      "homeLambda": 2.11,
-      "awayLambda": 1.29,
-      "ai_key_fact": "Monza totalise 7 points en 7 matchs et pointe à la 14e place.",
-      "ai_analysis": "Le modèle Poisson BTTSPredict indique des xG de 2.11 pour Monza et 1.29 pour Napoli, avec une probabilité BTTS de 63.7% et un Over 2.5 à 66.0%. La fiabilité du modèle est établie à 77.62%. Au classement de Serie A, Monza est 14e avec 7 points, alors que Napoli se positionne 9e avec 10 points. Les cotes DraftKings évaluent la victoire à domicile à 3.65, le nul à 3.65 et la victoire extérieure à 1.83, avec l'Over 2.5 à 1.69.",
-      "ai_form_summary": "Monza enregistre 2 victoires, 1 nul et 2 défaites sur ses 5 derniers matchs avec 10 buts marqués et 8 encaissés. Napoli affiche également un bilan de 2 victoires, 1 nul et 2 défaites, inscrivant 7 buts pour 5 encaissés.",
-      "ai_analysis_en": "Monza has a total of 7 points in 7 matches and sits in 14th place.",
-      "ai_form_summary_en": "Monza records 2 wins, 1 draw, and 2 losses in their last 5 matches with 10 goals scored and 8 conceded. Napoli also shows a record of 2 wins, 1 draw, and 2 losses, scoring 7 goals and conceding 5.",
-      "ai_source": "gemini-v2",
-      "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
-      "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
-      "ai_odds_insight": "Le marché (DraftKings) cote 1: 3.65, nul: 3.65, 2: 1.83, Over 2.5: 1.69.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 3.65, draw: 3.65, 2: 1.83, Over 2.5: 1.69.",
-      "status": "PENDING"
-    },
-    {
       "id": "chicagof-vs-orlandoc-2026-10-29",
       "match": "Chicago Fire FC vs Orlando City SC",
       "home": "Chicago Fire FC",
@@ -7541,6 +5763,13 @@
       },
       "last5Home": [
         {
+          "date": "2026-10-24",
+          "opponent": "CF Montréal",
+          "venue": "A",
+          "score": "2-0",
+          "result": "W"
+        },
+        {
           "date": "2026-10-18",
           "opponent": "San Jose Earthquakes",
           "venue": "A",
@@ -7566,13 +5795,6 @@
           "opponent": "Toronto FC",
           "venue": "H",
           "score": "2-0",
-          "result": "W"
-        },
-        {
-          "date": "2026-09-20",
-          "opponent": "Chicago Fire FC",
-          "venue": "H",
-          "score": "3-0",
           "result": "W"
         }
       ],
@@ -8884,608 +7106,14 @@
     }
   ],
   "stats": {
-    "avgReliability": 81.17,
-    "totalAnalyzed": 107,
+    "avgReliability": 81.37,
+    "totalAnalyzed": 98,
     "totalRejected": 1,
-    "totalAccepted": 106,
-    "freeCount": 45,
+    "totalAccepted": 97,
+    "freeCount": 36,
     "vipCount": 8
   },
   "predictions": [
-    {
-      "id": "adodenha-vs-heerenve-2026-10-24",
-      "match": "ADO Den Haag vs Heerenveen",
-      "home": "ADO Den Haag",
-      "away": "Heerenveen",
-      "league": "Eredivisie",
-      "date": "2026-10-24",
-      "type": "BTTS",
-      "prediction": "Oui",
-      "proba": 0.7115,
-      "bttsProbDisplay": "71.15%",
-      "over25ProbDisplay": "72.70%",
-      "confidence": 71,
-      "time": "19:00",
-      "matchSemantic": "adodenha-vs-heerenve-2026-10-24",
-      "source": "poisson-v92-real-data",
-      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/2726.png",
-      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/146.png",
-      "tier": "GOLD",
-      "reliabilityScore": 89.88,
-      "dataQuality": "HIGH",
-      "dataSource": "ESPN_TEAM_SCHEDULE",
-      "matchCountHome": 8,
-      "matchCountAway": 8,
-      "h2hAvailable": false,
-      "xgHome": 1.65,
-      "xgAway": 2.13,
-      "xgTotal": 3.77,
-      "formBTTS": 50,
-      "analysis": "ADO Den Haag : forme V-N-N-D-D (1V 2N 2D, 7 buts marqués / 9 encaissés sur 5) · Heerenveen : forme V-D-V-N-D (2V 1N 2D, 10 buts marqués / 5 encaissés sur 5). Classement : ADO Den Haag 17e (6 pts), Heerenveen 8e (12 pts). Modèle Poisson : xG cumulé 3.77, BTTS 71.1%, Over 2.5 72.7%. Cotes DraftKings — 1: 3.2 / N: 3.85 / 2: 2. Fiabilité 89.88%.",
-      "analysisData": {
-        "bttsProb": 0.7115,
-        "over25Prob": 0.727,
-        "homeLambda": 1.65,
-        "awayLambda": 2.13,
-        "xgTotal": 3.77
-      },
-      "estimatedCote": 1.41,
-      "estimatedCoteOver": 1.38,
-      "odds": {
-        "provider": "DraftKings",
-        "home": 3.2,
-        "draw": 3.85,
-        "away": 2,
-        "over25": null,
-        "under25": null
-      },
-      "oddsSource": "DraftKings",
-      "estimatedCoteBTTS": 1.41,
-      "formHome": {
-        "last5String": "V-N-N-D-D",
-        "wins": 1,
-        "draws": 2,
-        "losses": 2,
-        "goalsFor": 7,
-        "goalsAgainst": 9,
-        "bttsRate": 0.8,
-        "over25Rate": 0.6,
-        "cleanSheets": 0,
-        "failedToScore": 1,
-        "count": 5
-      },
-      "formAway": {
-        "last5String": "V-D-V-N-D",
-        "wins": 2,
-        "draws": 1,
-        "losses": 2,
-        "goalsFor": 10,
-        "goalsAgainst": 5,
-        "bttsRate": 0.2,
-        "over25Rate": 0.6,
-        "cleanSheets": 3,
-        "failedToScore": 2,
-        "count": 5
-      },
-      "standingsHome": {
-        "rank": 17,
-        "points": 6,
-        "played": 9,
-        "gf": 11,
-        "ga": 20
-      },
-      "standingsAway": {
-        "rank": 8,
-        "points": 12,
-        "played": 9,
-        "gf": 15,
-        "ga": 11
-      },
-      "predictions": [
-        {
-          "type": "BTTS",
-          "prediction": "Oui",
-          "confidence": 71,
-          "bttsProb": 0.7115,
-          "homeLambda": 1.65,
-          "awayLambda": 2.13
-        },
-        {
-          "type": "Over 2.5",
-          "prediction": "Oui",
-          "confidence": 73,
-          "over25Prob": 0.727,
-          "homeLambda": 1.65,
-          "awayLambda": 2.13
-        }
-      ],
-      "bttsProb": 0.7115,
-      "over25Prob": 0.727,
-      "homeLambda": 1.65,
-      "awayLambda": 2.13,
-      "ai_key_fact": "Modèle Poisson : xG domicile 1.65, xG extérieur 2.13, BTTS 71.2%.",
-      "ai_analysis": "Les statistiques du modèle indiquent un xG de 1.65 pour ADO Den Haag et de 2.13 pour Heerenveen. La probabilité BTTS est estimée à 71.2% et l'Over 2.5 atteint 72.7% avec une fiabilité de 89.88%. Au classement de l'Eredivisie, ADO Den Haag occupe la 17e place avec 6 points tandis qu'Heerenveen se positionne au 8e rang avec 12 points. Aucune information relative aux absences n'est disponible dans les données.",
-      "ai_form_summary": "ADO Den Haag totalise 1V-2N-2D sur ses 5 derniers matchs avec un taux BTTS de 0.8. Heerenveen affiche 2V-1N-2D avec 10 buts marqués et 3 clean sheets.",
-      "ai_key_fact_en": "Poisson model: home xG 1.65, away xG 2.13, BTTS 71.2%.",
-      "ai_analysis_en": "Model statistics indicate an xG of 1.65 for ADO Den Haag and 2.13 for Heerenveen. The BTTS probability is estimated at 71.2% and Over 2.5 reaches 72.7% with a reliability of 89.88%. In the Eredivisie standings, ADO Den Haag occupies 17th place with 6 points while Heerenveen ranks 8th with 12 points. No information regarding absences is available in the data.",
-      "ai_form_summary_en": "ADO Den Haag totals 1W-2D-2L over their last 5 matches with a BTTS rate of 0.8. Heerenveen records 2W-1D-2L with 10 goals scored and 3 clean sheets.",
-      "ai_source": "gemini-v2",
-      "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
-      "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
-      "ai_odds_insight": "Le marché (DraftKings) cote 1: 3.2, nul: 3.85, 2: 2.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 3.2, draw: 3.85, 2: 2.",
-      "last5Home": [
-        {
-          "date": "2026-10-17",
-          "opponent": "PSV Eindhoven",
-          "venue": "H",
-          "score": "2-1",
-          "result": "W"
-        },
-        {
-          "date": "2026-10-11",
-          "opponent": "Telstar",
-          "venue": "A",
-          "score": "2-2",
-          "result": "D"
-        },
-        {
-          "date": "2026-09-19",
-          "opponent": "SC Cambuur",
-          "venue": "H",
-          "score": "1-1",
-          "result": "D"
-        },
-        {
-          "date": "2026-09-12",
-          "opponent": "FC Twente",
-          "venue": "A",
-          "score": "0-2",
-          "result": "L"
-        },
-        {
-          "date": "2026-09-06",
-          "opponent": "Fortuna Sittard",
-          "venue": "H",
-          "score": "2-3",
-          "result": "L"
-        }
-      ],
-      "last5Away": [
-        {
-          "date": "2026-10-16",
-          "opponent": "Excelsior",
-          "venue": "H",
-          "score": "4-0",
-          "result": "W"
-        },
-        {
-          "date": "2026-10-09",
-          "opponent": "PSV Eindhoven",
-          "venue": "A",
-          "score": "0-2",
-          "result": "L"
-        },
-        {
-          "date": "2026-09-19",
-          "opponent": "Sparta Rotterdam",
-          "venue": "A",
-          "score": "4-0",
-          "result": "W"
-        },
-        {
-          "date": "2026-09-13",
-          "opponent": "Telstar",
-          "venue": "H",
-          "score": "0-0",
-          "result": "D"
-        },
-        {
-          "date": "2026-09-06",
-          "opponent": "AZ Alkmaar",
-          "venue": "H",
-          "score": "2-3",
-          "result": "L"
-        }
-      ],
-      "status": "PENDING"
-    },
-    {
-      "id": "kvcweste-vs-waasland-2026-10-24",
-      "match": "KVC Westerlo vs Waasland-Beveren",
-      "home": "KVC Westerlo",
-      "away": "Waasland-Beveren",
-      "league": "Jupiler Pro League",
-      "date": "2026-10-24",
-      "type": "BTTS",
-      "prediction": "Oui",
-      "proba": 0.71,
-      "bttsProbDisplay": "71.00%",
-      "over25ProbDisplay": "81.19%",
-      "confidence": 71,
-      "time": "18:45",
-      "matchSemantic": "kvcweste-vs-waasland-2026-10-24",
-      "source": "poisson-v92-real-data",
-      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/606.png",
-      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/13450.png",
-      "tier": "GOLD",
-      "reliabilityScore": 89.81,
-      "dataQuality": "HIGH",
-      "dataSource": "ESPN_TEAM_SCHEDULE",
-      "matchCountHome": 8,
-      "matchCountAway": 8,
-      "h2hAvailable": false,
-      "xgHome": 3,
-      "xgAway": 1.38,
-      "xgTotal": 4.38,
-      "formBTTS": 40,
-      "analysis": "KVC Westerlo : forme V-V-V-V-N (4V 1N 0D, 17 buts marqués / 5 encaissés sur 5) · Waasland-Beveren : forme D-D-V-V-D (2V 0N 3D, 6 buts marqués / 8 encaissés sur 5). Classement : KVC Westerlo 6e (13 pts), Waasland-Beveren 11e (9 pts). Modèle Poisson : xG cumulé 4.38, BTTS 71.0%, Over 2.5 81.2%. Cotes DraftKings — 1: 2.05 / N: 3.75 / 2: 3.15. Fiabilité 89.81%.",
-      "analysisData": {
-        "bttsProb": 0.71,
-        "over25Prob": 0.8119,
-        "homeLambda": 3,
-        "awayLambda": 1.38,
-        "xgTotal": 4.38
-      },
-      "estimatedCote": 1.41,
-      "estimatedCoteOver": 1.23,
-      "odds": {
-        "provider": "DraftKings",
-        "home": 2.05,
-        "draw": 3.75,
-        "away": 3.15,
-        "over25": null,
-        "under25": null
-      },
-      "oddsSource": "DraftKings",
-      "estimatedCoteBTTS": 1.41,
-      "formHome": {
-        "last5String": "V-V-V-V-N",
-        "wins": 4,
-        "draws": 1,
-        "losses": 0,
-        "goalsFor": 17,
-        "goalsAgainst": 5,
-        "bttsRate": 0.6,
-        "over25Rate": 0.8,
-        "cleanSheets": 2,
-        "failedToScore": 0,
-        "count": 5
-      },
-      "formAway": {
-        "last5String": "D-D-V-V-D",
-        "wins": 2,
-        "draws": 0,
-        "losses": 3,
-        "goalsFor": 6,
-        "goalsAgainst": 8,
-        "bttsRate": 0.2,
-        "over25Rate": 0.6,
-        "cleanSheets": 2,
-        "failedToScore": 2,
-        "count": 5
-      },
-      "standingsHome": {
-        "rank": 6,
-        "points": 13,
-        "played": 8,
-        "gf": 20,
-        "ga": 17
-      },
-      "standingsAway": {
-        "rank": 11,
-        "points": 9,
-        "played": 8,
-        "gf": 8,
-        "ga": 14
-      },
-      "predictions": [
-        {
-          "type": "BTTS",
-          "prediction": "Oui",
-          "confidence": 71,
-          "bttsProb": 0.71,
-          "homeLambda": 3,
-          "awayLambda": 1.38
-        },
-        {
-          "type": "Over 2.5",
-          "prediction": "Oui",
-          "confidence": 81,
-          "over25Prob": 0.8119,
-          "homeLambda": 3,
-          "awayLambda": 1.38
-        }
-      ],
-      "bttsProb": 0.71,
-      "over25Prob": 0.8119,
-      "homeLambda": 3,
-      "awayLambda": 1.38,
-      "ai_key_fact": "Modèle Poisson : xG domicile 3.00, xG extérieur 1.38, BTTS 71.0%.",
-      "ai_analysis": "Le modèle projette un net avantage offensif pour les locaux avec un xG de 3.00 contre 1.38 pour les visiteurs. La probabilité du BTTS s'élève à 71.0% et l'Over 2.5 atteint 81.2% avec une fiabilité globale de 89.81%. Au classement de la Jupiler Pro League, KVC Westerlo est 6e avec 13 points et Waasland-Beveren pointe à la 11e place avec 9 points. Aucune donnée d'effectif n'est fournie concernant les absences.",
-      "ai_form_summary": "KVC Westerlo reste sur une solide série de 4V-1N-0D avec 17 buts marqués lors de ses 5 derniers matchs. Waasland-Beveren affiche 2V-0N-3D avec 6 buts inscrits et 8 encaissés.",
-      "ai_key_fact_en": "Poisson model: home xG 3.00, away xG 1.38, BTTS 71.0%.",
-      "ai_analysis_en": "The model projects a clear offensive advantage for the hosts with an xG of 3.00 against 1.38 for the visitors. The BTTS probability stands at 71.0% and Over 2.5 reaches 81.2% with an overall reliability of 89.81%. In the Jupiler Pro League standings, KVC Westerlo is 6th with 13 points and Waasland-Beveren points to 11th place with 9 points. No squad data is provided regarding absences.",
-      "ai_form_summary_en": "KVC Westerlo is on a solid run of 4W-1D-0L with 17 goals scored in their last 5 matches. Waasland-Beveren records 2W-0D-3L with 6 goals scored and 8 conceded.",
-      "ai_source": "gemini-v2",
-      "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
-      "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
-      "ai_odds_insight": "Le marché (DraftKings) cote 1: 2.05, nul: 3.75, 2: 3.15.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.05, draw: 3.75, 2: 3.15.",
-      "last5Home": [
-        {
-          "date": "2026-10-11",
-          "opponent": "Antwerp",
-          "venue": "H",
-          "score": "5-1",
-          "result": "W"
-        },
-        {
-          "date": "2026-09-20",
-          "opponent": "Sint-Truidense",
-          "venue": "A",
-          "score": "2-0",
-          "result": "W"
-        },
-        {
-          "date": "2026-09-12",
-          "opponent": "Standard Liege",
-          "venue": "H",
-          "score": "4-2",
-          "result": "W"
-        },
-        {
-          "date": "2026-09-05",
-          "opponent": "KV Mechelen",
-          "venue": "A",
-          "score": "4-0",
-          "result": "W"
-        },
-        {
-          "date": "2026-08-30",
-          "opponent": "Zulte-Waregem",
-          "venue": "H",
-          "score": "2-2",
-          "result": "D"
-        }
-      ],
-      "last5Away": [
-        {
-          "date": "2026-10-09",
-          "opponent": "Lommel SK",
-          "venue": "H",
-          "score": "1-3",
-          "result": "L"
-        },
-        {
-          "date": "2026-09-20",
-          "opponent": "KV Kortrijk",
-          "venue": "A",
-          "score": "0-1",
-          "result": "L"
-        },
-        {
-          "date": "2026-09-12",
-          "opponent": "Sint-Truidense",
-          "venue": "H",
-          "score": "2-0",
-          "result": "W"
-        },
-        {
-          "date": "2026-09-06",
-          "opponent": "Oud-Heverlee Leuven",
-          "venue": "H",
-          "score": "3-0",
-          "result": "W"
-        },
-        {
-          "date": "2026-08-28",
-          "opponent": "Racing Genk",
-          "venue": "A",
-          "score": "0-4",
-          "result": "L"
-        }
-      ],
-      "status": "PENDING"
-    },
-    {
-      "id": "atlticom-vs-deportiv-2026-10-24",
-      "match": "Atlético Madrid vs Deportivo",
-      "home": "Atlético Madrid",
-      "away": "Deportivo",
-      "league": "LaLiga",
-      "date": "2026-10-24",
-      "type": "BTTS",
-      "prediction": "Oui",
-      "proba": 0.6765,
-      "bttsProbDisplay": "67.65%",
-      "over25ProbDisplay": "72.02%",
-      "confidence": 68,
-      "time": "19:00",
-      "matchSemantic": "atlticom-vs-deportiv-2026-10-24",
-      "source": "poisson-v92-real-data",
-      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/1068.png",
-      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/90.png",
-      "tier": "GOLD",
-      "reliabilityScore": 88.35,
-      "dataQuality": "HIGH",
-      "dataSource": "ESPN_TEAM_SCHEDULE",
-      "matchCountHome": 8,
-      "matchCountAway": 8,
-      "h2hAvailable": false,
-      "xgHome": 2.36,
-      "xgAway": 1.38,
-      "xgTotal": 3.73,
-      "formBTTS": 60,
-      "analysis": "Atlético Madrid : forme V-V-V-V-V (5V 0N 0D, 12 buts marqués / 2 encaissés sur 5) · Deportivo : forme N-D-N-D-N (0V 3N 2D, 5 buts marqués / 7 encaissés sur 5). Classement : Atlético Madrid 2e (22 pts), Deportivo 9e (11 pts). Modèle Poisson : xG cumulé 3.73, BTTS 67.6%, Over 2.5 72.0%. Cotes DraftKings — 1: 1.29 / N: 5.75 / 2: 10 · Over 2.5: 1.57. Fiabilité 88.35%.",
-      "analysisData": {
-        "bttsProb": 0.6765,
-        "over25Prob": 0.7202,
-        "homeLambda": 2.36,
-        "awayLambda": 1.38,
-        "xgTotal": 3.73
-      },
-      "estimatedCote": 1.48,
-      "estimatedCoteOver": 1.39,
-      "odds": {
-        "provider": "DraftKings",
-        "home": 1.29,
-        "draw": 5.75,
-        "away": 10,
-        "over25": 1.57,
-        "under25": 2.4
-      },
-      "oddsSource": "DraftKings",
-      "estimatedCoteBTTS": 1.48,
-      "formHome": {
-        "last5String": "V-V-V-V-V",
-        "wins": 5,
-        "draws": 0,
-        "losses": 0,
-        "goalsFor": 12,
-        "goalsAgainst": 2,
-        "bttsRate": 0.4,
-        "over25Rate": 0.8,
-        "cleanSheets": 3,
-        "failedToScore": 0,
-        "count": 5
-      },
-      "formAway": {
-        "last5String": "N-D-N-D-N",
-        "wins": 0,
-        "draws": 3,
-        "losses": 2,
-        "goalsFor": 5,
-        "goalsAgainst": 7,
-        "bttsRate": 0.8,
-        "over25Rate": 0.2,
-        "cleanSheets": 0,
-        "failedToScore": 1,
-        "count": 5
-      },
-      "standingsHome": {
-        "rank": 2,
-        "points": 22,
-        "played": 9,
-        "gf": 19,
-        "ga": 8
-      },
-      "standingsAway": {
-        "rank": 9,
-        "points": 11,
-        "played": 9,
-        "gf": 13,
-        "ga": 12
-      },
-      "predictions": [
-        {
-          "type": "BTTS",
-          "prediction": "Oui",
-          "confidence": 68,
-          "bttsProb": 0.6765,
-          "homeLambda": 2.36,
-          "awayLambda": 1.38
-        },
-        {
-          "type": "Over 2.5",
-          "prediction": "Oui",
-          "confidence": 72,
-          "over25Prob": 0.7202,
-          "homeLambda": 2.36,
-          "awayLambda": 1.38
-        }
-      ],
-      "bttsProb": 0.6765,
-      "over25Prob": 0.7202,
-      "homeLambda": 2.36,
-      "awayLambda": 1.38,
-      "ai_key_fact": "Atlético Madrid présente un bilan parfait à domicile sur ses cinq derniers matchs.",
-      "ai_analysis": "Les statistiques des deux équipes révèlent une supériorité nette de l'Atlético Madrid, second au classement, face à un Deportivo positionné à la neuvième place. Le modèle Poisson anticipe des xG respectifs de 2.36 pour l'équipe hôte et 1.38 pour les visiteurs. Les probabilités indiquent un taux de BTTS à 67.7% et un Over 2.5 à 72.0%. La fiabilité globale du modèle s'établit à 88.35%.",
-      "ai_form_summary": "L'Atlético Madrid enchaîne une série de cinq victoires consécutives avec 12 buts marqués et 2 encaissés. En face, Deportivo traverse une période délicate avec trois nuls et deux défaites en cinq rencontres.",
-      "ai_key_fact_en": "Atletico Madrid shows a perfect home record over their last five matches.",
-      "ai_analysis_en": "Team statistics reveal a clear superiority for Atletico Madrid, second in the standings, against Deportivo, placed ninth. The Poisson model anticipates respective xG of 2.36 for the home team and 1.38 for the visitors. Probabilities indicate a BTTS rate of 67.7% and an Over 2.5 of 72.0%. The overall model reliability stands at 88.35%.",
-      "ai_form_summary_en": "Atletico Madrid is on a five-match winning streak with 12 goals scored and 2 conceded. Meanwhile, Deportivo is going through a delicate period with three draws and two defeats in five games.",
-      "ai_source": "gemini-v2",
-      "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
-      "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
-      "ai_odds_insight": "Le marché (DraftKings) cote 1: 1.29, nul: 5.75, 2: 10, Over 2.5: 1.57.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 1.29, draw: 5.75, 2: 10, Over 2.5: 1.57.",
-      "last5Home": [
-        {
-          "date": "2026-10-17",
-          "opponent": "Espanyol",
-          "venue": "A",
-          "score": "1-0",
-          "result": "W"
-        },
-        {
-          "date": "2026-10-10",
-          "opponent": "Alavés",
-          "venue": "A",
-          "score": "2-1",
-          "result": "W"
-        },
-        {
-          "date": "2026-09-20",
-          "opponent": "Real Madrid",
-          "venue": "H",
-          "score": "2-1",
-          "result": "W"
-        },
-        {
-          "date": "2026-09-16",
-          "opponent": "Osasuna",
-          "venue": "H",
-          "score": "4-0",
-          "result": "W"
-        },
-        {
-          "date": "2026-09-13",
-          "opponent": "Real Sociedad",
-          "venue": "A",
-          "score": "3-0",
-          "result": "W"
-        }
-      ],
-      "last5Away": [
-        {
-          "date": "2026-10-16",
-          "opponent": "Levante",
-          "venue": "H",
-          "score": "1-1",
-          "result": "D"
-        },
-        {
-          "date": "2026-10-11",
-          "opponent": "Real Sociedad",
-          "venue": "A",
-          "score": "2-3",
-          "result": "L"
-        },
-        {
-          "date": "2026-09-20",
-          "opponent": "Real Betis",
-          "venue": "H",
-          "score": "1-1",
-          "result": "D"
-        },
-        {
-          "date": "2026-09-16",
-          "opponent": "Sevilla",
-          "venue": "H",
-          "score": "0-1",
-          "result": "L"
-        },
-        {
-          "date": "2026-09-13",
-          "opponent": "Getafe",
-          "venue": "A",
-          "score": "1-1",
-          "result": "D"
-        }
-      ],
-      "status": "PENDING"
-    },
     {
       "id": "philadel-vs-newengla-2026-10-24",
       "match": "Philadelphia Union vs New England Revolution",
@@ -10081,402 +7709,6 @@
       "status": "PENDING"
     },
     {
-      "id": "raallalo-vs-zultewar-2026-10-24",
-      "match": "RAAL La Louvière vs Zulte-Waregem",
-      "home": "RAAL La Louvière",
-      "away": "Zulte-Waregem",
-      "league": "Jupiler Pro League",
-      "date": "2026-10-24",
-      "type": "BTTS",
-      "prediction": "Oui",
-      "proba": 0.6277,
-      "bttsProbDisplay": "62.77%",
-      "over25ProbDisplay": "60.96%",
-      "confidence": 63,
-      "time": "18:45",
-      "matchSemantic": "raallalo-vs-zultewar-2026-10-24",
-      "source": "poisson-v92-real-data",
-      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/131235.png",
-      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/4691.png",
-      "tier": "GOLD",
-      "reliabilityScore": 83.71,
-      "dataQuality": "HIGH",
-      "dataSource": "ESPN_TEAM_SCHEDULE",
-      "matchCountHome": 8,
-      "matchCountAway": 8,
-      "h2hAvailable": false,
-      "xgHome": 1.65,
-      "xgAway": 1.5,
-      "xgTotal": 3.15,
-      "formBTTS": 30,
-      "analysis": "RAAL La Louvière : forme D-D-V-D-N (1V 1N 3D, 6 buts marqués / 12 encaissés sur 5) · Zulte-Waregem : forme D-D-D-V-N (1V 1N 3D, 4 buts marqués / 8 encaissés sur 5). Classement : RAAL La Louvière 16e (4 pts), Zulte-Waregem 8e (11 pts). Modèle Poisson : xG cumulé 3.15, BTTS 62.8%, Over 2.5 61.0%. Cotes DraftKings — 1: 3 / N: 3.4 / 2: 2.3 · Over 2.5: 1.87. Fiabilité 83.71%.",
-      "analysisData": {
-        "bttsProb": 0.6277,
-        "over25Prob": 0.6096,
-        "homeLambda": 1.65,
-        "awayLambda": 1.5,
-        "xgTotal": 3.15
-      },
-      "estimatedCote": 1.59,
-      "estimatedCoteOver": 1.64,
-      "odds": {
-        "provider": "DraftKings",
-        "home": 3,
-        "draw": 3.4,
-        "away": 2.3,
-        "over25": 1.87,
-        "under25": 1.87
-      },
-      "oddsSource": "DraftKings",
-      "estimatedCoteBTTS": 1.59,
-      "formHome": {
-        "last5String": "D-D-V-D-N",
-        "wins": 1,
-        "draws": 1,
-        "losses": 3,
-        "goalsFor": 6,
-        "goalsAgainst": 12,
-        "bttsRate": 0.4,
-        "over25Rate": 0.8,
-        "cleanSheets": 1,
-        "failedToScore": 2,
-        "count": 5
-      },
-      "formAway": {
-        "last5String": "D-D-D-V-N",
-        "wins": 1,
-        "draws": 1,
-        "losses": 3,
-        "goalsFor": 4,
-        "goalsAgainst": 8,
-        "bttsRate": 0.2,
-        "over25Rate": 0.4,
-        "cleanSheets": 1,
-        "failedToScore": 3,
-        "count": 5
-      },
-      "last5Home": [
-        {
-          "date": "2026-10-10",
-          "opponent": "Club Brugge",
-          "venue": "H",
-          "score": "1-4",
-          "result": "L"
-        },
-        {
-          "date": "2026-09-19",
-          "opponent": "Oud-Heverlee Leuven",
-          "venue": "A",
-          "score": "0-2",
-          "result": "L"
-        },
-        {
-          "date": "2026-09-13",
-          "opponent": "KV Kortrijk",
-          "venue": "H",
-          "score": "3-0",
-          "result": "W"
-        },
-        {
-          "date": "2026-09-05",
-          "opponent": "Sint-Truidense",
-          "venue": "A",
-          "score": "0-4",
-          "result": "L"
-        },
-        {
-          "date": "2026-08-29",
-          "opponent": "KV Mechelen",
-          "venue": "H",
-          "score": "2-2",
-          "result": "D"
-        }
-      ],
-      "last5Away": [
-        {
-          "date": "2026-10-10",
-          "opponent": "KAA Gent",
-          "venue": "H",
-          "score": "0-2",
-          "result": "L"
-        },
-        {
-          "date": "2026-09-19",
-          "opponent": "Anderlecht",
-          "venue": "A",
-          "score": "0-3",
-          "result": "L"
-        },
-        {
-          "date": "2026-09-13",
-          "opponent": "Royal Charleroi SC",
-          "venue": "H",
-          "score": "0-1",
-          "result": "L"
-        },
-        {
-          "date": "2026-09-06",
-          "opponent": "KV Kortrijk",
-          "venue": "A",
-          "score": "2-0",
-          "result": "W"
-        },
-        {
-          "date": "2026-08-30",
-          "opponent": "KVC Westerlo",
-          "venue": "A",
-          "score": "2-2",
-          "result": "D"
-        }
-      ],
-      "standingsHome": {
-        "rank": 16,
-        "points": 4,
-        "played": 8,
-        "gf": 8,
-        "ga": 18
-      },
-      "standingsAway": {
-        "rank": 8,
-        "points": 11,
-        "played": 8,
-        "gf": 10,
-        "ga": 9
-      },
-      "predictions": [
-        {
-          "type": "BTTS",
-          "prediction": "Oui",
-          "confidence": 63,
-          "bttsProb": 0.6277,
-          "homeLambda": 1.65,
-          "awayLambda": 1.5
-        },
-        {
-          "type": "Over 2.5",
-          "prediction": "Oui",
-          "confidence": 61,
-          "over25Prob": 0.6096,
-          "homeLambda": 1.65,
-          "awayLambda": 1.5
-        }
-      ],
-      "bttsProb": 0.6277,
-      "over25Prob": 0.6096,
-      "homeLambda": 1.65,
-      "awayLambda": 1.5,
-      "ai_key_fact": "RAAL La Louvière est 16e et Zulte-Waregem se classe 8e du championnat.",
-      "ai_analysis": "Le modèle Poisson prévoit des xG de 1.65 pour RAAL La Louvière et de 1.5 pour Zulte-Waregem. La probabilité BTTS est estimée à 62.8% et celle de l'Over 2.5 atteint 61.0%, avec un indice de fiabilité de 83.71%. Les cotes des bookmakers placent Zulte-Waregem légèrement favori à l'extérieur.",
-      "ai_form_summary": "RAAL La Louvière traverse une phase délicate avec une seule victoire et trois défaites lors de ses cinq derniers matchs. Zulte-Waregem affiche également un bilan de une victoire, un nul et trois défaites sur la même séquence.",
-      "ai_key_fact_en": "RAAL La Louvière is 16th and Zulte-Waregem ranks 8th in the championship.",
-      "ai_analysis_en": "The Poisson model forecasts xGs of 1.65 for RAAL La Louvière and 1.5 for Zulte-Waregem. The BTTS probability is estimated at 62.8% and that of Over 2.5 reaches 61.0%, with a reliability index of 83.71%. Bookmaker odds place Zulte-Waregem as a slight away favorite.",
-      "ai_form_summary_en": "RAAL La Louvière is going through a delicate phase with a single win and three defeats in their last five matches. Zulte-Waregem also displays a record of one win, one draw, and three defeats over the same sequence.",
-      "ai_source": "gemini-v2",
-      "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
-      "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
-      "ai_odds_insight": "Le marché (DraftKings) cote 1: 3, nul: 3.4, 2: 2.3, Over 2.5: 1.87.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 3, draw: 3.4, 2: 2.3, Over 2.5: 1.87.",
-      "status": "PENDING"
-    },
-    {
-      "id": "fcnrnber-vs-kaisersl-2026-10-24",
-      "match": "1. FC Nürnberg vs Kaiserslautern",
-      "home": "1. FC Nürnberg",
-      "away": "Kaiserslautern",
-      "league": "2. Bundesliga",
-      "date": "2026-10-24",
-      "type": "BTTS",
-      "prediction": "Oui",
-      "proba": 0.5671,
-      "bttsProbDisplay": "56.71%",
-      "over25ProbDisplay": "63.55%",
-      "confidence": 57,
-      "time": "18:30",
-      "matchSemantic": "fcnrnber-vs-kaisersl-2026-10-24",
-      "source": "poisson-v92-real-data",
-      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/269.png",
-      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/130.png",
-      "tier": "GOLD",
-      "reliabilityScore": 83.56,
-      "dataQuality": "HIGH",
-      "dataSource": "ESPN_TEAM_SCHEDULE",
-      "matchCountHome": 8,
-      "matchCountAway": 8,
-      "h2hAvailable": false,
-      "xgHome": 2.27,
-      "xgAway": 1,
-      "xgTotal": 3.27,
-      "formBTTS": 40,
-      "analysis": "1. FC Nürnberg : forme N-N-V-V-N (2V 3N 0D, 10 buts marqués / 8 encaissés sur 5) · Kaiserslautern : forme V-N-V-D-V (3V 1N 1D, 6 buts marqués / 3 encaissés sur 5). Classement : 1. FC Nürnberg 2e (18 pts), Kaiserslautern 4e (15 pts). Modèle Poisson : xG cumulé 3.27, BTTS 56.7%, Over 2.5 63.6%. Cotes DraftKings — 1: 2.05 / N: 3.85 / 2: 3.25. Fiabilité 83.56%.",
-      "analysisData": {
-        "bttsProb": 0.5671,
-        "over25Prob": 0.6355,
-        "homeLambda": 2.27,
-        "awayLambda": 1,
-        "xgTotal": 3.27
-      },
-      "estimatedCote": 1.76,
-      "estimatedCoteOver": 1.57,
-      "odds": {
-        "provider": "DraftKings",
-        "home": 2.05,
-        "draw": 3.85,
-        "away": 3.25,
-        "over25": null,
-        "under25": null
-      },
-      "oddsSource": "DraftKings",
-      "estimatedCoteBTTS": 1.76,
-      "formHome": {
-        "last5String": "N-N-V-V-N",
-        "wins": 2,
-        "draws": 3,
-        "losses": 0,
-        "goalsFor": 10,
-        "goalsAgainst": 8,
-        "bttsRate": 0.8,
-        "over25Rate": 0.6,
-        "cleanSheets": 1,
-        "failedToScore": 0,
-        "count": 5
-      },
-      "formAway": {
-        "last5String": "V-N-V-D-V",
-        "wins": 3,
-        "draws": 1,
-        "losses": 1,
-        "goalsFor": 6,
-        "goalsAgainst": 3,
-        "bttsRate": 0,
-        "over25Rate": 0.4,
-        "cleanSheets": 4,
-        "failedToScore": 2,
-        "count": 5
-      },
-      "last5Home": [
-        {
-          "date": "2026-10-16",
-          "opponent": "Energie Cottbus",
-          "venue": "A",
-          "score": "1-1",
-          "result": "D"
-        },
-        {
-          "date": "2026-10-10",
-          "opponent": "VfL Wolfsburg",
-          "venue": "H",
-          "score": "4-4",
-          "result": "D"
-        },
-        {
-          "date": "2026-09-19",
-          "opponent": "Karlsruher SC",
-          "venue": "A",
-          "score": "1-0",
-          "result": "W"
-        },
-        {
-          "date": "2026-09-11",
-          "opponent": "Hannover 96",
-          "venue": "H",
-          "score": "2-1",
-          "result": "W"
-        },
-        {
-          "date": "2026-09-05",
-          "opponent": "Holstein Kiel",
-          "venue": "A",
-          "score": "2-2",
-          "result": "D"
-        }
-      ],
-      "last5Away": [
-        {
-          "date": "2026-10-17",
-          "opponent": "VfL Bochum",
-          "venue": "H",
-          "score": "2-0",
-          "result": "W"
-        },
-        {
-          "date": "2026-10-09",
-          "opponent": "1. FC Heidenheim 1846",
-          "venue": "A",
-          "score": "0-0",
-          "result": "D"
-        },
-        {
-          "date": "2026-09-19",
-          "opponent": "TSV Eintracht Braunschweig",
-          "venue": "H",
-          "score": "1-0",
-          "result": "W"
-        },
-        {
-          "date": "2026-09-12",
-          "opponent": "1. FC Magdeburg",
-          "venue": "A",
-          "score": "0-3",
-          "result": "L"
-        },
-        {
-          "date": "2026-09-05",
-          "opponent": "SV Darmstadt 98",
-          "venue": "H",
-          "score": "3-0",
-          "result": "W"
-        }
-      ],
-      "standingsHome": {
-        "rank": 2,
-        "points": 18,
-        "played": 8,
-        "gf": 21,
-        "ga": 11
-      },
-      "standingsAway": {
-        "rank": 4,
-        "points": 15,
-        "played": 8,
-        "gf": 8,
-        "ga": 4
-      },
-      "predictions": [
-        {
-          "type": "BTTS",
-          "prediction": "Oui",
-          "confidence": 57,
-          "bttsProb": 0.5671,
-          "homeLambda": 2.27,
-          "awayLambda": 1
-        },
-        {
-          "type": "Over 2.5",
-          "prediction": "Oui",
-          "confidence": 64,
-          "over25Prob": 0.6355,
-          "homeLambda": 2.27,
-          "awayLambda": 1
-        }
-      ],
-      "bttsProb": 0.5671,
-      "over25Prob": 0.6355,
-      "homeLambda": 2.27,
-      "awayLambda": 1,
-      "ai_key_fact": "Nürnberg affiche un taux de BTTS à domicile de 80% sur ses cinq derniers matchs.",
-      "ai_analysis": "Le modèle Poisson de BTTSPredict attribue un xG de 2.27 pour l'équipe à domicile et de 1.0 pour l'extérieur, traduisant une domination offensive potentielle de Nürnberg. Les probabilités calculées atteignent 56.7% pour le BTTS et 63.5% pour l'Over 2.5, avec une fiabilité de modèle évaluée à 83.56%. Les cotes de DraftKings situent la victoire de Nürnberg à 2.05, le nul à 3.85 et le succès extérieur à 3.25. Aucune donnée sur l'Over et l'Under 2.5 n'est disponible auprès de ce bookmaker.",
-      "ai_form_summary": "Le 1. FC Nürnberg présente une forme stable avec deux victoires et trois nuls, affichant dix buts marqués et huit encaissés. De son côté, Kaiserslautern totalise trois victoires, un nul et une défaite, s'appuyant sur une défense solide avec quatre clean sheets.",
-      "ai_key_fact_en": "Nuremberg boasts an 80% home BTTS rate over their last five matches.",
-      "ai_analysis_en": "The BTTSPredict Poisson model assigns an xG of 2.27 for the home team and 1.0 for the away team, reflecting potential offensive dominance by Nuremberg. Calculated probabilities reach 56.7% for BTTS and 63.5% for Over 2.5, with a model reliability rated at 83.56%. DraftKings odds price a Nuremberg win at 2.05, a draw at 3.85, and an away victory at 3.25. No data for Over and Under 2.5 is available from this bookmaker.",
-      "ai_form_summary_en": "1. FC Nürnberg shows stable form with two wins and three draws, scoring ten goals and conceding eight. Meanwhile, Kaiserslautern records three wins, one draw, and one defeat, relying on a solid defense with four clean sheets.",
-      "ai_source": "gemini-v2",
-      "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
-      "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
-      "ai_odds_insight": "Le marché (DraftKings) cote 1: 2.05, nul: 3.85, 2: 3.25.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.05, draw: 3.85, 2: 3.25.",
-      "status": "PENDING"
-    },
-    {
       "id": "orlandoc-vs-newyorkc-2026-10-24",
       "match": "Orlando City SC vs New York City FC",
       "home": "Orlando City SC",
@@ -10871,794 +8103,6 @@
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 2.55, nul: 3.7, 2: 2.4.",
       "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.55, draw: 3.7, 2: 2.4.",
       "status": "PENDING"
-    },
-    {
-      "id": "columbus-vs-torontof-2026-10-24",
-      "match": "Columbus Crew vs Toronto FC",
-      "home": "Columbus Crew",
-      "away": "Toronto FC",
-      "league": "MLS",
-      "date": "2026-10-24",
-      "type": "BTTS",
-      "prediction": "Non",
-      "proba": 0.4662,
-      "bttsProbDisplay": "46.62%",
-      "over25ProbDisplay": "55.40%",
-      "confidence": 47,
-      "time": "19:30",
-      "matchSemantic": "columbus-vs-torontof-2026-10-24",
-      "source": "poisson-v92-real-data",
-      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/183.png",
-      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/7318.png",
-      "tier": "GOLD",
-      "reliabilityScore": 76.65,
-      "dataQuality": "HIGH",
-      "dataSource": "ESPN_TEAM_SCHEDULE",
-      "matchCountHome": 8,
-      "matchCountAway": 8,
-      "h2hAvailable": false,
-      "xgHome": 2.15,
-      "xgAway": 0.75,
-      "xgTotal": 2.9,
-      "formBTTS": 60,
-      "analysis": "Columbus Crew : forme V-V-D-V-V (4V 0N 1D, 11 buts marqués / 5 encaissés sur 5) · Toronto FC : forme V-N-V-D-D (2V 1N 2D, 8 buts marqués / 9 encaissés sur 5). Classement : Columbus Crew 11e (35 pts), Toronto FC 10e (36 pts). Modèle Poisson : xG cumulé 2.9, BTTS 46.6%, Over 2.5 55.4%. Cotes DraftKings — 1: 1.65 / N: 4.2 / 2: 4.3. Fiabilité 76.65%.",
-      "analysisData": {
-        "bttsProb": 0.4662,
-        "over25Prob": 0.554,
-        "homeLambda": 2.15,
-        "awayLambda": 0.75,
-        "xgTotal": 2.9
-      },
-      "estimatedCote": 2.15,
-      "estimatedCoteOver": 1.8,
-      "odds": {
-        "provider": "DraftKings",
-        "home": 1.65,
-        "draw": 4.2,
-        "away": 4.3,
-        "over25": null,
-        "under25": null
-      },
-      "oddsSource": "DraftKings",
-      "estimatedCoteBTTS": 2.15,
-      "formHome": {
-        "last5String": "V-V-D-V-V",
-        "wins": 4,
-        "draws": 0,
-        "losses": 1,
-        "goalsFor": 11,
-        "goalsAgainst": 5,
-        "bttsRate": 0.6,
-        "over25Rate": 0.6,
-        "cleanSheets": 2,
-        "failedToScore": 0,
-        "count": 5
-      },
-      "formAway": {
-        "last5String": "V-N-V-D-D",
-        "wins": 2,
-        "draws": 1,
-        "losses": 2,
-        "goalsFor": 8,
-        "goalsAgainst": 9,
-        "bttsRate": 0.6,
-        "over25Rate": 0.6,
-        "cleanSheets": 1,
-        "failedToScore": 1,
-        "count": 5
-      },
-      "last5Home": [
-        {
-          "date": "2026-10-18",
-          "opponent": "FC Cincinnati",
-          "venue": "A",
-          "score": "2-0",
-          "result": "W"
-        },
-        {
-          "date": "2026-10-14",
-          "opponent": "Charlotte FC",
-          "venue": "H",
-          "score": "3-1",
-          "result": "W"
-        },
-        {
-          "date": "2026-10-10",
-          "opponent": "Orlando City SC",
-          "venue": "A",
-          "score": "2-3",
-          "result": "L"
-        },
-        {
-          "date": "2026-09-27",
-          "opponent": "Inter Miami CF",
-          "venue": "H",
-          "score": "2-1",
-          "result": "W"
-        },
-        {
-          "date": "2026-09-19",
-          "opponent": "CF Montréal",
-          "venue": "A",
-          "score": "2-0",
-          "result": "W"
-        }
-      ],
-      "last5Away": [
-        {
-          "date": "2026-10-17",
-          "opponent": "Red Bull New York",
-          "venue": "A",
-          "score": "2-0",
-          "result": "W"
-        },
-        {
-          "date": "2026-10-14",
-          "opponent": "Orlando City SC",
-          "venue": "H",
-          "score": "3-3",
-          "result": "D"
-        },
-        {
-          "date": "2026-10-10",
-          "opponent": "CF Montréal",
-          "venue": "H",
-          "score": "2-1",
-          "result": "W"
-        },
-        {
-          "date": "2026-09-27",
-          "opponent": "Nashville SC",
-          "venue": "A",
-          "score": "0-2",
-          "result": "L"
-        },
-        {
-          "date": "2026-09-20",
-          "opponent": "St. Louis CITY SC",
-          "venue": "A",
-          "score": "1-3",
-          "result": "L"
-        }
-      ],
-      "standingsHome": {
-        "rank": 11,
-        "points": 35,
-        "played": 30,
-        "gf": 46,
-        "ga": 47
-      },
-      "standingsAway": {
-        "rank": 10,
-        "points": 36,
-        "played": 30,
-        "gf": 46,
-        "ga": 55
-      },
-      "predictions": [
-        {
-          "type": "BTTS",
-          "prediction": "Non",
-          "confidence": 47,
-          "bttsProb": 0.4662,
-          "homeLambda": 2.15,
-          "awayLambda": 0.75
-        },
-        {
-          "type": "Over 2.5",
-          "prediction": "Oui",
-          "confidence": 55,
-          "over25Prob": 0.554,
-          "homeLambda": 2.15,
-          "awayLambda": 0.75
-        }
-      ],
-      "bttsProb": 0.4662,
-      "over25Prob": 0.554,
-      "homeLambda": 2.15,
-      "awayLambda": 0.75,
-      "ai_key_fact": "Columbus Crew totalise quatre victoires sur ses cinq derniers matchs.",
-      "ai_analysis": "Le modèle Poisson met en avant un net avantage offensif pour Columbus Crew avec un xG de 2.15, comparé à 0.75 pour Toronto FC. Les probabilités affichées atteignent 46.6% pour le BTTS et 55.4% pour l'Over 2.5, sous une fiabilité de modèle de 76.65%. Au classement, Columbus Crew se positionne à la 11e place avec 35 points, juste devant Toronto FC, 10e avec 36 points. Les cotes de DraftKings reflètent le statut de favori des locaux à 1.65, contre 4.2 pour le match nul et 4.3 pour la victoire de Toronto. Les statistiques traduisent une supériorité théorique de Columbus à domicile.",
-      "ai_form_summary": "Columbus Crew enchaîne une bonne série de 4V-0N-1D, avec 11 buts marqués et 5 encaissés. Toronto FC affiche un bilan plus modéré de 2V-1N-2D, comptant 8 buts inscrits et 9 concédés.",
-      "ai_key_fact_en": "Columbus Crew totals four wins in their last five matches.",
-      "ai_analysis_en": "The Poisson model highlights a clear offensive advantage for Columbus Crew with an xG of 2.15, compared to 0.75 for Toronto FC. Displayed probabilities reach 46.6% for BTTS and 55.4% for Over 2.5, under a model reliability of 76.65%. In the standings, Columbus Crew is positioned 11th with 35 points, just behind Toronto FC, who are 10th with 36 points. DraftKings odds reflect the favorites status of the hosts at 1.65, versus 4.2 for a draw and 4.3 for a Toronto win. The statistics translate Columbus's theoretical superiority at home.",
-      "ai_form_summary_en": "Columbus Crew puts together a strong run of 4W-0D-1L, with 11 goals scored and 5 conceded. Toronto FC records a more moderate balance of 2W-1D-2L, tallying 8 goals scored and 9 conceded.",
-      "ai_source": "gemini-v2",
-      "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
-      "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
-      "ai_odds_insight": "Le marché (DraftKings) cote 1: 1.65, nul: 4.2, 2: 4.3.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 1.65, draw: 4.2, 2: 4.3."
-    },
-    {
-      "id": "gilvicen-vs-fcporto-2026-10-24",
-      "match": "Gil Vicente vs FC Porto",
-      "home": "Gil Vicente",
-      "away": "FC Porto",
-      "league": "Liga Portugal",
-      "date": "2026-10-24",
-      "type": "BTTS",
-      "prediction": "Non",
-      "proba": 0.4766,
-      "bttsProbDisplay": "47.66%",
-      "over25ProbDisplay": "46.26%",
-      "confidence": 48,
-      "time": "19:30",
-      "matchSemantic": "gilvicen-vs-fcporto-2026-10-24",
-      "source": "poisson-v92-real-data",
-      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/3699.png",
-      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/437.png",
-      "tier": "SILVER",
-      "reliabilityScore": 74.6,
-      "dataQuality": "HIGH",
-      "dataSource": "ESPN_TEAM_SCHEDULE",
-      "matchCountHome": 8,
-      "matchCountAway": 8,
-      "h2hAvailable": false,
-      "xgHome": 0.9,
-      "xgAway": 1.63,
-      "xgTotal": 2.52,
-      "formBTTS": 70,
-      "analysis": "Gil Vicente : forme V-V-N-D-D (2V 1N 2D, 5 buts marqués / 6 encaissés sur 5) · FC Porto : forme V-V-V-V-V (5V 0N 0D, 14 buts marqués / 4 encaissés sur 5). Classement : Gil Vicente 7e (14 pts), FC Porto 1e (24 pts). Modèle Poisson : xG cumulé 2.52, BTTS 47.7%, Over 2.5 46.3%. Cotes DraftKings — 1: 7 / N: 4.6 / 2: 1.43 · Over 2.5: 1.83. Fiabilité 74.6%.",
-      "analysisData": {
-        "bttsProb": 0.4766,
-        "over25Prob": 0.4626,
-        "homeLambda": 0.9,
-        "awayLambda": 1.63,
-        "xgTotal": 2.52
-      },
-      "estimatedCote": 2.1,
-      "estimatedCoteOver": 2.16,
-      "odds": {
-        "provider": "DraftKings",
-        "home": 7,
-        "draw": 4.6,
-        "away": 1.43,
-        "over25": 1.83,
-        "under25": 1.91
-      },
-      "oddsSource": "DraftKings",
-      "estimatedCoteBTTS": 2.1,
-      "formHome": {
-        "last5String": "V-V-N-D-D",
-        "wins": 2,
-        "draws": 1,
-        "losses": 2,
-        "goalsFor": 5,
-        "goalsAgainst": 6,
-        "bttsRate": 0.6,
-        "over25Rate": 0.4,
-        "cleanSheets": 1,
-        "failedToScore": 1,
-        "count": 5
-      },
-      "formAway": {
-        "last5String": "V-V-V-V-V",
-        "wins": 5,
-        "draws": 0,
-        "losses": 0,
-        "goalsFor": 14,
-        "goalsAgainst": 4,
-        "bttsRate": 0.8,
-        "over25Rate": 1,
-        "cleanSheets": 1,
-        "failedToScore": 0,
-        "count": 5
-      },
-      "last5Home": [
-        {
-          "date": "2026-10-19",
-          "opponent": "Braga",
-          "venue": "A",
-          "score": "2-1",
-          "result": "W"
-        },
-        {
-          "date": "2026-10-09",
-          "opponent": "Moreirense",
-          "venue": "A",
-          "score": "1-0",
-          "result": "W"
-        },
-        {
-          "date": "2026-09-19",
-          "opponent": "Maritimo",
-          "venue": "H",
-          "score": "1-1",
-          "result": "D"
-        },
-        {
-          "date": "2026-09-13",
-          "opponent": "Benfica",
-          "venue": "A",
-          "score": "1-3",
-          "result": "L"
-        },
-        {
-          "date": "2026-09-06",
-          "opponent": "Académico de Viseu",
-          "venue": "H",
-          "score": "0-1",
-          "result": "L"
-        }
-      ],
-      "last5Away": [
-        {
-          "date": "2026-10-10",
-          "opponent": "Maritimo",
-          "venue": "A",
-          "score": "2-1",
-          "result": "W"
-        },
-        {
-          "date": "2026-09-20",
-          "opponent": "Benfica",
-          "venue": "H",
-          "score": "3-1",
-          "result": "W"
-        },
-        {
-          "date": "2026-09-12",
-          "opponent": "Casa Pia",
-          "venue": "A",
-          "score": "4-1",
-          "result": "W"
-        },
-        {
-          "date": "2026-09-04",
-          "opponent": "Moreirense",
-          "venue": "H",
-          "score": "2-1",
-          "result": "W"
-        },
-        {
-          "date": "2026-08-29",
-          "opponent": "Académico de Viseu",
-          "venue": "A",
-          "score": "3-0",
-          "result": "W"
-        }
-      ],
-      "standingsHome": {
-        "rank": 7,
-        "points": 14,
-        "played": 8,
-        "gf": 8,
-        "ga": 6
-      },
-      "standingsAway": {
-        "rank": 1,
-        "points": 24,
-        "played": 8,
-        "gf": 20,
-        "ga": 4
-      },
-      "predictions": [
-        {
-          "type": "BTTS",
-          "prediction": "Non",
-          "confidence": 48,
-          "bttsProb": 0.4766,
-          "homeLambda": 0.9,
-          "awayLambda": 1.63
-        },
-        {
-          "type": "Over 2.5",
-          "prediction": "Non",
-          "confidence": 46,
-          "over25Prob": 0.4626,
-          "homeLambda": 0.9,
-          "awayLambda": 1.63
-        }
-      ],
-      "bttsProb": 0.4766,
-      "over25Prob": 0.4626,
-      "homeLambda": 0.9,
-      "awayLambda": 1.63,
-      "ai_key_fact": "Le FC Porto réalise un parcours parfait avec cinq victoires consécutives à l'extérieur.",
-      "ai_analysis": "Le modèle Poisson attribue un xG de 0.9 à Gil Vicente et de 1.63 au FC Porto. Les probabilités du modèle s'établissent à 47.7% pour le BTTS et 46.3% pour l'Over 2.5, avec un indice de fiabilité de 74.6%. En Liga Portugal, Gil Vicente occupe la 7e place avec 14 points en 8 matchs, tandis que le FC Porto domine le championnat en étant 1er avec 24 points. Les cotes du bookmaker DraftKings confirment la hiérarchie avec une cote de 7 pour la victoire de Gil Vicente, 4.6 pour le nul et 1.43 pour le succès du FC Porto. Le marché propose également l'Over 2.5 à 1.83 et l'Under 2.5 à 1.91.",
-      "ai_form_summary": "Gil Vicente présente un bilan de 2V-1N-2D lors de ses cinq dernières rencontres, inscrivant 5 buts et en encaissant 6. Le FC Porto domine pleinement avec 5V-0N-0D, totalisant 14 buts marqués pour seulement 4 concédés.",
-      "ai_key_fact_en": "FC Porto maintains a perfect run with five consecutive away victories.",
-      "ai_analysis_en": "The Poisson model assigns an xG of 0.9 to Gil Vicente and 1.63 to FC Porto. Model probabilities stand at 47.7% for BTTS and 46.3% for Over 2.5, with a reliability index of 74.6%. In Liga Portugal, Gil Vicente occupies 7th place with 14 points from 8 matches, while FC Porto dominates the league in 1st place with 24 points. DraftKings bookmaker odds confirm the hierarchy with odds of 7 for a Gil Vicente win, 4.6 for a draw, and 1.43 for FC Porto's success. The market also prices Over 2.5 at 1.83 and Under 2.5 at 1.91.",
-      "ai_form_summary_en": "Gil Vicente posts a record of 2W-1D-2L in their last five fixtures, scoring 5 goals and conceding 6. FC Porto fully dominates with 5W-0D-5L (corrected from 5V-0N-0D), totaling 14 goals scored for only 4 conceded.",
-      "ai_source": "gemini-v2",
-      "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
-      "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
-      "ai_odds_insight": "Le marché (DraftKings) cote 1: 7, nul: 4.6, 2: 1.43, Over 2.5: 1.83.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 7, draw: 4.6, 2: 1.43, Over 2.5: 1.83."
-    },
-    {
-      "id": "lens-vs-parisfc-2026-10-24",
-      "match": "Lens vs Paris FC",
-      "home": "Lens",
-      "away": "Paris FC",
-      "league": "Ligue 1",
-      "date": "2026-10-24",
-      "type": "BTTS",
-      "prediction": "Oui",
-      "proba": 0.5767,
-      "bttsProbDisplay": "57.67%",
-      "over25ProbDisplay": "57.31%",
-      "confidence": 58,
-      "time": "18:45",
-      "matchSemantic": "lens-vs-parisfc-2026-10-24",
-      "source": "poisson-v92-real-data",
-      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/175.png",
-      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/6851.png",
-      "tier": "SILVER",
-      "reliabilityScore": 72.48,
-      "dataQuality": "MEDIUM",
-      "dataSource": "ESPN_TEAM_SCHEDULE",
-      "matchCountHome": 7,
-      "matchCountAway": 7,
-      "h2hAvailable": false,
-      "xgHome": 1.82,
-      "xgAway": 1.17,
-      "xgTotal": 2.98,
-      "formBTTS": 70,
-      "analysis": "Lens : forme V-V-D-N-D (2V 1N 2D, 8 buts marqués / 7 encaissés sur 5) · Paris FC : forme V-D-V-N-V (3V 1N 1D, 9 buts marqués / 7 encaissés sur 5). Classement : Lens 9e (10 pts), Paris FC 3e (14 pts). Modèle Poisson : xG cumulé 2.98, BTTS 57.7%, Over 2.5 57.3%. Cotes DraftKings — 1: 2.55 / N: 3.5 / 2: 2.7 · Over 2.5: 1.65. Fiabilité 72.48%.",
-      "analysisData": {
-        "bttsProb": 0.5767,
-        "over25Prob": 0.5731,
-        "homeLambda": 1.82,
-        "awayLambda": 1.17,
-        "xgTotal": 2.98
-      },
-      "estimatedCote": 1.73,
-      "estimatedCoteOver": 1.75,
-      "odds": {
-        "provider": "DraftKings",
-        "home": 2.55,
-        "draw": 3.5,
-        "away": 2.7,
-        "over25": 1.65,
-        "under25": 2.25
-      },
-      "oddsSource": "DraftKings",
-      "estimatedCoteBTTS": 1.73,
-      "formHome": {
-        "last5String": "V-V-D-N-D",
-        "wins": 2,
-        "draws": 1,
-        "losses": 2,
-        "goalsFor": 8,
-        "goalsAgainst": 7,
-        "bttsRate": 0.8,
-        "over25Rate": 0.8,
-        "cleanSheets": 0,
-        "failedToScore": 1,
-        "count": 5
-      },
-      "formAway": {
-        "last5String": "V-D-V-N-V",
-        "wins": 3,
-        "draws": 1,
-        "losses": 1,
-        "goalsFor": 9,
-        "goalsAgainst": 7,
-        "bttsRate": 0.6,
-        "over25Rate": 0.6,
-        "cleanSheets": 1,
-        "failedToScore": 2,
-        "count": 5
-      },
-      "last5Home": [
-        {
-          "date": "2026-10-17",
-          "opponent": "Troyes",
-          "venue": "A",
-          "score": "3-1",
-          "result": "W"
-        },
-        {
-          "date": "2026-10-09",
-          "opponent": "Lyon",
-          "venue": "H",
-          "score": "2-1",
-          "result": "W"
-        },
-        {
-          "date": "2026-09-18",
-          "opponent": "AS Monaco",
-          "venue": "A",
-          "score": "1-2",
-          "result": "L"
-        },
-        {
-          "date": "2026-09-13",
-          "opponent": "Le Mans",
-          "venue": "A",
-          "score": "2-2",
-          "result": "D"
-        },
-        {
-          "date": "2026-09-05",
-          "opponent": "Lorient",
-          "venue": "H",
-          "score": "0-1",
-          "result": "L"
-        }
-      ],
-      "last5Away": [
-        {
-          "date": "2026-10-18",
-          "opponent": "Stade Rennais",
-          "venue": "H",
-          "score": "4-3",
-          "result": "W"
-        },
-        {
-          "date": "2026-10-10",
-          "opponent": "Lorient",
-          "venue": "A",
-          "score": "0-1",
-          "result": "L"
-        },
-        {
-          "date": "2026-09-19",
-          "opponent": "Strasbourg",
-          "venue": "H",
-          "score": "2-1",
-          "result": "W"
-        },
-        {
-          "date": "2026-09-12",
-          "opponent": "Lyon",
-          "venue": "H",
-          "score": "0-0",
-          "result": "D"
-        },
-        {
-          "date": "2026-09-06",
-          "opponent": "Marseille",
-          "venue": "A",
-          "score": "3-2",
-          "result": "W"
-        }
-      ],
-      "standingsHome": {
-        "rank": 9,
-        "points": 10,
-        "played": 7,
-        "gf": 14,
-        "ga": 11
-      },
-      "standingsAway": {
-        "rank": 3,
-        "points": 14,
-        "played": 7,
-        "gf": 12,
-        "ga": 7
-      },
-      "predictions": [
-        {
-          "type": "BTTS",
-          "prediction": "Oui",
-          "confidence": 58,
-          "bttsProb": 0.5767,
-          "homeLambda": 1.82,
-          "awayLambda": 1.17
-        },
-        {
-          "type": "Over 2.5",
-          "prediction": "Oui",
-          "confidence": 57,
-          "over25Prob": 0.5731,
-          "homeLambda": 1.82,
-          "awayLambda": 1.17
-        }
-      ],
-      "bttsProb": 0.5767,
-      "over25Prob": 0.5731,
-      "homeLambda": 1.82,
-      "awayLambda": 1.17,
-      "ai_key_fact": "Lens présente un taux BTTS de 0.8 sur ses 5 derniers matchs.",
-      "ai_analysis": "Le modèle Poisson anticipe un xG de 1.82 pour Lens et de 1.17 pour Paris FC, générant une probabilité de 57.7% pour le BTTS et de 57.3% pour l'Over 2.5. Lens se classe 9e avec 10 points en 7 matchs, tandis que Paris FC occupe la 3e place avec 14 points. La fiabilité du modèle s'établit à 72.48%. Aucune information supplémentaire sur l'effectif n'est fournie dans les données.",
-      "ai_form_summary": "Sur ses 5 derniers matchs, Lens affiche un bilan de 2 victoires, 1 nul et 2 défaites avec 8 buts marqués et 7 encaissés. En face, Paris FC totalise 3 victoires, 1 nul et 1 défaite pour 9 buts inscrits et 7 concédés.",
-      "ai_key_fact_en": "Lens shows a BTTS rate of 0.8 over its last 5 matches.",
-      "ai_analysis_en": "The Poisson model anticipates an xG of 1.82 for Lens and 1.17 for Paris FC, generating a 57.7% probability for BTTS and 57.3% for Over 2.5. Lens ranks 9th with 10 points in 7 matches, whereas Paris FC occupies 3rd place with 14 points. Model reliability stands at 72.48%. No additional squad information is provided in the data.",
-      "ai_form_summary_en": "Over their last 5 matches, Lens records 2 wins, 1 draw and 2 losses with 8 goals scored and 7 conceded. Meanwhile, Paris FC tallies 3 wins, 1 draw and 1 loss with 9 goals scored and 7 conceded.",
-      "ai_source": "gemini-v2",
-      "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
-      "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
-      "ai_odds_insight": "Le marché (DraftKings) cote 1: 2.55, nul: 3.5, 2: 2.7, Over 2.5: 1.65.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.55, draw: 3.5, 2: 2.7, Over 2.5: 1.65."
-    },
-    {
-      "id": "lazio-vs-parma-2026-10-24",
-      "match": "Lazio vs Parma",
-      "home": "Lazio",
-      "away": "Parma",
-      "league": "Serie A",
-      "date": "2026-10-24",
-      "type": "BTTS",
-      "prediction": "Non",
-      "proba": 0.4386,
-      "bttsProbDisplay": "43.86%",
-      "over25ProbDisplay": "57.31%",
-      "confidence": 44,
-      "time": "18:45",
-      "matchSemantic": "lazio-vs-parma-2026-10-24",
-      "source": "poisson-v92-real-data",
-      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/112.png",
-      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/115.png",
-      "tier": "SILVER",
-      "reliabilityScore": 66.44,
-      "dataQuality": "MEDIUM",
-      "dataSource": "ESPN_TEAM_SCHEDULE",
-      "matchCountHome": 7,
-      "matchCountAway": 7,
-      "h2hAvailable": false,
-      "xgHome": 2.32,
-      "xgAway": 0.67,
-      "xgTotal": 2.98,
-      "formBTTS": 60,
-      "analysis": "Lazio : forme V-V-V-N-V (4V 1N 0D, 12 buts marqués / 4 encaissés sur 5) · Parma : forme D-D-V-D-N (1V 1N 3D, 4 buts marqués / 10 encaissés sur 5). Classement : Lazio 2e (19 pts), Parma 19e (4 pts). Modèle Poisson : xG cumulé 2.98, BTTS 43.9%, Over 2.5 57.3%. Cotes DraftKings — 1: 1.4 / N: 4.2 / 2: 7.5 · Over 2.5: 1.87. Fiabilité 66.44%.",
-      "analysisData": {
-        "bttsProb": 0.4386,
-        "over25Prob": 0.5731,
-        "homeLambda": 2.32,
-        "awayLambda": 0.67,
-        "xgTotal": 2.98
-      },
-      "estimatedCote": 2.28,
-      "estimatedCoteOver": 1.75,
-      "odds": {
-        "provider": "DraftKings",
-        "home": 1.4,
-        "draw": 4.2,
-        "away": 7.5,
-        "over25": 1.87,
-        "under25": 1.91
-      },
-      "oddsSource": "DraftKings",
-      "estimatedCoteBTTS": 2.28,
-      "formHome": {
-        "last5String": "V-V-V-N-V",
-        "wins": 4,
-        "draws": 1,
-        "losses": 0,
-        "goalsFor": 12,
-        "goalsAgainst": 4,
-        "bttsRate": 0.6,
-        "over25Rate": 0.8,
-        "cleanSheets": 2,
-        "failedToScore": 0,
-        "count": 5
-      },
-      "formAway": {
-        "last5String": "D-D-V-D-N",
-        "wins": 1,
-        "draws": 1,
-        "losses": 3,
-        "goalsFor": 4,
-        "goalsAgainst": 10,
-        "bttsRate": 0.6,
-        "over25Rate": 0.8,
-        "cleanSheets": 0,
-        "failedToScore": 2,
-        "count": 5
-      },
-      "last5Home": [
-        {
-          "date": "2026-10-18",
-          "opponent": "Juventus",
-          "venue": "A",
-          "score": "3-0",
-          "result": "W"
-        },
-        {
-          "date": "2026-10-11",
-          "opponent": "Monza",
-          "venue": "H",
-          "score": "3-1",
-          "result": "W"
-        },
-        {
-          "date": "2026-09-19",
-          "opponent": "Venezia",
-          "venue": "A",
-          "score": "2-0",
-          "result": "W"
-        },
-        {
-          "date": "2026-09-12",
-          "opponent": "AC Milan",
-          "venue": "H",
-          "score": "2-2",
-          "result": "D"
-        },
-        {
-          "date": "2026-09-07",
-          "opponent": "Udinese",
-          "venue": "A",
-          "score": "2-1",
-          "result": "W"
-        }
-      ],
-      "last5Away": [
-        {
-          "date": "2026-10-19",
-          "opponent": "Torino",
-          "venue": "H",
-          "score": "0-3",
-          "result": "L"
-        },
-        {
-          "date": "2026-10-10",
-          "opponent": "Internazionale",
-          "venue": "A",
-          "score": "0-3",
-          "result": "L"
-        },
-        {
-          "date": "2026-09-20",
-          "opponent": "Genoa",
-          "venue": "H",
-          "score": "2-1",
-          "result": "W"
-        },
-        {
-          "date": "2026-09-14",
-          "opponent": "Como",
-          "venue": "A",
-          "score": "1-2",
-          "result": "L"
-        },
-        {
-          "date": "2026-09-06",
-          "opponent": "Monza",
-          "venue": "H",
-          "score": "1-1",
-          "result": "D"
-        }
-      ],
-      "standingsHome": {
-        "rank": 2,
-        "points": 19,
-        "played": 7,
-        "gf": 14,
-        "ga": 4
-      },
-      "standingsAway": {
-        "rank": 19,
-        "points": 4,
-        "played": 7,
-        "gf": 4,
-        "ga": 13
-      },
-      "predictions": [
-        {
-          "type": "BTTS",
-          "prediction": "Non",
-          "confidence": 44,
-          "bttsProb": 0.4386,
-          "homeLambda": 2.32,
-          "awayLambda": 0.67
-        },
-        {
-          "type": "Over 2.5",
-          "prediction": "Oui",
-          "confidence": 57,
-          "over25Prob": 0.5731,
-          "homeLambda": 2.32,
-          "awayLambda": 0.67
-        }
-      ],
-      "bttsProb": 0.4386,
-      "over25Prob": 0.5731,
-      "homeLambda": 2.32,
-      "awayLambda": 0.67,
-      "ai_key_fact": "Lazio affiche une dynamique solide avec 4 victoires sur ses 5 derniers matchs.",
-      "ai_analysis": "Le modèle attribue un xG de 2.32 à Lazio et de 0.67 à Parma, avec une probabilité BTTS estimée à 43.9% et l'Over 2.5 à 57.3%. Au classement, Lazio pointe au 2e rang avec 19 points en 7 matchs, alors que Parma se trouve à la 19e place avec 4 points. La fiabilité globale du modèle atteint 66.44%. Aucune information supplémentaire sur l'effectif n'est fournie dans les données.",
-      "ai_form_summary": "Lazio enregistre 4 victoires et 1 nul lors de ses 5 dernières sorties, inscrivant 12 buts pour 4 encaissés. Parma traverse une période difficile avec 1 victoire, 1 nul et 3 défaites, marquant 4 buts et en concédant 10.",
-      "ai_key_fact_en": "Lazio displays solid momentum with 4 wins in their last 5 matches.",
-      "ai_analysis_en": "The model assigns an xG of 2.32 to Lazio and 0.67 to Parma, with an estimated BTTS probability of 43.9% and Over 2.5 at 57.3%. In the standings, Lazio sits 2nd with 19 points in 7 matches, whereas Parma is 19th with 4 points. Overall model reliability reaches 66.44%. No additional squad information is provided in the data.",
-      "ai_form_summary_en": "Lazio records 4 wins and 1 draw in their last 5 outings, scoring 12 goals with 4 conceded. Parma goes through a difficult spell with 1 win, 1 draw and 3 losses, scoring 4 goals and conceding 10.",
-      "ai_source": "gemini-v2",
-      "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
-      "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
-      "ai_odds_insight": "Le marché (DraftKings) cote 1: 1.4, nul: 4.2, 2: 7.5, Over 2.5: 1.87.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 1.4, draw: 4.2, 2: 7.5, Over 2.5: 1.87."
     },
     {
       "id": "psveindh-vs-feyenoor-2026-10-25",
@@ -14234,6 +10678,204 @@
       "status": "PENDING"
     },
     {
+      "id": "asroma-vs-cagliari-2026-10-27",
+      "match": "AS Roma vs Cagliari",
+      "home": "AS Roma",
+      "away": "Cagliari",
+      "league": "Serie A",
+      "date": "2026-10-27",
+      "type": "BTTS",
+      "prediction": "Oui",
+      "proba": 0.5062,
+      "bttsProbDisplay": "50.62%",
+      "over25ProbDisplay": "55.40%",
+      "confidence": 51,
+      "time": "19:45",
+      "matchSemantic": "asroma-vs-cagliari-2026-10-27",
+      "source": "poisson-v92-real-data",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/104.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/2925.png",
+      "tier": "SILVER",
+      "reliabilityScore": 69.39,
+      "dataQuality": "MEDIUM",
+      "dataSource": "ESPN_TEAM_SCHEDULE",
+      "matchCountHome": 7,
+      "matchCountAway": 7,
+      "h2hAvailable": false,
+      "xgHome": 2.02,
+      "xgAway": 0.88,
+      "xgTotal": 2.9,
+      "formBTTS": 40,
+      "analysis": "AS Roma : forme V-N-N-V-V (3V 2N 0D, 8 buts marqués / 3 encaissés sur 5) · Cagliari : forme D-N-V-V-V (3V 1N 1D, 5 buts marqués / 6 encaissés sur 5). Classement : AS Roma 3e (17 pts), Cagliari 7e (13 pts). Modèle Poisson : xG cumulé 2.9, BTTS 50.6%, Over 2.5 55.4%. Cotes DraftKings — 1: 1.32 / N: 4.6 / 2: 8.5 · Over 2.5: 1.69. Fiabilité 69.39%.",
+      "analysisData": {
+        "bttsProb": 0.5062,
+        "over25Prob": 0.554,
+        "homeLambda": 2.02,
+        "awayLambda": 0.88,
+        "xgTotal": 2.9
+      },
+      "estimatedCote": 1.98,
+      "estimatedCoteOver": 1.8,
+      "odds": {
+        "provider": "DraftKings",
+        "home": 1.32,
+        "draw": 4.6,
+        "away": 8.5,
+        "over25": 1.69,
+        "under25": 2.1
+      },
+      "oddsSource": "DraftKings",
+      "estimatedCoteBTTS": 1.98,
+      "formHome": {
+        "last5String": "V-N-N-V-V",
+        "wins": 3,
+        "draws": 2,
+        "losses": 0,
+        "goalsFor": 8,
+        "goalsAgainst": 3,
+        "bttsRate": 0.4,
+        "over25Rate": 0.4,
+        "cleanSheets": 3,
+        "failedToScore": 1,
+        "count": 5
+      },
+      "formAway": {
+        "last5String": "D-N-V-V-V",
+        "wins": 3,
+        "draws": 1,
+        "losses": 1,
+        "goalsFor": 5,
+        "goalsAgainst": 6,
+        "bttsRate": 0.4,
+        "over25Rate": 0.4,
+        "cleanSheets": 2,
+        "failedToScore": 1,
+        "count": 5
+      },
+      "standingsHome": {
+        "rank": 3,
+        "points": 17,
+        "played": 7,
+        "gf": 16,
+        "ga": 3
+      },
+      "standingsAway": {
+        "rank": 7,
+        "points": 13,
+        "played": 7,
+        "gf": 6,
+        "ga": 7
+      },
+      "predictions": [
+        {
+          "type": "BTTS",
+          "prediction": "Oui",
+          "confidence": 51,
+          "bttsProb": 0.5062,
+          "homeLambda": 2.02,
+          "awayLambda": 0.88
+        },
+        {
+          "type": "Over 2.5",
+          "prediction": "Oui",
+          "confidence": 55,
+          "over25Prob": 0.554,
+          "homeLambda": 2.02,
+          "awayLambda": 0.88
+        }
+      ],
+      "bttsProb": 0.5062,
+      "over25Prob": 0.554,
+      "homeLambda": 2.02,
+      "awayLambda": 0.88,
+      "ai_key_fact": "L'AS Roma possède la meilleure défense à domicile avec 3 buts encaissés.",
+      "ai_analysis": "Le modèle Poisson attribue un net avantage xG à l'AS Roma avec 2.02 contre 0.88 pour Cagliari, qui se positionne 7e en Serie A. Les probabilités du modèle affichent 50.6% pour le BTTS et 55.4% pour l'Over 2.5, avec une fiabilité de 69.39%. Les cotes du marché placent l'AS Roma nettement favorite à 1.32, soit une probabilité implicite de 75.8%. Aucune donnée d'effectif n'est mentionnée dans les sources. Les chiffres indiquent une assise défensive solide pour les locaux face à des visiteurs aux ambitions mesurées à l'extérieur.",
+      "ai_form_summary": "L'AS Roma à domicile présente un bilan de 3V-2N-0D sur ses 5 derniers matchs avec un taux BTTS de 0.4. Cagliari à l'extérieur affiche 3V-1N-1D et un taux BTTS de 0.4.",
+      "ai_key_fact_en": "AS Roma boasts the best home defense with only 3 goals conceded.",
+      "ai_analysis_en": "The Poisson model assigns a clear xG advantage to AS Roma with 2.02 against Cagliari's 0.88, with the visitors positioned 7th in Serie A. Model probabilities show 50.6% for BTTS and 55.4% for Over 2.5, with 69.39% reliability. Market odds price AS Roma as clear favorites at 1.32, reflecting a 75.8% implicit probability. No squad data is mentioned in the sources. The figures indicate a solid defensive foundation for the hosts against visitors with measured away ambitions.",
+      "ai_form_summary_en": "AS Roma at home presents a 3W-2D-0L record in their last 5 matches with a 0.4 BTTS rate. Cagliari away shows 3W-1D-1L and a 0.4 BTTS rate.",
+      "ai_source": "gemini-v2",
+      "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
+      "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
+      "ai_odds_insight": "Le marché (DraftKings) cote 1: 1.32, nul: 4.6, 2: 8.5, Over 2.5: 1.69.",
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 1.32, draw: 4.6, 2: 8.5, Over 2.5: 1.69.",
+      "last5Home": [
+        {
+          "date": "2026-10-24",
+          "opponent": "Napoli",
+          "venue": "A",
+          "score": "3-3",
+          "result": "D"
+        },
+        {
+          "date": "2026-10-17",
+          "opponent": "Genoa",
+          "venue": "H",
+          "score": "2-0",
+          "result": "W"
+        },
+        {
+          "date": "2026-10-11",
+          "opponent": "Como",
+          "venue": "A",
+          "score": "0-0",
+          "result": "D"
+        },
+        {
+          "date": "2026-09-19",
+          "opponent": "Internazionale",
+          "venue": "H",
+          "score": "2-2",
+          "result": "D"
+        },
+        {
+          "date": "2026-09-14",
+          "opponent": "Torino",
+          "venue": "A",
+          "score": "2-0",
+          "result": "W"
+        }
+      ],
+      "last5Away": [
+        {
+          "date": "2026-10-24",
+          "opponent": "Bologna",
+          "venue": "H",
+          "score": "0-2",
+          "result": "L"
+        },
+        {
+          "date": "2026-10-19",
+          "opponent": "Monza",
+          "venue": "A",
+          "score": "0-4",
+          "result": "L"
+        },
+        {
+          "date": "2026-10-11",
+          "opponent": "Juventus",
+          "venue": "H",
+          "score": "1-1",
+          "result": "D"
+        },
+        {
+          "date": "2026-09-19",
+          "opponent": "Udinese",
+          "venue": "A",
+          "score": "1-0",
+          "result": "W"
+        },
+        {
+          "date": "2026-09-12",
+          "opponent": "Atalanta",
+          "venue": "A",
+          "score": "2-1",
+          "result": "W"
+        }
+      ],
+      "status": "PENDING"
+    },
+    {
       "id": "sassuolo-vs-lazio-2026-10-27",
       "match": "Sassuolo vs Lazio",
       "home": "Sassuolo",
@@ -14424,204 +11066,6 @@
         {
           "date": "2026-09-07",
           "opponent": "Udinese",
-          "venue": "A",
-          "score": "2-1",
-          "result": "W"
-        }
-      ],
-      "status": "PENDING"
-    },
-    {
-      "id": "asroma-vs-cagliari-2026-10-27",
-      "match": "AS Roma vs Cagliari",
-      "home": "AS Roma",
-      "away": "Cagliari",
-      "league": "Serie A",
-      "date": "2026-10-27",
-      "type": "BTTS",
-      "prediction": "Oui",
-      "proba": 0.5062,
-      "bttsProbDisplay": "50.62%",
-      "over25ProbDisplay": "55.40%",
-      "confidence": 51,
-      "time": "19:45",
-      "matchSemantic": "asroma-vs-cagliari-2026-10-27",
-      "source": "poisson-v92-real-data",
-      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/104.png",
-      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/2925.png",
-      "tier": "SILVER",
-      "reliabilityScore": 69.39,
-      "dataQuality": "MEDIUM",
-      "dataSource": "ESPN_TEAM_SCHEDULE",
-      "matchCountHome": 7,
-      "matchCountAway": 7,
-      "h2hAvailable": false,
-      "xgHome": 2.02,
-      "xgAway": 0.88,
-      "xgTotal": 2.9,
-      "formBTTS": 40,
-      "analysis": "AS Roma : forme V-N-N-V-V (3V 2N 0D, 8 buts marqués / 3 encaissés sur 5) · Cagliari : forme D-N-V-V-V (3V 1N 1D, 5 buts marqués / 6 encaissés sur 5). Classement : AS Roma 3e (17 pts), Cagliari 7e (13 pts). Modèle Poisson : xG cumulé 2.9, BTTS 50.6%, Over 2.5 55.4%. Cotes DraftKings — 1: 1.32 / N: 4.6 / 2: 8.5 · Over 2.5: 1.69. Fiabilité 69.39%.",
-      "analysisData": {
-        "bttsProb": 0.5062,
-        "over25Prob": 0.554,
-        "homeLambda": 2.02,
-        "awayLambda": 0.88,
-        "xgTotal": 2.9
-      },
-      "estimatedCote": 1.98,
-      "estimatedCoteOver": 1.8,
-      "odds": {
-        "provider": "DraftKings",
-        "home": 1.32,
-        "draw": 4.6,
-        "away": 8.5,
-        "over25": 1.69,
-        "under25": 2.1
-      },
-      "oddsSource": "DraftKings",
-      "estimatedCoteBTTS": 1.98,
-      "formHome": {
-        "last5String": "V-N-N-V-V",
-        "wins": 3,
-        "draws": 2,
-        "losses": 0,
-        "goalsFor": 8,
-        "goalsAgainst": 3,
-        "bttsRate": 0.4,
-        "over25Rate": 0.4,
-        "cleanSheets": 3,
-        "failedToScore": 1,
-        "count": 5
-      },
-      "formAway": {
-        "last5String": "D-N-V-V-V",
-        "wins": 3,
-        "draws": 1,
-        "losses": 1,
-        "goalsFor": 5,
-        "goalsAgainst": 6,
-        "bttsRate": 0.4,
-        "over25Rate": 0.4,
-        "cleanSheets": 2,
-        "failedToScore": 1,
-        "count": 5
-      },
-      "standingsHome": {
-        "rank": 3,
-        "points": 17,
-        "played": 7,
-        "gf": 16,
-        "ga": 3
-      },
-      "standingsAway": {
-        "rank": 7,
-        "points": 13,
-        "played": 7,
-        "gf": 6,
-        "ga": 7
-      },
-      "predictions": [
-        {
-          "type": "BTTS",
-          "prediction": "Oui",
-          "confidence": 51,
-          "bttsProb": 0.5062,
-          "homeLambda": 2.02,
-          "awayLambda": 0.88
-        },
-        {
-          "type": "Over 2.5",
-          "prediction": "Oui",
-          "confidence": 55,
-          "over25Prob": 0.554,
-          "homeLambda": 2.02,
-          "awayLambda": 0.88
-        }
-      ],
-      "bttsProb": 0.5062,
-      "over25Prob": 0.554,
-      "homeLambda": 2.02,
-      "awayLambda": 0.88,
-      "ai_key_fact": "L'AS Roma possède la meilleure défense à domicile avec 3 buts encaissés.",
-      "ai_analysis": "Le modèle Poisson attribue un net avantage xG à l'AS Roma avec 2.02 contre 0.88 pour Cagliari, qui se positionne 7e en Serie A. Les probabilités du modèle affichent 50.6% pour le BTTS et 55.4% pour l'Over 2.5, avec une fiabilité de 69.39%. Les cotes du marché placent l'AS Roma nettement favorite à 1.32, soit une probabilité implicite de 75.8%. Aucune donnée d'effectif n'est mentionnée dans les sources. Les chiffres indiquent une assise défensive solide pour les locaux face à des visiteurs aux ambitions mesurées à l'extérieur.",
-      "ai_form_summary": "L'AS Roma à domicile présente un bilan de 3V-2N-0D sur ses 5 derniers matchs avec un taux BTTS de 0.4. Cagliari à l'extérieur affiche 3V-1N-1D et un taux BTTS de 0.4.",
-      "ai_key_fact_en": "AS Roma boasts the best home defense with only 3 goals conceded.",
-      "ai_analysis_en": "The Poisson model assigns a clear xG advantage to AS Roma with 2.02 against Cagliari's 0.88, with the visitors positioned 7th in Serie A. Model probabilities show 50.6% for BTTS and 55.4% for Over 2.5, with 69.39% reliability. Market odds price AS Roma as clear favorites at 1.32, reflecting a 75.8% implicit probability. No squad data is mentioned in the sources. The figures indicate a solid defensive foundation for the hosts against visitors with measured away ambitions.",
-      "ai_form_summary_en": "AS Roma at home presents a 3W-2D-0L record in their last 5 matches with a 0.4 BTTS rate. Cagliari away shows 3W-1D-1L and a 0.4 BTTS rate.",
-      "ai_source": "gemini-v2",
-      "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
-      "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
-      "ai_odds_insight": "Le marché (DraftKings) cote 1: 1.32, nul: 4.6, 2: 8.5, Over 2.5: 1.69.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 1.32, draw: 4.6, 2: 8.5, Over 2.5: 1.69.",
-      "last5Home": [
-        {
-          "date": "2026-10-17",
-          "opponent": "Genoa",
-          "venue": "H",
-          "score": "2-0",
-          "result": "W"
-        },
-        {
-          "date": "2026-10-11",
-          "opponent": "Como",
-          "venue": "A",
-          "score": "0-0",
-          "result": "D"
-        },
-        {
-          "date": "2026-09-19",
-          "opponent": "Internazionale",
-          "venue": "H",
-          "score": "2-2",
-          "result": "D"
-        },
-        {
-          "date": "2026-09-14",
-          "opponent": "Torino",
-          "venue": "A",
-          "score": "2-0",
-          "result": "W"
-        },
-        {
-          "date": "2026-09-05",
-          "opponent": "Atalanta",
-          "venue": "H",
-          "score": "2-1",
-          "result": "W"
-        }
-      ],
-      "last5Away": [
-        {
-          "date": "2026-10-24",
-          "opponent": "Bologna",
-          "venue": "H",
-          "score": "0-2",
-          "result": "L"
-        },
-        {
-          "date": "2026-10-19",
-          "opponent": "Monza",
-          "venue": "A",
-          "score": "0-4",
-          "result": "L"
-        },
-        {
-          "date": "2026-10-11",
-          "opponent": "Juventus",
-          "venue": "H",
-          "score": "1-1",
-          "result": "D"
-        },
-        {
-          "date": "2026-09-19",
-          "opponent": "Udinese",
-          "venue": "A",
-          "score": "1-0",
-          "result": "W"
-        },
-        {
-          "date": "2026-09-12",
-          "opponent": "Atalanta",
           "venue": "A",
           "score": "2-1",
           "result": "W"
@@ -15393,6 +11837,203 @@
       "status": "PENDING"
     },
     {
+      "id": "monza-vs-napoli-2026-10-28",
+      "match": "Monza vs Napoli",
+      "home": "Monza",
+      "away": "Napoli",
+      "league": "Serie A",
+      "date": "2026-10-28",
+      "type": "BTTS",
+      "prediction": "Oui",
+      "proba": 0.6371,
+      "bttsProbDisplay": "63.71%",
+      "over25ProbDisplay": "66.03%",
+      "confidence": 64,
+      "time": "19:45",
+      "matchSemantic": "monza-vs-napoli-2026-10-28",
+      "source": "poisson-v92-real-data",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/4007.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/114.png",
+      "tier": "GOLD",
+      "reliabilityScore": 77.62,
+      "dataQuality": "MEDIUM",
+      "dataSource": "ESPN_TEAM_SCHEDULE",
+      "matchCountHome": 7,
+      "matchCountAway": 7,
+      "h2hAvailable": false,
+      "xgHome": 2.11,
+      "xgAway": 1.29,
+      "xgTotal": 3.4,
+      "formBTTS": 60,
+      "analysis": "Monza : forme V-D-V-D-N (2V 1N 2D, 10 buts marqués / 8 encaissés sur 5) · Napoli : forme D-V-N-V-D (2V 1N 2D, 7 buts marqués / 5 encaissés sur 5). Classement : Monza 14e (7 pts), Napoli 9e (10 pts). Modèle Poisson : xG cumulé 3.4, BTTS 63.7%, Over 2.5 66.0%. Cotes DraftKings — 1: 3.65 / N: 3.65 / 2: 1.83 · Over 2.5: 1.69. Fiabilité 77.62%.",
+      "analysisData": {
+        "bttsProb": 0.6371,
+        "over25Prob": 0.6603,
+        "homeLambda": 2.11,
+        "awayLambda": 1.29,
+        "xgTotal": 3.4
+      },
+      "estimatedCote": 1.57,
+      "estimatedCoteOver": 1.51,
+      "odds": {
+        "provider": "DraftKings",
+        "home": 3.65,
+        "draw": 3.65,
+        "away": 1.83,
+        "over25": 1.69,
+        "under25": 2.1
+      },
+      "oddsSource": "DraftKings",
+      "estimatedCoteBTTS": 1.57,
+      "formHome": {
+        "last5String": "V-D-V-D-N",
+        "wins": 2,
+        "draws": 1,
+        "losses": 2,
+        "goalsFor": 10,
+        "goalsAgainst": 8,
+        "bttsRate": 0.8,
+        "over25Rate": 0.8,
+        "cleanSheets": 1,
+        "failedToScore": 0,
+        "count": 5
+      },
+      "formAway": {
+        "last5String": "D-V-N-V-D",
+        "wins": 2,
+        "draws": 1,
+        "losses": 2,
+        "goalsFor": 7,
+        "goalsAgainst": 5,
+        "bttsRate": 0.4,
+        "over25Rate": 0.4,
+        "cleanSheets": 2,
+        "failedToScore": 1,
+        "count": 5
+      },
+      "last5Home": [
+        {
+          "date": "2026-10-23",
+          "opponent": "Torino",
+          "venue": "A",
+          "score": "2-3",
+          "result": "L"
+        },
+        {
+          "date": "2026-10-19",
+          "opponent": "Cagliari",
+          "venue": "H",
+          "score": "4-0",
+          "result": "W"
+        },
+        {
+          "date": "2026-10-11",
+          "opponent": "Lazio",
+          "venue": "A",
+          "score": "1-3",
+          "result": "L"
+        },
+        {
+          "date": "2026-09-18",
+          "opponent": "Sassuolo",
+          "venue": "H",
+          "score": "2-1",
+          "result": "W"
+        },
+        {
+          "date": "2026-09-13",
+          "opponent": "Lecce",
+          "venue": "A",
+          "score": "2-3",
+          "result": "L"
+        }
+      ],
+      "last5Away": [
+        {
+          "date": "2026-10-24",
+          "opponent": "AS Roma",
+          "venue": "H",
+          "score": "3-3",
+          "result": "D"
+        },
+        {
+          "date": "2026-10-17",
+          "opponent": "Venezia",
+          "venue": "A",
+          "score": "0-1",
+          "result": "L"
+        },
+        {
+          "date": "2026-10-10",
+          "opponent": "Frosinone",
+          "venue": "H",
+          "score": "3-0",
+          "result": "W"
+        },
+        {
+          "date": "2026-09-20",
+          "opponent": "Fiorentina",
+          "venue": "A",
+          "score": "1-1",
+          "result": "D"
+        },
+        {
+          "date": "2026-09-13",
+          "opponent": "Bologna",
+          "venue": "H",
+          "score": "1-0",
+          "result": "W"
+        }
+      ],
+      "standingsHome": {
+        "rank": 14,
+        "points": 7,
+        "played": 7,
+        "gf": 13,
+        "ga": 15
+      },
+      "standingsAway": {
+        "rank": 9,
+        "points": 10,
+        "played": 7,
+        "gf": 10,
+        "ga": 7
+      },
+      "predictions": [
+        {
+          "type": "BTTS",
+          "prediction": "Oui",
+          "confidence": 64,
+          "bttsProb": 0.6371,
+          "homeLambda": 2.11,
+          "awayLambda": 1.29
+        },
+        {
+          "type": "Over 2.5",
+          "prediction": "Oui",
+          "confidence": 66,
+          "over25Prob": 0.6603,
+          "homeLambda": 2.11,
+          "awayLambda": 1.29
+        }
+      ],
+      "bttsProb": 0.6371,
+      "over25Prob": 0.6603,
+      "homeLambda": 2.11,
+      "awayLambda": 1.29,
+      "ai_key_fact": "Monza totalise 7 points en 7 matchs et pointe à la 14e place.",
+      "ai_analysis": "Le modèle Poisson BTTSPredict indique des xG de 2.11 pour Monza et 1.29 pour Napoli, avec une probabilité BTTS de 63.7% et un Over 2.5 à 66.0%. La fiabilité du modèle est établie à 77.62%. Au classement de Serie A, Monza est 14e avec 7 points, alors que Napoli se positionne 9e avec 10 points. Les cotes DraftKings évaluent la victoire à domicile à 3.65, le nul à 3.65 et la victoire extérieure à 1.83, avec l'Over 2.5 à 1.69.",
+      "ai_form_summary": "Monza enregistre 2 victoires, 1 nul et 2 défaites sur ses 5 derniers matchs avec 10 buts marqués et 8 encaissés. Napoli affiche également un bilan de 2 victoires, 1 nul et 2 défaites, inscrivant 7 buts pour 5 encaissés.",
+      "ai_analysis_en": "Monza has a total of 7 points in 7 matches and sits in 14th place.",
+      "ai_form_summary_en": "Monza records 2 wins, 1 draw, and 2 losses in their last 5 matches with 10 goals scored and 8 conceded. Napoli also shows a record of 2 wins, 1 draw, and 2 losses, scoring 7 goals and conceding 5.",
+      "ai_source": "gemini-v2",
+      "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
+      "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
+      "ai_odds_insight": "Le marché (DraftKings) cote 1: 3.65, nul: 3.65, 2: 1.83, Over 2.5: 1.69.",
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 3.65, draw: 3.65, 2: 1.83, Over 2.5: 1.69.",
+      "status": "PENDING"
+    },
+    {
       "id": "stjohnst-vs-motherwe-2026-10-28",
       "match": "St Johnstone vs Motherwell",
       "home": "St Johnstone",
@@ -15973,203 +12614,6 @@
       "status": "PENDING"
     },
     {
-      "id": "monza-vs-napoli-2026-10-28",
-      "match": "Monza vs Napoli",
-      "home": "Monza",
-      "away": "Napoli",
-      "league": "Serie A",
-      "date": "2026-10-28",
-      "type": "BTTS",
-      "prediction": "Oui",
-      "proba": 0.6371,
-      "bttsProbDisplay": "63.71%",
-      "over25ProbDisplay": "66.03%",
-      "confidence": 64,
-      "time": "19:45",
-      "matchSemantic": "monza-vs-napoli-2026-10-28",
-      "source": "poisson-v92-real-data",
-      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/4007.png",
-      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/114.png",
-      "tier": "GOLD",
-      "reliabilityScore": 77.62,
-      "dataQuality": "MEDIUM",
-      "dataSource": "ESPN_TEAM_SCHEDULE",
-      "matchCountHome": 7,
-      "matchCountAway": 7,
-      "h2hAvailable": false,
-      "xgHome": 2.11,
-      "xgAway": 1.29,
-      "xgTotal": 3.4,
-      "formBTTS": 60,
-      "analysis": "Monza : forme V-D-V-D-N (2V 1N 2D, 10 buts marqués / 8 encaissés sur 5) · Napoli : forme D-V-N-V-D (2V 1N 2D, 7 buts marqués / 5 encaissés sur 5). Classement : Monza 14e (7 pts), Napoli 9e (10 pts). Modèle Poisson : xG cumulé 3.4, BTTS 63.7%, Over 2.5 66.0%. Cotes DraftKings — 1: 3.65 / N: 3.65 / 2: 1.83 · Over 2.5: 1.69. Fiabilité 77.62%.",
-      "analysisData": {
-        "bttsProb": 0.6371,
-        "over25Prob": 0.6603,
-        "homeLambda": 2.11,
-        "awayLambda": 1.29,
-        "xgTotal": 3.4
-      },
-      "estimatedCote": 1.57,
-      "estimatedCoteOver": 1.51,
-      "odds": {
-        "provider": "DraftKings",
-        "home": 3.65,
-        "draw": 3.65,
-        "away": 1.83,
-        "over25": 1.69,
-        "under25": 2.1
-      },
-      "oddsSource": "DraftKings",
-      "estimatedCoteBTTS": 1.57,
-      "formHome": {
-        "last5String": "V-D-V-D-N",
-        "wins": 2,
-        "draws": 1,
-        "losses": 2,
-        "goalsFor": 10,
-        "goalsAgainst": 8,
-        "bttsRate": 0.8,
-        "over25Rate": 0.8,
-        "cleanSheets": 1,
-        "failedToScore": 0,
-        "count": 5
-      },
-      "formAway": {
-        "last5String": "D-V-N-V-D",
-        "wins": 2,
-        "draws": 1,
-        "losses": 2,
-        "goalsFor": 7,
-        "goalsAgainst": 5,
-        "bttsRate": 0.4,
-        "over25Rate": 0.4,
-        "cleanSheets": 2,
-        "failedToScore": 1,
-        "count": 5
-      },
-      "last5Home": [
-        {
-          "date": "2026-10-23",
-          "opponent": "Torino",
-          "venue": "A",
-          "score": "2-3",
-          "result": "L"
-        },
-        {
-          "date": "2026-10-19",
-          "opponent": "Cagliari",
-          "venue": "H",
-          "score": "4-0",
-          "result": "W"
-        },
-        {
-          "date": "2026-10-11",
-          "opponent": "Lazio",
-          "venue": "A",
-          "score": "1-3",
-          "result": "L"
-        },
-        {
-          "date": "2026-09-18",
-          "opponent": "Sassuolo",
-          "venue": "H",
-          "score": "2-1",
-          "result": "W"
-        },
-        {
-          "date": "2026-09-13",
-          "opponent": "Lecce",
-          "venue": "A",
-          "score": "2-3",
-          "result": "L"
-        }
-      ],
-      "last5Away": [
-        {
-          "date": "2026-10-17",
-          "opponent": "Venezia",
-          "venue": "A",
-          "score": "0-1",
-          "result": "L"
-        },
-        {
-          "date": "2026-10-10",
-          "opponent": "Frosinone",
-          "venue": "H",
-          "score": "3-0",
-          "result": "W"
-        },
-        {
-          "date": "2026-09-20",
-          "opponent": "Fiorentina",
-          "venue": "A",
-          "score": "1-1",
-          "result": "D"
-        },
-        {
-          "date": "2026-09-13",
-          "opponent": "Bologna",
-          "venue": "H",
-          "score": "1-0",
-          "result": "W"
-        },
-        {
-          "date": "2026-09-05",
-          "opponent": "Internazionale",
-          "venue": "A",
-          "score": "2-3",
-          "result": "L"
-        }
-      ],
-      "standingsHome": {
-        "rank": 14,
-        "points": 7,
-        "played": 7,
-        "gf": 13,
-        "ga": 15
-      },
-      "standingsAway": {
-        "rank": 9,
-        "points": 10,
-        "played": 7,
-        "gf": 10,
-        "ga": 7
-      },
-      "predictions": [
-        {
-          "type": "BTTS",
-          "prediction": "Oui",
-          "confidence": 64,
-          "bttsProb": 0.6371,
-          "homeLambda": 2.11,
-          "awayLambda": 1.29
-        },
-        {
-          "type": "Over 2.5",
-          "prediction": "Oui",
-          "confidence": 66,
-          "over25Prob": 0.6603,
-          "homeLambda": 2.11,
-          "awayLambda": 1.29
-        }
-      ],
-      "bttsProb": 0.6371,
-      "over25Prob": 0.6603,
-      "homeLambda": 2.11,
-      "awayLambda": 1.29,
-      "ai_key_fact": "Monza totalise 7 points en 7 matchs et pointe à la 14e place.",
-      "ai_analysis": "Le modèle Poisson BTTSPredict indique des xG de 2.11 pour Monza et 1.29 pour Napoli, avec une probabilité BTTS de 63.7% et un Over 2.5 à 66.0%. La fiabilité du modèle est établie à 77.62%. Au classement de Serie A, Monza est 14e avec 7 points, alors que Napoli se positionne 9e avec 10 points. Les cotes DraftKings évaluent la victoire à domicile à 3.65, le nul à 3.65 et la victoire extérieure à 1.83, avec l'Over 2.5 à 1.69.",
-      "ai_form_summary": "Monza enregistre 2 victoires, 1 nul et 2 défaites sur ses 5 derniers matchs avec 10 buts marqués et 8 encaissés. Napoli affiche également un bilan de 2 victoires, 1 nul et 2 défaites, inscrivant 7 buts pour 5 encaissés.",
-      "ai_analysis_en": "Monza has a total of 7 points in 7 matches and sits in 14th place.",
-      "ai_form_summary_en": "Monza records 2 wins, 1 draw, and 2 losses in their last 5 matches with 10 goals scored and 8 conceded. Napoli also shows a record of 2 wins, 1 draw, and 2 losses, scoring 7 goals and conceding 5.",
-      "ai_source": "gemini-v2",
-      "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
-      "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
-      "ai_odds_insight": "Le marché (DraftKings) cote 1: 3.65, nul: 3.65, 2: 1.83, Over 2.5: 1.69.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 3.65, draw: 3.65, 2: 1.83, Over 2.5: 1.69.",
-      "status": "PENDING"
-    },
-    {
       "id": "chicagof-vs-orlandoc-2026-10-29",
       "match": "Chicago Fire FC vs Orlando City SC",
       "home": "Chicago Fire FC",
@@ -16430,6 +12874,13 @@
       },
       "last5Home": [
         {
+          "date": "2026-10-24",
+          "opponent": "CF Montréal",
+          "venue": "A",
+          "score": "2-0",
+          "result": "W"
+        },
+        {
           "date": "2026-10-18",
           "opponent": "San Jose Earthquakes",
           "venue": "A",
@@ -16455,13 +12906,6 @@
           "opponent": "Toronto FC",
           "venue": "H",
           "score": "2-0",
-          "result": "W"
-        },
-        {
-          "date": "2026-09-20",
-          "opponent": "Chicago Fire FC",
-          "venue": "H",
-          "score": "3-0",
           "result": "W"
         }
       ],
