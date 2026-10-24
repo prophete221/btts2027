@@ -1721,7 +1721,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 2.45, nul: 3.3, 2: 2.95, Over 2.5: 2.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.45, draw: 3.3, 2: 2.95, Over 2.5: 2."
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.45, draw: 3.3, 2: 2.95, Over 2.5: 2.",
+      "status": "PENDING"
     },
     {
       "id": "racingsa-vs-espanyol-2026-10-24",
@@ -1918,7 +1919,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 2.4, nul: 3.65, 2: 2.8, Over 2.5: 1.63.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.4, draw: 3.65, 2: 2.8, Over 2.5: 1.63."
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.4, draw: 3.65, 2: 2.8, Over 2.5: 1.63.",
+      "status": "PENDING"
     },
     {
       "id": "redbulln-vs-intermia-2026-10-24",
@@ -2115,7 +2117,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 3.25, nul: 4.2, 2: 1.87.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 3.25, draw: 4.2, 2: 1.87."
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 3.25, draw: 4.2, 2: 1.87.",
+      "status": "PENDING"
     },
     {
       "id": "portsmou-vs-millwall-2026-10-24",
@@ -2312,7 +2315,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 2.5, nul: 3.35, 2: 2.9, Over 2.5: 1.95.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.5, draw: 3.35, 2: 2.9, Over 2.5: 1.95."
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.5, draw: 3.35, 2: 2.9, Over 2.5: 1.95.",
+      "status": "PENDING"
     },
     {
       "id": "dcunited-vs-fccincin-2026-10-24",
@@ -2509,7 +2513,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 2.75, nul: 3.85, 2: 2.2.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.75, draw: 3.85, 2: 2.2."
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.75, draw: 3.85, 2: 2.2.",
+      "status": "PENDING"
     },
     {
       "id": "sheffiel-vs-derbycou-2026-10-24",
@@ -2706,7 +2711,8 @@
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 1.8, nul: 3.95, 2: 4.2, Over 2.5: 1.74.",
       "ai_odds_insight_en": "The market (DraftKings) prices 1: 1.8, draw: 3.95, 2: 4.2, Over 2.5: 1.74.",
-      "ai_analysis": "Sheffield United aborde le match avec 2 victoire(s), 0 nul(s) et 3 défaite(s) sur ses 5 dernières sorties (7 buts marqués, 6 encaissés). Derby County affiche 0 victoire(s), 2 nul(s) et 3 défaite(s) sur 5, pour 4 buts marqués et 9 encaissés. Au classement, Sheffield United est 11e avec 15 points, face à Derby County, 23e avec 6 points. Le marché place Sheffield United en favori (1: 1.8, nul: 3.95, 2: 4.2, Over 2.5: 1.74 — cotes DraftKings). Le modèle Poisson BTTSPredict projette 2.02 buts attendus pour Sheffield United et 1.25 pour Derby County, soit BTTS à 61.9% et Over 2.5 à 63.5%. Le scénario d'un match ouvert avec des buts des deux côtés ressort comme la tendance principale."
+      "ai_analysis": "Sheffield United aborde le match avec 2 victoire(s), 0 nul(s) et 3 défaite(s) sur ses 5 dernières sorties (7 buts marqués, 6 encaissés). Derby County affiche 0 victoire(s), 2 nul(s) et 3 défaite(s) sur 5, pour 4 buts marqués et 9 encaissés. Au classement, Sheffield United est 11e avec 15 points, face à Derby County, 23e avec 6 points. Le marché place Sheffield United en favori (1: 1.8, nul: 3.95, 2: 4.2, Over 2.5: 1.74 — cotes DraftKings). Le modèle Poisson BTTSPredict projette 2.02 buts attendus pour Sheffield United et 1.25 pour Derby County, soit BTTS à 61.9% et Over 2.5 à 63.5%. Le scénario d'un match ouvert avec des buts des deux côtés ressort comme la tendance principale.",
+      "status": "PENDING"
     },
     {
       "id": "cardiffc-vs-birmingh-2026-10-24",
@@ -2903,7 +2909,8 @@
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 2.75, nul: 3.8, 2: 2.4, Over 2.5: 1.59.",
       "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.75, draw: 3.8, 2: 2.4, Over 2.5: 1.59.",
-      "ai_analysis": "Cardiff City aborde le match avec 2 victoire(s), 1 nul(s) et 2 défaite(s) sur ses 5 dernières sorties (11 buts marqués, 7 encaissés). Birmingham City affiche 4 victoire(s), 1 nul(s) et 0 défaite(s) sur 5, pour 12 buts marqués et 3 encaissés. Au classement, Cardiff City est 19e avec 11 points, face à Birmingham City, 4e avec 20 points. Le marché place Birmingham City en favori (1: 2.75, nul: 3.8, 2: 2.4, Over 2.5: 1.59 — cotes DraftKings). Le modèle Poisson BTTSPredict projette 2.15 buts attendus pour Cardiff City et 1.17 pour Birmingham City, soit BTTS à 60.8% et Over 2.5 à 64.4%. Le scénario d'un match ouvert avec des buts des deux côtés ressort comme la tendance principale."
+      "ai_analysis": "Cardiff City aborde le match avec 2 victoire(s), 1 nul(s) et 2 défaite(s) sur ses 5 dernières sorties (11 buts marqués, 7 encaissés). Birmingham City affiche 4 victoire(s), 1 nul(s) et 0 défaite(s) sur 5, pour 12 buts marqués et 3 encaissés. Au classement, Cardiff City est 19e avec 11 points, face à Birmingham City, 4e avec 20 points. Le marché place Birmingham City en favori (1: 2.75, nul: 3.8, 2: 2.4, Over 2.5: 1.59 — cotes DraftKings). Le modèle Poisson BTTSPredict projette 2.15 buts attendus pour Cardiff City et 1.17 pour Birmingham City, soit BTTS à 60.8% et Over 2.5 à 64.4%. Le scénario d'un match ouvert avec des buts des deux côtés ressort comme la tendance principale.",
+      "status": "PENDING"
     },
     {
       "id": "antwerp-vs-royalcha-2026-10-24",
@@ -3100,7 +3107,8 @@
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 3.95, nul: 4, 2: 1.8, Over 2.5: 1.65.",
       "ai_odds_insight_en": "The market (DraftKings) prices 1: 3.95, draw: 4, 2: 1.8, Over 2.5: 1.65.",
-      "ai_analysis": "Antwerp aborde le match avec 0 victoire(s), 0 nul(s) et 5 défaite(s) sur ses 5 dernières sorties (3 buts marqués, 15 encaissés). Royal Charleroi SC affiche 4 victoire(s), 0 nul(s) et 1 défaite(s) sur 5, pour 10 buts marqués et 6 encaissés. Au classement, Antwerp est 13e avec 7 points, face à Royal Charleroi SC, 3e avec 21 points. Le marché place Royal Charleroi SC en favori (1: 3.95, nul: 4, 2: 1.8, Over 2.5: 1.65 — cotes DraftKings). Le modèle Poisson BTTSPredict projette 1.15 buts attendus pour Antwerp et 2.13 pour Royal Charleroi SC, soit BTTS à 60.2% et Over 2.5 à 63.5%. Le scénario d'un match ouvert avec des buts des deux côtés ressort comme la tendance principale."
+      "ai_analysis": "Antwerp aborde le match avec 0 victoire(s), 0 nul(s) et 5 défaite(s) sur ses 5 dernières sorties (3 buts marqués, 15 encaissés). Royal Charleroi SC affiche 4 victoire(s), 0 nul(s) et 1 défaite(s) sur 5, pour 10 buts marqués et 6 encaissés. Au classement, Antwerp est 13e avec 7 points, face à Royal Charleroi SC, 3e avec 21 points. Le marché place Royal Charleroi SC en favori (1: 3.95, nul: 4, 2: 1.8, Over 2.5: 1.65 — cotes DraftKings). Le modèle Poisson BTTSPredict projette 1.15 buts attendus pour Antwerp et 2.13 pour Royal Charleroi SC, soit BTTS à 60.2% et Over 2.5 à 63.5%. Le scénario d'un match ouvert avec des buts des deux côtés ressort comme la tendance principale.",
+      "status": "PENDING"
     },
     {
       "id": "rapidvie-vs-austrial-2026-10-24",
@@ -3297,7 +3305,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 1.21, nul: 7, 2: 11.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 1.21, draw: 7, 2: 11."
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 1.21, draw: 7, 2: 11.",
+      "status": "PENDING"
     },
     {
       "id": "herthabe-vs-arminiab-2026-10-24",
@@ -3494,7 +3503,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 1.83, nul: 3.95, 2: 3.95.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 1.83, draw: 3.95, 2: 3.95."
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 1.83, draw: 3.95, 2: 3.95.",
+      "status": "PENDING"
     },
     {
       "id": "rayovall-vs-elche-2026-10-24",
@@ -3691,7 +3701,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 1.77, nul: 3.85, 2: 4.5, Over 2.5: 1.83.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 1.77, draw: 3.85, 2: 4.5, Over 2.5: 1.83."
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 1.77, draw: 3.85, 2: 4.5, Over 2.5: 1.83.",
+      "status": "PENDING"
     },
     {
       "id": "raallalo-vs-zultewar-2026-10-24",
@@ -3888,7 +3899,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 3, nul: 3.4, 2: 2.3, Over 2.5: 1.87.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 3, draw: 3.4, 2: 2.3, Over 2.5: 1.87."
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 3, draw: 3.4, 2: 2.3, Over 2.5: 1.87.",
+      "status": "PENDING"
     },
     {
       "id": "fcnrnber-vs-kaisersl-2026-10-24",
@@ -4085,7 +4097,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 2.05, nul: 3.85, 2: 3.25.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.05, draw: 3.85, 2: 3.25."
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.05, draw: 3.85, 2: 3.25.",
+      "status": "PENDING"
     },
     {
       "id": "orlandoc-vs-newyorkc-2026-10-24",
@@ -4282,7 +4295,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 2.15, nul: 3.85, 2: 2.8.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.15, draw: 3.85, 2: 2.8."
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.15, draw: 3.85, 2: 2.8.",
+      "status": "PENDING"
     },
     {
       "id": "atlantau-vs-chicagof-2026-10-24",
@@ -4479,7 +4493,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 2.55, nul: 3.7, 2: 2.4.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.55, draw: 3.7, 2: 2.4."
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.55, draw: 3.7, 2: 2.4.",
+      "status": "PENDING"
     },
     {
       "id": "willemii-vs-sccambuu-2026-10-24",
@@ -4676,7 +4691,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 2.5, nul: 3.7, 2: 2.55.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.5, draw: 3.7, 2: 2.55."
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.5, draw: 3.7, 2: 2.55.",
+      "status": "PENDING"
     },
     {
       "id": "psveindh-vs-feyenoor-2026-10-25",
@@ -9375,7 +9391,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Cotes marché non disponibles — pronostic basé sur le modèle statistique seul.",
-      "ai_odds_insight_en": "Market odds unavailable — prediction based on the statistical model only."
+      "ai_odds_insight_en": "Market odds unavailable — prediction based on the statistical model only.",
+      "status": "PENDING"
     },
     {
       "id": "nashvill-vs-philadel-2026-10-29",
@@ -9565,7 +9582,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Cotes marché non disponibles — pronostic basé sur le modèle statistique seul.",
-      "ai_odds_insight_en": "Market odds unavailable — prediction based on the statistical model only."
+      "ai_odds_insight_en": "Market odds unavailable — prediction based on the statistical model only.",
+      "status": "PENDING"
     },
     {
       "id": "minnesot-vs-sporting-2026-10-29",
@@ -9755,7 +9773,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Cotes marché non disponibles — pronostic basé sur le modèle statistique seul.",
-      "ai_odds_insight_en": "Market odds unavailable — prediction based on the statistical model only."
+      "ai_odds_insight_en": "Market odds unavailable — prediction based on the statistical model only.",
+      "status": "PENDING"
     },
     {
       "id": "vancouve-vs-sandiego-2026-10-29",
@@ -9945,7 +9964,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Cotes marché non disponibles — pronostic basé sur le modèle statistique seul.",
-      "ai_odds_insight_en": "Market odds unavailable — prediction based on the statistical model only."
+      "ai_odds_insight_en": "Market odds unavailable — prediction based on the statistical model only.",
+      "status": "PENDING"
     },
     {
       "id": "stlouisc-vs-portland-2026-10-29",
@@ -10135,7 +10155,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Cotes marché non disponibles — pronostic basé sur le modèle statistique seul.",
-      "ai_odds_insight_en": "Market odds unavailable — prediction based on the statistical model only."
+      "ai_odds_insight_en": "Market odds unavailable — prediction based on the statistical model only.",
+      "status": "PENDING"
     },
     {
       "id": "austinfc-vs-realsalt-2026-10-29",
@@ -10325,7 +10346,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Cotes marché non disponibles — pronostic basé sur le modèle statistique seul.",
-      "ai_odds_insight_en": "Market odds unavailable — prediction based on the statistical model only."
+      "ai_odds_insight_en": "Market odds unavailable — prediction based on the statistical model only.",
+      "status": "PENDING"
     },
     {
       "id": "fcdallas-vs-columbus-2026-10-29",
@@ -10515,7 +10537,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Cotes marché non disponibles — pronostic basé sur le modèle statistique seul.",
-      "ai_odds_insight_en": "Market odds unavailable — prediction based on the statistical model only."
+      "ai_odds_insight_en": "Market odds unavailable — prediction based on the statistical model only.",
+      "status": "PENDING"
     },
     {
       "id": "seattles-vs-houstond-2026-10-29",
@@ -10705,7 +10728,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Cotes marché non disponibles — pronostic basé sur le modèle statistique seul.",
-      "ai_odds_insight_en": "Market odds unavailable — prediction based on the statistical model only."
+      "ai_odds_insight_en": "Market odds unavailable — prediction based on the statistical model only.",
+      "status": "PENDING"
     }
   ],
   "vipPreview": [
