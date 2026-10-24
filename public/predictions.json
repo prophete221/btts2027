@@ -1,6 +1,6 @@
 {
   "date": "2026-10-24",
-  "lastUpdated": "2026-10-24T07:47:18.187Z",
+  "lastUpdated": "2026-10-24T13:01:28.775Z",
   "source": "ESPN + TheSportsDB",
   "free": [
     {
@@ -139,204 +139,6 @@
           "result": "D"
         }
       ]
-    },
-    {
-      "id": "fcheiden-vs-energiec-2026-10-24",
-      "match": "1. FC Heidenheim 1846 vs Energie Cottbus",
-      "home": "1. FC Heidenheim 1846",
-      "away": "Energie Cottbus",
-      "league": "2. Bundesliga",
-      "date": "2026-10-24",
-      "type": "BTTS",
-      "prediction": "Oui",
-      "proba": 0.7679,
-      "bttsProbDisplay": "76.79%",
-      "over25ProbDisplay": "81.49%",
-      "confidence": 77,
-      "time": "11:00",
-      "matchSemantic": "fcheiden-vs-energiec-2026-10-24",
-      "source": "poisson-v92-real-data",
-      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/6418.png",
-      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/123.png",
-      "tier": "GOLD",
-      "reliabilityScore": 92.34,
-      "dataQuality": "HIGH",
-      "dataSource": "ESPN_TEAM_SCHEDULE",
-      "matchCountHome": 8,
-      "matchCountAway": 8,
-      "h2hAvailable": false,
-      "xgHome": 2.65,
-      "xgAway": 1.75,
-      "xgTotal": 4.4,
-      "formBTTS": 60,
-      "analysis": "1. FC Heidenheim 1846 : forme D-N-N-V-V (2V 2N 1D, 5 buts marqués / 5 encaissés sur 5) · Energie Cottbus : forme N-D-N-V-N (1V 3N 1D, 10 buts marqués / 9 encaissés sur 5). Classement : 1. FC Heidenheim 1846 5e (14 pts), Energie Cottbus 9e (9 pts). Modèle Poisson : xG cumulé 4.4, BTTS 76.8%, Over 2.5 81.5%. Cotes DraftKings — 1: 1.69 / N: 4.5 / 2: 3.95. Fiabilité 92.34%.",
-      "analysisData": {
-        "bttsProb": 0.7679,
-        "over25Prob": 0.8149,
-        "homeLambda": 2.65,
-        "awayLambda": 1.75,
-        "xgTotal": 4.4
-      },
-      "estimatedCote": 1.3,
-      "estimatedCoteOver": 1.23,
-      "odds": {
-        "provider": "DraftKings",
-        "home": 1.69,
-        "draw": 4.5,
-        "away": 3.95,
-        "over25": null,
-        "under25": null
-      },
-      "oddsSource": "DraftKings",
-      "estimatedCoteBTTS": 1.3,
-      "formHome": {
-        "last5String": "D-N-N-V-V",
-        "wins": 2,
-        "draws": 2,
-        "losses": 1,
-        "goalsFor": 5,
-        "goalsAgainst": 5,
-        "bttsRate": 0.4,
-        "over25Rate": 0.4,
-        "cleanSheets": 3,
-        "failedToScore": 1,
-        "count": 5
-      },
-      "formAway": {
-        "last5String": "N-D-N-V-N",
-        "wins": 1,
-        "draws": 3,
-        "losses": 1,
-        "goalsFor": 10,
-        "goalsAgainst": 9,
-        "bttsRate": 0.8,
-        "over25Rate": 0.6,
-        "cleanSheets": 1,
-        "failedToScore": 0,
-        "count": 5
-      },
-      "standingsHome": {
-        "rank": 5,
-        "points": 14,
-        "played": 8,
-        "gf": 15,
-        "ga": 15
-      },
-      "standingsAway": {
-        "rank": 9,
-        "points": 9,
-        "played": 8,
-        "gf": 16,
-        "ga": 17
-      },
-      "predictions": [
-        {
-          "type": "BTTS",
-          "prediction": "Oui",
-          "confidence": 77,
-          "bttsProb": 0.7679,
-          "homeLambda": 2.65,
-          "awayLambda": 1.75
-        },
-        {
-          "type": "Over 2.5",
-          "prediction": "Oui",
-          "confidence": 81,
-          "over25Prob": 0.8149,
-          "homeLambda": 2.65,
-          "awayLambda": 1.75
-        }
-      ],
-      "bttsProb": 0.7679,
-      "over25Prob": 0.8149,
-      "homeLambda": 2.65,
-      "awayLambda": 1.75,
-      "ai_key_fact": "1. FC Heidenheim 1846 présente un xG modèle élevé de 2.65.",
-      "ai_analysis": "Le modèle Poisson de BTTSPredict attribue un xG de 2.65 à l'équipe hôte et de 1.75 pour Energie Cottbus. Les probabilités calculées atteignent 76.8% pour le BTTS et 81.5% pour l'Over 2.5. Au classement de 2. Bundesliga, Heidenheim occupe la 5e position avec 14 points, tandis que Cottbus se classe 9e avec 9 points. La fiabilité du modèle s'établit à un niveau solide de 92.34%.",
-      "ai_form_summary": "1. FC Heidenheim 1846 reste sur deux victoires consécutives et trois clean sheets sur ses cinq derniers matchs à domicile. Energie Cottbus affiche un profil offensif intéressant à l'extérieur avec dix buts marqués mais un taux de BTTS de 0.8.",
-      "ai_key_fact_en": "1. FC Heidenheim 1846 records a high model xG of 2.65.",
-      "ai_analysis_en": "The BTTSPredict Poisson model assigns an xG of 2.65 to the home team and 1.75 for Energie Cottbus. Calculated probabilities reach 76.8% for BTTS and 81.5% for Over 2.5. In the 2. Bundesliga standings, Heidenheim occupies 5th position with 14 points, while Cottbus ranks 9th with 9 points. Model reliability stands at a solid level of 92.34%.",
-      "ai_form_summary_en": "1. FC Heidenheim 1846 comes off two consecutive wins and three clean sheets in their last five home matches. Energie Cottbus displays an interesting away offensive profile with ten goals scored but a 0.8 BTTS rate.",
-      "ai_source": "gemini-v2",
-      "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
-      "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
-      "ai_odds_insight": "Le marché (DraftKings) cote 1: 1.69, nul: 4.5, 2: 3.95.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 1.69, draw: 4.5, 2: 3.95.",
-      "last5Home": [
-        {
-          "date": "2026-10-17",
-          "opponent": "VfL Wolfsburg",
-          "venue": "A",
-          "score": "1-3",
-          "result": "L"
-        },
-        {
-          "date": "2026-10-09",
-          "opponent": "Kaiserslautern",
-          "venue": "H",
-          "score": "0-0",
-          "result": "D"
-        },
-        {
-          "date": "2026-09-20",
-          "opponent": "Arminia Bielefeld",
-          "venue": "A",
-          "score": "2-2",
-          "result": "D"
-        },
-        {
-          "date": "2026-09-13",
-          "opponent": "Holstein Kiel",
-          "venue": "H",
-          "score": "1-0",
-          "result": "W"
-        },
-        {
-          "date": "2026-09-06",
-          "opponent": "SpVgg Greuther Fürth",
-          "venue": "A",
-          "score": "1-0",
-          "result": "W"
-        }
-      ],
-      "last5Away": [
-        {
-          "date": "2026-10-16",
-          "opponent": "1. FC Nürnberg",
-          "venue": "H",
-          "score": "1-1",
-          "result": "D"
-        },
-        {
-          "date": "2026-10-10",
-          "opponent": "SV Darmstadt 98",
-          "venue": "A",
-          "score": "1-3",
-          "result": "L"
-        },
-        {
-          "date": "2026-09-20",
-          "opponent": "St. Pauli",
-          "venue": "H",
-          "score": "1-1",
-          "result": "D"
-        },
-        {
-          "date": "2026-09-13",
-          "opponent": "Karlsruher SC",
-          "venue": "A",
-          "score": "3-0",
-          "result": "W"
-        },
-        {
-          "date": "2026-09-05",
-          "opponent": "VfL Wolfsburg",
-          "venue": "A",
-          "score": "4-4",
-          "result": "D"
-        }
-      ],
-      "status": "PENDING"
     },
     {
       "id": "wsgswaro-vs-grazerak-2026-10-24",
@@ -2121,204 +1923,6 @@
       "status": "PENDING"
     },
     {
-      "id": "portsmou-vs-millwall-2026-10-24",
-      "match": "Portsmouth vs Millwall",
-      "home": "Portsmouth",
-      "away": "Millwall",
-      "league": "Championship",
-      "date": "2026-10-24",
-      "type": "BTTS",
-      "prediction": "Oui",
-      "proba": 0.6394,
-      "bttsProbDisplay": "63.94%",
-      "over25ProbDisplay": "63.55%",
-      "confidence": 64,
-      "time": "11:30",
-      "matchSemantic": "portsmou-vs-millwall-2026-10-24",
-      "source": "poisson-v92-real-data",
-      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/385.png",
-      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/391.png",
-      "tier": "GOLD",
-      "reliabilityScore": 86.72,
-      "dataQuality": "HIGH",
-      "dataSource": "ESPN_TEAM_SCHEDULE",
-      "matchCountHome": 8,
-      "matchCountAway": 8,
-      "h2hAvailable": false,
-      "xgHome": 1.86,
-      "xgAway": 1.42,
-      "xgTotal": 3.27,
-      "formBTTS": 60,
-      "analysis": "Portsmouth : forme N-V-V-D-N (2V 2N 1D, 7 buts marqués / 6 encaissés sur 5) · Millwall : forme N-D-V-N-N (1V 3N 1D, 7 buts marqués / 7 encaissés sur 5). Classement : Portsmouth 13e (15 pts), Millwall 12e (15 pts). Modèle Poisson : xG cumulé 3.27, BTTS 63.9%, Over 2.5 63.6%. Cotes DraftKings — 1: 2.5 / N: 3.35 / 2: 2.9 · Over 2.5: 1.95. Fiabilité 86.72%.",
-      "analysisData": {
-        "bttsProb": 0.6394,
-        "over25Prob": 0.6355,
-        "homeLambda": 1.86,
-        "awayLambda": 1.42,
-        "xgTotal": 3.27
-      },
-      "estimatedCote": 1.56,
-      "estimatedCoteOver": 1.57,
-      "odds": {
-        "provider": "DraftKings",
-        "home": 2.5,
-        "draw": 3.35,
-        "away": 2.9,
-        "over25": 1.95,
-        "under25": 1.8
-      },
-      "oddsSource": "DraftKings",
-      "estimatedCoteBTTS": 1.56,
-      "formHome": {
-        "last5String": "N-V-V-D-N",
-        "wins": 2,
-        "draws": 2,
-        "losses": 1,
-        "goalsFor": 7,
-        "goalsAgainst": 6,
-        "bttsRate": 0.6,
-        "over25Rate": 0.4,
-        "cleanSheets": 1,
-        "failedToScore": 1,
-        "count": 5
-      },
-      "formAway": {
-        "last5String": "N-D-V-N-N",
-        "wins": 1,
-        "draws": 3,
-        "losses": 1,
-        "goalsFor": 7,
-        "goalsAgainst": 7,
-        "bttsRate": 0.6,
-        "over25Rate": 0.6,
-        "cleanSheets": 1,
-        "failedToScore": 1,
-        "count": 5
-      },
-      "last5Home": [
-        {
-          "date": "2026-10-20",
-          "opponent": "Wolverhampton Wanderers",
-          "venue": "A",
-          "score": "1-1",
-          "result": "D"
-        },
-        {
-          "date": "2026-10-17",
-          "opponent": "Norwich City",
-          "venue": "A",
-          "score": "1-0",
-          "result": "W"
-        },
-        {
-          "date": "2026-10-14",
-          "opponent": "Sheffield United",
-          "venue": "H",
-          "score": "3-2",
-          "result": "W"
-        },
-        {
-          "date": "2026-10-11",
-          "opponent": "Southampton",
-          "venue": "A",
-          "score": "0-1",
-          "result": "L"
-        },
-        {
-          "date": "2026-09-19",
-          "opponent": "Blackburn Rovers",
-          "venue": "H",
-          "score": "2-2",
-          "result": "D"
-        }
-      ],
-      "last5Away": [
-        {
-          "date": "2026-10-17",
-          "opponent": "Lincoln City",
-          "venue": "H",
-          "score": "2-2",
-          "result": "D"
-        },
-        {
-          "date": "2026-10-13",
-          "opponent": "Swansea City",
-          "venue": "H",
-          "score": "0-1",
-          "result": "L"
-        },
-        {
-          "date": "2026-10-10",
-          "opponent": "Preston North End",
-          "venue": "A",
-          "score": "1-0",
-          "result": "W"
-        },
-        {
-          "date": "2026-09-19",
-          "opponent": "West Ham United",
-          "venue": "H",
-          "score": "2-2",
-          "result": "D"
-        },
-        {
-          "date": "2026-09-15",
-          "opponent": "Middlesbrough",
-          "venue": "A",
-          "score": "2-2",
-          "result": "D"
-        }
-      ],
-      "standingsHome": {
-        "rank": 13,
-        "points": 15,
-        "played": 11,
-        "gf": 14,
-        "ga": 14
-      },
-      "standingsAway": {
-        "rank": 12,
-        "points": 15,
-        "played": 11,
-        "gf": 18,
-        "ga": 18
-      },
-      "predictions": [
-        {
-          "type": "BTTS",
-          "prediction": "Oui",
-          "confidence": 64,
-          "bttsProb": 0.6394,
-          "homeLambda": 1.86,
-          "awayLambda": 1.42
-        },
-        {
-          "type": "Over 2.5",
-          "prediction": "Oui",
-          "confidence": 64,
-          "over25Prob": 0.6355,
-          "homeLambda": 1.86,
-          "awayLambda": 1.42
-        }
-      ],
-      "bttsProb": 0.6394,
-      "over25Prob": 0.6355,
-      "homeLambda": 1.86,
-      "awayLambda": 1.42,
-      "ai_key_fact": "Portsmouth et Millwall possèdent tous deux 15 points après 11 matchs.",
-      "ai_analysis": "Portsmouth et Millwall affichent des parcours presque symétriques au classement de Championship, occupant respectivement les 13e et 12e positions avec 15 points en 11 matchs. Les deux formations présentent un taux BTTS de 60% sur leurs cinq dernières rencontres. Le modèle Poisson calcule des xG de 1.86 pour Portsmouth et 1.42 pour Millwall. Les probabilités prévisionnelles atteignent 63.9% pour le BTTS et 63.5% pour l'Over 2.5, avec une fiabilité de modèle établie à 86.72%.",
-      "ai_form_summary": "Portsmouth totalise deux victoires, deux nuls et une défaite sur ses cinq derniers matchs avec sept buts marqués et six encaissés. Millwall affiche une victoire, trois nuls et une défaite, avec également sept buts marqués et sept encaissés.",
-      "ai_key_fact_en": "Portsmouth and Millwall both possess 15 points after 11 matches.",
-      "ai_analysis_en": "Portsmouth and Millwall display near-symmetrical records in the Championship standings, occupying 13th and 12th positions respectively with 15 points from 11 matches. Both teams record a 60% BTTS rate over their last five fixtures. The Poisson model calculates xG figures of 1.86 for Portsmouth and 1.42 for Millwall. Projected probabilities reach 63.9% for BTTS and 63.5% for Over 2.5, supported by a model reliability of 86.72%.",
-      "ai_form_summary_en": "Portsmouth records two wins, two draws and one defeat in their last five matches with seven goals scored and six conceded. Millwall displays one win, three draws and one defeat, also with seven goals scored and seven conceded.",
-      "ai_source": "gemini-v2",
-      "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
-      "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
-      "ai_odds_insight": "Le marché (DraftKings) cote 1: 2.5, nul: 3.35, 2: 2.9, Over 2.5: 1.95.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.5, draw: 3.35, 2: 2.9, Over 2.5: 1.95.",
-      "status": "PENDING"
-    },
-    {
       "id": "dcunited-vs-fccincin-2026-10-24",
       "match": "D.C. United vs FC Cincinnati",
       "home": "D.C. United",
@@ -2514,204 +2118,6 @@
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 2.75, nul: 3.85, 2: 2.2.",
       "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.75, draw: 3.85, 2: 2.2.",
-      "status": "PENDING"
-    },
-    {
-      "id": "sheffiel-vs-derbycou-2026-10-24",
-      "match": "Sheffield United vs Derby County",
-      "home": "Sheffield United",
-      "away": "Derby County",
-      "league": "Championship",
-      "date": "2026-10-24",
-      "type": "BTTS",
-      "prediction": "Oui",
-      "proba": 0.6193,
-      "bttsProbDisplay": "61.93%",
-      "over25ProbDisplay": "63.55%",
-      "confidence": 62,
-      "time": "11:30",
-      "matchSemantic": "sheffiel-vs-derbycou-2026-10-24",
-      "source": "poisson-v92-real-data",
-      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/398.png",
-      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/374.png",
-      "tier": "GOLD",
-      "reliabilityScore": 85.85,
-      "dataQuality": "HIGH",
-      "dataSource": "ESPN_TEAM_SCHEDULE",
-      "matchCountHome": 8,
-      "matchCountAway": 8,
-      "h2hAvailable": false,
-      "xgHome": 2.02,
-      "xgAway": 1.25,
-      "xgTotal": 3.27,
-      "formBTTS": 60,
-      "analysis": "Sheffield United : forme V-D-V-D-D (2V 0N 3D, 7 buts marqués / 6 encaissés sur 5) · Derby County : forme D-D-N-N-D (0V 2N 3D, 4 buts marqués / 9 encaissés sur 5). Classement : Sheffield United 11e (15 pts), Derby County 23e (6 pts). Modèle Poisson : xG cumulé 3.27, BTTS 61.9%, Over 2.5 63.6%. Cotes DraftKings — 1: 1.8 / N: 3.95 / 2: 4.2 · Over 2.5: 1.74. Fiabilité 85.85%.",
-      "analysisData": {
-        "bttsProb": 0.6193,
-        "over25Prob": 0.6355,
-        "homeLambda": 2.02,
-        "awayLambda": 1.25,
-        "xgTotal": 3.27
-      },
-      "estimatedCote": 1.61,
-      "estimatedCoteOver": 1.57,
-      "odds": {
-        "provider": "DraftKings",
-        "home": 1.8,
-        "draw": 3.95,
-        "away": 4.2,
-        "over25": 1.74,
-        "under25": 2.05
-      },
-      "oddsSource": "DraftKings",
-      "estimatedCoteBTTS": 1.61,
-      "formHome": {
-        "last5String": "V-D-V-D-D",
-        "wins": 2,
-        "draws": 0,
-        "losses": 3,
-        "goalsFor": 7,
-        "goalsAgainst": 6,
-        "bttsRate": 0.4,
-        "over25Rate": 0.6,
-        "cleanSheets": 2,
-        "failedToScore": 1,
-        "count": 5
-      },
-      "formAway": {
-        "last5String": "D-D-N-N-D",
-        "wins": 0,
-        "draws": 2,
-        "losses": 3,
-        "goalsFor": 4,
-        "goalsAgainst": 9,
-        "bttsRate": 0.8,
-        "over25Rate": 0.4,
-        "cleanSheets": 0,
-        "failedToScore": 1,
-        "count": 5
-      },
-      "last5Home": [
-        {
-          "date": "2026-10-17",
-          "opponent": "Bristol City",
-          "venue": "A",
-          "score": "1-0",
-          "result": "W"
-        },
-        {
-          "date": "2026-10-14",
-          "opponent": "Portsmouth",
-          "venue": "A",
-          "score": "2-3",
-          "result": "L"
-        },
-        {
-          "date": "2026-10-10",
-          "opponent": "Lincoln City",
-          "venue": "H",
-          "score": "3-0",
-          "result": "W"
-        },
-        {
-          "date": "2026-09-19",
-          "opponent": "Stoke City",
-          "venue": "A",
-          "score": "1-2",
-          "result": "L"
-        },
-        {
-          "date": "2026-09-13",
-          "opponent": "Wolverhampton Wanderers",
-          "venue": "H",
-          "score": "0-1",
-          "result": "L"
-        }
-      ],
-      "last5Away": [
-        {
-          "date": "2026-10-17",
-          "opponent": "Stoke City",
-          "venue": "H",
-          "score": "0-1",
-          "result": "L"
-        },
-        {
-          "date": "2026-10-14",
-          "opponent": "Queens Park Rangers",
-          "venue": "A",
-          "score": "1-4",
-          "result": "L"
-        },
-        {
-          "date": "2026-10-10",
-          "opponent": "Wrexham",
-          "venue": "H",
-          "score": "1-1",
-          "result": "D"
-        },
-        {
-          "date": "2026-09-19",
-          "opponent": "Burnley",
-          "venue": "A",
-          "score": "1-1",
-          "result": "D"
-        },
-        {
-          "date": "2026-09-12",
-          "opponent": "Birmingham City",
-          "venue": "H",
-          "score": "1-2",
-          "result": "L"
-        }
-      ],
-      "standingsHome": {
-        "rank": 11,
-        "points": 15,
-        "played": 11,
-        "gf": 15,
-        "ga": 14
-      },
-      "standingsAway": {
-        "rank": 23,
-        "points": 6,
-        "played": 11,
-        "gf": 9,
-        "ga": 20
-      },
-      "predictions": [
-        {
-          "type": "BTTS",
-          "prediction": "Oui",
-          "confidence": 62,
-          "bttsProb": 0.6193,
-          "homeLambda": 2.02,
-          "awayLambda": 1.25
-        },
-        {
-          "type": "Over 2.5",
-          "prediction": "Oui",
-          "confidence": 64,
-          "over25Prob": 0.6355,
-          "homeLambda": 2.02,
-          "awayLambda": 1.25
-        }
-      ],
-      "bttsProb": 0.6193,
-      "over25Prob": 0.6355,
-      "homeLambda": 2.02,
-      "awayLambda": 1.25,
-      "ai_key_fact": "Sheffield United V-D-V-D-D vs Derby County D-D-N-N-D — BTTS 61.9%, Over 2.5 63.5%",
-      "ai_form_summary": "Sheffield United : série V-D-V-D-D, 7 buts marqués / 6 encaissés sur 5. Derby County : série D-D-N-N-D, 4 buts marqués / 9 encaissés sur 5.",
-      "ai_key_fact_en": "Sheffield United V-D-V-D-D vs Derby County D-D-N-N-D — BTTS 61.9%, Over 2.5 63.5%",
-      "ai_analysis_en": "Sheffield United come into this match with 2 win(s), 0 draw(s) and 3 defeat(s) in their last 5 outings (7 goals scored, 6 conceded). Derby County record 0 win(s), 2 draw(s) and 3 defeat(s) in 5, with 4 goals scored and 9 conceded. In the standings, Sheffield United sit 11th with 15 points, against Derby County, 23th with 6 points. The market makes Sheffield United the favourite (1: 1.8, draw: 3.95, 2: 4.2, Over 2.5: 1.74 — DraftKings odds). The BTTSPredict Poisson model projects 2.02 expected goals for Sheffield United and 1.25 for Derby County, i.e. BTTS at 61.9% and Over 2.5 at 63.5%. An open game with goals at both ends stands out as the main trend.",
-      "ai_form_summary_en": "Sheffield United: streak V-D-V-D-D, 7 goals scored / 6 conceded in 5. Derby County: streak D-D-N-N-D, 4 goals scored / 9 conceded in 5.",
-      "ai_source": "local-model-v2",
-      "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
-      "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
-      "ai_odds_insight": "Le marché (DraftKings) cote 1: 1.8, nul: 3.95, 2: 4.2, Over 2.5: 1.74.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 1.8, draw: 3.95, 2: 4.2, Over 2.5: 1.74.",
-      "ai_analysis": "Sheffield United aborde le match avec 2 victoire(s), 0 nul(s) et 3 défaite(s) sur ses 5 dernières sorties (7 buts marqués, 6 encaissés). Derby County affiche 0 victoire(s), 2 nul(s) et 3 défaite(s) sur 5, pour 4 buts marqués et 9 encaissés. Au classement, Sheffield United est 11e avec 15 points, face à Derby County, 23e avec 6 points. Le marché place Sheffield United en favori (1: 1.8, nul: 3.95, 2: 4.2, Over 2.5: 1.74 — cotes DraftKings). Le modèle Poisson BTTSPredict projette 2.02 buts attendus pour Sheffield United et 1.25 pour Derby County, soit BTTS à 61.9% et Over 2.5 à 63.5%. Le scénario d'un match ouvert avec des buts des deux côtés ressort comme la tendance principale.",
       "status": "PENDING"
     },
     {
@@ -3306,402 +2712,6 @@
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 1.21, nul: 7, 2: 11.",
       "ai_odds_insight_en": "The market (DraftKings) prices 1: 1.21, draw: 7, 2: 11.",
-      "status": "PENDING"
-    },
-    {
-      "id": "herthabe-vs-arminiab-2026-10-24",
-      "match": "Hertha Berlin vs Arminia Bielefeld",
-      "home": "Hertha Berlin",
-      "away": "Arminia Bielefeld",
-      "league": "2. Bundesliga",
-      "date": "2026-10-24",
-      "type": "BTTS",
-      "prediction": "Oui",
-      "proba": 0.5794,
-      "bttsProbDisplay": "57.94%",
-      "over25ProbDisplay": "67.61%",
-      "confidence": 58,
-      "time": "11:00",
-      "matchSemantic": "herthabe-vs-arminiab-2026-10-24",
-      "source": "poisson-v92-real-data",
-      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/129.png",
-      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/2506.png",
-      "tier": "GOLD",
-      "reliabilityScore": 84.1,
-      "dataQuality": "HIGH",
-      "dataSource": "ESPN_TEAM_SCHEDULE",
-      "matchCountHome": 8,
-      "matchCountAway": 8,
-      "h2hAvailable": false,
-      "xgHome": 2.48,
-      "xgAway": 1,
-      "xgTotal": 3.48,
-      "formBTTS": 80,
-      "analysis": "Hertha Berlin : forme N-V-V-V-V (4V 1N 0D, 9 buts marqués / 4 encaissés sur 5) · Arminia Bielefeld : forme V-V-N-D-N (2V 2N 1D, 8 buts marqués / 7 encaissés sur 5). Classement : Hertha Berlin 1e (22 pts), Arminia Bielefeld 8e (11 pts). Modèle Poisson : xG cumulé 3.48, BTTS 57.9%, Over 2.5 67.6%. Cotes DraftKings — 1: 1.83 / N: 3.95 / 2: 3.95. Fiabilité 84.1%.",
-      "analysisData": {
-        "bttsProb": 0.5794,
-        "over25Prob": 0.6761,
-        "homeLambda": 2.48,
-        "awayLambda": 1,
-        "xgTotal": 3.48
-      },
-      "estimatedCote": 1.73,
-      "estimatedCoteOver": 1.48,
-      "odds": {
-        "provider": "DraftKings",
-        "home": 1.83,
-        "draw": 3.95,
-        "away": 3.95,
-        "over25": null,
-        "under25": null
-      },
-      "oddsSource": "DraftKings",
-      "estimatedCoteBTTS": 1.73,
-      "formHome": {
-        "last5String": "N-V-V-V-V",
-        "wins": 4,
-        "draws": 1,
-        "losses": 0,
-        "goalsFor": 9,
-        "goalsAgainst": 4,
-        "bttsRate": 0.8,
-        "over25Rate": 0.8,
-        "cleanSheets": 1,
-        "failedToScore": 1,
-        "count": 5
-      },
-      "formAway": {
-        "last5String": "V-V-N-D-N",
-        "wins": 2,
-        "draws": 2,
-        "losses": 1,
-        "goalsFor": 8,
-        "goalsAgainst": 7,
-        "bttsRate": 0.8,
-        "over25Rate": 0.8,
-        "cleanSheets": 1,
-        "failedToScore": 0,
-        "count": 5
-      },
-      "last5Home": [
-        {
-          "date": "2026-10-16",
-          "opponent": "Holstein Kiel",
-          "venue": "A",
-          "score": "0-0",
-          "result": "D"
-        },
-        {
-          "date": "2026-10-11",
-          "opponent": "SpVgg Greuther Fürth",
-          "venue": "H",
-          "score": "2-1",
-          "result": "W"
-        },
-        {
-          "date": "2026-09-19",
-          "opponent": "Dynamo Dresden",
-          "venue": "A",
-          "score": "2-1",
-          "result": "W"
-        },
-        {
-          "date": "2026-09-13",
-          "opponent": "VfL Osnabruck",
-          "venue": "A",
-          "score": "3-1",
-          "result": "W"
-        },
-        {
-          "date": "2026-09-06",
-          "opponent": "1. FC Magdeburg",
-          "venue": "H",
-          "score": "2-1",
-          "result": "W"
-        }
-      ],
-      "last5Away": [
-        {
-          "date": "2026-10-18",
-          "opponent": "VfL Osnabruck",
-          "venue": "H",
-          "score": "2-1",
-          "result": "W"
-        },
-        {
-          "date": "2026-10-11",
-          "opponent": "VfL Bochum",
-          "venue": "A",
-          "score": "1-0",
-          "result": "W"
-        },
-        {
-          "date": "2026-09-20",
-          "opponent": "1. FC Heidenheim 1846",
-          "venue": "H",
-          "score": "2-2",
-          "result": "D"
-        },
-        {
-          "date": "2026-09-11",
-          "opponent": "SV Darmstadt 98",
-          "venue": "A",
-          "score": "1-2",
-          "result": "L"
-        },
-        {
-          "date": "2026-09-04",
-          "opponent": "St. Pauli",
-          "venue": "H",
-          "score": "2-2",
-          "result": "D"
-        }
-      ],
-      "standingsHome": {
-        "rank": 1,
-        "points": 22,
-        "played": 8,
-        "gf": 19,
-        "ga": 8
-      },
-      "standingsAway": {
-        "rank": 8,
-        "points": 11,
-        "played": 8,
-        "gf": 13,
-        "ga": 13
-      },
-      "predictions": [
-        {
-          "type": "BTTS",
-          "prediction": "Oui",
-          "confidence": 58,
-          "bttsProb": 0.5794,
-          "homeLambda": 2.48,
-          "awayLambda": 1
-        },
-        {
-          "type": "Over 2.5",
-          "prediction": "Oui",
-          "confidence": 68,
-          "over25Prob": 0.6761,
-          "homeLambda": 2.48,
-          "awayLambda": 1
-        }
-      ],
-      "bttsProb": 0.5794,
-      "over25Prob": 0.6761,
-      "homeLambda": 2.48,
-      "awayLambda": 1,
-      "ai_key_fact": "Hertha Berlin occupe la 1ère place tandis qu'Arminia Bielefeld se positionne 8e.",
-      "ai_analysis": "Le modèle Poisson attribue un xG de 2.48 à Hertha Berlin et de 1 à Arminia Bielefeld. Les probabilités calculées indiquent un taux de 57.9% pour le BTTS et de 67.6% pour l'Over 2.5, avec une fiabilité de modèle évaluée à 84.1%. Les cotes des bookmakers proposent un équilibre relatif entre le nul et la victoire extérieure.",
-      "ai_form_summary": "Hertha Berlin reste sur une série positive de quatre victoires et un match nul lors de ses cinq dernières sorties. Arminia Bielefeld présente un bilan plus mitigé avec deux victoires, deux nuls et une défaite.",
-      "ai_key_fact_en": "Hertha Berlin occupies 1st place while Arminia Bielefeld is positioned 8th.",
-      "ai_analysis_en": "The Poisson model assigns an xG of 2.48 to Hertha Berlin and 1 to Arminia Bielefeld. The calculated probabilities indicate a rate of 57.9% for BTTS and 67.6% for Over 2.5, with a model reliability evaluated at 84.1%. Bookmaker odds offer a relative balance between the draw and the away win.",
-      "ai_form_summary_en": "Hertha Berlin remains on a positive run of four wins and one draw in their last five outings. Arminia Bielefeld presents a more mixed record with two wins, two draws, and one defeat.",
-      "ai_source": "gemini-v2",
-      "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
-      "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
-      "ai_odds_insight": "Le marché (DraftKings) cote 1: 1.83, nul: 3.95, 2: 3.95.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 1.83, draw: 3.95, 2: 3.95.",
-      "status": "PENDING"
-    },
-    {
-      "id": "rayovall-vs-elche-2026-10-24",
-      "match": "Rayo Vallecano vs Elche",
-      "home": "Rayo Vallecano",
-      "away": "Elche",
-      "league": "LaLiga",
-      "date": "2026-10-24",
-      "type": "BTTS",
-      "prediction": "Oui",
-      "proba": 0.6291,
-      "bttsProbDisplay": "62.91%",
-      "over25ProbDisplay": "61.84%",
-      "confidence": 63,
-      "time": "12:00",
-      "matchSemantic": "rayovall-vs-elche-2026-10-24",
-      "source": "poisson-v92-real-data",
-      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/101.png",
-      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/3751.png",
-      "tier": "GOLD",
-      "reliabilityScore": 83.77,
-      "dataQuality": "HIGH",
-      "dataSource": "ESPN_TEAM_SCHEDULE",
-      "matchCountHome": 8,
-      "matchCountAway": 8,
-      "h2hAvailable": false,
-      "xgHome": 1.77,
-      "xgAway": 1.42,
-      "xgTotal": 3.19,
-      "formBTTS": 80,
-      "analysis": "Rayo Vallecano : forme N-N-V-D-V (2V 2N 1D, 8 buts marqués / 9 encaissés sur 5) · Elche : forme N-N-V-D-N (1V 3N 1D, 6 buts marqués / 5 encaissés sur 5). Classement : Rayo Vallecano 14e (9 pts), Elche 18e (7 pts). Modèle Poisson : xG cumulé 3.19, BTTS 62.9%, Over 2.5 61.8%. Cotes DraftKings — 1: 1.77 / N: 3.85 / 2: 4.5 · Over 2.5: 1.83. Fiabilité 83.77%.",
-      "analysisData": {
-        "bttsProb": 0.6291,
-        "over25Prob": 0.6184,
-        "homeLambda": 1.77,
-        "awayLambda": 1.42,
-        "xgTotal": 3.19
-      },
-      "estimatedCote": 1.59,
-      "estimatedCoteOver": 1.62,
-      "odds": {
-        "provider": "DraftKings",
-        "home": 1.77,
-        "draw": 3.85,
-        "away": 4.5,
-        "over25": 1.83,
-        "under25": 1.95
-      },
-      "oddsSource": "DraftKings",
-      "estimatedCoteBTTS": 1.59,
-      "formHome": {
-        "last5String": "N-N-V-D-V",
-        "wins": 2,
-        "draws": 2,
-        "losses": 1,
-        "goalsFor": 8,
-        "goalsAgainst": 9,
-        "bttsRate": 1,
-        "over25Rate": 0.6,
-        "cleanSheets": 0,
-        "failedToScore": 0,
-        "count": 5
-      },
-      "formAway": {
-        "last5String": "N-N-V-D-N",
-        "wins": 1,
-        "draws": 3,
-        "losses": 1,
-        "goalsFor": 6,
-        "goalsAgainst": 5,
-        "bttsRate": 0.6,
-        "over25Rate": 0.4,
-        "cleanSheets": 2,
-        "failedToScore": 2,
-        "count": 5
-      },
-      "last5Home": [
-        {
-          "date": "2026-10-19",
-          "opponent": "Getafe",
-          "venue": "A",
-          "score": "1-1",
-          "result": "D"
-        },
-        {
-          "date": "2026-09-19",
-          "opponent": "Osasuna",
-          "venue": "A",
-          "score": "1-1",
-          "result": "D"
-        },
-        {
-          "date": "2026-09-15",
-          "opponent": "Espanyol",
-          "venue": "H",
-          "score": "2-1",
-          "result": "W"
-        },
-        {
-          "date": "2026-09-12",
-          "opponent": "Real Madrid",
-          "venue": "A",
-          "score": "1-4",
-          "result": "L"
-        },
-        {
-          "date": "2026-09-05",
-          "opponent": "Racing Santander",
-          "venue": "H",
-          "score": "3-2",
-          "result": "W"
-        }
-      ],
-      "last5Away": [
-        {
-          "date": "2026-10-17",
-          "opponent": "Villarreal",
-          "venue": "A",
-          "score": "0-0",
-          "result": "D"
-        },
-        {
-          "date": "2026-10-11",
-          "opponent": "Celta Vigo",
-          "venue": "H",
-          "score": "0-0",
-          "result": "D"
-        },
-        {
-          "date": "2026-09-18",
-          "opponent": "Espanyol",
-          "venue": "A",
-          "score": "3-1",
-          "result": "W"
-        },
-        {
-          "date": "2026-09-15",
-          "opponent": "Real Madrid",
-          "venue": "H",
-          "score": "2-3",
-          "result": "L"
-        },
-        {
-          "date": "2026-09-12",
-          "opponent": "Athletic Club",
-          "venue": "A",
-          "score": "1-1",
-          "result": "D"
-        }
-      ],
-      "standingsHome": {
-        "rank": 14,
-        "points": 9,
-        "played": 8,
-        "gf": 12,
-        "ga": 17
-      },
-      "standingsAway": {
-        "rank": 18,
-        "points": 7,
-        "played": 9,
-        "gf": 11,
-        "ga": 17
-      },
-      "predictions": [
-        {
-          "type": "BTTS",
-          "prediction": "Oui",
-          "confidence": 63,
-          "bttsProb": 0.6291,
-          "homeLambda": 1.77,
-          "awayLambda": 1.42
-        },
-        {
-          "type": "Over 2.5",
-          "prediction": "Oui",
-          "confidence": 62,
-          "over25Prob": 0.6184,
-          "homeLambda": 1.77,
-          "awayLambda": 1.42
-        }
-      ],
-      "bttsProb": 0.6291,
-      "over25Prob": 0.6184,
-      "homeLambda": 1.77,
-      "awayLambda": 1.42,
-      "ai_key_fact": "Rayo Vallecano est 14e au classement et Elche pointe à la 18e place.",
-      "ai_analysis": "Les xG du modèle s'élèvent à 1.77 pour Rayo Vallecano et 1.42 pour Elche. Le modèle BTTSPredict évalue la probabilité de buts des deux équipes à 62.9% et l'Over 2.5 à 61.8%, appuyés par une fiabilité de 83.77%. Les cotes réelles du marché reflètent des probabilités implicites modérées pour les issues principales.",
-      "ai_form_summary": "Rayo Vallecano totalise deux victoires, deux nuls et une défaite sur ses cinq derniers matchs avec un taux de BTTS de 1. Elche enregistre de son côté une victoire, trois nuls et une défaite sur la même période.",
-      "ai_key_fact_en": "Rayo Vallecano is 14th in the standings and Elche points to 18th place.",
-      "ai_analysis_en": "The model's xGs stand at 1.77 for Rayo Vallecano and 1.42 for Elche. The BTTSPredict model evaluates both teams to score probability at 62.9% and Over 2.5 at 61.8%, supported by a reliability of 83.77%. Real market odds reflect moderate implicit probabilities for the main outcomes.",
-      "ai_form_summary_en": "Rayo Vallecano totals two wins, two draws, and one defeat in their last five matches with a BTTS rate of 1. Elche records one win, three draws, and one defeat over the same period.",
-      "ai_source": "gemini-v2",
-      "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
-      "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
-      "ai_odds_insight": "Le marché (DraftKings) cote 1: 1.77, nul: 3.85, 2: 4.5, Over 2.5: 1.83.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 1.77, draw: 3.85, 2: 4.5, Over 2.5: 1.83.",
       "status": "PENDING"
     },
     {
@@ -4693,6 +3703,990 @@
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 2.5, nul: 3.7, 2: 2.55.",
       "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.5, draw: 3.7, 2: 2.55.",
       "status": "PENDING"
+    },
+    {
+      "id": "queenspa-vs-swanseac-2026-10-24",
+      "match": "Queens Park Rangers vs Swansea City",
+      "home": "Queens Park Rangers",
+      "away": "Swansea City",
+      "league": "Championship",
+      "date": "2026-10-24",
+      "type": "BTTS",
+      "prediction": "Oui",
+      "proba": 0.6073,
+      "bttsProbDisplay": "60.73%",
+      "over25ProbDisplay": "60.06%",
+      "confidence": 61,
+      "time": "14:00",
+      "matchSemantic": "queenspa-vs-swanseac-2026-10-24",
+      "source": "poisson-v92-real-data",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/334.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/318.png",
+      "tier": "GOLD",
+      "reliabilityScore": 82.82,
+      "dataQuality": "HIGH",
+      "dataSource": "ESPN_TEAM_SCHEDULE",
+      "matchCountHome": 8,
+      "matchCountAway": 8,
+      "h2hAvailable": false,
+      "xgHome": 1.82,
+      "xgAway": 1.29,
+      "xgTotal": 3.11,
+      "formBTTS": 70,
+      "analysis": "Queens Park Rangers : forme D-V-N-N-N (1V 3N 1D, 8 buts marqués / 8 encaissés sur 5) · Swansea City : forme D-V-V-V-V (4V 0N 1D, 8 buts marqués / 4 encaissés sur 5). Classement : Queens Park Rangers 9e (17 pts), Swansea City 2e (23 pts). Modèle Poisson : xG cumulé 3.11, BTTS 60.7%, Over 2.5 60.1%. Cotes DraftKings — 1: 2.45 / N: 3.45 / 2: 2.85 · Over 2.5: 1.91. Fiabilité 82.82%.",
+      "analysisData": {
+        "bttsProb": 0.6073,
+        "over25Prob": 0.6006,
+        "homeLambda": 1.82,
+        "awayLambda": 1.29,
+        "xgTotal": 3.11
+      },
+      "estimatedCote": 1.65,
+      "estimatedCoteOver": 1.66,
+      "odds": {
+        "provider": "DraftKings",
+        "home": 2.45,
+        "draw": 3.45,
+        "away": 2.85,
+        "over25": 1.91,
+        "under25": 1.87
+      },
+      "oddsSource": "DraftKings",
+      "estimatedCoteBTTS": 1.65,
+      "formHome": {
+        "last5String": "D-V-N-N-N",
+        "wins": 1,
+        "draws": 3,
+        "losses": 1,
+        "goalsFor": 8,
+        "goalsAgainst": 8,
+        "bttsRate": 0.8,
+        "over25Rate": 0.6,
+        "cleanSheets": 0,
+        "failedToScore": 1,
+        "count": 5
+      },
+      "formAway": {
+        "last5String": "D-V-V-V-V",
+        "wins": 4,
+        "draws": 0,
+        "losses": 1,
+        "goalsFor": 8,
+        "goalsAgainst": 4,
+        "bttsRate": 0.6,
+        "over25Rate": 0.6,
+        "cleanSheets": 1,
+        "failedToScore": 1,
+        "count": 5
+      },
+      "last5Home": [
+        {
+          "date": "2026-10-17",
+          "opponent": "Birmingham City",
+          "venue": "A",
+          "score": "0-3",
+          "result": "L"
+        },
+        {
+          "date": "2026-10-14",
+          "opponent": "Derby County",
+          "venue": "H",
+          "score": "4-1",
+          "result": "W"
+        },
+        {
+          "date": "2026-10-09",
+          "opponent": "West Ham United",
+          "venue": "A",
+          "score": "1-1",
+          "result": "D"
+        },
+        {
+          "date": "2026-09-19",
+          "opponent": "Preston North End",
+          "venue": "H",
+          "score": "2-2",
+          "result": "D"
+        },
+        {
+          "date": "2026-09-12",
+          "opponent": "West Bromwich Albion",
+          "venue": "A",
+          "score": "1-1",
+          "result": "D"
+        }
+      ],
+      "last5Away": [
+        {
+          "date": "2026-10-17",
+          "opponent": "West Ham United",
+          "venue": "H",
+          "score": "0-1",
+          "result": "L"
+        },
+        {
+          "date": "2026-10-13",
+          "opponent": "Millwall",
+          "venue": "A",
+          "score": "1-0",
+          "result": "W"
+        },
+        {
+          "date": "2026-10-10",
+          "opponent": "Norwich City",
+          "venue": "H",
+          "score": "2-1",
+          "result": "W"
+        },
+        {
+          "date": "2026-09-19",
+          "opponent": "Lincoln City",
+          "venue": "A",
+          "score": "2-1",
+          "result": "W"
+        },
+        {
+          "date": "2026-09-12",
+          "opponent": "Burnley",
+          "venue": "H",
+          "score": "3-1",
+          "result": "W"
+        }
+      ],
+      "standingsHome": {
+        "rank": 9,
+        "points": 17,
+        "played": 11,
+        "gf": 15,
+        "ga": 12
+      },
+      "standingsAway": {
+        "rank": 2,
+        "points": 23,
+        "played": 11,
+        "gf": 16,
+        "ga": 8
+      },
+      "predictions": [
+        {
+          "type": "BTTS",
+          "prediction": "Oui",
+          "confidence": 61,
+          "bttsProb": 0.6073,
+          "homeLambda": 1.82,
+          "awayLambda": 1.29
+        },
+        {
+          "type": "Over 2.5",
+          "prediction": "Oui",
+          "confidence": 60,
+          "over25Prob": 0.6006,
+          "homeLambda": 1.82,
+          "awayLambda": 1.29
+        }
+      ],
+      "bttsProb": 0.6073,
+      "over25Prob": 0.6006,
+      "homeLambda": 1.82,
+      "awayLambda": 1.29,
+      "ai_key_fact": "Swansea City reste sur une série de quatre victoires consécutives à l'extérieur.",
+      "ai_analysis": "Le modèle Poisson projette un xG de 1.82 pour QPR et de 1.29 pour Swansea, berçant l'analyse vers les locaux sur le plan statistique pur. Les probabilités du modèle s'élèvent à 60.7% pour le BTTS et 60.1% pour l'Over 2.5, avec une fiabilité de 82.82%. Les cotes bookmaker proposent la victoire de QPR à 2.45, le nul à 3.45 et le succès de Swansea à 2.85. Ces données de marché complètent un profil quantitatif ouvert sans présager du score final.",
+      "ai_form_summary": "QPR enregistre un bilan de 1V-3N-1D avec 8 buts marqués et 8 encaissés sur ses cinq dernières sorties, tandis que Swansea affiche 4V-0N-1D avec 8 buts inscrits et 4 concédés. Les deux formations affichent des dynamiques contrastées mais une efficacité offensive constante.",
+      "ai_key_fact_en": "Swansea City is on a streak of four consecutive away victories.",
+      "ai_analysis_en": "The Poisson model projects an xG of 1.82 for QPR and 1.29 for Swansea, tilting the analysis towards the home side from a purely statistical standpoint. The model probabilities rise to 60.7% for BTTS and 60.1% for Over 2.5, with a reliability of 82.82%. Bookmaker odds offer QPR to win at 2.45, the draw at 3.45, and Swansea's success at 2.85. These market data complete an open quantitative profile without foreshadowing the final score.",
+      "ai_form_summary_en": "QPR records a 1W-3D-1L record with 8 goals scored and 8 conceded over their last five outings, while Swansea displays 4W-0D-1L with 8 goals scored and 4 conceded. Both teams show contrasting dynamics but consistent offensive efficiency.",
+      "ai_source": "gemini-v2",
+      "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
+      "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
+      "ai_odds_insight": "Le marché (DraftKings) cote 1: 2.45, nul: 3.45, 2: 2.85, Over 2.5: 1.91.",
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.45, draw: 3.45, 2: 2.85, Over 2.5: 1.91."
+    },
+    {
+      "id": "stmirren-vs-dundee-2026-10-24",
+      "match": "St Mirren vs Dundee",
+      "home": "St Mirren",
+      "away": "Dundee",
+      "league": "Scottish Premiership",
+      "date": "2026-10-24",
+      "type": "BTTS",
+      "prediction": "Oui",
+      "proba": 0.6054,
+      "bttsProbDisplay": "60.54%",
+      "over25ProbDisplay": "60.06%",
+      "confidence": 61,
+      "time": "14:00",
+      "matchSemantic": "stmirren-vs-dundee-2026-10-24",
+      "source": "poisson-v92-real-data",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/250.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/261.png",
+      "tier": "GOLD",
+      "reliabilityScore": 82.73,
+      "dataQuality": "HIGH",
+      "dataSource": "ESPN_TEAM_SCHEDULE",
+      "matchCountHome": 8,
+      "matchCountAway": 8,
+      "h2hAvailable": false,
+      "xgHome": 1.27,
+      "xgAway": 1.83,
+      "xgTotal": 3.11,
+      "formBTTS": 70,
+      "analysis": "St Mirren : forme D-D-D-D-D (0V 0N 5D, 2 buts marqués / 14 encaissés sur 5) · Dundee : forme N-V-V-D-N (2V 2N 1D, 8 buts marqués / 7 encaissés sur 5). Classement : St Mirren 8e (10 pts), Dundee 4e (14 pts). Modèle Poisson : xG cumulé 3.11, BTTS 60.5%, Over 2.5 60.1%. Cotes DraftKings — 1: 2.3 / N: 3.6 / 2: 2.95 · Over 2.5: 1.67. Fiabilité 82.73%.",
+      "analysisData": {
+        "bttsProb": 0.6054,
+        "over25Prob": 0.6006,
+        "homeLambda": 1.27,
+        "awayLambda": 1.83,
+        "xgTotal": 3.11
+      },
+      "estimatedCote": 1.65,
+      "estimatedCoteOver": 1.66,
+      "odds": {
+        "provider": "DraftKings",
+        "home": 2.3,
+        "draw": 3.6,
+        "away": 2.95,
+        "over25": 1.67,
+        "under25": 2.15
+      },
+      "oddsSource": "DraftKings",
+      "estimatedCoteBTTS": 1.65,
+      "formHome": {
+        "last5String": "D-D-D-D-D",
+        "wins": 0,
+        "draws": 0,
+        "losses": 5,
+        "goalsFor": 2,
+        "goalsAgainst": 14,
+        "bttsRate": 0.4,
+        "over25Rate": 0.8,
+        "cleanSheets": 0,
+        "failedToScore": 3,
+        "count": 5
+      },
+      "formAway": {
+        "last5String": "N-V-V-D-N",
+        "wins": 2,
+        "draws": 2,
+        "losses": 1,
+        "goalsFor": 8,
+        "goalsAgainst": 7,
+        "bttsRate": 1,
+        "over25Rate": 0.8,
+        "cleanSheets": 0,
+        "failedToScore": 0,
+        "count": 5
+      },
+      "last5Home": [
+        {
+          "date": "2026-10-17",
+          "opponent": "Aberdeen",
+          "venue": "A",
+          "score": "1-3",
+          "result": "L"
+        },
+        {
+          "date": "2026-10-10",
+          "opponent": "Heart of Midlothian",
+          "venue": "A",
+          "score": "0-5",
+          "result": "L"
+        },
+        {
+          "date": "2026-09-19",
+          "opponent": "Dundee United",
+          "venue": "H",
+          "score": "0-3",
+          "result": "L"
+        },
+        {
+          "date": "2026-09-09",
+          "opponent": "Rangers",
+          "venue": "A",
+          "score": "0-1",
+          "result": "L"
+        },
+        {
+          "date": "2026-09-05",
+          "opponent": "Celtic",
+          "venue": "H",
+          "score": "1-2",
+          "result": "L"
+        }
+      ],
+      "last5Away": [
+        {
+          "date": "2026-10-17",
+          "opponent": "Rangers",
+          "venue": "H",
+          "score": "2-2",
+          "result": "D"
+        },
+        {
+          "date": "2026-10-10",
+          "opponent": "Falkirk",
+          "venue": "A",
+          "score": "2-1",
+          "result": "W"
+        },
+        {
+          "date": "2026-09-19",
+          "opponent": "Motherwell",
+          "venue": "H",
+          "score": "2-1",
+          "result": "W"
+        },
+        {
+          "date": "2026-09-06",
+          "opponent": "Heart of Midlothian",
+          "venue": "A",
+          "score": "1-2",
+          "result": "L"
+        },
+        {
+          "date": "2026-09-02",
+          "opponent": "St Johnstone",
+          "venue": "H",
+          "score": "1-1",
+          "result": "D"
+        }
+      ],
+      "standingsHome": {
+        "rank": 8,
+        "points": 10,
+        "played": 9,
+        "gf": 9,
+        "ga": 17
+      },
+      "standingsAway": {
+        "rank": 4,
+        "points": 14,
+        "played": 9,
+        "gf": 13,
+        "ga": 10
+      },
+      "predictions": [
+        {
+          "type": "BTTS",
+          "prediction": "Oui",
+          "confidence": 61,
+          "bttsProb": 0.6054,
+          "homeLambda": 1.27,
+          "awayLambda": 1.83
+        },
+        {
+          "type": "Over 2.5",
+          "prediction": "Oui",
+          "confidence": 60,
+          "over25Prob": 0.6006,
+          "homeLambda": 1.27,
+          "awayLambda": 1.83
+        }
+      ],
+      "bttsProb": 0.6054,
+      "over25Prob": 0.6006,
+      "homeLambda": 1.27,
+      "awayLambda": 1.83,
+      "ai_key_fact": "St Mirren affiche 5 défaites consécutives tandis que Dundee présente un taux BTTS de 100%.",
+      "ai_analysis": "Les données de classement placent St Mirren au 8e rang et Dundee au 4e rang de la Scottish Premiership. Le modèle Poisson anticipe des xG de 1.27 pour l'équipe à domicile et 1.83 pour l'extérieur, avec une probabilité BTTS estimée à 60.5% et un Over 2.5 à 60.1%. La fiabilité du modèle s'établit à 82.73%.",
+      "ai_form_summary": "St Mirren traverse une période difficile avec cinq défaites de suite, 2 buts marqués et 14 encaissés. En face, Dundee reste sur une dynamique plus solide avec deux victoires, deux nuls et une défaite sur ses cinq derniers matchs.",
+      "ai_key_fact_en": "St Mirren records 5 consecutive defeats while Dundee presents a 100% BTTS rate.",
+      "ai_analysis_en": "League standings place St Mirren in 8th position and Dundee in 4th place in the Scottish Premiership. The Poisson model anticipates xG figures of 1.27 for the home team and 1.83 for the away side, with a BTTS probability estimated at 60.5% and Over 2.5 at 60.1%. Model reliability stands at 82.73%.",
+      "ai_form_summary_en": "St Mirren is going through a difficult spell with five straight losses, scoring 2 goals and conceding 14. Meanwhile, Dundee maintains a solid dynamic with two wins, two draws and one defeat in their last five matches.",
+      "ai_source": "gemini-v2",
+      "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
+      "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
+      "ai_odds_insight": "Le marché (DraftKings) cote 1: 2.3, nul: 3.6, 2: 2.95, Over 2.5: 1.67.",
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.3, draw: 3.6, 2: 2.95, Over 2.5: 1.67."
+    },
+    {
+      "id": "blackbur-vs-wrexham-2026-10-24",
+      "match": "Blackburn Rovers vs Wrexham",
+      "home": "Blackburn Rovers",
+      "away": "Wrexham",
+      "league": "Championship",
+      "date": "2026-10-24",
+      "type": "BTTS",
+      "prediction": "Oui",
+      "proba": 0.5977,
+      "bttsProbDisplay": "59.77%",
+      "over25ProbDisplay": "61.84%",
+      "confidence": 60,
+      "time": "14:00",
+      "matchSemantic": "blackbur-vs-wrexham-2026-10-24",
+      "source": "poisson-v92-real-data",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/365.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/352.png",
+      "tier": "GOLD",
+      "reliabilityScore": 82.4,
+      "dataQuality": "HIGH",
+      "dataSource": "ESPN_TEAM_SCHEDULE",
+      "matchCountHome": 8,
+      "matchCountAway": 8,
+      "h2hAvailable": false,
+      "xgHome": 2.02,
+      "xgAway": 1.17,
+      "xgTotal": 3.19,
+      "formBTTS": 80,
+      "analysis": "Blackburn Rovers : forme D-V-V-N-V (3V 1N 1D, 10 buts marqués / 7 encaissés sur 5) · Wrexham : forme V-D-N-V-D (2V 1N 2D, 8 buts marqués / 11 encaissés sur 5). Classement : Blackburn Rovers 10e (15 pts), Wrexham 14e (14 pts). Modèle Poisson : xG cumulé 3.19, BTTS 59.8%, Over 2.5 61.8%. Cotes DraftKings — 1: 3 / N: 3.35 / 2: 2.4 · Over 2.5: 2.05. Fiabilité 82.4%.",
+      "analysisData": {
+        "bttsProb": 0.5977,
+        "over25Prob": 0.6184,
+        "homeLambda": 2.02,
+        "awayLambda": 1.17,
+        "xgTotal": 3.19
+      },
+      "estimatedCote": 1.67,
+      "estimatedCoteOver": 1.62,
+      "odds": {
+        "provider": "DraftKings",
+        "home": 3,
+        "draw": 3.35,
+        "away": 2.4,
+        "over25": 2.05,
+        "under25": 1.74
+      },
+      "oddsSource": "DraftKings",
+      "estimatedCoteBTTS": 1.67,
+      "formHome": {
+        "last5String": "D-V-V-N-V",
+        "wins": 3,
+        "draws": 1,
+        "losses": 1,
+        "goalsFor": 10,
+        "goalsAgainst": 7,
+        "bttsRate": 0.8,
+        "over25Rate": 0.8,
+        "cleanSheets": 1,
+        "failedToScore": 0,
+        "count": 5
+      },
+      "formAway": {
+        "last5String": "V-D-N-V-D",
+        "wins": 2,
+        "draws": 1,
+        "losses": 2,
+        "goalsFor": 8,
+        "goalsAgainst": 11,
+        "bttsRate": 0.8,
+        "over25Rate": 0.8,
+        "cleanSheets": 0,
+        "failedToScore": 1,
+        "count": 5
+      },
+      "last5Home": [
+        {
+          "date": "2026-10-17",
+          "opponent": "West Bromwich Albion",
+          "venue": "A",
+          "score": "2-3",
+          "result": "L"
+        },
+        {
+          "date": "2026-10-13",
+          "opponent": "Bristol City",
+          "venue": "A",
+          "score": "1-0",
+          "result": "W"
+        },
+        {
+          "date": "2026-10-10",
+          "opponent": "Cardiff City",
+          "venue": "H",
+          "score": "2-1",
+          "result": "W"
+        },
+        {
+          "date": "2026-09-19",
+          "opponent": "Portsmouth",
+          "venue": "A",
+          "score": "2-2",
+          "result": "D"
+        },
+        {
+          "date": "2026-09-12",
+          "opponent": "Millwall",
+          "venue": "H",
+          "score": "3-1",
+          "result": "W"
+        }
+      ],
+      "last5Away": [
+        {
+          "date": "2026-10-17",
+          "opponent": "Preston North End",
+          "venue": "H",
+          "score": "4-1",
+          "result": "W"
+        },
+        {
+          "date": "2026-10-13",
+          "opponent": "West Bromwich Albion",
+          "venue": "H",
+          "score": "1-2",
+          "result": "L"
+        },
+        {
+          "date": "2026-10-10",
+          "opponent": "Derby County",
+          "venue": "A",
+          "score": "1-1",
+          "result": "D"
+        },
+        {
+          "date": "2026-09-19",
+          "opponent": "Southampton",
+          "venue": "H",
+          "score": "2-1",
+          "result": "W"
+        },
+        {
+          "date": "2026-09-11",
+          "opponent": "West Ham United",
+          "venue": "A",
+          "score": "0-6",
+          "result": "L"
+        }
+      ],
+      "standingsHome": {
+        "rank": 10,
+        "points": 15,
+        "played": 11,
+        "gf": 17,
+        "ga": 16
+      },
+      "standingsAway": {
+        "rank": 14,
+        "points": 14,
+        "played": 11,
+        "gf": 15,
+        "ga": 16
+      },
+      "predictions": [
+        {
+          "type": "BTTS",
+          "prediction": "Oui",
+          "confidence": 60,
+          "bttsProb": 0.5977,
+          "homeLambda": 2.02,
+          "awayLambda": 1.17
+        },
+        {
+          "type": "Over 2.5",
+          "prediction": "Oui",
+          "confidence": 62,
+          "over25Prob": 0.6184,
+          "homeLambda": 2.02,
+          "awayLambda": 1.17
+        }
+      ],
+      "bttsProb": 0.5977,
+      "over25Prob": 0.6184,
+      "homeLambda": 2.02,
+      "awayLambda": 1.17,
+      "ai_key_fact": "Blackburn Rovers totalise 10 buts marqués sur ses 5 derniers matchs.",
+      "ai_analysis": "Au classement de Championship, Blackburn occupe la 10e place et Wrexham la 14e position. Le modèle projette un xG de 2.02 pour le domicile et de 1.17 pour l'extérieur, avec une probabilité BTTS de 59.8% et un Over 2.5 évalué à 61.8% pour une fiabilité de 82.4%.",
+      "ai_form_summary": "Blackburn Rovers montre une forme positive avec trois victoires, un nul et une défaite, affichant un taux BTTS de 0.8. Wrexham présente un bilan équilibré de deux victoires, un nul et deux défaites sur la même période.",
+      "ai_analysis_en": "In the Championship standings, Blackburn occupies 10th place and Wrexham 14th position. The model projects an xG of 2.02 for the home side and 1.17 for the away side, with a BTTS probability of 59.8% and an Over 2.5 rated at 61.8% for a reliability of 82.4%.",
+      "ai_form_summary_en": "Blackburn Rovers shows positive form with three wins, one draw and one defeat, displaying a 0.8 BTTS rate. Wrexham presents a balanced record of two wins, one draw and two defeats over the same period.",
+      "ai_source": "gemini-v2",
+      "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
+      "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
+      "ai_odds_insight": "Le marché (DraftKings) cote 1: 3, nul: 3.35, 2: 2.4, Over 2.5: 2.05.",
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 3, draw: 3.35, 2: 2.4, Over 2.5: 2.05."
+    },
+    {
+      "id": "cfmontra-vs-nashvill-2026-10-24",
+      "match": "CF Montréal vs Nashville SC",
+      "home": "CF Montréal",
+      "away": "Nashville SC",
+      "league": "MLS",
+      "date": "2026-10-24",
+      "type": "BTTS",
+      "prediction": "Oui",
+      "proba": 0.5956,
+      "bttsProbDisplay": "59.56%",
+      "over25ProbDisplay": "58.79%",
+      "confidence": 60,
+      "time": "17:30",
+      "matchSemantic": "cfmontra-vs-nashvill-2026-10-24",
+      "source": "poisson-v92-real-data",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/9720.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/18986.png",
+      "tier": "GOLD",
+      "reliabilityScore": 82.31,
+      "dataQuality": "HIGH",
+      "dataSource": "ESPN_TEAM_SCHEDULE",
+      "matchCountHome": 8,
+      "matchCountAway": 8,
+      "h2hAvailable": false,
+      "xgHome": 1.25,
+      "xgAway": 1.8,
+      "xgTotal": 3.05,
+      "formBTTS": 50,
+      "analysis": "CF Montréal : forme N-D-D-V-D (1V 1N 3D, 5 buts marqués / 9 encaissés sur 5) · Nashville SC : forme N-V-V-V-V (4V 1N 0D, 14 buts marqués / 2 encaissés sur 5). Classement : CF Montréal 15e (25 pts), Nashville SC 1e (67 pts). Modèle Poisson : xG cumulé 3.05, BTTS 59.6%, Over 2.5 58.8%. Cotes DraftKings — 1: 5.25 / N: 4.4 / 2: 1.5. Fiabilité 82.31%.",
+      "analysisData": {
+        "bttsProb": 0.5956,
+        "over25Prob": 0.5879,
+        "homeLambda": 1.25,
+        "awayLambda": 1.8,
+        "xgTotal": 3.05
+      },
+      "estimatedCote": 1.68,
+      "estimatedCoteOver": 1.7,
+      "odds": {
+        "provider": "DraftKings",
+        "home": 5.25,
+        "draw": 4.4,
+        "away": 1.5,
+        "over25": null,
+        "under25": null
+      },
+      "oddsSource": "DraftKings",
+      "estimatedCoteBTTS": 1.68,
+      "formHome": {
+        "last5String": "N-D-D-V-D",
+        "wins": 1,
+        "draws": 1,
+        "losses": 3,
+        "goalsFor": 5,
+        "goalsAgainst": 9,
+        "bttsRate": 0.6,
+        "over25Rate": 0.6,
+        "cleanSheets": 0,
+        "failedToScore": 2,
+        "count": 5
+      },
+      "formAway": {
+        "last5String": "N-V-V-V-V",
+        "wins": 4,
+        "draws": 1,
+        "losses": 0,
+        "goalsFor": 14,
+        "goalsAgainst": 2,
+        "bttsRate": 0.4,
+        "over25Rate": 0.6,
+        "cleanSheets": 3,
+        "failedToScore": 0,
+        "count": 5
+      },
+      "last5Home": [
+        {
+          "date": "2026-10-18",
+          "opponent": "Seattle Sounders FC",
+          "venue": "A",
+          "score": "1-1",
+          "result": "D"
+        },
+        {
+          "date": "2026-10-14",
+          "opponent": "Atlanta United FC",
+          "venue": "H",
+          "score": "0-3",
+          "result": "L"
+        },
+        {
+          "date": "2026-10-10",
+          "opponent": "Toronto FC",
+          "venue": "A",
+          "score": "1-2",
+          "result": "L"
+        },
+        {
+          "date": "2026-09-26",
+          "opponent": "FC Cincinnati",
+          "venue": "H",
+          "score": "3-1",
+          "result": "W"
+        },
+        {
+          "date": "2026-09-19",
+          "opponent": "Columbus Crew",
+          "venue": "H",
+          "score": "0-2",
+          "result": "L"
+        }
+      ],
+      "last5Away": [
+        {
+          "date": "2026-10-18",
+          "opponent": "San Jose Earthquakes",
+          "venue": "A",
+          "score": "1-1",
+          "result": "D"
+        },
+        {
+          "date": "2026-10-15",
+          "opponent": "Sporting Kansas City",
+          "venue": "H",
+          "score": "4-0",
+          "result": "W"
+        },
+        {
+          "date": "2026-10-11",
+          "opponent": "Austin FC",
+          "venue": "A",
+          "score": "4-1",
+          "result": "W"
+        },
+        {
+          "date": "2026-09-27",
+          "opponent": "Toronto FC",
+          "venue": "H",
+          "score": "2-0",
+          "result": "W"
+        },
+        {
+          "date": "2026-09-20",
+          "opponent": "Chicago Fire FC",
+          "venue": "H",
+          "score": "3-0",
+          "result": "W"
+        }
+      ],
+      "standingsHome": {
+        "rank": 15,
+        "points": 25,
+        "played": 30,
+        "gf": 36,
+        "ga": 60
+      },
+      "standingsAway": {
+        "rank": 1,
+        "points": 67,
+        "played": 30,
+        "gf": 64,
+        "ga": 23
+      },
+      "predictions": [
+        {
+          "type": "BTTS",
+          "prediction": "Oui",
+          "confidence": 60,
+          "bttsProb": 0.5956,
+          "homeLambda": 1.25,
+          "awayLambda": 1.8
+        },
+        {
+          "type": "Over 2.5",
+          "prediction": "Oui",
+          "confidence": 59,
+          "over25Prob": 0.5879,
+          "homeLambda": 1.25,
+          "awayLambda": 1.8
+        }
+      ],
+      "bttsProb": 0.5956,
+      "over25Prob": 0.5879,
+      "homeLambda": 1.25,
+      "awayLambda": 1.8,
+      "ai_key_fact": "Nashville SC domine le classement de MLS avec 67 points après 30 matchs.",
+      "ai_analysis": "Le classement de MLS positionne Montréal au 15e rang tandis que Nashville trône à la 1e place. Le modèle indique des xG de 1.25 pour Montréal et 1.8 pour Nashville, assortis d'une probabilité BTTS de 59.6% et d'un Over 2.5 à 58.8%, pour un niveau de fiabilité de 82.31%.",
+      "ai_form_summary": "CF Montréal enregistre une victoire, un nul et trois défaites lors de ses cinq dernières sorties, sans le moindre clean sheet. Nashville SC domine nettement avec quatre victoires et un nul, concédant seulement 2 buts sur cette période.",
+      "ai_key_fact_en": "Nashville SC dominates the MLS standings with 67 points after 30 matches.",
+      "ai_analysis_en": "The MLS standings position Montréal in 15th rank while Nashville sits in 1st place. The model indicates xG values of 1.25 for Montréal and 1.8 for Nashville, paired with a BTTS probability of 59.6% and an Over 2.5 at 58.8%, for a reliability level of 82.31%.",
+      "ai_form_summary_en": "CF Montréal records one win, one draw and three defeats in their last five outings, without a single clean sheet. Nashville SC clearly dominates with four wins and one draw, conceding only 2 goals over this period.",
+      "ai_source": "gemini-v2",
+      "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
+      "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
+      "ai_odds_insight": "Le marché (DraftKings) cote 1: 5.25, nul: 4.4, 2: 1.5.",
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 5.25, draw: 4.4, 2: 1.5."
+    },
+    {
+      "id": "westhamu-vs-southamp-2026-10-24",
+      "match": "West Ham United vs Southampton",
+      "home": "West Ham United",
+      "away": "Southampton",
+      "league": "Championship",
+      "date": "2026-10-24",
+      "type": "BTTS",
+      "prediction": "Oui",
+      "proba": 0.5302,
+      "bttsProbDisplay": "53.02%",
+      "over25ProbDisplay": "63.55%",
+      "confidence": 53,
+      "time": "14:00",
+      "matchSemantic": "westhamu-vs-southamp-2026-10-24",
+      "source": "poisson-v92-real-data",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/371.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/376.png",
+      "tier": "GOLD",
+      "reliabilityScore": 81.95,
+      "dataQuality": "HIGH",
+      "dataSource": "ESPN_TEAM_SCHEDULE",
+      "matchCountHome": 8,
+      "matchCountAway": 8,
+      "h2hAvailable": false,
+      "xgHome": 2.4,
+      "xgAway": 0.88,
+      "xgTotal": 3.27,
+      "formBTTS": 40,
+      "analysis": "West Ham United : forme V-V-N-N-V (3V 2N 0D, 16 buts marqués / 3 encaissés sur 5) · Southampton : forme N-V-V-D-V (3V 1N 1D, 7 buts marqués / 3 encaissés sur 5). Classement : West Ham United 3e (22 pts), Southampton 8e (17 pts). Modèle Poisson : xG cumulé 3.27, BTTS 53.0%, Over 2.5 63.6%. Cotes DraftKings — 1: 1.69 / N: 4.3 / 2: 4.5. Fiabilité 81.95%.",
+      "analysisData": {
+        "bttsProb": 0.5302,
+        "over25Prob": 0.6355,
+        "homeLambda": 2.4,
+        "awayLambda": 0.88,
+        "xgTotal": 3.27
+      },
+      "estimatedCote": 1.89,
+      "estimatedCoteOver": 1.57,
+      "odds": {
+        "provider": "DraftKings",
+        "home": 1.69,
+        "draw": 4.3,
+        "away": 4.5,
+        "over25": null,
+        "under25": null
+      },
+      "oddsSource": "DraftKings",
+      "estimatedCoteBTTS": 1.89,
+      "formHome": {
+        "last5String": "V-V-N-N-V",
+        "wins": 3,
+        "draws": 2,
+        "losses": 0,
+        "goalsFor": 16,
+        "goalsAgainst": 3,
+        "bttsRate": 0.4,
+        "over25Rate": 0.6,
+        "cleanSheets": 3,
+        "failedToScore": 0,
+        "count": 5
+      },
+      "formAway": {
+        "last5String": "N-V-V-D-V",
+        "wins": 3,
+        "draws": 1,
+        "losses": 1,
+        "goalsFor": 7,
+        "goalsAgainst": 3,
+        "bttsRate": 0.4,
+        "over25Rate": 0.4,
+        "cleanSheets": 3,
+        "failedToScore": 1,
+        "count": 5
+      },
+      "last5Home": [
+        {
+          "date": "2026-10-17",
+          "opponent": "Swansea City",
+          "venue": "A",
+          "score": "1-0",
+          "result": "W"
+        },
+        {
+          "date": "2026-10-14",
+          "opponent": "Lincoln City",
+          "venue": "A",
+          "score": "6-0",
+          "result": "W"
+        },
+        {
+          "date": "2026-10-09",
+          "opponent": "Queens Park Rangers",
+          "venue": "H",
+          "score": "1-1",
+          "result": "D"
+        },
+        {
+          "date": "2026-09-19",
+          "opponent": "Millwall",
+          "venue": "A",
+          "score": "2-2",
+          "result": "D"
+        },
+        {
+          "date": "2026-09-11",
+          "opponent": "Wrexham",
+          "venue": "H",
+          "score": "6-0",
+          "result": "W"
+        }
+      ],
+      "last5Away": [
+        {
+          "date": "2026-10-17",
+          "opponent": "Bolton Wanderers",
+          "venue": "H",
+          "score": "0-0",
+          "result": "D"
+        },
+        {
+          "date": "2026-10-14",
+          "opponent": "Norwich City",
+          "venue": "A",
+          "score": "1-0",
+          "result": "W"
+        },
+        {
+          "date": "2026-10-11",
+          "opponent": "Portsmouth",
+          "venue": "H",
+          "score": "1-0",
+          "result": "W"
+        },
+        {
+          "date": "2026-09-19",
+          "opponent": "Wrexham",
+          "venue": "A",
+          "score": "1-2",
+          "result": "L"
+        },
+        {
+          "date": "2026-09-12",
+          "opponent": "Bristol City",
+          "venue": "H",
+          "score": "4-1",
+          "result": "W"
+        }
+      ],
+      "standingsHome": {
+        "rank": 3,
+        "points": 22,
+        "played": 11,
+        "gf": 30,
+        "ga": 12
+      },
+      "standingsAway": {
+        "rank": 8,
+        "points": 17,
+        "played": 11,
+        "gf": 21,
+        "ga": 10
+      },
+      "predictions": [
+        {
+          "type": "BTTS",
+          "prediction": "Oui",
+          "confidence": 53,
+          "bttsProb": 0.5302,
+          "homeLambda": 2.4,
+          "awayLambda": 0.88
+        },
+        {
+          "type": "Over 2.5",
+          "prediction": "Oui",
+          "confidence": 64,
+          "over25Prob": 0.6355,
+          "homeLambda": 2.4,
+          "awayLambda": 0.88
+        }
+      ],
+      "bttsProb": 0.5302,
+      "over25Prob": 0.6355,
+      "homeLambda": 2.4,
+      "awayLambda": 0.88,
+      "ai_key_fact": "West Ham United totalise 30 buts inscrits en 11 matchs de championnat.",
+      "ai_analysis": "Au classement, West Ham se trouve en 3e position et Southampton pointe à la 8e place. Le modèle calcule des xG de 2.4 pour le domicile et 0.88 pour l'extérieur, avec une probabilité BTTS de 53.0% et un Over 2.5 évalué à 63.5% avec une fiabilité de 81.95%.",
+      "ai_form_summary": "West Ham United maintient une série invaincue de trois victoires et deux nuls, s'appuyant sur une défense solide avec 3 buts encaissés. Southampton affiche un bilan de trois victoires, un nul et une défaite sur ses cinq dernières rencontres.",
+      "ai_key_fact_en": "West Ham United totals 30 goals scored in 11 league matches.",
+      "ai_analysis_en": "In the standings, West Ham is in 3rd position and Southampton points to 8th place. The model calculates xG figures of 2.4 for the home team and 0.88 for the away team, with a BTTS probability of 53.0% and an Over 2.5 evaluated at 63.5% with a reliability of 81.95%.",
+      "ai_form_summary_en": "West Ham United maintains an unbeaten run of three wins and two draws, relying on a solid defense with 3 goals conceded. Southampton displays a record of three wins, one draw and one defeat in their last five encounters.",
+      "ai_source": "gemini-v2",
+      "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
+      "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
+      "ai_odds_insight": "Le marché (DraftKings) cote 1: 1.69, nul: 4.3, 2: 4.5.",
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 1.69, draw: 4.3, 2: 4.5."
     },
     {
       "id": "psveindh-vs-feyenoor-2026-10-25",
@@ -10735,51 +10729,6 @@
   "vipPreview": [
     {
       "vip": true,
-      "id": "queenspa-vs-swanseac-2026-10-24",
-      "home": "Queens Park Rangers",
-      "away": "Swansea City",
-      "league": "Championship",
-      "date": "2026-10-24",
-      "time": "14:00"
-    },
-    {
-      "vip": true,
-      "id": "stmirren-vs-dundee-2026-10-24",
-      "home": "St Mirren",
-      "away": "Dundee",
-      "league": "Scottish Premiership",
-      "date": "2026-10-24",
-      "time": "14:00"
-    },
-    {
-      "vip": true,
-      "id": "blackbur-vs-wrexham-2026-10-24",
-      "home": "Blackburn Rovers",
-      "away": "Wrexham",
-      "league": "Championship",
-      "date": "2026-10-24",
-      "time": "14:00"
-    },
-    {
-      "vip": true,
-      "id": "cfmontra-vs-nashvill-2026-10-24",
-      "home": "CF Montréal",
-      "away": "Nashville SC",
-      "league": "MLS",
-      "date": "2026-10-24",
-      "time": "17:30"
-    },
-    {
-      "vip": true,
-      "id": "westhamu-vs-southamp-2026-10-24",
-      "home": "West Ham United",
-      "away": "Southampton",
-      "league": "Championship",
-      "date": "2026-10-24",
-      "time": "14:00"
-    },
-    {
-      "vip": true,
       "id": "ohleuven-vs-lommelsk-2026-10-24",
       "home": "OH Leuven",
       "away": "Lommel SK",
@@ -10798,19 +10747,64 @@
     },
     {
       "vip": true,
-      "id": "mainz-vs-werderbr-2026-10-24",
-      "home": "Mainz",
-      "away": "Werder Bremen",
+      "id": "borussia-vs-eintrach-2026-10-24",
+      "home": "Borussia Dortmund",
+      "away": "Eintracht Frankfurt",
       "league": "Bundesliga",
       "date": "2026-10-24",
-      "time": "13:30"
+      "time": "16:30"
+    },
+    {
+      "vip": true,
+      "id": "chelsea-vs-tottenha-2026-10-24",
+      "home": "Chelsea",
+      "away": "Tottenham Hotspur",
+      "league": "Premier League",
+      "date": "2026-10-24",
+      "time": "16:30"
+    },
+    {
+      "vip": true,
+      "id": "valencia-vs-villarre-2026-10-24",
+      "home": "Valencia",
+      "away": "Villarreal",
+      "league": "LaLiga",
+      "date": "2026-10-24",
+      "time": "16:30"
+    },
+    {
+      "vip": true,
+      "id": "columbus-vs-torontof-2026-10-24",
+      "home": "Columbus Crew",
+      "away": "Toronto FC",
+      "league": "MLS",
+      "date": "2026-10-24",
+      "time": "19:30"
+    },
+    {
+      "vip": true,
+      "id": "estrela-vs-casapia-2026-10-24",
+      "home": "Estrela",
+      "away": "Casa Pia",
+      "league": "Liga Portugal",
+      "date": "2026-10-24",
+      "time": "14:30"
+    },
+    {
+      "vip": true,
+      "id": "falkirk-vs-kilmarno-2026-10-24",
+      "home": "Falkirk",
+      "away": "Kilmarnock",
+      "league": "Scottish Premiership",
+      "date": "2026-10-24",
+      "time": "14:00"
     }
   ],
   "stats": {
-    "avgReliability": 80.39,
-    "totalAnalyzed": 151,
-    "totalRejected": 2,
-    "totalAccepted": 149,
+    "avgReliability": 80.58,
+    "totalAnalyzed": 136,
+    "totalRejected": 1,
+    "totalAccepted": 135,
     "freeCount": 55,
     "vipCount": 8
   },
@@ -10951,204 +10945,6 @@
           "result": "D"
         }
       ]
-    },
-    {
-      "id": "fcheiden-vs-energiec-2026-10-24",
-      "match": "1. FC Heidenheim 1846 vs Energie Cottbus",
-      "home": "1. FC Heidenheim 1846",
-      "away": "Energie Cottbus",
-      "league": "2. Bundesliga",
-      "date": "2026-10-24",
-      "type": "BTTS",
-      "prediction": "Oui",
-      "proba": 0.7679,
-      "bttsProbDisplay": "76.79%",
-      "over25ProbDisplay": "81.49%",
-      "confidence": 77,
-      "time": "11:00",
-      "matchSemantic": "fcheiden-vs-energiec-2026-10-24",
-      "source": "poisson-v92-real-data",
-      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/6418.png",
-      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/123.png",
-      "tier": "GOLD",
-      "reliabilityScore": 92.34,
-      "dataQuality": "HIGH",
-      "dataSource": "ESPN_TEAM_SCHEDULE",
-      "matchCountHome": 8,
-      "matchCountAway": 8,
-      "h2hAvailable": false,
-      "xgHome": 2.65,
-      "xgAway": 1.75,
-      "xgTotal": 4.4,
-      "formBTTS": 60,
-      "analysis": "1. FC Heidenheim 1846 : forme D-N-N-V-V (2V 2N 1D, 5 buts marqués / 5 encaissés sur 5) · Energie Cottbus : forme N-D-N-V-N (1V 3N 1D, 10 buts marqués / 9 encaissés sur 5). Classement : 1. FC Heidenheim 1846 5e (14 pts), Energie Cottbus 9e (9 pts). Modèle Poisson : xG cumulé 4.4, BTTS 76.8%, Over 2.5 81.5%. Cotes DraftKings — 1: 1.69 / N: 4.5 / 2: 3.95. Fiabilité 92.34%.",
-      "analysisData": {
-        "bttsProb": 0.7679,
-        "over25Prob": 0.8149,
-        "homeLambda": 2.65,
-        "awayLambda": 1.75,
-        "xgTotal": 4.4
-      },
-      "estimatedCote": 1.3,
-      "estimatedCoteOver": 1.23,
-      "odds": {
-        "provider": "DraftKings",
-        "home": 1.69,
-        "draw": 4.5,
-        "away": 3.95,
-        "over25": null,
-        "under25": null
-      },
-      "oddsSource": "DraftKings",
-      "estimatedCoteBTTS": 1.3,
-      "formHome": {
-        "last5String": "D-N-N-V-V",
-        "wins": 2,
-        "draws": 2,
-        "losses": 1,
-        "goalsFor": 5,
-        "goalsAgainst": 5,
-        "bttsRate": 0.4,
-        "over25Rate": 0.4,
-        "cleanSheets": 3,
-        "failedToScore": 1,
-        "count": 5
-      },
-      "formAway": {
-        "last5String": "N-D-N-V-N",
-        "wins": 1,
-        "draws": 3,
-        "losses": 1,
-        "goalsFor": 10,
-        "goalsAgainst": 9,
-        "bttsRate": 0.8,
-        "over25Rate": 0.6,
-        "cleanSheets": 1,
-        "failedToScore": 0,
-        "count": 5
-      },
-      "standingsHome": {
-        "rank": 5,
-        "points": 14,
-        "played": 8,
-        "gf": 15,
-        "ga": 15
-      },
-      "standingsAway": {
-        "rank": 9,
-        "points": 9,
-        "played": 8,
-        "gf": 16,
-        "ga": 17
-      },
-      "predictions": [
-        {
-          "type": "BTTS",
-          "prediction": "Oui",
-          "confidence": 77,
-          "bttsProb": 0.7679,
-          "homeLambda": 2.65,
-          "awayLambda": 1.75
-        },
-        {
-          "type": "Over 2.5",
-          "prediction": "Oui",
-          "confidence": 81,
-          "over25Prob": 0.8149,
-          "homeLambda": 2.65,
-          "awayLambda": 1.75
-        }
-      ],
-      "bttsProb": 0.7679,
-      "over25Prob": 0.8149,
-      "homeLambda": 2.65,
-      "awayLambda": 1.75,
-      "ai_key_fact": "1. FC Heidenheim 1846 présente un xG modèle élevé de 2.65.",
-      "ai_analysis": "Le modèle Poisson de BTTSPredict attribue un xG de 2.65 à l'équipe hôte et de 1.75 pour Energie Cottbus. Les probabilités calculées atteignent 76.8% pour le BTTS et 81.5% pour l'Over 2.5. Au classement de 2. Bundesliga, Heidenheim occupe la 5e position avec 14 points, tandis que Cottbus se classe 9e avec 9 points. La fiabilité du modèle s'établit à un niveau solide de 92.34%.",
-      "ai_form_summary": "1. FC Heidenheim 1846 reste sur deux victoires consécutives et trois clean sheets sur ses cinq derniers matchs à domicile. Energie Cottbus affiche un profil offensif intéressant à l'extérieur avec dix buts marqués mais un taux de BTTS de 0.8.",
-      "ai_key_fact_en": "1. FC Heidenheim 1846 records a high model xG of 2.65.",
-      "ai_analysis_en": "The BTTSPredict Poisson model assigns an xG of 2.65 to the home team and 1.75 for Energie Cottbus. Calculated probabilities reach 76.8% for BTTS and 81.5% for Over 2.5. In the 2. Bundesliga standings, Heidenheim occupies 5th position with 14 points, while Cottbus ranks 9th with 9 points. Model reliability stands at a solid level of 92.34%.",
-      "ai_form_summary_en": "1. FC Heidenheim 1846 comes off two consecutive wins and three clean sheets in their last five home matches. Energie Cottbus displays an interesting away offensive profile with ten goals scored but a 0.8 BTTS rate.",
-      "ai_source": "gemini-v2",
-      "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
-      "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
-      "ai_odds_insight": "Le marché (DraftKings) cote 1: 1.69, nul: 4.5, 2: 3.95.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 1.69, draw: 4.5, 2: 3.95.",
-      "last5Home": [
-        {
-          "date": "2026-10-17",
-          "opponent": "VfL Wolfsburg",
-          "venue": "A",
-          "score": "1-3",
-          "result": "L"
-        },
-        {
-          "date": "2026-10-09",
-          "opponent": "Kaiserslautern",
-          "venue": "H",
-          "score": "0-0",
-          "result": "D"
-        },
-        {
-          "date": "2026-09-20",
-          "opponent": "Arminia Bielefeld",
-          "venue": "A",
-          "score": "2-2",
-          "result": "D"
-        },
-        {
-          "date": "2026-09-13",
-          "opponent": "Holstein Kiel",
-          "venue": "H",
-          "score": "1-0",
-          "result": "W"
-        },
-        {
-          "date": "2026-09-06",
-          "opponent": "SpVgg Greuther Fürth",
-          "venue": "A",
-          "score": "1-0",
-          "result": "W"
-        }
-      ],
-      "last5Away": [
-        {
-          "date": "2026-10-16",
-          "opponent": "1. FC Nürnberg",
-          "venue": "H",
-          "score": "1-1",
-          "result": "D"
-        },
-        {
-          "date": "2026-10-10",
-          "opponent": "SV Darmstadt 98",
-          "venue": "A",
-          "score": "1-3",
-          "result": "L"
-        },
-        {
-          "date": "2026-09-20",
-          "opponent": "St. Pauli",
-          "venue": "H",
-          "score": "1-1",
-          "result": "D"
-        },
-        {
-          "date": "2026-09-13",
-          "opponent": "Karlsruher SC",
-          "venue": "A",
-          "score": "3-0",
-          "result": "W"
-        },
-        {
-          "date": "2026-09-05",
-          "opponent": "VfL Wolfsburg",
-          "venue": "A",
-          "score": "4-4",
-          "result": "D"
-        }
-      ],
-      "status": "PENDING"
     },
     {
       "id": "wsgswaro-vs-grazerak-2026-10-24",
@@ -12933,204 +12729,6 @@
       "status": "PENDING"
     },
     {
-      "id": "portsmou-vs-millwall-2026-10-24",
-      "match": "Portsmouth vs Millwall",
-      "home": "Portsmouth",
-      "away": "Millwall",
-      "league": "Championship",
-      "date": "2026-10-24",
-      "type": "BTTS",
-      "prediction": "Oui",
-      "proba": 0.6394,
-      "bttsProbDisplay": "63.94%",
-      "over25ProbDisplay": "63.55%",
-      "confidence": 64,
-      "time": "11:30",
-      "matchSemantic": "portsmou-vs-millwall-2026-10-24",
-      "source": "poisson-v92-real-data",
-      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/385.png",
-      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/391.png",
-      "tier": "GOLD",
-      "reliabilityScore": 86.72,
-      "dataQuality": "HIGH",
-      "dataSource": "ESPN_TEAM_SCHEDULE",
-      "matchCountHome": 8,
-      "matchCountAway": 8,
-      "h2hAvailable": false,
-      "xgHome": 1.86,
-      "xgAway": 1.42,
-      "xgTotal": 3.27,
-      "formBTTS": 60,
-      "analysis": "Portsmouth : forme N-V-V-D-N (2V 2N 1D, 7 buts marqués / 6 encaissés sur 5) · Millwall : forme N-D-V-N-N (1V 3N 1D, 7 buts marqués / 7 encaissés sur 5). Classement : Portsmouth 13e (15 pts), Millwall 12e (15 pts). Modèle Poisson : xG cumulé 3.27, BTTS 63.9%, Over 2.5 63.6%. Cotes DraftKings — 1: 2.5 / N: 3.35 / 2: 2.9 · Over 2.5: 1.95. Fiabilité 86.72%.",
-      "analysisData": {
-        "bttsProb": 0.6394,
-        "over25Prob": 0.6355,
-        "homeLambda": 1.86,
-        "awayLambda": 1.42,
-        "xgTotal": 3.27
-      },
-      "estimatedCote": 1.56,
-      "estimatedCoteOver": 1.57,
-      "odds": {
-        "provider": "DraftKings",
-        "home": 2.5,
-        "draw": 3.35,
-        "away": 2.9,
-        "over25": 1.95,
-        "under25": 1.8
-      },
-      "oddsSource": "DraftKings",
-      "estimatedCoteBTTS": 1.56,
-      "formHome": {
-        "last5String": "N-V-V-D-N",
-        "wins": 2,
-        "draws": 2,
-        "losses": 1,
-        "goalsFor": 7,
-        "goalsAgainst": 6,
-        "bttsRate": 0.6,
-        "over25Rate": 0.4,
-        "cleanSheets": 1,
-        "failedToScore": 1,
-        "count": 5
-      },
-      "formAway": {
-        "last5String": "N-D-V-N-N",
-        "wins": 1,
-        "draws": 3,
-        "losses": 1,
-        "goalsFor": 7,
-        "goalsAgainst": 7,
-        "bttsRate": 0.6,
-        "over25Rate": 0.6,
-        "cleanSheets": 1,
-        "failedToScore": 1,
-        "count": 5
-      },
-      "last5Home": [
-        {
-          "date": "2026-10-20",
-          "opponent": "Wolverhampton Wanderers",
-          "venue": "A",
-          "score": "1-1",
-          "result": "D"
-        },
-        {
-          "date": "2026-10-17",
-          "opponent": "Norwich City",
-          "venue": "A",
-          "score": "1-0",
-          "result": "W"
-        },
-        {
-          "date": "2026-10-14",
-          "opponent": "Sheffield United",
-          "venue": "H",
-          "score": "3-2",
-          "result": "W"
-        },
-        {
-          "date": "2026-10-11",
-          "opponent": "Southampton",
-          "venue": "A",
-          "score": "0-1",
-          "result": "L"
-        },
-        {
-          "date": "2026-09-19",
-          "opponent": "Blackburn Rovers",
-          "venue": "H",
-          "score": "2-2",
-          "result": "D"
-        }
-      ],
-      "last5Away": [
-        {
-          "date": "2026-10-17",
-          "opponent": "Lincoln City",
-          "venue": "H",
-          "score": "2-2",
-          "result": "D"
-        },
-        {
-          "date": "2026-10-13",
-          "opponent": "Swansea City",
-          "venue": "H",
-          "score": "0-1",
-          "result": "L"
-        },
-        {
-          "date": "2026-10-10",
-          "opponent": "Preston North End",
-          "venue": "A",
-          "score": "1-0",
-          "result": "W"
-        },
-        {
-          "date": "2026-09-19",
-          "opponent": "West Ham United",
-          "venue": "H",
-          "score": "2-2",
-          "result": "D"
-        },
-        {
-          "date": "2026-09-15",
-          "opponent": "Middlesbrough",
-          "venue": "A",
-          "score": "2-2",
-          "result": "D"
-        }
-      ],
-      "standingsHome": {
-        "rank": 13,
-        "points": 15,
-        "played": 11,
-        "gf": 14,
-        "ga": 14
-      },
-      "standingsAway": {
-        "rank": 12,
-        "points": 15,
-        "played": 11,
-        "gf": 18,
-        "ga": 18
-      },
-      "predictions": [
-        {
-          "type": "BTTS",
-          "prediction": "Oui",
-          "confidence": 64,
-          "bttsProb": 0.6394,
-          "homeLambda": 1.86,
-          "awayLambda": 1.42
-        },
-        {
-          "type": "Over 2.5",
-          "prediction": "Oui",
-          "confidence": 64,
-          "over25Prob": 0.6355,
-          "homeLambda": 1.86,
-          "awayLambda": 1.42
-        }
-      ],
-      "bttsProb": 0.6394,
-      "over25Prob": 0.6355,
-      "homeLambda": 1.86,
-      "awayLambda": 1.42,
-      "ai_key_fact": "Portsmouth et Millwall possèdent tous deux 15 points après 11 matchs.",
-      "ai_analysis": "Portsmouth et Millwall affichent des parcours presque symétriques au classement de Championship, occupant respectivement les 13e et 12e positions avec 15 points en 11 matchs. Les deux formations présentent un taux BTTS de 60% sur leurs cinq dernières rencontres. Le modèle Poisson calcule des xG de 1.86 pour Portsmouth et 1.42 pour Millwall. Les probabilités prévisionnelles atteignent 63.9% pour le BTTS et 63.5% pour l'Over 2.5, avec une fiabilité de modèle établie à 86.72%.",
-      "ai_form_summary": "Portsmouth totalise deux victoires, deux nuls et une défaite sur ses cinq derniers matchs avec sept buts marqués et six encaissés. Millwall affiche une victoire, trois nuls et une défaite, avec également sept buts marqués et sept encaissés.",
-      "ai_key_fact_en": "Portsmouth and Millwall both possess 15 points after 11 matches.",
-      "ai_analysis_en": "Portsmouth and Millwall display near-symmetrical records in the Championship standings, occupying 13th and 12th positions respectively with 15 points from 11 matches. Both teams record a 60% BTTS rate over their last five fixtures. The Poisson model calculates xG figures of 1.86 for Portsmouth and 1.42 for Millwall. Projected probabilities reach 63.9% for BTTS and 63.5% for Over 2.5, supported by a model reliability of 86.72%.",
-      "ai_form_summary_en": "Portsmouth records two wins, two draws and one defeat in their last five matches with seven goals scored and six conceded. Millwall displays one win, three draws and one defeat, also with seven goals scored and seven conceded.",
-      "ai_source": "gemini-v2",
-      "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
-      "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
-      "ai_odds_insight": "Le marché (DraftKings) cote 1: 2.5, nul: 3.35, 2: 2.9, Over 2.5: 1.95.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.5, draw: 3.35, 2: 2.9, Over 2.5: 1.95.",
-      "status": "PENDING"
-    },
-    {
       "id": "dcunited-vs-fccincin-2026-10-24",
       "match": "D.C. United vs FC Cincinnati",
       "home": "D.C. United",
@@ -13326,204 +12924,6 @@
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 2.75, nul: 3.85, 2: 2.2.",
       "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.75, draw: 3.85, 2: 2.2.",
-      "status": "PENDING"
-    },
-    {
-      "id": "sheffiel-vs-derbycou-2026-10-24",
-      "match": "Sheffield United vs Derby County",
-      "home": "Sheffield United",
-      "away": "Derby County",
-      "league": "Championship",
-      "date": "2026-10-24",
-      "type": "BTTS",
-      "prediction": "Oui",
-      "proba": 0.6193,
-      "bttsProbDisplay": "61.93%",
-      "over25ProbDisplay": "63.55%",
-      "confidence": 62,
-      "time": "11:30",
-      "matchSemantic": "sheffiel-vs-derbycou-2026-10-24",
-      "source": "poisson-v92-real-data",
-      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/398.png",
-      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/374.png",
-      "tier": "GOLD",
-      "reliabilityScore": 85.85,
-      "dataQuality": "HIGH",
-      "dataSource": "ESPN_TEAM_SCHEDULE",
-      "matchCountHome": 8,
-      "matchCountAway": 8,
-      "h2hAvailable": false,
-      "xgHome": 2.02,
-      "xgAway": 1.25,
-      "xgTotal": 3.27,
-      "formBTTS": 60,
-      "analysis": "Sheffield United : forme V-D-V-D-D (2V 0N 3D, 7 buts marqués / 6 encaissés sur 5) · Derby County : forme D-D-N-N-D (0V 2N 3D, 4 buts marqués / 9 encaissés sur 5). Classement : Sheffield United 11e (15 pts), Derby County 23e (6 pts). Modèle Poisson : xG cumulé 3.27, BTTS 61.9%, Over 2.5 63.6%. Cotes DraftKings — 1: 1.8 / N: 3.95 / 2: 4.2 · Over 2.5: 1.74. Fiabilité 85.85%.",
-      "analysisData": {
-        "bttsProb": 0.6193,
-        "over25Prob": 0.6355,
-        "homeLambda": 2.02,
-        "awayLambda": 1.25,
-        "xgTotal": 3.27
-      },
-      "estimatedCote": 1.61,
-      "estimatedCoteOver": 1.57,
-      "odds": {
-        "provider": "DraftKings",
-        "home": 1.8,
-        "draw": 3.95,
-        "away": 4.2,
-        "over25": 1.74,
-        "under25": 2.05
-      },
-      "oddsSource": "DraftKings",
-      "estimatedCoteBTTS": 1.61,
-      "formHome": {
-        "last5String": "V-D-V-D-D",
-        "wins": 2,
-        "draws": 0,
-        "losses": 3,
-        "goalsFor": 7,
-        "goalsAgainst": 6,
-        "bttsRate": 0.4,
-        "over25Rate": 0.6,
-        "cleanSheets": 2,
-        "failedToScore": 1,
-        "count": 5
-      },
-      "formAway": {
-        "last5String": "D-D-N-N-D",
-        "wins": 0,
-        "draws": 2,
-        "losses": 3,
-        "goalsFor": 4,
-        "goalsAgainst": 9,
-        "bttsRate": 0.8,
-        "over25Rate": 0.4,
-        "cleanSheets": 0,
-        "failedToScore": 1,
-        "count": 5
-      },
-      "last5Home": [
-        {
-          "date": "2026-10-17",
-          "opponent": "Bristol City",
-          "venue": "A",
-          "score": "1-0",
-          "result": "W"
-        },
-        {
-          "date": "2026-10-14",
-          "opponent": "Portsmouth",
-          "venue": "A",
-          "score": "2-3",
-          "result": "L"
-        },
-        {
-          "date": "2026-10-10",
-          "opponent": "Lincoln City",
-          "venue": "H",
-          "score": "3-0",
-          "result": "W"
-        },
-        {
-          "date": "2026-09-19",
-          "opponent": "Stoke City",
-          "venue": "A",
-          "score": "1-2",
-          "result": "L"
-        },
-        {
-          "date": "2026-09-13",
-          "opponent": "Wolverhampton Wanderers",
-          "venue": "H",
-          "score": "0-1",
-          "result": "L"
-        }
-      ],
-      "last5Away": [
-        {
-          "date": "2026-10-17",
-          "opponent": "Stoke City",
-          "venue": "H",
-          "score": "0-1",
-          "result": "L"
-        },
-        {
-          "date": "2026-10-14",
-          "opponent": "Queens Park Rangers",
-          "venue": "A",
-          "score": "1-4",
-          "result": "L"
-        },
-        {
-          "date": "2026-10-10",
-          "opponent": "Wrexham",
-          "venue": "H",
-          "score": "1-1",
-          "result": "D"
-        },
-        {
-          "date": "2026-09-19",
-          "opponent": "Burnley",
-          "venue": "A",
-          "score": "1-1",
-          "result": "D"
-        },
-        {
-          "date": "2026-09-12",
-          "opponent": "Birmingham City",
-          "venue": "H",
-          "score": "1-2",
-          "result": "L"
-        }
-      ],
-      "standingsHome": {
-        "rank": 11,
-        "points": 15,
-        "played": 11,
-        "gf": 15,
-        "ga": 14
-      },
-      "standingsAway": {
-        "rank": 23,
-        "points": 6,
-        "played": 11,
-        "gf": 9,
-        "ga": 20
-      },
-      "predictions": [
-        {
-          "type": "BTTS",
-          "prediction": "Oui",
-          "confidence": 62,
-          "bttsProb": 0.6193,
-          "homeLambda": 2.02,
-          "awayLambda": 1.25
-        },
-        {
-          "type": "Over 2.5",
-          "prediction": "Oui",
-          "confidence": 64,
-          "over25Prob": 0.6355,
-          "homeLambda": 2.02,
-          "awayLambda": 1.25
-        }
-      ],
-      "bttsProb": 0.6193,
-      "over25Prob": 0.6355,
-      "homeLambda": 2.02,
-      "awayLambda": 1.25,
-      "ai_key_fact": "Sheffield United V-D-V-D-D vs Derby County D-D-N-N-D — BTTS 61.9%, Over 2.5 63.5%",
-      "ai_form_summary": "Sheffield United : série V-D-V-D-D, 7 buts marqués / 6 encaissés sur 5. Derby County : série D-D-N-N-D, 4 buts marqués / 9 encaissés sur 5.",
-      "ai_key_fact_en": "Sheffield United V-D-V-D-D vs Derby County D-D-N-N-D — BTTS 61.9%, Over 2.5 63.5%",
-      "ai_analysis_en": "Sheffield United come into this match with 2 win(s), 0 draw(s) and 3 defeat(s) in their last 5 outings (7 goals scored, 6 conceded). Derby County record 0 win(s), 2 draw(s) and 3 defeat(s) in 5, with 4 goals scored and 9 conceded. In the standings, Sheffield United sit 11th with 15 points, against Derby County, 23th with 6 points. The market makes Sheffield United the favourite (1: 1.8, draw: 3.95, 2: 4.2, Over 2.5: 1.74 — DraftKings odds). The BTTSPredict Poisson model projects 2.02 expected goals for Sheffield United and 1.25 for Derby County, i.e. BTTS at 61.9% and Over 2.5 at 63.5%. An open game with goals at both ends stands out as the main trend.",
-      "ai_form_summary_en": "Sheffield United: streak V-D-V-D-D, 7 goals scored / 6 conceded in 5. Derby County: streak D-D-N-N-D, 4 goals scored / 9 conceded in 5.",
-      "ai_source": "local-model-v2",
-      "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
-      "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
-      "ai_odds_insight": "Le marché (DraftKings) cote 1: 1.8, nul: 3.95, 2: 4.2, Over 2.5: 1.74.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 1.8, draw: 3.95, 2: 4.2, Over 2.5: 1.74.",
-      "ai_analysis": "Sheffield United aborde le match avec 2 victoire(s), 0 nul(s) et 3 défaite(s) sur ses 5 dernières sorties (7 buts marqués, 6 encaissés). Derby County affiche 0 victoire(s), 2 nul(s) et 3 défaite(s) sur 5, pour 4 buts marqués et 9 encaissés. Au classement, Sheffield United est 11e avec 15 points, face à Derby County, 23e avec 6 points. Le marché place Sheffield United en favori (1: 1.8, nul: 3.95, 2: 4.2, Over 2.5: 1.74 — cotes DraftKings). Le modèle Poisson BTTSPredict projette 2.02 buts attendus pour Sheffield United et 1.25 pour Derby County, soit BTTS à 61.9% et Over 2.5 à 63.5%. Le scénario d'un match ouvert avec des buts des deux côtés ressort comme la tendance principale.",
       "status": "PENDING"
     },
     {
@@ -14118,402 +13518,6 @@
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 1.21, nul: 7, 2: 11.",
       "ai_odds_insight_en": "The market (DraftKings) prices 1: 1.21, draw: 7, 2: 11.",
-      "status": "PENDING"
-    },
-    {
-      "id": "herthabe-vs-arminiab-2026-10-24",
-      "match": "Hertha Berlin vs Arminia Bielefeld",
-      "home": "Hertha Berlin",
-      "away": "Arminia Bielefeld",
-      "league": "2. Bundesliga",
-      "date": "2026-10-24",
-      "type": "BTTS",
-      "prediction": "Oui",
-      "proba": 0.5794,
-      "bttsProbDisplay": "57.94%",
-      "over25ProbDisplay": "67.61%",
-      "confidence": 58,
-      "time": "11:00",
-      "matchSemantic": "herthabe-vs-arminiab-2026-10-24",
-      "source": "poisson-v92-real-data",
-      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/129.png",
-      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/2506.png",
-      "tier": "GOLD",
-      "reliabilityScore": 84.1,
-      "dataQuality": "HIGH",
-      "dataSource": "ESPN_TEAM_SCHEDULE",
-      "matchCountHome": 8,
-      "matchCountAway": 8,
-      "h2hAvailable": false,
-      "xgHome": 2.48,
-      "xgAway": 1,
-      "xgTotal": 3.48,
-      "formBTTS": 80,
-      "analysis": "Hertha Berlin : forme N-V-V-V-V (4V 1N 0D, 9 buts marqués / 4 encaissés sur 5) · Arminia Bielefeld : forme V-V-N-D-N (2V 2N 1D, 8 buts marqués / 7 encaissés sur 5). Classement : Hertha Berlin 1e (22 pts), Arminia Bielefeld 8e (11 pts). Modèle Poisson : xG cumulé 3.48, BTTS 57.9%, Over 2.5 67.6%. Cotes DraftKings — 1: 1.83 / N: 3.95 / 2: 3.95. Fiabilité 84.1%.",
-      "analysisData": {
-        "bttsProb": 0.5794,
-        "over25Prob": 0.6761,
-        "homeLambda": 2.48,
-        "awayLambda": 1,
-        "xgTotal": 3.48
-      },
-      "estimatedCote": 1.73,
-      "estimatedCoteOver": 1.48,
-      "odds": {
-        "provider": "DraftKings",
-        "home": 1.83,
-        "draw": 3.95,
-        "away": 3.95,
-        "over25": null,
-        "under25": null
-      },
-      "oddsSource": "DraftKings",
-      "estimatedCoteBTTS": 1.73,
-      "formHome": {
-        "last5String": "N-V-V-V-V",
-        "wins": 4,
-        "draws": 1,
-        "losses": 0,
-        "goalsFor": 9,
-        "goalsAgainst": 4,
-        "bttsRate": 0.8,
-        "over25Rate": 0.8,
-        "cleanSheets": 1,
-        "failedToScore": 1,
-        "count": 5
-      },
-      "formAway": {
-        "last5String": "V-V-N-D-N",
-        "wins": 2,
-        "draws": 2,
-        "losses": 1,
-        "goalsFor": 8,
-        "goalsAgainst": 7,
-        "bttsRate": 0.8,
-        "over25Rate": 0.8,
-        "cleanSheets": 1,
-        "failedToScore": 0,
-        "count": 5
-      },
-      "last5Home": [
-        {
-          "date": "2026-10-16",
-          "opponent": "Holstein Kiel",
-          "venue": "A",
-          "score": "0-0",
-          "result": "D"
-        },
-        {
-          "date": "2026-10-11",
-          "opponent": "SpVgg Greuther Fürth",
-          "venue": "H",
-          "score": "2-1",
-          "result": "W"
-        },
-        {
-          "date": "2026-09-19",
-          "opponent": "Dynamo Dresden",
-          "venue": "A",
-          "score": "2-1",
-          "result": "W"
-        },
-        {
-          "date": "2026-09-13",
-          "opponent": "VfL Osnabruck",
-          "venue": "A",
-          "score": "3-1",
-          "result": "W"
-        },
-        {
-          "date": "2026-09-06",
-          "opponent": "1. FC Magdeburg",
-          "venue": "H",
-          "score": "2-1",
-          "result": "W"
-        }
-      ],
-      "last5Away": [
-        {
-          "date": "2026-10-18",
-          "opponent": "VfL Osnabruck",
-          "venue": "H",
-          "score": "2-1",
-          "result": "W"
-        },
-        {
-          "date": "2026-10-11",
-          "opponent": "VfL Bochum",
-          "venue": "A",
-          "score": "1-0",
-          "result": "W"
-        },
-        {
-          "date": "2026-09-20",
-          "opponent": "1. FC Heidenheim 1846",
-          "venue": "H",
-          "score": "2-2",
-          "result": "D"
-        },
-        {
-          "date": "2026-09-11",
-          "opponent": "SV Darmstadt 98",
-          "venue": "A",
-          "score": "1-2",
-          "result": "L"
-        },
-        {
-          "date": "2026-09-04",
-          "opponent": "St. Pauli",
-          "venue": "H",
-          "score": "2-2",
-          "result": "D"
-        }
-      ],
-      "standingsHome": {
-        "rank": 1,
-        "points": 22,
-        "played": 8,
-        "gf": 19,
-        "ga": 8
-      },
-      "standingsAway": {
-        "rank": 8,
-        "points": 11,
-        "played": 8,
-        "gf": 13,
-        "ga": 13
-      },
-      "predictions": [
-        {
-          "type": "BTTS",
-          "prediction": "Oui",
-          "confidence": 58,
-          "bttsProb": 0.5794,
-          "homeLambda": 2.48,
-          "awayLambda": 1
-        },
-        {
-          "type": "Over 2.5",
-          "prediction": "Oui",
-          "confidence": 68,
-          "over25Prob": 0.6761,
-          "homeLambda": 2.48,
-          "awayLambda": 1
-        }
-      ],
-      "bttsProb": 0.5794,
-      "over25Prob": 0.6761,
-      "homeLambda": 2.48,
-      "awayLambda": 1,
-      "ai_key_fact": "Hertha Berlin occupe la 1ère place tandis qu'Arminia Bielefeld se positionne 8e.",
-      "ai_analysis": "Le modèle Poisson attribue un xG de 2.48 à Hertha Berlin et de 1 à Arminia Bielefeld. Les probabilités calculées indiquent un taux de 57.9% pour le BTTS et de 67.6% pour l'Over 2.5, avec une fiabilité de modèle évaluée à 84.1%. Les cotes des bookmakers proposent un équilibre relatif entre le nul et la victoire extérieure.",
-      "ai_form_summary": "Hertha Berlin reste sur une série positive de quatre victoires et un match nul lors de ses cinq dernières sorties. Arminia Bielefeld présente un bilan plus mitigé avec deux victoires, deux nuls et une défaite.",
-      "ai_key_fact_en": "Hertha Berlin occupies 1st place while Arminia Bielefeld is positioned 8th.",
-      "ai_analysis_en": "The Poisson model assigns an xG of 2.48 to Hertha Berlin and 1 to Arminia Bielefeld. The calculated probabilities indicate a rate of 57.9% for BTTS and 67.6% for Over 2.5, with a model reliability evaluated at 84.1%. Bookmaker odds offer a relative balance between the draw and the away win.",
-      "ai_form_summary_en": "Hertha Berlin remains on a positive run of four wins and one draw in their last five outings. Arminia Bielefeld presents a more mixed record with two wins, two draws, and one defeat.",
-      "ai_source": "gemini-v2",
-      "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
-      "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
-      "ai_odds_insight": "Le marché (DraftKings) cote 1: 1.83, nul: 3.95, 2: 3.95.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 1.83, draw: 3.95, 2: 3.95.",
-      "status": "PENDING"
-    },
-    {
-      "id": "rayovall-vs-elche-2026-10-24",
-      "match": "Rayo Vallecano vs Elche",
-      "home": "Rayo Vallecano",
-      "away": "Elche",
-      "league": "LaLiga",
-      "date": "2026-10-24",
-      "type": "BTTS",
-      "prediction": "Oui",
-      "proba": 0.6291,
-      "bttsProbDisplay": "62.91%",
-      "over25ProbDisplay": "61.84%",
-      "confidence": 63,
-      "time": "12:00",
-      "matchSemantic": "rayovall-vs-elche-2026-10-24",
-      "source": "poisson-v92-real-data",
-      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/101.png",
-      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/3751.png",
-      "tier": "GOLD",
-      "reliabilityScore": 83.77,
-      "dataQuality": "HIGH",
-      "dataSource": "ESPN_TEAM_SCHEDULE",
-      "matchCountHome": 8,
-      "matchCountAway": 8,
-      "h2hAvailable": false,
-      "xgHome": 1.77,
-      "xgAway": 1.42,
-      "xgTotal": 3.19,
-      "formBTTS": 80,
-      "analysis": "Rayo Vallecano : forme N-N-V-D-V (2V 2N 1D, 8 buts marqués / 9 encaissés sur 5) · Elche : forme N-N-V-D-N (1V 3N 1D, 6 buts marqués / 5 encaissés sur 5). Classement : Rayo Vallecano 14e (9 pts), Elche 18e (7 pts). Modèle Poisson : xG cumulé 3.19, BTTS 62.9%, Over 2.5 61.8%. Cotes DraftKings — 1: 1.77 / N: 3.85 / 2: 4.5 · Over 2.5: 1.83. Fiabilité 83.77%.",
-      "analysisData": {
-        "bttsProb": 0.6291,
-        "over25Prob": 0.6184,
-        "homeLambda": 1.77,
-        "awayLambda": 1.42,
-        "xgTotal": 3.19
-      },
-      "estimatedCote": 1.59,
-      "estimatedCoteOver": 1.62,
-      "odds": {
-        "provider": "DraftKings",
-        "home": 1.77,
-        "draw": 3.85,
-        "away": 4.5,
-        "over25": 1.83,
-        "under25": 1.95
-      },
-      "oddsSource": "DraftKings",
-      "estimatedCoteBTTS": 1.59,
-      "formHome": {
-        "last5String": "N-N-V-D-V",
-        "wins": 2,
-        "draws": 2,
-        "losses": 1,
-        "goalsFor": 8,
-        "goalsAgainst": 9,
-        "bttsRate": 1,
-        "over25Rate": 0.6,
-        "cleanSheets": 0,
-        "failedToScore": 0,
-        "count": 5
-      },
-      "formAway": {
-        "last5String": "N-N-V-D-N",
-        "wins": 1,
-        "draws": 3,
-        "losses": 1,
-        "goalsFor": 6,
-        "goalsAgainst": 5,
-        "bttsRate": 0.6,
-        "over25Rate": 0.4,
-        "cleanSheets": 2,
-        "failedToScore": 2,
-        "count": 5
-      },
-      "last5Home": [
-        {
-          "date": "2026-10-19",
-          "opponent": "Getafe",
-          "venue": "A",
-          "score": "1-1",
-          "result": "D"
-        },
-        {
-          "date": "2026-09-19",
-          "opponent": "Osasuna",
-          "venue": "A",
-          "score": "1-1",
-          "result": "D"
-        },
-        {
-          "date": "2026-09-15",
-          "opponent": "Espanyol",
-          "venue": "H",
-          "score": "2-1",
-          "result": "W"
-        },
-        {
-          "date": "2026-09-12",
-          "opponent": "Real Madrid",
-          "venue": "A",
-          "score": "1-4",
-          "result": "L"
-        },
-        {
-          "date": "2026-09-05",
-          "opponent": "Racing Santander",
-          "venue": "H",
-          "score": "3-2",
-          "result": "W"
-        }
-      ],
-      "last5Away": [
-        {
-          "date": "2026-10-17",
-          "opponent": "Villarreal",
-          "venue": "A",
-          "score": "0-0",
-          "result": "D"
-        },
-        {
-          "date": "2026-10-11",
-          "opponent": "Celta Vigo",
-          "venue": "H",
-          "score": "0-0",
-          "result": "D"
-        },
-        {
-          "date": "2026-09-18",
-          "opponent": "Espanyol",
-          "venue": "A",
-          "score": "3-1",
-          "result": "W"
-        },
-        {
-          "date": "2026-09-15",
-          "opponent": "Real Madrid",
-          "venue": "H",
-          "score": "2-3",
-          "result": "L"
-        },
-        {
-          "date": "2026-09-12",
-          "opponent": "Athletic Club",
-          "venue": "A",
-          "score": "1-1",
-          "result": "D"
-        }
-      ],
-      "standingsHome": {
-        "rank": 14,
-        "points": 9,
-        "played": 8,
-        "gf": 12,
-        "ga": 17
-      },
-      "standingsAway": {
-        "rank": 18,
-        "points": 7,
-        "played": 9,
-        "gf": 11,
-        "ga": 17
-      },
-      "predictions": [
-        {
-          "type": "BTTS",
-          "prediction": "Oui",
-          "confidence": 63,
-          "bttsProb": 0.6291,
-          "homeLambda": 1.77,
-          "awayLambda": 1.42
-        },
-        {
-          "type": "Over 2.5",
-          "prediction": "Oui",
-          "confidence": 62,
-          "over25Prob": 0.6184,
-          "homeLambda": 1.77,
-          "awayLambda": 1.42
-        }
-      ],
-      "bttsProb": 0.6291,
-      "over25Prob": 0.6184,
-      "homeLambda": 1.77,
-      "awayLambda": 1.42,
-      "ai_key_fact": "Rayo Vallecano est 14e au classement et Elche pointe à la 18e place.",
-      "ai_analysis": "Les xG du modèle s'élèvent à 1.77 pour Rayo Vallecano et 1.42 pour Elche. Le modèle BTTSPredict évalue la probabilité de buts des deux équipes à 62.9% et l'Over 2.5 à 61.8%, appuyés par une fiabilité de 83.77%. Les cotes réelles du marché reflètent des probabilités implicites modérées pour les issues principales.",
-      "ai_form_summary": "Rayo Vallecano totalise deux victoires, deux nuls et une défaite sur ses cinq derniers matchs avec un taux de BTTS de 1. Elche enregistre de son côté une victoire, trois nuls et une défaite sur la même période.",
-      "ai_key_fact_en": "Rayo Vallecano is 14th in the standings and Elche points to 18th place.",
-      "ai_analysis_en": "The model's xGs stand at 1.77 for Rayo Vallecano and 1.42 for Elche. The BTTSPredict model evaluates both teams to score probability at 62.9% and Over 2.5 at 61.8%, supported by a reliability of 83.77%. Real market odds reflect moderate implicit probabilities for the main outcomes.",
-      "ai_form_summary_en": "Rayo Vallecano totals two wins, two draws, and one defeat in their last five matches with a BTTS rate of 1. Elche records one win, three draws, and one defeat over the same period.",
-      "ai_source": "gemini-v2",
-      "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
-      "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
-      "ai_odds_insight": "Le marché (DraftKings) cote 1: 1.77, nul: 3.85, 2: 4.5, Over 2.5: 1.83.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 1.77, draw: 3.85, 2: 4.5, Over 2.5: 1.83.",
       "status": "PENDING"
     },
     {
@@ -15505,6 +14509,990 @@
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 2.5, nul: 3.7, 2: 2.55.",
       "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.5, draw: 3.7, 2: 2.55.",
       "status": "PENDING"
+    },
+    {
+      "id": "queenspa-vs-swanseac-2026-10-24",
+      "match": "Queens Park Rangers vs Swansea City",
+      "home": "Queens Park Rangers",
+      "away": "Swansea City",
+      "league": "Championship",
+      "date": "2026-10-24",
+      "type": "BTTS",
+      "prediction": "Oui",
+      "proba": 0.6073,
+      "bttsProbDisplay": "60.73%",
+      "over25ProbDisplay": "60.06%",
+      "confidence": 61,
+      "time": "14:00",
+      "matchSemantic": "queenspa-vs-swanseac-2026-10-24",
+      "source": "poisson-v92-real-data",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/334.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/318.png",
+      "tier": "GOLD",
+      "reliabilityScore": 82.82,
+      "dataQuality": "HIGH",
+      "dataSource": "ESPN_TEAM_SCHEDULE",
+      "matchCountHome": 8,
+      "matchCountAway": 8,
+      "h2hAvailable": false,
+      "xgHome": 1.82,
+      "xgAway": 1.29,
+      "xgTotal": 3.11,
+      "formBTTS": 70,
+      "analysis": "Queens Park Rangers : forme D-V-N-N-N (1V 3N 1D, 8 buts marqués / 8 encaissés sur 5) · Swansea City : forme D-V-V-V-V (4V 0N 1D, 8 buts marqués / 4 encaissés sur 5). Classement : Queens Park Rangers 9e (17 pts), Swansea City 2e (23 pts). Modèle Poisson : xG cumulé 3.11, BTTS 60.7%, Over 2.5 60.1%. Cotes DraftKings — 1: 2.45 / N: 3.45 / 2: 2.85 · Over 2.5: 1.91. Fiabilité 82.82%.",
+      "analysisData": {
+        "bttsProb": 0.6073,
+        "over25Prob": 0.6006,
+        "homeLambda": 1.82,
+        "awayLambda": 1.29,
+        "xgTotal": 3.11
+      },
+      "estimatedCote": 1.65,
+      "estimatedCoteOver": 1.66,
+      "odds": {
+        "provider": "DraftKings",
+        "home": 2.45,
+        "draw": 3.45,
+        "away": 2.85,
+        "over25": 1.91,
+        "under25": 1.87
+      },
+      "oddsSource": "DraftKings",
+      "estimatedCoteBTTS": 1.65,
+      "formHome": {
+        "last5String": "D-V-N-N-N",
+        "wins": 1,
+        "draws": 3,
+        "losses": 1,
+        "goalsFor": 8,
+        "goalsAgainst": 8,
+        "bttsRate": 0.8,
+        "over25Rate": 0.6,
+        "cleanSheets": 0,
+        "failedToScore": 1,
+        "count": 5
+      },
+      "formAway": {
+        "last5String": "D-V-V-V-V",
+        "wins": 4,
+        "draws": 0,
+        "losses": 1,
+        "goalsFor": 8,
+        "goalsAgainst": 4,
+        "bttsRate": 0.6,
+        "over25Rate": 0.6,
+        "cleanSheets": 1,
+        "failedToScore": 1,
+        "count": 5
+      },
+      "last5Home": [
+        {
+          "date": "2026-10-17",
+          "opponent": "Birmingham City",
+          "venue": "A",
+          "score": "0-3",
+          "result": "L"
+        },
+        {
+          "date": "2026-10-14",
+          "opponent": "Derby County",
+          "venue": "H",
+          "score": "4-1",
+          "result": "W"
+        },
+        {
+          "date": "2026-10-09",
+          "opponent": "West Ham United",
+          "venue": "A",
+          "score": "1-1",
+          "result": "D"
+        },
+        {
+          "date": "2026-09-19",
+          "opponent": "Preston North End",
+          "venue": "H",
+          "score": "2-2",
+          "result": "D"
+        },
+        {
+          "date": "2026-09-12",
+          "opponent": "West Bromwich Albion",
+          "venue": "A",
+          "score": "1-1",
+          "result": "D"
+        }
+      ],
+      "last5Away": [
+        {
+          "date": "2026-10-17",
+          "opponent": "West Ham United",
+          "venue": "H",
+          "score": "0-1",
+          "result": "L"
+        },
+        {
+          "date": "2026-10-13",
+          "opponent": "Millwall",
+          "venue": "A",
+          "score": "1-0",
+          "result": "W"
+        },
+        {
+          "date": "2026-10-10",
+          "opponent": "Norwich City",
+          "venue": "H",
+          "score": "2-1",
+          "result": "W"
+        },
+        {
+          "date": "2026-09-19",
+          "opponent": "Lincoln City",
+          "venue": "A",
+          "score": "2-1",
+          "result": "W"
+        },
+        {
+          "date": "2026-09-12",
+          "opponent": "Burnley",
+          "venue": "H",
+          "score": "3-1",
+          "result": "W"
+        }
+      ],
+      "standingsHome": {
+        "rank": 9,
+        "points": 17,
+        "played": 11,
+        "gf": 15,
+        "ga": 12
+      },
+      "standingsAway": {
+        "rank": 2,
+        "points": 23,
+        "played": 11,
+        "gf": 16,
+        "ga": 8
+      },
+      "predictions": [
+        {
+          "type": "BTTS",
+          "prediction": "Oui",
+          "confidence": 61,
+          "bttsProb": 0.6073,
+          "homeLambda": 1.82,
+          "awayLambda": 1.29
+        },
+        {
+          "type": "Over 2.5",
+          "prediction": "Oui",
+          "confidence": 60,
+          "over25Prob": 0.6006,
+          "homeLambda": 1.82,
+          "awayLambda": 1.29
+        }
+      ],
+      "bttsProb": 0.6073,
+      "over25Prob": 0.6006,
+      "homeLambda": 1.82,
+      "awayLambda": 1.29,
+      "ai_key_fact": "Swansea City reste sur une série de quatre victoires consécutives à l'extérieur.",
+      "ai_analysis": "Le modèle Poisson projette un xG de 1.82 pour QPR et de 1.29 pour Swansea, berçant l'analyse vers les locaux sur le plan statistique pur. Les probabilités du modèle s'élèvent à 60.7% pour le BTTS et 60.1% pour l'Over 2.5, avec une fiabilité de 82.82%. Les cotes bookmaker proposent la victoire de QPR à 2.45, le nul à 3.45 et le succès de Swansea à 2.85. Ces données de marché complètent un profil quantitatif ouvert sans présager du score final.",
+      "ai_form_summary": "QPR enregistre un bilan de 1V-3N-1D avec 8 buts marqués et 8 encaissés sur ses cinq dernières sorties, tandis que Swansea affiche 4V-0N-1D avec 8 buts inscrits et 4 concédés. Les deux formations affichent des dynamiques contrastées mais une efficacité offensive constante.",
+      "ai_key_fact_en": "Swansea City is on a streak of four consecutive away victories.",
+      "ai_analysis_en": "The Poisson model projects an xG of 1.82 for QPR and 1.29 for Swansea, tilting the analysis towards the home side from a purely statistical standpoint. The model probabilities rise to 60.7% for BTTS and 60.1% for Over 2.5, with a reliability of 82.82%. Bookmaker odds offer QPR to win at 2.45, the draw at 3.45, and Swansea's success at 2.85. These market data complete an open quantitative profile without foreshadowing the final score.",
+      "ai_form_summary_en": "QPR records a 1W-3D-1L record with 8 goals scored and 8 conceded over their last five outings, while Swansea displays 4W-0D-1L with 8 goals scored and 4 conceded. Both teams show contrasting dynamics but consistent offensive efficiency.",
+      "ai_source": "gemini-v2",
+      "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
+      "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
+      "ai_odds_insight": "Le marché (DraftKings) cote 1: 2.45, nul: 3.45, 2: 2.85, Over 2.5: 1.91.",
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.45, draw: 3.45, 2: 2.85, Over 2.5: 1.91."
+    },
+    {
+      "id": "stmirren-vs-dundee-2026-10-24",
+      "match": "St Mirren vs Dundee",
+      "home": "St Mirren",
+      "away": "Dundee",
+      "league": "Scottish Premiership",
+      "date": "2026-10-24",
+      "type": "BTTS",
+      "prediction": "Oui",
+      "proba": 0.6054,
+      "bttsProbDisplay": "60.54%",
+      "over25ProbDisplay": "60.06%",
+      "confidence": 61,
+      "time": "14:00",
+      "matchSemantic": "stmirren-vs-dundee-2026-10-24",
+      "source": "poisson-v92-real-data",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/250.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/261.png",
+      "tier": "GOLD",
+      "reliabilityScore": 82.73,
+      "dataQuality": "HIGH",
+      "dataSource": "ESPN_TEAM_SCHEDULE",
+      "matchCountHome": 8,
+      "matchCountAway": 8,
+      "h2hAvailable": false,
+      "xgHome": 1.27,
+      "xgAway": 1.83,
+      "xgTotal": 3.11,
+      "formBTTS": 70,
+      "analysis": "St Mirren : forme D-D-D-D-D (0V 0N 5D, 2 buts marqués / 14 encaissés sur 5) · Dundee : forme N-V-V-D-N (2V 2N 1D, 8 buts marqués / 7 encaissés sur 5). Classement : St Mirren 8e (10 pts), Dundee 4e (14 pts). Modèle Poisson : xG cumulé 3.11, BTTS 60.5%, Over 2.5 60.1%. Cotes DraftKings — 1: 2.3 / N: 3.6 / 2: 2.95 · Over 2.5: 1.67. Fiabilité 82.73%.",
+      "analysisData": {
+        "bttsProb": 0.6054,
+        "over25Prob": 0.6006,
+        "homeLambda": 1.27,
+        "awayLambda": 1.83,
+        "xgTotal": 3.11
+      },
+      "estimatedCote": 1.65,
+      "estimatedCoteOver": 1.66,
+      "odds": {
+        "provider": "DraftKings",
+        "home": 2.3,
+        "draw": 3.6,
+        "away": 2.95,
+        "over25": 1.67,
+        "under25": 2.15
+      },
+      "oddsSource": "DraftKings",
+      "estimatedCoteBTTS": 1.65,
+      "formHome": {
+        "last5String": "D-D-D-D-D",
+        "wins": 0,
+        "draws": 0,
+        "losses": 5,
+        "goalsFor": 2,
+        "goalsAgainst": 14,
+        "bttsRate": 0.4,
+        "over25Rate": 0.8,
+        "cleanSheets": 0,
+        "failedToScore": 3,
+        "count": 5
+      },
+      "formAway": {
+        "last5String": "N-V-V-D-N",
+        "wins": 2,
+        "draws": 2,
+        "losses": 1,
+        "goalsFor": 8,
+        "goalsAgainst": 7,
+        "bttsRate": 1,
+        "over25Rate": 0.8,
+        "cleanSheets": 0,
+        "failedToScore": 0,
+        "count": 5
+      },
+      "last5Home": [
+        {
+          "date": "2026-10-17",
+          "opponent": "Aberdeen",
+          "venue": "A",
+          "score": "1-3",
+          "result": "L"
+        },
+        {
+          "date": "2026-10-10",
+          "opponent": "Heart of Midlothian",
+          "venue": "A",
+          "score": "0-5",
+          "result": "L"
+        },
+        {
+          "date": "2026-09-19",
+          "opponent": "Dundee United",
+          "venue": "H",
+          "score": "0-3",
+          "result": "L"
+        },
+        {
+          "date": "2026-09-09",
+          "opponent": "Rangers",
+          "venue": "A",
+          "score": "0-1",
+          "result": "L"
+        },
+        {
+          "date": "2026-09-05",
+          "opponent": "Celtic",
+          "venue": "H",
+          "score": "1-2",
+          "result": "L"
+        }
+      ],
+      "last5Away": [
+        {
+          "date": "2026-10-17",
+          "opponent": "Rangers",
+          "venue": "H",
+          "score": "2-2",
+          "result": "D"
+        },
+        {
+          "date": "2026-10-10",
+          "opponent": "Falkirk",
+          "venue": "A",
+          "score": "2-1",
+          "result": "W"
+        },
+        {
+          "date": "2026-09-19",
+          "opponent": "Motherwell",
+          "venue": "H",
+          "score": "2-1",
+          "result": "W"
+        },
+        {
+          "date": "2026-09-06",
+          "opponent": "Heart of Midlothian",
+          "venue": "A",
+          "score": "1-2",
+          "result": "L"
+        },
+        {
+          "date": "2026-09-02",
+          "opponent": "St Johnstone",
+          "venue": "H",
+          "score": "1-1",
+          "result": "D"
+        }
+      ],
+      "standingsHome": {
+        "rank": 8,
+        "points": 10,
+        "played": 9,
+        "gf": 9,
+        "ga": 17
+      },
+      "standingsAway": {
+        "rank": 4,
+        "points": 14,
+        "played": 9,
+        "gf": 13,
+        "ga": 10
+      },
+      "predictions": [
+        {
+          "type": "BTTS",
+          "prediction": "Oui",
+          "confidence": 61,
+          "bttsProb": 0.6054,
+          "homeLambda": 1.27,
+          "awayLambda": 1.83
+        },
+        {
+          "type": "Over 2.5",
+          "prediction": "Oui",
+          "confidence": 60,
+          "over25Prob": 0.6006,
+          "homeLambda": 1.27,
+          "awayLambda": 1.83
+        }
+      ],
+      "bttsProb": 0.6054,
+      "over25Prob": 0.6006,
+      "homeLambda": 1.27,
+      "awayLambda": 1.83,
+      "ai_key_fact": "St Mirren affiche 5 défaites consécutives tandis que Dundee présente un taux BTTS de 100%.",
+      "ai_analysis": "Les données de classement placent St Mirren au 8e rang et Dundee au 4e rang de la Scottish Premiership. Le modèle Poisson anticipe des xG de 1.27 pour l'équipe à domicile et 1.83 pour l'extérieur, avec une probabilité BTTS estimée à 60.5% et un Over 2.5 à 60.1%. La fiabilité du modèle s'établit à 82.73%.",
+      "ai_form_summary": "St Mirren traverse une période difficile avec cinq défaites de suite, 2 buts marqués et 14 encaissés. En face, Dundee reste sur une dynamique plus solide avec deux victoires, deux nuls et une défaite sur ses cinq derniers matchs.",
+      "ai_key_fact_en": "St Mirren records 5 consecutive defeats while Dundee presents a 100% BTTS rate.",
+      "ai_analysis_en": "League standings place St Mirren in 8th position and Dundee in 4th place in the Scottish Premiership. The Poisson model anticipates xG figures of 1.27 for the home team and 1.83 for the away side, with a BTTS probability estimated at 60.5% and Over 2.5 at 60.1%. Model reliability stands at 82.73%.",
+      "ai_form_summary_en": "St Mirren is going through a difficult spell with five straight losses, scoring 2 goals and conceding 14. Meanwhile, Dundee maintains a solid dynamic with two wins, two draws and one defeat in their last five matches.",
+      "ai_source": "gemini-v2",
+      "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
+      "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
+      "ai_odds_insight": "Le marché (DraftKings) cote 1: 2.3, nul: 3.6, 2: 2.95, Over 2.5: 1.67.",
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.3, draw: 3.6, 2: 2.95, Over 2.5: 1.67."
+    },
+    {
+      "id": "blackbur-vs-wrexham-2026-10-24",
+      "match": "Blackburn Rovers vs Wrexham",
+      "home": "Blackburn Rovers",
+      "away": "Wrexham",
+      "league": "Championship",
+      "date": "2026-10-24",
+      "type": "BTTS",
+      "prediction": "Oui",
+      "proba": 0.5977,
+      "bttsProbDisplay": "59.77%",
+      "over25ProbDisplay": "61.84%",
+      "confidence": 60,
+      "time": "14:00",
+      "matchSemantic": "blackbur-vs-wrexham-2026-10-24",
+      "source": "poisson-v92-real-data",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/365.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/352.png",
+      "tier": "GOLD",
+      "reliabilityScore": 82.4,
+      "dataQuality": "HIGH",
+      "dataSource": "ESPN_TEAM_SCHEDULE",
+      "matchCountHome": 8,
+      "matchCountAway": 8,
+      "h2hAvailable": false,
+      "xgHome": 2.02,
+      "xgAway": 1.17,
+      "xgTotal": 3.19,
+      "formBTTS": 80,
+      "analysis": "Blackburn Rovers : forme D-V-V-N-V (3V 1N 1D, 10 buts marqués / 7 encaissés sur 5) · Wrexham : forme V-D-N-V-D (2V 1N 2D, 8 buts marqués / 11 encaissés sur 5). Classement : Blackburn Rovers 10e (15 pts), Wrexham 14e (14 pts). Modèle Poisson : xG cumulé 3.19, BTTS 59.8%, Over 2.5 61.8%. Cotes DraftKings — 1: 3 / N: 3.35 / 2: 2.4 · Over 2.5: 2.05. Fiabilité 82.4%.",
+      "analysisData": {
+        "bttsProb": 0.5977,
+        "over25Prob": 0.6184,
+        "homeLambda": 2.02,
+        "awayLambda": 1.17,
+        "xgTotal": 3.19
+      },
+      "estimatedCote": 1.67,
+      "estimatedCoteOver": 1.62,
+      "odds": {
+        "provider": "DraftKings",
+        "home": 3,
+        "draw": 3.35,
+        "away": 2.4,
+        "over25": 2.05,
+        "under25": 1.74
+      },
+      "oddsSource": "DraftKings",
+      "estimatedCoteBTTS": 1.67,
+      "formHome": {
+        "last5String": "D-V-V-N-V",
+        "wins": 3,
+        "draws": 1,
+        "losses": 1,
+        "goalsFor": 10,
+        "goalsAgainst": 7,
+        "bttsRate": 0.8,
+        "over25Rate": 0.8,
+        "cleanSheets": 1,
+        "failedToScore": 0,
+        "count": 5
+      },
+      "formAway": {
+        "last5String": "V-D-N-V-D",
+        "wins": 2,
+        "draws": 1,
+        "losses": 2,
+        "goalsFor": 8,
+        "goalsAgainst": 11,
+        "bttsRate": 0.8,
+        "over25Rate": 0.8,
+        "cleanSheets": 0,
+        "failedToScore": 1,
+        "count": 5
+      },
+      "last5Home": [
+        {
+          "date": "2026-10-17",
+          "opponent": "West Bromwich Albion",
+          "venue": "A",
+          "score": "2-3",
+          "result": "L"
+        },
+        {
+          "date": "2026-10-13",
+          "opponent": "Bristol City",
+          "venue": "A",
+          "score": "1-0",
+          "result": "W"
+        },
+        {
+          "date": "2026-10-10",
+          "opponent": "Cardiff City",
+          "venue": "H",
+          "score": "2-1",
+          "result": "W"
+        },
+        {
+          "date": "2026-09-19",
+          "opponent": "Portsmouth",
+          "venue": "A",
+          "score": "2-2",
+          "result": "D"
+        },
+        {
+          "date": "2026-09-12",
+          "opponent": "Millwall",
+          "venue": "H",
+          "score": "3-1",
+          "result": "W"
+        }
+      ],
+      "last5Away": [
+        {
+          "date": "2026-10-17",
+          "opponent": "Preston North End",
+          "venue": "H",
+          "score": "4-1",
+          "result": "W"
+        },
+        {
+          "date": "2026-10-13",
+          "opponent": "West Bromwich Albion",
+          "venue": "H",
+          "score": "1-2",
+          "result": "L"
+        },
+        {
+          "date": "2026-10-10",
+          "opponent": "Derby County",
+          "venue": "A",
+          "score": "1-1",
+          "result": "D"
+        },
+        {
+          "date": "2026-09-19",
+          "opponent": "Southampton",
+          "venue": "H",
+          "score": "2-1",
+          "result": "W"
+        },
+        {
+          "date": "2026-09-11",
+          "opponent": "West Ham United",
+          "venue": "A",
+          "score": "0-6",
+          "result": "L"
+        }
+      ],
+      "standingsHome": {
+        "rank": 10,
+        "points": 15,
+        "played": 11,
+        "gf": 17,
+        "ga": 16
+      },
+      "standingsAway": {
+        "rank": 14,
+        "points": 14,
+        "played": 11,
+        "gf": 15,
+        "ga": 16
+      },
+      "predictions": [
+        {
+          "type": "BTTS",
+          "prediction": "Oui",
+          "confidence": 60,
+          "bttsProb": 0.5977,
+          "homeLambda": 2.02,
+          "awayLambda": 1.17
+        },
+        {
+          "type": "Over 2.5",
+          "prediction": "Oui",
+          "confidence": 62,
+          "over25Prob": 0.6184,
+          "homeLambda": 2.02,
+          "awayLambda": 1.17
+        }
+      ],
+      "bttsProb": 0.5977,
+      "over25Prob": 0.6184,
+      "homeLambda": 2.02,
+      "awayLambda": 1.17,
+      "ai_key_fact": "Blackburn Rovers totalise 10 buts marqués sur ses 5 derniers matchs.",
+      "ai_analysis": "Au classement de Championship, Blackburn occupe la 10e place et Wrexham la 14e position. Le modèle projette un xG de 2.02 pour le domicile et de 1.17 pour l'extérieur, avec une probabilité BTTS de 59.8% et un Over 2.5 évalué à 61.8% pour une fiabilité de 82.4%.",
+      "ai_form_summary": "Blackburn Rovers montre une forme positive avec trois victoires, un nul et une défaite, affichant un taux BTTS de 0.8. Wrexham présente un bilan équilibré de deux victoires, un nul et deux défaites sur la même période.",
+      "ai_analysis_en": "In the Championship standings, Blackburn occupies 10th place and Wrexham 14th position. The model projects an xG of 2.02 for the home side and 1.17 for the away side, with a BTTS probability of 59.8% and an Over 2.5 rated at 61.8% for a reliability of 82.4%.",
+      "ai_form_summary_en": "Blackburn Rovers shows positive form with three wins, one draw and one defeat, displaying a 0.8 BTTS rate. Wrexham presents a balanced record of two wins, one draw and two defeats over the same period.",
+      "ai_source": "gemini-v2",
+      "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
+      "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
+      "ai_odds_insight": "Le marché (DraftKings) cote 1: 3, nul: 3.35, 2: 2.4, Over 2.5: 2.05.",
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 3, draw: 3.35, 2: 2.4, Over 2.5: 2.05."
+    },
+    {
+      "id": "cfmontra-vs-nashvill-2026-10-24",
+      "match": "CF Montréal vs Nashville SC",
+      "home": "CF Montréal",
+      "away": "Nashville SC",
+      "league": "MLS",
+      "date": "2026-10-24",
+      "type": "BTTS",
+      "prediction": "Oui",
+      "proba": 0.5956,
+      "bttsProbDisplay": "59.56%",
+      "over25ProbDisplay": "58.79%",
+      "confidence": 60,
+      "time": "17:30",
+      "matchSemantic": "cfmontra-vs-nashvill-2026-10-24",
+      "source": "poisson-v92-real-data",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/9720.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/18986.png",
+      "tier": "GOLD",
+      "reliabilityScore": 82.31,
+      "dataQuality": "HIGH",
+      "dataSource": "ESPN_TEAM_SCHEDULE",
+      "matchCountHome": 8,
+      "matchCountAway": 8,
+      "h2hAvailable": false,
+      "xgHome": 1.25,
+      "xgAway": 1.8,
+      "xgTotal": 3.05,
+      "formBTTS": 50,
+      "analysis": "CF Montréal : forme N-D-D-V-D (1V 1N 3D, 5 buts marqués / 9 encaissés sur 5) · Nashville SC : forme N-V-V-V-V (4V 1N 0D, 14 buts marqués / 2 encaissés sur 5). Classement : CF Montréal 15e (25 pts), Nashville SC 1e (67 pts). Modèle Poisson : xG cumulé 3.05, BTTS 59.6%, Over 2.5 58.8%. Cotes DraftKings — 1: 5.25 / N: 4.4 / 2: 1.5. Fiabilité 82.31%.",
+      "analysisData": {
+        "bttsProb": 0.5956,
+        "over25Prob": 0.5879,
+        "homeLambda": 1.25,
+        "awayLambda": 1.8,
+        "xgTotal": 3.05
+      },
+      "estimatedCote": 1.68,
+      "estimatedCoteOver": 1.7,
+      "odds": {
+        "provider": "DraftKings",
+        "home": 5.25,
+        "draw": 4.4,
+        "away": 1.5,
+        "over25": null,
+        "under25": null
+      },
+      "oddsSource": "DraftKings",
+      "estimatedCoteBTTS": 1.68,
+      "formHome": {
+        "last5String": "N-D-D-V-D",
+        "wins": 1,
+        "draws": 1,
+        "losses": 3,
+        "goalsFor": 5,
+        "goalsAgainst": 9,
+        "bttsRate": 0.6,
+        "over25Rate": 0.6,
+        "cleanSheets": 0,
+        "failedToScore": 2,
+        "count": 5
+      },
+      "formAway": {
+        "last5String": "N-V-V-V-V",
+        "wins": 4,
+        "draws": 1,
+        "losses": 0,
+        "goalsFor": 14,
+        "goalsAgainst": 2,
+        "bttsRate": 0.4,
+        "over25Rate": 0.6,
+        "cleanSheets": 3,
+        "failedToScore": 0,
+        "count": 5
+      },
+      "last5Home": [
+        {
+          "date": "2026-10-18",
+          "opponent": "Seattle Sounders FC",
+          "venue": "A",
+          "score": "1-1",
+          "result": "D"
+        },
+        {
+          "date": "2026-10-14",
+          "opponent": "Atlanta United FC",
+          "venue": "H",
+          "score": "0-3",
+          "result": "L"
+        },
+        {
+          "date": "2026-10-10",
+          "opponent": "Toronto FC",
+          "venue": "A",
+          "score": "1-2",
+          "result": "L"
+        },
+        {
+          "date": "2026-09-26",
+          "opponent": "FC Cincinnati",
+          "venue": "H",
+          "score": "3-1",
+          "result": "W"
+        },
+        {
+          "date": "2026-09-19",
+          "opponent": "Columbus Crew",
+          "venue": "H",
+          "score": "0-2",
+          "result": "L"
+        }
+      ],
+      "last5Away": [
+        {
+          "date": "2026-10-18",
+          "opponent": "San Jose Earthquakes",
+          "venue": "A",
+          "score": "1-1",
+          "result": "D"
+        },
+        {
+          "date": "2026-10-15",
+          "opponent": "Sporting Kansas City",
+          "venue": "H",
+          "score": "4-0",
+          "result": "W"
+        },
+        {
+          "date": "2026-10-11",
+          "opponent": "Austin FC",
+          "venue": "A",
+          "score": "4-1",
+          "result": "W"
+        },
+        {
+          "date": "2026-09-27",
+          "opponent": "Toronto FC",
+          "venue": "H",
+          "score": "2-0",
+          "result": "W"
+        },
+        {
+          "date": "2026-09-20",
+          "opponent": "Chicago Fire FC",
+          "venue": "H",
+          "score": "3-0",
+          "result": "W"
+        }
+      ],
+      "standingsHome": {
+        "rank": 15,
+        "points": 25,
+        "played": 30,
+        "gf": 36,
+        "ga": 60
+      },
+      "standingsAway": {
+        "rank": 1,
+        "points": 67,
+        "played": 30,
+        "gf": 64,
+        "ga": 23
+      },
+      "predictions": [
+        {
+          "type": "BTTS",
+          "prediction": "Oui",
+          "confidence": 60,
+          "bttsProb": 0.5956,
+          "homeLambda": 1.25,
+          "awayLambda": 1.8
+        },
+        {
+          "type": "Over 2.5",
+          "prediction": "Oui",
+          "confidence": 59,
+          "over25Prob": 0.5879,
+          "homeLambda": 1.25,
+          "awayLambda": 1.8
+        }
+      ],
+      "bttsProb": 0.5956,
+      "over25Prob": 0.5879,
+      "homeLambda": 1.25,
+      "awayLambda": 1.8,
+      "ai_key_fact": "Nashville SC domine le classement de MLS avec 67 points après 30 matchs.",
+      "ai_analysis": "Le classement de MLS positionne Montréal au 15e rang tandis que Nashville trône à la 1e place. Le modèle indique des xG de 1.25 pour Montréal et 1.8 pour Nashville, assortis d'une probabilité BTTS de 59.6% et d'un Over 2.5 à 58.8%, pour un niveau de fiabilité de 82.31%.",
+      "ai_form_summary": "CF Montréal enregistre une victoire, un nul et trois défaites lors de ses cinq dernières sorties, sans le moindre clean sheet. Nashville SC domine nettement avec quatre victoires et un nul, concédant seulement 2 buts sur cette période.",
+      "ai_key_fact_en": "Nashville SC dominates the MLS standings with 67 points after 30 matches.",
+      "ai_analysis_en": "The MLS standings position Montréal in 15th rank while Nashville sits in 1st place. The model indicates xG values of 1.25 for Montréal and 1.8 for Nashville, paired with a BTTS probability of 59.6% and an Over 2.5 at 58.8%, for a reliability level of 82.31%.",
+      "ai_form_summary_en": "CF Montréal records one win, one draw and three defeats in their last five outings, without a single clean sheet. Nashville SC clearly dominates with four wins and one draw, conceding only 2 goals over this period.",
+      "ai_source": "gemini-v2",
+      "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
+      "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
+      "ai_odds_insight": "Le marché (DraftKings) cote 1: 5.25, nul: 4.4, 2: 1.5.",
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 5.25, draw: 4.4, 2: 1.5."
+    },
+    {
+      "id": "westhamu-vs-southamp-2026-10-24",
+      "match": "West Ham United vs Southampton",
+      "home": "West Ham United",
+      "away": "Southampton",
+      "league": "Championship",
+      "date": "2026-10-24",
+      "type": "BTTS",
+      "prediction": "Oui",
+      "proba": 0.5302,
+      "bttsProbDisplay": "53.02%",
+      "over25ProbDisplay": "63.55%",
+      "confidence": 53,
+      "time": "14:00",
+      "matchSemantic": "westhamu-vs-southamp-2026-10-24",
+      "source": "poisson-v92-real-data",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/371.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/376.png",
+      "tier": "GOLD",
+      "reliabilityScore": 81.95,
+      "dataQuality": "HIGH",
+      "dataSource": "ESPN_TEAM_SCHEDULE",
+      "matchCountHome": 8,
+      "matchCountAway": 8,
+      "h2hAvailable": false,
+      "xgHome": 2.4,
+      "xgAway": 0.88,
+      "xgTotal": 3.27,
+      "formBTTS": 40,
+      "analysis": "West Ham United : forme V-V-N-N-V (3V 2N 0D, 16 buts marqués / 3 encaissés sur 5) · Southampton : forme N-V-V-D-V (3V 1N 1D, 7 buts marqués / 3 encaissés sur 5). Classement : West Ham United 3e (22 pts), Southampton 8e (17 pts). Modèle Poisson : xG cumulé 3.27, BTTS 53.0%, Over 2.5 63.6%. Cotes DraftKings — 1: 1.69 / N: 4.3 / 2: 4.5. Fiabilité 81.95%.",
+      "analysisData": {
+        "bttsProb": 0.5302,
+        "over25Prob": 0.6355,
+        "homeLambda": 2.4,
+        "awayLambda": 0.88,
+        "xgTotal": 3.27
+      },
+      "estimatedCote": 1.89,
+      "estimatedCoteOver": 1.57,
+      "odds": {
+        "provider": "DraftKings",
+        "home": 1.69,
+        "draw": 4.3,
+        "away": 4.5,
+        "over25": null,
+        "under25": null
+      },
+      "oddsSource": "DraftKings",
+      "estimatedCoteBTTS": 1.89,
+      "formHome": {
+        "last5String": "V-V-N-N-V",
+        "wins": 3,
+        "draws": 2,
+        "losses": 0,
+        "goalsFor": 16,
+        "goalsAgainst": 3,
+        "bttsRate": 0.4,
+        "over25Rate": 0.6,
+        "cleanSheets": 3,
+        "failedToScore": 0,
+        "count": 5
+      },
+      "formAway": {
+        "last5String": "N-V-V-D-V",
+        "wins": 3,
+        "draws": 1,
+        "losses": 1,
+        "goalsFor": 7,
+        "goalsAgainst": 3,
+        "bttsRate": 0.4,
+        "over25Rate": 0.4,
+        "cleanSheets": 3,
+        "failedToScore": 1,
+        "count": 5
+      },
+      "last5Home": [
+        {
+          "date": "2026-10-17",
+          "opponent": "Swansea City",
+          "venue": "A",
+          "score": "1-0",
+          "result": "W"
+        },
+        {
+          "date": "2026-10-14",
+          "opponent": "Lincoln City",
+          "venue": "A",
+          "score": "6-0",
+          "result": "W"
+        },
+        {
+          "date": "2026-10-09",
+          "opponent": "Queens Park Rangers",
+          "venue": "H",
+          "score": "1-1",
+          "result": "D"
+        },
+        {
+          "date": "2026-09-19",
+          "opponent": "Millwall",
+          "venue": "A",
+          "score": "2-2",
+          "result": "D"
+        },
+        {
+          "date": "2026-09-11",
+          "opponent": "Wrexham",
+          "venue": "H",
+          "score": "6-0",
+          "result": "W"
+        }
+      ],
+      "last5Away": [
+        {
+          "date": "2026-10-17",
+          "opponent": "Bolton Wanderers",
+          "venue": "H",
+          "score": "0-0",
+          "result": "D"
+        },
+        {
+          "date": "2026-10-14",
+          "opponent": "Norwich City",
+          "venue": "A",
+          "score": "1-0",
+          "result": "W"
+        },
+        {
+          "date": "2026-10-11",
+          "opponent": "Portsmouth",
+          "venue": "H",
+          "score": "1-0",
+          "result": "W"
+        },
+        {
+          "date": "2026-09-19",
+          "opponent": "Wrexham",
+          "venue": "A",
+          "score": "1-2",
+          "result": "L"
+        },
+        {
+          "date": "2026-09-12",
+          "opponent": "Bristol City",
+          "venue": "H",
+          "score": "4-1",
+          "result": "W"
+        }
+      ],
+      "standingsHome": {
+        "rank": 3,
+        "points": 22,
+        "played": 11,
+        "gf": 30,
+        "ga": 12
+      },
+      "standingsAway": {
+        "rank": 8,
+        "points": 17,
+        "played": 11,
+        "gf": 21,
+        "ga": 10
+      },
+      "predictions": [
+        {
+          "type": "BTTS",
+          "prediction": "Oui",
+          "confidence": 53,
+          "bttsProb": 0.5302,
+          "homeLambda": 2.4,
+          "awayLambda": 0.88
+        },
+        {
+          "type": "Over 2.5",
+          "prediction": "Oui",
+          "confidence": 64,
+          "over25Prob": 0.6355,
+          "homeLambda": 2.4,
+          "awayLambda": 0.88
+        }
+      ],
+      "bttsProb": 0.5302,
+      "over25Prob": 0.6355,
+      "homeLambda": 2.4,
+      "awayLambda": 0.88,
+      "ai_key_fact": "West Ham United totalise 30 buts inscrits en 11 matchs de championnat.",
+      "ai_analysis": "Au classement, West Ham se trouve en 3e position et Southampton pointe à la 8e place. Le modèle calcule des xG de 2.4 pour le domicile et 0.88 pour l'extérieur, avec une probabilité BTTS de 53.0% et un Over 2.5 évalué à 63.5% avec une fiabilité de 81.95%.",
+      "ai_form_summary": "West Ham United maintient une série invaincue de trois victoires et deux nuls, s'appuyant sur une défense solide avec 3 buts encaissés. Southampton affiche un bilan de trois victoires, un nul et une défaite sur ses cinq dernières rencontres.",
+      "ai_key_fact_en": "West Ham United totals 30 goals scored in 11 league matches.",
+      "ai_analysis_en": "In the standings, West Ham is in 3rd position and Southampton points to 8th place. The model calculates xG figures of 2.4 for the home team and 0.88 for the away team, with a BTTS probability of 53.0% and an Over 2.5 evaluated at 63.5% with a reliability of 81.95%.",
+      "ai_form_summary_en": "West Ham United maintains an unbeaten run of three wins and two draws, relying on a solid defense with 3 goals conceded. Southampton displays a record of three wins, one draw and one defeat in their last five encounters.",
+      "ai_source": "gemini-v2",
+      "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
+      "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
+      "ai_odds_insight": "Le marché (DraftKings) cote 1: 1.69, nul: 4.3, 2: 4.5.",
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 1.69, draw: 4.3, 2: 4.5."
     },
     {
       "id": "psveindh-vs-feyenoor-2026-10-25",

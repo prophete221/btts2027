@@ -12767,7 +12767,9 @@
           "result": "D"
         }
       ],
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "1-1",
+      "verifiedAt": "2026-10-24T13:03:35.368Z"
     },
     {
       "id": "wsgswaro-vs-grazerak-2026-10-24",

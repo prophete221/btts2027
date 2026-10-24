@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "generatedAt": "2026-10-24T07:49:53.891Z",
+  "generatedAt": "2026-10-24T13:04:35.010Z",
   "pendingPolicy": {
     "graceHours": 48,
     "rule": "Sans statut vérifié, un match futur ou récent reste « en attente » pendant exactement 48 h après son coup d'envoi.",
@@ -15,18 +15,18 @@
     "insufficientVolume": false
   },
   "stats": {
-    "total": 271,
-    "won": 231,
-    "lost": 40,
-    "pending": 56,
+    "total": 273,
+    "won": 232,
+    "lost": 41,
+    "pending": 59,
     "unverifiable": 130,
-    "archivedTotal": 457,
-    "rate": 85.2,
+    "archivedTotal": 462,
+    "rate": 85,
     "gold": {
-      "total": 184,
-      "won": 164,
-      "lost": 20,
-      "rate": 89.1
+      "total": 186,
+      "won": 165,
+      "lost": 21,
+      "rate": 88.7
     },
     "standard": {
       "total": 87,
@@ -36,10 +36,10 @@
     },
     "byType": {
       "btts": {
-        "total": 268,
-        "won": 230,
-        "lost": 38,
-        "rate": 85.8
+        "total": 270,
+        "won": 231,
+        "lost": 39,
+        "rate": 85.6
       },
       "over25": {
         "total": 3,
@@ -49,13 +49,6 @@
       }
     },
     "trend14": [
-      {
-        "date": "2026-10-02",
-        "total": 1,
-        "won": 1,
-        "lost": 0,
-        "rate": 100
-      },
       {
         "date": "2026-10-09",
         "total": 1,
@@ -146,6 +139,13 @@
         "won": 7,
         "lost": 4,
         "rate": 63.6
+      },
+      {
+        "date": "2026-10-24",
+        "total": 2,
+        "won": 1,
+        "lost": 1,
+        "rate": 50
       }
     ],
     "period": {
@@ -155,6 +155,32 @@
     }
   },
   "history": [
+    {
+      "date": "2026-10-24",
+      "match": "Hertha Berlin vs Arminia Bielefeld",
+      "league": "2. Bundesliga",
+      "market": "btts",
+      "tier": "GOLD",
+      "proba": 0.5794,
+      "status": "LOST",
+      "finalScore": "1-0",
+      "verifiedAt": "2026-10-24T13:03:35.375Z",
+      "source": "ESPN public",
+      "prediction": "Oui"
+    },
+    {
+      "date": "2026-10-24",
+      "match": "1. FC Heidenheim 1846 vs Energie Cottbus",
+      "league": "2. Bundesliga",
+      "market": "btts",
+      "tier": "GOLD",
+      "proba": 0.7679,
+      "status": "WON",
+      "finalScore": "1-1",
+      "verifiedAt": "2026-10-24T13:03:35.368Z",
+      "source": "ESPN public",
+      "prediction": "Oui"
+    },
     {
       "date": "2026-10-23",
       "match": "Brest vs Nice",
