@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "generatedAt": "2026-10-23T23:44:26.061Z",
+  "generatedAt": "2026-10-24T02:44:31.921Z",
   "pendingPolicy": {
     "graceHours": 48,
     "rule": "Sans statut vérifié, un match futur ou récent reste « en attente » pendant exactement 48 h après son coup d'envoi.",
@@ -18,9 +18,9 @@
     "total": 271,
     "won": 231,
     "lost": 40,
-    "pending": 32,
+    "pending": 56,
     "unverifiable": 130,
-    "archivedTotal": 433,
+    "archivedTotal": 457,
     "rate": 85.2,
     "gold": {
       "total": 184,
@@ -150,8 +150,8 @@
     ],
     "period": {
       "from": "2026-08-08",
-      "to": "2026-10-23",
-      "days": 77
+      "to": "2026-10-24",
+      "days": 78
     }
   },
   "history": [
@@ -3680,47 +3680,40 @@
     }
   ],
   "legacyStats": {
-    "total": 166,
-    "won": 166,
+    "total": 137,
+    "won": 137,
     "lost": 0,
     "pending": 0,
-    "unverifiable": 220,
-    "archivedTotal": 386,
+    "unverifiable": 199,
+    "archivedTotal": 336,
     "rate": 100,
     "gold": {
-      "total": 4,
-      "won": 4,
+      "total": 0,
+      "won": 0,
       "lost": 0,
-      "rate": 100
+      "rate": 0
     },
     "standard": {
-      "total": 162,
-      "won": 162,
+      "total": 137,
+      "won": 137,
       "lost": 0,
       "rate": 100
     },
     "byType": {
       "btts": {
-        "total": 82,
-        "won": 82,
+        "total": 70,
+        "won": 70,
         "lost": 0,
         "rate": 100
       },
       "over25": {
-        "total": 84,
-        "won": 84,
+        "total": 67,
+        "won": 67,
         "lost": 0,
         "rate": 100
       }
     },
     "trend14": [
-      {
-        "date": "2026-07-26",
-        "total": 29,
-        "won": 29,
-        "lost": 0,
-        "rate": 100
-      },
       {
         "date": "2026-07-27",
         "total": 4,
@@ -3814,9 +3807,9 @@
       }
     ],
     "period": {
-      "from": "2026-07-26",
+      "from": "2026-07-27",
       "to": "2026-08-07",
-      "days": 13
+      "days": 12
     },
     "history": [
       {
@@ -5597,383 +5590,6 @@
         "status": "WON",
         "finalScore": "4-0",
         "verifiedAt": "2026-08-07T11:21:02.011Z",
-        "source": "ESPN public",
-        "prediction": "Oui"
-      },
-      {
-        "date": "2026-07-26",
-        "match": "Cerro vs Racing (Montevideo)",
-        "league": "Primera Division (URU)",
-        "market": "btts",
-        "tier": "STANDARD",
-        "proba": 0.48,
-        "status": "WON",
-        "finalScore": "1-0",
-        "verifiedAt": "2026-08-07T14:25:28.875Z",
-        "source": "ESPN public",
-        "prediction": "Non"
-      },
-      {
-        "date": "2026-07-26",
-        "match": "Cerro vs Racing (Montevideo)",
-        "league": "Primera Division (URU)",
-        "market": "over25",
-        "tier": "STANDARD",
-        "proba": 0.48,
-        "status": "WON",
-        "finalScore": "1-0",
-        "verifiedAt": "2026-08-07T14:25:28.875Z",
-        "source": "ESPN public",
-        "prediction": "Non"
-      },
-      {
-        "date": "2026-07-26",
-        "match": "Aucas vs Macará",
-        "league": "Serie A (ECU)",
-        "market": "over25",
-        "tier": "STANDARD",
-        "proba": 0.49,
-        "status": "WON",
-        "finalScore": "1-4",
-        "verifiedAt": "2026-08-07T14:25:28.874Z",
-        "source": "ESPN public",
-        "prediction": "Oui"
-      },
-      {
-        "date": "2026-07-26",
-        "match": "Delfín vs Leones",
-        "league": "Serie A (ECU)",
-        "market": "btts",
-        "tier": "STANDARD",
-        "proba": 0.5,
-        "status": "WON",
-        "finalScore": "0-1",
-        "verifiedAt": "2026-08-07T14:25:28.874Z",
-        "source": "ESPN public",
-        "prediction": "Non"
-      },
-      {
-        "date": "2026-07-26",
-        "match": "Delfín vs Leones",
-        "league": "Serie A (ECU)",
-        "market": "over25",
-        "tier": "STANDARD",
-        "proba": 0.5,
-        "status": "WON",
-        "finalScore": "0-1",
-        "verifiedAt": "2026-08-07T14:25:28.874Z",
-        "source": "ESPN public",
-        "prediction": "Non"
-      },
-      {
-        "date": "2026-07-26",
-        "match": "Gazovik Orenburg vs Rostov",
-        "league": "Premier League (RUS)",
-        "market": "over25",
-        "tier": "STANDARD",
-        "proba": 0.5,
-        "status": "WON",
-        "finalScore": "2-1",
-        "verifiedAt": "2026-08-07T14:25:28.874Z",
-        "source": "ESPN public",
-        "prediction": "Oui"
-      },
-      {
-        "date": "2026-07-26",
-        "match": "Orense vs Independiente del Valle",
-        "league": "Serie A (ECU)",
-        "market": "over25",
-        "tier": "STANDARD",
-        "proba": 0.5,
-        "status": "WON",
-        "finalScore": "2-3",
-        "verifiedAt": "2026-08-07T14:25:28.874Z",
-        "source": "ESPN public",
-        "prediction": "Oui"
-      },
-      {
-        "date": "2026-07-26",
-        "match": "Rubin Kazan vs Krasnodar",
-        "league": "Premier League (RUS)",
-        "market": "over25",
-        "tier": "STANDARD",
-        "proba": 0.5,
-        "status": "WON",
-        "finalScore": "1-3",
-        "verifiedAt": "2026-08-07T14:25:28.874Z",
-        "source": "ESPN public",
-        "prediction": "Oui"
-      },
-      {
-        "date": "2026-07-26",
-        "match": "Audax Italiano vs Universidad de Chile",
-        "league": "Primera Division (CHI)",
-        "market": "btts",
-        "tier": "GOLD",
-        "proba": 0.51,
-        "status": "WON",
-        "finalScore": "1-2",
-        "verifiedAt": "2026-08-07T14:25:28.873Z",
-        "source": "ESPN public",
-        "prediction": "Oui"
-      },
-      {
-        "date": "2026-07-26",
-        "match": "Audax Italiano vs Universidad de Chile",
-        "league": "Primera Division (CHI)",
-        "market": "over25",
-        "tier": "GOLD",
-        "proba": 0.51,
-        "status": "WON",
-        "finalScore": "1-2",
-        "verifiedAt": "2026-08-07T14:25:28.873Z",
-        "source": "ESPN public",
-        "prediction": "Oui"
-      },
-      {
-        "date": "2026-07-26",
-        "match": "Club Olimpia vs Libertad",
-        "league": "Primera Division (PAR)",
-        "market": "over25",
-        "tier": "GOLD",
-        "proba": 0.51,
-        "status": "WON",
-        "finalScore": "0-1",
-        "verifiedAt": "2026-08-07T14:25:28.873Z",
-        "source": "ESPN public",
-        "prediction": "Non"
-      },
-      {
-        "date": "2026-07-26",
-        "match": "Guaraní vs Sportivo Luqueño",
-        "league": "Primera Division (PAR)",
-        "market": "btts",
-        "tier": "GOLD",
-        "proba": 0.51,
-        "status": "WON",
-        "finalScore": "1-2",
-        "verifiedAt": "2026-08-07T14:25:28.873Z",
-        "source": "ESPN public",
-        "prediction": "Oui"
-      },
-      {
-        "date": "2026-07-26",
-        "match": "Atlético Tucumán vs Independiente Rivadavia",
-        "league": "Primera Division (ARG)",
-        "market": "over25",
-        "tier": "STANDARD",
-        "proba": 0.5,
-        "status": "WON",
-        "finalScore": "0-0",
-        "verifiedAt": "2026-08-07T12:16:47.664Z",
-        "source": "ESPN public",
-        "prediction": "Non"
-      },
-      {
-        "date": "2026-07-26",
-        "match": "Bahia vs Corinthians",
-        "league": "Serie A (BRA)",
-        "market": "btts",
-        "tier": "STANDARD",
-        "proba": 0.49,
-        "status": "WON",
-        "finalScore": "1-1",
-        "verifiedAt": "2026-08-07T12:16:47.664Z",
-        "source": "ESPN public",
-        "prediction": "Oui"
-      },
-      {
-        "date": "2026-07-26",
-        "match": "Bahia vs Corinthians",
-        "league": "Serie A (BRA)",
-        "market": "over25",
-        "tier": "STANDARD",
-        "proba": 0.49,
-        "status": "WON",
-        "finalScore": "1-1",
-        "verifiedAt": "2026-08-07T12:16:47.664Z",
-        "source": "ESPN public",
-        "prediction": "Non"
-      },
-      {
-        "date": "2026-07-26",
-        "match": "Cruzeiro vs Botafogo",
-        "league": "Serie A (BRA)",
-        "market": "over25",
-        "tier": "STANDARD",
-        "proba": 0.48,
-        "status": "WON",
-        "finalScore": "0-1",
-        "verifiedAt": "2026-08-07T12:16:47.664Z",
-        "source": "ESPN public",
-        "prediction": "Non"
-      },
-      {
-        "date": "2026-07-26",
-        "match": "F.C. København vs Lyngby Boldklub",
-        "league": "Superliga",
-        "market": "btts",
-        "tier": "STANDARD",
-        "proba": 0.48,
-        "status": "WON",
-        "finalScore": "3-2",
-        "verifiedAt": "2026-08-07T12:16:47.664Z",
-        "source": "ESPN public",
-        "prediction": "Oui"
-      },
-      {
-        "date": "2026-07-26",
-        "match": "F.C. København vs Lyngby Boldklub",
-        "league": "Superliga",
-        "market": "over25",
-        "tier": "STANDARD",
-        "proba": 0.48,
-        "status": "WON",
-        "finalScore": "3-2",
-        "verifiedAt": "2026-08-07T12:16:47.664Z",
-        "source": "ESPN public",
-        "prediction": "Oui"
-      },
-      {
-        "date": "2026-07-26",
-        "match": "GAIS vs Halmstads BK",
-        "league": "Allsvenskan",
-        "market": "over25",
-        "tier": "STANDARD",
-        "proba": 0.49,
-        "status": "WON",
-        "finalScore": "1-1",
-        "verifiedAt": "2026-08-07T12:16:47.664Z",
-        "source": "ESPN public",
-        "prediction": "Non"
-      },
-      {
-        "date": "2026-07-26",
-        "match": "Sandefjord vs Bodo/Glimt",
-        "league": "Eliteserien",
-        "market": "btts",
-        "tier": "STANDARD",
-        "proba": 0.49,
-        "status": "WON",
-        "finalScore": "0-3",
-        "verifiedAt": "2026-08-07T12:16:47.664Z",
-        "source": "ESPN public",
-        "prediction": "Non"
-      },
-      {
-        "date": "2026-07-26",
-        "match": "Sandefjord vs Bodo/Glimt",
-        "league": "Eliteserien",
-        "market": "over25",
-        "tier": "STANDARD",
-        "proba": 0.49,
-        "status": "WON",
-        "finalScore": "0-3",
-        "verifiedAt": "2026-08-07T12:16:47.664Z",
-        "source": "ESPN public",
-        "prediction": "Oui"
-      },
-      {
-        "date": "2026-07-26",
-        "match": "Aalesund vs Viking FK",
-        "league": "Eliteserien",
-        "market": "btts",
-        "tier": "STANDARD",
-        "proba": 0.52,
-        "status": "WON",
-        "finalScore": "1-1",
-        "verifiedAt": "2026-08-07T12:16:47.663Z",
-        "source": "ESPN public",
-        "prediction": "Oui"
-      },
-      {
-        "date": "2026-07-26",
-        "match": "Atlético Tucumán vs Independiente Rivadavia",
-        "league": "Primera Division (ARG)",
-        "market": "btts",
-        "tier": "STANDARD",
-        "proba": 0.5,
-        "status": "WON",
-        "finalScore": "0-0",
-        "verifiedAt": "2026-08-07T12:16:47.663Z",
-        "source": "ESPN public",
-        "prediction": "Non"
-      },
-      {
-        "date": "2026-07-26",
-        "match": "Estudiantes de La Plata vs Independiente",
-        "league": "Primera Division (ARG)",
-        "market": "btts",
-        "tier": "STANDARD",
-        "proba": 0.51,
-        "status": "WON",
-        "finalScore": "0-2",
-        "verifiedAt": "2026-08-07T12:16:47.663Z",
-        "source": "ESPN public",
-        "prediction": "Non"
-      },
-      {
-        "date": "2026-07-26",
-        "match": "Estudiantes de La Plata vs Independiente",
-        "league": "Primera Division (ARG)",
-        "market": "over25",
-        "tier": "STANDARD",
-        "proba": 0.51,
-        "status": "WON",
-        "finalScore": "0-2",
-        "verifiedAt": "2026-08-07T12:16:47.663Z",
-        "source": "ESPN public",
-        "prediction": "Non"
-      },
-      {
-        "date": "2026-07-26",
-        "match": "KFUM Oslo vs Molde",
-        "league": "Eliteserien",
-        "market": "btts",
-        "tier": "STANDARD",
-        "proba": 0.51,
-        "status": "WON",
-        "finalScore": "2-4",
-        "verifiedAt": "2026-08-07T12:16:47.663Z",
-        "source": "ESPN public",
-        "prediction": "Oui"
-      },
-      {
-        "date": "2026-07-26",
-        "match": "KFUM Oslo vs Molde",
-        "league": "Eliteserien",
-        "market": "over25",
-        "tier": "STANDARD",
-        "proba": 0.51,
-        "status": "WON",
-        "finalScore": "2-4",
-        "verifiedAt": "2026-08-07T12:16:47.663Z",
-        "source": "ESPN public",
-        "prediction": "Oui"
-      },
-      {
-        "date": "2026-07-26",
-        "match": "SK Brann vs Vålerenga",
-        "league": "Eliteserien",
-        "market": "btts",
-        "tier": "STANDARD",
-        "proba": 0.5,
-        "status": "WON",
-        "finalScore": "2-3",
-        "verifiedAt": "2026-08-07T12:16:47.663Z",
-        "source": "ESPN public",
-        "prediction": "Oui"
-      },
-      {
-        "date": "2026-07-26",
-        "match": "SK Brann vs Vålerenga",
-        "league": "Eliteserien",
-        "market": "over25",
-        "tier": "STANDARD",
-        "proba": 0.5,
-        "status": "WON",
-        "finalScore": "2-3",
-        "verifiedAt": "2026-08-07T12:16:47.663Z",
         "source": "ESPN public",
         "prediction": "Oui"
       }
