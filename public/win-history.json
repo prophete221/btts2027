@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "generatedAt": "2026-10-24T13:04:35.010Z",
+  "generatedAt": "2026-10-24T17:48:06.146Z",
   "pendingPolicy": {
     "graceHours": 48,
     "rule": "Sans statut vérifié, un match futur ou récent reste « en attente » pendant exactement 48 h après son coup d'envoi.",
@@ -15,18 +15,18 @@
     "insufficientVolume": false
   },
   "stats": {
-    "total": 273,
-    "won": 232,
-    "lost": 41,
-    "pending": 59,
+    "total": 287,
+    "won": 239,
+    "lost": 48,
+    "pending": 49,
     "unverifiable": 130,
-    "archivedTotal": 462,
-    "rate": 85,
+    "archivedTotal": 466,
+    "rate": 83.3,
     "gold": {
-      "total": 186,
-      "won": 165,
-      "lost": 21,
-      "rate": 88.7
+      "total": 200,
+      "won": 172,
+      "lost": 28,
+      "rate": 86
     },
     "standard": {
       "total": 87,
@@ -36,10 +36,10 @@
     },
     "byType": {
       "btts": {
-        "total": 270,
-        "won": 231,
-        "lost": 39,
-        "rate": 85.6
+        "total": 284,
+        "won": 238,
+        "lost": 46,
+        "rate": 83.8
       },
       "over25": {
         "total": 3,
@@ -142,9 +142,9 @@
       },
       {
         "date": "2026-10-24",
-        "total": 2,
-        "won": 1,
-        "lost": 1,
+        "total": 16,
+        "won": 8,
+        "lost": 8,
         "rate": 50
       }
     ],
@@ -155,6 +155,188 @@
     }
   },
   "history": [
+    {
+      "date": "2026-10-24",
+      "match": "West Ham United vs Southampton",
+      "league": "Championship",
+      "market": "btts",
+      "tier": "GOLD",
+      "proba": 0.5302,
+      "status": "WON",
+      "finalScore": "2-3",
+      "verifiedAt": "2026-10-24T17:47:22.750Z",
+      "source": "ESPN public",
+      "prediction": "Oui"
+    },
+    {
+      "date": "2026-10-24",
+      "match": "Blackburn Rovers vs Wrexham",
+      "league": "Championship",
+      "market": "btts",
+      "tier": "GOLD",
+      "proba": 0.5977,
+      "status": "LOST",
+      "finalScore": "2-0",
+      "verifiedAt": "2026-10-24T17:47:22.749Z",
+      "source": "ESPN public",
+      "prediction": "Oui"
+    },
+    {
+      "date": "2026-10-24",
+      "match": "Queens Park Rangers vs Swansea City",
+      "league": "Championship",
+      "market": "btts",
+      "tier": "GOLD",
+      "proba": 0.6073,
+      "status": "LOST",
+      "finalScore": "5-0",
+      "verifiedAt": "2026-10-24T17:47:22.749Z",
+      "source": "ESPN public",
+      "prediction": "Oui"
+    },
+    {
+      "date": "2026-10-24",
+      "match": "St Mirren vs Dundee",
+      "league": "Scottish Premiership",
+      "market": "btts",
+      "tier": "GOLD",
+      "proba": 0.6054,
+      "status": "WON",
+      "finalScore": "2-1",
+      "verifiedAt": "2026-10-24T17:47:22.749Z",
+      "source": "ESPN public",
+      "prediction": "Oui"
+    },
+    {
+      "date": "2026-10-24",
+      "match": "Rayo Vallecano vs Elche",
+      "league": "LaLiga",
+      "market": "btts",
+      "tier": "GOLD",
+      "proba": 0.6291,
+      "status": "LOST",
+      "finalScore": "0-3",
+      "verifiedAt": "2026-10-24T17:47:03.087Z",
+      "source": "ESPN public",
+      "prediction": "Oui"
+    },
+    {
+      "date": "2026-10-24",
+      "match": "Antwerp vs Royal Charleroi SC",
+      "league": "Jupiler Pro League",
+      "market": "btts",
+      "tier": "GOLD",
+      "proba": 0.6017,
+      "status": "LOST",
+      "finalScore": "3-0",
+      "verifiedAt": "2026-10-24T17:47:03.085Z",
+      "source": "ESPN public",
+      "prediction": "Oui"
+    },
+    {
+      "date": "2026-10-24",
+      "match": "Cardiff City vs Birmingham City",
+      "league": "Championship",
+      "market": "btts",
+      "tier": "GOLD",
+      "proba": 0.6084,
+      "status": "LOST",
+      "finalScore": "1-0",
+      "verifiedAt": "2026-10-24T17:47:03.084Z",
+      "source": "ESPN public",
+      "prediction": "Oui"
+    },
+    {
+      "date": "2026-10-24",
+      "match": "Sheffield United vs Derby County",
+      "league": "Championship",
+      "market": "btts",
+      "tier": "GOLD",
+      "proba": 0.6193,
+      "status": "WON",
+      "finalScore": "1-1",
+      "verifiedAt": "2026-10-24T17:47:03.084Z",
+      "source": "ESPN public",
+      "prediction": "Oui"
+    },
+    {
+      "date": "2026-10-24",
+      "match": "Portsmouth vs Millwall",
+      "league": "Championship",
+      "market": "btts",
+      "tier": "GOLD",
+      "proba": 0.6394,
+      "status": "WON",
+      "finalScore": "2-1",
+      "verifiedAt": "2026-10-24T17:47:03.083Z",
+      "source": "ESPN public",
+      "prediction": "Oui"
+    },
+    {
+      "date": "2026-10-24",
+      "match": "Racing Santander vs Espanyol",
+      "league": "LaLiga",
+      "market": "btts",
+      "tier": "GOLD",
+      "proba": 0.6573,
+      "status": "WON",
+      "finalScore": "2-1",
+      "verifiedAt": "2026-10-24T17:47:03.082Z",
+      "source": "ESPN public",
+      "prediction": "Oui"
+    },
+    {
+      "date": "2026-10-24",
+      "match": "Stoke City vs Bristol City",
+      "league": "Championship",
+      "market": "btts",
+      "tier": "GOLD",
+      "proba": 0.6601,
+      "status": "LOST",
+      "finalScore": "0-0",
+      "verifiedAt": "2026-10-24T17:47:03.082Z",
+      "source": "ESPN public",
+      "prediction": "Oui"
+    },
+    {
+      "date": "2026-10-24",
+      "match": "TSV Hartberg vs Wolfsberger",
+      "league": "Austrian Bundesliga",
+      "market": "btts",
+      "tier": "GOLD",
+      "proba": 0.6867,
+      "status": "LOST",
+      "finalScore": "1-0",
+      "verifiedAt": "2026-10-24T17:47:03.080Z",
+      "source": "ESPN public",
+      "prediction": "Oui"
+    },
+    {
+      "date": "2026-10-24",
+      "match": "WSG Swarovski Tirol vs Grazer AK",
+      "league": "Austrian Bundesliga",
+      "market": "btts",
+      "tier": "GOLD",
+      "proba": 0.7304,
+      "status": "WON",
+      "finalScore": "1-1",
+      "verifiedAt": "2026-10-24T17:46:59.353Z",
+      "source": "ESPN public",
+      "prediction": "Oui"
+    },
+    {
+      "date": "2026-10-24",
+      "match": "FC Utrecht vs PEC Zwolle",
+      "league": "Eredivisie",
+      "market": "btts",
+      "tier": "GOLD",
+      "proba": 0.8013,
+      "status": "WON",
+      "finalScore": "1-1",
+      "verifiedAt": "2026-10-24T17:46:59.352Z",
+      "source": "ESPN public",
+      "prediction": "Oui"
+    },
     {
       "date": "2026-10-24",
       "match": "Hertha Berlin vs Arminia Bielefeld",

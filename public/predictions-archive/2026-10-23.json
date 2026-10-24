@@ -9934,7 +9934,9 @@
           "result": "D"
         }
       ],
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "1-1",
+      "verifiedAt": "2026-10-24T17:46:59.352Z"
     },
     {
       "id": "fcheiden-vs-energiec-2026-10-24",
@@ -10332,7 +10334,9 @@
           "result": "D"
         }
       ],
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "1-1",
+      "verifiedAt": "2026-10-24T17:46:59.353Z"
     },
     {
       "id": "adodenha-vs-heerenve-2026-10-24",
@@ -10926,7 +10930,9 @@
           "result": "L"
         }
       ],
-      "status": "PENDING"
+      "status": "LOST",
+      "finalScore": "1-0",
+      "verifiedAt": "2026-10-24T17:47:03.080Z"
     },
     {
       "id": "atlticom-vs-deportiv-2026-10-24",

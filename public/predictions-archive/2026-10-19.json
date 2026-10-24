@@ -1532,7 +1532,9 @@
       "over25Prob": 0.8292,
       "homeLambda": 2.15,
       "awayLambda": 2.38,
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "1-1",
+      "verifiedAt": "2026-10-24T17:46:59.352Z"
     }
   ]
 }
