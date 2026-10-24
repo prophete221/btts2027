@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "generatedAt": "2026-10-24T20:04:25.466Z",
+  "generatedAt": "2026-10-24T22:51:09.591Z",
   "pendingPolicy": {
     "graceHours": 48,
     "rule": "Sans statut vérifié, un match futur ou récent reste « en attente » pendant exactement 48 h après son coup d'envoi.",
@@ -15,31 +15,31 @@
     "insufficientVolume": false
   },
   "stats": {
-    "total": 290,
-    "won": 241,
-    "lost": 49,
-    "pending": 46,
+    "total": 299,
+    "won": 245,
+    "lost": 54,
+    "pending": 37,
     "unverifiable": 130,
     "archivedTotal": 466,
-    "rate": 83.1,
+    "rate": 81.9,
     "gold": {
-      "total": 203,
-      "won": 174,
-      "lost": 29,
-      "rate": 85.7
+      "total": 209,
+      "won": 176,
+      "lost": 33,
+      "rate": 84.2
     },
     "standard": {
-      "total": 87,
-      "won": 67,
-      "lost": 20,
-      "rate": 77
+      "total": 90,
+      "won": 69,
+      "lost": 21,
+      "rate": 76.7
     },
     "byType": {
       "btts": {
-        "total": 287,
-        "won": 240,
-        "lost": 47,
-        "rate": 83.6
+        "total": 296,
+        "won": 244,
+        "lost": 52,
+        "rate": 82.4
       },
       "over25": {
         "total": 3,
@@ -142,10 +142,10 @@
       },
       {
         "date": "2026-10-24",
-        "total": 19,
-        "won": 10,
-        "lost": 9,
-        "rate": 52.6
+        "total": 28,
+        "won": 14,
+        "lost": 14,
+        "rate": 50
       }
     ],
     "period": {
@@ -155,6 +155,123 @@
     }
   },
   "history": [
+    {
+      "date": "2026-10-24",
+      "match": "Gil Vicente vs FC Porto",
+      "league": "Liga Portugal",
+      "market": "btts",
+      "tier": "STANDARD",
+      "proba": 0.4766,
+      "status": "WON",
+      "finalScore": "0-1",
+      "verifiedAt": "2026-10-24T22:50:24.101Z",
+      "source": "ESPN public",
+      "prediction": "Non"
+    },
+    {
+      "date": "2026-10-24",
+      "match": "Lazio vs Parma",
+      "league": "Serie A",
+      "market": "btts",
+      "tier": "STANDARD",
+      "proba": 0.4386,
+      "status": "LOST",
+      "finalScore": "2-1",
+      "verifiedAt": "2026-10-24T22:50:24.101Z",
+      "source": "ESPN public",
+      "prediction": "Non"
+    },
+    {
+      "date": "2026-10-24",
+      "match": "Lens vs Paris FC",
+      "league": "Ligue 1",
+      "market": "btts",
+      "tier": "STANDARD",
+      "proba": 0.5767,
+      "status": "WON",
+      "finalScore": "2-1",
+      "verifiedAt": "2026-10-24T22:50:24.101Z",
+      "source": "ESPN public",
+      "prediction": "Oui"
+    },
+    {
+      "date": "2026-10-24",
+      "match": "Columbus Crew vs Toronto FC",
+      "league": "MLS",
+      "market": "btts",
+      "tier": "GOLD",
+      "proba": 0.4662,
+      "status": "LOST",
+      "finalScore": "4-2",
+      "verifiedAt": "2026-10-24T22:50:24.100Z",
+      "source": "ESPN public",
+      "prediction": "Non"
+    },
+    {
+      "date": "2026-10-24",
+      "match": "1. FC Nürnberg vs Kaiserslautern",
+      "league": "2. Bundesliga",
+      "market": "btts",
+      "tier": "GOLD",
+      "proba": 0.5671,
+      "status": "LOST",
+      "finalScore": "0-1",
+      "verifiedAt": "2026-10-24T22:49:59.543Z",
+      "source": "ESPN public",
+      "prediction": "Oui"
+    },
+    {
+      "date": "2026-10-24",
+      "match": "RAAL La Louvière vs Zulte-Waregem",
+      "league": "Jupiler Pro League",
+      "market": "btts",
+      "tier": "GOLD",
+      "proba": 0.6277,
+      "status": "LOST",
+      "finalScore": "3-0",
+      "verifiedAt": "2026-10-24T22:49:59.542Z",
+      "source": "ESPN public",
+      "prediction": "Oui"
+    },
+    {
+      "date": "2026-10-24",
+      "match": "Atlético Madrid vs Deportivo",
+      "league": "LaLiga",
+      "market": "btts",
+      "tier": "GOLD",
+      "proba": 0.6765,
+      "status": "LOST",
+      "finalScore": "1-0",
+      "verifiedAt": "2026-10-24T22:49:54.872Z",
+      "source": "ESPN public",
+      "prediction": "Oui"
+    },
+    {
+      "date": "2026-10-24",
+      "match": "ADO Den Haag vs Heerenveen",
+      "league": "Eredivisie",
+      "market": "btts",
+      "tier": "GOLD",
+      "proba": 0.7115,
+      "status": "WON",
+      "finalScore": "2-3",
+      "verifiedAt": "2026-10-24T22:49:54.871Z",
+      "source": "ESPN public",
+      "prediction": "Oui"
+    },
+    {
+      "date": "2026-10-24",
+      "match": "KVC Westerlo vs Waasland-Beveren",
+      "league": "Jupiler Pro League",
+      "market": "btts",
+      "tier": "GOLD",
+      "proba": 0.71,
+      "status": "WON",
+      "finalScore": "4-4",
+      "verifiedAt": "2026-10-24T22:49:54.871Z",
+      "source": "ESPN public",
+      "prediction": "Oui"
+    },
     {
       "date": "2026-10-24",
       "match": "CF Montréal vs Nashville SC",

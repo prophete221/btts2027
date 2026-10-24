@@ -13169,7 +13169,9 @@
           "result": "L"
         }
       ],
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "2-3",
+      "verifiedAt": "2026-10-24T22:49:54.871Z"
     },
     {
       "id": "kvcweste-vs-waasland-2026-10-24",
@@ -13367,7 +13369,9 @@
           "result": "L"
         }
       ],
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "4-4",
+      "verifiedAt": "2026-10-24T22:49:54.871Z"
     },
     {
       "id": "tsvhartb-vs-wolfsber-2026-10-24",
@@ -13765,7 +13769,9 @@
           "result": "D"
         }
       ],
-      "status": "PENDING"
+      "status": "LOST",
+      "finalScore": "1-0",
+      "verifiedAt": "2026-10-24T22:49:54.872Z"
     },
     {
       "id": "philadel-vs-newengla-2026-10-24",
