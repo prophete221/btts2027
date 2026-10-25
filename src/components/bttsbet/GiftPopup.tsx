@@ -118,7 +118,7 @@ export default function GiftPopup() {
           transition={{ type: 'spring', stiffness: 320, damping: 19 }}
           className="hp-gift"
           role="complementary"
-          aria-label="Exclusive Linebet offer — 300% bonus"
+          aria-label="Linebet bookmaker bonus 300% — promo code VISION221"
         >
           <div className="hp-gift-card">
             {/* Fermeture — l'utilisateur garde le contrôle */}
@@ -175,10 +175,10 @@ export default function GiftPopup() {
             {/* Offre */}
             <div className="hp-gift-body">
               <p className="hp-gift-bonus">
-                <span>300%</span> Bonus
+                Linebet · <span>300%</span> bonus
               </p>
               <p className="hp-gift-sub">
-                1. Click below · 2. Enter code <b>{SITE.promoCode}</b>
+                Bookmaker promo code <b>{SITE.promoCode}</b> on Linebet
               </p>
               <MovingGradientButton
                 href={AFFILIATE.linebet}
@@ -194,7 +194,7 @@ export default function GiftPopup() {
                 border={{ borderWidth: 1.5, borderStyle: 'solid', borderColor: 'rgba(0, 210, 122, 0.45)' }}
                 stroke={{ headColor: '#8CFFC1', color: '#00C26E', direction: 'cw', movement: 'step', count: 2, trail: 72, speed: 14 }}
               >
-                Sign up · {SITE.promoCode}
+                Join Linebet · {SITE.promoCode}
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                   <line x1="5" y1="12" x2="19" y2="12" />
                   <polyline points="12 5 19 12 12 19" />
