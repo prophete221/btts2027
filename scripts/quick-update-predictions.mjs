@@ -191,29 +191,11 @@ const DOMESTIC_SLUGS = [
 const teamSlugResolution = new Map() // teamId → slug domestique résolu
 
 // ─── Poisson functions (conservées — mathématiquement correctes) ───
-function factorial(n) {
-  if (n <= 1) return 1
-  let r = 1
-  for (let i = 2; i <= n; i++) r *= i
-  return r
-}
-
-function bttsRealProb(lambdaHome, lambdaAway) {
-  const pHomeScores = 1 - Math.exp(-lambdaHome)
-  const pAwayScores = 1 - Math.exp(-lambdaAway)
-  return pHomeScores * pAwayScores
-}
-
-function over25RealProb(lambdaHome, lambdaAway) {
-  let pUnder25 = 0
-  for (let i = 0; i <= 2; i++) {
-    for (let j = 0; j <= 2 - i; j++) {
-      const pHome = Math.exp(-lambdaHome) * Math.pow(lambdaHome, i) / factorial(i)
-      const pAway = Math.exp(-lambdaAway) * Math.pow(lambdaAway, j) / factorial(j)
-      pUnder25 += pHome * pAway
-    }
-  }
-  return 1 - pUnder25
+/** Moyenne des taux empiriques valides (0–1). Remplace l’ancien moteur Poisson. */
+function empiricalRate(...rates) {
+  const vals = rates.filter((r) => typeof r === 'number' && Number.isFinite(r) && r >= 0 && r <= 1)
+  if (!vals.length) return null
+  return vals.reduce((a, b) => a + b, 0) / vals.length
 }
 
 // ─── Fetch real team stats from ESPN schedule API (un slug donné) ───
@@ -488,7 +470,7 @@ function genAnalysis(home, away, xgHome, xgAway, bttsProb, over25Prob, formHome,
 // ─── Main ───
 async function quickUpdate() {
   const today = getTodayISO()
-  console.log(`[v91 Display-First] Generating predictions for ${today}`)
+  console.log(`[v92 Empirical-stats + Gemini] Generating predictions for ${today}`)
   console.log('[v91] Strategy: display top matches per day. Eliminate only truly unusable.')
 
   const dateParams = []
@@ -550,47 +532,51 @@ async function quickUpdate() {
     const qualityRank = { HIGH: 3, MEDIUM: 2, LOW: 1 }
     const dataQuality = qualityRank[homeQuality] <= qualityRank[awayQuality] ? homeQuality : awayQuality
 
-    // ─── Calculate lambda from REAL data only ───
-    let homeAttackXG, homeDefenseXG, awayAttackXG, awayDefenseXG
+    // ─── Signaux empiriques (forme récente) — plus de Poisson / λ inventé ───
+    // Gemini (analyze/enrich) affine ensuite proba + Oui/Non à partir de ces stats.
+    const homeBttsRate = homeStats.form?.bttsRate
+    const awayBttsRate = awayStats.form?.bttsRate
+    const homeOverRate = homeStats.form?.over25Rate
+    const awayOverRate = awayStats.form?.over25Rate
 
-    if (homeStats.available && homeStats.matchCount >= 4) {
-      // Real data: prefer home-specific stats for home team
-      homeAttackXG = homeStats.homeAvgScored !== null ? homeStats.homeAvgScored : homeStats.avgScored
-      homeDefenseXG = homeStats.homeAvgConceded !== null ? homeStats.homeAvgConceded : homeStats.avgConceded
+    let bttsProbRaw = empiricalRate(homeBttsRate, awayBttsRate)
+    let over25ProbRaw = empiricalRate(homeOverRate, awayOverRate)
+
+    // Moyennes de buts observées (descriptif — PAS des xG fournisseur, PAS un λ Poisson)
+    const avgHomeFor = homeStats.homeAvgScored != null ? homeStats.homeAvgScored : homeStats.avgScored
+    const avgHomeAg = homeStats.homeAvgConceded != null ? homeStats.homeAvgConceded : homeStats.avgConceded
+    const avgAwayFor = awayStats.awayAvgScored != null ? awayStats.awayAvgScored : awayStats.avgScored
+    const avgAwayAg = awayStats.awayAvgConceded != null ? awayStats.awayAvgConceded : awayStats.avgConceded
+
+    if (bttsProbRaw == null) {
+      // Proxy faible : part des matchs où chaque côté marque en moyenne > 0.9 buts
+      const ph = (avgHomeFor != null && avgHomeFor >= 0.9) ? 0.62 : 0.45
+      const pa = (avgAwayFor != null && avgAwayFor >= 0.9) ? 0.62 : 0.45
+      bttsProbRaw = (ph + pa) / 2
+    }
+    if (over25ProbRaw == null) {
+      const tot = (Number(avgHomeFor) || 1) + (Number(avgAwayFor) || 1)
+      over25ProbRaw = tot >= 2.7 ? 0.58 : tot >= 2.2 ? 0.5 : 0.42
     }
 
-    if (awayStats.available && awayStats.matchCount >= 4) {
-      // Real data: prefer away-specific stats for away team
-      awayAttackXG = awayStats.awayAvgScored !== null ? awayStats.awayAvgScored : awayStats.avgScored
-      awayDefenseXG = awayStats.awayAvgConceded !== null ? awayStats.awayAvgConceded : awayStats.avgConceded
-    }
+    const goalsHome = +(Number(avgHomeFor) || 0).toFixed(2)
+    const goalsAway = +(Number(avgAwayFor) || 0).toFixed(2)
+    const goalsTotal = +(goalsHome + goalsAway).toFixed(2)
 
-    // Lambda = average of (team attack, opponent defense)
-    const homeBonus = 0.15
-    const lambdaHome = Math.max(0.50, Math.min(3.00,
-      (homeAttackXG + awayDefenseXG) / 2 + homeBonus
-    ))
-    const lambdaAway = Math.max(0.50, Math.min(3.00,
-      (awayAttackXG + homeDefenseXG) / 2
-    ))
+    // Compat champs historiques (UI) : plus présentés comme xG/λ Poisson
+    const xgHome = goalsHome
+    const xgAway = goalsAway
+    const xgTotal = goalsTotal
 
-    // ─── Calculate REAL Poisson probas ───
-    const bttsProbRaw = bttsRealProb(lambdaHome, lambdaAway)
-    const over25ProbRaw = over25RealProb(lambdaHome, lambdaAway)
-
-    const xgHome = +lambdaHome.toFixed(2)
-    const xgAway = +lambdaAway.toFixed(2)
-    const xgTotal = +(lambdaHome + lambdaAway).toFixed(2)
-
-    // ═══ DISPLAY-FIRST: only reject if both BTTS and Over 2.5 are very low ═══
+    // ═══ Ne publier que si au moins un marché a un signal raisonnable ═══
     const maxProb = Math.max(bttsProbRaw, over25ProbRaw)
-    if (maxProb < 0.35) {
+    if (maxProb < 0.40) {
       rejected++
-      rejectionReasons.push(`REJETE: ${m.home} vs ${m.away} - BTTS ${(bttsProbRaw*100).toFixed(1)}% + Over ${(over25ProbRaw*100).toFixed(1)}% tous deux < 35%`)
+      rejectionReasons.push(`REJETE: ${m.home} vs ${m.away} - signaux empiriques trop faibles BTTS ${(bttsProbRaw*100).toFixed(1)}% Over ${(over25ProbRaw*100).toFixed(1)}%`)
       continue
     }
 
-    // ═══ RELIABILITY SCORE — basé sur données réelles, pas de randomisation ═══
+        // ═══ RELIABILITY SCORE — basé sur données réelles, pas de randomisation ═══
     // xg score: higher xG total → higher score
     let xgScore = 0
     if (xgTotal >= 3.2) xgScore = 95
@@ -639,7 +625,7 @@ async function quickUpdate() {
     const oddsBit = m.odds?.provider
       ? ` Cotes ${m.odds.provider} — 1: ${m.odds.home ?? '—'} / N: ${m.odds.draw ?? '—'} / 2: ${m.odds.away ?? '—'}${m.odds.over25 ? ` · Over 2.5: ${m.odds.over25}` : ''}.`
       : ''
-    const analysis = `${formBits.join(' · ')}.${rankBits.length ? ` Classement : ${rankBits.join(', ')}.` : ''} Modèle Poisson : xG cumulé ${xgTotal}, BTTS ${(bttsProbRaw*100).toFixed(1)}%, Over 2.5 ${(over25ProbRaw*100).toFixed(1)}%.${oddsBit} Fiabilité ${reliability}%.`
+    const analysis = `${formBits.join(' · ')}.${rankBits.length ? ` Classement : ${rankBits.join(', ')}.` : ''} Stats empiriques (forme récente) : buts moy. ${xgTotal}, BTTS ${(bttsProbRaw*100).toFixed(1)}%, Over 2.5 ${(over25ProbRaw*100).toFixed(1)}%. Affinage AI ensuite.${oddsBit} Fiabilité ${reliability}%.`
     const matchId = genMatchId(m.home, m.away, m.date)
 
     // Build TWO predictions: BTTS + Over 2.5 (so component has both)
@@ -650,6 +636,8 @@ async function quickUpdate() {
       bttsProb: +bttsProbRaw.toFixed(4),
       homeLambda: xgHome,
       awayLambda: xgAway,
+      modelEngine: 'empirical-form+gemini',
+      statsOnly: true,
     }
 
     const over25Prediction = {
@@ -659,6 +647,8 @@ async function quickUpdate() {
       over25Prob: +over25ProbRaw.toFixed(4),
       homeLambda: xgHome,
       awayLambda: xgAway,
+      modelEngine: 'empirical-form+gemini',
+      statsOnly: true,
     }
 
     // MAIN prediction object — contains everything the component needs
@@ -741,6 +731,8 @@ async function quickUpdate() {
       over25Prob: +over25ProbRaw.toFixed(4),
       homeLambda: xgHome,
       awayLambda: xgAway,
+      modelEngine: 'empirical-form+gemini',
+      statsOnly: true,
     }
 
     scored.push(prediction)
