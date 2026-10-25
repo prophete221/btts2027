@@ -10954,7 +10954,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 2.2, nul: 3.4, 2: 2.9, Over 2.5: 1.69.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.2, draw: 3.4, 2: 2.9, Over 2.5: 1.69."
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.2, draw: 3.4, 2: 2.9, Over 2.5: 1.69.",
+      "status": "PENDING"
     }
   ],
   "vipPreview": [
