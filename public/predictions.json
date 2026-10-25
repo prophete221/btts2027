@@ -1,6 +1,6 @@
 {
   "date": "2026-10-25",
-  "lastUpdated": "2026-10-25T02:29:51.556Z",
+  "lastUpdated": "2026-10-25T07:57:33.576Z",
   "source": "ESPN + TheSportsDB",
   "free": [
     {
@@ -990,7 +990,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 1.74, nul: 3.8, 2: 4.5, Over 2.5: 1.56.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 1.74, draw: 3.8, 2: 4.5, Over 2.5: 1.56."
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 1.74, draw: 3.8, 2: 4.5, Over 2.5: 1.56.",
+      "status": "PENDING"
     },
     {
       "id": "azalkmaa-vs-fctwente-2026-10-25",
@@ -1187,7 +1188,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 2.15, nul: 3.9, 2: 2.95.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.15, draw: 3.9, 2: 2.95."
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.15, draw: 3.9, 2: 2.95.",
+      "status": "PENDING"
     },
     {
       "id": "clubbrug-vs-sinttrui-2026-10-25",
@@ -1384,7 +1386,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 1.34, nul: 5.75, 2: 7.5.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 1.34, draw: 5.75, 2: 7.5."
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 1.34, draw: 5.75, 2: 7.5.",
+      "status": "PENDING"
     },
     {
       "id": "vflosnab-vs-spvgggre-2026-10-25",
@@ -1581,7 +1584,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 2.25, nul: 3.6, 2: 2.95, Over 2.5: 1.57.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.25, draw: 3.6, 2: 2.95, Over 2.5: 1.57."
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.25, draw: 3.6, 2: 2.95, Over 2.5: 1.57.",
+      "status": "PENDING"
     },
     {
       "id": "rioave-vs-fcfamali-2026-10-25",
@@ -1778,7 +1782,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 3.65, nul: 3.35, 2: 2.05, Over 2.5: 2.05.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 3.65, draw: 3.35, 2: 2.05, Over 2.5: 2.05."
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 3.65, draw: 3.35, 2: 2.05, Over 2.5: 2.05.",
+      "status": "PENDING"
     },
     {
       "id": "sporting-vs-acadmico-2026-10-25",
@@ -1975,7 +1980,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 1.24, nul: 6.5, 2: 10.5.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 1.24, draw: 6.5, 2: 10.5."
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 1.24, draw: 6.5, 2: 10.5.",
+      "status": "PENDING"
     },
     {
       "id": "motherwe-vs-heartofm-2026-10-25",
@@ -2172,7 +2178,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 3.1, nul: 3.7, 2: 2.15, Over 2.5: 1.63.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 3.1, draw: 3.7, 2: 2.15, Over 2.5: 1.63."
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 3.1, draw: 3.7, 2: 2.15, Over 2.5: 1.63.",
+      "status": "PENDING"
     },
     {
       "id": "holstein-vs-dynamodr-2026-10-25",
@@ -2369,7 +2376,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 2.3, nul: 3.75, 2: 2.8, Over 2.5: 1.56.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.3, draw: 3.75, 2: 2.8, Over 2.5: 1.56."
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.3, draw: 3.75, 2: 2.8, Over 2.5: 1.56.",
+      "status": "PENDING"
     },
     {
       "id": "sksturmg-vs-svjoskor-2026-10-25",
@@ -2566,7 +2574,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 1.67, nul: 4.3, 2: 4.5.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 1.67, draw: 4.3, 2: 4.5."
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 1.67, draw: 4.3, 2: 4.5.",
+      "status": "PENDING"
     },
     {
       "id": "barcelon-vs-realmadr-2026-10-25",
@@ -2762,7 +2771,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 1.67, nul: 5.5, 2: 3.75.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 1.67, draw: 5.5, 2: 3.75."
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 1.67, draw: 5.5, 2: 3.75.",
+      "status": "PENDING"
     },
     {
       "id": "cdnacion-vs-braga-2026-10-25",
@@ -2959,7 +2969,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 5.5, nul: 4.1, 2: 1.57, Over 2.5: 1.83.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 5.5, draw: 4.1, 2: 1.57, Over 2.5: 1.83."
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 5.5, draw: 4.1, 2: 1.57, Over 2.5: 1.83.",
+      "status": "PENDING"
     },
     {
       "id": "tsveintr-vs-hannover-2026-10-25",
@@ -3149,7 +3160,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Cotes marché non disponibles — pronostic basé sur le modèle statistique seul.",
-      "ai_odds_insight_en": "Market odds unavailable — prediction based on the statistical model only."
+      "ai_odds_insight_en": "Market odds unavailable — prediction based on the statistical model only.",
+      "status": "PENDING"
     },
     {
       "id": "celtavig-vs-realbeti-2026-10-25",
@@ -3346,7 +3358,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 3.2, nul: 3.55, 2: 2.25, Over 2.5: 1.74.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 3.2, draw: 3.55, 2: 2.25, Over 2.5: 1.74."
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 3.2, draw: 3.55, 2: 2.25, Over 2.5: 1.74.",
+      "status": "PENDING"
     },
     {
       "id": "tsghoffe-vs-bayerlev-2026-10-25",
@@ -3542,7 +3555,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 2.65, nul: 3.8, 2: 2.25.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.65, draw: 3.8, 2: 2.25."
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.65, draw: 3.8, 2: 2.25.",
+      "status": "PENDING"
     },
     {
       "id": "crystalp-vs-newcastl-2026-10-25",
@@ -3739,7 +3753,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 2.9, nul: 3.65, 2: 2.35.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.9, draw: 3.65, 2: 2.35."
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.9, draw: 3.65, 2: 2.35.",
+      "status": "PENDING"
     },
     {
       "id": "internaz-vs-fiorenti-2026-10-25",
@@ -3936,7 +3951,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 1.32, nul: 5.25, 2: 7.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 1.32, draw: 5.25, 2: 7."
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 1.32, draw: 5.25, 2: 7.",
+      "status": "PENDING"
     },
     {
       "id": "staderen-vs-strasbou-2026-10-25",
@@ -4133,7 +4149,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 1.8, nul: 4.3, 2: 3.9.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 1.8, draw: 4.3, 2: 3.9."
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 1.8, draw: 4.3, 2: 3.9.",
+      "status": "PENDING"
     },
     {
       "id": "manchest-vs-afcbourn-2026-10-25",
@@ -4328,7 +4345,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 2.2, nul: 3.65, 2: 3.1, Over 2.5: 1.65.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.2, draw: 3.65, 2: 3.1, Over 2.5: 1.65."
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.2, draw: 3.65, 2: 3.1, Over 2.5: 1.65.",
+      "status": "PENDING"
     },
     {
       "id": "genoa-vs-venezia-2026-10-25",
@@ -4525,7 +4543,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 2.1, nul: 3.15, 2: 3.45, Over 2.5: 1.95.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.1, draw: 3.15, 2: 3.45, Over 2.5: 1.95."
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.1, draw: 3.15, 2: 3.45, Over 2.5: 1.95.",
+      "status": "PENDING"
     },
     {
       "id": "lecce-vs-juventus-2026-10-25",
@@ -4722,7 +4741,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 6.5, nul: 4.1, 2: 1.45, Over 2.5: 1.83.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 6.5, draw: 4.1, 2: 1.45, Over 2.5: 1.83."
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 6.5, draw: 4.1, 2: 1.45, Over 2.5: 1.83.",
+      "status": "PENDING"
     },
     {
       "id": "sevilla-vs-osasuna-2026-10-26",
@@ -7841,6 +7861,197 @@
       "status": "PENDING"
     },
     {
+      "id": "vancouve-vs-sandiego-2026-10-29",
+      "match": "Vancouver Whitecaps vs San Diego FC",
+      "home": "Vancouver Whitecaps",
+      "away": "San Diego FC",
+      "league": "MLS",
+      "date": "2026-10-29",
+      "type": "BTTS",
+      "prediction": "Oui",
+      "proba": 0.7398,
+      "bttsProbDisplay": "73.98%",
+      "over25ProbDisplay": "78.31%",
+      "confidence": 74,
+      "time": "02:30",
+      "matchSemantic": "vancouve-vs-sandiego-2026-10-29",
+      "source": "poisson-v92-real-data",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/9727.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/22529.png",
+      "tier": "GOLD",
+      "reliabilityScore": 91.11,
+      "dataQuality": "HIGH",
+      "dataSource": "ESPN_TEAM_SCHEDULE",
+      "matchCountHome": 8,
+      "matchCountAway": 8,
+      "h2hAvailable": false,
+      "xgHome": 2.52,
+      "xgAway": 1.63,
+      "xgTotal": 4.15,
+      "formBTTS": 90,
+      "analysis": "Vancouver Whitecaps : forme V-N-N-D-N (1V 3N 1D, 7 buts marqués / 8 encaissés sur 5) · San Diego FC : forme N-N-D-N-N (0V 4N 1D, 11 buts marqués / 14 encaissés sur 5). Classement : Vancouver Whitecaps 1e (55 pts), San Diego FC 12e (34 pts). Modèle Poisson : xG cumulé 4.15, BTTS 74.0%, Over 2.5 78.3%. Fiabilité 91.11%.",
+      "analysisData": {
+        "bttsProb": 0.7398,
+        "over25Prob": 0.7831,
+        "homeLambda": 2.52,
+        "awayLambda": 1.63,
+        "xgTotal": 4.15
+      },
+      "estimatedCote": 1.35,
+      "estimatedCoteOver": 1.28,
+      "odds": null,
+      "oddsSource": "ESTIMATION_POISSON",
+      "estimatedCoteBTTS": 1.35,
+      "formHome": {
+        "last5String": "V-N-N-D-N",
+        "wins": 1,
+        "draws": 3,
+        "losses": 1,
+        "goalsFor": 7,
+        "goalsAgainst": 8,
+        "bttsRate": 0.8,
+        "over25Rate": 0.6,
+        "cleanSheets": 1,
+        "failedToScore": 1,
+        "count": 5
+      },
+      "formAway": {
+        "last5String": "N-N-D-N-N",
+        "wins": 0,
+        "draws": 4,
+        "losses": 1,
+        "goalsFor": 11,
+        "goalsAgainst": 14,
+        "bttsRate": 1,
+        "over25Rate": 1,
+        "cleanSheets": 0,
+        "failedToScore": 0,
+        "count": 5
+      },
+      "last5Home": [
+        {
+          "date": "2026-10-25",
+          "opponent": "Colorado Rapids",
+          "venue": "A",
+          "score": "0-1",
+          "result": "L"
+        },
+        {
+          "date": "2026-10-18",
+          "opponent": "Austin FC",
+          "venue": "A",
+          "score": "2-1",
+          "result": "W"
+        },
+        {
+          "date": "2026-10-15",
+          "opponent": "St. Louis CITY SC",
+          "venue": "A",
+          "score": "0-0",
+          "result": "D"
+        },
+        {
+          "date": "2026-10-11",
+          "opponent": "LAFC",
+          "venue": "A",
+          "score": "1-1",
+          "result": "D"
+        },
+        {
+          "date": "2026-10-07",
+          "opponent": "Chicago Fire FC",
+          "venue": "A",
+          "score": "1-3",
+          "result": "L"
+        }
+      ],
+      "last5Away": [
+        {
+          "date": "2026-10-25",
+          "opponent": "Seattle Sounders FC",
+          "venue": "H",
+          "score": "2-2",
+          "result": "D"
+        },
+        {
+          "date": "2026-10-18",
+          "opponent": "LA Galaxy",
+          "venue": "A",
+          "score": "2-2",
+          "result": "D"
+        },
+        {
+          "date": "2026-10-15",
+          "opponent": "Houston Dynamo FC",
+          "venue": "H",
+          "score": "3-3",
+          "result": "D"
+        },
+        {
+          "date": "2026-10-10",
+          "opponent": "Red Bull New York",
+          "venue": "A",
+          "score": "1-4",
+          "result": "L"
+        },
+        {
+          "date": "2026-09-27",
+          "opponent": "Austin FC",
+          "venue": "A",
+          "score": "3-3",
+          "result": "D"
+        }
+      ],
+      "standingsHome": {
+        "rank": 1,
+        "points": 55,
+        "played": 30,
+        "gf": 63,
+        "ga": 31
+      },
+      "standingsAway": {
+        "rank": 12,
+        "points": 34,
+        "played": 30,
+        "gf": 53,
+        "ga": 56
+      },
+      "predictions": [
+        {
+          "type": "BTTS",
+          "prediction": "Oui",
+          "confidence": 74,
+          "bttsProb": 0.7398,
+          "homeLambda": 2.52,
+          "awayLambda": 1.63
+        },
+        {
+          "type": "Over 2.5",
+          "prediction": "Oui",
+          "confidence": 78,
+          "over25Prob": 0.7831,
+          "homeLambda": 2.52,
+          "awayLambda": 1.63
+        }
+      ],
+      "bttsProb": 0.7398,
+      "over25Prob": 0.7831,
+      "homeLambda": 2.52,
+      "awayLambda": 1.63,
+      "ai_key_fact": "Vancouver Whitecaps domine son classement à la 1e place avec 55 points.",
+      "ai_analysis": "Le modèle Poisson attribue un xG de 2.52 à Vancouver Whitecaps et de 1.63 à San Diego FC. Les probabilités calculées atteignent 74.0% pour le BTTS et 78.3% pour l'Over 2.5, avec une fiabilité de modèle de 91.11%. Le différentiel au classement entre le leader à domicile et San Diego (12e) encadre cette confrontation.",
+      "ai_form_summary": "Vancouver Whitecaps totalise 1 victoire, 3 nuls et 1 défaite lors de ses 5 dernières rencontres à domicile. San Diego FC reste sur une série sans victoire en déplacement, enregistrant 4 nuls et 1 défaite avec 14 buts encaissés.",
+      "ai_key_fact_en": "Vancouver Whitecaps dominates their standings in 1st place with 55 points.",
+      "ai_analysis_en": "The Poisson model assigns an xG of 2.52 to Vancouver Whitecaps and 1.63 to San Diego FC. Calculated probabilities reach 74.0% for BTTS and 78.3% for Over 2.5, with a model reliability of 91.11%. The standings differential between the home leader and San Diego (12th) frames this confrontation.",
+      "ai_form_summary_en": "Vancouver Whitecaps totals 1 win, 3 draws and 1 defeat in their last 5 home matches. San Diego FC remains winless away, recording 4 draws and 1 defeat with 14 goals conceded.",
+      "ai_source": "gemini-v2",
+      "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
+      "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
+      "ai_odds_insight": "Cotes marché non disponibles — pronostic basé sur le modèle statistique seul.",
+      "ai_odds_insight_en": "Market odds unavailable — prediction based on the statistical model only.",
+      "status": "PENDING"
+    },
+    {
       "id": "nashvill-vs-philadel-2026-10-29",
       "match": "Nashville SC vs Philadelphia Union",
       "home": "Nashville SC",
@@ -8101,6 +8312,13 @@
       },
       "last5Home": [
         {
+          "date": "2026-10-25",
+          "opponent": "Houston Dynamo FC",
+          "venue": "A",
+          "score": "0-0",
+          "result": "D"
+        },
+        {
           "date": "2026-10-17",
           "opponent": "St. Louis CITY SC",
           "venue": "H",
@@ -8127,16 +8345,16 @@
           "venue": "A",
           "score": "1-3",
           "result": "L"
-        },
-        {
-          "date": "2026-09-20",
-          "opponent": "LA Galaxy",
-          "venue": "H",
-          "score": "2-3",
-          "result": "L"
         }
       ],
       "last5Away": [
+        {
+          "date": "2026-10-25",
+          "opponent": "Austin FC",
+          "venue": "H",
+          "score": "1-2",
+          "result": "L"
+        },
         {
           "date": "2026-10-18",
           "opponent": "Real Salt Lake",
@@ -8164,13 +8382,6 @@
           "venue": "A",
           "score": "1-2",
           "result": "L"
-        },
-        {
-          "date": "2026-09-27",
-          "opponent": "Houston Dynamo FC",
-          "venue": "A",
-          "score": "2-0",
-          "result": "W"
         }
       ],
       "standingsHome": {
@@ -8215,388 +8426,6 @@
       "ai_key_fact_en": "Minnesota United FC records a 100% BTTS rate over their last five matches.",
       "ai_analysis_en": "Model xG figures reach 2.4 for Minnesota United FC and 1.88 for Sporting Kansas City, reflecting notable defensive vulnerabilities. The model indicates a 77.0% probability for BTTS and 80.0% for Over 2.5, with a reliability level of 92.43%. In the standings, Minnesota (13th) hosts Sporting Kansas City (15th) in a lower-table clash.",
       "ai_form_summary_en": "Minnesota United FC is going through a difficult period with 1 win, 2 draws and 2 defeats, conceding 12 goals. Sporting Kansas City records a similar record of 1 win, 1 draw and 3 defeats with also 12 goals conceded away.",
-      "ai_source": "gemini-v2",
-      "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
-      "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
-      "ai_odds_insight": "Cotes marché non disponibles — pronostic basé sur le modèle statistique seul.",
-      "ai_odds_insight_en": "Market odds unavailable — prediction based on the statistical model only.",
-      "status": "PENDING"
-    },
-    {
-      "id": "vancouve-vs-sandiego-2026-10-29",
-      "match": "Vancouver Whitecaps vs San Diego FC",
-      "home": "Vancouver Whitecaps",
-      "away": "San Diego FC",
-      "league": "MLS",
-      "date": "2026-10-29",
-      "type": "BTTS",
-      "prediction": "Oui",
-      "proba": 0.7398,
-      "bttsProbDisplay": "73.98%",
-      "over25ProbDisplay": "78.31%",
-      "confidence": 74,
-      "time": "02:30",
-      "matchSemantic": "vancouve-vs-sandiego-2026-10-29",
-      "source": "poisson-v92-real-data",
-      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/9727.png",
-      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/22529.png",
-      "tier": "GOLD",
-      "reliabilityScore": 91.11,
-      "dataQuality": "HIGH",
-      "dataSource": "ESPN_TEAM_SCHEDULE",
-      "matchCountHome": 8,
-      "matchCountAway": 8,
-      "h2hAvailable": false,
-      "xgHome": 2.52,
-      "xgAway": 1.63,
-      "xgTotal": 4.15,
-      "formBTTS": 90,
-      "analysis": "Vancouver Whitecaps : forme V-N-N-D-N (1V 3N 1D, 7 buts marqués / 8 encaissés sur 5) · San Diego FC : forme N-N-D-N-N (0V 4N 1D, 11 buts marqués / 14 encaissés sur 5). Classement : Vancouver Whitecaps 1e (55 pts), San Diego FC 12e (34 pts). Modèle Poisson : xG cumulé 4.15, BTTS 74.0%, Over 2.5 78.3%. Fiabilité 91.11%.",
-      "analysisData": {
-        "bttsProb": 0.7398,
-        "over25Prob": 0.7831,
-        "homeLambda": 2.52,
-        "awayLambda": 1.63,
-        "xgTotal": 4.15
-      },
-      "estimatedCote": 1.35,
-      "estimatedCoteOver": 1.28,
-      "odds": null,
-      "oddsSource": "ESTIMATION_POISSON",
-      "estimatedCoteBTTS": 1.35,
-      "formHome": {
-        "last5String": "V-N-N-D-N",
-        "wins": 1,
-        "draws": 3,
-        "losses": 1,
-        "goalsFor": 7,
-        "goalsAgainst": 8,
-        "bttsRate": 0.8,
-        "over25Rate": 0.6,
-        "cleanSheets": 1,
-        "failedToScore": 1,
-        "count": 5
-      },
-      "formAway": {
-        "last5String": "N-N-D-N-N",
-        "wins": 0,
-        "draws": 4,
-        "losses": 1,
-        "goalsFor": 11,
-        "goalsAgainst": 14,
-        "bttsRate": 1,
-        "over25Rate": 1,
-        "cleanSheets": 0,
-        "failedToScore": 0,
-        "count": 5
-      },
-      "last5Home": [
-        {
-          "date": "2026-10-18",
-          "opponent": "Austin FC",
-          "venue": "A",
-          "score": "2-1",
-          "result": "W"
-        },
-        {
-          "date": "2026-10-15",
-          "opponent": "St. Louis CITY SC",
-          "venue": "A",
-          "score": "0-0",
-          "result": "D"
-        },
-        {
-          "date": "2026-10-11",
-          "opponent": "LAFC",
-          "venue": "A",
-          "score": "1-1",
-          "result": "D"
-        },
-        {
-          "date": "2026-10-07",
-          "opponent": "Chicago Fire FC",
-          "venue": "A",
-          "score": "1-3",
-          "result": "L"
-        },
-        {
-          "date": "2026-09-27",
-          "opponent": "D.C. United",
-          "venue": "H",
-          "score": "3-3",
-          "result": "D"
-        }
-      ],
-      "last5Away": [
-        {
-          "date": "2026-10-18",
-          "opponent": "LA Galaxy",
-          "venue": "A",
-          "score": "2-2",
-          "result": "D"
-        },
-        {
-          "date": "2026-10-15",
-          "opponent": "Houston Dynamo FC",
-          "venue": "H",
-          "score": "3-3",
-          "result": "D"
-        },
-        {
-          "date": "2026-10-10",
-          "opponent": "Red Bull New York",
-          "venue": "A",
-          "score": "1-4",
-          "result": "L"
-        },
-        {
-          "date": "2026-09-27",
-          "opponent": "Austin FC",
-          "venue": "A",
-          "score": "3-3",
-          "result": "D"
-        },
-        {
-          "date": "2026-09-20",
-          "opponent": "Inter Miami CF",
-          "venue": "A",
-          "score": "2-2",
-          "result": "D"
-        }
-      ],
-      "standingsHome": {
-        "rank": 1,
-        "points": 55,
-        "played": 30,
-        "gf": 63,
-        "ga": 31
-      },
-      "standingsAway": {
-        "rank": 12,
-        "points": 34,
-        "played": 30,
-        "gf": 53,
-        "ga": 56
-      },
-      "predictions": [
-        {
-          "type": "BTTS",
-          "prediction": "Oui",
-          "confidence": 74,
-          "bttsProb": 0.7398,
-          "homeLambda": 2.52,
-          "awayLambda": 1.63
-        },
-        {
-          "type": "Over 2.5",
-          "prediction": "Oui",
-          "confidence": 78,
-          "over25Prob": 0.7831,
-          "homeLambda": 2.52,
-          "awayLambda": 1.63
-        }
-      ],
-      "bttsProb": 0.7398,
-      "over25Prob": 0.7831,
-      "homeLambda": 2.52,
-      "awayLambda": 1.63,
-      "ai_key_fact": "Vancouver Whitecaps domine son classement à la 1e place avec 55 points.",
-      "ai_analysis": "Le modèle Poisson attribue un xG de 2.52 à Vancouver Whitecaps et de 1.63 à San Diego FC. Les probabilités calculées atteignent 74.0% pour le BTTS et 78.3% pour l'Over 2.5, avec une fiabilité de modèle de 91.11%. Le différentiel au classement entre le leader à domicile et San Diego (12e) encadre cette confrontation.",
-      "ai_form_summary": "Vancouver Whitecaps totalise 1 victoire, 3 nuls et 1 défaite lors de ses 5 dernières rencontres à domicile. San Diego FC reste sur une série sans victoire en déplacement, enregistrant 4 nuls et 1 défaite avec 14 buts encaissés.",
-      "ai_key_fact_en": "Vancouver Whitecaps dominates their standings in 1st place with 55 points.",
-      "ai_analysis_en": "The Poisson model assigns an xG of 2.52 to Vancouver Whitecaps and 1.63 to San Diego FC. Calculated probabilities reach 74.0% for BTTS and 78.3% for Over 2.5, with a model reliability of 91.11%. The standings differential between the home leader and San Diego (12th) frames this confrontation.",
-      "ai_form_summary_en": "Vancouver Whitecaps totals 1 win, 3 draws and 1 defeat in their last 5 home matches. San Diego FC remains winless away, recording 4 draws and 1 defeat with 14 goals conceded.",
-      "ai_source": "gemini-v2",
-      "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
-      "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
-      "ai_odds_insight": "Cotes marché non disponibles — pronostic basé sur le modèle statistique seul.",
-      "ai_odds_insight_en": "Market odds unavailable — prediction based on the statistical model only.",
-      "status": "PENDING"
-    },
-    {
-      "id": "stlouisc-vs-portland-2026-10-29",
-      "match": "St. Louis CITY SC vs Portland Timbers",
-      "home": "St. Louis CITY SC",
-      "away": "Portland Timbers",
-      "league": "MLS",
-      "date": "2026-10-29",
-      "type": "BTTS",
-      "prediction": "Oui",
-      "proba": 0.678,
-      "bttsProbDisplay": "67.80%",
-      "over25ProbDisplay": "79.63%",
-      "confidence": 68,
-      "time": "00:30",
-      "matchSemantic": "stlouisc-vs-portland-2026-10-29",
-      "source": "poisson-v92-real-data",
-      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/21812.png",
-      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/9723.png",
-      "tier": "GOLD",
-      "reliabilityScore": 88.41,
-      "dataQuality": "HIGH",
-      "dataSource": "ESPN_TEAM_SCHEDULE",
-      "matchCountHome": 8,
-      "matchCountAway": 8,
-      "h2hAvailable": false,
-      "xgHome": 3,
-      "xgAway": 1.25,
-      "xgTotal": 4.25,
-      "formBTTS": 50,
-      "analysis": "St. Louis CITY SC : forme D-N-V-V-V (3V 1N 1D, 14 buts marqués / 6 encaissés sur 5) · Portland Timbers : forme N-D-N-D-D (0V 2N 3D, 4 buts marqués / 9 encaissés sur 5). Classement : St. Louis CITY SC 2e (51 pts), Portland Timbers 11e (34 pts). Modèle Poisson : xG cumulé 4.25, BTTS 67.8%, Over 2.5 79.6%. Fiabilité 88.41%.",
-      "analysisData": {
-        "bttsProb": 0.678,
-        "over25Prob": 0.7963,
-        "homeLambda": 3,
-        "awayLambda": 1.25,
-        "xgTotal": 4.25
-      },
-      "estimatedCote": 1.47,
-      "estimatedCoteOver": 1.26,
-      "odds": null,
-      "oddsSource": "ESTIMATION_POISSON",
-      "estimatedCoteBTTS": 1.47,
-      "formHome": {
-        "last5String": "D-N-V-V-V",
-        "wins": 3,
-        "draws": 1,
-        "losses": 1,
-        "goalsFor": 14,
-        "goalsAgainst": 6,
-        "bttsRate": 0.6,
-        "over25Rate": 0.8,
-        "cleanSheets": 2,
-        "failedToScore": 1,
-        "count": 5
-      },
-      "formAway": {
-        "last5String": "N-D-N-D-D",
-        "wins": 0,
-        "draws": 2,
-        "losses": 3,
-        "goalsFor": 4,
-        "goalsAgainst": 9,
-        "bttsRate": 0.4,
-        "over25Rate": 0.4,
-        "cleanSheets": 1,
-        "failedToScore": 3,
-        "count": 5
-      },
-      "last5Home": [
-        {
-          "date": "2026-10-17",
-          "opponent": "Minnesota United FC",
-          "venue": "A",
-          "score": "2-3",
-          "result": "L"
-        },
-        {
-          "date": "2026-10-15",
-          "opponent": "Vancouver Whitecaps",
-          "venue": "H",
-          "score": "0-0",
-          "result": "D"
-        },
-        {
-          "date": "2026-10-11",
-          "opponent": "LA Galaxy",
-          "venue": "H",
-          "score": "6-2",
-          "result": "W"
-        },
-        {
-          "date": "2026-09-30",
-          "opponent": "Red Bull New York",
-          "venue": "A",
-          "score": "3-0",
-          "result": "W"
-        },
-        {
-          "date": "2026-09-20",
-          "opponent": "Toronto FC",
-          "venue": "H",
-          "score": "3-1",
-          "result": "W"
-        }
-      ],
-      "last5Away": [
-        {
-          "date": "2026-10-18",
-          "opponent": "Colorado Rapids",
-          "venue": "H",
-          "score": "0-0",
-          "result": "D"
-        },
-        {
-          "date": "2026-10-15",
-          "opponent": "LA Galaxy",
-          "venue": "A",
-          "score": "0-2",
-          "result": "L"
-        },
-        {
-          "date": "2026-10-11",
-          "opponent": "Sporting Kansas City",
-          "venue": "A",
-          "score": "3-3",
-          "result": "D"
-        },
-        {
-          "date": "2026-09-27",
-          "opponent": "San Jose Earthquakes",
-          "venue": "A",
-          "score": "1-3",
-          "result": "L"
-        },
-        {
-          "date": "2026-09-20",
-          "opponent": "Atlanta United FC",
-          "venue": "H",
-          "score": "0-1",
-          "result": "L"
-        }
-      ],
-      "standingsHome": {
-        "rank": 2,
-        "points": 51,
-        "played": 30,
-        "gf": 56,
-        "ga": 41
-      },
-      "standingsAway": {
-        "rank": 11,
-        "points": 34,
-        "played": 30,
-        "gf": 51,
-        "ga": 56
-      },
-      "predictions": [
-        {
-          "type": "BTTS",
-          "prediction": "Oui",
-          "confidence": 68,
-          "bttsProb": 0.678,
-          "homeLambda": 3,
-          "awayLambda": 1.25
-        },
-        {
-          "type": "Over 2.5",
-          "prediction": "Oui",
-          "confidence": 80,
-          "over25Prob": 0.7963,
-          "homeLambda": 3,
-          "awayLambda": 1.25
-        }
-      ],
-      "bttsProb": 0.678,
-      "over25Prob": 0.7963,
-      "homeLambda": 3,
-      "awayLambda": 1.25,
-      "ai_key_fact": "St. Louis CITY SC se positionne au 2e rang du classement avec 56 buts marqués.",
-      "ai_analysis": "Les xG du modèle s'établissent à un niveau élevé de 3.0 pour St. Louis CITY SC contre 1.25 pour Portland Timbers. Le modèle estime la probabilité du BTTS à 67.8% et celle de l'Over 2.5 à 79.6%, sous une fiabilité de 88.41%. Cette configuration oppose la deuxième meilleure équipe à domicile au onzième visiteur.",
-      "ai_form_summary": "St. Louis CITY SC affiche une belle forme récente à domicile avec 3 victoires, 1 nul et 1 défaite, marquant 14 buts. Portland Timbers traverse une période délicate à l'extérieur avec 3 défaites et 2 nuls, ne marquant que 4 buts.",
-      "ai_key_fact_en": "St. Louis CITY SC stands 2nd in the league table with 56 goals scored.",
-      "ai_analysis_en": "Model xG figures are set at a high 3.0 for St. Louis CITY SC against 1.25 for Portland Timbers. The model estimates BTTS probability at 67.8% and Over 2.5 at 79.6%, under an 88.41% reliability. This setup pits the second-best home team against the eleventh-ranked visitor.",
-      "ai_form_summary_en": "St. Louis CITY SC shows strong recent home form with 3 wins, 1 draw and 1 defeat, scoring 14 goals. Portland Timbers is going through a difficult away spell with 3 defeats and 2 draws, scoring only 4 goals.",
       "ai_source": "gemini-v2",
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
@@ -8674,6 +8503,13 @@
       },
       "last5Home": [
         {
+          "date": "2026-10-25",
+          "opponent": "Sporting Kansas City",
+          "venue": "A",
+          "score": "2-1",
+          "result": "W"
+        },
+        {
           "date": "2026-10-18",
           "opponent": "Vancouver Whitecaps",
           "venue": "H",
@@ -8700,16 +8536,16 @@
           "venue": "H",
           "score": "3-3",
           "result": "D"
-        },
-        {
-          "date": "2026-09-20",
-          "opponent": "FC Dallas",
-          "venue": "A",
-          "score": "0-0",
-          "result": "D"
         }
       ],
       "last5Away": [
+        {
+          "date": "2026-10-25",
+          "opponent": "St. Louis CITY SC",
+          "venue": "H",
+          "score": "3-0",
+          "result": "W"
+        },
         {
           "date": "2026-10-18",
           "opponent": "Sporting Kansas City",
@@ -8737,13 +8573,6 @@
           "venue": "H",
           "score": "3-0",
           "result": "W"
-        },
-        {
-          "date": "2026-09-24",
-          "opponent": "Seattle Sounders FC",
-          "venue": "A",
-          "score": "0-2",
-          "result": "L"
         }
       ],
       "standingsHome": {
@@ -8796,189 +8625,189 @@
       "status": "PENDING"
     },
     {
-      "id": "fcdallas-vs-columbus-2026-10-29",
-      "match": "FC Dallas vs Columbus Crew",
-      "home": "FC Dallas",
-      "away": "Columbus Crew",
+      "id": "stlouisc-vs-portland-2026-10-29",
+      "match": "St. Louis CITY SC vs Portland Timbers",
+      "home": "St. Louis CITY SC",
+      "away": "Portland Timbers",
       "league": "MLS",
       "date": "2026-10-29",
       "type": "BTTS",
       "prediction": "Oui",
-      "proba": 0.5714,
-      "bttsProbDisplay": "57.14%",
-      "over25ProbDisplay": "54.24%",
-      "confidence": 57,
+      "proba": 0.678,
+      "bttsProbDisplay": "67.80%",
+      "over25ProbDisplay": "79.63%",
+      "confidence": 68,
       "time": "00:30",
-      "matchSemantic": "fcdallas-vs-columbus-2026-10-29",
+      "matchSemantic": "stlouisc-vs-portland-2026-10-29",
       "source": "poisson-v92-real-data",
-      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/185.png",
-      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/183.png",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/21812.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/9723.png",
       "tier": "GOLD",
-      "reliabilityScore": 81.25,
+      "reliabilityScore": 88.41,
       "dataQuality": "HIGH",
       "dataSource": "ESPN_TEAM_SCHEDULE",
       "matchCountHome": 8,
       "matchCountAway": 8,
       "h2hAvailable": false,
-      "xgHome": 1.57,
-      "xgAway": 1.27,
-      "xgTotal": 2.85,
+      "xgHome": 3,
+      "xgAway": 1.25,
+      "xgTotal": 4.25,
       "formBTTS": 50,
-      "analysis": "FC Dallas : forme N-V-D-V-N (2V 2N 1D, 6 buts marqués / 5 encaissés sur 5) · Columbus Crew : forme V-V-D-V-V (4V 0N 1D, 11 buts marqués / 5 encaissés sur 5). Classement : FC Dallas 3e (51 pts), Columbus Crew 11e (35 pts). Modèle Poisson : xG cumulé 2.85, BTTS 57.1%, Over 2.5 54.2%. Fiabilité 81.25%.",
+      "analysis": "St. Louis CITY SC : forme D-N-V-V-V (3V 1N 1D, 14 buts marqués / 6 encaissés sur 5) · Portland Timbers : forme N-D-N-D-D (0V 2N 3D, 4 buts marqués / 9 encaissés sur 5). Classement : St. Louis CITY SC 2e (51 pts), Portland Timbers 11e (34 pts). Modèle Poisson : xG cumulé 4.25, BTTS 67.8%, Over 2.5 79.6%. Fiabilité 88.41%.",
       "analysisData": {
-        "bttsProb": 0.5714,
-        "over25Prob": 0.5424,
-        "homeLambda": 1.57,
-        "awayLambda": 1.27,
-        "xgTotal": 2.85
+        "bttsProb": 0.678,
+        "over25Prob": 0.7963,
+        "homeLambda": 3,
+        "awayLambda": 1.25,
+        "xgTotal": 4.25
       },
-      "estimatedCote": 1.75,
-      "estimatedCoteOver": 1.84,
+      "estimatedCote": 1.47,
+      "estimatedCoteOver": 1.26,
       "odds": null,
       "oddsSource": "ESTIMATION_POISSON",
-      "estimatedCoteBTTS": 1.75,
+      "estimatedCoteBTTS": 1.47,
       "formHome": {
-        "last5String": "N-V-D-V-N",
-        "wins": 2,
-        "draws": 2,
+        "last5String": "D-N-V-V-V",
+        "wins": 3,
+        "draws": 1,
         "losses": 1,
-        "goalsFor": 6,
-        "goalsAgainst": 5,
-        "bttsRate": 0.4,
-        "over25Rate": 0.4,
-        "cleanSheets": 3,
+        "goalsFor": 14,
+        "goalsAgainst": 6,
+        "bttsRate": 0.6,
+        "over25Rate": 0.8,
+        "cleanSheets": 2,
         "failedToScore": 1,
         "count": 5
       },
       "formAway": {
-        "last5String": "V-V-D-V-V",
-        "wins": 4,
-        "draws": 0,
-        "losses": 1,
-        "goalsFor": 11,
-        "goalsAgainst": 5,
-        "bttsRate": 0.6,
-        "over25Rate": 0.6,
-        "cleanSheets": 2,
-        "failedToScore": 0,
+        "last5String": "N-D-N-D-D",
+        "wins": 0,
+        "draws": 2,
+        "losses": 3,
+        "goalsFor": 4,
+        "goalsAgainst": 9,
+        "bttsRate": 0.4,
+        "over25Rate": 0.4,
+        "cleanSheets": 1,
+        "failedToScore": 3,
         "count": 5
       },
       "last5Home": [
         {
-          "date": "2026-10-18",
-          "opponent": "Houston Dynamo FC",
+          "date": "2026-10-25",
+          "opponent": "Real Salt Lake",
           "venue": "A",
-          "score": "2-2",
-          "result": "D"
+          "score": "0-3",
+          "result": "L"
         },
         {
-          "date": "2026-10-15",
-          "opponent": "Seattle Sounders FC",
-          "venue": "H",
-          "score": "1-0",
-          "result": "W"
-        },
-        {
-          "date": "2026-10-10",
-          "opponent": "Charlotte FC",
+          "date": "2026-10-17",
+          "opponent": "Minnesota United FC",
           "venue": "A",
           "score": "2-3",
           "result": "L"
         },
         {
-          "date": "2026-09-27",
-          "opponent": "LAFC",
-          "venue": "H",
-          "score": "1-0",
-          "result": "W"
-        },
-        {
-          "date": "2026-09-20",
-          "opponent": "Austin FC",
+          "date": "2026-10-15",
+          "opponent": "Vancouver Whitecaps",
           "venue": "H",
           "score": "0-0",
           "result": "D"
+        },
+        {
+          "date": "2026-10-11",
+          "opponent": "LA Galaxy",
+          "venue": "H",
+          "score": "6-2",
+          "result": "W"
+        },
+        {
+          "date": "2026-09-30",
+          "opponent": "Red Bull New York",
+          "venue": "A",
+          "score": "3-0",
+          "result": "W"
         }
       ],
       "last5Away": [
         {
-          "date": "2026-10-24",
-          "opponent": "Toronto FC",
+          "date": "2026-10-25",
+          "opponent": "Charlotte FC",
           "venue": "H",
-          "score": "4-2",
+          "score": "3-2",
           "result": "W"
         },
         {
           "date": "2026-10-18",
-          "opponent": "FC Cincinnati",
-          "venue": "A",
-          "score": "2-0",
-          "result": "W"
-        },
-        {
-          "date": "2026-10-14",
-          "opponent": "Charlotte FC",
+          "opponent": "Colorado Rapids",
           "venue": "H",
-          "score": "3-1",
-          "result": "W"
+          "score": "0-0",
+          "result": "D"
         },
         {
-          "date": "2026-10-10",
-          "opponent": "Orlando City SC",
+          "date": "2026-10-15",
+          "opponent": "LA Galaxy",
           "venue": "A",
-          "score": "2-3",
+          "score": "0-2",
           "result": "L"
         },
         {
+          "date": "2026-10-11",
+          "opponent": "Sporting Kansas City",
+          "venue": "A",
+          "score": "3-3",
+          "result": "D"
+        },
+        {
           "date": "2026-09-27",
-          "opponent": "Inter Miami CF",
-          "venue": "H",
-          "score": "2-1",
-          "result": "W"
+          "opponent": "San Jose Earthquakes",
+          "venue": "A",
+          "score": "1-3",
+          "result": "L"
         }
       ],
       "standingsHome": {
-        "rank": 3,
+        "rank": 2,
         "points": 51,
         "played": 30,
-        "gf": 55,
-        "ga": 47
+        "gf": 56,
+        "ga": 41
       },
       "standingsAway": {
         "rank": 11,
-        "points": 35,
+        "points": 34,
         "played": 30,
-        "gf": 46,
-        "ga": 47
+        "gf": 51,
+        "ga": 56
       },
       "predictions": [
         {
           "type": "BTTS",
           "prediction": "Oui",
-          "confidence": 57,
-          "bttsProb": 0.5714,
-          "homeLambda": 1.57,
-          "awayLambda": 1.27
+          "confidence": 68,
+          "bttsProb": 0.678,
+          "homeLambda": 3,
+          "awayLambda": 1.25
         },
         {
           "type": "Over 2.5",
           "prediction": "Oui",
-          "confidence": 54,
-          "over25Prob": 0.5424,
-          "homeLambda": 1.57,
-          "awayLambda": 1.27
+          "confidence": 80,
+          "over25Prob": 0.7963,
+          "homeLambda": 3,
+          "awayLambda": 1.25
         }
       ],
-      "bttsProb": 0.5714,
-      "over25Prob": 0.5424,
-      "homeLambda": 1.57,
-      "awayLambda": 1.27,
-      "ai_key_fact": "Columbus Crew totalise 4 victoires sur ses 5 derniers matchs.",
-      "ai_analysis": "Le modèle évalue les xG à 1.57 pour le FC Dallas et 1.27 pour Columbus Crew, traduisant une production offensive intéressante pour les locaux. La probabilité BTTS est estimée à 57.1% et l'Over 2.5 à 54.2%, s'appuyant sur le classement des deux équipes où Dallas pointe à la 3e place et Columbus à la 11e. FC Dallas s'appuie sur une défense relativement hermétique avec trois clean sheets récents, tandis que Columbus Crew carbure à l'offensive avec 11 buts marqués sur ses cinq dernières sorties. La fiabilité globale du modèle s'élève à 81.25%.",
-      "ai_form_summary": "FC Dallas enregistre un bilan de deux victoires, deux nuls et une défaite avec un taux BTTS de 0.4. En face, Columbus Crew montre une dynamique solide avec quatre succès en cinq rencontres et un taux BTTS de 0.6.",
-      "ai_key_fact_en": "Columbus Crew totals 4 wins in their last 5 matches.",
-      "ai_analysis_en": "The model evaluates xG at 1.57 for FC Dallas and 1.27 for Columbus Crew, reflecting an interesting offensive output for the hosts. The BTTS probability is estimated at 57.1% and the Over 2.5 at 54.2%, based on the teams' standings where Dallas sits in 3rd place and Columbus in 11th. FC Dallas relies on a relatively watertight defense with three recent clean sheets, while Columbus Crew thrives offensively with 11 goals scored in their last five appearances. The overall reliability of the model stands at 81.25%.",
-      "ai_form_summary_en": "FC Dallas records a record of two wins, two draws, and one defeat with a 0.4 BTTS rate. Conversely, Columbus Crew displays a solid dynamic with four successes in five outings and a 0.6 BTTS rate.",
+      "bttsProb": 0.678,
+      "over25Prob": 0.7963,
+      "homeLambda": 3,
+      "awayLambda": 1.25,
+      "ai_key_fact": "St. Louis CITY SC se positionne au 2e rang du classement avec 56 buts marqués.",
+      "ai_analysis": "Les xG du modèle s'établissent à un niveau élevé de 3.0 pour St. Louis CITY SC contre 1.25 pour Portland Timbers. Le modèle estime la probabilité du BTTS à 67.8% et celle de l'Over 2.5 à 79.6%, sous une fiabilité de 88.41%. Cette configuration oppose la deuxième meilleure équipe à domicile au onzième visiteur.",
+      "ai_form_summary": "St. Louis CITY SC affiche une belle forme récente à domicile avec 3 victoires, 1 nul et 1 défaite, marquant 14 buts. Portland Timbers traverse une période délicate à l'extérieur avec 3 défaites et 2 nuls, ne marquant que 4 buts.",
+      "ai_key_fact_en": "St. Louis CITY SC stands 2nd in the league table with 56 goals scored.",
+      "ai_analysis_en": "Model xG figures are set at a high 3.0 for St. Louis CITY SC against 1.25 for Portland Timbers. The model estimates BTTS probability at 67.8% and Over 2.5 at 79.6%, under an 88.41% reliability. This setup pits the second-best home team against the eleventh-ranked visitor.",
+      "ai_form_summary_en": "St. Louis CITY SC shows strong recent home form with 3 wins, 1 draw and 1 defeat, scoring 14 goals. Portland Timbers is going through a difficult away spell with 3 defeats and 2 draws, scoring only 4 goals.",
       "ai_source": "gemini-v2",
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
@@ -9056,6 +8885,13 @@
       },
       "last5Home": [
         {
+          "date": "2026-10-25",
+          "opponent": "San Diego FC",
+          "venue": "A",
+          "score": "2-2",
+          "result": "D"
+        },
+        {
           "date": "2026-10-18",
           "opponent": "CF Montréal",
           "venue": "H",
@@ -9082,16 +8918,16 @@
           "venue": "H",
           "score": "2-1",
           "result": "W"
-        },
-        {
-          "date": "2026-09-27",
-          "opponent": "Minnesota United FC",
-          "venue": "H",
-          "score": "3-1",
-          "result": "W"
         }
       ],
       "last5Away": [
+        {
+          "date": "2026-10-25",
+          "opponent": "Minnesota United FC",
+          "venue": "H",
+          "score": "0-0",
+          "result": "D"
+        },
         {
           "date": "2026-10-18",
           "opponent": "FC Dallas",
@@ -9119,13 +8955,6 @@
           "venue": "H",
           "score": "0-2",
           "result": "L"
-        },
-        {
-          "date": "2026-09-20",
-          "opponent": "FC Cincinnati",
-          "venue": "H",
-          "score": "2-2",
-          "result": "D"
         }
       ],
       "standingsHome": {
@@ -9176,6 +9005,203 @@
       "ai_odds_insight": "Cotes marché non disponibles — pronostic basé sur le modèle statistique seul.",
       "ai_odds_insight_en": "Market odds unavailable — prediction based on the statistical model only.",
       "status": "PENDING"
+    },
+    {
+      "id": "fiorenti-vs-atalanta-2026-10-29",
+      "match": "Fiorentina vs Atalanta",
+      "home": "Fiorentina",
+      "away": "Atalanta",
+      "league": "Serie A",
+      "date": "2026-10-29",
+      "type": "BTTS",
+      "prediction": "Oui",
+      "proba": 0.6551,
+      "bttsProbDisplay": "65.51%",
+      "over25ProbDisplay": "64.39%",
+      "confidence": 66,
+      "time": "19:45",
+      "matchSemantic": "fiorenti-vs-atalanta-2026-10-29",
+      "source": "poisson-v92-real-data",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/109.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/105.png",
+      "tier": "GOLD",
+      "reliabilityScore": 78.41,
+      "dataQuality": "MEDIUM",
+      "dataSource": "ESPN_TEAM_SCHEDULE",
+      "matchCountHome": 7,
+      "matchCountAway": 7,
+      "h2hAvailable": false,
+      "xgHome": 1.69,
+      "xgAway": 1.63,
+      "xgTotal": 3.32,
+      "formBTTS": 90,
+      "analysis": "Fiorentina : forme D-D-N-V-D (1V 1N 3D, 8 buts marqués / 10 encaissés sur 5) · Atalanta : forme D-V-D-D-D (1V 0N 4D, 7 buts marqués / 10 encaissés sur 5). Classement : Fiorentina 18e (4 pts), Atalanta 11e (9 pts). Modèle Poisson : xG cumulé 3.32, BTTS 65.5%, Over 2.5 64.4%. Cotes DraftKings — 1: 2.2 / N: 3.4 / 2: 2.9 · Over 2.5: 1.69. Fiabilité 78.41%.",
+      "analysisData": {
+        "bttsProb": 0.6551,
+        "over25Prob": 0.6439,
+        "homeLambda": 1.69,
+        "awayLambda": 1.63,
+        "xgTotal": 3.32
+      },
+      "estimatedCote": 1.53,
+      "estimatedCoteOver": 1.55,
+      "odds": {
+        "provider": "DraftKings",
+        "home": 2.2,
+        "draw": 3.4,
+        "away": 2.9,
+        "over25": 1.69,
+        "under25": 2.1
+      },
+      "oddsSource": "DraftKings",
+      "estimatedCoteBTTS": 1.53,
+      "formHome": {
+        "last5String": "D-D-N-V-D",
+        "wins": 1,
+        "draws": 1,
+        "losses": 3,
+        "goalsFor": 8,
+        "goalsAgainst": 10,
+        "bttsRate": 1,
+        "over25Rate": 0.8,
+        "cleanSheets": 0,
+        "failedToScore": 0,
+        "count": 5
+      },
+      "formAway": {
+        "last5String": "D-V-D-D-D",
+        "wins": 1,
+        "draws": 0,
+        "losses": 4,
+        "goalsFor": 7,
+        "goalsAgainst": 10,
+        "bttsRate": 0.8,
+        "over25Rate": 0.8,
+        "cleanSheets": 0,
+        "failedToScore": 1,
+        "count": 5
+      },
+      "last5Home": [
+        {
+          "date": "2026-10-18",
+          "opponent": "Como",
+          "venue": "H",
+          "score": "1-3",
+          "result": "L"
+        },
+        {
+          "date": "2026-10-10",
+          "opponent": "Genoa",
+          "venue": "A",
+          "score": "1-2",
+          "result": "L"
+        },
+        {
+          "date": "2026-09-20",
+          "opponent": "Napoli",
+          "venue": "H",
+          "score": "1-1",
+          "result": "D"
+        },
+        {
+          "date": "2026-09-11",
+          "opponent": "Venezia",
+          "venue": "A",
+          "score": "4-2",
+          "result": "W"
+        },
+        {
+          "date": "2026-09-05",
+          "opponent": "Torino",
+          "venue": "H",
+          "score": "1-2",
+          "result": "L"
+        }
+      ],
+      "last5Away": [
+        {
+          "date": "2026-10-18",
+          "opponent": "AC Milan",
+          "venue": "A",
+          "score": "2-3",
+          "result": "L"
+        },
+        {
+          "date": "2026-10-12",
+          "opponent": "Venezia",
+          "venue": "H",
+          "score": "3-1",
+          "result": "W"
+        },
+        {
+          "date": "2026-09-20",
+          "opponent": "Juventus",
+          "venue": "A",
+          "score": "0-2",
+          "result": "L"
+        },
+        {
+          "date": "2026-09-12",
+          "opponent": "Cagliari",
+          "venue": "H",
+          "score": "1-2",
+          "result": "L"
+        },
+        {
+          "date": "2026-09-05",
+          "opponent": "AS Roma",
+          "venue": "A",
+          "score": "1-2",
+          "result": "L"
+        }
+      ],
+      "standingsHome": {
+        "rank": 18,
+        "points": 4,
+        "played": 7,
+        "gf": 8,
+        "ga": 17
+      },
+      "standingsAway": {
+        "rank": 11,
+        "points": 9,
+        "played": 7,
+        "gf": 10,
+        "ga": 11
+      },
+      "predictions": [
+        {
+          "type": "BTTS",
+          "prediction": "Oui",
+          "confidence": 66,
+          "bttsProb": 0.6551,
+          "homeLambda": 1.69,
+          "awayLambda": 1.63
+        },
+        {
+          "type": "Over 2.5",
+          "prediction": "Oui",
+          "confidence": 64,
+          "over25Prob": 0.6439,
+          "homeLambda": 1.69,
+          "awayLambda": 1.63
+        }
+      ],
+      "bttsProb": 0.6551,
+      "over25Prob": 0.6439,
+      "homeLambda": 1.69,
+      "awayLambda": 1.63,
+      "ai_key_fact": "Fiorentina enregistre un taux BTTS de 1 sur ses cinq derniers matchs.",
+      "ai_analysis": "Le modèle Poisson évalue les xG à 1.69 pour la Fiorentina et 1.63 pour l'Atalanta dans cette opposition de Serie A. Les prédictions indiquent des probabilités de 65.5% pour le BTTS et de 64.4% pour l'Over 2.5, appuyées par un taux de fiabilité de 78.41%. Au classement, la Fiorentina pointe à la 18e place avec 4 points tandis que l'Atalanta se trouve 11e avec 9 points. Les cotes de DraftKings affichent le succès de la Fiorentina à 2.2, le nul à 3.4 et la victoire de l'Atalanta à 2.9.",
+      "ai_form_summary": "La Fiorentina compte une victoire, un nul et trois défaites sur ses cinq dernières sorties avec un taux BTTS de 1. L'Atalanta totalise une victoire et quatre défaites sur la même période, affichant un taux BTTS de 0.8.",
+      "ai_key_fact_en": "Fiorentina records a BTTS rate of 1 in their last five matches.",
+      "ai_analysis_en": "The Poisson model evaluates xG at 1.69 for Fiorentina and 1.63 for Atalanta in this Serie A fixture. Predictions indicate probabilities of 65.5% for BTTS and 64.4% for Over 2.5, backed by a reliability rate of 78.41%. In the standings, Fiorentina sits in 18th place with 4 points while Atalanta is 11th with 9 points. DraftKings odds list Fiorentina's success at 2.2, the draw at 3.4 and Atalanta's win at 2.9.",
+      "ai_form_summary_en": "Fiorentina counts one win, one draw and three losses over their last five outings with a 1 BTTS rate. Atalanta totals one win and four losses over the same period, posting a 0.8 BTTS rate.",
+      "ai_source": "gemini-v2",
+      "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
+      "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
+      "ai_odds_insight": "Le marché (DraftKings) cote 1: 2.2, nul: 3.4, 2: 2.9, Over 2.5: 1.69.",
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.2, draw: 3.4, 2: 2.9, Over 2.5: 1.69."
     },
     {
       "id": "arminiab-vs-tsveintr-2026-10-30",
@@ -9365,7 +9391,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Cotes marché non disponibles — pronostic basé sur le modèle statistique seul.",
-      "ai_odds_insight_en": "Market odds unavailable — prediction based on the statistical model only."
+      "ai_odds_insight_en": "Market odds unavailable — prediction based on the statistical model only.",
+      "status": "PENDING"
     },
     {
       "id": "svelvers-vs-mainz-2026-10-30",
@@ -9562,7 +9589,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 3.15, nul: 3.6, 2: 2.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 3.15, draw: 3.6, 2: 2."
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 3.15, draw: 3.6, 2: 2.",
+      "status": "PENDING"
     },
     {
       "id": "energiec-vs-vflbochu-2026-10-30",
@@ -9759,7 +9787,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 3, nul: 3.45, 2: 2.15.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 3, draw: 3.45, 2: 2.15."
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 3, draw: 3.45, 2: 2.15.",
+      "status": "PENDING"
     },
     {
       "id": "villarre-vs-espanyol-2026-10-30",
@@ -9956,7 +9985,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 1.54, nul: 4.4, 2: 5.5, Over 2.5: 1.59.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 1.54, draw: 4.4, 2: 5.5, Over 2.5: 1.59."
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 1.54, draw: 4.4, 2: 5.5, Over 2.5: 1.59.",
+      "status": "PENDING"
     },
     {
       "id": "casapia-vs-sporting-2026-10-30",
@@ -10146,7 +10176,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Cotes marché non disponibles — pronostic basé sur le modèle statistique seul.",
-      "ai_odds_insight_en": "Market odds unavailable — prediction based on the statistical model only."
+      "ai_odds_insight_en": "Market odds unavailable — prediction based on the statistical model only.",
+      "status": "PENDING"
     },
     {
       "id": "zultewar-vs-clubbrug-2026-10-30",
@@ -10336,7 +10367,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Cotes marché non disponibles — pronostic basé sur le modèle statistique seul.",
-      "ai_odds_insight_en": "Market odds unavailable — prediction based on the statistical model only."
+      "ai_odds_insight_en": "Market odds unavailable — prediction based on the statistical model only.",
+      "status": "PENDING"
     },
     {
       "id": "grazerak-vs-tsvhartb-2026-10-30",
@@ -10532,7 +10564,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 1.91, nul: 3.5, 2: 3.6, Over 2.5: 1.8.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 1.91, draw: 3.5, 2: 3.6, Over 2.5: 1.8."
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 1.91, draw: 3.5, 2: 3.6, Over 2.5: 1.8.",
+      "status": "PENDING"
     },
     {
       "id": "sheffiel-vs-wrexham-2026-10-30",
@@ -10729,7 +10762,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 2.65, nul: 3.3, 2: 2.6, Over 2.5: 1.87.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.65, draw: 3.3, 2: 2.6, Over 2.5: 1.87."
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.65, draw: 3.3, 2: 2.6, Over 2.5: 1.87.",
+      "status": "PENDING"
     }
   ],
   "vipPreview": [
@@ -10807,7 +10841,7 @@
     }
   ],
   "stats": {
-    "avgReliability": 80.53,
+    "avgReliability": 80.63,
     "totalAnalyzed": 150,
     "totalRejected": 1,
     "totalAccepted": 149,
@@ -11802,7 +11836,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 1.74, nul: 3.8, 2: 4.5, Over 2.5: 1.56.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 1.74, draw: 3.8, 2: 4.5, Over 2.5: 1.56."
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 1.74, draw: 3.8, 2: 4.5, Over 2.5: 1.56.",
+      "status": "PENDING"
     },
     {
       "id": "azalkmaa-vs-fctwente-2026-10-25",
@@ -11999,7 +12034,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 2.15, nul: 3.9, 2: 2.95.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.15, draw: 3.9, 2: 2.95."
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.15, draw: 3.9, 2: 2.95.",
+      "status": "PENDING"
     },
     {
       "id": "clubbrug-vs-sinttrui-2026-10-25",
@@ -12196,7 +12232,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 1.34, nul: 5.75, 2: 7.5.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 1.34, draw: 5.75, 2: 7.5."
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 1.34, draw: 5.75, 2: 7.5.",
+      "status": "PENDING"
     },
     {
       "id": "vflosnab-vs-spvgggre-2026-10-25",
@@ -12393,7 +12430,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 2.25, nul: 3.6, 2: 2.95, Over 2.5: 1.57.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.25, draw: 3.6, 2: 2.95, Over 2.5: 1.57."
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.25, draw: 3.6, 2: 2.95, Over 2.5: 1.57.",
+      "status": "PENDING"
     },
     {
       "id": "rioave-vs-fcfamali-2026-10-25",
@@ -12590,7 +12628,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 3.65, nul: 3.35, 2: 2.05, Over 2.5: 2.05.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 3.65, draw: 3.35, 2: 2.05, Over 2.5: 2.05."
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 3.65, draw: 3.35, 2: 2.05, Over 2.5: 2.05.",
+      "status": "PENDING"
     },
     {
       "id": "sporting-vs-acadmico-2026-10-25",
@@ -12787,7 +12826,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 1.24, nul: 6.5, 2: 10.5.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 1.24, draw: 6.5, 2: 10.5."
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 1.24, draw: 6.5, 2: 10.5.",
+      "status": "PENDING"
     },
     {
       "id": "motherwe-vs-heartofm-2026-10-25",
@@ -12984,7 +13024,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 3.1, nul: 3.7, 2: 2.15, Over 2.5: 1.63.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 3.1, draw: 3.7, 2: 2.15, Over 2.5: 1.63."
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 3.1, draw: 3.7, 2: 2.15, Over 2.5: 1.63.",
+      "status": "PENDING"
     },
     {
       "id": "holstein-vs-dynamodr-2026-10-25",
@@ -13181,7 +13222,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 2.3, nul: 3.75, 2: 2.8, Over 2.5: 1.56.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.3, draw: 3.75, 2: 2.8, Over 2.5: 1.56."
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.3, draw: 3.75, 2: 2.8, Over 2.5: 1.56.",
+      "status": "PENDING"
     },
     {
       "id": "sksturmg-vs-svjoskor-2026-10-25",
@@ -13378,7 +13420,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 1.67, nul: 4.3, 2: 4.5.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 1.67, draw: 4.3, 2: 4.5."
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 1.67, draw: 4.3, 2: 4.5.",
+      "status": "PENDING"
     },
     {
       "id": "barcelon-vs-realmadr-2026-10-25",
@@ -13574,7 +13617,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 1.67, nul: 5.5, 2: 3.75.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 1.67, draw: 5.5, 2: 3.75."
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 1.67, draw: 5.5, 2: 3.75.",
+      "status": "PENDING"
     },
     {
       "id": "cdnacion-vs-braga-2026-10-25",
@@ -13771,7 +13815,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 5.5, nul: 4.1, 2: 1.57, Over 2.5: 1.83.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 5.5, draw: 4.1, 2: 1.57, Over 2.5: 1.83."
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 5.5, draw: 4.1, 2: 1.57, Over 2.5: 1.83.",
+      "status": "PENDING"
     },
     {
       "id": "tsveintr-vs-hannover-2026-10-25",
@@ -13961,7 +14006,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Cotes marché non disponibles — pronostic basé sur le modèle statistique seul.",
-      "ai_odds_insight_en": "Market odds unavailable — prediction based on the statistical model only."
+      "ai_odds_insight_en": "Market odds unavailable — prediction based on the statistical model only.",
+      "status": "PENDING"
     },
     {
       "id": "celtavig-vs-realbeti-2026-10-25",
@@ -14158,7 +14204,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 3.2, nul: 3.55, 2: 2.25, Over 2.5: 1.74.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 3.2, draw: 3.55, 2: 2.25, Over 2.5: 1.74."
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 3.2, draw: 3.55, 2: 2.25, Over 2.5: 1.74.",
+      "status": "PENDING"
     },
     {
       "id": "tsghoffe-vs-bayerlev-2026-10-25",
@@ -14354,7 +14401,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 2.65, nul: 3.8, 2: 2.25.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.65, draw: 3.8, 2: 2.25."
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.65, draw: 3.8, 2: 2.25.",
+      "status": "PENDING"
     },
     {
       "id": "crystalp-vs-newcastl-2026-10-25",
@@ -14551,7 +14599,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 2.9, nul: 3.65, 2: 2.35.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.9, draw: 3.65, 2: 2.35."
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.9, draw: 3.65, 2: 2.35.",
+      "status": "PENDING"
     },
     {
       "id": "internaz-vs-fiorenti-2026-10-25",
@@ -14748,7 +14797,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 1.32, nul: 5.25, 2: 7.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 1.32, draw: 5.25, 2: 7."
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 1.32, draw: 5.25, 2: 7.",
+      "status": "PENDING"
     },
     {
       "id": "staderen-vs-strasbou-2026-10-25",
@@ -14945,7 +14995,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 1.8, nul: 4.3, 2: 3.9.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 1.8, draw: 4.3, 2: 3.9."
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 1.8, draw: 4.3, 2: 3.9.",
+      "status": "PENDING"
     },
     {
       "id": "manchest-vs-afcbourn-2026-10-25",
@@ -15140,7 +15191,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 2.2, nul: 3.65, 2: 3.1, Over 2.5: 1.65.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.2, draw: 3.65, 2: 3.1, Over 2.5: 1.65."
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.2, draw: 3.65, 2: 3.1, Over 2.5: 1.65.",
+      "status": "PENDING"
     },
     {
       "id": "genoa-vs-venezia-2026-10-25",
@@ -15337,7 +15389,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 2.1, nul: 3.15, 2: 3.45, Over 2.5: 1.95.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.1, draw: 3.15, 2: 3.45, Over 2.5: 1.95."
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.1, draw: 3.15, 2: 3.45, Over 2.5: 1.95.",
+      "status": "PENDING"
     },
     {
       "id": "lecce-vs-juventus-2026-10-25",
@@ -15534,7 +15587,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 6.5, nul: 4.1, 2: 1.45, Over 2.5: 1.83.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 6.5, draw: 4.1, 2: 1.45, Over 2.5: 1.83."
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 6.5, draw: 4.1, 2: 1.45, Over 2.5: 1.83.",
+      "status": "PENDING"
     },
     {
       "id": "sevilla-vs-osasuna-2026-10-26",
@@ -18653,6 +18707,197 @@
       "status": "PENDING"
     },
     {
+      "id": "vancouve-vs-sandiego-2026-10-29",
+      "match": "Vancouver Whitecaps vs San Diego FC",
+      "home": "Vancouver Whitecaps",
+      "away": "San Diego FC",
+      "league": "MLS",
+      "date": "2026-10-29",
+      "type": "BTTS",
+      "prediction": "Oui",
+      "proba": 0.7398,
+      "bttsProbDisplay": "73.98%",
+      "over25ProbDisplay": "78.31%",
+      "confidence": 74,
+      "time": "02:30",
+      "matchSemantic": "vancouve-vs-sandiego-2026-10-29",
+      "source": "poisson-v92-real-data",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/9727.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/22529.png",
+      "tier": "GOLD",
+      "reliabilityScore": 91.11,
+      "dataQuality": "HIGH",
+      "dataSource": "ESPN_TEAM_SCHEDULE",
+      "matchCountHome": 8,
+      "matchCountAway": 8,
+      "h2hAvailable": false,
+      "xgHome": 2.52,
+      "xgAway": 1.63,
+      "xgTotal": 4.15,
+      "formBTTS": 90,
+      "analysis": "Vancouver Whitecaps : forme V-N-N-D-N (1V 3N 1D, 7 buts marqués / 8 encaissés sur 5) · San Diego FC : forme N-N-D-N-N (0V 4N 1D, 11 buts marqués / 14 encaissés sur 5). Classement : Vancouver Whitecaps 1e (55 pts), San Diego FC 12e (34 pts). Modèle Poisson : xG cumulé 4.15, BTTS 74.0%, Over 2.5 78.3%. Fiabilité 91.11%.",
+      "analysisData": {
+        "bttsProb": 0.7398,
+        "over25Prob": 0.7831,
+        "homeLambda": 2.52,
+        "awayLambda": 1.63,
+        "xgTotal": 4.15
+      },
+      "estimatedCote": 1.35,
+      "estimatedCoteOver": 1.28,
+      "odds": null,
+      "oddsSource": "ESTIMATION_POISSON",
+      "estimatedCoteBTTS": 1.35,
+      "formHome": {
+        "last5String": "V-N-N-D-N",
+        "wins": 1,
+        "draws": 3,
+        "losses": 1,
+        "goalsFor": 7,
+        "goalsAgainst": 8,
+        "bttsRate": 0.8,
+        "over25Rate": 0.6,
+        "cleanSheets": 1,
+        "failedToScore": 1,
+        "count": 5
+      },
+      "formAway": {
+        "last5String": "N-N-D-N-N",
+        "wins": 0,
+        "draws": 4,
+        "losses": 1,
+        "goalsFor": 11,
+        "goalsAgainst": 14,
+        "bttsRate": 1,
+        "over25Rate": 1,
+        "cleanSheets": 0,
+        "failedToScore": 0,
+        "count": 5
+      },
+      "last5Home": [
+        {
+          "date": "2026-10-25",
+          "opponent": "Colorado Rapids",
+          "venue": "A",
+          "score": "0-1",
+          "result": "L"
+        },
+        {
+          "date": "2026-10-18",
+          "opponent": "Austin FC",
+          "venue": "A",
+          "score": "2-1",
+          "result": "W"
+        },
+        {
+          "date": "2026-10-15",
+          "opponent": "St. Louis CITY SC",
+          "venue": "A",
+          "score": "0-0",
+          "result": "D"
+        },
+        {
+          "date": "2026-10-11",
+          "opponent": "LAFC",
+          "venue": "A",
+          "score": "1-1",
+          "result": "D"
+        },
+        {
+          "date": "2026-10-07",
+          "opponent": "Chicago Fire FC",
+          "venue": "A",
+          "score": "1-3",
+          "result": "L"
+        }
+      ],
+      "last5Away": [
+        {
+          "date": "2026-10-25",
+          "opponent": "Seattle Sounders FC",
+          "venue": "H",
+          "score": "2-2",
+          "result": "D"
+        },
+        {
+          "date": "2026-10-18",
+          "opponent": "LA Galaxy",
+          "venue": "A",
+          "score": "2-2",
+          "result": "D"
+        },
+        {
+          "date": "2026-10-15",
+          "opponent": "Houston Dynamo FC",
+          "venue": "H",
+          "score": "3-3",
+          "result": "D"
+        },
+        {
+          "date": "2026-10-10",
+          "opponent": "Red Bull New York",
+          "venue": "A",
+          "score": "1-4",
+          "result": "L"
+        },
+        {
+          "date": "2026-09-27",
+          "opponent": "Austin FC",
+          "venue": "A",
+          "score": "3-3",
+          "result": "D"
+        }
+      ],
+      "standingsHome": {
+        "rank": 1,
+        "points": 55,
+        "played": 30,
+        "gf": 63,
+        "ga": 31
+      },
+      "standingsAway": {
+        "rank": 12,
+        "points": 34,
+        "played": 30,
+        "gf": 53,
+        "ga": 56
+      },
+      "predictions": [
+        {
+          "type": "BTTS",
+          "prediction": "Oui",
+          "confidence": 74,
+          "bttsProb": 0.7398,
+          "homeLambda": 2.52,
+          "awayLambda": 1.63
+        },
+        {
+          "type": "Over 2.5",
+          "prediction": "Oui",
+          "confidence": 78,
+          "over25Prob": 0.7831,
+          "homeLambda": 2.52,
+          "awayLambda": 1.63
+        }
+      ],
+      "bttsProb": 0.7398,
+      "over25Prob": 0.7831,
+      "homeLambda": 2.52,
+      "awayLambda": 1.63,
+      "ai_key_fact": "Vancouver Whitecaps domine son classement à la 1e place avec 55 points.",
+      "ai_analysis": "Le modèle Poisson attribue un xG de 2.52 à Vancouver Whitecaps et de 1.63 à San Diego FC. Les probabilités calculées atteignent 74.0% pour le BTTS et 78.3% pour l'Over 2.5, avec une fiabilité de modèle de 91.11%. Le différentiel au classement entre le leader à domicile et San Diego (12e) encadre cette confrontation.",
+      "ai_form_summary": "Vancouver Whitecaps totalise 1 victoire, 3 nuls et 1 défaite lors de ses 5 dernières rencontres à domicile. San Diego FC reste sur une série sans victoire en déplacement, enregistrant 4 nuls et 1 défaite avec 14 buts encaissés.",
+      "ai_key_fact_en": "Vancouver Whitecaps dominates their standings in 1st place with 55 points.",
+      "ai_analysis_en": "The Poisson model assigns an xG of 2.52 to Vancouver Whitecaps and 1.63 to San Diego FC. Calculated probabilities reach 74.0% for BTTS and 78.3% for Over 2.5, with a model reliability of 91.11%. The standings differential between the home leader and San Diego (12th) frames this confrontation.",
+      "ai_form_summary_en": "Vancouver Whitecaps totals 1 win, 3 draws and 1 defeat in their last 5 home matches. San Diego FC remains winless away, recording 4 draws and 1 defeat with 14 goals conceded.",
+      "ai_source": "gemini-v2",
+      "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
+      "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
+      "ai_odds_insight": "Cotes marché non disponibles — pronostic basé sur le modèle statistique seul.",
+      "ai_odds_insight_en": "Market odds unavailable — prediction based on the statistical model only.",
+      "status": "PENDING"
+    },
+    {
       "id": "nashvill-vs-philadel-2026-10-29",
       "match": "Nashville SC vs Philadelphia Union",
       "home": "Nashville SC",
@@ -18913,6 +19158,13 @@
       },
       "last5Home": [
         {
+          "date": "2026-10-25",
+          "opponent": "Houston Dynamo FC",
+          "venue": "A",
+          "score": "0-0",
+          "result": "D"
+        },
+        {
           "date": "2026-10-17",
           "opponent": "St. Louis CITY SC",
           "venue": "H",
@@ -18939,16 +19191,16 @@
           "venue": "A",
           "score": "1-3",
           "result": "L"
-        },
-        {
-          "date": "2026-09-20",
-          "opponent": "LA Galaxy",
-          "venue": "H",
-          "score": "2-3",
-          "result": "L"
         }
       ],
       "last5Away": [
+        {
+          "date": "2026-10-25",
+          "opponent": "Austin FC",
+          "venue": "H",
+          "score": "1-2",
+          "result": "L"
+        },
         {
           "date": "2026-10-18",
           "opponent": "Real Salt Lake",
@@ -18976,13 +19228,6 @@
           "venue": "A",
           "score": "1-2",
           "result": "L"
-        },
-        {
-          "date": "2026-09-27",
-          "opponent": "Houston Dynamo FC",
-          "venue": "A",
-          "score": "2-0",
-          "result": "W"
         }
       ],
       "standingsHome": {
@@ -19027,388 +19272,6 @@
       "ai_key_fact_en": "Minnesota United FC records a 100% BTTS rate over their last five matches.",
       "ai_analysis_en": "Model xG figures reach 2.4 for Minnesota United FC and 1.88 for Sporting Kansas City, reflecting notable defensive vulnerabilities. The model indicates a 77.0% probability for BTTS and 80.0% for Over 2.5, with a reliability level of 92.43%. In the standings, Minnesota (13th) hosts Sporting Kansas City (15th) in a lower-table clash.",
       "ai_form_summary_en": "Minnesota United FC is going through a difficult period with 1 win, 2 draws and 2 defeats, conceding 12 goals. Sporting Kansas City records a similar record of 1 win, 1 draw and 3 defeats with also 12 goals conceded away.",
-      "ai_source": "gemini-v2",
-      "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
-      "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
-      "ai_odds_insight": "Cotes marché non disponibles — pronostic basé sur le modèle statistique seul.",
-      "ai_odds_insight_en": "Market odds unavailable — prediction based on the statistical model only.",
-      "status": "PENDING"
-    },
-    {
-      "id": "vancouve-vs-sandiego-2026-10-29",
-      "match": "Vancouver Whitecaps vs San Diego FC",
-      "home": "Vancouver Whitecaps",
-      "away": "San Diego FC",
-      "league": "MLS",
-      "date": "2026-10-29",
-      "type": "BTTS",
-      "prediction": "Oui",
-      "proba": 0.7398,
-      "bttsProbDisplay": "73.98%",
-      "over25ProbDisplay": "78.31%",
-      "confidence": 74,
-      "time": "02:30",
-      "matchSemantic": "vancouve-vs-sandiego-2026-10-29",
-      "source": "poisson-v92-real-data",
-      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/9727.png",
-      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/22529.png",
-      "tier": "GOLD",
-      "reliabilityScore": 91.11,
-      "dataQuality": "HIGH",
-      "dataSource": "ESPN_TEAM_SCHEDULE",
-      "matchCountHome": 8,
-      "matchCountAway": 8,
-      "h2hAvailable": false,
-      "xgHome": 2.52,
-      "xgAway": 1.63,
-      "xgTotal": 4.15,
-      "formBTTS": 90,
-      "analysis": "Vancouver Whitecaps : forme V-N-N-D-N (1V 3N 1D, 7 buts marqués / 8 encaissés sur 5) · San Diego FC : forme N-N-D-N-N (0V 4N 1D, 11 buts marqués / 14 encaissés sur 5). Classement : Vancouver Whitecaps 1e (55 pts), San Diego FC 12e (34 pts). Modèle Poisson : xG cumulé 4.15, BTTS 74.0%, Over 2.5 78.3%. Fiabilité 91.11%.",
-      "analysisData": {
-        "bttsProb": 0.7398,
-        "over25Prob": 0.7831,
-        "homeLambda": 2.52,
-        "awayLambda": 1.63,
-        "xgTotal": 4.15
-      },
-      "estimatedCote": 1.35,
-      "estimatedCoteOver": 1.28,
-      "odds": null,
-      "oddsSource": "ESTIMATION_POISSON",
-      "estimatedCoteBTTS": 1.35,
-      "formHome": {
-        "last5String": "V-N-N-D-N",
-        "wins": 1,
-        "draws": 3,
-        "losses": 1,
-        "goalsFor": 7,
-        "goalsAgainst": 8,
-        "bttsRate": 0.8,
-        "over25Rate": 0.6,
-        "cleanSheets": 1,
-        "failedToScore": 1,
-        "count": 5
-      },
-      "formAway": {
-        "last5String": "N-N-D-N-N",
-        "wins": 0,
-        "draws": 4,
-        "losses": 1,
-        "goalsFor": 11,
-        "goalsAgainst": 14,
-        "bttsRate": 1,
-        "over25Rate": 1,
-        "cleanSheets": 0,
-        "failedToScore": 0,
-        "count": 5
-      },
-      "last5Home": [
-        {
-          "date": "2026-10-18",
-          "opponent": "Austin FC",
-          "venue": "A",
-          "score": "2-1",
-          "result": "W"
-        },
-        {
-          "date": "2026-10-15",
-          "opponent": "St. Louis CITY SC",
-          "venue": "A",
-          "score": "0-0",
-          "result": "D"
-        },
-        {
-          "date": "2026-10-11",
-          "opponent": "LAFC",
-          "venue": "A",
-          "score": "1-1",
-          "result": "D"
-        },
-        {
-          "date": "2026-10-07",
-          "opponent": "Chicago Fire FC",
-          "venue": "A",
-          "score": "1-3",
-          "result": "L"
-        },
-        {
-          "date": "2026-09-27",
-          "opponent": "D.C. United",
-          "venue": "H",
-          "score": "3-3",
-          "result": "D"
-        }
-      ],
-      "last5Away": [
-        {
-          "date": "2026-10-18",
-          "opponent": "LA Galaxy",
-          "venue": "A",
-          "score": "2-2",
-          "result": "D"
-        },
-        {
-          "date": "2026-10-15",
-          "opponent": "Houston Dynamo FC",
-          "venue": "H",
-          "score": "3-3",
-          "result": "D"
-        },
-        {
-          "date": "2026-10-10",
-          "opponent": "Red Bull New York",
-          "venue": "A",
-          "score": "1-4",
-          "result": "L"
-        },
-        {
-          "date": "2026-09-27",
-          "opponent": "Austin FC",
-          "venue": "A",
-          "score": "3-3",
-          "result": "D"
-        },
-        {
-          "date": "2026-09-20",
-          "opponent": "Inter Miami CF",
-          "venue": "A",
-          "score": "2-2",
-          "result": "D"
-        }
-      ],
-      "standingsHome": {
-        "rank": 1,
-        "points": 55,
-        "played": 30,
-        "gf": 63,
-        "ga": 31
-      },
-      "standingsAway": {
-        "rank": 12,
-        "points": 34,
-        "played": 30,
-        "gf": 53,
-        "ga": 56
-      },
-      "predictions": [
-        {
-          "type": "BTTS",
-          "prediction": "Oui",
-          "confidence": 74,
-          "bttsProb": 0.7398,
-          "homeLambda": 2.52,
-          "awayLambda": 1.63
-        },
-        {
-          "type": "Over 2.5",
-          "prediction": "Oui",
-          "confidence": 78,
-          "over25Prob": 0.7831,
-          "homeLambda": 2.52,
-          "awayLambda": 1.63
-        }
-      ],
-      "bttsProb": 0.7398,
-      "over25Prob": 0.7831,
-      "homeLambda": 2.52,
-      "awayLambda": 1.63,
-      "ai_key_fact": "Vancouver Whitecaps domine son classement à la 1e place avec 55 points.",
-      "ai_analysis": "Le modèle Poisson attribue un xG de 2.52 à Vancouver Whitecaps et de 1.63 à San Diego FC. Les probabilités calculées atteignent 74.0% pour le BTTS et 78.3% pour l'Over 2.5, avec une fiabilité de modèle de 91.11%. Le différentiel au classement entre le leader à domicile et San Diego (12e) encadre cette confrontation.",
-      "ai_form_summary": "Vancouver Whitecaps totalise 1 victoire, 3 nuls et 1 défaite lors de ses 5 dernières rencontres à domicile. San Diego FC reste sur une série sans victoire en déplacement, enregistrant 4 nuls et 1 défaite avec 14 buts encaissés.",
-      "ai_key_fact_en": "Vancouver Whitecaps dominates their standings in 1st place with 55 points.",
-      "ai_analysis_en": "The Poisson model assigns an xG of 2.52 to Vancouver Whitecaps and 1.63 to San Diego FC. Calculated probabilities reach 74.0% for BTTS and 78.3% for Over 2.5, with a model reliability of 91.11%. The standings differential between the home leader and San Diego (12th) frames this confrontation.",
-      "ai_form_summary_en": "Vancouver Whitecaps totals 1 win, 3 draws and 1 defeat in their last 5 home matches. San Diego FC remains winless away, recording 4 draws and 1 defeat with 14 goals conceded.",
-      "ai_source": "gemini-v2",
-      "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
-      "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
-      "ai_odds_insight": "Cotes marché non disponibles — pronostic basé sur le modèle statistique seul.",
-      "ai_odds_insight_en": "Market odds unavailable — prediction based on the statistical model only.",
-      "status": "PENDING"
-    },
-    {
-      "id": "stlouisc-vs-portland-2026-10-29",
-      "match": "St. Louis CITY SC vs Portland Timbers",
-      "home": "St. Louis CITY SC",
-      "away": "Portland Timbers",
-      "league": "MLS",
-      "date": "2026-10-29",
-      "type": "BTTS",
-      "prediction": "Oui",
-      "proba": 0.678,
-      "bttsProbDisplay": "67.80%",
-      "over25ProbDisplay": "79.63%",
-      "confidence": 68,
-      "time": "00:30",
-      "matchSemantic": "stlouisc-vs-portland-2026-10-29",
-      "source": "poisson-v92-real-data",
-      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/21812.png",
-      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/9723.png",
-      "tier": "GOLD",
-      "reliabilityScore": 88.41,
-      "dataQuality": "HIGH",
-      "dataSource": "ESPN_TEAM_SCHEDULE",
-      "matchCountHome": 8,
-      "matchCountAway": 8,
-      "h2hAvailable": false,
-      "xgHome": 3,
-      "xgAway": 1.25,
-      "xgTotal": 4.25,
-      "formBTTS": 50,
-      "analysis": "St. Louis CITY SC : forme D-N-V-V-V (3V 1N 1D, 14 buts marqués / 6 encaissés sur 5) · Portland Timbers : forme N-D-N-D-D (0V 2N 3D, 4 buts marqués / 9 encaissés sur 5). Classement : St. Louis CITY SC 2e (51 pts), Portland Timbers 11e (34 pts). Modèle Poisson : xG cumulé 4.25, BTTS 67.8%, Over 2.5 79.6%. Fiabilité 88.41%.",
-      "analysisData": {
-        "bttsProb": 0.678,
-        "over25Prob": 0.7963,
-        "homeLambda": 3,
-        "awayLambda": 1.25,
-        "xgTotal": 4.25
-      },
-      "estimatedCote": 1.47,
-      "estimatedCoteOver": 1.26,
-      "odds": null,
-      "oddsSource": "ESTIMATION_POISSON",
-      "estimatedCoteBTTS": 1.47,
-      "formHome": {
-        "last5String": "D-N-V-V-V",
-        "wins": 3,
-        "draws": 1,
-        "losses": 1,
-        "goalsFor": 14,
-        "goalsAgainst": 6,
-        "bttsRate": 0.6,
-        "over25Rate": 0.8,
-        "cleanSheets": 2,
-        "failedToScore": 1,
-        "count": 5
-      },
-      "formAway": {
-        "last5String": "N-D-N-D-D",
-        "wins": 0,
-        "draws": 2,
-        "losses": 3,
-        "goalsFor": 4,
-        "goalsAgainst": 9,
-        "bttsRate": 0.4,
-        "over25Rate": 0.4,
-        "cleanSheets": 1,
-        "failedToScore": 3,
-        "count": 5
-      },
-      "last5Home": [
-        {
-          "date": "2026-10-17",
-          "opponent": "Minnesota United FC",
-          "venue": "A",
-          "score": "2-3",
-          "result": "L"
-        },
-        {
-          "date": "2026-10-15",
-          "opponent": "Vancouver Whitecaps",
-          "venue": "H",
-          "score": "0-0",
-          "result": "D"
-        },
-        {
-          "date": "2026-10-11",
-          "opponent": "LA Galaxy",
-          "venue": "H",
-          "score": "6-2",
-          "result": "W"
-        },
-        {
-          "date": "2026-09-30",
-          "opponent": "Red Bull New York",
-          "venue": "A",
-          "score": "3-0",
-          "result": "W"
-        },
-        {
-          "date": "2026-09-20",
-          "opponent": "Toronto FC",
-          "venue": "H",
-          "score": "3-1",
-          "result": "W"
-        }
-      ],
-      "last5Away": [
-        {
-          "date": "2026-10-18",
-          "opponent": "Colorado Rapids",
-          "venue": "H",
-          "score": "0-0",
-          "result": "D"
-        },
-        {
-          "date": "2026-10-15",
-          "opponent": "LA Galaxy",
-          "venue": "A",
-          "score": "0-2",
-          "result": "L"
-        },
-        {
-          "date": "2026-10-11",
-          "opponent": "Sporting Kansas City",
-          "venue": "A",
-          "score": "3-3",
-          "result": "D"
-        },
-        {
-          "date": "2026-09-27",
-          "opponent": "San Jose Earthquakes",
-          "venue": "A",
-          "score": "1-3",
-          "result": "L"
-        },
-        {
-          "date": "2026-09-20",
-          "opponent": "Atlanta United FC",
-          "venue": "H",
-          "score": "0-1",
-          "result": "L"
-        }
-      ],
-      "standingsHome": {
-        "rank": 2,
-        "points": 51,
-        "played": 30,
-        "gf": 56,
-        "ga": 41
-      },
-      "standingsAway": {
-        "rank": 11,
-        "points": 34,
-        "played": 30,
-        "gf": 51,
-        "ga": 56
-      },
-      "predictions": [
-        {
-          "type": "BTTS",
-          "prediction": "Oui",
-          "confidence": 68,
-          "bttsProb": 0.678,
-          "homeLambda": 3,
-          "awayLambda": 1.25
-        },
-        {
-          "type": "Over 2.5",
-          "prediction": "Oui",
-          "confidence": 80,
-          "over25Prob": 0.7963,
-          "homeLambda": 3,
-          "awayLambda": 1.25
-        }
-      ],
-      "bttsProb": 0.678,
-      "over25Prob": 0.7963,
-      "homeLambda": 3,
-      "awayLambda": 1.25,
-      "ai_key_fact": "St. Louis CITY SC se positionne au 2e rang du classement avec 56 buts marqués.",
-      "ai_analysis": "Les xG du modèle s'établissent à un niveau élevé de 3.0 pour St. Louis CITY SC contre 1.25 pour Portland Timbers. Le modèle estime la probabilité du BTTS à 67.8% et celle de l'Over 2.5 à 79.6%, sous une fiabilité de 88.41%. Cette configuration oppose la deuxième meilleure équipe à domicile au onzième visiteur.",
-      "ai_form_summary": "St. Louis CITY SC affiche une belle forme récente à domicile avec 3 victoires, 1 nul et 1 défaite, marquant 14 buts. Portland Timbers traverse une période délicate à l'extérieur avec 3 défaites et 2 nuls, ne marquant que 4 buts.",
-      "ai_key_fact_en": "St. Louis CITY SC stands 2nd in the league table with 56 goals scored.",
-      "ai_analysis_en": "Model xG figures are set at a high 3.0 for St. Louis CITY SC against 1.25 for Portland Timbers. The model estimates BTTS probability at 67.8% and Over 2.5 at 79.6%, under an 88.41% reliability. This setup pits the second-best home team against the eleventh-ranked visitor.",
-      "ai_form_summary_en": "St. Louis CITY SC shows strong recent home form with 3 wins, 1 draw and 1 defeat, scoring 14 goals. Portland Timbers is going through a difficult away spell with 3 defeats and 2 draws, scoring only 4 goals.",
       "ai_source": "gemini-v2",
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
@@ -19486,6 +19349,13 @@
       },
       "last5Home": [
         {
+          "date": "2026-10-25",
+          "opponent": "Sporting Kansas City",
+          "venue": "A",
+          "score": "2-1",
+          "result": "W"
+        },
+        {
           "date": "2026-10-18",
           "opponent": "Vancouver Whitecaps",
           "venue": "H",
@@ -19512,16 +19382,16 @@
           "venue": "H",
           "score": "3-3",
           "result": "D"
-        },
-        {
-          "date": "2026-09-20",
-          "opponent": "FC Dallas",
-          "venue": "A",
-          "score": "0-0",
-          "result": "D"
         }
       ],
       "last5Away": [
+        {
+          "date": "2026-10-25",
+          "opponent": "St. Louis CITY SC",
+          "venue": "H",
+          "score": "3-0",
+          "result": "W"
+        },
         {
           "date": "2026-10-18",
           "opponent": "Sporting Kansas City",
@@ -19549,13 +19419,6 @@
           "venue": "H",
           "score": "3-0",
           "result": "W"
-        },
-        {
-          "date": "2026-09-24",
-          "opponent": "Seattle Sounders FC",
-          "venue": "A",
-          "score": "0-2",
-          "result": "L"
         }
       ],
       "standingsHome": {
@@ -19608,189 +19471,189 @@
       "status": "PENDING"
     },
     {
-      "id": "fcdallas-vs-columbus-2026-10-29",
-      "match": "FC Dallas vs Columbus Crew",
-      "home": "FC Dallas",
-      "away": "Columbus Crew",
+      "id": "stlouisc-vs-portland-2026-10-29",
+      "match": "St. Louis CITY SC vs Portland Timbers",
+      "home": "St. Louis CITY SC",
+      "away": "Portland Timbers",
       "league": "MLS",
       "date": "2026-10-29",
       "type": "BTTS",
       "prediction": "Oui",
-      "proba": 0.5714,
-      "bttsProbDisplay": "57.14%",
-      "over25ProbDisplay": "54.24%",
-      "confidence": 57,
+      "proba": 0.678,
+      "bttsProbDisplay": "67.80%",
+      "over25ProbDisplay": "79.63%",
+      "confidence": 68,
       "time": "00:30",
-      "matchSemantic": "fcdallas-vs-columbus-2026-10-29",
+      "matchSemantic": "stlouisc-vs-portland-2026-10-29",
       "source": "poisson-v92-real-data",
-      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/185.png",
-      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/183.png",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/21812.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/9723.png",
       "tier": "GOLD",
-      "reliabilityScore": 81.25,
+      "reliabilityScore": 88.41,
       "dataQuality": "HIGH",
       "dataSource": "ESPN_TEAM_SCHEDULE",
       "matchCountHome": 8,
       "matchCountAway": 8,
       "h2hAvailable": false,
-      "xgHome": 1.57,
-      "xgAway": 1.27,
-      "xgTotal": 2.85,
+      "xgHome": 3,
+      "xgAway": 1.25,
+      "xgTotal": 4.25,
       "formBTTS": 50,
-      "analysis": "FC Dallas : forme N-V-D-V-N (2V 2N 1D, 6 buts marqués / 5 encaissés sur 5) · Columbus Crew : forme V-V-D-V-V (4V 0N 1D, 11 buts marqués / 5 encaissés sur 5). Classement : FC Dallas 3e (51 pts), Columbus Crew 11e (35 pts). Modèle Poisson : xG cumulé 2.85, BTTS 57.1%, Over 2.5 54.2%. Fiabilité 81.25%.",
+      "analysis": "St. Louis CITY SC : forme D-N-V-V-V (3V 1N 1D, 14 buts marqués / 6 encaissés sur 5) · Portland Timbers : forme N-D-N-D-D (0V 2N 3D, 4 buts marqués / 9 encaissés sur 5). Classement : St. Louis CITY SC 2e (51 pts), Portland Timbers 11e (34 pts). Modèle Poisson : xG cumulé 4.25, BTTS 67.8%, Over 2.5 79.6%. Fiabilité 88.41%.",
       "analysisData": {
-        "bttsProb": 0.5714,
-        "over25Prob": 0.5424,
-        "homeLambda": 1.57,
-        "awayLambda": 1.27,
-        "xgTotal": 2.85
+        "bttsProb": 0.678,
+        "over25Prob": 0.7963,
+        "homeLambda": 3,
+        "awayLambda": 1.25,
+        "xgTotal": 4.25
       },
-      "estimatedCote": 1.75,
-      "estimatedCoteOver": 1.84,
+      "estimatedCote": 1.47,
+      "estimatedCoteOver": 1.26,
       "odds": null,
       "oddsSource": "ESTIMATION_POISSON",
-      "estimatedCoteBTTS": 1.75,
+      "estimatedCoteBTTS": 1.47,
       "formHome": {
-        "last5String": "N-V-D-V-N",
-        "wins": 2,
-        "draws": 2,
+        "last5String": "D-N-V-V-V",
+        "wins": 3,
+        "draws": 1,
         "losses": 1,
-        "goalsFor": 6,
-        "goalsAgainst": 5,
-        "bttsRate": 0.4,
-        "over25Rate": 0.4,
-        "cleanSheets": 3,
+        "goalsFor": 14,
+        "goalsAgainst": 6,
+        "bttsRate": 0.6,
+        "over25Rate": 0.8,
+        "cleanSheets": 2,
         "failedToScore": 1,
         "count": 5
       },
       "formAway": {
-        "last5String": "V-V-D-V-V",
-        "wins": 4,
-        "draws": 0,
-        "losses": 1,
-        "goalsFor": 11,
-        "goalsAgainst": 5,
-        "bttsRate": 0.6,
-        "over25Rate": 0.6,
-        "cleanSheets": 2,
-        "failedToScore": 0,
+        "last5String": "N-D-N-D-D",
+        "wins": 0,
+        "draws": 2,
+        "losses": 3,
+        "goalsFor": 4,
+        "goalsAgainst": 9,
+        "bttsRate": 0.4,
+        "over25Rate": 0.4,
+        "cleanSheets": 1,
+        "failedToScore": 3,
         "count": 5
       },
       "last5Home": [
         {
-          "date": "2026-10-18",
-          "opponent": "Houston Dynamo FC",
+          "date": "2026-10-25",
+          "opponent": "Real Salt Lake",
           "venue": "A",
-          "score": "2-2",
-          "result": "D"
+          "score": "0-3",
+          "result": "L"
         },
         {
-          "date": "2026-10-15",
-          "opponent": "Seattle Sounders FC",
-          "venue": "H",
-          "score": "1-0",
-          "result": "W"
-        },
-        {
-          "date": "2026-10-10",
-          "opponent": "Charlotte FC",
+          "date": "2026-10-17",
+          "opponent": "Minnesota United FC",
           "venue": "A",
           "score": "2-3",
           "result": "L"
         },
         {
-          "date": "2026-09-27",
-          "opponent": "LAFC",
-          "venue": "H",
-          "score": "1-0",
-          "result": "W"
-        },
-        {
-          "date": "2026-09-20",
-          "opponent": "Austin FC",
+          "date": "2026-10-15",
+          "opponent": "Vancouver Whitecaps",
           "venue": "H",
           "score": "0-0",
           "result": "D"
+        },
+        {
+          "date": "2026-10-11",
+          "opponent": "LA Galaxy",
+          "venue": "H",
+          "score": "6-2",
+          "result": "W"
+        },
+        {
+          "date": "2026-09-30",
+          "opponent": "Red Bull New York",
+          "venue": "A",
+          "score": "3-0",
+          "result": "W"
         }
       ],
       "last5Away": [
         {
-          "date": "2026-10-24",
-          "opponent": "Toronto FC",
+          "date": "2026-10-25",
+          "opponent": "Charlotte FC",
           "venue": "H",
-          "score": "4-2",
+          "score": "3-2",
           "result": "W"
         },
         {
           "date": "2026-10-18",
-          "opponent": "FC Cincinnati",
-          "venue": "A",
-          "score": "2-0",
-          "result": "W"
-        },
-        {
-          "date": "2026-10-14",
-          "opponent": "Charlotte FC",
+          "opponent": "Colorado Rapids",
           "venue": "H",
-          "score": "3-1",
-          "result": "W"
+          "score": "0-0",
+          "result": "D"
         },
         {
-          "date": "2026-10-10",
-          "opponent": "Orlando City SC",
+          "date": "2026-10-15",
+          "opponent": "LA Galaxy",
           "venue": "A",
-          "score": "2-3",
+          "score": "0-2",
           "result": "L"
         },
         {
+          "date": "2026-10-11",
+          "opponent": "Sporting Kansas City",
+          "venue": "A",
+          "score": "3-3",
+          "result": "D"
+        },
+        {
           "date": "2026-09-27",
-          "opponent": "Inter Miami CF",
-          "venue": "H",
-          "score": "2-1",
-          "result": "W"
+          "opponent": "San Jose Earthquakes",
+          "venue": "A",
+          "score": "1-3",
+          "result": "L"
         }
       ],
       "standingsHome": {
-        "rank": 3,
+        "rank": 2,
         "points": 51,
         "played": 30,
-        "gf": 55,
-        "ga": 47
+        "gf": 56,
+        "ga": 41
       },
       "standingsAway": {
         "rank": 11,
-        "points": 35,
+        "points": 34,
         "played": 30,
-        "gf": 46,
-        "ga": 47
+        "gf": 51,
+        "ga": 56
       },
       "predictions": [
         {
           "type": "BTTS",
           "prediction": "Oui",
-          "confidence": 57,
-          "bttsProb": 0.5714,
-          "homeLambda": 1.57,
-          "awayLambda": 1.27
+          "confidence": 68,
+          "bttsProb": 0.678,
+          "homeLambda": 3,
+          "awayLambda": 1.25
         },
         {
           "type": "Over 2.5",
           "prediction": "Oui",
-          "confidence": 54,
-          "over25Prob": 0.5424,
-          "homeLambda": 1.57,
-          "awayLambda": 1.27
+          "confidence": 80,
+          "over25Prob": 0.7963,
+          "homeLambda": 3,
+          "awayLambda": 1.25
         }
       ],
-      "bttsProb": 0.5714,
-      "over25Prob": 0.5424,
-      "homeLambda": 1.57,
-      "awayLambda": 1.27,
-      "ai_key_fact": "Columbus Crew totalise 4 victoires sur ses 5 derniers matchs.",
-      "ai_analysis": "Le modèle évalue les xG à 1.57 pour le FC Dallas et 1.27 pour Columbus Crew, traduisant une production offensive intéressante pour les locaux. La probabilité BTTS est estimée à 57.1% et l'Over 2.5 à 54.2%, s'appuyant sur le classement des deux équipes où Dallas pointe à la 3e place et Columbus à la 11e. FC Dallas s'appuie sur une défense relativement hermétique avec trois clean sheets récents, tandis que Columbus Crew carbure à l'offensive avec 11 buts marqués sur ses cinq dernières sorties. La fiabilité globale du modèle s'élève à 81.25%.",
-      "ai_form_summary": "FC Dallas enregistre un bilan de deux victoires, deux nuls et une défaite avec un taux BTTS de 0.4. En face, Columbus Crew montre une dynamique solide avec quatre succès en cinq rencontres et un taux BTTS de 0.6.",
-      "ai_key_fact_en": "Columbus Crew totals 4 wins in their last 5 matches.",
-      "ai_analysis_en": "The model evaluates xG at 1.57 for FC Dallas and 1.27 for Columbus Crew, reflecting an interesting offensive output for the hosts. The BTTS probability is estimated at 57.1% and the Over 2.5 at 54.2%, based on the teams' standings where Dallas sits in 3rd place and Columbus in 11th. FC Dallas relies on a relatively watertight defense with three recent clean sheets, while Columbus Crew thrives offensively with 11 goals scored in their last five appearances. The overall reliability of the model stands at 81.25%.",
-      "ai_form_summary_en": "FC Dallas records a record of two wins, two draws, and one defeat with a 0.4 BTTS rate. Conversely, Columbus Crew displays a solid dynamic with four successes in five outings and a 0.6 BTTS rate.",
+      "bttsProb": 0.678,
+      "over25Prob": 0.7963,
+      "homeLambda": 3,
+      "awayLambda": 1.25,
+      "ai_key_fact": "St. Louis CITY SC se positionne au 2e rang du classement avec 56 buts marqués.",
+      "ai_analysis": "Les xG du modèle s'établissent à un niveau élevé de 3.0 pour St. Louis CITY SC contre 1.25 pour Portland Timbers. Le modèle estime la probabilité du BTTS à 67.8% et celle de l'Over 2.5 à 79.6%, sous une fiabilité de 88.41%. Cette configuration oppose la deuxième meilleure équipe à domicile au onzième visiteur.",
+      "ai_form_summary": "St. Louis CITY SC affiche une belle forme récente à domicile avec 3 victoires, 1 nul et 1 défaite, marquant 14 buts. Portland Timbers traverse une période délicate à l'extérieur avec 3 défaites et 2 nuls, ne marquant que 4 buts.",
+      "ai_key_fact_en": "St. Louis CITY SC stands 2nd in the league table with 56 goals scored.",
+      "ai_analysis_en": "Model xG figures are set at a high 3.0 for St. Louis CITY SC against 1.25 for Portland Timbers. The model estimates BTTS probability at 67.8% and Over 2.5 at 79.6%, under an 88.41% reliability. This setup pits the second-best home team against the eleventh-ranked visitor.",
+      "ai_form_summary_en": "St. Louis CITY SC shows strong recent home form with 3 wins, 1 draw and 1 defeat, scoring 14 goals. Portland Timbers is going through a difficult away spell with 3 defeats and 2 draws, scoring only 4 goals.",
       "ai_source": "gemini-v2",
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
@@ -19868,6 +19731,13 @@
       },
       "last5Home": [
         {
+          "date": "2026-10-25",
+          "opponent": "San Diego FC",
+          "venue": "A",
+          "score": "2-2",
+          "result": "D"
+        },
+        {
           "date": "2026-10-18",
           "opponent": "CF Montréal",
           "venue": "H",
@@ -19894,16 +19764,16 @@
           "venue": "H",
           "score": "2-1",
           "result": "W"
-        },
-        {
-          "date": "2026-09-27",
-          "opponent": "Minnesota United FC",
-          "venue": "H",
-          "score": "3-1",
-          "result": "W"
         }
       ],
       "last5Away": [
+        {
+          "date": "2026-10-25",
+          "opponent": "Minnesota United FC",
+          "venue": "H",
+          "score": "0-0",
+          "result": "D"
+        },
         {
           "date": "2026-10-18",
           "opponent": "FC Dallas",
@@ -19931,13 +19801,6 @@
           "venue": "H",
           "score": "0-2",
           "result": "L"
-        },
-        {
-          "date": "2026-09-20",
-          "opponent": "FC Cincinnati",
-          "venue": "H",
-          "score": "2-2",
-          "result": "D"
         }
       ],
       "standingsHome": {
@@ -19988,6 +19851,203 @@
       "ai_odds_insight": "Cotes marché non disponibles — pronostic basé sur le modèle statistique seul.",
       "ai_odds_insight_en": "Market odds unavailable — prediction based on the statistical model only.",
       "status": "PENDING"
+    },
+    {
+      "id": "fiorenti-vs-atalanta-2026-10-29",
+      "match": "Fiorentina vs Atalanta",
+      "home": "Fiorentina",
+      "away": "Atalanta",
+      "league": "Serie A",
+      "date": "2026-10-29",
+      "type": "BTTS",
+      "prediction": "Oui",
+      "proba": 0.6551,
+      "bttsProbDisplay": "65.51%",
+      "over25ProbDisplay": "64.39%",
+      "confidence": 66,
+      "time": "19:45",
+      "matchSemantic": "fiorenti-vs-atalanta-2026-10-29",
+      "source": "poisson-v92-real-data",
+      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/109.png",
+      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/105.png",
+      "tier": "GOLD",
+      "reliabilityScore": 78.41,
+      "dataQuality": "MEDIUM",
+      "dataSource": "ESPN_TEAM_SCHEDULE",
+      "matchCountHome": 7,
+      "matchCountAway": 7,
+      "h2hAvailable": false,
+      "xgHome": 1.69,
+      "xgAway": 1.63,
+      "xgTotal": 3.32,
+      "formBTTS": 90,
+      "analysis": "Fiorentina : forme D-D-N-V-D (1V 1N 3D, 8 buts marqués / 10 encaissés sur 5) · Atalanta : forme D-V-D-D-D (1V 0N 4D, 7 buts marqués / 10 encaissés sur 5). Classement : Fiorentina 18e (4 pts), Atalanta 11e (9 pts). Modèle Poisson : xG cumulé 3.32, BTTS 65.5%, Over 2.5 64.4%. Cotes DraftKings — 1: 2.2 / N: 3.4 / 2: 2.9 · Over 2.5: 1.69. Fiabilité 78.41%.",
+      "analysisData": {
+        "bttsProb": 0.6551,
+        "over25Prob": 0.6439,
+        "homeLambda": 1.69,
+        "awayLambda": 1.63,
+        "xgTotal": 3.32
+      },
+      "estimatedCote": 1.53,
+      "estimatedCoteOver": 1.55,
+      "odds": {
+        "provider": "DraftKings",
+        "home": 2.2,
+        "draw": 3.4,
+        "away": 2.9,
+        "over25": 1.69,
+        "under25": 2.1
+      },
+      "oddsSource": "DraftKings",
+      "estimatedCoteBTTS": 1.53,
+      "formHome": {
+        "last5String": "D-D-N-V-D",
+        "wins": 1,
+        "draws": 1,
+        "losses": 3,
+        "goalsFor": 8,
+        "goalsAgainst": 10,
+        "bttsRate": 1,
+        "over25Rate": 0.8,
+        "cleanSheets": 0,
+        "failedToScore": 0,
+        "count": 5
+      },
+      "formAway": {
+        "last5String": "D-V-D-D-D",
+        "wins": 1,
+        "draws": 0,
+        "losses": 4,
+        "goalsFor": 7,
+        "goalsAgainst": 10,
+        "bttsRate": 0.8,
+        "over25Rate": 0.8,
+        "cleanSheets": 0,
+        "failedToScore": 1,
+        "count": 5
+      },
+      "last5Home": [
+        {
+          "date": "2026-10-18",
+          "opponent": "Como",
+          "venue": "H",
+          "score": "1-3",
+          "result": "L"
+        },
+        {
+          "date": "2026-10-10",
+          "opponent": "Genoa",
+          "venue": "A",
+          "score": "1-2",
+          "result": "L"
+        },
+        {
+          "date": "2026-09-20",
+          "opponent": "Napoli",
+          "venue": "H",
+          "score": "1-1",
+          "result": "D"
+        },
+        {
+          "date": "2026-09-11",
+          "opponent": "Venezia",
+          "venue": "A",
+          "score": "4-2",
+          "result": "W"
+        },
+        {
+          "date": "2026-09-05",
+          "opponent": "Torino",
+          "venue": "H",
+          "score": "1-2",
+          "result": "L"
+        }
+      ],
+      "last5Away": [
+        {
+          "date": "2026-10-18",
+          "opponent": "AC Milan",
+          "venue": "A",
+          "score": "2-3",
+          "result": "L"
+        },
+        {
+          "date": "2026-10-12",
+          "opponent": "Venezia",
+          "venue": "H",
+          "score": "3-1",
+          "result": "W"
+        },
+        {
+          "date": "2026-09-20",
+          "opponent": "Juventus",
+          "venue": "A",
+          "score": "0-2",
+          "result": "L"
+        },
+        {
+          "date": "2026-09-12",
+          "opponent": "Cagliari",
+          "venue": "H",
+          "score": "1-2",
+          "result": "L"
+        },
+        {
+          "date": "2026-09-05",
+          "opponent": "AS Roma",
+          "venue": "A",
+          "score": "1-2",
+          "result": "L"
+        }
+      ],
+      "standingsHome": {
+        "rank": 18,
+        "points": 4,
+        "played": 7,
+        "gf": 8,
+        "ga": 17
+      },
+      "standingsAway": {
+        "rank": 11,
+        "points": 9,
+        "played": 7,
+        "gf": 10,
+        "ga": 11
+      },
+      "predictions": [
+        {
+          "type": "BTTS",
+          "prediction": "Oui",
+          "confidence": 66,
+          "bttsProb": 0.6551,
+          "homeLambda": 1.69,
+          "awayLambda": 1.63
+        },
+        {
+          "type": "Over 2.5",
+          "prediction": "Oui",
+          "confidence": 64,
+          "over25Prob": 0.6439,
+          "homeLambda": 1.69,
+          "awayLambda": 1.63
+        }
+      ],
+      "bttsProb": 0.6551,
+      "over25Prob": 0.6439,
+      "homeLambda": 1.69,
+      "awayLambda": 1.63,
+      "ai_key_fact": "Fiorentina enregistre un taux BTTS de 1 sur ses cinq derniers matchs.",
+      "ai_analysis": "Le modèle Poisson évalue les xG à 1.69 pour la Fiorentina et 1.63 pour l'Atalanta dans cette opposition de Serie A. Les prédictions indiquent des probabilités de 65.5% pour le BTTS et de 64.4% pour l'Over 2.5, appuyées par un taux de fiabilité de 78.41%. Au classement, la Fiorentina pointe à la 18e place avec 4 points tandis que l'Atalanta se trouve 11e avec 9 points. Les cotes de DraftKings affichent le succès de la Fiorentina à 2.2, le nul à 3.4 et la victoire de l'Atalanta à 2.9.",
+      "ai_form_summary": "La Fiorentina compte une victoire, un nul et trois défaites sur ses cinq dernières sorties avec un taux BTTS de 1. L'Atalanta totalise une victoire et quatre défaites sur la même période, affichant un taux BTTS de 0.8.",
+      "ai_key_fact_en": "Fiorentina records a BTTS rate of 1 in their last five matches.",
+      "ai_analysis_en": "The Poisson model evaluates xG at 1.69 for Fiorentina and 1.63 for Atalanta in this Serie A fixture. Predictions indicate probabilities of 65.5% for BTTS and 64.4% for Over 2.5, backed by a reliability rate of 78.41%. In the standings, Fiorentina sits in 18th place with 4 points while Atalanta is 11th with 9 points. DraftKings odds list Fiorentina's success at 2.2, the draw at 3.4 and Atalanta's win at 2.9.",
+      "ai_form_summary_en": "Fiorentina counts one win, one draw and three losses over their last five outings with a 1 BTTS rate. Atalanta totals one win and four losses over the same period, posting a 0.8 BTTS rate.",
+      "ai_source": "gemini-v2",
+      "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
+      "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
+      "ai_odds_insight": "Le marché (DraftKings) cote 1: 2.2, nul: 3.4, 2: 2.9, Over 2.5: 1.69.",
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.2, draw: 3.4, 2: 2.9, Over 2.5: 1.69."
     },
     {
       "id": "arminiab-vs-tsveintr-2026-10-30",
@@ -20177,7 +20237,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Cotes marché non disponibles — pronostic basé sur le modèle statistique seul.",
-      "ai_odds_insight_en": "Market odds unavailable — prediction based on the statistical model only."
+      "ai_odds_insight_en": "Market odds unavailable — prediction based on the statistical model only.",
+      "status": "PENDING"
     },
     {
       "id": "svelvers-vs-mainz-2026-10-30",
@@ -20374,7 +20435,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 3.15, nul: 3.6, 2: 2.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 3.15, draw: 3.6, 2: 2."
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 3.15, draw: 3.6, 2: 2.",
+      "status": "PENDING"
     },
     {
       "id": "energiec-vs-vflbochu-2026-10-30",
@@ -20571,7 +20633,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 3, nul: 3.45, 2: 2.15.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 3, draw: 3.45, 2: 2.15."
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 3, draw: 3.45, 2: 2.15.",
+      "status": "PENDING"
     },
     {
       "id": "villarre-vs-espanyol-2026-10-30",
@@ -20768,7 +20831,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 1.54, nul: 4.4, 2: 5.5, Over 2.5: 1.59.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 1.54, draw: 4.4, 2: 5.5, Over 2.5: 1.59."
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 1.54, draw: 4.4, 2: 5.5, Over 2.5: 1.59.",
+      "status": "PENDING"
     },
     {
       "id": "casapia-vs-sporting-2026-10-30",
@@ -20958,7 +21022,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Cotes marché non disponibles — pronostic basé sur le modèle statistique seul.",
-      "ai_odds_insight_en": "Market odds unavailable — prediction based on the statistical model only."
+      "ai_odds_insight_en": "Market odds unavailable — prediction based on the statistical model only.",
+      "status": "PENDING"
     },
     {
       "id": "zultewar-vs-clubbrug-2026-10-30",
@@ -21148,7 +21213,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Cotes marché non disponibles — pronostic basé sur le modèle statistique seul.",
-      "ai_odds_insight_en": "Market odds unavailable — prediction based on the statistical model only."
+      "ai_odds_insight_en": "Market odds unavailable — prediction based on the statistical model only.",
+      "status": "PENDING"
     },
     {
       "id": "grazerak-vs-tsvhartb-2026-10-30",
@@ -21344,7 +21410,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 1.91, nul: 3.5, 2: 3.6, Over 2.5: 1.8.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 1.91, draw: 3.5, 2: 3.6, Over 2.5: 1.8."
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 1.91, draw: 3.5, 2: 3.6, Over 2.5: 1.8.",
+      "status": "PENDING"
     },
     {
       "id": "sheffiel-vs-wrexham-2026-10-30",
@@ -21541,7 +21608,8 @@
       "ai_absences": "Absents : aucune indisponibilité officielle dans nos données — compos à confirmer avant le coup d'envoi.",
       "ai_absences_en": "Absences: no official unavailability in our data — line-ups to be confirmed before kick-off.",
       "ai_odds_insight": "Le marché (DraftKings) cote 1: 2.65, nul: 3.3, 2: 2.6, Over 2.5: 1.87.",
-      "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.65, draw: 3.3, 2: 2.6, Over 2.5: 1.87."
+      "ai_odds_insight_en": "The market (DraftKings) prices 1: 2.65, draw: 3.3, 2: 2.6, Over 2.5: 1.87.",
+      "status": "PENDING"
     }
   ]
 }

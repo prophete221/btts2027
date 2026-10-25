@@ -14367,7 +14367,9 @@
           "result": "L"
         }
       ],
-      "status": "PENDING"
+      "status": "LOST",
+      "finalScore": "0-0",
+      "verifiedAt": "2026-10-25T07:59:11.267Z"
     },
     {
       "id": "necnijme-vs-fcgronin-2026-10-25",
@@ -14961,7 +14963,9 @@
           "result": "W"
         }
       ],
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "2-2",
+      "verifiedAt": "2026-10-25T07:59:11.270Z"
     },
     {
       "id": "sporting-vs-austinfc-2026-10-25",
@@ -15159,7 +15163,9 @@
           "result": "D"
         }
       ],
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "1-2",
+      "verifiedAt": "2026-10-25T07:59:11.272Z"
     },
     {
       "id": "portland-vs-charlott-2026-10-25",
@@ -15357,7 +15363,9 @@
           "result": "W"
         }
       ],
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "3-2",
+      "verifiedAt": "2026-10-25T07:59:11.273Z"
     },
     {
       "id": "fortunas-vs-excelsio-2026-10-25",

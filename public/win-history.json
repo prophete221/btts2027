@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "generatedAt": "2026-10-25T02:32:48.963Z",
+  "generatedAt": "2026-10-25T07:59:57.142Z",
   "pendingPolicy": {
     "graceHours": 48,
     "rule": "Sans statut vérifié, un match futur ou récent reste « en attente » pendant exactement 48 h après son coup d'envoi.",
@@ -15,18 +15,18 @@
     "insufficientVolume": false
   },
   "stats": {
-    "total": 304,
-    "won": 248,
-    "lost": 56,
-    "pending": 60,
+    "total": 308,
+    "won": 251,
+    "lost": 57,
+    "pending": 57,
     "unverifiable": 130,
-    "archivedTotal": 494,
-    "rate": 81.6,
+    "archivedTotal": 495,
+    "rate": 81.5,
     "gold": {
-      "total": 214,
-      "won": 179,
-      "lost": 35,
-      "rate": 83.6
+      "total": 218,
+      "won": 182,
+      "lost": 36,
+      "rate": 83.5
     },
     "standard": {
       "total": 90,
@@ -36,10 +36,10 @@
     },
     "byType": {
       "btts": {
-        "total": 301,
-        "won": 247,
-        "lost": 54,
-        "rate": 82.1
+        "total": 305,
+        "won": 250,
+        "lost": 55,
+        "rate": 82
       },
       "over25": {
         "total": 3,
@@ -49,13 +49,6 @@
       }
     },
     "trend14": [
-      {
-        "date": "2026-10-09",
-        "total": 1,
-        "won": 1,
-        "lost": 0,
-        "rate": 100
-      },
       {
         "date": "2026-10-10",
         "total": 7,
@@ -146,6 +139,13 @@
         "won": 17,
         "lost": 16,
         "rate": 51.5
+      },
+      {
+        "date": "2026-10-25",
+        "total": 4,
+        "won": 3,
+        "lost": 1,
+        "rate": 75
       }
     ],
     "period": {
@@ -155,6 +155,58 @@
     }
   },
   "history": [
+    {
+      "date": "2026-10-25",
+      "match": "Portland Timbers vs Charlotte FC",
+      "league": "MLS",
+      "market": "btts",
+      "tier": "GOLD",
+      "proba": 0.7349,
+      "status": "WON",
+      "finalScore": "3-2",
+      "verifiedAt": "2026-10-25T07:59:11.273Z",
+      "source": "ESPN public",
+      "prediction": "Oui"
+    },
+    {
+      "date": "2026-10-25",
+      "match": "Sporting Kansas City vs Austin FC",
+      "league": "MLS",
+      "market": "btts",
+      "tier": "GOLD",
+      "proba": 0.7395,
+      "status": "WON",
+      "finalScore": "1-2",
+      "verifiedAt": "2026-10-25T07:59:11.272Z",
+      "source": "ESPN public",
+      "prediction": "Oui"
+    },
+    {
+      "date": "2026-10-25",
+      "match": "San Diego FC vs Seattle Sounders FC",
+      "league": "MLS",
+      "market": "btts",
+      "tier": "GOLD",
+      "proba": 0.7465,
+      "status": "WON",
+      "finalScore": "2-2",
+      "verifiedAt": "2026-10-25T07:59:11.270Z",
+      "source": "ESPN public",
+      "prediction": "Oui"
+    },
+    {
+      "date": "2026-10-25",
+      "match": "Houston Dynamo FC vs Minnesota United FC",
+      "league": "MLS",
+      "market": "btts",
+      "tier": "GOLD",
+      "proba": 0.8036,
+      "status": "LOST",
+      "finalScore": "0-0",
+      "verifiedAt": "2026-10-25T07:59:11.267Z",
+      "source": "ESPN public",
+      "prediction": "Oui"
+    },
     {
       "date": "2026-10-24",
       "match": "Atlanta United FC vs Chicago Fire FC",
