@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "generatedAt": "2026-10-24T22:51:09.591Z",
+  "generatedAt": "2026-10-25T02:32:48.963Z",
   "pendingPolicy": {
     "graceHours": 48,
     "rule": "Sans statut vérifié, un match futur ou récent reste « en attente » pendant exactement 48 h après son coup d'envoi.",
@@ -15,18 +15,18 @@
     "insufficientVolume": false
   },
   "stats": {
-    "total": 299,
-    "won": 245,
-    "lost": 54,
-    "pending": 37,
+    "total": 304,
+    "won": 248,
+    "lost": 56,
+    "pending": 60,
     "unverifiable": 130,
-    "archivedTotal": 466,
-    "rate": 81.9,
+    "archivedTotal": 494,
+    "rate": 81.6,
     "gold": {
-      "total": 209,
-      "won": 176,
-      "lost": 33,
-      "rate": 84.2
+      "total": 214,
+      "won": 179,
+      "lost": 35,
+      "rate": 83.6
     },
     "standard": {
       "total": 90,
@@ -36,10 +36,10 @@
     },
     "byType": {
       "btts": {
-        "total": 296,
-        "won": 244,
-        "lost": 52,
-        "rate": 82.4
+        "total": 301,
+        "won": 247,
+        "lost": 54,
+        "rate": 82.1
       },
       "over25": {
         "total": 3,
@@ -142,19 +142,84 @@
       },
       {
         "date": "2026-10-24",
-        "total": 28,
-        "won": 14,
-        "lost": 14,
-        "rate": 50
+        "total": 33,
+        "won": 17,
+        "lost": 16,
+        "rate": 51.5
       }
     ],
     "period": {
       "from": "2026-08-08",
-      "to": "2026-10-24",
-      "days": 78
+      "to": "2026-10-25",
+      "days": 79
     }
   },
   "history": [
+    {
+      "date": "2026-10-24",
+      "match": "Atlanta United FC vs Chicago Fire FC",
+      "league": "MLS",
+      "market": "btts",
+      "tier": "GOLD",
+      "proba": 0.6219,
+      "status": "WON",
+      "finalScore": "2-3",
+      "verifiedAt": "2026-10-25T02:31:46.777Z",
+      "source": "ESPN public",
+      "prediction": "Oui"
+    },
+    {
+      "date": "2026-10-24",
+      "match": "D.C. United vs FC Cincinnati",
+      "league": "MLS",
+      "market": "btts",
+      "tier": "GOLD",
+      "proba": 0.6304,
+      "status": "LOST",
+      "finalScore": "0-2",
+      "verifiedAt": "2026-10-25T02:31:46.777Z",
+      "source": "ESPN public",
+      "prediction": "Oui"
+    },
+    {
+      "date": "2026-10-24",
+      "match": "Orlando City SC vs New York City FC",
+      "league": "MLS",
+      "market": "btts",
+      "tier": "GOLD",
+      "proba": 0.5671,
+      "status": "WON",
+      "finalScore": "2-2",
+      "verifiedAt": "2026-10-25T02:31:46.777Z",
+      "source": "ESPN public",
+      "prediction": "Oui"
+    },
+    {
+      "date": "2026-10-24",
+      "match": "Red Bull New York vs Inter Miami CF",
+      "league": "MLS",
+      "market": "btts",
+      "tier": "GOLD",
+      "proba": 0.6495,
+      "status": "LOST",
+      "finalScore": "2-0",
+      "verifiedAt": "2026-10-25T02:31:46.777Z",
+      "source": "ESPN public",
+      "prediction": "Oui"
+    },
+    {
+      "date": "2026-10-24",
+      "match": "Philadelphia Union vs New England Revolution",
+      "league": "MLS",
+      "market": "btts",
+      "tier": "GOLD",
+      "proba": 0.6707,
+      "status": "WON",
+      "finalScore": "1-2",
+      "verifiedAt": "2026-10-25T02:31:46.776Z",
+      "source": "ESPN public",
+      "prediction": "Oui"
+    },
     {
       "date": "2026-10-24",
       "match": "Gil Vicente vs FC Porto",
@@ -4044,12 +4109,12 @@
     }
   ],
   "legacyStats": {
-    "total": 137,
-    "won": 137,
+    "total": 130,
+    "won": 130,
     "lost": 0,
     "pending": 0,
-    "unverifiable": 199,
-    "archivedTotal": 336,
+    "unverifiable": 192,
+    "archivedTotal": 322,
     "rate": 100,
     "gold": {
       "total": 0,
@@ -4058,37 +4123,30 @@
       "rate": 0
     },
     "standard": {
-      "total": 137,
-      "won": 137,
+      "total": 130,
+      "won": 130,
       "lost": 0,
       "rate": 100
     },
     "byType": {
       "btts": {
-        "total": 70,
-        "won": 70,
+        "total": 67,
+        "won": 67,
         "lost": 0,
         "rate": 100
       },
       "over25": {
-        "total": 67,
-        "won": 67,
+        "total": 63,
+        "won": 63,
         "lost": 0,
         "rate": 100
       }
     },
     "trend14": [
       {
-        "date": "2026-07-27",
-        "total": 4,
-        "won": 4,
-        "lost": 0,
-        "rate": 100
-      },
-      {
         "date": "2026-07-28",
-        "total": 6,
-        "won": 6,
+        "total": 3,
+        "won": 3,
         "lost": 0,
         "rate": 100
       },
@@ -4171,9 +4229,9 @@
       }
     ],
     "period": {
-      "from": "2026-07-27",
+      "from": "2026-07-28",
       "to": "2026-08-07",
-      "days": 12
+      "days": 11
     },
     "history": [
       {
@@ -5751,32 +5809,6 @@
       },
       {
         "date": "2026-07-29",
-        "match": "Rosario Central vs Racing Club",
-        "league": "Argentine Liga Profesional de Fútbol",
-        "market": "btts",
-        "tier": "STANDARD",
-        "proba": 0.45,
-        "status": "WON",
-        "finalScore": "0-0",
-        "verifiedAt": "2026-10-23T05:48:33.585Z",
-        "source": "ESPN public",
-        "prediction": "Non"
-      },
-      {
-        "date": "2026-07-29",
-        "match": "San Lorenzo vs Gimnasia (Mendoza)",
-        "league": "Argentine Liga Profesional de Fútbol",
-        "market": "over25",
-        "tier": "STANDARD",
-        "proba": 0.45,
-        "status": "WON",
-        "finalScore": "1-0",
-        "verifiedAt": "2026-10-23T05:48:33.585Z",
-        "source": "ESPN public",
-        "prediction": "Non"
-      },
-      {
-        "date": "2026-07-29",
         "match": "Barracas Central vs Aldosivi",
         "league": "Argentine Liga Profesional de Fútbol",
         "market": "btts",
@@ -5828,6 +5860,32 @@
         "prediction": "Oui"
       },
       {
+        "date": "2026-07-29",
+        "match": "Rosario Central vs Racing Club",
+        "league": "Argentine Liga Profesional de Fútbol",
+        "market": "btts",
+        "tier": "STANDARD",
+        "proba": 0.45,
+        "status": "WON",
+        "finalScore": "0-0",
+        "verifiedAt": "2026-08-07T12:16:59.319Z",
+        "source": "ESPN public",
+        "prediction": "Non"
+      },
+      {
+        "date": "2026-07-29",
+        "match": "San Lorenzo vs Gimnasia (Mendoza)",
+        "league": "Argentine Liga Profesional de Fútbol",
+        "market": "over25",
+        "tier": "STANDARD",
+        "proba": 0.45,
+        "status": "WON",
+        "finalScore": "1-0",
+        "verifiedAt": "2026-08-07T11:21:16.381Z",
+        "source": "ESPN public",
+        "prediction": "Non"
+      },
+      {
         "date": "2026-07-28",
         "match": "2 de Mayo vs Cerro Porteño",
         "league": "Paraguayan Primera División",
@@ -5836,7 +5894,7 @@
         "proba": 0.49,
         "status": "WON",
         "finalScore": "2-1",
-        "verifiedAt": "2026-10-23T05:48:33.585Z",
+        "verifiedAt": "2026-08-07T14:30:26.578Z",
         "source": "ESPN public",
         "prediction": "Oui"
       },
@@ -5849,7 +5907,7 @@
         "proba": 0.48,
         "status": "WON",
         "finalScore": "1-1",
-        "verifiedAt": "2026-10-23T05:48:33.585Z",
+        "verifiedAt": "2026-08-07T14:30:26.578Z",
         "source": "ESPN public",
         "prediction": "Oui"
       },
@@ -5862,100 +5920,9 @@
         "proba": 0.42,
         "status": "WON",
         "finalScore": "1-1",
-        "verifiedAt": "2026-10-23T05:48:33.585Z",
+        "verifiedAt": "2026-08-07T14:30:26.578Z",
         "source": "ESPN public",
         "prediction": "Non"
-      },
-      {
-        "date": "2026-07-28",
-        "match": "Deportivo Cuenca vs Emelec",
-        "league": "LigaPro Ecuador",
-        "market": "btts",
-        "tier": "STANDARD",
-        "proba": 0.51,
-        "status": "WON",
-        "finalScore": "2-1",
-        "verifiedAt": "2026-08-07T14:30:31.186Z",
-        "source": "ESPN public",
-        "prediction": "Oui"
-      },
-      {
-        "date": "2026-07-28",
-        "match": "Unión La Calera vs Everton CD",
-        "league": "Chilean Primera División",
-        "market": "btts",
-        "tier": "STANDARD",
-        "proba": 0.49,
-        "status": "WON",
-        "finalScore": "1-1",
-        "verifiedAt": "2026-08-07T14:30:31.186Z",
-        "source": "ESPN public",
-        "prediction": "Oui"
-      },
-      {
-        "date": "2026-07-28",
-        "match": "Unión La Calera vs Everton CD",
-        "league": "Chilean Primera División",
-        "market": "over25",
-        "tier": "STANDARD",
-        "proba": 0.45,
-        "status": "WON",
-        "finalScore": "1-1",
-        "verifiedAt": "2026-08-07T14:30:31.186Z",
-        "source": "ESPN public",
-        "prediction": "Non"
-      },
-      {
-        "date": "2026-07-27",
-        "match": "Guayaquil City FC vs Universidad Católica (Quito)",
-        "league": "LigaPro Ecuador",
-        "market": "over25",
-        "tier": "STANDARD",
-        "proba": 0.44,
-        "status": "WON",
-        "finalScore": "0-0",
-        "verifiedAt": "2026-08-07T14:30:31.186Z",
-        "source": "ESPN public",
-        "prediction": "Non"
-      },
-      {
-        "date": "2026-07-27",
-        "match": "Mushuc Runa vs Libertad (Ecuador)",
-        "league": "LigaPro Ecuador",
-        "market": "over25",
-        "tier": "STANDARD",
-        "proba": 0.47,
-        "status": "WON",
-        "finalScore": "0-2",
-        "verifiedAt": "2026-08-07T14:30:31.185Z",
-        "source": "ESPN public",
-        "prediction": "Non"
-      },
-      {
-        "date": "2026-07-27",
-        "match": "Randers FC vs Silkeborg IF",
-        "league": "Danish Superliga",
-        "market": "btts",
-        "tier": "STANDARD",
-        "proba": 0.52,
-        "status": "WON",
-        "finalScore": "1-1",
-        "verifiedAt": "2026-08-07T12:16:54.263Z",
-        "source": "ESPN public",
-        "prediction": "Oui"
-      },
-      {
-        "date": "2026-07-27",
-        "match": "Rosenborg vs Fredrikstad",
-        "league": "Norwegian Eliteserien",
-        "market": "over25",
-        "tier": "STANDARD",
-        "proba": 0.52,
-        "status": "WON",
-        "finalScore": "4-0",
-        "verifiedAt": "2026-08-07T11:21:02.011Z",
-        "source": "ESPN public",
-        "prediction": "Oui"
       }
     ],
     "isPrivate": true,

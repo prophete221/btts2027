@@ -13969,7 +13969,9 @@
           "result": "W"
         }
       ],
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "1-2",
+      "verifiedAt": "2026-10-25T02:31:46.776Z"
     },
     {
       "id": "psveindh-vs-feyenoor-2026-10-25",
