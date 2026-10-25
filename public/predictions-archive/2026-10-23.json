@@ -11534,7 +11534,9 @@
           "result": "W"
         }
       ],
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "1-1",
+      "verifiedAt": "2026-10-25T18:02:14.392Z"
     },
     {
       "id": "houstond-vs-minnesot-2026-10-25",
@@ -11932,7 +11934,9 @@
           "result": "D"
         }
       ],
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "2-2",
+      "verifiedAt": "2026-10-25T18:02:14.393Z"
     },
     {
       "id": "spartaro-vs-ajaxamst-2026-10-25",
@@ -12130,7 +12134,9 @@
           "result": "W"
         }
       ],
-      "status": "PENDING"
+      "status": "WON",
+      "finalScore": "1-2",
+      "verifiedAt": "2026-10-25T18:02:14.393Z"
     },
     {
       "id": "sandiego-vs-seattles-2026-10-25",
